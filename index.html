@@ -1,14 +1,14 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-US">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-<title>Spin the Wheel to Decide a Random Choice - spinthewheelly.com</title>
+<title>Spin The Wheelly — Spin the Wheel to Decide a Random Choice</title>
 <meta name="description" content="Spin the wheel to pick a random winner, make decisions, or choose a random item. Create your own picker wheel for free with one click.">
 <meta name="theme-color" content="#ffffff" id="themeColorMeta">
 <link rel="canonical" href="https://spinthewheelly.com/">
 
-<!-- UPDATED FAVICONS AND MANIFEST -->
+<!-- FAVICONS AND MANIFEST -->
 <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
@@ -18,6 +18,7 @@
 <meta property="og:description" content="Free online spin the wheel random picker. Add names or options, hit SPIN, and let the wheel decide fairly. 100% private, no signup.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://spinthewheelly.com/">
+<meta property="og:locale" content="en_US">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Spin The Wheelly — Spin the Wheel to Decide a Random Choice">
 <meta name="twitter:description" content="Free spin the wheel random picker. No signup, 100% private.">
@@ -34,8 +35,8 @@
   "description": "Free online spin the wheel random choice picker. Add names or options and let the wheel fairly decide a random winner. No signup required.",
   "applicationCategory": "UtilityApplication",
   "operatingSystem": "Any",
-  "offers": {"@type": "Offer","price": "0","priceCurrency": "USD"},
-  "aggregateRating": {"@type": "AggregateRating","ratingValue": "4.8","ratingCount": "1240"}
+  "inLanguage": "en-US",
+  "offers": {"@type": "Offer","price": "0","priceCurrency": "USD"}
 }
 </script>
 
@@ -177,7 +178,6 @@ html.dark-mode .site-header {
   flex-shrink: 0;
 }
 
-/* ADDED: Logo Image Style */
 .nav-logo-img {
   width: 28px;
   height: 28px;
@@ -445,7 +445,7 @@ html.dark-mode .count-badge{background:#3b82f6;color:#ffffff;border-color:#60a5f
 @media (max-width:900px){.wheel-layout{grid-template-columns:minmax(0,1fr);gap:22px}}
 .wheel-col{min-width:0; display:flex; flex-direction:column; align-items:center; gap:10px; width:100%}
 
-/* ---------- UPDATED CONTROLS TOP ---------- */
+/* ---------- CONTROLS TOP ---------- */
 .wheel-controls-top {
   display: flex; 
   flex-direction: column; 
@@ -551,7 +551,7 @@ html.dark-mode .sub-btn:hover { background: #475569; }
 .panel-view.exit-right { opacity: 0; transform: translateX(20px); visibility: hidden; }
 .sliding-container.hidden-content .panel-view { opacity: 0 !important; visibility: hidden !important; pointer-events: none !important; }
 
-/* ---------- UPDATED ENTRIES TEXTAREA (THIN BLACK BORDER, NO FOCUS RING) ---------- */
+/* ---------- ENTRIES TEXTAREA ---------- */
 #entriesTextarea {
   width: 100%; height: 100%;
   padding: 14px 14px 44px 14px;
@@ -582,7 +582,7 @@ html.dark-mode #entriesTextarea:focus-visible {
 .emoji-btn svg { width:20px; height:20px; color:#4b5563; }
 html.dark-mode .emoji-btn svg { color:#9ca3af; }
 
-/* ---------- UPDATED RESULTS BOX (SAME THIN BLACK BORDER, NO FOCUS RING) ---------- */
+/* ---------- RESULTS BOX ---------- */
 .results-box {
   width: 100%; height: 100%;
   border: 1px solid #000000; border-radius: 8px;
@@ -644,8 +644,6 @@ html.dark-mode .wheel-premium-bg::before {background: radial-gradient(circle, rg
 
 /* ============================================================
    FULLSCREEN BRAND BAR
-   Shown ONLY in fullscreen. Brand pill background REMOVED —
-   only logo + text floating. Icons remain bare (no bg/border/shadow).
    ============================================================ */
 .fullscreen-brand-bar {
   display: none;
@@ -664,7 +662,6 @@ html.dark-mode .wheel-premium-bg::before {background: radial-gradient(circle, rg
 }
 .fullscreen-brand-bar > * { pointer-events: auto; }
 
-/* ✅ BRAND — no background, no border, no shadow, no glass */
 .fs-brand {
   display: flex;
   align-items: center;
@@ -705,7 +702,6 @@ html.dark-mode .fs-brand-text {
   align-items: center;
 }
 
-/* ✅ ICONS WITHOUT BACKGROUND (bare, floating) */
 .fs-icon-btn {
   background: transparent;
   border: none;
@@ -770,7 +766,7 @@ html.dark-mode .spin-button{background:#0a0a0a;color:#fff;box-shadow:0 2px 10px 
 .spin-button:focus-visible{outline:2px solid var(--text) !important;outline-offset:5px !important;border-radius:50%}
 .spin-button.long-label{font-size:clamp(7px,1.15vw,10px);letter-spacing:0}
 
-/* ---------- WINNER POPUP (EXACT ORIGINAL) ---------- */
+/* ---------- WINNER POPUP ---------- */
 .winner-overlay{position:fixed;inset:0;background:rgba(0,0,0,0.55);-webkit-backdrop-filter:blur(2px);backdrop-filter:blur(2px);z-index:10000;display:flex;align-items:center;justify-content:center;padding:20px;opacity:0;visibility:hidden;transition:opacity .3s ease,visibility .3s ease;}
 .winner-overlay.show{opacity:1;visibility:visible}
 .winner-popup{position:relative;background:#ffffff;border:5px solid #155e1f;border-radius:4px;padding:40px 24px 20px;max-width:480px;width:100%;text-align:center;box-shadow:0 10px 40px rgba(0,0,0,0.4);transform:scale(.85) translateY(20px);opacity:0;transition:transform .4s cubic-bezier(.34,1.56,.64,1),opacity .3s ease;display:flex; flex-direction:column; justify-content:space-between; min-height:380px;overflow:hidden;}
@@ -1125,8 +1121,8 @@ html.dark-mode .footer-link-item svg { color: #9ca3af; }
 <!-- PAGE BANNER -->
 <section class="page-banner">
   <div class="banner-container">
-    <h1 class="banner-title" id="bannerTitle">Picker Wheel</h1>
-    <p class="banner-subtitle">Spin The Wheelly — Help you to make a random decision</p>
+    <h1 class="banner-title" id="bannerTitle">Spin The Wheelly</h1>
+    <p class="banner-subtitle">Spin the wheel to make a random decision — free, fair, and fun</p>
   </div>
 </section>
 
@@ -1136,7 +1132,7 @@ html.dark-mode .footer-link-item svg { color: #9ca3af; }
       <div class="wheel-layout">
         <div class="wheel-col">
         
-          <!-- VERTICAL STACKED UPDATED CONTROLS -->
+          <!-- VERTICAL STACKED CONTROLS -->
           <div class="wheel-controls-top">
             <button class="icon-btn" id="headerSoundBtn" onclick="cycleSoundVolume()" title="Change Volume" aria-label="Change Volume">
               <svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-speaker-wave" id="soundIconUse"/></svg>
@@ -1147,7 +1143,7 @@ html.dark-mode .footer-link-item svg { color: #9ca3af; }
           </div>
           
           <div class="wheel-premium-bg" id="wheelPremiumBg">
-            <!-- FULLSCREEN-ONLY BAR: brand (no bg) + sound + exit (no bg) -->
+            <!-- FULLSCREEN-ONLY BAR -->
             <div class="fullscreen-brand-bar" id="fullscreenBrandBar" aria-hidden="true">
               <div class="fs-brand">
                 <img src="/apple-touch-icon.png" alt="Spin The Wheelly Logo" class="fs-brand-img">
@@ -1273,7 +1269,7 @@ Soup</textarea>
       </div>
 
       <div class="seo-block">
-        <h2><img class="seo-h2-icon" src="/favicon-32x32.png" alt="">How to Use the Spin the Wheel Random Picker</h2>
+        <h2><img class="seo-h2-icon" src="/favicon-32x32.png" alt="">How to Use Spin The Wheelly</h2>
         <p>Using our free spin the wheel tool is as easy as it gets. Just follow these three simple steps and let the wheel do the deciding:</p>
         <ol>
           <li><strong>Add your entries</strong> — Type your options, names, or choices in the text box on the right. One entry per line.</li>
@@ -1285,7 +1281,7 @@ Soup</textarea>
 
       <div class="seo-block">
         <h2><img class="seo-h2-icon" src="/favicon-32x32.png" alt="">Features of Our Random Choice Picker</h2>
-        <p>We built Spin The Wheelly to be the fastest, most fun random picker on the web. Here's what makes it great:</p>
+        <p>We built Spin The Wheelly to be a fast, fun random picker. Here's what makes it great:</p>
         <ul>
           <li><strong>Instant spins</strong> with smooth, satisfying animation</li>
           <li><strong>Premium confetti</strong> celebrations when the winner is revealed</li>
@@ -1302,7 +1298,7 @@ Soup</textarea>
 
     </div>
 
-    <!-- ROW 2: 4 BOXES (3 + 1 full-width) -->
+    <!-- ROW 2: 3 BOXES + 1 FULL-WIDTH -->
     <div class="seo-row">
 
       <div class="seo-block">
@@ -1340,7 +1336,7 @@ Soup</textarea>
           <li><strong>Cryptographically secure</strong> — we use the browser's built-in crypto API to generate random numbers.</li>
           <li><strong>Each spin is independent</strong> — previous results don't affect future spins.</li>
           <li><strong>No bias or patterns</strong> — every entry has an equal chance of winning.</li>
-          <li><strong>Fair for all participants</strong> — no hidden weights or favourites.</li>
+          <li><strong>Fair for all participants</strong> — no hidden weights or favorites.</li>
           <li><strong>Transparent</strong> — the winner is selected before the wheel starts spinning.</li>
           <li><strong>Verifiable</strong> — all code runs in your browser, so you can inspect it if you like.</li>
         </ul>
@@ -1363,7 +1359,7 @@ Soup</textarea>
 
     </div>
 
-    <!-- ROW 3: 4 BOXES (3 + 1 full-width) -->
+    <!-- ROW 3: 3 BOXES + 1 FULL-WIDTH -->
     <div class="seo-row">
 
       <div class="seo-block">
@@ -1396,7 +1392,7 @@ Soup</textarea>
 
       <div class="seo-block">
         <h2><img class="seo-h2-icon" src="/favicon-32x32.png" alt="">Spin the Wheel for Teachers &amp; Classrooms</h2>
-        <p>Teachers around the world use our wheel every day to make learning more fun and fair. Here are some favourite classroom ideas:</p>
+        <p>Teachers around the world use our wheel every day to make learning more fun and fair. Here are some favorite classroom ideas:</p>
         <ul>
           <li><strong>Pick a student</strong> — choose who answers the next question fairly.</li>
           <li><strong>Group work</strong> — split the class into random teams in seconds.</li>
@@ -1452,7 +1448,7 @@ Soup</textarea>
           <li><strong>Random number apps</strong> — fast but boring. No visual feedback.</li>
           <li><strong>Spin wheels</strong> — visual, engaging, and perfect for up to 50 options.</li>
         </ul>
-        <p>Our wheel is <strong>fun to watch, easy to explain, and impossible to argue with</strong> — that's why it's the #1 pick for classrooms, parties, and live streams.</p>
+        <p>Our wheel is <strong>fun to watch, easy to explain, and impossible to argue with</strong> — which makes it a popular pick for classrooms, parties, and live streams.</p>
       </div>
 
       <div class="seo-block">
@@ -1524,7 +1520,7 @@ Soup</textarea>
 
 <input type="file" id="imageInput" accept="image/*" style="display:none;" onchange="handleImageUpload(event)">
 
-<!-- Winner popup (Restored to original) -->
+<!-- Winner popup -->
 <div class="winner-overlay" id="winnerOverlay" role="dialog" aria-modal="true" aria-labelledby="winnerPopupTitle" aria-hidden="true">
   <div class="winner-popup" id="winnerPopup">
     <h2 id="winnerPopupTitle" class="sr-only">Winner selected</h2>
@@ -1632,12 +1628,12 @@ Soup</textarea>
   </div>
 </div>
 
-<!-- Privacy Modal (short) -->
+<!-- Privacy Modal -->
 <div class="modal-overlay" id="privacyModal" role="dialog" aria-modal="true" aria-label="Privacy Policy" aria-hidden="true">
   <div class="modal-box modal-wide">
     <h3>Privacy Policy</h3>
     <div class="modal-content-body">
-      <p><em>Last updated: January 2025</em></p>
+      <p><em>Last updated: October 2026</em></p>
       <p>At <strong>Spin The Wheelly</strong>, your privacy is extremely important to us.</p>
       <h4>1. Information We Collect</h4>
       <p>We do <strong>not</strong> collect, store, or transmit any personal information.</p>
@@ -1663,12 +1659,12 @@ Soup</textarea>
   </div>
 </div>
 
-<!-- Terms Modal (short) -->
+<!-- Terms Modal -->
 <div class="modal-overlay" id="termsModal" role="dialog" aria-modal="true" aria-label="Terms and Conditions" aria-hidden="true">
   <div class="modal-box modal-wide">
     <h3>Terms &amp; Conditions</h3>
     <div class="modal-content-body">
-      <p><em>Last updated: January 2025</em></p>
+      <p><em>Last updated: October 2026</em></p>
       <p>Welcome to <strong>Spin The Wheelly</strong>. By using our website and tools, you agree to these simple terms.</p>
       <h4>1. Free to Use</h4>
       <p>Spin The Wheelly is 100% free. No signup, no payment, no hidden fees — ever.</p>
@@ -2003,7 +1999,7 @@ function resetWheel(){
   currentRotation=0;
   document.title = 'Spin The Wheelly — Spin the Wheel to Decide a Random Choice';
   var bt = document.getElementById('bannerTitle');
-  if (bt) bt.textContent = 'Picker Wheel';
+  if (bt) bt.textContent = 'Spin The Wheelly';
   updateEntries();
   renderResultsList();
   closeWinnerPopup();
