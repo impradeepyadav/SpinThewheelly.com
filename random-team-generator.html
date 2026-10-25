@@ -7,6 +7,13 @@
 <meta name="description" content="Free random team generator by Spin The Wheelly. Spin the wheel to pick a team fairly, or split people into random groups. No signup, 100% private, works on any device.">
 <meta name="theme-color" content="#ffffff" id="themeColorMeta">
 <link rel="canonical" href="https://spinthewheelly.com/random-team-generator">
+
+<!-- FAVICONS AND MANIFEST -->
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/site.webmanifest">
+
 <meta property="og:title" content="Random Team Generator — Free Spin the Wheel Team Picker">
 <meta property="og:description" content="Free random team generator. Spin to pick a team fairly, or split people into random groups. No signup, 100% private.">
 <meta property="og:type" content="website">
@@ -14,7 +21,6 @@
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Random Team Generator — Free Spin the Wheel Team Picker">
 <meta name="twitter:description" content="Pick a random team fairly with a spinning wheel. 100% free, no signup.">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='46' fill='%231a1a1a'/%3E%3Cpath d='M50 50 L50 8 A42 42 0 0 1 88 71 Z' fill='%23E8A500'/%3E%3Cpath d='M50 50 L88 71 A42 42 0 0 1 12 71 Z' fill='%23F5EBC8'/%3E%3Cpath d='M50 50 L12 71 A42 42 0 0 1 50 8 Z' fill='%231E4620'/%3E%3Ccircle cx='50' cy='50' r='9' fill='%23fff'/%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap">
@@ -153,6 +159,14 @@ html.dark-mode .site-header {
   cursor: pointer;
   flex-shrink: 0;
 }
+
+.nav-logo-img {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
 .nav-logo-text {
   font-size: 20px;
   font-weight: 800;
@@ -224,6 +238,7 @@ html.dark-mode .hamburger-btn svg { stroke: #d1d5db; }
 @media (max-width: 560px) {
   .header-container { height: 56px; }
   .nav-logo-text { font-size: 16px; letter-spacing: -0.5px; }
+  .nav-logo-img { width: 24px; height: 24px; }
 }
 
 /* ============================================================
@@ -412,20 +427,55 @@ html.dark-mode .count-badge{background:#3b82f6;color:#ffffff;border-color:#60a5f
 @media (max-width:900px){.wheel-layout{grid-template-columns:minmax(0,1fr);gap:22px}}
 .wheel-col{min-width:0; display:flex; flex-direction: column; align-items:center; gap:10px; width:100%}
 
+/* ---------- VERTICAL STACKED CONTROLS ---------- */
 .wheel-controls-top {
-  display: flex; justify-content: flex-end; align-items: center;
-  gap: 8px; width: 100%; max-width: 520px;
-  margin: 0 auto; padding: 0 8px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: flex-end;
+  gap: 10px;
+  width: 100%;
+  max-width: 520px;
+  margin: 0 auto;
+  padding: 0 8px;
 }
 .icon-btn {
-  background: transparent; border: none; color: #64748b;
-  cursor: pointer; display: flex; align-items: center; justify-content: center;
-  padding: 8px; border-radius: 8px; transition: all 0.2s;
+  background: #ffffff;
+  border: 1px solid rgba(0,0,0,0.08);
+  color: #1a1a1a;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  transition: all 0.2s ease;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.08);
 }
-html.dark-mode .icon-btn { color: #94a3b8; }
-.icon-btn:hover { color: var(--text); background: rgba(0,0,0,0.05); }
-html.dark-mode .icon-btn:hover { background: rgba(255,255,255,0.1); }
-.icon-btn svg { width: 22px; height: 22px; }
+html.dark-mode .icon-btn {
+  background: #1e293b;
+  border-color: rgba(255,255,255,0.1);
+  color: #f1f5f9;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+}
+.icon-btn:hover {
+  background: #f8fafc;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.12);
+}
+html.dark-mode .icon-btn:hover {
+  background: #334155;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+}
+.icon-btn svg {
+  width: 22px;
+  height: 22px;
+  stroke: currentColor;
+  stroke-width: 2.2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
 
 .entries-panel{min-width:0; display:flex; flex-direction:column; max-width:340px; width:100%; justify-self:end;}
 @media (max-width:900px){.entries-panel{max-width:none; justify-self:stretch;}}
@@ -468,7 +518,7 @@ html.dark-mode .sub-btn { background: #334155; color: #e2e8f0; }
 html.dark-mode .sub-btn:hover { background: #475569; }
 .sub-btn svg { width: 16px; height: 16px; }
 
-/* ---------- preset chips for teams ---------- */
+/* ---------- preset chips ---------- */
 .team-presets {
   display: flex;
   flex-wrap: wrap;
@@ -517,32 +567,64 @@ html.dark-mode .preset-chip.active {
 .panel-view.exit-right { opacity: 0; transform: translateX(20px); visibility: hidden; }
 .sliding-container.hidden-content .panel-view { opacity: 0 !important; visibility: hidden !important; pointer-events: none !important; }
 
+/* ---------- ENTRIES TEXTAREA ---------- */
 #entriesTextarea {
   width: 100%; height: 100%;
   padding: 14px 14px 44px 14px;
-  border: 1px solid #d1d5db; border-radius: 8px;
+  border: 1px solid #000000; border-radius: 8px;
   background: #ffffff; color: #111827;
   font-family: inherit; font-size: 15px; line-height: 1.6;
   resize: none; outline: none;
   box-shadow: inset 0 1px 2px rgba(0,0,0,0.05);
-  transition: opacity 0.3s; box-sizing: border-box;
+  transition: opacity 0.3s, border-color .15s; box-sizing: border-box;
 }
-html.dark-mode #entriesTextarea { background:#0f172a; color:#f1f5f9; border-color:#334155; }
-#entriesTextarea:focus, #entriesTextarea:focus-visible {border-color:#d1d5db;outline:none !important;box-shadow: inset 0 1px 2px rgba(0,0,0,0.05);}
-html.dark-mode #entriesTextarea:focus, html.dark-mode #entriesTextarea:focus-visible {border-color:#334155;box-shadow: inset 0 1px 2px rgba(0,0,0,0.3);}
+html.dark-mode #entriesTextarea { background:#0f172a; color:#f1f5f9; border-color:#000000; }
+#entriesTextarea:focus,
+#entriesTextarea:focus-visible {
+  border-color:#000000;
+  box-shadow: inset 0 1px 2px rgba(0,0,0,0.05);
+  outline: none;
+}
+html.dark-mode #entriesTextarea:focus,
+html.dark-mode #entriesTextarea:focus-visible {
+  border-color:#000000;
+  box-shadow: inset 0 1px 2px rgba(0,0,0,0.3);
+  outline: none;
+}
+#entriesTextarea[readonly] { opacity: .6; cursor: progress; }
 
 .emoji-btn {position:absolute; bottom:10px; right:10px;background:none; border:none; font-size:20px; cursor:pointer;opacity:0.6; transition:opacity 0.15s; padding:4px;display:flex; align-items:center; justify-content:center; z-index: 5;}
 .emoji-btn:hover { opacity:1; }
 .emoji-btn svg { width:20px; height:20px; color:#4b5563; }
 html.dark-mode .emoji-btn svg { color:#9ca3af; }
 
+/* ---------- RESULTS BOX ---------- */
 .results-box {
   width: 100%; height: 100%;
-  border: 1px solid #d1d5db; border-radius: 8px;
+  border: 1px solid #000000; border-radius: 8px;
   background: #ffffff; padding: 16px;
   overflow-y: auto; box-sizing: border-box;
+  outline: none;
+  box-shadow: inset 0 1px 2px rgba(0,0,0,0.05);
+  transition: border-color .15s;
 }
-html.dark-mode .results-box { border-color: #334155; background: #0f172a; }
+html.dark-mode .results-box {
+  border-color: #000000;
+  background: #0f172a;
+  box-shadow: inset 0 1px 2px rgba(0,0,0,0.3);
+}
+.results-box:focus,
+.results-box:focus-visible {
+  border-color: #000000;
+  outline: none;
+  box-shadow: inset 0 1px 2px rgba(0,0,0,0.05);
+}
+html.dark-mode .results-box:focus,
+html.dark-mode .results-box:focus-visible {
+  border-color: #000000;
+  outline: none;
+  box-shadow: inset 0 1px 2px rgba(0,0,0,0.3);
+}
 .results-title { font-size: 15px; font-weight: 600; color: #374151; margin-top: 0; margin-bottom: 12px; }
 html.dark-mode .results-title { color: #e2e8f0; }
 .results-list { list-style: none; padding: 0; margin: 0; }
@@ -560,6 +642,9 @@ html.dark-mode .results-list li { color: #f1f5f9; border-bottom-color: #334155; 
   gap: 12px; margin-top: 12px; flex-wrap: wrap; padding-right: 8px;
 }
 
+/* ============================================================
+   WHEEL PREMIUM BG / STAGE
+   ============================================================ */
 .wheel-premium-bg {position: relative;display: flex;align-items: center;justify-content: center;width: 100%;aspect-ratio: 1/1;max-width: 520px;margin: 0 auto;border-radius: 50%;box-shadow: inset 0 0 0 1px rgba(0,0,0,0.02);}
 html.dark-mode .wheel-premium-bg {box-shadow: inset 0 0 0 1px rgba(255,255,255,0.03);}
 .wheel-premium-bg:fullscreen,
@@ -572,6 +657,106 @@ html.dark-mode .wheel-premium-bg::before {background: radial-gradient(circle, rg
   0% { transform: translate(-50%, -50%) scale(1); opacity: 0.6; }
   100% { transform: translate(-50%, -50%) scale(1.08); opacity: 1; }
 }
+
+/* ============================================================
+   FULLSCREEN BRAND BAR (bare — no backgrounds)
+   ============================================================ */
+.fullscreen-brand-bar {
+  display: none;
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  padding: 16px clamp(16px, 3vw, 32px);
+  z-index: 20;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  pointer-events: none;
+}
+.wheel-premium-bg:fullscreen .fullscreen-brand-bar,
+.wheel-premium-bg:-webkit-full-screen .fullscreen-brand-bar {
+  display: flex;
+}
+.fullscreen-brand-bar > * { pointer-events: auto; }
+
+.fs-brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: transparent;
+  padding: 0;
+  border: none;
+  box-shadow: none;
+  -webkit-backdrop-filter: none;
+  backdrop-filter: none;
+}
+.fs-brand-img {
+  width: 30px; height: 30px;
+  border-radius: 50%;
+  object-fit: cover;
+  flex-shrink: 0;
+  filter: drop-shadow(0 1px 3px rgba(0,0,0,0.25));
+}
+html.dark-mode .fs-brand-img {
+  filter: drop-shadow(0 1px 4px rgba(0,0,0,0.65));
+}
+.fs-brand-text {
+  font-size: 16px;
+  font-weight: 800;
+  letter-spacing: -0.5px;
+  color: #1a1a1a;
+  white-space: nowrap;
+  filter: drop-shadow(0 1px 2px rgba(255,255,255,0.5));
+}
+html.dark-mode .fs-brand-text {
+  color: #f1f5f9;
+  filter: drop-shadow(0 1px 3px rgba(0,0,0,0.7));
+}
+
+.fs-actions { display: flex; gap: 10px; align-items: center; }
+
+.fs-icon-btn {
+  background: transparent;
+  border: none;
+  color: #1a1a1a;
+  width: 44px; height: 44px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  padding: 0;
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+html.dark-mode .fs-icon-btn { color: #f1f5f9; }
+.fs-icon-btn:hover { transform: scale(1.1); opacity: 0.85; }
+.fs-icon-btn:active { transform: scale(0.95); }
+.fs-icon-btn svg {
+  width: 24px; height: 24px;
+  stroke: currentColor;
+  stroke-width: 2.2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  filter: drop-shadow(0 1px 2px rgba(0,0,0,0.18));
+}
+html.dark-mode .fs-icon-btn svg {
+  filter: drop-shadow(0 1px 3px rgba(0,0,0,0.6));
+}
+
+@media (max-width: 560px) {
+  .fullscreen-brand-bar { padding: 10px 12px; gap: 8px; }
+  .fs-brand { gap: 8px; }
+  .fs-brand-img { width: 24px; height: 24px; }
+  .fs-brand-text { font-size: 14px; letter-spacing: -0.3px; }
+  .fs-icon-btn { width: 40px; height: 40px; }
+  .fs-icon-btn svg { width: 22px; height: 22px; }
+  .fs-actions { gap: 6px; }
+}
+@media (max-width: 400px) {
+  .fs-brand-text { font-size: 13px; }
+  .fs-icon-btn { width: 36px; height: 36px; }
+  .fs-icon-btn svg { width: 20px; height: 20px; }
+}
+
 .wheel-stage{position:relative;display:block;width:100%;max-width:440px;margin:0 auto;aspect-ratio:1/1;min-width:0;z-index:1;}
 .wheel-svg{width:100%;height:100%;display:block;overflow:visible}
 .wheel-svg .wheel-segment{stroke:none}
@@ -585,12 +770,13 @@ html.dark-mode .wheel-pointer-shape{
   fill:#ffffff; stroke:rgba(0,0,0,0.7);
   filter:drop-shadow(0 2px 4px rgba(0,0,0,0.6));
 }
-.spin-button{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:21%;height:21%;min-width:60px;min-height:60px;border-radius:50%;background:#1a1a1a;color:#fff;border:none;font-family:inherit;font-weight:900;font-size:clamp(11px,1.7vw,15px);letter-spacing:1.2px;cursor:pointer;display:flex;align-items:center;justify-content:center;text-transform:uppercase;outline:none;z-index:5;transition:transform .15s,filter .15s;box-shadow:0 2px 10px rgba(0,0,0,.28);}
+.spin-button{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:21%;height:21%;min-width:60px;min-height:60px;border-radius:50%;background:#1a1a1a;color:#fff;border:none;font-family:inherit;font-weight:900;font-size:clamp(11px,1.7vw,15px);letter-spacing:1.2px;cursor:pointer;display:flex;align-items:center;justify-content:center;text-transform:uppercase;outline:none;z-index:5;transition:transform .15s,filter .15s,font-size .15s;box-shadow:0 2px 10px rgba(0,0,0,.28);}
 html.dark-mode .spin-button{background:#0a0a0a;color:#fff;box-shadow:0 2px 10px rgba(0,0,0,.7)}
 .spin-button:hover:not(:disabled){filter:brightness(1.18);transform:translate(-50%,-50%) scale(1.04)}
 .spin-button:active:not(:disabled){transform:translate(-50%,-50%) scale(.97)}
 .spin-button:disabled{cursor:not-allowed;opacity:.55}
 .spin-button:focus-visible{outline:2px solid var(--text) !important;outline-offset:5px !important;border-radius:50%}
+.spin-button.long-label{font-size:clamp(7px,1.15vw,10px);letter-spacing:0}
 
 /* ---------- WINNER POPUP ---------- */
 .winner-overlay{position:fixed;inset:0;background:rgba(0,0,0,0.55);-webkit-backdrop-filter:blur(2px);backdrop-filter:blur(2px);z-index:10000;display:flex;align-items:center;justify-content:center;padding:20px;opacity:0;visibility:hidden;transition:opacity .3s ease,visibility .3s ease;}
@@ -605,14 +791,14 @@ html.dark-mode .spin-button{background:#0a0a0a;color:#fff;box-shadow:0 2px 10px 
 .winner-icon-btn:hover{color:#000;background:#f0f0f0;transform:scale(1.08)}
 .winner-icon-btn svg{width:24px;height:24px;display:block}
 .winner-footer{padding-top:15px; border-top:1px solid #e5e5e5; display:flex; align-items:center; justify-content:center; gap:10px;font-size:15px; font-weight:700; color:#555;}
-.winner-footer svg {width: 30px; height: 30px; flex-shrink: 0;}
+.winner-footer img {width: 30px; height: 30px; flex-shrink: 0;}
 @media (max-width:480px){
   .winner-popup{padding:30px 15px 15px; min-height:320px; border-width:4px;}
   .winner-icons{gap:16px;margin-bottom:20px;}
   .winner-icon-btn{width:38px;height:38px}
   .winner-pays{font-size:16px; margin-bottom:20px;}
   .winner-footer { font-size: 13px; }
-  .winner-footer svg { width: 26px; height: 26px; }
+  .winner-footer img { width: 26px; height: 26px; }
 }
 
 /* ---------- confetti / modal / toast ---------- */
@@ -822,8 +1008,13 @@ html.dark-mode .footer-link-item svg { color: #9ca3af; }
 <svg xmlns="http://www.w3.org/2000/svg" style="position:absolute;width:0;height:0;overflow:hidden" aria-hidden="true">
 <defs>
 <symbol id="i-share-2" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" x2="15.42" y1="13.51" y2="17.49"/><line x1="15.41" x2="8.59" y1="6.51" y2="10.49"/></symbol>
+
 <symbol id="i-speaker" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m3 11 18-5v12L3 14v-3z"/><path d="M11.6 16.8a3 3 0 1 1-5.8-1.6"/></symbol>
-<symbol id="i-speaker-mute" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m3 11 18-5v12L3 14v-3z"/><path d="M11.6 16.8a3 3 0 1 1-5.8-1.6"/><line x1="22" y1="9" x2="16" y2="15"/><line x1="16" y1="9" x2="22" y2="15"/></symbol>
+<symbol id="i-speaker-wave" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 5L6 9H2v6h4l5 4V5z"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14"/></symbol>
+<symbol id="i-speaker-mute-wave" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 5L6 9H2v6h4l5 4V5z"/><line x1="22" y1="9" x2="16" y2="15"/><line x1="16" y1="9" x2="22" y2="15"/></symbol>
+<symbol id="i-maximize" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 3 21 3 21 9"></polyline><polyline points="9 21 3 21 3 15"></polyline><line x1="21" y1="3" x2="14" y2="10"></line><line x1="3" y1="21" x2="10" y2="14"></line></symbol>
+<symbol id="i-minimize" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="4 14 10 14 10 20"></polyline><polyline points="20 10 14 10 14 4"></polyline><line x1="14" y1="10" x2="21" y2="3"></line><line x1="3" y1="21" x2="10" y2="14"></line></symbol>
+
 <symbol id="i-pencil" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 3a2.828 2.828 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5L17 3z"/></symbol>
 <symbol id="i-clipboard" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="8" y="2" width="8" height="4" rx="1" ry="1"/><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/><path d="m9 14 2 2 4-4"/></symbol>
 <symbol id="i-eye-off" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9.88 9.88a3 3 0 1 0 4.24 4.24"/><path d="M10.73 5.08A10.43 10.43 0 0 1 12 5c7 0 10 7 10 7a13.16 13.16 0 0 1-1.67 2.68"/><path d="M6.61 6.61A13.526 13.526 0 0 0 2 12s3 7 10 7a9.74 9.74 0 0 0 5.39-1.61"/><line x1="2" x2="22" y1="2" y2="22"/></symbol>
@@ -836,7 +1027,6 @@ html.dark-mode .footer-link-item svg { color: #9ca3af; }
 <symbol id="i-trash" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 6h18"/><path d="M19 6v14c0 1-1 2-2 2H7c-1 0-2-1-2-2V6"/><path d="M8 6V4c0-1 1-2 2-2h4c1 0 2 1 2 2v2"/></symbol>
 <symbol id="i-sort-alpha" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 7h16"/><path d="M4 12h9"/><path d="M4 17h5"/><path d="m17 17 3 3 3-3"/><path d="M20 20V10"/></symbol>
 <symbol id="i-smile" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M8 14s1.5 2 4 2 4-2 4-2"/><line x1="9" x2="9.01" y1="9" y2="9"/><line x1="15" x2="15.01" y1="9" y2="9"/></symbol>
-<symbol id="i-maximize" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 3H5a2 2 0 0 0-2 2v3"/><path d="M21 8V5a2 2 0 0 0-2-2h-3"/><path d="M3 16v3a2 2 0 0 0 2 2h3"/><path d="M16 21h3a2 2 0 0 0 2-2v-3"/></symbol>
 <symbol id="i-chevron-down" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></symbol>
 <symbol id="i-scale" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m16 16 3-8 3 8c-.87.65-1.92 1-3 1s-2.13-.35-3-1Z"/><path d="m2 16 3-8 3 8c-.87.65-1.92 1-3 1s-2.13-.35-3-1Z"/><path d="M7 21h10"/><path d="M12 3v18"/><path d="M3 7h2c2 0 5-1 7-2 2 1 5 2 7 2h2"/></symbol>
 <symbol id="i-help" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></symbol>
@@ -868,6 +1058,7 @@ html.dark-mode .footer-link-item svg { color: #9ca3af; }
 <header class="site-header">
   <div class="header-container">
     <a href="/" class="nav-logo" title="Spin The Wheelly — Home">
+      <img src="/apple-touch-icon.png" alt="Spin The Wheelly Logo" class="nav-logo-img">
       <span class="nav-logo-text">Spin The Wheelly</span>
     </a>
 
@@ -944,15 +1135,32 @@ html.dark-mode .footer-link-item svg { color: #9ca3af; }
     <section class="wheel-section" id="wheelSection" aria-labelledby="bannerTitle">
       <div class="wheel-layout">
         <div class="wheel-col">
+
           <div class="wheel-controls-top">
             <button class="icon-btn" id="headerSoundBtn" onclick="cycleSoundVolume()" title="Change Volume" aria-label="Change Volume">
-              <svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-speaker" id="soundIconUse"/></svg>
+              <svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-speaker-wave" id="soundIconUse"/></svg>
             </button>
             <button class="icon-btn" onclick="toggleFullscreenWheel()" title="Fullscreen Wheel" aria-label="Fullscreen Wheel">
               <svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-maximize"/></svg>
             </button>
           </div>
+
           <div class="wheel-premium-bg" id="wheelPremiumBg">
+            <div class="fullscreen-brand-bar" id="fullscreenBrandBar" aria-hidden="true">
+              <div class="fs-brand">
+                <img src="/apple-touch-icon.png" alt="Spin The Wheelly Logo" class="fs-brand-img">
+                <span class="fs-brand-text">Spin The Wheelly</span>
+              </div>
+              <div class="fs-actions">
+                <button type="button" class="fs-icon-btn" onclick="cycleSoundVolume()" title="Change Volume" aria-label="Change Volume">
+                  <svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-speaker-wave" id="fsSoundIconUse"/></svg>
+                </button>
+                <button type="button" class="fs-icon-btn" onclick="toggleFullscreenWheel()" title="Exit Fullscreen" aria-label="Exit Fullscreen">
+                  <svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-minimize"/></svg>
+                </button>
+              </div>
+            </div>
+
             <div class="wheel-stage" id="wheelStage">
               <svg class="wheel-svg" id="wheelSvg" viewBox="-110 -110 220 220" role="img" aria-label="Random team picker wheel">
                 <g id="wheelGroup"></g>
@@ -1047,16 +1255,11 @@ Team D</textarea>
 <div class="white-bottom-bg">
   <section class="seo-content" aria-label="About the random team generator">
 
-    <!-- ROW 1 -->
     <div class="seo-row">
       <div class="seo-block">
         <h2><svg class="seo-h2-icon" aria-hidden="true"><use href="#i-users"/></svg>What Is a Random Team Generator?</h2>
-        <p>
-          A <strong>Random Team Generator</strong> is a fair, visual way to pick one team from a list — or split people into random groups. Instead of arguing over who goes first, let the wheel decide.
-        </p>
-        <p>
-          Our free Random Team Generator uses the browser's cryptographically secure random number generator, so every team on the wheel has an equal chance of being selected. No bias, no favourites, no repeats.
-        </p>
+        <p>A <strong>Random Team Generator</strong> is a fair, visual way to pick one team from a list — or split people into random groups. Instead of arguing over who goes first, let the wheel decide.</p>
+        <p>Our free Random Team Generator uses the browser's cryptographically secure random number generator, so every team on the wheel has an equal chance of being selected. No bias, no favourites, no repeats.</p>
       </div>
 
       <div class="seo-block">
@@ -1084,7 +1287,6 @@ Team D</textarea>
       </div>
     </div>
 
-    <!-- ROW 2 -->
     <div class="seo-row">
       <div class="seo-block">
         <h2><svg class="seo-h2-icon" aria-hidden="true"><use href="#i-flag"/></svg>For Classrooms &amp; Group Work</h2>
@@ -1126,7 +1328,6 @@ Team D</textarea>
       </div>
     </div>
 
-    <!-- ROW 3 -->
     <div class="seo-row">
       <div class="seo-block">
         <h2><svg class="seo-h2-icon" aria-hidden="true"><use href="#i-help"/></svg>Frequently Asked Questions</h2>
@@ -1179,7 +1380,6 @@ Team D</textarea>
 
   </section>
 
-  <!-- FOOTER -->
   <footer class="site-footer">
     <div class="footer-divider" aria-hidden="true"></div>
     <div class="footer-grid">
@@ -1205,7 +1405,7 @@ Team D</textarea>
       </a>
       <a href="/privacy-policy" class="footer-link-item" title="Privacy Policy">
         <svg aria-hidden="true"><use href="#i-lock"/></svg>
-        <span>Privacy_policy</span>
+        <span>Privacy Policy</span>
       </a>
       <a href="/about-us" class="footer-link-item" title="About Us">
         <svg aria-hidden="true"><use href="#i-info"/></svg>
@@ -1217,7 +1417,6 @@ Team D</textarea>
 
 <input type="file" id="imageInput" accept="image/*" style="display:none;" onchange="handleImageUpload(event)">
 
-<!-- Winner popup -->
 <div class="winner-overlay" id="winnerOverlay" role="dialog" aria-modal="true" aria-labelledby="winnerPopupTitle" aria-hidden="true">
   <div class="winner-popup" id="winnerPopup">
     <h2 id="winnerPopupTitle" class="sr-only">Team selected</h2>
@@ -1235,17 +1434,7 @@ Team D</textarea>
         </button>
       </div>
       <div class="winner-footer">
-        <svg viewBox="0 0 100 100" aria-hidden="true">
-          <circle cx="50" cy="50" r="46" fill="#1a1a1a"/>
-          <path d="M50 50 L50 4 A46 46 0 0 1 96 50 Z" fill="#E8A500"/>
-          <path d="M50 50 L96 50 A46 46 0 0 1 50 96 Z" fill="#F5EBC8"/>
-          <path d="M50 50 L50 96 A46 46 0 0 1 4 50 Z" fill="#1E4620"/>
-          <path d="M50 50 L4 50 A46 46 0 0 1 50 4 Z" fill="#B5A642"/>
-          <circle cx="50" cy="50" r="12" fill="#ffffff"/>
-          <circle cx="47" cy="48" r="1.5" fill="#1a1a1a"/>
-          <circle cx="53" cy="48" r="1.5" fill="#1a1a1a"/>
-          <path d="M 46 52 Q 50 56 54 52" stroke="#1a1a1a" stroke-width="2.2" fill="none" stroke-linecap="round"/>
-        </svg>
+        <img src="/apple-touch-icon.png" alt="Spin The Wheelly Logo" style="width: 30px; height: 30px; border-radius: 50%; object-fit: cover; flex-shrink: 0;">
         <span>Spin The Wheelly</span>
       </div>
     </div>
@@ -1254,7 +1443,6 @@ Team D</textarea>
 
 <canvas class="confetti-canvas" id="confettiCanvas" aria-hidden="true"></canvas>
 
-<!-- Share modal -->
 <div class="modal-overlay" id="shareModal" role="dialog" aria-modal="true" aria-label="Share result" aria-hidden="true">
   <div class="modal-box">
     <h3>Share Result</h3>
@@ -1267,7 +1455,6 @@ Team D</textarea>
   </div>
 </div>
 
-<!-- Settings Modal -->
 <div class="modal-overlay" id="settingsModal" role="dialog" aria-modal="true" aria-label="Settings" aria-hidden="true">
   <div class="modal-box">
     <h3>Wheel Settings</h3>
@@ -1292,7 +1479,6 @@ Team D</textarea>
   </div>
 </div>
 
-<!-- About Modal -->
 <div class="modal-overlay" id="aboutModal" role="dialog" aria-modal="true" aria-label="About Us" aria-hidden="true">
   <div class="modal-box modal-wide">
     <h3>About Spin The Wheelly</h3>
@@ -1317,7 +1503,6 @@ Team D</textarea>
   </div>
 </div>
 
-<!-- Contact Modal -->
 <div class="modal-overlay" id="contactModal" role="dialog" aria-modal="true" aria-label="Contact Us" aria-hidden="true">
   <div class="modal-box modal-wide">
     <h3>Contact Us</h3>
@@ -1335,7 +1520,6 @@ Team D</textarea>
   </div>
 </div>
 
-<!-- Privacy Modal (short) -->
 <div class="modal-overlay" id="privacyModal" role="dialog" aria-modal="true" aria-label="Privacy Policy" aria-hidden="true">
   <div class="modal-box modal-wide">
     <h3>Privacy Policy</h3>
@@ -1366,7 +1550,6 @@ Team D</textarea>
   </div>
 </div>
 
-<!-- Terms Modal (short) -->
 <div class="modal-overlay" id="termsModal" role="dialog" aria-modal="true" aria-label="Terms and Conditions" aria-hidden="true">
   <div class="modal-box modal-wide">
     <h3>Terms &amp; Conditions</h3>
@@ -1391,7 +1574,6 @@ Team D</textarea>
   </div>
 </div>
 
-<!-- Blog Modal -->
 <div class="modal-overlay" id="blogModal" role="dialog" aria-modal="true" aria-label="Blog" aria-hidden="true">
   <div class="modal-box modal-wide">
     <h3>Spin The Wheelly Blog</h3>
@@ -1412,10 +1594,9 @@ Team D</textarea>
   </div>
 </div>
 
-<!-- MOBILE SIDEBAR -->
 <div class="sidebar-overlay" id="sidebarOverlay" onclick="closeSidebar()"></div>
 
-<aside class="mobile-sidebar" id="mobileSidebar" aria-hidden="true" aria-label="Mobile menu">
+<aside class="mobile-sidebar" id="mobileSidebar" aria-hidden="true" aria-label="Mobile menu" inert>
   <div class="sidebar-body">
 
     <button type="button" class="sidebar-item" onclick="resetWheel(); closeSidebar();">
@@ -1511,6 +1692,7 @@ var TEAM_PRESETS = {
 };
 
 function applyPreset(name, btnEl){
+  if(blockIfSpinning())return;
   var preset = TEAM_PRESETS[name];
   if(!preset)return;
   var ta = document.getElementById('entriesTextarea');
@@ -1621,6 +1803,7 @@ function openSidebar(){
   var btn=document.getElementById('hamburgerBtn');
   if(!sb)return;
   sb.classList.add('show');
+  sb.removeAttribute('inert');
   if(ov)ov.classList.add('show');
   if(btn)btn.setAttribute('aria-expanded','true');
   sb.setAttribute('aria-hidden','false');
@@ -1632,6 +1815,7 @@ function closeSidebar(){
   var btn=document.getElementById('hamburgerBtn');
   if(!sb)return;
   sb.classList.remove('show');
+  sb.setAttribute('inert','');
   if(ov)ov.classList.remove('show');
   if(btn)btn.setAttribute('aria-expanded','false');
   sb.setAttribute('aria-hidden','true');
@@ -1704,18 +1888,51 @@ var idleRAF=0;
 var idleLastTime=0;
 var IDLE_SPEED=12;
 var pointerEl=null;
+var spinToken=0;
 
+/* ============================================================
+   HELPERS (spin label + guard)
+   ============================================================ */
+function setSpinLabel(text){
+  var btn=document.getElementById('spinBtn');
+  if(!btn)return;
+  btn.textContent=text;
+  if(text.length>6)btn.classList.add('long-label');
+  else btn.classList.remove('long-label');
+}
+function blockIfSpinning(){
+  if(isSpinning){
+    showToast('Please wait for the spin to finish.');
+    return true;
+  }
+  return false;
+}
+
+/* ============================================================
+   RESET
+   ============================================================ */
 function resetWheel(){
+  spinToken++;
+  isSpinning=false;
+  stopIdleSpin();
+
+  var btn=document.getElementById('spinBtn');
+  if(btn){ btn.disabled=false; btn.removeAttribute('aria-busy'); }
+  setSpinLabel('SPIN');
+
   var ta=document.getElementById('entriesTextarea');
-  if(ta)ta.value='Team A\nTeam B\nTeam C\nTeam D';
+  if(ta){ ta.readOnly=false; ta.value='Team A\nTeam B\nTeam C\nTeam D'; }
+
   participantImages={};
   winnerHistory=[];
   currentWinnerName='';
   currentWinnerIndex=-1;
   currentRotation=0;
+
   clearActivePresets();
   var fourTeamsChip = document.querySelector('.preset-chip[data-preset="teams4"]');
   if(fourTeamsChip) fourTeamsChip.classList.add('active');
+
   updateEntries();
   renderResultsList();
   closeWinnerPopup();
@@ -1811,8 +2028,9 @@ function clearResults(){
    ============================================================ */
 function updateSoundIcon(){
   var useEl=document.getElementById('soundIconUse');
-  if(!useEl)return;
-  useEl.setAttribute('href',currentVolumeLevel===0?'#i-speaker-mute':'#i-speaker');
+  if(useEl)useEl.setAttribute('href',currentVolumeLevel===0?'#i-speaker-mute-wave':'#i-speaker-wave');
+  var fsEl=document.getElementById('fsSoundIconUse');
+  if(fsEl)fsEl.setAttribute('href',currentVolumeLevel===0?'#i-speaker-mute-wave':'#i-speaker-wave');
 }
 function cycleSoundVolume(){
   currentVolumeLevel=(currentVolumeLevel+1)%3;
@@ -1946,6 +2164,7 @@ function idleLoop(now){
    ENTRIES
    ============================================================ */
 function updateEntries(){
+  if(isSpinning)return;
   var ta=document.getElementById('entriesTextarea');
   if(!ta)return;
   var lines=ta.value.split('\n');
@@ -1963,6 +2182,7 @@ function updateEntries(){
   else{stopIdleSpin();resetSpinButtonLabel();}
 }
 function shuffleEntries(){
+  if(blockIfSpinning())return;
   var ta=document.getElementById('entriesTextarea');
   if(!ta)return;
   var lines=ta.value.split('\n').map(function(l){return l.trim();}).filter(function(l){return l.length>0;});
@@ -1971,6 +2191,7 @@ function shuffleEntries(){
   updateEntries();showToast('Teams shuffled.');
 }
 function sortEntries(){
+  if(blockIfSpinning())return;
   var ta=document.getElementById('entriesTextarea');
   if(!ta)return;
   var lines=ta.value.split('\n').map(function(l){return l.trim();}).filter(function(l){return l.length>0;});
@@ -1978,7 +2199,10 @@ function sortEntries(){
   ta.value=lines.join('\n');
   updateEntries();showToast('Teams sorted alphabetically.');
 }
-function triggerImageUpload(){document.getElementById('imageInput').click();}
+function triggerImageUpload(){
+  if(blockIfSpinning())return;
+  document.getElementById('imageInput').click();
+}
 
 function downscaleImage(dataUrl,maxSize,callback){
   try{
@@ -2007,6 +2231,7 @@ function handleImageUpload(event){
   event.target.value='';
   if(!file)return;
   if(!/^image\//.test(file.type)){showToast('Please choose an image file.');return;}
+  if(blockIfSpinning())return;
   var rawName=file.name.replace(/\.[^/.]+$/,'').trim().slice(0,30)||'Image';
   var reader=new FileReader();
   reader.onload=function(e){
@@ -2036,6 +2261,7 @@ function handleImageUpload(event){
 }
 
 function saveEntries(){
+  if(blockIfSpinning())return;
   var ta=document.getElementById('entriesTextarea');
   if(!ta||ta.value.trim()===''){showToast('No teams to save.');return;}
   var blob=new Blob([ta.value],{type:'text/plain;charset=utf-8'});
@@ -2049,6 +2275,7 @@ function saveEntries(){
 
 var EMOJIS=['🏆','🥇','🥈','🥉','🔥','⭐','🚀','🎯','💪','⚡','🏅','🎮'];
 function addEmoji(){
+  if(blockIfSpinning())return;
   var ta=document.getElementById('entriesTextarea');
   if(!ta)return;
   switchPanel('edit');
@@ -2071,6 +2298,7 @@ function rebuildWheel(){
   if(n===0){
     g.innerHTML='<circle cx="0" cy="0" r="105" fill="#e8e8e8"/>'+
       '<text x="0" y="0" text-anchor="middle" dominant-baseline="middle" font-size="11" fill="#666" font-family="Inter,sans-serif">Add teams to spin</text>';
+    updatePointerColor(currentRotation);
     return;
   }
   var segAngle=360/n;
@@ -2162,8 +2390,8 @@ function applyRotation(deg){
   updatePointerColor(deg);
 }
 function resetSpinButtonLabel(){
-  var btn=document.getElementById('spinBtn');
-  if(btn&&!isSpinning)btn.textContent='SPIN';
+  if(isSpinning)return;
+  setSpinLabel('SPIN');
 }
 function updateSpinButtonState(){
   var btn=document.getElementById('spinBtn');
@@ -2182,6 +2410,11 @@ function spinWheel(){
   stopIdleSpin();
   closeWinnerPopup();
   isSpinning=true;
+  var token=++spinToken;
+
+  var ta=document.getElementById('entriesTextarea');
+  if(ta)ta.readOnly=true;
+
   var winnerIndex=secureRandomInt(participants.length);
   var winnerName=participants[winnerIndex];
   var n=participants.length;
@@ -2202,9 +2435,10 @@ function spinWheel(){
   var lastBoundaryIndex=Math.floor(startRotation/segAngle);
   var btn=document.getElementById('spinBtn');
   btn.disabled=true;
-  btn.textContent='SPINNING';
+  setSpinLabel('SPINNING');
   btn.setAttribute('aria-busy','true');
   function animate(now){
+    if(token!==spinToken)return;
     var t=Math.min((now-startTime)/duration,1);
     var eased=1-Math.pow(1-t,5);
     var angle=startRotation+(finalRotation-startRotation)*eased;
@@ -2213,16 +2447,23 @@ function spinWheel(){
     var curBoundary=Math.floor(angle/segAngle);
     if(curBoundary!==lastBoundaryIndex){if(soundEnabled)playTick();lastBoundaryIndex=curBoundary;}
     if(t<1){requestAnimationFrame(animate);}
-    else{currentRotation=finalRotation%360;applyRotation(currentRotation);onSpinComplete(winnerIndex,winnerName);}
+    else{
+      if(token!==spinToken)return;
+      currentRotation=finalRotation%360;
+      applyRotation(currentRotation);
+      onSpinComplete(winnerIndex,winnerName);
+    }
   }
   requestAnimationFrame(animate);
 }
 
 function onSpinComplete(winnerIndex,winnerName){
   isSpinning=false;
+  var ta=document.getElementById('entriesTextarea');
+  if(ta)ta.readOnly=false;
   var btn=document.getElementById('spinBtn');
   btn.disabled=false;
-  btn.textContent='SPIN AGAIN';
+  setSpinLabel('SPIN AGAIN');
   btn.removeAttribute('aria-busy');
   currentWinnerIndex=winnerIndex;
   currentWinnerName=winnerName;
@@ -2232,10 +2473,11 @@ function onSpinComplete(winnerIndex,winnerName){
   if(!window.matchMedia||!window.matchMedia('(prefers-reduced-motion: reduce)').matches){launchConfetti();}
   showWinnerPopup(winnerName);
   if(autoRemoveWinner){
-     var ta=document.getElementById('entriesTextarea');
-     if(ta){
-        var lines=ta.value.split('\n');
-        ta.value=lines.filter(function(line){return line.trim()!==winnerName;}).join('\n');
+     var ta2=document.getElementById('entriesTextarea');
+     if(ta2){
+        var lines=ta2.value.split('\n');
+        ta2.value=lines.filter(function(line){return line.trim()!==winnerName;}).join('\n');
+        delete participantImages[winnerName];
         updateEntries();
      }
   }else{
@@ -2365,7 +2607,7 @@ function fallbackCopyText(text){
 document.getElementById('shareModal').addEventListener('click',function(e){if(e.target===this)closeShareModal();});
 
 /* ============================================================
-   FOCUS / KEYBOARD / LIFECYCLE
+   FOCUS / KEYBOARD / LIFECYCLE / ROUTING
    ============================================================ */
 function trapFocus(e,container){
   if(e.key!=='Tab'||!container)return;
@@ -2406,6 +2648,22 @@ window.addEventListener('resize',function(){
   }
 });
 
+/* Legacy hash routes → redirect to real pages */
+function handleRoute(){
+  var hash = window.location.hash;
+  var presetRedirects = {
+    '#random-name-picker': '/random-name-picker',
+    '#yes-no-wheel': '/yes-no-wheel',
+    '#random-team-generator': '/random-team-generator',
+    '#what-to-eat': '/what-to-eat'
+  };
+  if (presetRedirects[hash]) {
+    window.location.replace(presetRedirects[hash]);
+  }
+}
+window.addEventListener('popstate', handleRoute);
+window.addEventListener('hashchange', handleRoute);
+
 ['aboutModal','contactModal','privacyModal','termsModal','blogModal'].forEach(function(id){
   var m=document.getElementById(id);
   if(m){m.addEventListener('click',function(e){if(e.target===this)closeModal(id);});}
@@ -2432,6 +2690,7 @@ function init(){
   updateEntries();
   updateSoundIcon();
   renderResultsList();
+  handleRoute();
 }
 if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',init);
 else init();
