@@ -1,0 +1,1490 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>About Us — Spin The Wheelly</title>
+<meta name="description" content="Learn about Spin The Wheelly — the free spin the wheel random picker built to make decisions fast, fair, and fun. 100% private, no signup, forever free.">
+<meta name="theme-color" content="#ffffff" id="themeColorMeta">
+<link rel="canonical" href="https://spinthewheelly.com/about-us">
+<meta property="og:title" content="About Us — Spin The Wheelly">
+<meta property="og:description" content="Learn about Spin The Wheelly — the free spin the wheel random picker built to make decisions fast, fair, and fun.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://spinthewheelly.com/about-us">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="About Us — Spin The Wheelly">
+<meta name="twitter:description" content="Learn about Spin The Wheelly — the free spin the wheel random picker.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='46' fill='%231a1a1a'/%3E%3Cpath d='M50 50 L50 8 A42 42 0 0 1 88 71 Z' fill='%23E8A500'/%3E%3Cpath d='M50 50 L88 71 A42 42 0 0 1 12 71 Z' fill='%23F5EBC8'/%3E%3Cpath d='M50 50 L12 71 A42 42 0 0 1 50 8 Z' fill='%231E4620'/%3E%3Ccircle cx='50' cy='50' r='9' fill='%23fff'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap">
+
+<script>
+(function(){
+  var stored=null;
+  try{stored=localStorage.getItem('theme');}catch(e){}
+  var prefersDark=window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches;
+  var isDark=stored==='dark'||(!stored&&prefersDark);
+  if(isDark){
+    document.documentElement.classList.add('dark-mode');
+    var meta=document.getElementById('themeColorMeta');
+    if(meta)meta.setAttribute('content','#0f172a');
+  }
+})();
+</script>
+
+<style>
+:root{
+  color-scheme:light dark;
+  --bg:#ffffff;--text:#0a0a0a;--text-light:#525252;--line:#e5e5e5;--hover:#f3f4f6;
+  --card:#fafafa;--soft-bg:#f9fafb;--panel-bg:#ffffff;--input-bg:#ffffff;--input-border:#e5e5e5;
+  --shadow:rgba(0,0,0,.1);--overlay-bg:rgba(0,0,0,.55);
+  --footer-text:#333;--footer-heading:#000;--footer-link-color:#2563eb;--footer-link-hover:#1d4ed8;
+  --card-shadow:0 4px 12px rgba(0,0,0,.04);
+  --good:#16a34a;--bad:#dc2626;--bad-bg:rgba(220,38,38,.1);
+  --toast-bg:#0f172a;--toast-text:#fff;
+  --page-max:1200px;--gutter:clamp(16px,3vw,40px);
+}
+html.dark-mode{
+  color-scheme:dark;
+  --bg:#0f172a;--text:#f1f5f9;--text-light:#94a3b8;--line:#1e293b;--hover:#1e293b;
+  --card:#1e293b;--soft-bg:#0f172a;--panel-bg:#0f172a;--input-bg:#0f172a;--input-border:#1e293b;
+  --shadow:rgba(0,0,0,.5);--overlay-bg:rgba(0,0,0,.75);
+  --footer-text:#e2e8f0;--footer-heading:#ffffff;--footer-link-color:#60a5fa;--footer-link-hover:#ffffff;
+  --card-shadow:0 4px 12px rgba(0,0,0,.3);
+  --toast-bg:#f1f5f9;--toast-text:#0f172a;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;overflow-x:hidden;-webkit-text-size-adjust:100%}
+body{
+  font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;
+  color:var(--text);min-height:100vh;
+  transition:background-color .3s,color .3s;overflow-x:hidden;width:100%;max-width:100%;
+  overflow-wrap:break-word;-webkit-font-smoothing:antialiased;
+  display: flex;flex-direction: column;
+  position: relative;z-index: 0;
+  background-color: #fffdf8;
+  background-image:
+    linear-gradient(180deg, rgba(255,255,255,0.85) 0%, rgba(255,255,255,0) 35%),
+    radial-gradient(ellipse 70% 55% at 12% -5%, rgba(232,165,0,0.16), transparent 62%),
+    radial-gradient(ellipse 55% 45% at 88% 5%, rgba(30,70,32,0.10), transparent 60%),
+    radial-gradient(ellipse 65% 55% at 50% 105%, rgba(232,165,0,0.12), transparent 65%),
+    radial-gradient(ellipse 50% 40% at 100% 60%, rgba(181,166,66,0.08), transparent 60%),
+    linear-gradient(180deg, #fffdf8 0%, #ffffff 45%, #fffaf0 100%);
+  background-attachment: fixed;background-repeat: no-repeat;
+}
+html.dark-mode body{
+  background-color: #0b1220;
+  background-image:
+    linear-gradient(180deg, rgba(15,23,42,0.6) 0%, rgba(15,23,42,0) 35%),
+    radial-gradient(ellipse 70% 55% at 12% -5%, rgba(232,165,0,0.18), transparent 62%),
+    radial-gradient(ellipse 55% 45% at 88% 5%, rgba(96,165,250,0.20), transparent 60%),
+    radial-gradient(ellipse 65% 55% at 50% 105%, rgba(96,165,250,0.14), transparent 65%),
+    radial-gradient(ellipse 50% 40% at 100% 60%, rgba(139,92,246,0.12), transparent 60%),
+    linear-gradient(180deg, #0b1220 0%, #0f172a 50%, #0a0f1c 100%);
+}
+body::before{
+  content:'';position: fixed;inset: 0;z-index: -1;pointer-events: none;
+  background-image: radial-gradient(rgba(0,0,0,0.05) 1px, transparent 1px);
+  background-size: 22px 22px;
+  -webkit-mask-image: radial-gradient(ellipse at 50% 40%, black 25%, transparent 82%);
+  mask-image: radial-gradient(ellipse at 50% 40%, black 25%, transparent 82%);
+  opacity: 0.9;
+}
+html.dark-mode body::before{
+  background-image: radial-gradient(rgba(255,255,255,0.07) 1px, transparent 1px);
+  opacity: 0.7;
+}
+img,svg,canvas{max-width:100%}
+a:focus-visible,button:focus-visible,input:focus-visible,[tabindex]:focus-visible{
+  outline:2px solid var(--text) !important;outline-offset:2px !important
+}
+.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+@media (prefers-reduced-motion: reduce){
+  html{scroll-behavior:auto}
+  *,*::before,*::after{animation-duration:.001ms !important;animation-iteration-count:1 !important;transition-duration:.001ms !important}
+}
+
+/* ============================================================
+   HEADER / NAVBAR
+   ============================================================ */
+.site-header {
+  background: #ffffff;
+  border-bottom: 1px solid #e5e7eb;
+  width: 100%;
+  position: relative;
+  z-index: 100;
+  padding: 0;
+}
+html.dark-mode .site-header {
+  background: #0f172a;
+  border-bottom-color: #1e293b;
+}
+
+.header-container {
+  max-width: var(--page-max);
+  margin: 0 auto;
+  padding: 0 var(--gutter);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 64px;
+  gap: 12px;
+}
+
+.nav-logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+  cursor: pointer;
+  flex-shrink: 0;
+}
+.nav-logo-text {
+  font-size: 20px;
+  font-weight: 800;
+  color: #1a1a1a;
+  letter-spacing: -0.7px;
+  white-space: nowrap;
+}
+html.dark-mode .nav-logo-text { color: #ffffff; }
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+@media (max-width: 768px) { .nav-links { gap: 2px; } }
+
+.nav-btn {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  background: transparent;
+  border: none;
+  padding: 9px 13px;
+  border-radius: 7px;
+  font-family: inherit;
+  font-size: 15px;
+  font-weight: 600;
+  color: #374151;
+  cursor: pointer;
+  transition: background 0.2s;
+  white-space: nowrap;
+}
+html.dark-mode .nav-btn { color: #d1d5db; }
+.nav-btn:hover { background: #f3f4f6; }
+html.dark-mode .nav-btn:hover { background: #1e293b; }
+.nav-btn svg { width: 20px; height: 20px; stroke: #6b7280; }
+html.dark-mode .nav-btn svg { stroke: #9ca3af; }
+
+.nav-btn.share-btn {
+  background: #d4f3cb;
+  color: #1a1a1a;
+  padding: 9px 17px;
+  border-radius: 7px;
+  margin-left: 5px;
+}
+html.dark-mode .nav-btn.share-btn {
+  background: #2e4a3a;
+  color: #ffffff;
+}
+.nav-btn.share-btn:hover { background: #c3e8b8; }
+html.dark-mode .nav-btn.share-btn:hover { background: #3d5f4a; }
+.nav-btn.share-btn svg { stroke: #1a1a1a; }
+html.dark-mode .nav-btn.share-btn svg { stroke: #ffffff; }
+
+.hamburger-btn { display: none; padding: 9px; margin-left: 4px; }
+.hamburger-btn svg { width: 24px; height: 24px; stroke: #374151; }
+html.dark-mode .hamburger-btn svg { stroke: #d1d5db; }
+
+@media (max-width: 900px) {
+  .nav-btn .nav-text { display: none; }
+  .nav-btn { padding: 9px; }
+  .nav-btn.share-btn { padding: 9px 12px; }
+  .header-container { height: 60px; }
+  .nav-links .nav-btn:not(.hamburger-btn),
+  .nav-links .nav-tools-wrap { display: none; }
+  .hamburger-btn { display: flex; }
+}
+@media (max-width: 560px) {
+  .header-container { height: 56px; }
+  .nav-logo-text { font-size: 16px; letter-spacing: -0.5px; }
+}
+
+/* ============================================================
+   TOOLS DROPDOWN MENU
+   ============================================================ */
+.nav-tools-wrap { position: relative; }
+.tools-menu {
+  position: absolute;
+  top: calc(100% + 8px);
+  right: 0;
+  min-width: 260px;
+  background: var(--bg);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  box-shadow: 0 10px 40px rgba(0,0,0,0.15);
+  padding: 6px;
+  z-index: 200;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-8px);
+  transition: opacity 0.18s ease, transform 0.18s ease, visibility 0.18s ease;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+html.dark-mode .tools-menu {
+  box-shadow: 0 10px 40px rgba(0,0,0,0.55);
+  border-color: #334155;
+}
+.tools-menu.show { opacity: 1; visibility: visible; transform: translateY(0); }
+.tools-menu-item {
+  display: flex; align-items: center; gap: 10px;
+  width: 100%; padding: 10px 12px;
+  background: transparent; border: none; border-radius: 8px;
+  font-family: inherit;
+  color: var(--text); cursor: pointer; text-align: left;
+  transition: background 0.15s; white-space: nowrap;
+  text-decoration: none;
+}
+.tools-menu-item:hover { background: var(--hover); }
+.tools-menu-item svg { width: 20px; height: 20px; stroke: #6b7280; flex-shrink: 0; }
+html.dark-mode .tools-menu-item svg { stroke: #9ca3af; }
+.tools-item-content { display: flex; flex-direction: column; gap: 2px; min-width: 0; text-align: left; }
+.tools-item-title { font-size: 14px; font-weight: 600; color: var(--text); line-height: 1.2; }
+.tools-item-url {
+  font-size: 11px; font-family: 'SF Mono', Consolas, 'Courier New', monospace;
+  color: var(--text-light); opacity: 0.75; letter-spacing: 0.2px;
+}
+
+/* ============================================================
+   MOBILE SIDEBAR
+   ============================================================ */
+.sidebar-overlay {
+  position: fixed; inset: 0;
+  background: rgba(0,0,0,0.5);
+  -webkit-backdrop-filter: blur(2px); backdrop-filter: blur(2px);
+  z-index: 9998; opacity: 0; visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+.sidebar-overlay.show { opacity: 1; visibility: visible; }
+
+.mobile-sidebar {
+  position: fixed; top: 0; left: 0;
+  width: min(300px, 85vw);
+  height: 100vh; height: 100dvh;
+  background: var(--bg); z-index: 9999;
+  transform: translateX(-100%);
+  transition: transform 0.32s cubic-bezier(0.4, 0, 0.2, 1);
+  display: flex; flex-direction: column;
+  box-shadow: 12px 0 40px rgba(0,0,0,0.25);
+  overflow: hidden;
+}
+html.dark-mode .mobile-sidebar { box-shadow: 12px 0 40px rgba(0,0,0,0.6); }
+.mobile-sidebar.show { transform: translateX(0); }
+
+.sidebar-body {
+  flex: 1; overflow-y: auto;
+  padding: 14px 10px 24px;
+  -webkit-overflow-scrolling: touch;
+}
+
+.sidebar-item {
+  display: flex; align-items: center; gap: 8px;
+  width: 100%; padding: 11px 13px;
+  background: transparent; border: none; border-radius: 7px;
+  font-family: inherit; font-size: 15px; font-weight: 600;
+  color: #374151; cursor: pointer; text-align: left;
+  transition: background 0.2s; margin-bottom: 2px;
+}
+.sidebar-item:hover, .sidebar-item:active { background: #f3f4f6; }
+html.dark-mode .sidebar-item { color: #d1d5db; }
+html.dark-mode .sidebar-item:hover, html.dark-mode .sidebar-item:active { background: #1e293b; }
+.sidebar-item svg { width: 20px; height: 20px; stroke: #6b7280; flex-shrink: 0; }
+html.dark-mode .sidebar-item svg { stroke: #9ca3af; }
+
+.sidebar-item.share-btn {
+  background: #d4f3cb; color: #1a1a1a; margin-top: 4px;
+}
+html.dark-mode .sidebar-item.share-btn { background: #2e4a3a; color: #ffffff; }
+.sidebar-item.share-btn:hover, .sidebar-item.share-btn:active { background: #c3e8b8; }
+html.dark-mode .sidebar-item.share-btn:hover, html.dark-mode .sidebar-item.share-btn:active { background: #3d5f4a; }
+.sidebar-item.share-btn svg { stroke: #1a1a1a; }
+html.dark-mode .sidebar-item.share-btn svg { stroke: #ffffff; }
+
+.sidebar-tools-btn { justify-content: flex-start; }
+.sidebar-tools-btn .chevron {
+  margin-left: auto; width: 16px; height: 16px;
+  stroke: #6b7280; transition: transform 0.25s ease;
+}
+html.dark-mode .sidebar-tools-btn .chevron { stroke: #9ca3af; }
+.sidebar-tools-btn.open .chevron { transform: rotate(180deg); }
+
+.sidebar-tools-sub {
+  max-height: 0; overflow: hidden;
+  transition: max-height 0.3s ease;
+  padding-left: 6px;
+}
+.sidebar-tools-sub.open { max-height: 500px; }
+
+.sidebar-sub-item {
+  display: flex; align-items: flex-start; gap: 10px;
+  width: 100%; padding: 10px 12px;
+  background: transparent; border: none; border-radius: 7px;
+  font-family: inherit; color: var(--text); cursor: pointer;
+  text-align: left; transition: background 0.2s; margin-bottom: 2px;
+  text-decoration: none;
+}
+.sidebar-sub-item:hover, .sidebar-sub-item:active { background: #f3f4f6; }
+html.dark-mode .sidebar-sub-item:hover, html.dark-mode .sidebar-sub-item:active { background: #1e293b; }
+.sidebar-sub-item svg { width: 18px; height: 18px; stroke: #6b7280; flex-shrink: 0; margin-top: 2px; }
+html.dark-mode .sidebar-sub-item svg { stroke: #9ca3af; }
+.sidebar-sub-item .item-content {
+  display: flex; flex-direction: column; gap: 2px;
+  min-width: 0; flex: 1; text-align: left;
+}
+.sidebar-sub-item .item-title {
+  font-size: 13.5px; font-weight: 600; color: var(--text); line-height: 1.2;
+}
+.sidebar-sub-item .item-url {
+  font-size: 10.5px;
+  font-family: 'SF Mono', Consolas, 'Courier New', monospace;
+  color: var(--text-light); opacity: 0.75; letter-spacing: 0.2px;
+}
+
+/* ============================================================
+   PAGE BANNER
+   ============================================================ */
+.page-banner {
+  background-color: #c3ceb9;
+  width: 100%;
+  padding: 20px 0 24px;
+}
+html.dark-mode .page-banner { background-color: #1e293b; }
+
+.banner-container {
+  max-width: var(--page-max); margin: 0 auto;
+  padding: 0 var(--gutter);
+  display: flex; flex-direction: column; gap: 4px;
+}
+.banner-title {
+  font-size: 30px; font-weight: 800; color: #1a1a1a;
+  margin: 0; letter-spacing: -0.7px;
+}
+html.dark-mode .banner-title { color: #f1f5f9; }
+.banner-subtitle {
+  font-size: 14px; color: #4b5563; margin: 0; font-weight: 400;
+}
+html.dark-mode .banner-subtitle { color: #94a3b8; }
+
+@media (max-width: 560px) {
+  .banner-title { font-size: 24px; letter-spacing: -0.6px; }
+  .banner-subtitle { font-size: 13px; }
+  .page-banner { padding: 16px 0 20px; }
+}
+
+/* ---------- layout ---------- */
+main{flex:1;display: flex;align-items: flex-start;justify-content: center;padding: 40px 20px 30px;width:100%;min-width:0;}
+.content-container{width:100%;max-width:var(--page-max);margin:0 auto;min-width:0;}
+
+/* ============================================================
+   ABOUT PAGE — hero + content
+   ============================================================ */
+.about-page{display:flex;flex-direction:column;gap:22px;}
+
+.about-hero{
+  background: var(--bg);
+  border: 1px solid var(--line);
+  border-radius: 20px;
+  padding: clamp(28px, 5vw, 60px) clamp(20px, 4vw, 48px);
+  box-shadow: var(--card-shadow);
+  display: flex;
+  align-items: center;
+  gap: clamp(20px, 4vw, 48px);
+  position: relative;
+  overflow: hidden;
+}
+.about-hero::before{
+  content: '';
+  position: absolute;
+  top: -80px;
+  right: -80px;
+  width: 260px;
+  height: 260px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(232,165,0,0.22), transparent 70%);
+  pointer-events: none;
+}
+html.dark-mode .about-hero::before{
+  background: radial-gradient(circle, rgba(96,165,250,0.20), transparent 70%);
+}
+.about-hero-text{flex:1;min-width:0;position:relative;z-index:1;}
+.about-hero-eyebrow{
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+  background: rgba(232,165,0,0.15);
+  color: #7c5a00;
+  font-size: 12.5px;
+  font-weight: 700;
+  letter-spacing: 0.8px;
+  text-transform: uppercase;
+  padding: 6px 12px;
+  border-radius: 20px;
+  margin-bottom: 16px;
+}
+html.dark-mode .about-hero-eyebrow{
+  background: rgba(96,165,250,0.18);
+  color: #93c5fd;
+}
+.about-hero-eyebrow svg{width:14px;height:14px;}
+.about-hero-title{
+  font-size: clamp(28px, 4.2vw, 46px);
+  font-weight: 900;
+  color: var(--text);
+  letter-spacing: -1.2px;
+  line-height: 1.08;
+  margin-bottom: 16px;
+}
+.about-hero-title .accent{
+  background: linear-gradient(135deg, #E8A500, #1E4620);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+html.dark-mode .about-hero-title .accent{
+  background: linear-gradient(135deg, #fbbf24, #60a5fa);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+.about-hero-lead{
+  font-size: clamp(15px, 1.7vw, 17px);
+  line-height: 1.7;
+  color: var(--text-light);
+  margin-bottom: 24px;
+  max-width: 620px;
+}
+.about-hero-actions{display:flex;flex-wrap:wrap;gap:10px;}
+.about-cta-btn{
+  display:inline-flex;align-items:center;gap:8px;
+  padding: 11px 20px;
+  border-radius: 10px;
+  font-family: inherit;
+  font-size: 14.5px;
+  font-weight: 700;
+  cursor: pointer;
+  border: none;
+  transition: all 0.2s;
+  text-decoration: none;
+}
+.about-cta-primary{background: var(--text);color: var(--bg);}
+.about-cta-primary:hover{opacity:0.85;transform:translateY(-1px);}
+.about-cta-ghost{background: transparent;color: var(--text);border: 1.5px solid var(--line);}
+.about-cta-ghost:hover{background: var(--hover);}
+.about-cta-btn svg{width:18px;height:18px;}
+
+.about-hero-visual{
+  flex-shrink: 0;
+  width: clamp(180px, 22vw, 260px);
+  aspect-ratio: 1/1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+.about-hero-wheel{
+  width: 100%;
+  height: 100%;
+  animation: slowSpin 40s linear infinite;
+  filter: drop-shadow(0 8px 24px rgba(0,0,0,0.12));
+}
+html.dark-mode .about-hero-wheel{
+  filter: drop-shadow(0 8px 24px rgba(0,0,0,0.5));
+}
+@keyframes slowSpin{
+  from{transform:rotate(0deg);}
+  to{transform:rotate(360deg);}
+}
+@media (prefers-reduced-motion: reduce){
+  .about-hero-wheel{animation: none;}
+}
+@media (max-width: 700px){
+  .about-hero{flex-direction: column;text-align:center;}
+  .about-hero-lead{margin-left:auto;margin-right:auto;}
+  .about-hero-actions{justify-content:center;}
+  .about-hero-visual{width: 160px;order:-1;}
+}
+
+/* ============================================================
+   SEO-style content blocks (reused design language)
+   ============================================================ */
+.seo-row{
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+  margin-bottom: 0;
+  align-items: stretch;
+}
+.seo-block{
+  background: var(--bg);
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  padding: clamp(18px, 2.4vw, 30px);
+  box-shadow: var(--card-shadow);
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  overflow-wrap: break-word;
+  scroll-margin-top: 20px;
+}
+.seo-block h2{
+  font-size: clamp(17px, 1.8vw, 22px);
+  font-weight: 800;
+  letter-spacing: -0.5px;
+  margin-bottom: 12px;
+  color: var(--text);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  line-height: 1.25;
+}
+.seo-h2-icon{width:26px;height:26px;flex-shrink:0;display:inline-block;}
+.seo-block p{
+  font-size: 14px;
+  line-height: 1.7;
+  color: var(--text-light);
+  margin-bottom: 12px;
+}
+.seo-block p:last-child{margin-bottom:0;}
+.seo-block ul, .seo-block ol{
+  margin: 6px 0 12px 20px;
+  font-size: 14px;
+  line-height: 1.7;
+  color: var(--text-light);
+}
+.seo-block li{margin-bottom: 7px;}
+.seo-block strong{color: var(--text);font-weight:700;}
+.seo-block a{color: var(--footer-link-color);text-decoration:underline;text-underline-offset:3px;font-weight:600;}
+.seo-block a:hover{opacity:0.8;}
+
+@media (max-width: 1024px){
+  .seo-row{grid-template-columns: repeat(2, minmax(0, 1fr));gap: 16px;}
+}
+@media (max-width: 700px){
+  .seo-row{grid-template-columns: minmax(0, 1fr);gap: 14px;}
+}
+
+/* CTA strip */
+.about-cta-strip{
+  background: linear-gradient(135deg, #E8A500 0%, #B5A642 50%, #1E4620 100%);
+  border-radius: 20px;
+  padding: clamp(28px, 4vw, 48px);
+  text-align: center;
+  color: #ffffff;
+  box-shadow: 0 12px 40px rgba(30,70,32,0.25);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+}
+html.dark-mode .about-cta-strip{
+  background: linear-gradient(135deg, #1e3a5f 0%, #1e293b 50%, #0f172a 100%);
+  box-shadow: 0 12px 40px rgba(0,0,0,0.5);
+}
+.about-cta-strip h2{
+  font-size: clamp(22px, 3vw, 32px);
+  font-weight: 900;
+  letter-spacing: -0.7px;
+  margin: 0;
+  color: #ffffff;
+  line-height: 1.2;
+}
+.about-cta-strip p{
+  font-size: clamp(14px, 1.6vw, 16px);
+  line-height: 1.7;
+  max-width: 620px;
+  margin: 0;
+  color: rgba(255,255,255,0.92);
+}
+.about-cta-strip .about-cta-primary{
+  background: #ffffff;
+  color: #1a1a1a;
+  margin-top: 8px;
+}
+.about-cta-strip .about-cta-primary:hover{background: #fff7e6;}
+
+/* ============================================================
+   FOOTER
+   ============================================================ */
+.content-divider{
+  max-width: var(--page-max);
+  margin: 32px auto 0;
+  padding: 0 var(--gutter);
+  width: 100%;
+}
+.content-divider::after{
+  content:'';
+  display:block;
+  height:2px;
+  border-radius:2px;
+  background: linear-gradient(90deg, transparent, #cbd5e1 12%, #cbd5e1 88%, transparent);
+}
+html.dark-mode .content-divider::after{
+  background: linear-gradient(90deg, transparent, #334155 12%, #334155 88%, transparent);
+}
+
+.white-bottom-bg { background-color: #ffffff; width: 100%; padding-bottom: 0; }
+html.dark-mode .white-bottom-bg { background-color: #0f172a; }
+
+.site-footer {
+  background: transparent;
+  padding: 30px 20px 40px;
+  margin-top: 20px;
+  width: 100%;
+}
+
+.footer-divider{
+  max-width: var(--page-max);
+  margin: 0 auto 26px;
+  padding: 0 var(--gutter);
+  width: 100%;
+}
+.footer-divider::after{
+  content:'';
+  display:block;
+  height:2px;
+  border-radius:2px;
+  background: linear-gradient(90deg, transparent, #cbd5e1 12%, #cbd5e1 88%, transparent);
+}
+html.dark-mode .footer-divider::after{
+  background: linear-gradient(90deg, transparent, #334155 12%, #334155 88%, transparent);
+}
+
+.footer-grid {
+  max-width: var(--page-max);
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px 44px;
+  justify-content: center;
+  align-items: center;
+}
+@media (max-width: 560px) {
+  .footer-grid { gap: 14px 28px; }
+  .footer-link-item { font-size: 14px; }
+}
+
+.footer-link-item {
+  display: flex; align-items: center; gap: 8px;
+  color: #4c1d95; text-decoration: underline; text-underline-offset: 3px;
+  font-size: 15px; font-weight: 500; white-space: nowrap; transition: opacity 0.2s;
+  background: none; border: none; font-family: inherit; cursor: pointer; padding: 0;
+}
+html.dark-mode .footer-link-item { color: #a78bfa; }
+.footer-link-item:hover { opacity: 0.75; }
+.footer-link-item svg { width: 18px; height: 18px; color: #4b5563; flex-shrink: 0; }
+html.dark-mode .footer-link-item svg { color: #9ca3af; }
+
+/* ============================================================
+   MODALS
+   ============================================================ */
+.modal-overlay{position:fixed;inset:0;background:rgba(0,0,0,.55);z-index:10001;display:flex;align-items:center;justify-content:center;opacity:0;visibility:hidden;transition:.3s;padding:16px}
+.modal-overlay.active{opacity:1;visibility:visible}
+.modal-box{background:var(--bg);border:1px solid var(--line);border-radius:18px;padding:24px;max-width:420px;width:100%;box-shadow:0 25px 50px -12px rgba(0,0,0,.4);transform:translateY(20px);transition:transform .3s;max-height:90vh;overflow-y:auto}
+.modal-overlay.active .modal-box{transform:translateY(0)}
+.modal-box h3{font-size:20px;font-weight:800;margin-bottom:12px;color:var(--text)}
+.modal-box p{font-size:14px;color:var(--text-light);line-height:1.6;margin-bottom:14px}
+.modal-actions{display:flex;gap:8px;flex-wrap:wrap;margin-top:16px}
+.modal-actions .btn{flex:1 1 auto}
+.modal-box.modal-wide{max-width:600px}
+.modal-content-body{max-height:60vh;overflow-y:auto;padding-right:6px;font-size:14px;line-height:1.7;color:var(--text-light);margin-top:8px}
+.modal-content-body h4{font-size:15px;font-weight:700;color:var(--text);margin-top:18px;margin-bottom:8px}
+.modal-content-body h4:first-child{margin-top:0}
+.modal-content-body p{margin-bottom:12px}
+.modal-content-body ul,.modal-content-body ol{margin: 8px 0 14px 20px; font-size:14px; line-height:1.7; color:var(--text-light)}
+.modal-content-body li{margin-bottom:6px}
+.modal-content-body a{color:var(--footer-link-color);text-decoration:underline}
+
+.btn {padding: 10px 18px; border-radius: 9px; font-family: inherit; font-size: 14px; font-weight: 600; cursor: pointer; border: none; transition: all 0.2s;}
+.btn-primary {background: var(--text); color: var(--bg);}
+.btn-primary:hover {opacity: 0.88;}
+.btn-outline {background: transparent; color: var(--text); border: 1.5px solid var(--line);}
+.btn-outline:hover {background: var(--hover);}
+
+.settings-row {display: flex;align-items: center;justify-content: space-between;gap: 12px;padding: 12px 0;border-bottom: 1px solid var(--line);font-size: 14px;font-weight: 500;color: var(--text);}
+.settings-row label { display: flex; align-items: center; gap: 10px; cursor: pointer; flex: 1; }
+.settings-row input[type="checkbox"] { width: 18px; height: 18px; accent-color: #3b82f6; }
+.settings-row select {padding: 7px 12px;border-radius: 9px;border:1.5px solid var(--input-border);background: var(--input-bg);color: var(--text);font-family: inherit;font-size: 14px;font-weight: 500;cursor: pointer;min-width: 110px;}
+.settings-note { font-size: 12.5px; color: var(--text-light); line-height: 1.5; margin: 12px 0 18px; }
+
+.toast{position:fixed;bottom:26px;left:50%;transform:translateX(-50%) translateY(120px);background:var(--toast-bg);color:var(--toast-text);padding:13px 24px;border-radius:30px;font-weight:600;font-size:14px;z-index:10002;box-shadow:0 10px 30px rgba(0,0,0,.3);transition:transform .35s;pointer-events:none;max-width:min(90vw,460px);text-align:center;line-height:1.4;}
+.toast.show{transform:translateX(-50%) translateY(0)}
+</style>
+</head>
+<body>
+
+<svg xmlns="http://www.w3.org/2000/svg" style="position:absolute;width:0;height:0;overflow:hidden" aria-hidden="true">
+<defs>
+<symbol id="i-share-2" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" x2="15.42" y1="13.51" y2="17.49"/><line x1="15.41" x2="8.59" y1="6.51" y2="10.49"/></symbol>
+<symbol id="i-pencil" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 3a2.828 2.828 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5L17 3z"/></symbol>
+<symbol id="i-settings" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12.22 2h-.44a2 2 0 0 0-2 2v.18a2 2 0 0 1-1 1.73l-.43.25a2 2 0 0 1-2 0l-.15-.08a2 2 0 0 0-2.73.73l-.22.38a2 2 0 0 0 .73 2.73l.15.1a2 2 0 0 1 1 1.72v.51a2 2 0 0 1-1 1.74l-.15.09a2 2 0 0 0-.73 2.73l.22.38a2 2 0 0 0 2.73.73l.15-.08a2 2 0 0 1 2 0l.43.25a2 2 0 0 1 1 1.73V20a2 2 0 0 0 2 2h.44a2 2 0 0 0 2-2v-.18a2 2 0 0 1 1-1.73l.43-.25a2 2 0 0 1 2 0l.15.08a2 2 0 0 0 2.73-.73l.22-.39a2 2 0 0 0-.73-2.73l-.15-.08a2 2 0 0 1-1-1.74v-.5a2 2 0 0 1 1-1.74l.15-.09a2 2 0 0 0 .73-2.73l-.22-.38a2 2 0 0 0-2.73-.73l-.15.08a2 2 0 0 1-2 0l-.43-.25a2 2 0 0 1-1-1.73V4a2 2 0 0 0-2-2z"/><circle cx="12" cy="12" r="3"/></symbol>
+<symbol id="i-chevron-down" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></symbol>
+<symbol id="i-scale" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m16 16 3-8 3 8c-.87.65-1.92 1-3 1s-2.13-.35-3-1Z"/><path d="m2 16 3-8 3 8c-.87.65-1.92 1-3 1s-2.13-.35-3-1Z"/><path d="M7 21h10"/><path d="M12 3v18"/><path d="M3 7h2c2 0 5-1 7-2 2 1 5 2 7 2h2"/></symbol>
+<symbol id="i-help" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></symbol>
+<symbol id="i-lock" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="11" x="3" y="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></symbol>
+<symbol id="i-pie" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21.21 15.89A10 10 0 1 1 8 2.83"/><path d="M22 12A10 10 0 0 0 12 2v10z"/></symbol>
+<symbol id="i-folder" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"/></symbol>
+<symbol id="i-tool" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></symbol>
+<symbol id="i-menu" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="18" x2="21" y2="18"/></symbol>
+<symbol id="i-info" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></symbol>
+<symbol id="i-smile" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M8 14s1.5 2 4 2 4-2 4-2"/><line x1="9" x2="9.01" y1="9" y2="9"/><line x1="15" x2="15.01" y1="9" y2="9"/></symbol>
+<symbol id="i-heart" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></symbol>
+<symbol id="i-target" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></symbol>
+<symbol id="i-zap" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></symbol>
+<symbol id="i-users" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></symbol>
+<symbol id="i-award" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="6"/><path d="M15.477 12.89 17 22l-5-3-5 3 1.523-9.11"/></symbol>
+<symbol id="i-mail" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></symbol>
+<symbol id="i-wheel-color" viewBox="0 0 100 100">
+  <circle cx="50" cy="50" r="46" fill="#1a1a1a"/>
+  <path d="M50 50 L50 4 A46 46 0 0 1 96 50 Z" fill="#E8A500"/>
+  <path d="M50 50 L96 50 A46 46 0 0 1 50 96 Z" fill="#F5EBC8"/>
+  <path d="M50 50 L50 96 A46 46 0 0 1 4 50 Z" fill="#1E4620"/>
+  <path d="M50 50 L4 50 A46 46 0 0 1 50 4 Z" fill="#B5A642"/>
+  <circle cx="50" cy="50" r="12" fill="#ffffff"/>
+</symbol>
+</defs>
+</svg>
+
+<!-- HEADER / NAVBAR -->
+<header class="site-header">
+  <div class="header-container">
+    <a href="/" class="nav-logo" title="Spin The Wheelly — Home">
+      <span class="nav-logo-text">Spin The Wheelly</span>
+    </a>
+
+    <div class="nav-links">
+      <a href="/" class="nav-btn" style="text-decoration:none;">
+        <svg aria-hidden="true"><use href="#i-pie"/></svg>
+        <span class="nav-text">New Wheel</span>
+      </a>
+      <a href="/" class="nav-btn" style="text-decoration:none;">
+        <svg aria-hidden="true"><use href="#i-folder"/></svg>
+        <span class="nav-text">File</span>
+      </a>
+      <button type="button" class="nav-btn" onclick="openSettingsModal()">
+        <svg aria-hidden="true"><use href="#i-settings"/></svg>
+        <span class="nav-text">Settings</span>
+      </button>
+      <button type="button" class="nav-btn share-btn" onclick="shareApp()">
+        <svg aria-hidden="true"><use href="#i-share-2"/></svg>
+        <span class="nav-text">Share</span>
+      </button>
+      <div class="nav-tools-wrap">
+        <button type="button" class="nav-btn" id="toolsMenuBtn" onclick="toggleToolsMenu(event)" aria-haspopup="true" aria-expanded="false">
+          <svg aria-hidden="true"><use href="#i-tool"/></svg>
+          <span class="nav-text">Tools</span>
+        </button>
+        <div class="tools-menu" id="toolsMenu" role="menu">
+          <a href="/random-name-picker" class="tools-menu-item" role="menuitem">
+            <svg aria-hidden="true"><use href="#i-pencil"/></svg>
+            <span class="tools-item-content">
+              <span class="tools-item-title">Random Name Picker</span>
+              <span class="tools-item-url">/random-name-picker</span>
+            </span>
+          </a>
+          <a href="/yes-no-wheel" class="tools-menu-item" role="menuitem">
+            <svg aria-hidden="true"><use href="#i-help"/></svg>
+            <span class="tools-item-content">
+              <span class="tools-item-title">Yes / No Wheel</span>
+              <span class="tools-item-url">/yes-no-wheel</span>
+            </span>
+          </a>
+          <a href="/random-team-generator" class="tools-menu-item" role="menuitem">
+            <svg aria-hidden="true"><use href="#i-folder"/></svg>
+            <span class="tools-item-content">
+              <span class="tools-item-title">Random Team Generator</span>
+              <span class="tools-item-url">/random-team-generator</span>
+            </span>
+          </a>
+          <a href="/what-to-eat" class="tools-menu-item" role="menuitem">
+            <svg aria-hidden="true"><use href="#i-smile"/></svg>
+            <span class="tools-item-content">
+              <span class="tools-item-title">What to Eat</span>
+              <span class="tools-item-url">/what-to-eat</span>
+            </span>
+          </a>
+        </div>
+      </div>
+      <button type="button" class="nav-btn hamburger-btn" id="hamburgerBtn" onclick="openSidebar()" aria-label="Open menu" aria-expanded="false" aria-controls="mobileSidebar">
+        <svg aria-hidden="true"><use href="#i-menu"/></svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+<!-- PAGE BANNER -->
+<section class="page-banner">
+  <div class="banner-container">
+    <h1 class="banner-title" id="bannerTitle">About Us</h1>
+    <p class="banner-subtitle">Spin The Wheelly — Our story, our mission, our promise</p>
+  </div>
+</section>
+
+<main id="mainContent">
+  <div class="content-container">
+    <div class="about-page">
+
+      <!-- HERO -->
+      <section class="about-hero">
+        <div class="about-hero-text">
+          <span class="about-hero-eyebrow">
+            <svg aria-hidden="true"><use href="#i-heart"/></svg>
+            Meet Spin The Wheelly
+          </span>
+          <h2 class="about-hero-title">
+            Decisions shouldn't be hard.<br>
+            <span class="accent">Let the wheel handle it.</span>
+          </h2>
+          <p class="about-hero-lead">
+            We built <strong>Spin The Wheelly</strong> as the world's friendliest free random picker — fast, fair, and fun for everyone. Whether you're a teacher, a parent, an event planner, or just someone who can't pick a restaurant, the wheel is here to help you decide with a single satisfying spin.
+          </p>
+          <div class="about-hero-actions">
+            <a href="/" class="about-cta-btn about-cta-primary">
+              <svg aria-hidden="true"><use href="#i-pie"/></svg>
+              Try the Wheel
+            </a>
+            <button type="button" class="about-cta-btn about-cta-ghost" onclick="openModal('contactModal')">
+              <svg aria-hidden="true"><use href="#i-mail"/></svg>
+              Contact Us
+            </button>
+          </div>
+        </div>
+        <div class="about-hero-visual" aria-hidden="true">
+          <svg class="about-hero-wheel" viewBox="0 0 100 100">
+            <circle cx="50" cy="50" r="46" fill="#1a1a1a"/>
+            <path d="M50 50 L50 4 A46 46 0 0 1 96 50 Z" fill="#E8A500"/>
+            <path d="M50 50 L96 50 A46 46 0 0 1 50 96 Z" fill="#F5EBC8"/>
+            <path d="M50 50 L50 96 A46 46 0 0 1 4 50 Z" fill="#1E4620"/>
+            <path d="M50 50 L4 50 A46 46 0 0 1 50 4 Z" fill="#B5A642"/>
+            <circle cx="50" cy="50" r="12" fill="#ffffff"/>
+            <circle cx="50" cy="50" r="6" fill="#1a1a1a"/>
+          </svg>
+        </div>
+      </section>
+
+      <!-- ROW 1 -->
+      <div class="seo-row">
+        <div class="seo-block">
+          <h2><svg class="seo-h2-icon" aria-hidden="true"><use href="#i-heart"/></svg>Our Story</h2>
+          <p>
+            Spin The Wheelly was born out of frustration — the classic "you pick" debate that drags on for twenty minutes while everyone politely refuses to make a decision.
+          </p>
+          <p>
+            We wanted a tool that was <strong>instant, visual, and fair</strong>. No signups, no ads, no downloads, no "premium" tiers hiding behind a paywall. Just open the page, type your options, and spin.
+          </p>
+          <p>
+            So we built it. Then we made it <em>beautiful</em> — with satisfying animation, premium confetti, and a victory melody that makes every spin feel like a mini celebration.
+          </p>
+        </div>
+
+        <div class="seo-block">
+          <h2><svg class="seo-h2-icon" aria-hidden="true"><use href="#i-target"/></svg>Our Mission</h2>
+          <p>
+            To make random decisions <strong>fast, fair, and genuinely fun</strong> for anyone, anywhere, on any device — without asking for an email, a login, or a single cent.
+          </p>
+          <ul>
+            <li><strong>Fast</strong> — no app to install, no account to create.</li>
+            <li><strong>Fair</strong> — cryptographically secure randomness, verified in your browser.</li>
+            <li><strong>Fun</strong> — confetti, sound effects, and a wheel that actually feels alive.</li>
+            <li><strong>Accessible</strong> — works on phones, tablets, laptops, and smart TV browsers.</li>
+          </ul>
+        </div>
+
+        <div class="seo-block">
+          <h2><svg class="seo-h2-icon" aria-hidden="true"><use href="#i-award"/></svg>Our Promise</h2>
+          <p>
+            We keep Spin The Wheelly <strong>100% free, forever</strong>. No ads, no subscriptions, no data collection, no tricks.
+          </p>
+          <ul>
+            <li><strong>Never signup</strong> — open the page, spin, done.</li>
+            <li><strong>Never sell your data</strong> — everything runs locally in your browser.</li>
+            <li><strong>Never paywall features</strong> — every wheel tool on the site is free.</li>
+            <li><strong>Never track you</strong> — we don't run analytics on your entries or results.</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- ROW 2 -->
+      <div class="seo-row">
+        <div class="seo-block">
+          <h2><svg class="seo-h2-icon" aria-hidden="true"><use href="#i-zap"/></svg>How It Works</h2>
+          <p>There are just three steps — and one of them is "click spin":</p>
+          <ol>
+            <li><strong>Add your options</strong> — Type one entry per line. Names, choices, restaurants, whatever you need to pick from.</li>
+            <li><strong>Hit SPIN</strong> — Watch the wheel do its thing with a smooth, suspenseful animation.</li>
+            <li><strong>Reveal the winner</strong> — The wheel lands on a random result, and the celebration begins.</li>
+          </ol>
+          <p>
+            That's it. No settings to configure, no account to activate, no notifications to dismiss.
+          </p>
+        </div>
+
+        <div class="seo-block">
+          <h2><svg class="seo-h2-icon" aria-hidden="true"><use href="#i-lock"/></svg>Privacy First</h2>
+          <p>
+            Your entries and results <strong>never leave your device</strong>. Every spin happens in your browser, on your computer, using your own hardware.
+          </p>
+          <ul>
+            <li>No servers store your entries</li>
+            <li>No images uploaded to the cloud</li>
+            <li>No results tracked or shared</li>
+            <li>No cookies for tracking, ever</li>
+          </ul>
+          <p>
+            The only data we keep is a tiny local preference (light or dark mode), stored safely in your browser and never sent anywhere.
+          </p>
+        </div>
+
+        <div class="seo-block">
+          <h2><svg class="seo-h2-icon" aria-hidden="true"><use href="#i-scale"/></svg>Completely Free</h2>
+          <p>
+            Spin The Wheelly is <strong>free forever</strong> — and we mean it. There's no paid tier waiting at the end of a free trial, no watermark, and no missing features behind a login.
+          </p>
+          <ul>
+            <li>Free random name picker</li>
+            <li>Free yes/no wheel</li>
+            <li>Free random team generator</li>
+            <li>Free "what to eat" decider</li>
+            <li>Free image support, sound effects, and fullscreen</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- ROW 3 -->
+      <div class="seo-row">
+        <div class="seo-block">
+          <h2><svg class="seo-h2-icon" aria-hidden="true"><use href="#i-users"/></svg>Who Uses Spin The Wheelly</h2>
+          <p>The wheel is loved by all kinds of people:</p>
+          <ul>
+            <li><strong>Teachers</strong> — pick students, split teams, choose topics.</li>
+            <li><strong>Parents</strong> — settle family debates without arguments.</li>
+            <li><strong>Event planners</strong> — run raffles, giveaways, and prize draws.</li>
+            <li><strong>Streamers</strong> — spin on camera for giveaways and dares.</li>
+            <li><strong>Teams</strong> — assign tasks, pick speakers, decide lunch spots.</li>
+            <li><strong>Anyone</strong> — who's tired of hearing "I don't know, you pick".</li>
+          </ul>
+        </div>
+
+        <div class="seo-block">
+          <h2><svg class="seo-h2-icon" aria-hidden="true"><use href="#i-heart"/></svg>Our Values</h2>
+          <ul>
+            <li><strong>Simplicity</strong> — the wheel should just work. No friction, no clutter.</li>
+            <li><strong>Fairness</strong> — cryptographically secure randomness, every single spin.</li>
+            <li><strong>Privacy</strong> — your data is yours. We never see it, never store it.</li>
+            <li><strong>Accessibility</strong> — works on any device, any browser, any network.</li>
+            <li><strong>Fun</strong> — decisions don't have to be boring. Confetti helps.</li>
+          </ul>
+        </div>
+
+        <div class="seo-block">
+          <h2><svg class="seo-h2-icon" aria-hidden="true"><use href="#i-mail"/></svg>Get in Touch</h2>
+          <p>
+            We'd love to hear from you — whether you have a feature idea, found a bug, or just want to say hello.
+          </p>
+          <p>
+            <strong>Email:</strong> <a href="mailto:hello@spinthewheelly.com">hello@spinthewheelly.com</a><br>
+            <strong>Response time:</strong> usually within 48 hours.
+          </p>
+          <p>
+            For privacy details, see our <a href="#privacy-policy" onclick="openModal('privacyModal'); return false;">Privacy Policy</a>. For site rules, check the <a href="#terms" onclick="openModal('termsModal'); return false;">Terms &amp; Conditions</a>.
+          </p>
+          <button type="button" class="about-cta-btn about-cta-primary" onclick="openModal('contactModal')" style="margin-top:8px;">
+            <svg aria-hidden="true"><use href="#i-mail"/></svg>
+            Send us a message
+          </button>
+        </div>
+      </div>
+
+      <!-- CTA STRIP -->
+      <section class="about-cta-strip">
+        <h2>Ready to spin?</h2>
+        <p>Head back to the wheel and let it make your next decision — fair, fast, and a little bit fun.</p>
+        <a href="/" class="about-cta-btn about-cta-primary">
+          <svg aria-hidden="true"><use href="#i-pie"/></svg>
+          Open the Wheel
+        </a>
+      </section>
+
+    </div>
+  </div>
+</main>
+
+<div class="content-divider" aria-hidden="true"></div>
+
+<div class="white-bottom-bg">
+  <footer class="site-footer">
+    <div class="footer-divider" aria-hidden="true"></div>
+    <div class="footer-grid">
+      <a id="linkName" href="/random-name-picker" class="footer-link-item" title="Random Name Picker">
+        <svg aria-hidden="true"><use href="#i-pencil"/></svg>
+        <span>Random Name Picker</span>
+      </a>
+      <a id="linkYesNo" href="/yes-no-wheel" class="footer-link-item" title="Yes / No Wheel">
+        <svg aria-hidden="true"><use href="#i-help"/></svg>
+        <span>Yes / No Wheel</span>
+      </a>
+      <a id="linkTeam" href="/random-team-generator" class="footer-link-item" title="Random Team Generator">
+        <svg aria-hidden="true"><use href="#i-folder"/></svg>
+        <span>Random Team Generator</span>
+      </a>
+      <a id="linkEat" href="/what-to-eat" class="footer-link-item" title="What to Eat">
+        <svg aria-hidden="true"><use href="#i-smile"/></svg>
+        <span>What to Eat</span>
+      </a>
+      <a href="#terms" class="footer-link-item" title="Terms & Conditions" onclick="openModal('termsModal'); return false;">
+        <svg aria-hidden="true"><use href="#i-scale"/></svg>
+        <span>Terms &amp; conditions</span>
+      </a>
+      <a href="#privacy-policy" class="footer-link-item" title="Privacy Policy" onclick="openModal('privacyModal'); return false;">
+        <svg aria-hidden="true"><use href="#i-lock"/></svg>
+        <span>Privacy_policy</span>
+      </a>
+      <a href="/about-us" class="footer-link-item" title="About Us" aria-current="page" style="opacity:0.75;">
+        <svg aria-hidden="true"><use href="#i-info"/></svg>
+        <span>About Us</span>
+      </a>
+    </div>
+  </footer>
+</div>
+
+<!-- Settings Modal -->
+<div class="modal-overlay" id="settingsModal" role="dialog" aria-modal="true" aria-label="Settings" aria-hidden="true">
+  <div class="modal-box">
+    <h3>Wheel Settings</h3>
+    <div class="settings-row">
+      <label for="soundEnabled"><input type="checkbox" id="soundEnabled" checked> Sound effects</label>
+    </div>
+    <div class="settings-row">
+      <label for="wheelSpeed" style="flex:1;">Wheel speed</label>
+      <select id="wheelSpeed">
+        <option value="slow">Slow</option>
+        <option value="normal" selected>Normal</option>
+        <option value="fast">Fast</option>
+      </select>
+    </div>
+    <div class="settings-row">
+      <label for="autoRemoveWinner"><input type="checkbox" id="autoRemoveWinner"> Auto-remove winner after spin</label>
+    </div>
+    <p class="settings-note">These settings live on the main wheel page. Head back home to see them in action.</p>
+    <div class="modal-actions">
+      <button type="button" class="btn btn-outline" onclick="closeModal('settingsModal')">Close</button>
+      <a href="/" class="btn btn-primary" style="text-decoration:none;text-align:center;">Go to Wheel</a>
+    </div>
+  </div>
+</div>
+
+<!-- About Modal -->
+<div class="modal-overlay" id="aboutModal" role="dialog" aria-modal="true" aria-label="About Us" aria-hidden="true">
+  <div class="modal-box modal-wide">
+    <h3>About Spin The Wheelly</h3>
+    <div class="modal-content-body">
+      <p>Welcome to <strong>Spin The Wheelly</strong> — the free, easy-to-use random choice picker that lets the wheel decide your fate.</p>
+      <h4>Why we built this</h4>
+      <p>We built Spin The Wheelly with one simple goal: to make random decision-making <strong>fast, fair, and fun</strong>.</p>
+      <h4>What makes it different</h4>
+      <ul>
+        <li>No signup, no ads, no limits</li>
+        <li>100% private — all processing happens in your browser</li>
+        <li>Beautiful animations, confetti, and sound effects</li>
+        <li>Works on mobile, tablet, and desktop</li>
+        <li>Free forever</li>
+      </ul>
+      <p>Thank you for using Spin The Wheelly. May the odds be ever in your favor! 🎡</p>
+    </div>
+    <div class="modal-actions">
+      <button type="button" class="btn btn-primary" onclick="closeModal('aboutModal')">Close</button>
+    </div>
+  </div>
+</div>
+
+<!-- Contact Modal -->
+<div class="modal-overlay" id="contactModal" role="dialog" aria-modal="true" aria-label="Contact Us" aria-hidden="true">
+  <div class="modal-box modal-wide">
+    <h3>Contact Us</h3>
+    <div class="modal-content-body">
+      <p>We'd love to hear from you! Whether you have a suggestion for a new feature, found a bug, or just want to say hello, feel free to reach out.</p>
+      <h4>📧 Email</h4>
+      <p><a href="mailto:hello@spinthewheelly.com">hello@spinthewheelly.com</a></p>
+      <h4>⏱ Response Time</h4>
+      <p>We do our best to respond within <strong>48 hours</strong>.</p>
+      <p>Thanks for visiting Spin The Wheelly 🎡</p>
+    </div>
+    <div class="modal-actions">
+      <button type="button" class="btn btn-primary" onclick="closeModal('contactModal')">Close</button>
+    </div>
+  </div>
+</div>
+
+<!-- Privacy Modal -->
+<div class="modal-overlay" id="privacyModal" role="dialog" aria-modal="true" aria-label="Privacy Policy" aria-hidden="true">
+  <div class="modal-box modal-wide">
+    <h3>Privacy Policy</h3>
+    <div class="modal-content-body">
+      <p><em>Last updated: January 2025</em></p>
+      <p>At <strong>Spin The Wheelly</strong>, your privacy is extremely important to us.</p>
+      <h4>1. Information We Collect</h4>
+      <p>We do <strong>not</strong> collect, store, or transmit any personal information.</p>
+      <h4>2. Local Storage</h4>
+      <p>We may use your browser's local storage to remember your theme preference.</p>
+      <h4>3. Third-Party Services</h4>
+      <p>We use <strong>Google Fonts</strong> to display the Inter typeface.</p>
+      <h4>4. Analytics</h4>
+      <p>We do not run our own analytics.</p>
+      <h4>5. Children's Privacy</h4>
+      <p>Our service is safe for all ages.</p>
+      <h4>6. Data Security</h4>
+      <p>Because we don't store your data, there's essentially nothing to breach.</p>
+      <h4>7. Changes to This Policy</h4>
+      <p>We may update this Privacy Policy from time to time.</p>
+      <h4>8. Contact Us</h4>
+      <p>If you have any questions about this Privacy Policy, please reach out via our <a href="mailto:hello@spinthewheelly.com">hello@spinthewheelly.com</a>.</p>
+    </div>
+    <div class="modal-actions">
+      <button type="button" class="btn btn-primary" onclick="closeModal('privacyModal')">Close</button>
+    </div>
+  </div>
+</div>
+
+<!-- Terms & Conditions Modal -->
+<div class="modal-overlay" id="termsModal" role="dialog" aria-modal="true" aria-label="Terms and Conditions" aria-hidden="true">
+  <div class="modal-box modal-wide">
+    <h3>Terms &amp; Conditions</h3>
+    <div class="modal-content-body">
+      <p><em>Last updated: January 2025</em></p>
+      <p>Welcome to <strong>Spin The Wheelly</strong>. By using our website and tools, you agree to these simple terms.</p>
+      <h4>1. Free to Use</h4>
+      <p>Spin The Wheelly is 100% free. No signup, no payment, no hidden fees — ever.</p>
+      <h4>2. Fair Use</h4>
+      <p>You may use the wheel for personal, educational, or commercial purposes. You agree <strong>not</strong> to:</p>
+      <ul>
+        <li>Attempt to break, overload, or abuse the service</li>
+        <li>Use the service for illegal or harmful activities</li>
+        <li>Copy or redistribute the site's code as your own</li>
+      </ul>
+      <h4>3. No Warranty</h4>
+      <p>The service is provided "as is" without warranty of any kind. We do our best to keep it working, but we cannot guarantee it will always be available or error-free.</p>
+      <h4>4. Randomness</h4>
+      <p>All spins use cryptographically secure random number generation in your browser. Results are fair and unbiased. The winner selection is final for each spin.</p>
+      <h4>5. Your Responsibility</h4>
+      <p>You are responsible for any decisions you make based on the wheel's results. Use it responsibly.</p>
+      <h4>6. Changes</h4>
+      <p>We may update these terms occasionally. Continued use of the site means you accept the current terms.</p>
+      <h4>7. Contact</h4>
+      <p>Questions? Email us at <a href="mailto:hello@spinthewheelly.com">hello@spinthewheelly.com</a>.</p>
+      <p>Thanks for using Spin The Wheelly! 🎡</p>
+    </div>
+    <div class="modal-actions">
+      <button type="button" class="btn btn-primary" onclick="closeModal('termsModal')">Close</button>
+    </div>
+  </div>
+</div>
+
+<!-- Blog Modal -->
+<div class="modal-overlay" id="blogModal" role="dialog" aria-modal="true" aria-label="Blog" aria-hidden="true">
+  <div class="modal-box modal-wide">
+    <h3>Spin The Wheelly Blog</h3>
+    <div class="modal-content-body">
+      <p>Welcome to the <strong>Spin The Wheelly Blog</strong>! Here we share tips, ideas, and fun ways to use spin wheels for random decisions.</p>
+      <h4>📝 Coming Soon</h4>
+      <ul>
+        <li><strong>10 Fun Ways to Use a Spin Wheel</strong></li>
+        <li><strong>How Randomness Works</strong></li>
+        <li><strong>Classroom Ideas for Teachers</strong></li>
+        <li><strong>Party Games That Never Get Old</strong></li>
+      </ul>
+      <p>Have a great idea for a spin wheel story? Email us at <a href="mailto:hello@spinthewheelly.com">hello@spinthewheelly.com</a>.</p>
+    </div>
+    <div class="modal-actions">
+      <button type="button" class="btn btn-primary" onclick="closeModal('blogModal')">Close</button>
+    </div>
+  </div>
+</div>
+
+<!-- MOBILE SIDEBAR -->
+<div class="sidebar-overlay" id="sidebarOverlay" onclick="closeSidebar()"></div>
+
+<aside class="mobile-sidebar" id="mobileSidebar" aria-hidden="true" aria-label="Mobile menu">
+  <div class="sidebar-body">
+
+    <a href="/" class="sidebar-item" style="text-decoration:none;">
+      <svg aria-hidden="true"><use href="#i-pie"/></svg>
+      <span>New Wheel</span>
+    </a>
+    <a href="/" class="sidebar-item" style="text-decoration:none;">
+      <svg aria-hidden="true"><use href="#i-folder"/></svg>
+      <span>File</span>
+    </a>
+    <button type="button" class="sidebar-item" onclick="openSettingsModal(); closeSidebar();">
+      <svg aria-hidden="true"><use href="#i-settings"/></svg>
+      <span>Settings</span>
+    </button>
+    <button type="button" class="sidebar-item share-btn" onclick="shareApp(); closeSidebar();">
+      <svg aria-hidden="true"><use href="#i-share-2"/></svg>
+      <span>Share</span>
+    </button>
+
+    <button type="button" class="sidebar-item sidebar-tools-btn" id="sidebarToolsBtn" onclick="toggleSidebarTools(event)" aria-expanded="false">
+      <svg aria-hidden="true"><use href="#i-tool"/></svg>
+      <span>Tools</span>
+      <svg class="chevron" aria-hidden="true"><use href="#i-chevron-down"/></svg>
+    </button>
+
+    <div class="sidebar-tools-sub" id="sidebarToolsSub">
+      <a href="/random-name-picker" class="sidebar-sub-item">
+        <svg aria-hidden="true"><use href="#i-pencil"/></svg>
+        <span class="item-content">
+          <span class="item-title">Random Name Picker</span>
+          <span class="item-url">/random-name-picker</span>
+        </span>
+      </a>
+      <a href="/yes-no-wheel" class="sidebar-sub-item">
+        <svg aria-hidden="true"><use href="#i-help"/></svg>
+        <span class="item-content">
+          <span class="item-title">Yes / No Wheel</span>
+          <span class="item-url">/yes-no-wheel</span>
+        </span>
+      </a>
+      <a href="/random-team-generator" class="sidebar-sub-item">
+        <svg aria-hidden="true"><use href="#i-folder"/></svg>
+        <span class="item-content">
+          <span class="item-title">Random Team Generator</span>
+          <span class="item-url">/random-team-generator</span>
+        </span>
+      </a>
+      <a href="/what-to-eat" class="sidebar-sub-item">
+        <svg aria-hidden="true"><use href="#i-smile"/></svg>
+        <span class="item-content">
+          <span class="item-title">What to Eat</span>
+          <span class="item-url">/what-to-eat</span>
+        </span>
+      </a>
+    </div>
+
+  </div>
+</aside>
+
+<div class="toast" id="toast"></div>
+<div id="liveAnnouncer" role="status" aria-live="polite" aria-atomic="true" class="sr-only"></div>
+
+<script>
+function announce(msg){
+  var el=document.getElementById('liveAnnouncer');
+  if(!el)return;
+  el.textContent='';
+  setTimeout(function(){ el.textContent=msg; },40);
+}
+var toastTimer;
+function showToast(msg,dur){
+  dur=dur||2400;
+  var t=document.getElementById('toast');
+  if(!t)return;
+  t.textContent=msg;
+  t.classList.add('show');
+  clearTimeout(toastTimer);
+  toastTimer=setTimeout(function(){ t.classList.remove('show'); },dur);
+  announce(msg);
+}
+
+var ABOUT_SLUG = 'about-us';
+var ABOUT_URL_RE = /\/about-us\/?$/;
+var PRESET_SLUGS = ['random-name-picker','yes-no-wheel','random-team-generator','what-to-eat'];
+
+function getBaseUrl(){
+  var origin = window.location.origin;
+  if (!origin || origin === 'null' || origin.indexOf('file:') === 0) origin = '';
+  var p = window.location.pathname || '/';
+  for (var i = 0; i < PRESET_SLUGS.length; i++) {
+    var re = new RegExp('/' + PRESET_SLUGS[i] + '/?$');
+    if (re.test(p)) { p = p.replace(re, '/'); break; }
+  }
+  if (ABOUT_URL_RE.test(p)) { p = p.replace(ABOUT_URL_RE, '/'); }
+  p = p.replace(/[^/]*\.html?$/i, '');
+  if (p.charAt(p.length - 1) !== '/') p += '/';
+  return origin + p;
+}
+
+function initPresetLinks(){
+  var base = getBaseUrl();
+  var map = {
+    linkName: 'random-name-picker',
+    linkYesNo: 'yes-no-wheel',
+    linkTeam: 'random-team-generator',
+    linkEat: 'what-to-eat'
+  };
+  Object.keys(map).forEach(function(id){
+    var el = document.getElementById(id);
+    if (el) el.href = base + map[id];
+  });
+}
+
+function shareApp(){
+  var text='Check out Spin The Wheelly — a free spin the wheel app for fair random decisions!\n\nhttps://spinthewheelly.com/';
+  if(navigator.share){
+    navigator.share({title:'Spin The Wheelly',text:text,url:'https://spinthewheelly.com/'}).catch(function(){});
+  }else{
+    if(navigator.clipboard && navigator.clipboard.writeText){
+      navigator.clipboard.writeText(text).then(function(){showToast('Link copied!');}).catch(function(){showToast('Share: spinthewheelly.com');});
+    }else{showToast('Share: spinthewheelly.com');}
+  }
+}
+
+function openModal(id){
+  var m=document.getElementById(id);
+  if(!m)return;
+  m.classList.add('active');
+  m.setAttribute('aria-hidden','false');
+  document.body.style.overflow='hidden';
+}
+function closeModal(id){
+  var m=document.getElementById(id);
+  if(!m)return;
+  m.classList.remove('active');
+  m.setAttribute('aria-hidden','true');
+  var hashMap = { 'termsModal': '#terms', 'privacyModal': '#privacy-policy', 'blogModal': '#blog' };
+  if (hashMap[id] === window.location.hash) {
+    if (history.replaceState) { history.replaceState(null, '', window.location.pathname + window.location.search); }
+  }
+  var anyActive = document.querySelector('.modal-overlay.active');
+  if(!anyActive) document.body.style.overflow='';
+}
+
+function openSettingsModal(){
+  openModal('settingsModal');
+}
+
+function toggleToolsMenu(e){
+  if(e)e.stopPropagation();
+  var menu=document.getElementById('toolsMenu');
+  var btn=document.getElementById('toolsMenuBtn');
+  if(!menu)return;
+  if(menu.classList.contains('show')){closeToolsMenu();}
+  else{menu.classList.add('show');if(btn)btn.setAttribute('aria-expanded','true');}
+}
+function closeToolsMenu(){
+  var menu=document.getElementById('toolsMenu');
+  var btn=document.getElementById('toolsMenuBtn');
+  if(menu)menu.classList.remove('show');
+  if(btn)btn.setAttribute('aria-expanded','false');
+}
+document.addEventListener('click',function(e){
+  var wrap=document.querySelector('.nav-tools-wrap');
+  if(wrap&&!wrap.contains(e.target))closeToolsMenu();
+});
+
+function openSidebar(){
+  var sb=document.getElementById('mobileSidebar');
+  var ov=document.getElementById('sidebarOverlay');
+  var btn=document.getElementById('hamburgerBtn');
+  if(!sb)return;
+  sb.classList.add('show');
+  if(ov)ov.classList.add('show');
+  if(btn)btn.setAttribute('aria-expanded','true');
+  sb.setAttribute('aria-hidden','false');
+  document.body.style.overflow='hidden';
+}
+function closeSidebar(){
+  var sb=document.getElementById('mobileSidebar');
+  var ov=document.getElementById('sidebarOverlay');
+  var btn=document.getElementById('hamburgerBtn');
+  if(!sb)return;
+  sb.classList.remove('show');
+  if(ov)ov.classList.remove('show');
+  if(btn)btn.setAttribute('aria-expanded','false');
+  sb.setAttribute('aria-hidden','true');
+  var toolsSub = document.getElementById('sidebarToolsSub');
+  var toolsBtn = document.getElementById('sidebarToolsBtn');
+  if (toolsSub) toolsSub.classList.remove('open');
+  if (toolsBtn) { toolsBtn.classList.remove('open'); toolsBtn.setAttribute('aria-expanded', 'false'); }
+  var anyModalOpen=document.querySelector('.modal-overlay.active');
+  if(!anyModalOpen)document.body.style.overflow='';
+}
+
+function toggleSidebarTools(e) {
+  if (e) e.stopPropagation();
+  var btn = document.getElementById('sidebarToolsBtn');
+  var sub = document.getElementById('sidebarToolsSub');
+  if (!btn || !sub) return;
+  var isOpen = sub.classList.contains('open');
+  sub.classList.toggle('open', !isOpen);
+  btn.classList.toggle('open', !isOpen);
+  btn.setAttribute('aria-expanded', !isOpen);
+}
+
+(function(){
+  var sb=document.getElementById('mobileSidebar');
+  if(!sb)return;
+  var startX=0,currentX=0,isDragging=false;
+  sb.addEventListener('touchstart',function(e){
+    if(!sb.classList.contains('show'))return;
+    startX=e.touches[0].clientX;isDragging=true;sb.style.transition='none';
+  },{passive:true});
+  sb.addEventListener('touchmove',function(e){
+    if(!isDragging)return;
+    currentX=e.touches[0].clientX;
+    var diff=currentX-startX;
+    if(diff<0)sb.style.transform='translateX('+diff+'px)';
+  },{passive:true});
+  sb.addEventListener('touchend',function(){
+    if(!isDragging)return;
+    isDragging=false;sb.style.transition='';sb.style.transform='';
+    if(currentX-startX<-80)closeSidebar();
+    startX=0;currentX=0;
+  });
+})();
+
+function handleRoute(){
+  var hash = window.location.hash;
+  ['termsModal','privacyModal','blogModal','aboutModal','contactModal','settingsModal'].forEach(function(id){
+    if(hash !== '#' + id.replace('Modal','')) {
+      var m = document.getElementById(id);
+      if (m && m.classList.contains('active')) {
+        m.classList.remove('active');
+        m.setAttribute('aria-hidden', 'true');
+      }
+    }
+  });
+  if (hash === '#terms') { setTimeout(function() { openModal('termsModal'); }, 120); }
+  else if (hash === '#privacy-policy') { setTimeout(function() { openModal('privacyModal'); }, 120); }
+  else if (hash === '#blog') { setTimeout(function() { openModal('blogModal'); }, 120); }
+  else { document.body.style.overflow=''; }
+}
+
+['settingsModal','aboutModal','contactModal','privacyModal','termsModal','blogModal'].forEach(function(id){
+  var m=document.getElementById(id);
+  if(m){m.addEventListener('click',function(e){if(e.target===this)closeModal(id);});}
+});
+
+document.addEventListener('keydown',function(e){
+  if(e.key==='Escape'){
+    ['settingsModal','aboutModal','contactModal','privacyModal','termsModal','blogModal'].forEach(function(id){
+      closeModal(id);
+    });
+    closeToolsMenu();closeSidebar();
+  }
+});
+
+window.addEventListener('popstate',handleRoute);
+window.addEventListener('hashchange',handleRoute);
+
+function init(){
+  initPresetLinks();
+  handleRoute();
+}
+if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',init);
+else init();
+</script>
+</body>
+</html>
