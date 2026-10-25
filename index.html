@@ -551,26 +551,29 @@ html.dark-mode .sub-btn:hover { background: #475569; }
 .panel-view.exit-right { opacity: 0; transform: translateX(20px); visibility: hidden; }
 .sliding-container.hidden-content .panel-view { opacity: 0 !important; visibility: hidden !important; pointer-events: none !important; }
 
+/* ---------- UPDATED ENTRIES TEXTAREA (THIN BLACK BORDER, NO FOCUS RING) ---------- */
 #entriesTextarea {
   width: 100%; height: 100%;
   padding: 14px 14px 44px 14px;
-  border: 1px solid #d1d5db; border-radius: 8px;
+  border: 1px solid #000000; border-radius: 8px;
   background: #ffffff; color: #111827;
   font-family: inherit; font-size: 15px; line-height: 1.6;
   resize: none; outline: none;
   box-shadow: inset 0 1px 2px rgba(0,0,0,0.05);
-  transition: opacity 0.3s, border-color .15s, box-shadow .15s; box-sizing: border-box;
+  transition: opacity 0.3s, border-color .15s; box-sizing: border-box;
 }
-html.dark-mode #entriesTextarea { background:#0f172a; color:#f1f5f9; border-color:#334155; }
+html.dark-mode #entriesTextarea { background:#0f172a; color:#f1f5f9; border-color:#000000; }
 #entriesTextarea:focus,
 #entriesTextarea:focus-visible {
-  border-color:#2563eb;
-  box-shadow: inset 0 1px 2px rgba(0,0,0,0.05), 0 0 0 3px rgba(37,99,235,.18);
+  border-color:#000000;
+  box-shadow: inset 0 1px 2px rgba(0,0,0,0.05);
+  outline: none;
 }
 html.dark-mode #entriesTextarea:focus,
 html.dark-mode #entriesTextarea:focus-visible {
-  border-color:#60a5fa;
-  box-shadow: inset 0 1px 2px rgba(0,0,0,0.3), 0 0 0 3px rgba(96,165,250,.22);
+  border-color:#000000;
+  box-shadow: inset 0 1px 2px rgba(0,0,0,0.3);
+  outline: none;
 }
 #entriesTextarea[readonly] { opacity: .6; cursor: progress; }
 
@@ -579,13 +582,33 @@ html.dark-mode #entriesTextarea:focus-visible {
 .emoji-btn svg { width:20px; height:20px; color:#4b5563; }
 html.dark-mode .emoji-btn svg { color:#9ca3af; }
 
+/* ---------- UPDATED RESULTS BOX (SAME THIN BLACK BORDER, NO FOCUS RING) ---------- */
 .results-box {
   width: 100%; height: 100%;
-  border: 1px solid #d1d5db; border-radius: 8px;
+  border: 1px solid #000000; border-radius: 8px;
   background: #ffffff; padding: 16px;
   overflow-y: auto; box-sizing: border-box;
+  outline: none;
+  box-shadow: inset 0 1px 2px rgba(0,0,0,0.05);
+  transition: border-color .15s;
 }
-html.dark-mode .results-box { border-color: #334155; background: #0f172a; }
+html.dark-mode .results-box {
+  border-color: #000000;
+  background: #0f172a;
+  box-shadow: inset 0 1px 2px rgba(0,0,0,0.3);
+}
+.results-box:focus,
+.results-box:focus-visible {
+  border-color: #000000;
+  outline: none;
+  box-shadow: inset 0 1px 2px rgba(0,0,0,0.05);
+}
+html.dark-mode .results-box:focus,
+html.dark-mode .results-box:focus-visible {
+  border-color: #000000;
+  outline: none;
+  box-shadow: inset 0 1px 2px rgba(0,0,0,0.3);
+}
 .results-title { font-size: 15px; font-weight: 600; color: #374151; margin-top: 0; margin-bottom: 12px; }
 html.dark-mode .results-title { color: #e2e8f0; }
 .results-list { list-style: none; padding: 0; margin: 0; }
@@ -603,6 +626,9 @@ html.dark-mode .results-list li { color: #f1f5f9; border-bottom-color: #334155; 
   gap: 12px; margin-top: 12px; flex-wrap: wrap; padding-right: 8px;
 }
 
+/* ============================================================
+   WHEEL PREMIUM BG / STAGE
+   ============================================================ */
 .wheel-premium-bg {position: relative;display: flex;align-items: center;justify-content: center;width: 100%;aspect-ratio: 1/1;max-width: 520px;margin: 0 auto;border-radius: 50%;box-shadow: inset 0 0 0 1px rgba(0,0,0,0.02);}
 html.dark-mode .wheel-premium-bg {box-shadow: inset 0 0 0 1px rgba(255,255,255,0.03);}
 .wheel-premium-bg:fullscreen,
@@ -615,6 +641,114 @@ html.dark-mode .wheel-premium-bg::before {background: radial-gradient(circle, rg
   0% { transform: translate(-50%, -50%) scale(1); opacity: 0.6; }
   100% { transform: translate(-50%, -50%) scale(1.08); opacity: 1; }
 }
+
+/* ============================================================
+   FULLSCREEN BRAND BAR
+   Shown ONLY in fullscreen. Brand pill background REMOVED —
+   only logo + text floating. Icons remain bare (no bg/border/shadow).
+   ============================================================ */
+.fullscreen-brand-bar {
+  display: none;
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  padding: 16px clamp(16px, 3vw, 32px);
+  z-index: 20;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  pointer-events: none;
+}
+.wheel-premium-bg:fullscreen .fullscreen-brand-bar,
+.wheel-premium-bg:-webkit-full-screen .fullscreen-brand-bar {
+  display: flex;
+}
+.fullscreen-brand-bar > * { pointer-events: auto; }
+
+/* ✅ BRAND — no background, no border, no shadow, no glass */
+.fs-brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: transparent;
+  padding: 0;
+  border: none;
+  box-shadow: none;
+  -webkit-backdrop-filter: none;
+  backdrop-filter: none;
+}
+.fs-brand-img {
+  width: 30px; height: 30px;
+  border-radius: 50%;
+  object-fit: cover;
+  flex-shrink: 0;
+  filter: drop-shadow(0 1px 3px rgba(0,0,0,0.25));
+}
+html.dark-mode .fs-brand-img {
+  filter: drop-shadow(0 1px 4px rgba(0,0,0,0.65));
+}
+.fs-brand-text {
+  font-size: 16px;
+  font-weight: 800;
+  letter-spacing: -0.5px;
+  color: #1a1a1a;
+  white-space: nowrap;
+  filter: drop-shadow(0 1px 2px rgba(255,255,255,0.5));
+}
+html.dark-mode .fs-brand-text {
+  color: #f1f5f9;
+  filter: drop-shadow(0 1px 3px rgba(0,0,0,0.7));
+}
+
+.fs-actions {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+/* ✅ ICONS WITHOUT BACKGROUND (bare, floating) */
+.fs-icon-btn {
+  background: transparent;
+  border: none;
+  color: #1a1a1a;
+  width: 44px; height: 44px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  padding: 0;
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+html.dark-mode .fs-icon-btn { color: #f1f5f9; }
+.fs-icon-btn:hover { transform: scale(1.1); opacity: 0.85; }
+.fs-icon-btn:active { transform: scale(0.95); }
+.fs-icon-btn svg {
+  width: 24px; height: 24px;
+  stroke: currentColor;
+  stroke-width: 2.2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  filter: drop-shadow(0 1px 2px rgba(0,0,0,0.18));
+}
+html.dark-mode .fs-icon-btn svg {
+  filter: drop-shadow(0 1px 3px rgba(0,0,0,0.6));
+}
+
+@media (max-width: 560px) {
+  .fullscreen-brand-bar { padding: 10px 12px; gap: 8px; }
+  .fs-brand { gap: 8px; }
+  .fs-brand-img { width: 24px; height: 24px; }
+  .fs-brand-text { font-size: 14px; letter-spacing: -0.3px; }
+  .fs-icon-btn { width: 40px; height: 40px; }
+  .fs-icon-btn svg { width: 22px; height: 22px; }
+  .fs-actions { gap: 6px; }
+}
+@media (max-width: 400px) {
+  .fs-brand-text { font-size: 13px; }
+  .fs-icon-btn { width: 36px; height: 36px; }
+  .fs-icon-btn svg { width: 20px; height: 20px; }
+}
+
 .wheel-stage{position:relative;display:block;width:100%;max-width:440px;margin:0 auto;aspect-ratio:1/1;min-width:0;z-index:1;}
 .wheel-svg{width:100%;height:100%;display:block;overflow:visible}
 .wheel-svg .wheel-segment{stroke:none}
@@ -894,6 +1028,7 @@ html.dark-mode .footer-link-item svg { color: #9ca3af; }
 <symbol id="i-speaker-wave" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 5L6 9H2v6h4l5 4V5z"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14"/></symbol>
 <symbol id="i-speaker-mute-wave" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 5L6 9H2v6h4l5 4V5z"/><line x1="22" y1="9" x2="16" y2="15"/><line x1="16" y1="9" x2="22" y2="15"/></symbol>
 <symbol id="i-maximize" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 3 21 3 21 9"></polyline><polyline points="9 21 3 21 3 15"></polyline><line x1="21" y1="3" x2="14" y2="10"></line><line x1="3" y1="21" x2="10" y2="14"></line></symbol>
+<symbol id="i-minimize" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="4 14 10 14 10 20"></polyline><polyline points="20 10 14 10 14 4"></polyline><line x1="14" y1="10" x2="21" y2="3"></line><line x1="3" y1="21" x2="10" y2="14"></line></symbol>
 
 <symbol id="i-pencil" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 3a2.828 2.828 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5L17 3z"/></symbol>
 <symbol id="i-clipboard" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="8" y="2" width="8" height="4" rx="1" ry="1"/><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/><path d="m9 14 2 2 4-4"/></symbol>
@@ -923,7 +1058,6 @@ html.dark-mode .footer-link-item svg { color: #9ca3af; }
 <header class="site-header">
   <div class="header-container">
     <a href="/" class="nav-logo" title="Spin The Wheelly — Home">
-      <!-- ADDED LOGO IMAGE HERE -->
       <img src="/apple-touch-icon.png" alt="Spin The Wheelly Logo" class="nav-logo-img">
       <span class="nav-logo-text">Spin The Wheelly</span>
     </a>
@@ -1013,6 +1147,22 @@ html.dark-mode .footer-link-item svg { color: #9ca3af; }
           </div>
           
           <div class="wheel-premium-bg" id="wheelPremiumBg">
+            <!-- FULLSCREEN-ONLY BAR: brand (no bg) + sound + exit (no bg) -->
+            <div class="fullscreen-brand-bar" id="fullscreenBrandBar" aria-hidden="true">
+              <div class="fs-brand">
+                <img src="/apple-touch-icon.png" alt="Spin The Wheelly Logo" class="fs-brand-img">
+                <span class="fs-brand-text">Spin The Wheelly</span>
+              </div>
+              <div class="fs-actions">
+                <button type="button" class="fs-icon-btn" onclick="cycleSoundVolume()" title="Change Volume" aria-label="Change Volume">
+                  <svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-speaker-wave" id="fsSoundIconUse"/></svg>
+                </button>
+                <button type="button" class="fs-icon-btn" onclick="toggleFullscreenWheel()" title="Exit Fullscreen" aria-label="Exit Fullscreen">
+                  <svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-minimize"/></svg>
+                </button>
+              </div>
+            </div>
+
             <div class="wheel-stage" id="wheelStage">
               <svg class="wheel-svg" id="wheelSvg" viewBox="-110 -110 220 220" role="img" aria-label="Spin wheel with choices">
                 <g id="wheelGroup"></g>
@@ -1392,7 +1542,6 @@ Soup</textarea>
         </button>
       </div>
       <div class="winner-footer">
-        <!-- ADDED LOGO IMAGE HERE -->
         <img src="/apple-touch-icon.png" alt="Spin The Wheelly Logo" style="width: 30px; height: 30px; border-radius: 50%; object-fit: cover; flex-shrink: 0;">
         <span>Spin The Wheelly</span>
       </div>
@@ -1945,8 +2094,9 @@ function clearResults(){
    ============================================================ */
 function updateSoundIcon(){
   var useEl=document.getElementById('soundIconUse');
-  if(!useEl)return;
-  useEl.setAttribute('href',currentVolumeLevel===0?'#i-speaker-mute-wave':'#i-speaker-wave');
+  if(useEl)useEl.setAttribute('href',currentVolumeLevel===0?'#i-speaker-mute-wave':'#i-speaker-wave');
+  var fsEl=document.getElementById('fsSoundIconUse');
+  if(fsEl)fsEl.setAttribute('href',currentVolumeLevel===0?'#i-speaker-mute-wave':'#i-speaker-wave');
 }
 function cycleSoundVolume(){
   currentVolumeLevel=(currentVolumeLevel+1)%3;
