@@ -136,7 +136,7 @@ a:focus-visible,button:focus-visible,input:focus-visible,[tabindex]:focus-visibl
 .icon{display:inline-block;vertical-align:middle;flex-shrink:0}
 
 /* ============================================================
-   HEADER / NAVBAR — TEXT ONLY LOGO
+   HEADER / NAVBAR
    ============================================================ */
 .site-header {
   background: #ffffff;
@@ -201,6 +201,7 @@ html.dark-mode .nav-logo-text { color: #ffffff; }
   cursor: pointer;
   transition: background 0.2s;
   white-space: nowrap;
+  text-decoration: none;
 }
 html.dark-mode .nav-btn { color: #d1d5db; }
 .nav-btn:hover { background: #f3f4f6; }
@@ -328,6 +329,7 @@ html.dark-mode .mobile-sidebar { box-shadow: 12px 0 40px rgba(0,0,0,0.6); }
   font-family: inherit; font-size: 15px; font-weight: 600;
   color: #374151; cursor: pointer; text-align: left;
   transition: background 0.2s; margin-bottom: 2px;
+  text-decoration: none;
 }
 .sidebar-item:hover, .sidebar-item:active { background: #f3f4f6; }
 html.dark-mode .sidebar-item { color: #d1d5db; }
@@ -644,9 +646,6 @@ html.dark-mode .spin-button{background:#0a0a0a;color:#fff;box-shadow:0 2px 10px 
 .seo-block a{color: var(--footer-link-color);text-decoration:underline;text-underline-offset:3px;font-weight:600;}
 .seo-block a:hover{opacity:0.8}
 
-/* ============================================================
-   SIDE-BY-SIDE SEO ROW — 3 EQUAL COLUMNS FITTING SCREEN
-   ============================================================ */
 .seo-row{
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -669,21 +668,12 @@ html.dark-mode .spin-button{background:#0a0a0a;color:#fff;box-shadow:0 2px 10px 
   gap: 8px;
   margin-bottom: 10px;
 }
-.seo-row .seo-block .seo-h2-icon{
-  width: 24px;
-  height: 24px;
-}
+.seo-row .seo-block .seo-h2-icon{width: 24px; height: 24px;}
 .seo-row .seo-block p,
-.seo-row .seo-block li{
-  font-size: 13.5px;
-  line-height: 1.6;
-}
+.seo-row .seo-block li{font-size: 13.5px; line-height: 1.6;}
 .seo-row .seo-block p{margin-bottom: 10px;}
 .seo-row .seo-block ul,
-.seo-row .seo-block ol{
-  font-size: 13.5px;
-  margin: 6px 0 10px 18px;
-}
+.seo-row .seo-block ol{font-size: 13.5px; margin: 6px 0 10px 18px;}
 .seo-row .seo-block li{margin-bottom: 5px;}
 
 .seo-row .seo-block .faq-q{ font-size: 13px; }
@@ -771,7 +761,7 @@ html.dark-mode .content-divider::after{
 html.dark-mode .white-bottom-bg { background-color: #0f172a; }
 
 /* ============================================================
-   FOOTER — no dotted border line
+   FOOTER
    ============================================================ */
 .site-footer {
   background: transparent;
@@ -836,7 +826,6 @@ html.dark-mode .footer-link-item svg { color: #9ca3af; }
 
 <svg xmlns="http://www.w3.org/2000/svg" style="position:absolute;width:0;height:0;overflow:hidden" aria-hidden="true">
 <defs>
-<symbol id="i-x" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></symbol>
 <symbol id="i-share-2" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" x2="15.42" y1="13.51" y2="17.49"/><line x1="15.41" x2="8.59" y1="6.51" y2="10.49"/></symbol>
 <symbol id="i-speaker" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m3 11 18-5v12L3 14v-3z"/><path d="M11.6 16.8a3 3 0 1 1-5.8-1.6"/></symbol>
 <symbol id="i-speaker-mute" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m3 11 18-5v12L3 14v-3z"/><path d="M11.6 16.8a3 3 0 1 1-5.8-1.6"/><line x1="22" y1="9" x2="16" y2="15"/><line x1="16" y1="9" x2="22" y2="15"/></symbol>
@@ -857,7 +846,6 @@ html.dark-mode .footer-link-item svg { color: #9ca3af; }
 <symbol id="i-scale" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m16 16 3-8 3 8c-.87.65-1.92 1-3 1s-2.13-.35-3-1Z"/><path d="m2 16 3-8 3 8c-.87.65-1.92 1-3 1s-2.13-.35-3-1Z"/><path d="M7 21h10"/><path d="M12 3v18"/><path d="M3 7h2c2 0 5-1 7-2 2 1 5 2 7 2h2"/></symbol>
 <symbol id="i-help" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></symbol>
 <symbol id="i-lock" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="11" x="3" y="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></symbol>
-<symbol id="i-megaphone" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m3 11 18-5v12L3 14v-3z"/><path d="M11.6 16.8a3 3 0 1 1-5.8-1.6"/></symbol>
 <symbol id="i-pie" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21.21 15.89A10 10 0 1 1 8 2.83"/><path d="M22 12A10 10 0 0 0 12 2v10z"/></symbol>
 <symbol id="i-folder" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"/></symbol>
 <symbol id="i-tool" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></symbol>
@@ -877,7 +865,7 @@ html.dark-mode .footer-link-item svg { color: #9ca3af; }
 <!-- HEADER / NAVBAR -->
 <header class="site-header">
   <div class="header-container">
-    <a href="/" class="nav-logo" onclick="resetWheel(); return false;" title="Spin The Wheelly — Home">
+    <a href="/" class="nav-logo" title="Spin The Wheelly — Home">
       <span class="nav-logo-text">Spin The Wheelly</span>
     </a>
 
@@ -904,34 +892,34 @@ html.dark-mode .footer-link-item svg { color: #9ca3af; }
           <span class="nav-text">Tools</span>
         </button>
         <div class="tools-menu" id="toolsMenu" role="menu">
-          <button type="button" class="tools-menu-item" role="menuitem" onclick="openWheelPreset('name')">
+          <a href="/random-name-picker" class="tools-menu-item" role="menuitem">
             <svg aria-hidden="true"><use href="#i-pencil"/></svg>
             <span class="tools-item-content">
               <span class="tools-item-title">Random Name Picker</span>
               <span class="tools-item-url">/random-name-picker</span>
             </span>
-          </button>
-          <button type="button" class="tools-menu-item" role="menuitem" onclick="openWheelPreset('yesno')">
+          </a>
+          <a href="/yes-no-wheel" class="tools-menu-item" role="menuitem">
             <svg aria-hidden="true"><use href="#i-help"/></svg>
             <span class="tools-item-content">
               <span class="tools-item-title">Yes / No Wheel</span>
               <span class="tools-item-url">/yes-no-wheel</span>
             </span>
-          </button>
-          <button type="button" class="tools-menu-item" role="menuitem" onclick="openWheelPreset('team')">
+          </a>
+          <a href="/random-team-generator" class="tools-menu-item" role="menuitem">
             <svg aria-hidden="true"><use href="#i-folder"/></svg>
             <span class="tools-item-content">
               <span class="tools-item-title">Random Team Generator</span>
               <span class="tools-item-url">/random-team-generator</span>
             </span>
-          </button>
-          <button type="button" class="tools-menu-item" role="menuitem" onclick="openWheelPreset('eat')">
+          </a>
+          <a href="/what-to-eat" class="tools-menu-item" role="menuitem">
             <svg aria-hidden="true"><use href="#i-smile"/></svg>
             <span class="tools-item-content">
               <span class="tools-item-title">What to Eat</span>
               <span class="tools-item-url">/what-to-eat</span>
             </span>
-          </button>
+          </a>
         </div>
       </div>
       <button type="button" class="nav-btn hamburger-btn" id="hamburgerBtn" onclick="openSidebar()" aria-label="Open menu" aria-expanded="false" aria-controls="mobileSidebar">
@@ -1058,17 +1046,17 @@ Soup</textarea>
 <div class="white-bottom-bg">
   <section class="seo-content" aria-label="About the spin the wheel tool">
 
-    <!-- ===== ROW 1: 3 BOXES SIDE BY SIDE ===== -->
+    <!-- ROW 1: 3 BOXES -->
     <div class="seo-row">
 
       <div class="seo-block" id="popularTools">
         <h2><svg class="seo-h2-icon" aria-hidden="true"><use href="#i-wheel-color"/></svg>Explore Popular Wheel Tools</h2>
-        <p>Jump straight to one of our most-used wheels — each has its own dedicated URL:</p>
+        <p>Jump straight to one of our most-used wheels — each has its own dedicated page:</p>
         <ul>
-          <li><a id="seoLinkName" href="/random-name-picker" onclick="loadWheelPreset('name'); return false;">Random Name Picker</a> — pick a random student, winner, or team member.</li>
-          <li><a id="seoLinkYesNo" href="/yes-no-wheel" onclick="loadWheelPreset('yesno'); return false;">Yes / No Wheel</a> — a quick yes-or-no decider.</li>
-          <li><a id="seoLinkTeam" href="/random-team-generator" onclick="loadWheelPreset('team'); return false;">Random Team Generator</a> — split people into fair teams.</li>
-          <li><a id="seoLinkEat" href="/what-to-eat" onclick="loadWheelPreset('eat'); return false;">What to Eat</a> — decide your next meal in one spin.</li>
+          <li><a href="/random-name-picker">Random Name Picker</a> — pick a random student, winner, or team member.</li>
+          <li><a href="/yes-no-wheel">Yes / No Wheel</a> — a quick yes-or-no decider.</li>
+          <li><a href="/random-team-generator">Random Team Generator</a> — split people into fair teams.</li>
+          <li><a href="/what-to-eat">What to Eat</a> — decide your next meal in one spin.</li>
         </ul>
       </div>
 
@@ -1101,9 +1089,8 @@ Soup</textarea>
       </div>
 
     </div>
-    <!-- ===== END ROW 1 ===== -->
 
-    <!-- ===== ROW 2: 4 BOXES (3 + 1 full-width) ===== -->
+    <!-- ROW 2: 4 BOXES (3 + 1 full-width) -->
     <div class="seo-row">
 
       <div class="seo-block">
@@ -1163,9 +1150,8 @@ Soup</textarea>
       </div>
 
     </div>
-    <!-- ===== END ROW 2 ===== -->
 
-    <!-- ===== ROW 3: 4 BOXES (3 + 1 full-width) ===== -->
+    <!-- ROW 3: 4 BOXES (3 + 1 full-width) -->
     <div class="seo-row">
 
       <div class="seo-block">
@@ -1241,9 +1227,8 @@ Soup</textarea>
       </div>
 
     </div>
-    <!-- ===== END ROW 3 ===== -->
 
-    <!-- ===== ROW 4: 3 BOXES SIDE BY SIDE ===== -->
+    <!-- ROW 4: 3 BOXES -->
     <div class="seo-row">
 
       <div class="seo-block">
@@ -1286,39 +1271,38 @@ Soup</textarea>
       </div>
 
     </div>
-    <!-- ===== END ROW 4 ===== -->
 
   </section>
 
-  <!-- FOOTER — no dotted border line -->
+  <!-- FOOTER -->
   <footer class="site-footer">
     <div class="footer-divider" aria-hidden="true"></div>
     <div class="footer-grid">
-      <a id="linkName" href="/random-name-picker" target="_blank" rel="noopener noreferrer" class="footer-link-item" title="Random Name Picker">
+      <a href="/random-name-picker" class="footer-link-item" title="Random Name Picker">
         <svg aria-hidden="true"><use href="#i-pencil"/></svg>
         <span>Random Name Picker</span>
       </a>
-      <a id="linkYesNo" href="/yes-no-wheel" target="_blank" rel="noopener noreferrer" class="footer-link-item" title="Yes / No Wheel">
+      <a href="/yes-no-wheel" class="footer-link-item" title="Yes / No Wheel">
         <svg aria-hidden="true"><use href="#i-help"/></svg>
         <span>Yes / No Wheel</span>
       </a>
-      <a id="linkTeam" href="/random-team-generator" target="_blank" rel="noopener noreferrer" class="footer-link-item" title="Random Team Generator">
+      <a href="/random-team-generator" class="footer-link-item" title="Random Team Generator">
         <svg aria-hidden="true"><use href="#i-folder"/></svg>
         <span>Random Team Generator</span>
       </a>
-      <a id="linkEat" href="/what-to-eat" target="_blank" rel="noopener noreferrer" class="footer-link-item" title="What to Eat">
+      <a href="/what-to-eat" class="footer-link-item" title="What to Eat">
         <svg aria-hidden="true"><use href="#i-smile"/></svg>
         <span>What to Eat</span>
       </a>
-      <a href="#terms" target="_blank" rel="noopener noreferrer" class="footer-link-item" title="Terms & Conditions (opens in new tab)">
+      <a href="/terms" class="footer-link-item" title="Terms & Conditions">
         <svg aria-hidden="true"><use href="#i-scale"/></svg>
         <span>Terms &amp; conditions</span>
       </a>
-      <a href="#privacy-policy" target="_blank" rel="noopener noreferrer" class="footer-link-item" title="Privacy Policy (opens in new tab)">
+      <a href="/privacy-policy" class="footer-link-item" title="Privacy Policy">
         <svg aria-hidden="true"><use href="#i-lock"/></svg>
         <span>Privacy_policy</span>
       </a>
-      <a href="/about-us" class="footer-link-item" title="About Us" onclick="openAboutPage(event); return false;">
+      <a href="/about-us" class="footer-link-item" title="About Us">
         <svg aria-hidden="true"><use href="#i-info"/></svg>
         <span>About Us</span>
       </a>
@@ -1423,6 +1407,7 @@ Soup</textarea>
     </div>
     <div class="modal-actions">
       <button type="button" class="btn btn-primary" onclick="closeModal('aboutModal')">Close</button>
+      <a href="/about-us" class="btn btn-outline" style="text-decoration:none;text-align:center;">Open About Page</a>
     </div>
   </div>
 </div>
@@ -1445,7 +1430,7 @@ Soup</textarea>
   </div>
 </div>
 
-<!-- Privacy Modal -->
+<!-- Privacy Modal (short) -->
 <div class="modal-overlay" id="privacyModal" role="dialog" aria-modal="true" aria-label="Privacy Policy" aria-hidden="true">
   <div class="modal-box modal-wide">
     <h3>Privacy Policy</h3>
@@ -1468,6 +1453,7 @@ Soup</textarea>
       <p>We may update this Privacy Policy from time to time.</p>
       <h4>8. Contact Us</h4>
       <p>If you have any questions about this Privacy Policy, please reach out via our <a href="mailto:hello@spinthewheelly.com">hello@spinthewheelly.com</a>.</p>
+      <p><a href="/privacy-policy">Read the full privacy policy →</a></p>
     </div>
     <div class="modal-actions">
       <button type="button" class="btn btn-primary" onclick="closeModal('privacyModal')">Close</button>
@@ -1475,7 +1461,7 @@ Soup</textarea>
   </div>
 </div>
 
-<!-- Terms & Conditions Modal -->
+<!-- Terms Modal (short) -->
 <div class="modal-overlay" id="termsModal" role="dialog" aria-modal="true" aria-label="Terms and Conditions" aria-hidden="true">
   <div class="modal-box modal-wide">
     <h3>Terms &amp; Conditions</h3>
@@ -1485,23 +1471,14 @@ Soup</textarea>
       <h4>1. Free to Use</h4>
       <p>Spin The Wheelly is 100% free. No signup, no payment, no hidden fees — ever.</p>
       <h4>2. Fair Use</h4>
-      <p>You may use the wheel for personal, educational, or commercial purposes. You agree <strong>not</strong> to:</p>
-      <ul>
-        <li>Attempt to break, overload, or abuse the service</li>
-        <li>Use the service for illegal or harmful activities</li>
-        <li>Copy or redistribute the site's code as your own</li>
-      </ul>
+      <p>You may use the wheel for personal, educational, or commercial purposes. You agree <strong>not</strong> to attempt to break, overload, or abuse the service.</p>
       <h4>3. No Warranty</h4>
-      <p>The service is provided "as is" without warranty of any kind. We do our best to keep it working, but we cannot guarantee it will always be available or error-free.</p>
+      <p>The service is provided "as is" without warranty of any kind.</p>
       <h4>4. Randomness</h4>
-      <p>All spins use cryptographically secure random number generation in your browser. Results are fair and unbiased. The winner selection is final for each spin.</p>
-      <h4>5. Your Responsibility</h4>
-      <p>You are responsible for any decisions you make based on the wheel's results. Use it responsibly.</p>
-      <h4>6. Changes</h4>
-      <p>We may update these terms occasionally. Continued use of the site means you accept the current terms.</p>
-      <h4>7. Contact</h4>
+      <p>All spins use cryptographically secure random number generation in your browser. Results are fair and unbiased.</p>
+      <h4>5. Contact</h4>
       <p>Questions? Email us at <a href="mailto:hello@spinthewheelly.com">hello@spinthewheelly.com</a>.</p>
-      <p>Thanks for using Spin The Wheelly! 🎡</p>
+      <p><a href="/terms">Read the full terms →</a></p>
     </div>
     <div class="modal-actions">
       <button type="button" class="btn btn-primary" onclick="closeModal('termsModal')">Close</button>
@@ -1509,26 +1486,20 @@ Soup</textarea>
   </div>
 </div>
 
-<!-- Blog Modal (kept but no footer link) -->
+<!-- Blog Modal -->
 <div class="modal-overlay" id="blogModal" role="dialog" aria-modal="true" aria-label="Blog" aria-hidden="true">
   <div class="modal-box modal-wide">
     <h3>Spin The Wheelly Blog</h3>
     <div class="modal-content-body">
       <p>Welcome to the <strong>Spin The Wheelly Blog</strong>! Here we share tips, ideas, and fun ways to use spin wheels for random decisions.</p>
       <h4>📝 Coming Soon</h4>
-      <p>We're working on some great articles for you:</p>
       <ul>
-        <li><strong>10 Fun Ways to Use a Spin Wheel</strong> — from classroom games to party giveaways</li>
-        <li><strong>How Randomness Works</strong> — a friendly look at the math behind fair decisions</li>
-        <li><strong>Classroom Ideas for Teachers</strong> — using spin wheels to make learning fun</li>
-        <li><strong>Party Games That Never Get Old</strong> — spin-to-win games for any event</li>
-        <li><strong>Decision-Making Made Easy</strong> — why random choices often work best</li>
+        <li><strong>10 Fun Ways to Use a Spin Wheel</strong></li>
+        <li><strong>How Randomness Works</strong></li>
+        <li><strong>Classroom Ideas for Teachers</strong></li>
+        <li><strong>Party Games That Never Get Old</strong></li>
       </ul>
-      <h4>✍️ Want to Contribute?</h4>
-      <p>Have a great idea for a spin wheel story or tutorial? We'd love to hear it! Email us at <a href="mailto:hello@spinthewheelly.com">hello@spinthewheelly.com</a>.</p>
-      <h4>📬 Stay Tuned</h4>
-      <p>Follow us on social media for new posts, tips, and updates. New content is coming soon!</p>
-      <p>Thanks for visiting Spin The Wheelly 🎡</p>
+      <p>Have a great idea for a spin wheel story? Email us at <a href="mailto:hello@spinthewheelly.com">hello@spinthewheelly.com</a>.</p>
     </div>
     <div class="modal-actions">
       <button type="button" class="btn btn-primary" onclick="closeModal('blogModal')">Close</button>
@@ -1566,34 +1537,34 @@ Soup</textarea>
     </button>
 
     <div class="sidebar-tools-sub" id="sidebarToolsSub">
-      <button type="button" class="sidebar-sub-item" onclick="openWheelPreset('name')">
+      <a href="/random-name-picker" class="sidebar-sub-item">
         <svg aria-hidden="true"><use href="#i-pencil"/></svg>
         <span class="item-content">
           <span class="item-title">Random Name Picker</span>
           <span class="item-url">/random-name-picker</span>
         </span>
-      </button>
-      <button type="button" class="sidebar-sub-item" onclick="openWheelPreset('yesno')">
+      </a>
+      <a href="/yes-no-wheel" class="sidebar-sub-item">
         <svg aria-hidden="true"><use href="#i-help"/></svg>
         <span class="item-content">
           <span class="item-title">Yes / No Wheel</span>
           <span class="item-url">/yes-no-wheel</span>
         </span>
-      </button>
-      <button type="button" class="sidebar-sub-item" onclick="openWheelPreset('team')">
+      </a>
+      <a href="/random-team-generator" class="sidebar-sub-item">
         <svg aria-hidden="true"><use href="#i-folder"/></svg>
         <span class="item-content">
           <span class="item-title">Random Team Generator</span>
           <span class="item-url">/random-team-generator</span>
         </span>
-      </button>
-      <button type="button" class="sidebar-sub-item" onclick="openWheelPreset('eat')">
+      </a>
+      <a href="/what-to-eat" class="sidebar-sub-item">
         <svg aria-hidden="true"><use href="#i-smile"/></svg>
         <span class="item-content">
           <span class="item-title">What to Eat</span>
           <span class="item-url">/what-to-eat</span>
         </span>
-      </button>
+      </a>
     </div>
 
   </div>
@@ -1624,156 +1595,68 @@ function showToast(msg,dur){
   announce(msg);
 }
 
-var WHEEL_PRESETS = {
-  name:  { label: 'Random Name Picker',    slug: 'random-name-picker',    entries: ['Alice','Bob','Charlie','Diana','Ethan','Fiona','George','Hannah','Ivan','Julia'] },
-  yesno: { label: 'Yes / No Wheel',        slug: 'yes-no-wheel',          entries: ['Yes','No'] },
-  team:  { label: 'Random Team Generator', slug: 'random-team-generator', entries: ['Team A','Team B','Team C','Team D','Team E','Team F'] },
-  eat:   { label: 'What to Eat',           slug: 'what-to-eat',           entries: ['Pizza','Burger','Sushi','Tacos','Pasta','Salad','Curry','Ramen','Steak','Fish','Chicken','Soup'] }
-};
+/* ============================================================
+   SHARE
+   ============================================================ */
+function shareApp(){
+  var text='Check out Spin The Wheelly — a free spin the wheel app for fair random decisions!\n\nhttps://spinthewheelly.com/';
+  if(navigator.share){
+    navigator.share({title:'Spin The Wheelly',text:text,url:'https://spinthewheelly.com/'}).catch(function(){});
+  }else{ openShareModal(text); }
+}
 
-var PRESET_SLUGS = [];
-for (var _k in WHEEL_PRESETS) PRESET_SLUGS.push(WHEEL_PRESETS[_k].slug);
-
-var ABOUT_SLUG = 'about-us';
-var ABOUT_URL_RE = /\/about-us\/?$/;
-
-function getBaseUrl(){
-  var origin = window.location.origin;
-  if (!origin || origin === 'null' || origin.indexOf('file:') === 0) origin = '';
-  var p = window.location.pathname || '/';
-  for (var i = 0; i < PRESET_SLUGS.length; i++) {
-    var re = new RegExp('/' + PRESET_SLUGS[i] + '/?$');
-    if (re.test(p)) { p = p.replace(re, '/'); break; }
+/* ============================================================
+   MODALS
+   ============================================================ */
+function openModal(id){
+  var m=document.getElementById(id);
+  if(!m)return;
+  m.classList.add('active');
+  m.setAttribute('aria-hidden','false');
+  document.body.style.overflow='hidden';
+}
+function closeModal(id){
+  var m=document.getElementById(id);
+  if(!m)return;
+  m.classList.remove('active');
+  m.setAttribute('aria-hidden','true');
+  var hashMap = { 'termsModal': '#terms', 'privacyModal': '#privacy-policy', 'blogModal': '#blog' };
+  if (hashMap[id] === window.location.hash) {
+    if (history.replaceState) { history.replaceState(null, '', window.location.pathname + window.location.search); }
   }
-  // Strip the /about-us sub-page so preset links work correctly from there
-  if (ABOUT_URL_RE.test(p)) { p = p.replace(ABOUT_URL_RE, '/'); }
-  p = p.replace(/[^/]*\.html?$/i, '');
-  if (p.charAt(p.length - 1) !== '/') p += '/';
-  return origin + p;
+  var anyActive = document.querySelector('.modal-overlay.active');
+  if(!anyActive) document.body.style.overflow='';
 }
-
-function presetUrl(type){ return getBaseUrl() + WHEEL_PRESETS[type].slug; }
-function aboutUsUrl(){ return getBaseUrl() + ABOUT_SLUG; }
-
-function detectPresetFromPath(){
-  var p = window.location.pathname || '/';
-  for (var type in WHEEL_PRESETS) {
-    var re = new RegExp('/' + WHEEL_PRESETS[type].slug + '/?$');
-    if (re.test(p)) return type;
-  }
-  return null;
+function openSettingsModal(){
+  var m=document.getElementById('settingsModal');
+  if(!m)return;
+  document.getElementById('autoRemoveWinner').checked=autoRemoveWinner;
+  document.getElementById('soundEnabled').checked=soundEnabled;
+  document.getElementById('wheelSpeed').value=wheelSpeed;
+  m.classList.add('active');
+  m.setAttribute('aria-hidden','false');
+  document.body.style.overflow='hidden';
 }
-
-function isAboutUsPath(){
-  return ABOUT_URL_RE.test(window.location.pathname || '/');
-}
-
-function openWheelPreset(type){
-  var preset = WHEEL_PRESETS[type];
-  if (!preset) return;
-  closeToolsMenu();
-  closeSidebar();
-  var url = presetUrl(type);
-  var w = window.open(url, '_blank', 'noopener');
-  if (!w) { loadWheelPreset(type); }
-}
-
-/* Open the /about-us sub-page (SPA-style) and show the About modal */
-function openAboutPage(e){
-  if (e && e.preventDefault) e.preventDefault();
-  openModal('aboutModal');
-  if (!isAboutUsPath()) {
-    if (history.pushState) history.pushState(null, '', aboutUsUrl());
+function closeSettingsModal(){
+  var m=document.getElementById('settingsModal');
+  if(!m)return;
+  autoRemoveWinner=document.getElementById('autoRemoveWinner').checked;
+  var newSound=document.getElementById('soundEnabled').checked;
+  if(!newSound){currentVolumeLevel=0;}
+  else if(currentVolumeLevel===0){currentVolumeLevel=2;}
+  soundEnabled=currentVolumeLevel>0;
+  updateSoundIcon();
+  wheelSpeed=document.getElementById('wheelSpeed').value;
+  m.classList.remove('active');
+  m.setAttribute('aria-hidden','true');
+  if(!document.getElementById('winnerOverlay').classList.contains('show')&&!document.getElementById('shareModal').classList.contains('active')){
+    document.body.style.overflow='';
   }
 }
 
-function loadWheelPreset(type, skipUrl) {
-  var preset = WHEEL_PRESETS[type];
-  if (!preset) return;
-  stopIdleSpin();
-  isSpinning = false;
-  closeWinnerPopup();
-  closeSidebar();
-  closeToolsMenu();
-  participantImages = {};
-  winnerHistory = [];
-  currentWinnerName = '';
-  currentWinnerIndex = -1;
-  currentRotation = 0;
-  var ta = document.getElementById('entriesTextarea');
-  if (ta) ta.value = preset.entries.join('\n');
-  document.title = preset.label + ' — Spin The Wheelly';
-  var bannerTitle = document.getElementById('bannerTitle');
-  if (bannerTitle) bannerTitle.textContent = preset.label;
-  updateEntries();
-  renderResultsList();
-  switchPanel('edit');
-  var btn = document.getElementById('spinBtn');
-  if (btn) { btn.textContent = 'SPIN'; btn.removeAttribute('aria-busy'); }
-  if (!skipUrl) {
-    var url = presetUrl(type);
-    if (history.pushState) history.pushState(null, '', url);
-    else window.location.hash = '#' + preset.slug;
-  }
-  var wheelEl = document.getElementById('wheelPremiumBg');
-  if (wheelEl && window.innerWidth <= 900) {
-    wheelEl.scrollIntoView({ behavior: 'smooth', block: 'center' });
-  }
-  if (!skipUrl) showToast(preset.label + ' loaded!');
-}
-
-function syncRouteModals(isAbout, hash){
-  function hideIfOpen(id){
-    var m = document.getElementById(id);
-    if (m && m.classList.contains('active')) {
-      m.classList.remove('active');
-      m.setAttribute('aria-hidden', 'true');
-    }
-  }
-  if (!isAbout) hideIfOpen('aboutModal');
-  if (hash !== '#terms') hideIfOpen('termsModal');
-  if (hash !== '#privacy-policy') hideIfOpen('privacyModal');
-  if (hash !== '#blog') hideIfOpen('blogModal');
-}
-
-function handleRoute() {
-  var pathType = detectPresetFromPath();
-  if (pathType) { loadWheelPreset(pathType, true); return; }
-
-  var isAbout = isAboutUsPath();
-  var hash = window.location.hash;
-
-  syncRouteModals(isAbout, hash);
-
-  if (isAbout) {
-    setTimeout(function() { openModal('aboutModal'); }, 120);
-    return;
-  }
-
-  if (!hash) {
-    document.body.style.overflow = '';
-    return;
-  }
-
-  var hashType = null;
-  for (var k in WHEEL_PRESETS) {
-    if (hash === '#' + WHEEL_PRESETS[k].slug) { hashType = k; break; }
-  }
-  if (hashType) { loadWheelPreset(hashType, true); return; }
-  if (hash === '#terms') { setTimeout(function() { openModal('termsModal'); }, 120); }
-  else if (hash === '#privacy-policy') { setTimeout(function() { openModal('privacyModal'); }, 120); }
-  else if (hash === '#blog') { setTimeout(function() { openModal('blogModal'); }, 120); }
-}
-
-function initPresetLinks(){
-  var base = getBaseUrl();
-  var map = { name:['linkName','seoLinkName'], yesno:['linkYesNo','seoLinkYesNo'], team:['linkTeam','seoLinkTeam'], eat:['linkEat','seoLinkEat'] };
-  Object.keys(map).forEach(function(t){
-    var url = base + WHEEL_PRESETS[t].slug;
-    map[t].forEach(function(id){ var el = document.getElementById(id); if (el) el.href = url; });
-  });
-}
-
+/* ============================================================
+   TOOLS MENU / SIDEBAR
+   ============================================================ */
 function toggleToolsMenu(e){
   if(e)e.stopPropagation();
   var menu=document.getElementById('toolsMenu');
@@ -1821,7 +1704,6 @@ function closeSidebar(){
   var anyModalOpen=document.querySelector('.modal-overlay.active');
   if(!winnerOpen&&!anyModalOpen)document.body.style.overflow='';
 }
-
 function toggleSidebarTools(e) {
   if (e) e.stopPropagation();
   var btn = document.getElementById('sidebarToolsBtn');
@@ -1855,6 +1737,35 @@ function toggleSidebarTools(e) {
   });
 })();
 
+/* ============================================================
+   WHEEL STATE
+   ============================================================ */
+var winnerHistory=[];
+var currentTab='edit';
+var isPanelVisible=true;
+var currentVolumeLevel=2;
+var soundEnabled=true;
+var SEGMENT_COLORS=[
+  {bg:'#E8A500',fg:'#1a1a1a'},
+  {bg:'#F5EBC8',fg:'#1a1a1a'},
+  {bg:'#1E4620',fg:'#ffffff'},
+  {bg:'#B5A642',fg:'#1a1a1a'}
+];
+var MAX_PARTICIPANTS=50;
+var participants=[];
+var participantImages={};
+var isSpinning=false;
+var currentRotation=0;
+var currentWinnerIndex=-1;
+var currentWinnerName='';
+var autoRemoveWinner=false;
+var wheelSpeed='normal';
+var idleActive=false;
+var idleRAF=0;
+var idleLastTime=0;
+var IDLE_SPEED=12;
+var pointerEl=null;
+
 function resetWheel(){
   var ta=document.getElementById('entriesTextarea');
   if(ta)ta.value='';
@@ -1863,34 +1774,19 @@ function resetWheel(){
   currentWinnerName='';
   currentWinnerIndex=-1;
   currentRotation=0;
-  var base = getBaseUrl();
-  if (history.pushState) history.pushState(null, '', base);
-  else window.location.hash = '';
   document.title = 'Spin The Wheelly — Spin the Wheel to Decide a Random Choice';
   var bt = document.getElementById('bannerTitle');
   if (bt) bt.textContent = 'Picker Wheel';
   updateEntries();
   renderResultsList();
   closeWinnerPopup();
-  closeModal('aboutModal');
-  closeModal('termsModal');
-  closeModal('privacyModal');
-  closeModal('blogModal');
   switchPanel('edit');
   showToast('New wheel started!');
 }
 
-function shareApp(){
-  var text='Check out Spin The Wheelly — a free spin the wheel app for fair random decisions!\n\nhttps://spinthewheelly.com/';
-  if(navigator.share){
-    navigator.share({title:'Spin The Wheelly',text:text,url:'https://spinthewheelly.com/'}).catch(function(){});
-  }else{ openShareModal(text); }
-}
-
-var winnerHistory=[];
-var currentTab='edit';
-var isPanelVisible=true;
-
+/* ============================================================
+   PANEL
+   ============================================================ */
 function switchPanel(tab){
   currentTab=tab;
   var entriesView=document.getElementById('entriesView');
@@ -1963,8 +1859,9 @@ function clearResults(){
   winnerHistory=[];renderResultsList();showToast("Results cleared.");
 }
 
-var currentVolumeLevel=2;
-var soundEnabled=true;
+/* ============================================================
+   SOUND
+   ============================================================ */
 function updateSoundIcon(){
   var useEl=document.getElementById('soundIconUse');
   if(!useEl)return;
@@ -1979,41 +1876,6 @@ function cycleSoundVolume(){
   if(soundCheckbox)soundCheckbox.checked=soundEnabled;
   var msgs=["Sound Muted","Sound Low","Sound High"];
   showToast(msgs[currentVolumeLevel]);
-}
-
-function openModal(id){
-  var m=document.getElementById(id);
-  if(!m)return;
-  m.classList.add('active');
-  m.setAttribute('aria-hidden','false');
-  document.body.style.overflow='hidden';
-}
-function closeModal(id){
-  var m=document.getElementById(id);
-  if(!m)return;
-  m.classList.remove('active');
-  m.setAttribute('aria-hidden','true');
-
-  // If we're on the /about-us sub-page and the About modal is being closed,
-  // return the URL to the base path.
-  if (id === 'aboutModal' && isAboutUsPath()) {
-    if (history.replaceState) { history.replaceState(null, '', getBaseUrl()); }
-  }
-
-  var hashMap = { 'termsModal': '#terms', 'privacyModal': '#privacy-policy', 'blogModal': '#blog' };
-  if (hashMap[id] === window.location.hash) {
-    if (history.replaceState) { history.replaceState(null, '', window.location.pathname + window.location.search); }
-  }
-  var otherActive=
-    (document.getElementById('winnerOverlay')&&document.getElementById('winnerOverlay').classList.contains('show'))||
-    (document.getElementById('shareModal')&&document.getElementById('shareModal').classList.contains('active'))||
-    (document.getElementById('settingsModal')&&document.getElementById('settingsModal').classList.contains('active'))||
-    (document.getElementById('aboutModal')&&document.getElementById('aboutModal').classList.contains('active'))||
-    (document.getElementById('contactModal')&&document.getElementById('contactModal').classList.contains('active'))||
-    (document.getElementById('privacyModal')&&document.getElementById('privacyModal').classList.contains('active'))||
-    (document.getElementById('termsModal')&&document.getElementById('termsModal').classList.contains('active'))||
-    (document.getElementById('blogModal')&&document.getElementById('blogModal').classList.contains('active'));
-  if(!otherActive)document.body.style.overflow='';
 }
 
 var audioCtx=null;
@@ -2090,27 +1952,9 @@ function toggleFullscreenWheel(){
   }
 }
 
-var SEGMENT_COLORS=[
-  {bg:'#E8A500',fg:'#1a1a1a'},
-  {bg:'#F5EBC8',fg:'#1a1a1a'},
-  {bg:'#1E4620',fg:'#ffffff'},
-  {bg:'#B5A642',fg:'#1a1a1a'}
-];
-var MAX_PARTICIPANTS=50;
-var participants=[];
-var participantImages={};
-var isSpinning=false;
-var currentRotation=0;
-var currentWinnerIndex=-1;
-var currentWinnerName='';
-var autoRemoveWinner=false;
-var wheelSpeed='normal';
-var idleActive=false;
-var idleRAF=0;
-var idleLastTime=0;
-var IDLE_SPEED=12;
-var pointerEl=null;
-
+/* ============================================================
+   RANDOM / SPIN
+   ============================================================ */
 function secureRandomInt(max){
   if(max<=0)return 0;
   if(window.crypto&&window.crypto.getRandomValues){
@@ -2148,6 +1992,9 @@ function idleLoop(now){
   idleRAF=requestAnimationFrame(idleLoop);
 }
 
+/* ============================================================
+   ENTRIES
+   ============================================================ */
 function updateEntries(){
   var ta=document.getElementById('entriesTextarea');
   if(!ta)return;
@@ -2264,33 +2111,9 @@ function addEmoji(){
   updateEntries();
 }
 
-function openSettingsModal(){
-  var m=document.getElementById('settingsModal');
-  if(!m)return;
-  document.getElementById('autoRemoveWinner').checked=autoRemoveWinner;
-  document.getElementById('soundEnabled').checked=soundEnabled;
-  document.getElementById('wheelSpeed').value=wheelSpeed;
-  m.classList.add('active');
-  m.setAttribute('aria-hidden','false');
-  document.body.style.overflow='hidden';
-}
-function closeSettingsModal(){
-  var m=document.getElementById('settingsModal');
-  if(!m)return;
-  autoRemoveWinner=document.getElementById('autoRemoveWinner').checked;
-  var newSound=document.getElementById('soundEnabled').checked;
-  if(!newSound){currentVolumeLevel=0;}
-  else if(currentVolumeLevel===0){currentVolumeLevel=2;}
-  soundEnabled=currentVolumeLevel>0;
-  updateSoundIcon();
-  wheelSpeed=document.getElementById('wheelSpeed').value;
-  m.classList.remove('active');
-  m.setAttribute('aria-hidden','true');
-  if(!document.getElementById('winnerOverlay').classList.contains('show')&&!document.getElementById('shareModal').classList.contains('active')){
-    document.body.style.overflow='';
-  }
-}
-
+/* ============================================================
+   WHEEL RENDER
+   ============================================================ */
 function rebuildWheel(){
   var g=document.getElementById('wheelGroup');
   if(!g)return;
@@ -2397,6 +2220,9 @@ function updateSpinButtonState(){
   btn.disabled=participants.length<2;
 }
 
+/* ============================================================
+   SPIN
+   ============================================================ */
 function spinWheel(){
   if(isSpinning)return;
   if(participants.length<2){showToast('Add at least 2 entries to spin.');return;}
@@ -2466,6 +2292,9 @@ function onSpinComplete(winnerIndex,winnerName){
   }
 }
 
+/* ============================================================
+   WINNER POPUP / CONFETTI
+   ============================================================ */
 function showWinnerPopup(name){
   var overlay=document.getElementById('winnerOverlay');
   if(!overlay)return;
@@ -2548,6 +2377,9 @@ function launchConfetti(){
   requestAnimationFrame(loop);
 }
 
+/* ============================================================
+   SHARE
+   ============================================================ */
 function openShareModal(text){
   var t=document.getElementById('shareText');
   if(t)t.value=text;
@@ -2581,6 +2413,9 @@ function fallbackCopyText(text){
 }
 document.getElementById('shareModal').addEventListener('click',function(e){if(e.target===this)closeShareModal();});
 
+/* ============================================================
+   FOCUS / KEYBOARD / LIFECYCLE / ROUTING
+   ============================================================ */
 function trapFocus(e,container){
   if(e.key!=='Tab'||!container)return;
   var focusable=container.querySelectorAll('a[href], button:not([disabled]), input:not([disabled]):not([type="hidden"]), textarea:not([disabled]), select:not([disabled]), [tabindex]:not([tabindex="-1"])');
@@ -2620,6 +2455,37 @@ window.addEventListener('resize',function(){
   }
 });
 
+/* Legacy hash routes → redirect to real pages */
+function handleRoute(){
+  var hash = window.location.hash;
+  var presetRedirects = {
+    '#random-name-picker': '/random-name-picker',
+    '#yes-no-wheel': '/yes-no-wheel',
+    '#random-team-generator': '/random-team-generator',
+    '#what-to-eat': '/what-to-eat'
+  };
+  if (presetRedirects[hash]) {
+    window.location.replace(presetRedirects[hash]);
+    return;
+  }
+  ['settingsModal','aboutModal','contactModal','privacyModal','termsModal','blogModal'].forEach(function(id){
+    var expected = '#' + id.replace('Modal','');
+    if (hash !== expected) {
+      var m = document.getElementById(id);
+      if (m && m.classList.contains('active')) {
+        m.classList.remove('active');
+        m.setAttribute('aria-hidden', 'true');
+      }
+    }
+  });
+  if (hash === '#terms') { setTimeout(function() { openModal('termsModal'); }, 120); }
+  else if (hash === '#privacy-policy' || hash === '#privacy') { setTimeout(function() { openModal('privacyModal'); }, 120); }
+  else if (hash === '#blog') { setTimeout(function() { openModal('blogModal'); }, 120); }
+  else if (hash === '#contact') { setTimeout(function() { openModal('contactModal'); }, 120); }
+  else if (hash === '#about') { setTimeout(function() { openModal('aboutModal'); }, 120); }
+  else { document.body.style.overflow=''; }
+}
+
 window.addEventListener('popstate',handleRoute);
 window.addEventListener('hashchange',handleRoute);
 
@@ -2635,7 +2501,6 @@ function init(){
   updateEntries();
   updateSoundIcon();
   renderResultsList();
-  initPresetLinks();
   handleRoute();
 }
 if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',init);
