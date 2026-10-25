@@ -7,6 +7,13 @@
 <meta name="description" content="Free spin the wheel random choice picker by Spin The Wheelly. Add options or names, hit SPIN, and let the wheel fairly decide. No signup, 100% private.">
 <meta name="theme-color" content="#ffffff" id="themeColorMeta">
 <link rel="canonical" href="https://spinthewheelly.com/">
+
+<!-- UPDATED FAVICONS AND MANIFEST -->
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/site.webmanifest">
+
 <meta property="og:title" content="Spin The Wheelly — Spin the Wheel to Decide a Random Choice">
 <meta property="og:description" content="Free online spin the wheel random picker. Add names or options, hit SPIN, and let the wheel decide fairly. 100% private, no signup.">
 <meta property="og:type" content="website">
@@ -14,7 +21,6 @@
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Spin The Wheelly — Spin the Wheel to Decide a Random Choice">
 <meta name="twitter:description" content="Free spin the wheel random picker. No signup, 100% private.">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='46' fill='%231a1a1a'/%3E%3Cpath d='M50 50 L50 8 A42 42 0 0 1 88 71 Z' fill='%23E8A500'/%3E%3Cpath d='M50 50 L88 71 A42 42 0 0 1 12 71 Z' fill='%23F5EBC8'/%3E%3Cpath d='M50 50 L12 71 A42 42 0 0 1 50 8 Z' fill='%231E4620'/%3E%3Ccircle cx='50' cy='50' r='9' fill='%23fff'/%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap">
@@ -170,6 +176,15 @@ html.dark-mode .site-header {
   cursor: pointer;
   flex-shrink: 0;
 }
+
+/* ADDED: Logo Image Style */
+.nav-logo-img {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
 .nav-logo-text {
   font-size: 20px;
   font-weight: 800;
@@ -241,6 +256,7 @@ html.dark-mode .hamburger-btn svg { stroke: #d1d5db; }
 @media (max-width: 560px) {
   .header-container { height: 56px; }
   .nav-logo-text { font-size: 16px; letter-spacing: -0.5px; }
+  .nav-logo-img { width: 24px; height: 24px; }
 }
 
 /* ============================================================
@@ -429,20 +445,56 @@ html.dark-mode .count-badge{background:#3b82f6;color:#ffffff;border-color:#60a5f
 @media (max-width:900px){.wheel-layout{grid-template-columns:minmax(0,1fr);gap:22px}}
 .wheel-col{min-width:0; display:flex; flex-direction:column; align-items:center; gap:10px; width:100%}
 
+/* ---------- UPDATED CONTROLS TOP ---------- */
 .wheel-controls-top {
-  display: flex; justify-content: flex-end; align-items: center;
-  gap: 8px; width: 100%; max-width: 520px;
-  margin: 0 auto; padding: 0 8px;
+  display: flex; 
+  flex-direction: column; 
+  justify-content: flex-end; 
+  align-items: flex-end;
+  gap: 10px; 
+  width: 100%; 
+  max-width: 520px;
+  margin: 0 auto; 
+  padding: 0 8px;
 }
+
 .icon-btn {
-  background: transparent; border: none; color: #64748b;
-  cursor: pointer; display: flex; align-items: center; justify-content: center;
-  padding: 8px; border-radius: 8px; transition: all 0.2s;
+  background: #ffffff;
+  border: 1px solid rgba(0,0,0,0.08);
+  color: #1a1a1a;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  transition: all 0.2s ease;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.08);
 }
-html.dark-mode .icon-btn { color: #94a3b8; }
-.icon-btn:hover { color: var(--text); background: rgba(0,0,0,0.05); }
-html.dark-mode .icon-btn:hover { background: rgba(255,255,255,0.1); }
-.icon-btn svg { width: 22px; height: 22px; }
+html.dark-mode .icon-btn {
+  background: #1e293b;
+  border-color: rgba(255,255,255,0.1);
+  color: #f1f5f9;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+}
+.icon-btn:hover {
+  background: #f8fafc;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.12);
+}
+html.dark-mode .icon-btn:hover {
+  background: #334155;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+}
+.icon-btn svg {
+  width: 22px;
+  height: 22px;
+  stroke: currentColor;
+  stroke-width: 2.2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
 
 .entries-panel{min-width:0; display:flex; flex-direction:column; max-width:340px; width:100%; justify-self:end;}
 @media (max-width:900px){.entries-panel{max-width:none; justify-self:stretch;}}
@@ -510,7 +562,6 @@ html.dark-mode .sub-btn:hover { background: #475569; }
   transition: opacity 0.3s, border-color .15s, box-shadow .15s; box-sizing: border-box;
 }
 html.dark-mode #entriesTextarea { background:#0f172a; color:#f1f5f9; border-color:#334155; }
-/* FIX: keep a visible focus indicator (was killed by `outline:none !important`) */
 #entriesTextarea:focus,
 #entriesTextarea:focus-visible {
   border-color:#2563eb;
@@ -583,10 +634,9 @@ html.dark-mode .spin-button{background:#0a0a0a;color:#fff;box-shadow:0 2px 10px 
 .spin-button:active:not(:disabled){transform:translate(-50%,-50%) scale(.97)}
 .spin-button:disabled{cursor:not-allowed;opacity:.55}
 .spin-button:focus-visible{outline:2px solid var(--text) !important;outline-offset:5px !important;border-radius:50%}
-/* FIX: long labels ("SPIN AGAIN" / "SPINNING") no longer overflow the round button */
 .spin-button.long-label{font-size:clamp(7px,1.15vw,10px);letter-spacing:0}
 
-/* ---------- WINNER POPUP ---------- */
+/* ---------- WINNER POPUP (EXACT ORIGINAL) ---------- */
 .winner-overlay{position:fixed;inset:0;background:rgba(0,0,0,0.55);-webkit-backdrop-filter:blur(2px);backdrop-filter:blur(2px);z-index:10000;display:flex;align-items:center;justify-content:center;padding:20px;opacity:0;visibility:hidden;transition:opacity .3s ease,visibility .3s ease;}
 .winner-overlay.show{opacity:1;visibility:visible}
 .winner-popup{position:relative;background:#ffffff;border:5px solid #155e1f;border-radius:4px;padding:40px 24px 20px;max-width:480px;width:100%;text-align:center;box-shadow:0 10px 40px rgba(0,0,0,0.4);transform:scale(.85) translateY(20px);opacity:0;transition:transform .4s cubic-bezier(.34,1.56,.64,1),opacity .3s ease;display:flex; flex-direction:column; justify-content:space-between; min-height:380px;overflow:hidden;}
@@ -648,7 +698,7 @@ html.dark-mode .spin-button{background:#0a0a0a;color:#fff;box-shadow:0 2px 10px 
 .seo-content{max-width: var(--page-max);margin: 0 auto;padding: 40px var(--gutter) 20px;}
 .seo-block{background: var(--bg);border: 1px solid var(--line);border-radius: 16px;padding: clamp(20px, 3vw, 36px);margin-bottom: 24px;box-shadow: var(--card-shadow);scroll-margin-top: 20px;}
 .seo-block h2{font-size: clamp(22px, 2.8vw, 30px);font-weight: 800;letter-spacing: -0.6px;margin-bottom: 14px;color: var(--text);display:flex;align-items:center;gap:10px;}
-.seo-h2-icon{width:28px;height:28px;flex-shrink:0;display:inline-block;}
+.seo-h2-icon{width:28px;height:28px;flex-shrink:0;display:inline-block; border-radius: 50%; object-fit: cover;}
 .seo-block h3{font-size: clamp(17px, 2vw, 20px);font-weight: 700;margin-top: 22px;margin-bottom: 10px;color: var(--text);}
 .seo-block p{font-size: 15px;line-height: 1.75;color: var(--text-light);margin-bottom: 14px;}
 .seo-block p:last-child{margin-bottom:0}
@@ -839,8 +889,12 @@ html.dark-mode .footer-link-item svg { color: #9ca3af; }
 <svg xmlns="http://www.w3.org/2000/svg" style="position:absolute;width:0;height:0;overflow:hidden" aria-hidden="true">
 <defs>
 <symbol id="i-share-2" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" x2="15.42" y1="13.51" y2="17.49"/><line x1="15.41" x2="8.59" y1="6.51" y2="10.49"/></symbol>
+
 <symbol id="i-speaker" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m3 11 18-5v12L3 14v-3z"/><path d="M11.6 16.8a3 3 0 1 1-5.8-1.6"/></symbol>
-<symbol id="i-speaker-mute" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m3 11 18-5v12L3 14v-3z"/><path d="M11.6 16.8a3 3 0 1 1-5.8-1.6"/><line x1="22" y1="9" x2="16" y2="15"/><line x1="16" y1="9" x2="22" y2="15"/></symbol>
+<symbol id="i-speaker-wave" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 5L6 9H2v6h4l5 4V5z"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14"/></symbol>
+<symbol id="i-speaker-mute-wave" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 5L6 9H2v6h4l5 4V5z"/><line x1="22" y1="9" x2="16" y2="15"/><line x1="16" y1="9" x2="22" y2="15"/></symbol>
+<symbol id="i-maximize" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 3 21 3 21 9"></polyline><polyline points="9 21 3 21 3 15"></polyline><line x1="21" y1="3" x2="14" y2="10"></line><line x1="3" y1="21" x2="10" y2="14"></line></symbol>
+
 <symbol id="i-pencil" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 3a2.828 2.828 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5L17 3z"/></symbol>
 <symbol id="i-clipboard" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="8" y="2" width="8" height="4" rx="1" ry="1"/><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/><path d="m9 14 2 2 4-4"/></symbol>
 <symbol id="i-eye-off" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9.88 9.88a3 3 0 1 0 4.24 4.24"/><path d="M10.73 5.08A10.43 10.43 0 0 1 12 5c7 0 10 7 10 7a13.16 13.16 0 0 1-1.67 2.68"/><path d="M6.61 6.61A13.526 13.526 0 0 0 2 12s3 7 10 7a9.74 9.74 0 0 0 5.39-1.61"/><line x1="2" x2="22" y1="2" y2="22"/></symbol>
@@ -853,7 +907,6 @@ html.dark-mode .footer-link-item svg { color: #9ca3af; }
 <symbol id="i-trash" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 6h18"/><path d="M19 6v14c0 1-1 2-2 2H7c-1 0-2-1-2-2V6"/><path d="M8 6V4c0-1 1-2 2-2h4c1 0 2 1 2 2v2"/></symbol>
 <symbol id="i-sort-alpha" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 7h16"/><path d="M4 12h9"/><path d="M4 17h5"/><path d="m17 17 3 3 3-3"/><path d="M20 20V10"/></symbol>
 <symbol id="i-smile" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M8 14s1.5 2 4 2 4-2 4-2"/><line x1="9" x2="9.01" y1="9" y2="9"/><line x1="15" x2="15.01" y1="9" y2="9"/></symbol>
-<symbol id="i-maximize" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 3H5a2 2 0 0 0-2 2v3"/><path d="M21 8V5a2 2 0 0 0-2-2h-3"/><path d="M3 16v3a2 2 0 0 0 2 2h3"/><path d="M16 21h3a2 2 0 0 0 2-2v-3"/></symbol>
 <symbol id="i-chevron-down" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></symbol>
 <symbol id="i-scale" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m16 16 3-8 3 8c-.87.65-1.92 1-3 1s-2.13-.35-3-1Z"/><path d="m2 16 3-8 3 8c-.87.65-1.92 1-3 1s-2.13-.35-3-1Z"/><path d="M7 21h10"/><path d="M12 3v18"/><path d="M3 7h2c2 0 5-1 7-2 2 1 5 2 7 2h2"/></symbol>
 <symbol id="i-help" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></symbol>
@@ -863,14 +916,6 @@ html.dark-mode .footer-link-item svg { color: #9ca3af; }
 <symbol id="i-tool" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></symbol>
 <symbol id="i-menu" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="18" x2="21" y2="18"/></symbol>
 <symbol id="i-info" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></symbol>
-<symbol id="i-wheel-color" viewBox="0 0 100 100">
-  <circle cx="50" cy="50" r="46" fill="#1a1a1a"/>
-  <path d="M50 50 L50 4 A46 46 0 0 1 96 50 Z" fill="#E8A500"/>
-  <path d="M50 50 L96 50 A46 46 0 0 1 50 96 Z" fill="#F5EBC8"/>
-  <path d="M50 50 L50 96 A46 46 0 0 1 4 50 Z" fill="#1E4620"/>
-  <path d="M50 50 L4 50 A46 46 0 0 1 50 4 Z" fill="#B5A642"/>
-  <circle cx="50" cy="50" r="12" fill="#ffffff"/>
-</symbol>
 </defs>
 </svg>
 
@@ -878,6 +923,8 @@ html.dark-mode .footer-link-item svg { color: #9ca3af; }
 <header class="site-header">
   <div class="header-container">
     <a href="/" class="nav-logo" title="Spin The Wheelly — Home">
+      <!-- ADDED LOGO IMAGE HERE -->
+      <img src="/apple-touch-icon.png" alt="Spin The Wheelly Logo" class="nav-logo-img">
       <span class="nav-logo-text">Spin The Wheelly</span>
     </a>
 
@@ -954,14 +1001,17 @@ html.dark-mode .footer-link-item svg { color: #9ca3af; }
     <section class="wheel-section" id="wheelSection" aria-labelledby="bannerTitle">
       <div class="wheel-layout">
         <div class="wheel-col">
+        
+          <!-- VERTICAL STACKED UPDATED CONTROLS -->
           <div class="wheel-controls-top">
             <button class="icon-btn" id="headerSoundBtn" onclick="cycleSoundVolume()" title="Change Volume" aria-label="Change Volume">
-              <svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-speaker" id="soundIconUse"/></svg>
+              <svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-speaker-wave" id="soundIconUse"/></svg>
             </button>
             <button class="icon-btn" onclick="toggleFullscreenWheel()" title="Fullscreen Wheel" aria-label="Fullscreen Wheel">
               <svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-maximize"/></svg>
             </button>
           </div>
+          
           <div class="wheel-premium-bg" id="wheelPremiumBg">
             <div class="wheel-stage" id="wheelStage">
               <svg class="wheel-svg" id="wheelSvg" viewBox="-110 -110 220 220" role="img" aria-label="Spin wheel with choices">
@@ -1062,7 +1112,7 @@ Soup</textarea>
     <div class="seo-row">
 
       <div class="seo-block" id="popularTools">
-        <h2><svg class="seo-h2-icon" aria-hidden="true"><use href="#i-wheel-color"/></svg>Explore Popular Wheel Tools</h2>
+        <h2><img class="seo-h2-icon" src="/favicon-32x32.png" alt="">Explore Popular Wheel Tools</h2>
         <p>Jump straight to one of our most-used wheels — each has its own dedicated page:</p>
         <ul>
           <li><a href="/random-name-picker">Random Name Picker</a> — pick a random student, winner, or team member.</li>
@@ -1073,7 +1123,7 @@ Soup</textarea>
       </div>
 
       <div class="seo-block">
-        <h2><svg class="seo-h2-icon" aria-hidden="true"><use href="#i-wheel-color"/></svg>How to Use the Spin the Wheel Random Picker</h2>
+        <h2><img class="seo-h2-icon" src="/favicon-32x32.png" alt="">How to Use the Spin the Wheel Random Picker</h2>
         <p>Using our free spin the wheel tool is as easy as it gets. Just follow these three simple steps and let the wheel do the deciding:</p>
         <ol>
           <li><strong>Add your entries</strong> — Type your options, names, or choices in the text box on the right. One entry per line.</li>
@@ -1084,7 +1134,7 @@ Soup</textarea>
       </div>
 
       <div class="seo-block">
-        <h2><svg class="seo-h2-icon" aria-hidden="true"><use href="#i-wheel-color"/></svg>Features of Our Random Choice Picker</h2>
+        <h2><img class="seo-h2-icon" src="/favicon-32x32.png" alt="">Features of Our Random Choice Picker</h2>
         <p>We built Spin The Wheelly to be the fastest, most fun random picker on the web. Here's what makes it great:</p>
         <ul>
           <li><strong>Instant spins</strong> with smooth, satisfying animation</li>
@@ -1106,7 +1156,7 @@ Soup</textarea>
     <div class="seo-row">
 
       <div class="seo-block">
-        <h2><svg class="seo-h2-icon" aria-hidden="true"><use href="#i-wheel-color"/></svg>Why Choose Spin The Wheelly?</h2>
+        <h2><img class="seo-h2-icon" src="/favicon-32x32.png" alt="">Why Choose Spin The Wheelly?</h2>
         <p>There are many spin wheel tools out there, but ours stands out for good reasons:</p>
         <ul>
           <li><strong>100% free forever</strong> — no hidden fees, no premium tiers, no ads.</li>
@@ -1120,7 +1170,7 @@ Soup</textarea>
       </div>
 
       <div class="seo-block">
-        <h2><svg class="seo-h2-icon" aria-hidden="true"><use href="#i-wheel-color"/></svg>Spin Wheel Tips &amp; Tricks</h2>
+        <h2><img class="seo-h2-icon" src="/favicon-32x32.png" alt="">Spin Wheel Tips &amp; Tricks</h2>
         <p>Get the most out of your spin wheel experience with these handy tips:</p>
         <ul>
           <li><strong>Keep entries short</strong> — shorter names are easier to read on the wheel.</li>
@@ -1134,7 +1184,7 @@ Soup</textarea>
       </div>
 
       <div class="seo-block">
-        <h2><svg class="seo-h2-icon" aria-hidden="true"><use href="#i-wheel-color"/></svg>How Randomness Works</h2>
+        <h2><img class="seo-h2-icon" src="/favicon-32x32.png" alt="">How Randomness Works</h2>
         <p>Wondering if the wheel is truly fair? Here's how it works:</p>
         <ul>
           <li><strong>Cryptographically secure</strong> — we use the browser's built-in crypto API to generate random numbers.</li>
@@ -1147,7 +1197,7 @@ Soup</textarea>
       </div>
 
       <div class="seo-block">
-        <h2><svg class="seo-h2-icon" aria-hidden="true"><use href="#i-wheel-color"/></svg>Great Uses for a Spin Wheel</h2>
+        <h2><img class="seo-h2-icon" src="/favicon-32x32.png" alt="">Great Uses for a Spin Wheel</h2>
         <p>Whether you're a teacher, parent, event planner, or just an indecisive friend, our wheel is here to help:</p>
         <ul>
           <li>Pick a restaurant for dinner with friends</li>
@@ -1167,7 +1217,7 @@ Soup</textarea>
     <div class="seo-row">
 
       <div class="seo-block">
-        <h2><svg class="seo-h2-icon" aria-hidden="true"><use href="#i-wheel-color"/></svg>Frequently Asked Questions</h2>
+        <h2><img class="seo-h2-icon" src="/favicon-32x32.png" alt="">Frequently Asked Questions</h2>
         <div class="faq-item">
           <p class="faq-q">Is the spin the wheel tool really free?</p>
           <p class="faq-a">Yes, Spin The Wheelly is 100% free with no signup, no payment, and no hidden fees — forever.</p>
@@ -1195,7 +1245,7 @@ Soup</textarea>
       </div>
 
       <div class="seo-block">
-        <h2><svg class="seo-h2-icon" aria-hidden="true"><use href="#i-wheel-color"/></svg>Spin the Wheel for Teachers &amp; Classrooms</h2>
+        <h2><img class="seo-h2-icon" src="/favicon-32x32.png" alt="">Spin the Wheel for Teachers &amp; Classrooms</h2>
         <p>Teachers around the world use our wheel every day to make learning more fun and fair. Here are some favourite classroom ideas:</p>
         <ul>
           <li><strong>Pick a student</strong> — choose who answers the next question fairly.</li>
@@ -1210,7 +1260,7 @@ Soup</textarea>
       </div>
 
       <div class="seo-block">
-        <h2><svg class="seo-h2-icon" aria-hidden="true"><use href="#i-wheel-color"/></svg>Spin the Wheel for Parties &amp; Events</h2>
+        <h2><img class="seo-h2-icon" src="/favicon-32x32.png" alt="">Spin the Wheel for Parties &amp; Events</h2>
         <p>From birthday parties to office raffles, the wheel adds excitement to any event:</p>
         <ul>
           <li><strong>Prize drawings</strong> — add guests' names and spin for a winner.</li>
@@ -1225,7 +1275,7 @@ Soup</textarea>
       </div>
 
       <div class="seo-block">
-        <h2><svg class="seo-h2-icon" aria-hidden="true"><use href="#i-wheel-color"/></svg>Fun Facts About Randomness</h2>
+        <h2><img class="seo-h2-icon" src="/favicon-32x32.png" alt="">Fun Facts About Randomness</h2>
         <p>Randomness is fascinating — here are some fun facts about chance and probability:</p>
         <ul>
           <li><strong>True randomness is hard</strong> — even your brain can't fake it. That's why we use the crypto API.</li>
@@ -1244,7 +1294,7 @@ Soup</textarea>
     <div class="seo-row">
 
       <div class="seo-block">
-        <h2><svg class="seo-h2-icon" aria-hidden="true"><use href="#i-wheel-color"/></svg>Spin the Wheel vs. Other Random Pickers</h2>
+        <h2><img class="seo-h2-icon" src="/favicon-32x32.png" alt="">Spin the Wheel vs. Other Random Pickers</h2>
         <p>Wondering how our wheel compares to dice, coin flips, or random number generators? Here's the breakdown:</p>
         <ul>
           <li><strong>Dice</strong> — quick, but limited to 6 options.</li>
@@ -1256,7 +1306,7 @@ Soup</textarea>
       </div>
 
       <div class="seo-block">
-        <h2><svg class="seo-h2-icon" aria-hidden="true"><use href="#i-wheel-color"/></svg>Customizing Your Wheel</h2>
+        <h2><img class="seo-h2-icon" src="/favicon-32x32.png" alt="">Customizing Your Wheel</h2>
         <p>Every wheel can be tuned to match your style and needs:</p>
         <ul>
           <li><strong>Add images</strong> — upload photos as wheel segments.</li>
@@ -1271,7 +1321,7 @@ Soup</textarea>
       </div>
 
       <div class="seo-block">
-        <h2><svg class="seo-h2-icon" aria-hidden="true"><use href="#i-wheel-color"/></svg>Getting Started in 30 Seconds</h2>
+        <h2><img class="seo-h2-icon" src="/favicon-32x32.png" alt="">Getting Started in 30 Seconds</h2>
         <p>New to Spin The Wheelly? Here's the quickest way to start:</p>
         <ol>
           <li>Open the page — the wheel is already loaded with sample entries.</li>
@@ -1324,7 +1374,7 @@ Soup</textarea>
 
 <input type="file" id="imageInput" accept="image/*" style="display:none;" onchange="handleImageUpload(event)">
 
-<!-- Winner popup -->
+<!-- Winner popup (Restored to original) -->
 <div class="winner-overlay" id="winnerOverlay" role="dialog" aria-modal="true" aria-labelledby="winnerPopupTitle" aria-hidden="true">
   <div class="winner-popup" id="winnerPopup">
     <h2 id="winnerPopupTitle" class="sr-only">Winner selected</h2>
@@ -1342,17 +1392,8 @@ Soup</textarea>
         </button>
       </div>
       <div class="winner-footer">
-        <svg viewBox="0 0 100 100" aria-hidden="true">
-          <circle cx="50" cy="50" r="46" fill="#1a1a1a"/>
-          <path d="M50 50 L50 4 A46 46 0 0 1 96 50 Z" fill="#E8A500"/>
-          <path d="M50 50 L96 50 A46 46 0 0 1 50 96 Z" fill="#F5EBC8"/>
-          <path d="M50 50 L50 96 A46 46 0 0 1 4 50 Z" fill="#1E4620"/>
-          <path d="M50 50 L4 50 A46 46 0 0 1 50 4 Z" fill="#B5A642"/>
-          <circle cx="50" cy="50" r="12" fill="#ffffff"/>
-          <circle cx="47" cy="48" r="1.5" fill="#1a1a1a"/>
-          <circle cx="53" cy="48" r="1.5" fill="#1a1a1a"/>
-          <path d="M 46 52 Q 50 56 54 52" stroke="#1a1a1a" stroke-width="2.2" fill="none" stroke-linecap="round"/>
-        </svg>
+        <!-- ADDED LOGO IMAGE HERE -->
+        <img src="/apple-touch-icon.png" alt="Spin The Wheelly Logo" style="width: 30px; height: 30px; border-radius: 50%; object-fit: cover; flex-shrink: 0;">
         <span>Spin The Wheelly</span>
       </div>
     </div>
@@ -1649,7 +1690,6 @@ function openSettingsModal(){
   m.setAttribute('aria-hidden','false');
   document.body.style.overflow='hidden';
 }
-/* FIX: was running on every Escape press and silently muting sound / resetting speed */
 function closeSettingsModal(){
   var m=document.getElementById('settingsModal');
   if(!m || !m.classList.contains('active')) return;
@@ -1698,7 +1738,7 @@ function openSidebar(){
   var btn=document.getElementById('hamburgerBtn');
   if(!sb)return;
   sb.classList.add('show');
-  sb.removeAttribute('inert');                 /* FIX: make menu focusable/clickable when open */
+  sb.removeAttribute('inert');                 
   if(ov)ov.classList.add('show');
   if(btn)btn.setAttribute('aria-expanded','true');
   sb.setAttribute('aria-hidden','false');
@@ -1710,7 +1750,7 @@ function closeSidebar(){
   var btn=document.getElementById('hamburgerBtn');
   if(!sb)return;
   sb.classList.remove('show');
-  sb.setAttribute('inert','');                 /* FIX: keep off-screen menu out of the tab order */
+  sb.setAttribute('inert','');                 
   if(ov)ov.classList.remove('show');
   if(btn)btn.setAttribute('aria-expanded','false');
   sb.setAttribute('aria-hidden','true');
@@ -1783,7 +1823,7 @@ var idleRAF=0;
 var idleLastTime=0;
 var IDLE_SPEED=12;
 var pointerEl=null;
-var spinToken=0;              /* FIX: invalidates an in-flight spin when the wheel is reset */
+var spinToken=0;
 
 function blockIfSpinning(){
   if(isSpinning){ showToast('Please wait for the spin to finish.'); return true; }
@@ -1799,7 +1839,6 @@ function setSpinLabel(text){
 }
 
 function resetWheel(){
-  /* FIX: cancel any spin that is currently running so it can't complete on an empty wheel */
   spinToken++;
   isSpinning=false;
   stopIdleSpin();
@@ -1907,7 +1946,7 @@ function clearResults(){
 function updateSoundIcon(){
   var useEl=document.getElementById('soundIconUse');
   if(!useEl)return;
-  useEl.setAttribute('href',currentVolumeLevel===0?'#i-speaker-mute':'#i-speaker');
+  useEl.setAttribute('href',currentVolumeLevel===0?'#i-speaker-mute-wave':'#i-speaker-wave');
 }
 function cycleSoundVolume(){
   currentVolumeLevel=(currentVolumeLevel+1)%3;
@@ -2038,7 +2077,7 @@ function idleLoop(now){
    ENTRIES
    ============================================================ */
 function updateEntries(){
-  if(isSpinning)return;                      /* FIX: never rebuild the wheel mid-spin */
+  if(isSpinning)return;
   var ta=document.getElementById('entriesTextarea');
   if(!ta)return;
   var lines=ta.value.split('\n');
@@ -2151,7 +2190,6 @@ function addEmoji(){
   var ta=document.getElementById('entriesTextarea');
   if(!ta)return;
   if(blockIfSpinning())return;
-  /* FIX: focus before reading the caret so the emoji lands at the cursor, not at position 0 */
   if(currentTab!=='edit')switchPanel('edit');
   ta.focus();
   var startPos=ta.selectionStart;
@@ -2172,7 +2210,7 @@ function rebuildWheel(){
   if(n===0){
     g.innerHTML='<circle cx="0" cy="0" r="105" fill="#e8e8e8"/>'+
       '<text x="0" y="0" text-anchor="middle" dominant-baseline="middle" font-size="11" fill="#666" font-family="Inter,sans-serif">Add entries to spin</text>';
-    updatePointerColor(currentRotation);     /* FIX: pointer no longer keeps the last segment colour */
+    updatePointerColor(currentRotation);
     return;
   }
   var segAngle=360/n;
@@ -2218,7 +2256,6 @@ function rebuildWheel(){
       var px=(Math.cos(midRad)*labelR).toFixed(4);
       var py=(Math.sin(midRad)*labelR).toFixed(4);
       var baseRot=midAngle-90;
-      /* FIX: flip labels on the left half so they are never upside-down */
       var norm=((baseRot%360)+360)%360;
       var textRot=(norm>90&&norm<270)?baseRot+180:baseRot;
       var name=participants[j];
@@ -2315,7 +2352,7 @@ function spinWheel(){
   btn.setAttribute('aria-busy','true');
 
   function animate(now){
-    if(token!==spinToken)return;             /* FIX: spin was cancelled (e.g. New Wheel) */
+    if(token!==spinToken)return;
     var t=Math.min((now-startTime)/duration,1);
     var eased=1-Math.pow(1-t,5);
     var angle=startRotation+(finalRotation-startRotation)*eased;
@@ -2352,34 +2389,26 @@ function onSpinComplete(winnerIndex,winnerName){
   if(autoRemoveWinner){
      if(ta){
         var lines=ta.value.split('\n');
-        /* FIX: compare on the same 30-char slice used when parsing entries */
         ta.value=lines.filter(function(line){return line.trim().slice(0,30)!==winnerName;}).join('\n');
         delete participantImages[winnerName];
         updateEntries();
      }
   }
-  /* FIX: idle rotation now restarts after auto-remove as well */
   setTimeout(function(){ if(!isSpinning&&participants.length>=2)startIdleSpin(); },500);
 }
 
 /* ============================================================
    WINNER POPUP / CONFETTI
    ============================================================ */
-var lastFocusedBeforeWinner=null;
 function showWinnerPopup(name){
   var overlay=document.getElementById('winnerOverlay');
   if(!overlay)return;
-  lastFocusedBeforeWinner=document.activeElement;
   document.getElementById('winnerNameBig').textContent=name;
   document.getElementById('winnerPaysLine').textContent='Selected';
   overlay.classList.add('show');
   overlay.setAttribute('aria-hidden','false');
   document.body.style.overflow='hidden';
   announce(name+' Selected');
-  setTimeout(function(){
-    var first=overlay.querySelector('.winner-icon-btn');
-    if(first)try{first.focus();}catch(e){}
-  },80);
 }
 function closeWinnerPopup(){
   var overlay=document.getElementById('winnerOverlay');
@@ -2389,10 +2418,6 @@ function closeWinnerPopup(){
   overlay.setAttribute('aria-hidden','true');
   var shareOpen=document.getElementById('shareModal').classList.contains('active');
   if(!shareOpen)document.body.style.overflow='';
-  if(lastFocusedBeforeWinner&&lastFocusedBeforeWinner.focus){
-    try{lastFocusedBeforeWinner.focus();}catch(e){}
-  }
-  lastFocusedBeforeWinner=null;
 }
 function speakWinnerName(){
   if(!currentWinnerName){showToast('No winner selected yet.');return;}
@@ -2563,7 +2588,7 @@ function handleRoute(){
   else if (hash === '#blog') { setTimeout(function() { openModal('blogModal'); }, 120); }
   else if (hash === '#contact') { setTimeout(function() { openModal('contactModal'); }, 120); }
   else if (hash === '#about') { setTimeout(function() { openModal('aboutModal'); }, 120); }
-  else if (hash === '#settings') { setTimeout(function() { openSettingsModal(); }, 120); }  /* FIX: was missing */
+  else if (hash === '#settings') { setTimeout(function() { openSettingsModal(); }, 120); }
   else { document.body.style.overflow=''; }
 }
 
