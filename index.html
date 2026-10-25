@@ -507,11 +507,21 @@ html.dark-mode .sub-btn:hover { background: #475569; }
   font-family: inherit; font-size: 15px; line-height: 1.6;
   resize: none; outline: none;
   box-shadow: inset 0 1px 2px rgba(0,0,0,0.05);
-  transition: opacity 0.3s; box-sizing: border-box;
+  transition: opacity 0.3s, border-color .15s, box-shadow .15s; box-sizing: border-box;
 }
 html.dark-mode #entriesTextarea { background:#0f172a; color:#f1f5f9; border-color:#334155; }
-#entriesTextarea:focus, #entriesTextarea:focus-visible {border-color:#d1d5db;outline:none !important;box-shadow: inset 0 1px 2px rgba(0,0,0,0.05);}
-html.dark-mode #entriesTextarea:focus, html.dark-mode #entriesTextarea:focus-visible {border-color:#334155;box-shadow: inset 0 1px 2px rgba(0,0,0,0.3);}
+/* FIX: keep a visible focus indicator (was killed by `outline:none !important`) */
+#entriesTextarea:focus,
+#entriesTextarea:focus-visible {
+  border-color:#2563eb;
+  box-shadow: inset 0 1px 2px rgba(0,0,0,0.05), 0 0 0 3px rgba(37,99,235,.18);
+}
+html.dark-mode #entriesTextarea:focus,
+html.dark-mode #entriesTextarea:focus-visible {
+  border-color:#60a5fa;
+  box-shadow: inset 0 1px 2px rgba(0,0,0,0.3), 0 0 0 3px rgba(96,165,250,.22);
+}
+#entriesTextarea[readonly] { opacity: .6; cursor: progress; }
 
 .emoji-btn {position:absolute; bottom:10px; right:10px;background:none; border:none; font-size:20px; cursor:pointer;opacity:0.6; transition:opacity 0.15s; padding:4px;display:flex; align-items:center; justify-content:center; z-index: 5;}
 .emoji-btn:hover { opacity:1; }
@@ -567,12 +577,14 @@ html.dark-mode .wheel-pointer-shape{
   fill:#ffffff; stroke:rgba(0,0,0,0.7);
   filter:drop-shadow(0 2px 4px rgba(0,0,0,0.6));
 }
-.spin-button{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:21%;height:21%;min-width:60px;min-height:60px;border-radius:50%;background:#1a1a1a;color:#fff;border:none;font-family:inherit;font-weight:900;font-size:clamp(11px,1.7vw,15px);letter-spacing:1.2px;cursor:pointer;display:flex;align-items:center;justify-content:center;text-transform:uppercase;outline:none;z-index:5;transition:transform .15s,filter .15s;box-shadow:0 2px 10px rgba(0,0,0,.28);}
+.spin-button{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:21%;height:21%;min-width:60px;min-height:60px;border-radius:50%;background:#1a1a1a;color:#fff;border:none;font-family:inherit;font-weight:900;font-size:clamp(11px,1.7vw,15px);letter-spacing:1.2px;cursor:pointer;display:flex;align-items:center;justify-content:center;text-transform:uppercase;outline:none;z-index:5;transition:transform .15s,filter .15s,font-size .15s;box-shadow:0 2px 10px rgba(0,0,0,.28);}
 html.dark-mode .spin-button{background:#0a0a0a;color:#fff;box-shadow:0 2px 10px rgba(0,0,0,.7)}
 .spin-button:hover:not(:disabled){filter:brightness(1.18);transform:translate(-50%,-50%) scale(1.04)}
 .spin-button:active:not(:disabled){transform:translate(-50%,-50%) scale(.97)}
 .spin-button:disabled{cursor:not-allowed;opacity:.55}
 .spin-button:focus-visible{outline:2px solid var(--text) !important;outline-offset:5px !important;border-radius:50%}
+/* FIX: long labels ("SPIN AGAIN" / "SPINNING") no longer overflow the round button */
+.spin-button.long-label{font-size:clamp(7px,1.15vw,10px);letter-spacing:0}
 
 /* ---------- WINNER POPUP ---------- */
 .winner-overlay{position:fixed;inset:0;background:rgba(0,0,0,0.55);-webkit-backdrop-filter:blur(2px);backdrop-filter:blur(2px);z-index:10000;display:flex;align-items:center;justify-content:center;padding:20px;opacity:0;visibility:hidden;transition:opacity .3s ease,visibility .3s ease;}
@@ -1300,7 +1312,7 @@ Soup</textarea>
       </a>
       <a href="/privacy-policy" class="footer-link-item" title="Privacy Policy">
         <svg aria-hidden="true"><use href="#i-lock"/></svg>
-        <span>Privacy_policy</span>
+        <span>Privacy Policy</span>
       </a>
       <a href="/about-us" class="footer-link-item" title="About Us">
         <svg aria-hidden="true"><use href="#i-info"/></svg>
@@ -1510,7 +1522,7 @@ Soup</textarea>
 <!-- MOBILE SIDEBAR -->
 <div class="sidebar-overlay" id="sidebarOverlay" onclick="closeSidebar()"></div>
 
-<aside class="mobile-sidebar" id="mobileSidebar" aria-hidden="true" aria-label="Mobile menu">
+<aside class="mobile-sidebar" id="mobileSidebar" aria-hidden="true" aria-label="Mobile menu" inert>
   <div class="sidebar-body">
 
     <button type="button" class="sidebar-item" onclick="resetWheel(); closeSidebar();">
@@ -1637,9 +1649,10 @@ function openSettingsModal(){
   m.setAttribute('aria-hidden','false');
   document.body.style.overflow='hidden';
 }
+/* FIX: was running on every Escape press and silently muting sound / resetting speed */
 function closeSettingsModal(){
   var m=document.getElementById('settingsModal');
-  if(!m)return;
+  if(!m || !m.classList.contains('active')) return;
   autoRemoveWinner=document.getElementById('autoRemoveWinner').checked;
   var newSound=document.getElementById('soundEnabled').checked;
   if(!newSound){currentVolumeLevel=0;}
@@ -1649,6 +1662,9 @@ function closeSettingsModal(){
   wheelSpeed=document.getElementById('wheelSpeed').value;
   m.classList.remove('active');
   m.setAttribute('aria-hidden','true');
+  if(window.location.hash==='#settings' && history.replaceState){
+    history.replaceState(null,'',window.location.pathname+window.location.search);
+  }
   if(!document.getElementById('winnerOverlay').classList.contains('show')&&!document.getElementById('shareModal').classList.contains('active')){
     document.body.style.overflow='';
   }
@@ -1682,6 +1698,7 @@ function openSidebar(){
   var btn=document.getElementById('hamburgerBtn');
   if(!sb)return;
   sb.classList.add('show');
+  sb.removeAttribute('inert');                 /* FIX: make menu focusable/clickable when open */
   if(ov)ov.classList.add('show');
   if(btn)btn.setAttribute('aria-expanded','true');
   sb.setAttribute('aria-hidden','false');
@@ -1693,6 +1710,7 @@ function closeSidebar(){
   var btn=document.getElementById('hamburgerBtn');
   if(!sb)return;
   sb.classList.remove('show');
+  sb.setAttribute('inert','');                 /* FIX: keep off-screen menu out of the tab order */
   if(ov)ov.classList.remove('show');
   if(btn)btn.setAttribute('aria-expanded','false');
   sb.setAttribute('aria-hidden','true');
@@ -1765,10 +1783,31 @@ var idleRAF=0;
 var idleLastTime=0;
 var IDLE_SPEED=12;
 var pointerEl=null;
+var spinToken=0;              /* FIX: invalidates an in-flight spin when the wheel is reset */
+
+function blockIfSpinning(){
+  if(isSpinning){ showToast('Please wait for the spin to finish.'); return true; }
+  return false;
+}
+
+function setSpinLabel(text){
+  var btn=document.getElementById('spinBtn');
+  if(!btn)return;
+  btn.textContent=text;
+  if(text.length>6)btn.classList.add('long-label');
+  else btn.classList.remove('long-label');
+}
 
 function resetWheel(){
+  /* FIX: cancel any spin that is currently running so it can't complete on an empty wheel */
+  spinToken++;
+  isSpinning=false;
+  stopIdleSpin();
+  var btn=document.getElementById('spinBtn');
+  if(btn){ btn.disabled=false; btn.removeAttribute('aria-busy'); }
+  setSpinLabel('SPIN');
   var ta=document.getElementById('entriesTextarea');
-  if(ta)ta.value='';
+  if(ta){ ta.readOnly=false; ta.value=''; }
   participantImages={};
   winnerHistory=[];
   currentWinnerName='';
@@ -1808,7 +1847,10 @@ function switchPanel(tab){
     editSubTools.style.display='flex';
     resultsSubTools.style.display='none';
     entriesFooter.style.display='flex';
-    setTimeout(function(){document.getElementById('entriesTextarea').focus();},150);
+    setTimeout(function(){
+      var ta=document.getElementById('entriesTextarea');
+      if(ta && !isSpinning) ta.focus();
+    },150);
   }else if(tab==='results'){
     resultsView.classList.add('active');
     resultsView.classList.remove('exit-left','exit-right');
@@ -1996,6 +2038,7 @@ function idleLoop(now){
    ENTRIES
    ============================================================ */
 function updateEntries(){
+  if(isSpinning)return;                      /* FIX: never rebuild the wheel mid-spin */
   var ta=document.getElementById('entriesTextarea');
   if(!ta)return;
   var lines=ta.value.split('\n');
@@ -2013,6 +2056,7 @@ function updateEntries(){
   else{stopIdleSpin();resetSpinButtonLabel();}
 }
 function shuffleEntries(){
+  if(blockIfSpinning())return;
   var ta=document.getElementById('entriesTextarea');
   if(!ta)return;
   var lines=ta.value.split('\n').map(function(l){return l.trim();}).filter(function(l){return l.length>0;});
@@ -2021,6 +2065,7 @@ function shuffleEntries(){
   updateEntries();showToast('Entries shuffled.');
 }
 function sortEntries(){
+  if(blockIfSpinning())return;
   var ta=document.getElementById('entriesTextarea');
   if(!ta)return;
   var lines=ta.value.split('\n').map(function(l){return l.trim();}).filter(function(l){return l.length>0;});
@@ -2028,7 +2073,10 @@ function sortEntries(){
   ta.value=lines.join('\n');
   updateEntries();showToast('Entries sorted alphabetically.');
 }
-function triggerImageUpload(){document.getElementById('imageInput').click();}
+function triggerImageUpload(){
+  if(blockIfSpinning())return;
+  document.getElementById('imageInput').click();
+}
 
 function downscaleImage(dataUrl,maxSize,callback){
   try{
@@ -2057,6 +2105,7 @@ function handleImageUpload(event){
   event.target.value='';
   if(!file)return;
   if(!/^image\//.test(file.type)){showToast('Please choose an image file.');return;}
+  if(blockIfSpinning())return;
   var rawName=file.name.replace(/\.[^/.]+$/,'').trim().slice(0,30)||'Image';
   var reader=new FileReader();
   reader.onload=function(e){
@@ -2101,13 +2150,15 @@ var EMOJIS=['😀','😂','🥳','🍕','💸','🎉','😎','🔥','🍻','✨'
 function addEmoji(){
   var ta=document.getElementById('entriesTextarea');
   if(!ta)return;
-  switchPanel('edit');
-  var emoji=EMOJIS[Math.floor(Math.random()*EMOJIS.length)];
+  if(blockIfSpinning())return;
+  /* FIX: focus before reading the caret so the emoji lands at the cursor, not at position 0 */
+  if(currentTab!=='edit')switchPanel('edit');
+  ta.focus();
   var startPos=ta.selectionStart;
   var endPos=ta.selectionEnd;
+  var emoji=EMOJIS[Math.floor(Math.random()*EMOJIS.length)];
   ta.value=ta.value.substring(0,startPos)+emoji+ta.value.substring(endPos,ta.value.length);
   ta.selectionStart=ta.selectionEnd=startPos+emoji.length;
-  ta.focus();
   updateEntries();
 }
 
@@ -2121,6 +2172,7 @@ function rebuildWheel(){
   if(n===0){
     g.innerHTML='<circle cx="0" cy="0" r="105" fill="#e8e8e8"/>'+
       '<text x="0" y="0" text-anchor="middle" dominant-baseline="middle" font-size="11" fill="#666" font-family="Inter,sans-serif">Add entries to spin</text>';
+    updatePointerColor(currentRotation);     /* FIX: pointer no longer keeps the last segment colour */
     return;
   }
   var segAngle=360/n;
@@ -2165,7 +2217,10 @@ function rebuildWheel(){
       var labelR=r*0.66;
       var px=(Math.cos(midRad)*labelR).toFixed(4);
       var py=(Math.sin(midRad)*labelR).toFixed(4);
-      var textRot=(midAngle-90).toFixed(2);
+      var baseRot=midAngle-90;
+      /* FIX: flip labels on the left half so they are never upside-down */
+      var norm=((baseRot%360)+360)%360;
+      var textRot=(norm>90&&norm<270)?baseRot+180:baseRot;
       var name=participants[j];
       var maxLen=n>20?7:(n>12?11:16);
       var display=name.length>maxLen?name.slice(0,maxLen-1)+'…':name;
@@ -2211,8 +2266,8 @@ function applyRotation(deg){
   updatePointerColor(deg);
 }
 function resetSpinButtonLabel(){
-  var btn=document.getElementById('spinBtn');
-  if(btn&&!isSpinning)btn.textContent='SPIN';
+  if(isSpinning)return;
+  setSpinLabel('SPIN');
 }
 function updateSpinButtonState(){
   var btn=document.getElementById('spinBtn');
@@ -2231,6 +2286,11 @@ function spinWheel(){
   stopIdleSpin();
   closeWinnerPopup();
   isSpinning=true;
+  var token=++spinToken;
+
+  var ta=document.getElementById('entriesTextarea');
+  if(ta)ta.readOnly=true;
+
   var winnerIndex=secureRandomInt(participants.length);
   var winnerName=participants[winnerIndex];
   var n=participants.length;
@@ -2251,9 +2311,11 @@ function spinWheel(){
   var lastBoundaryIndex=Math.floor(startRotation/segAngle);
   var btn=document.getElementById('spinBtn');
   btn.disabled=true;
-  btn.textContent='SPINNING';
+  setSpinLabel('SPINNING');
   btn.setAttribute('aria-busy','true');
+
   function animate(now){
+    if(token!==spinToken)return;             /* FIX: spin was cancelled (e.g. New Wheel) */
     var t=Math.min((now-startTime)/duration,1);
     var eased=1-Math.pow(1-t,5);
     var angle=startRotation+(finalRotation-startRotation)*eased;
@@ -2262,16 +2324,23 @@ function spinWheel(){
     var curBoundary=Math.floor(angle/segAngle);
     if(curBoundary!==lastBoundaryIndex){if(soundEnabled)playTick();lastBoundaryIndex=curBoundary;}
     if(t<1){requestAnimationFrame(animate);}
-    else{currentRotation=finalRotation%360;applyRotation(currentRotation);onSpinComplete(winnerIndex,winnerName);}
+    else{
+      if(token!==spinToken)return;
+      currentRotation=finalRotation%360;
+      applyRotation(currentRotation);
+      onSpinComplete(winnerIndex,winnerName);
+    }
   }
   requestAnimationFrame(animate);
 }
 
 function onSpinComplete(winnerIndex,winnerName){
   isSpinning=false;
+  var ta=document.getElementById('entriesTextarea');
+  if(ta)ta.readOnly=false;
   var btn=document.getElementById('spinBtn');
   btn.disabled=false;
-  btn.textContent='SPIN AGAIN';
+  setSpinLabel('SPIN AGAIN');
   btn.removeAttribute('aria-busy');
   currentWinnerIndex=winnerIndex;
   currentWinnerName=winnerName;
@@ -2281,29 +2350,36 @@ function onSpinComplete(winnerIndex,winnerName){
   if(!window.matchMedia||!window.matchMedia('(prefers-reduced-motion: reduce)').matches){launchConfetti();}
   showWinnerPopup(winnerName);
   if(autoRemoveWinner){
-     var ta=document.getElementById('entriesTextarea');
      if(ta){
         var lines=ta.value.split('\n');
-        ta.value=lines.filter(function(line){return line.trim()!==winnerName;}).join('\n');
+        /* FIX: compare on the same 30-char slice used when parsing entries */
+        ta.value=lines.filter(function(line){return line.trim().slice(0,30)!==winnerName;}).join('\n');
+        delete participantImages[winnerName];
         updateEntries();
      }
-  }else{
-     setTimeout(function(){if(!isSpinning&&participants.length>=2)startIdleSpin();},500);
   }
+  /* FIX: idle rotation now restarts after auto-remove as well */
+  setTimeout(function(){ if(!isSpinning&&participants.length>=2)startIdleSpin(); },500);
 }
 
 /* ============================================================
    WINNER POPUP / CONFETTI
    ============================================================ */
+var lastFocusedBeforeWinner=null;
 function showWinnerPopup(name){
   var overlay=document.getElementById('winnerOverlay');
   if(!overlay)return;
+  lastFocusedBeforeWinner=document.activeElement;
   document.getElementById('winnerNameBig').textContent=name;
   document.getElementById('winnerPaysLine').textContent='Selected';
   overlay.classList.add('show');
   overlay.setAttribute('aria-hidden','false');
   document.body.style.overflow='hidden';
   announce(name+' Selected');
+  setTimeout(function(){
+    var first=overlay.querySelector('.winner-icon-btn');
+    if(first)try{first.focus();}catch(e){}
+  },80);
 }
 function closeWinnerPopup(){
   var overlay=document.getElementById('winnerOverlay');
@@ -2313,6 +2389,10 @@ function closeWinnerPopup(){
   overlay.setAttribute('aria-hidden','true');
   var shareOpen=document.getElementById('shareModal').classList.contains('active');
   if(!shareOpen)document.body.style.overflow='';
+  if(lastFocusedBeforeWinner&&lastFocusedBeforeWinner.focus){
+    try{lastFocusedBeforeWinner.focus();}catch(e){}
+  }
+  lastFocusedBeforeWinner=null;
 }
 function speakWinnerName(){
   if(!currentWinnerName){showToast('No winner selected yet.');return;}
@@ -2483,6 +2563,7 @@ function handleRoute(){
   else if (hash === '#blog') { setTimeout(function() { openModal('blogModal'); }, 120); }
   else if (hash === '#contact') { setTimeout(function() { openModal('contactModal'); }, 120); }
   else if (hash === '#about') { setTimeout(function() { openModal('aboutModal'); }, 120); }
+  else if (hash === '#settings') { setTimeout(function() { openSettingsModal(); }, 120); }  /* FIX: was missing */
   else { document.body.style.overflow=''; }
 }
 
