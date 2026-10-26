@@ -8,7 +8,6 @@
 <meta name="theme-color" content="#ffffff" id="themeColorMeta">
 <link rel="canonical" href="https://spinthewheelly.com/random-team-generator">
 
-<!-- FAVICONS AND MANIFEST -->
 <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
@@ -158,6 +157,7 @@ html.dark-mode .site-header {
   text-decoration: none;
   cursor: pointer;
   flex-shrink: 0;
+  min-width: 0;
 }
 
 .nav-logo-img {
@@ -165,6 +165,7 @@ html.dark-mode .site-header {
   height: 28px;
   border-radius: 50%;
   object-fit: cover;
+  flex-shrink: 0;
 }
 
 .nav-logo-text {
@@ -173,6 +174,8 @@ html.dark-mode .site-header {
   color: #1a1a1a;
   letter-spacing: -0.7px;
   white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 html.dark-mode .nav-logo-text { color: #ffffff; }
 
@@ -180,12 +183,14 @@ html.dark-mode .nav-logo-text { color: #ffffff; }
   display: flex;
   align-items: center;
   gap: 6px;
+  flex-shrink: 0;
 }
 @media (max-width: 768px) { .nav-links { gap: 2px; } }
 
 .nav-btn {
   display: flex;
   align-items: center;
+  justify-content: center;
   gap: 7px;
   background: transparent;
   border: none;
@@ -196,14 +201,17 @@ html.dark-mode .nav-logo-text { color: #ffffff; }
   font-weight: 600;
   color: #374151;
   cursor: pointer;
-  transition: background 0.2s;
+  transition: background 0.18s ease, transform 0.15s ease, opacity 0.15s ease;
   white-space: nowrap;
   text-decoration: none;
+  -webkit-tap-highlight-color: transparent;
+  touch-action: manipulation;
 }
 html.dark-mode .nav-btn { color: #d1d5db; }
 .nav-btn:hover { background: #f3f4f6; }
 html.dark-mode .nav-btn:hover { background: #1e293b; }
-.nav-btn svg { width: 20px; height: 20px; stroke: #6b7280; }
+.nav-btn:active { transform: scale(0.94); }
+.nav-btn svg { width: 20px; height: 20px; stroke: #6b7280; flex-shrink: 0; }
 html.dark-mode .nav-btn svg { stroke: #9ca3af; }
 
 .nav-btn.share-btn {
@@ -226,19 +234,32 @@ html.dark-mode .nav-btn.share-btn svg { stroke: #ffffff; }
 .hamburger-btn svg { width: 24px; height: 24px; stroke: #374151; }
 html.dark-mode .hamburger-btn svg { stroke: #d1d5db; }
 
+/* TABLET & MOBILE (≤900px): Show Share + Tools + Hamburger together */
 @media (max-width: 900px) {
   .nav-btn .nav-text { display: none; }
   .nav-btn { padding: 9px; }
-  .nav-btn.share-btn { padding: 9px 12px; }
+  .nav-btn.share-btn { padding: 9px 12px; margin-left: 0; }
   .header-container { height: 60px; }
-  .nav-links .nav-btn:not(.hamburger-btn),
-  .nav-links .nav-tools-wrap { display: none; }
+  /* Hide only the plain nav-btns (New Wheel / File / Settings) */
+  .nav-links > .nav-btn:not(.share-btn):not(.hamburger-btn) { display: none; }
   .hamburger-btn { display: flex; }
 }
 @media (max-width: 560px) {
-  .header-container { height: 56px; }
+  .header-container { height: 56px; gap: 8px; }
   .nav-logo-text { font-size: 16px; letter-spacing: -0.5px; }
   .nav-logo-img { width: 24px; height: 24px; }
+  .nav-btn { padding: 8px; }
+  .nav-btn.share-btn { padding: 8px 10px; }
+  .nav-btn svg { width: 20px; height: 20px; }
+}
+@media (max-width: 380px) {
+  .header-container { gap: 6px; }
+  .nav-logo-text { font-size: 14px; letter-spacing: -0.4px; }
+  .nav-logo-img { width: 22px; height: 22px; }
+  .nav-btn { padding: 7px; }
+  .nav-btn.share-btn { padding: 7px 9px; }
+  .nav-btn svg { width: 18px; height: 18px; }
+  .hamburger-btn svg { width: 22px; height: 22px; }
 }
 
 /* ============================================================
@@ -250,6 +271,7 @@ html.dark-mode .hamburger-btn svg { stroke: #d1d5db; }
   top: calc(100% + 8px);
   right: 0;
   min-width: 260px;
+  max-width: calc(100vw - 24px);
   background: var(--bg);
   border: 1px solid var(--line);
   border-radius: 12px;
@@ -258,11 +280,12 @@ html.dark-mode .hamburger-btn svg { stroke: #d1d5db; }
   z-index: 200;
   opacity: 0;
   visibility: hidden;
-  transform: translateY(-8px);
-  transition: opacity 0.18s ease, transform 0.18s ease, visibility 0.18s ease;
+  transform: translateY(-6px);
+  transition: opacity 0.15s ease, transform 0.15s ease, visibility 0.15s ease;
   display: flex;
   flex-direction: column;
   gap: 2px;
+  will-change: opacity, transform;
 }
 html.dark-mode .tools-menu {
   box-shadow: 0 10px 40px rgba(0,0,0,0.55);
@@ -275,10 +298,12 @@ html.dark-mode .tools-menu {
   background: transparent; border: none; border-radius: 8px;
   font-family: inherit;
   color: var(--text); cursor: pointer; text-align: left;
-  transition: background 0.15s; white-space: nowrap;
+  transition: background 0.14s ease; white-space: nowrap;
   text-decoration: none;
+  -webkit-tap-highlight-color: transparent;
+  touch-action: manipulation;
 }
-.tools-menu-item:hover { background: var(--hover); }
+.tools-menu-item:hover, .tools-menu-item:active { background: var(--hover); }
 .tools-menu-item svg { width: 20px; height: 20px; stroke: #6b7280; flex-shrink: 0; }
 html.dark-mode .tools-menu-item svg { stroke: #9ca3af; }
 .tools-item-content { display: flex; flex-direction: column; gap: 2px; min-width: 0; text-align: left; }
@@ -296,7 +321,8 @@ html.dark-mode .tools-menu-item svg { stroke: #9ca3af; }
   background: rgba(0,0,0,0.5);
   -webkit-backdrop-filter: blur(2px); backdrop-filter: blur(2px);
   z-index: 9998; opacity: 0; visibility: hidden;
-  transition: opacity 0.3s ease, visibility 0.3s ease;
+  transition: opacity 0.25s ease, visibility 0.25s ease;
+  -webkit-tap-highlight-color: transparent;
 }
 .sidebar-overlay.show { opacity: 1; visibility: visible; }
 
@@ -306,10 +332,11 @@ html.dark-mode .tools-menu-item svg { stroke: #9ca3af; }
   height: 100vh; height: 100dvh;
   background: var(--bg); z-index: 9999;
   transform: translateX(-100%);
-  transition: transform 0.32s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: transform 0.28s cubic-bezier(0.4, 0, 0.2, 1);
   display: flex; flex-direction: column;
   box-shadow: 12px 0 40px rgba(0,0,0,0.25);
   overflow: hidden;
+  will-change: transform;
 }
 html.dark-mode .mobile-sidebar { box-shadow: 12px 0 40px rgba(0,0,0,0.6); }
 .mobile-sidebar.show { transform: translateX(0); }
@@ -326,8 +353,10 @@ html.dark-mode .mobile-sidebar { box-shadow: 12px 0 40px rgba(0,0,0,0.6); }
   background: transparent; border: none; border-radius: 7px;
   font-family: inherit; font-size: 15px; font-weight: 600;
   color: #374151; cursor: pointer; text-align: left;
-  transition: background 0.2s; margin-bottom: 2px;
+  transition: background 0.18s ease; margin-bottom: 2px;
   text-decoration: none;
+  -webkit-tap-highlight-color: transparent;
+  touch-action: manipulation;
 }
 .sidebar-item:hover, .sidebar-item:active { background: #f3f4f6; }
 html.dark-mode .sidebar-item { color: #d1d5db; }
@@ -347,14 +376,14 @@ html.dark-mode .sidebar-item.share-btn svg { stroke: #ffffff; }
 .sidebar-tools-btn { justify-content: flex-start; }
 .sidebar-tools-btn .chevron {
   margin-left: auto; width: 16px; height: 16px;
-  stroke: #6b7280; transition: transform 0.25s ease;
+  stroke: #6b7280; transition: transform 0.22s ease;
 }
 html.dark-mode .sidebar-tools-btn .chevron { stroke: #9ca3af; }
 .sidebar-tools-btn.open .chevron { transform: rotate(180deg); }
 
 .sidebar-tools-sub {
   max-height: 0; overflow: hidden;
-  transition: max-height 0.3s ease;
+  transition: max-height 0.28s ease;
   padding-left: 6px;
 }
 .sidebar-tools-sub.open { max-height: 500px; }
@@ -364,8 +393,10 @@ html.dark-mode .sidebar-tools-btn .chevron { stroke: #9ca3af; }
   width: 100%; padding: 10px 12px;
   background: transparent; border: none; border-radius: 7px;
   font-family: inherit; color: var(--text); cursor: pointer;
-  text-align: left; transition: background 0.2s; margin-bottom: 2px;
+  text-align: left; transition: background 0.18s ease; margin-bottom: 2px;
   text-decoration: none;
+  -webkit-tap-highlight-color: transparent;
+  touch-action: manipulation;
 }
 .sidebar-sub-item:hover, .sidebar-sub-item:active { background: #f3f4f6; }
 html.dark-mode .sidebar-sub-item:hover, html.dark-mode .sidebar-sub-item:active { background: #1e293b; }
@@ -427,7 +458,7 @@ html.dark-mode .count-badge{background:#3b82f6;color:#ffffff;border-color:#60a5f
 @media (max-width:900px){.wheel-layout{grid-template-columns:minmax(0,1fr);gap:22px}}
 .wheel-col{min-width:0; display:flex; flex-direction: column; align-items:center; gap:10px; width:100%}
 
-/* ---------- VERTICAL STACKED CONTROLS ---------- */
+/* ---------- VERTICAL STACKED CONTROLS (transparent icons) ---------- */
 .wheel-controls-top {
   display: flex;
   flex-direction: column;
@@ -440,8 +471,9 @@ html.dark-mode .count-badge{background:#3b82f6;color:#ffffff;border-color:#60a5f
   padding: 0 8px;
 }
 .icon-btn {
-  background: #ffffff;
-  border: 1px solid rgba(0,0,0,0.08);
+  background: transparent;
+  border: none;
+  box-shadow: none;
   color: #1a1a1a;
   cursor: pointer;
   display: flex;
@@ -450,24 +482,28 @@ html.dark-mode .count-badge{background:#3b82f6;color:#ffffff;border-color:#60a5f
   width: 48px;
   height: 48px;
   border-radius: 50%;
-  transition: all 0.2s ease;
-  box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+  transition: opacity 0.18s ease, transform 0.18s ease;
+  -webkit-tap-highlight-color: transparent;
+  touch-action: manipulation;
 }
 html.dark-mode .icon-btn {
-  background: #1e293b;
-  border-color: rgba(255,255,255,0.1);
+  background: transparent;
+  border: none;
+  box-shadow: none;
   color: #f1f5f9;
-  box-shadow: 0 2px 10px rgba(0,0,0,0.3);
 }
 .icon-btn:hover {
-  background: #f8fafc;
+  background: transparent;
+  box-shadow: none;
   transform: translateY(-1px);
-  box-shadow: 0 4px 12px rgba(0,0,0,0.12);
+  opacity: 0.7;
 }
 html.dark-mode .icon-btn:hover {
-  background: #334155;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+  background: transparent;
+  box-shadow: none;
+  opacity: 0.7;
 }
+.icon-btn:active { transform: translateY(0) scale(.94); opacity: .6; }
 .icon-btn svg {
   width: 22px;
   height: 22px;
@@ -484,7 +520,7 @@ html.dark-mode .icon-btn:hover {
   display: flex; gap: 8px; margin-bottom: 8px;
   justify-content: flex-start; padding: 0 4px; flex-wrap: wrap;
 }
-.tool-btn {width:36px; height:36px; border-radius:8px; border:none; background:transparent; color:#374151;display:flex; align-items:center; justify-content:center; cursor:pointer; transition: background 0.15s;position: relative; flex-shrink: 0;}
+.tool-btn {width:36px; height:36px; border-radius:8px; border:none; background:transparent; color:#374151;display:flex; align-items:center; justify-content:center; cursor:pointer; transition: background 0.15s;position: relative; flex-shrink: 0;-webkit-tap-highlight-color: transparent;touch-action: manipulation;}
 html.dark-mode .tool-btn { background:transparent; color:#e2e8f0; }
 .tool-btn:hover { background:#e5e7eb; }
 html.dark-mode .tool-btn:hover { background:#334155; }
@@ -511,7 +547,8 @@ html.dark-mode .entry-toolbar .tool-btn:hover { background: #475569; }
   padding: 6px 14px; border-radius: 6px; border: none;
   background: #e5e7eb; color: #374151;
   font-family: inherit; font-size: 14px; font-weight: 500;
-  cursor: pointer; transition: background 0.2s;
+  cursor: pointer; transition: background 0.18s;
+  -webkit-tap-highlight-color: transparent; touch-action: manipulation;
 }
 html.dark-mode .sub-btn { background: #334155; color: #e2e8f0; }
 .sub-btn:hover { background: #d1d5db; }
@@ -536,8 +573,10 @@ html.dark-mode .sub-btn:hover { background: #475569; }
   font-weight: 600;
   color: #374151;
   cursor: pointer;
-  transition: all 0.2s;
+  transition: all 0.18s;
   white-space: nowrap;
+  -webkit-tap-highlight-color: transparent;
+  touch-action: manipulation;
 }
 html.dark-mode .preset-chip { background: #334155; color: #e2e8f0; }
 .preset-chip:hover { background: #d1d5db; transform: translateY(-1px); }
@@ -557,7 +596,8 @@ html.dark-mode .preset-chip.active {
 .panel-view {
   position: absolute; top: 0; left: 0; width: 100%; height: 100%;
   opacity: 0; visibility: hidden; transform: translateX(20px);
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); pointer-events: none;
+  transition: opacity 0.24s ease, transform 0.24s ease, visibility 0.24s ease;
+  pointer-events: none;
 }
 .panel-view.active {
   opacity: 1; visibility: visible; transform: translateX(0);
@@ -593,7 +633,7 @@ html.dark-mode #entriesTextarea:focus-visible {
 }
 #entriesTextarea[readonly] { opacity: .6; cursor: progress; }
 
-.emoji-btn {position:absolute; bottom:10px; right:10px;background:none; border:none; font-size:20px; cursor:pointer;opacity:0.6; transition:opacity 0.15s; padding:4px;display:flex; align-items:center; justify-content:center; z-index: 5;}
+.emoji-btn {position:absolute; bottom:10px; right:10px;background:none; border:none; font-size:20px; cursor:pointer;opacity:0.6; transition:opacity 0.15s; padding:4px;display:flex; align-items:center; justify-content:center; z-index: 5;-webkit-tap-highlight-color: transparent;touch-action: manipulation;}
 .emoji-btn:hover { opacity:1; }
 .emoji-btn svg { width:20px; height:20px; color:#4b5563; }
 html.dark-mode .emoji-btn svg { color:#9ca3af; }
@@ -648,9 +688,27 @@ html.dark-mode .results-list li { color: #f1f5f9; border-bottom-color: #334155; 
 .wheel-premium-bg {position: relative;display: flex;align-items: center;justify-content: center;width: 100%;aspect-ratio: 1/1;max-width: 520px;margin: 0 auto;border-radius: 50%;box-shadow: inset 0 0 0 1px rgba(0,0,0,0.02);}
 html.dark-mode .wheel-premium-bg {box-shadow: inset 0 0 0 1px rgba(255,255,255,0.03);}
 .wheel-premium-bg:fullscreen,
-.wheel-premium-bg:-webkit-full-screen {max-width: none;width: 100vw;height: 100vh;aspect-ratio: auto;border-radius: 0;background: var(--bg);box-shadow: none;}
+.wheel-premium-bg:-webkit-full-screen {max-width: none;width: 100vw;height: 100vh;height: 100dvh;aspect-ratio: auto;border-radius: 0;background: var(--bg);box-shadow: none;}
 .wheel-premium-bg:fullscreen .wheel-stage,
-.wheel-premium-bg:-webkit-full-screen .wheel-stage {max-width: min(90vh, 90vw);}
+.wheel-premium-bg:-webkit-full-screen .wheel-stage,
+.wheel-premium-bg.pseudo-fullscreen .wheel-stage {max-width: min(84vh, 88vw);}
+
+/* Pseudo fullscreen fallback */
+.wheel-premium-bg.pseudo-fullscreen {
+  position: fixed;
+  inset: 0;
+  z-index: 9997;
+  width: 100vw;
+  height: 100vh;
+  height: 100dvh;
+  max-width: none;
+  aspect-ratio: auto;
+  border-radius: 0;
+  margin: 0;
+  background: var(--bg);
+  box-shadow: none;
+}
+
 .wheel-premium-bg::before {content: '';position: absolute;top: 50%;left: 50%;transform: translate(-50%, -50%);width: 95%;height: 95%;border-radius: 50%;background: radial-gradient(circle, rgba(232, 165, 0, 0.25) 0%, rgba(255, 255, 255, 0) 70%);filter: blur(40px);z-index: 0;animation: pulseGlow 5s infinite alternate ease-in-out;pointer-events: none;}
 html.dark-mode .wheel-premium-bg::before {background: radial-gradient(circle, rgba(96, 165, 250, 0.2) 0%, rgba(15, 23, 42, 0) 70%);}
 @keyframes pulseGlow {
@@ -673,7 +731,8 @@ html.dark-mode .wheel-premium-bg::before {background: radial-gradient(circle, rg
   pointer-events: none;
 }
 .wheel-premium-bg:fullscreen .fullscreen-brand-bar,
-.wheel-premium-bg:-webkit-full-screen .fullscreen-brand-bar {
+.wheel-premium-bg:-webkit-full-screen .fullscreen-brand-bar,
+.wheel-premium-bg.pseudo-fullscreen .fullscreen-brand-bar {
   display: flex;
 }
 .fullscreen-brand-bar > * { pointer-events: auto; }
@@ -686,8 +745,6 @@ html.dark-mode .wheel-premium-bg::before {background: radial-gradient(circle, rg
   padding: 0;
   border: none;
   box-shadow: none;
-  -webkit-backdrop-filter: none;
-  backdrop-filter: none;
 }
 .fs-brand-img {
   width: 30px; height: 30px;
@@ -726,6 +783,8 @@ html.dark-mode .fs-brand-text {
   cursor: pointer;
   padding: 0;
   transition: transform 0.2s ease, opacity 0.2s ease;
+  -webkit-tap-highlight-color: transparent;
+  touch-action: manipulation;
 }
 html.dark-mode .fs-icon-btn { color: #f1f5f9; }
 .fs-icon-btn:hover { transform: scale(1.1); opacity: 0.85; }
@@ -757,6 +816,56 @@ html.dark-mode .fs-icon-btn svg {
   .fs-icon-btn svg { width: 20px; height: 20px; }
 }
 
+/* ============================================================
+   FULLSCREEN FOOTER BAR — POWERED BY (no underline)
+   ============================================================ */
+.fullscreen-footer-bar {
+  display: none;
+  position: absolute;
+  left: 0; right: 0; bottom: 0;
+  padding: 14px clamp(16px, 3vw, 32px) calc(14px + env(safe-area-inset-bottom, 0px));
+  z-index: 20;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  font-size: clamp(12px, 2.5vw, 14px);
+  font-weight: 600;
+  letter-spacing: -0.2px;
+  color: #1a1a1a;
+  text-align: center;
+  white-space: nowrap;
+  pointer-events: none;
+  max-width: 100%;
+  box-sizing: border-box;
+}
+html.dark-mode .fullscreen-footer-bar { color: #e2e8f0; }
+.fullscreen-footer-bar a {
+  pointer-events: auto;
+  color: inherit;
+  text-decoration: none;
+  font-weight: 800;
+  transition: opacity 0.2s;
+}
+.fullscreen-footer-bar a:hover { opacity: 0.75; }
+.wheel-premium-bg:fullscreen .fullscreen-footer-bar,
+.wheel-premium-bg:-webkit-full-screen .fullscreen-footer-bar,
+.wheel-premium-bg.pseudo-fullscreen .fullscreen-footer-bar {
+  display: flex;
+}
+@media (max-width: 560px) {
+  .fullscreen-footer-bar {
+    font-size: 12.5px;
+    padding: 10px 12px calc(10px + env(safe-area-inset-bottom, 0px));
+  }
+}
+@media (max-width: 400px) {
+  .fullscreen-footer-bar {
+    white-space: normal;
+    font-size: 12px;
+    padding: 8px 10px calc(8px + env(safe-area-inset-bottom, 0px));
+  }
+}
+
 .wheel-stage{position:relative;display:block;width:100%;max-width:440px;margin:0 auto;aspect-ratio:1/1;min-width:0;z-index:1;}
 .wheel-svg{width:100%;height:100%;display:block;overflow:visible}
 .wheel-svg .wheel-segment{stroke:none}
@@ -770,7 +879,7 @@ html.dark-mode .wheel-pointer-shape{
   fill:#ffffff; stroke:rgba(0,0,0,0.7);
   filter:drop-shadow(0 2px 4px rgba(0,0,0,0.6));
 }
-.spin-button{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:21%;height:21%;min-width:60px;min-height:60px;border-radius:50%;background:#1a1a1a;color:#fff;border:none;font-family:inherit;font-weight:900;font-size:clamp(11px,1.7vw,15px);letter-spacing:1.2px;cursor:pointer;display:flex;align-items:center;justify-content:center;text-transform:uppercase;outline:none;z-index:5;transition:transform .15s,filter .15s,font-size .15s;box-shadow:0 2px 10px rgba(0,0,0,.28);}
+.spin-button{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:21%;height:21%;min-width:60px;min-height:60px;border-radius:50%;background:#1a1a1a;color:#fff;border:none;font-family:inherit;font-weight:900;font-size:clamp(11px,1.7vw,15px);letter-spacing:1.2px;cursor:pointer;display:flex;align-items:center;justify-content:center;text-transform:uppercase;outline:none;z-index:5;transition:transform .15s,filter .15s,font-size .15s;box-shadow:0 2px 10px rgba(0,0,0,.28);-webkit-tap-highlight-color:transparent;touch-action:manipulation;}
 html.dark-mode .spin-button{background:#0a0a0a;color:#fff;box-shadow:0 2px 10px rgba(0,0,0,.7)}
 .spin-button:hover:not(:disabled){filter:brightness(1.18);transform:translate(-50%,-50%) scale(1.04)}
 .spin-button:active:not(:disabled){transform:translate(-50%,-50%) scale(.97)}
@@ -778,7 +887,7 @@ html.dark-mode .spin-button{background:#0a0a0a;color:#fff;box-shadow:0 2px 10px 
 .spin-button:focus-visible{outline:2px solid var(--text) !important;outline-offset:5px !important;border-radius:50%}
 .spin-button.long-label{font-size:clamp(7px,1.15vw,10px);letter-spacing:0}
 
-/* ---------- WINNER POPUP ---------- */
+/* ---------- WINNER POPUP (inside fullscreen container) ---------- */
 .winner-overlay{position:fixed;inset:0;background:rgba(0,0,0,0.55);-webkit-backdrop-filter:blur(2px);backdrop-filter:blur(2px);z-index:10000;display:flex;align-items:center;justify-content:center;padding:20px;opacity:0;visibility:hidden;transition:opacity .3s ease,visibility .3s ease;}
 .winner-overlay.show{opacity:1;visibility:visible}
 .winner-popup{position:relative;background:#ffffff;border:5px solid #155e1f;border-radius:4px;padding:40px 24px 20px;max-width:480px;width:100%;text-align:center;box-shadow:0 10px 40px rgba(0,0,0,0.4);transform:scale(.85) translateY(20px);opacity:0;transition:transform .4s cubic-bezier(.34,1.56,.64,1),opacity .3s ease;display:flex; flex-direction:column; justify-content:space-between; min-height:380px;overflow:hidden;}
@@ -787,7 +896,7 @@ html.dark-mode .spin-button{background:#0a0a0a;color:#fff;box-shadow:0 2px 10px 
 @keyframes winnerNameIn{0%{transform:scale(.85);opacity:0}100%{transform:scale(1);opacity:1}}
 .winner-pays{font-size:20px;font-weight:400;color:#333;margin-bottom:30px;}
 .winner-icons{display:flex;justify-content:center;gap:20px;margin-bottom:30px;}
-.winner-icon-btn{width:44px;height:44px;border-radius:50%;background:transparent;border:none;display:flex;align-items:center;justify-content:center;cursor:pointer;color:#0a0a0a;transition:.2s;}
+.winner-icon-btn{width:44px;height:44px;border-radius:50%;background:transparent;border:none;display:flex;align-items:center;justify-content:center;cursor:pointer;color:#0a0a0a;transition:.2s;-webkit-tap-highlight-color:transparent;touch-action:manipulation;}
 .winner-icon-btn:hover{color:#000;background:#f0f0f0;transform:scale(1.08)}
 .winner-icon-btn svg{width:24px;height:24px;display:block}
 .winner-footer{padding-top:15px; border-top:1px solid #e5e5e5; display:flex; align-items:center; justify-content:center; gap:10px;font-size:15px; font-weight:700; color:#555;}
@@ -822,7 +931,7 @@ html.dark-mode .spin-button{background:#0a0a0a;color:#fff;box-shadow:0 2px 10px 
 .modal-content-body li{margin-bottom:6px}
 .modal-content-body a{color:var(--footer-link-color);text-decoration:underline}
 
-.btn {padding: 10px 18px; border-radius: 9px; font-family: inherit; font-size: 14px; font-weight: 600; cursor: pointer; border: none; transition: all 0.2s;}
+.btn {padding: 10px 18px; border-radius: 9px; font-family: inherit; font-size: 14px; font-weight: 600; cursor: pointer; border: none; transition: all 0.2s;-webkit-tap-highlight-color:transparent;touch-action:manipulation;}
 .btn-primary {background: var(--text); color: var(--bg);}
 .btn-primary:hover {opacity: 0.88;}
 .btn-outline {background: transparent; color: var(--text); border: 1.5px solid var(--line);}
@@ -987,6 +1096,7 @@ html.dark-mode .footer-divider::after{
   color: #4c1d95; text-decoration: underline; text-underline-offset: 3px;
   font-size: 15px; font-weight: 500; white-space: nowrap; transition: opacity 0.2s;
   background: none; border: none; font-family: inherit; cursor: pointer; padding: 0;
+  -webkit-tap-highlight-color: transparent;
 }
 html.dark-mode .footer-link-item { color: #a78bfa; }
 .footer-link-item:hover { opacity: 0.75; }
@@ -1008,13 +1118,11 @@ html.dark-mode .footer-link-item svg { color: #9ca3af; }
 <svg xmlns="http://www.w3.org/2000/svg" style="position:absolute;width:0;height:0;overflow:hidden" aria-hidden="true">
 <defs>
 <symbol id="i-share-2" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" x2="15.42" y1="13.51" y2="17.49"/><line x1="15.41" x2="8.59" y1="6.51" y2="10.49"/></symbol>
-
 <symbol id="i-speaker" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m3 11 18-5v12L3 14v-3z"/><path d="M11.6 16.8a3 3 0 1 1-5.8-1.6"/></symbol>
 <symbol id="i-speaker-wave" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 5L6 9H2v6h4l5 4V5z"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14"/></symbol>
 <symbol id="i-speaker-mute-wave" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 5L6 9H2v6h4l5 4V5z"/><line x1="22" y1="9" x2="16" y2="15"/><line x1="16" y1="9" x2="22" y2="15"/></symbol>
 <symbol id="i-maximize" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 3 21 3 21 9"></polyline><polyline points="9 21 3 21 3 15"></polyline><line x1="21" y1="3" x2="14" y2="10"></line><line x1="3" y1="21" x2="10" y2="14"></line></symbol>
 <symbol id="i-minimize" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="4 14 10 14 10 20"></polyline><polyline points="20 10 14 10 14 4"></polyline><line x1="14" y1="10" x2="21" y2="3"></line><line x1="3" y1="21" x2="10" y2="14"></line></symbol>
-
 <symbol id="i-pencil" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 3a2.828 2.828 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5L17 3z"/></symbol>
 <symbol id="i-clipboard" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="8" y="2" width="8" height="4" rx="1" ry="1"/><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/><path d="m9 14 2 2 4-4"/></symbol>
 <symbol id="i-eye-off" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9.88 9.88a3 3 0 1 0 4.24 4.24"/><path d="M10.73 5.08A10.43 10.43 0 0 1 12 5c7 0 10 7 10 7a13.16 13.16 0 0 1-1.67 2.68"/><path d="M6.61 6.61A13.526 13.526 0 0 0 2 12s3 7 10 7a9.74 9.74 0 0 0 5.39-1.61"/><line x1="2" x2="22" y1="2" y2="22"/></symbol>
@@ -1075,12 +1183,12 @@ html.dark-mode .footer-link-item svg { color: #9ca3af; }
         <svg aria-hidden="true"><use href="#i-settings"/></svg>
         <span class="nav-text">Settings</span>
       </button>
-      <button type="button" class="nav-btn share-btn" onclick="shareApp()">
+      <button type="button" class="nav-btn share-btn" onclick="shareApp()" aria-label="Share">
         <svg aria-hidden="true"><use href="#i-share-2"/></svg>
         <span class="nav-text">Share</span>
       </button>
       <div class="nav-tools-wrap">
-        <button type="button" class="nav-btn" id="toolsMenuBtn" onclick="toggleToolsMenu(event)" aria-haspopup="true" aria-expanded="false">
+        <button type="button" class="nav-btn" id="toolsMenuBtn" onclick="toggleToolsMenu(event)" aria-haspopup="true" aria-expanded="false" aria-label="Tools">
           <svg aria-hidden="true"><use href="#i-tool"/></svg>
           <span class="nav-text">Tools</span>
         </button>
@@ -1140,13 +1248,13 @@ html.dark-mode .footer-link-item svg { color: #9ca3af; }
             <button class="icon-btn" id="headerSoundBtn" onclick="cycleSoundVolume()" title="Change Volume" aria-label="Change Volume">
               <svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-speaker-wave" id="soundIconUse"/></svg>
             </button>
-            <button class="icon-btn" onclick="toggleFullscreenWheel()" title="Fullscreen Wheel" aria-label="Fullscreen Wheel">
-              <svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-maximize"/></svg>
+            <button class="icon-btn" id="fsToggleBtn" onclick="toggleFullscreenWheel()" title="Fullscreen Wheel" aria-label="Enter fullscreen" aria-pressed="false">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-maximize" id="fsToggleIcon"/></svg>
             </button>
           </div>
 
           <div class="wheel-premium-bg" id="wheelPremiumBg">
-            <div class="fullscreen-brand-bar" id="fullscreenBrandBar" aria-hidden="true">
+            <div class="fullscreen-brand-bar" id="fullscreenBrandBar">
               <div class="fs-brand">
                 <img src="/apple-touch-icon.png" alt="Spin The Wheelly Logo" class="fs-brand-img">
                 <span class="fs-brand-text">Spin The Wheelly</span>
@@ -1168,6 +1276,37 @@ html.dark-mode .footer-link-item svg { color: #9ca3af; }
               </svg>
               <button type="button" class="spin-button" id="spinBtn" onclick="spinWheel()" aria-label="Spin the wheel" title="Spin the wheel">SPIN</button>
             </div>
+
+            <div class="fullscreen-footer-bar" id="fullscreenFooterBar">
+              <span>Powered by</span>
+              <a href="https://spinthewheelly.com/" target="_blank" rel="noopener noreferrer">spinthewheelly.com</a>
+            </div>
+
+            <div class="winner-overlay" id="winnerOverlay" role="dialog" aria-modal="true" aria-labelledby="winnerPopupTitle" aria-hidden="true">
+              <div class="winner-popup" id="winnerPopup">
+                <h2 id="winnerPopupTitle" class="sr-only">Team selected</h2>
+                <div>
+                  <div class="winner-name-big" id="winnerNameBig">—</div>
+                  <div class="winner-pays" id="winnerPaysLine">Selected team</div>
+                </div>
+                <div>
+                  <div class="winner-icons">
+                    <button type="button" class="winner-icon-btn" onclick="speakWinnerName()" aria-label="Speak team name" title="Speak team name">
+                      <svg aria-hidden="true"><use href="#i-speaker"/></svg>
+                    </button>
+                    <button type="button" class="winner-icon-btn" onclick="shareWinnerFromPopup()" aria-label="Share result" title="Share result">
+                      <svg aria-hidden="true"><use href="#i-share-2"/></svg>
+                    </button>
+                  </div>
+                  <div class="winner-footer">
+                    <img src="/apple-touch-icon.png" alt="Spin The Wheelly Logo" style="width: 30px; height: 30px; border-radius: 50%; object-fit: cover; flex-shrink: 0;">
+                    <span>Spin The Wheelly</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <canvas class="confetti-canvas" id="confettiCanvas" aria-hidden="true"></canvas>
           </div>
         </div>
 
@@ -1416,32 +1555,6 @@ Team D</textarea>
 </div>
 
 <input type="file" id="imageInput" accept="image/*" style="display:none;" onchange="handleImageUpload(event)">
-
-<div class="winner-overlay" id="winnerOverlay" role="dialog" aria-modal="true" aria-labelledby="winnerPopupTitle" aria-hidden="true">
-  <div class="winner-popup" id="winnerPopup">
-    <h2 id="winnerPopupTitle" class="sr-only">Team selected</h2>
-    <div>
-      <div class="winner-name-big" id="winnerNameBig">—</div>
-      <div class="winner-pays" id="winnerPaysLine">Selected team</div>
-    </div>
-    <div>
-      <div class="winner-icons">
-        <button type="button" class="winner-icon-btn" onclick="speakWinnerName()" aria-label="Speak team name" title="Speak team name">
-          <svg aria-hidden="true"><use href="#i-speaker"/></svg>
-        </button>
-        <button type="button" class="winner-icon-btn" onclick="shareWinnerFromPopup()" aria-label="Share result" title="Share result">
-          <svg aria-hidden="true"><use href="#i-share-2"/></svg>
-        </button>
-      </div>
-      <div class="winner-footer">
-        <img src="/apple-touch-icon.png" alt="Spin The Wheelly Logo" style="width: 30px; height: 30px; border-radius: 50%; object-fit: cover; flex-shrink: 0;">
-        <span>Spin The Wheelly</span>
-      </div>
-    </div>
-  </div>
-</div>
-
-<canvas class="confetti-canvas" id="confettiCanvas" aria-hidden="true"></canvas>
 
 <div class="modal-overlay" id="shareModal" role="dialog" aria-modal="true" aria-label="Share result" aria-hidden="true">
   <div class="modal-box">
@@ -1717,7 +1830,7 @@ function clearActivePresets(){
 }
 
 /* ============================================================
-   ROUTING / SHARE
+   SHARE
    ============================================================ */
 function shareApp(){
   var text='Check out this free Random Team Generator by Spin The Wheelly — pick a random team fairly with one spin!\n\nhttps://spinthewheelly.com/random-team-generator';
@@ -1802,6 +1915,7 @@ function openSidebar(){
   var ov=document.getElementById('sidebarOverlay');
   var btn=document.getElementById('hamburgerBtn');
   if(!sb)return;
+  closeToolsMenu();
   sb.classList.add('show');
   sb.removeAttribute('inert');
   if(ov)ov.classList.add('show');
@@ -1890,9 +2004,6 @@ var IDLE_SPEED=12;
 var pointerEl=null;
 var spinToken=0;
 
-/* ============================================================
-   HELPERS (spin label + guard)
-   ============================================================ */
 function setSpinLabel(text){
   var btn=document.getElementById('spinBtn');
   if(!btn)return;
@@ -2106,19 +2217,85 @@ function playSweetMusic(){
 /* ============================================================
    FULLSCREEN
    ============================================================ */
+function fullscreenElementNow(){
+  return document.fullscreenElement||
+    document.webkitFullscreenElement||
+    document.msFullscreenElement||null;
+}
+function isWheelFullscreen(){
+  var el=document.getElementById('wheelPremiumBg');
+  return !!fullscreenElementNow() || !!(el && el.classList.contains('pseudo-fullscreen'));
+}
+function restoreBodyScroll(){
+  var winnerOpen=document.getElementById('winnerOverlay')&&
+    document.getElementById('winnerOverlay').classList.contains('show');
+  var modalOpen=document.querySelector('.modal-overlay.active');
+  var sidebarOpen=document.getElementById('mobileSidebar')&&
+    document.getElementById('mobileSidebar').classList.contains('show');
+  if(!winnerOpen&&!modalOpen&&!sidebarOpen)document.body.style.overflow='';
+}
+function updateFullscreenUi(){
+  var on=isWheelFullscreen();
+  var btn=document.getElementById('fsToggleBtn');
+  var icon=document.getElementById('fsToggleIcon');
+  if(btn){
+    btn.title=on?'Exit Fullscreen':'Fullscreen Wheel';
+    btn.setAttribute('aria-label',on?'Exit fullscreen':'Enter fullscreen');
+    btn.setAttribute('aria-pressed',on?'true':'false');
+  }
+  if(icon)icon.setAttribute('href',on?'#i-minimize':'#i-maximize');
+}
+function setPseudoFullscreen(on){
+  var el=document.getElementById('wheelPremiumBg');
+  if(!el)return;
+  el.classList.toggle('pseudo-fullscreen',on);
+  if(on){document.body.style.overflow='hidden';}
+  else{restoreBodyScroll();}
+  updateFullscreenUi();
+}
 function toggleFullscreenWheel(){
   var el=document.getElementById('wheelPremiumBg');
   if(!el)return;
-  var isFs=document.fullscreenElement||document.webkitFullscreenElement||document.msFullscreenElement;
-  if(!isFs){
-    var req=el.requestFullscreen||el.webkitRequestFullscreen||el.msRequestFullscreen;
-    if(req){try{req.call(el);}catch(e){showToast('Fullscreen not available.');}}
-    else{showToast('Fullscreen not supported.');}
-  }else{
-    var exit=document.exitFullscreen||document.webkitExitFullscreen||document.msExitFullscreen;
-    if(exit){try{exit.call(document);}catch(e){}}
+  if(isWheelFullscreen()){
+    if(el.classList.contains('pseudo-fullscreen')){
+      setPseudoFullscreen(false);
+      return;
+    }
+    var exit=document.exitFullscreen||
+      document.webkitExitFullscreen||
+      document.msExitFullscreen;
+    if(exit){
+      try{exit.call(document);}catch(e){setPseudoFullscreen(false);}
+    }else{
+      setPseudoFullscreen(false);
+    }
+    return;
+  }
+  var req=el.requestFullscreen||
+    el.webkitRequestFullscreen||
+    el.msRequestFullscreen;
+  if(!req){setPseudoFullscreen(true);return;}
+  try{
+    var p=req.call(el);
+    if(p&&typeof p.then==='function'){
+      p.then(function(){updateFullscreenUi();})
+       .catch(function(){setPseudoFullscreen(true);});
+    }else{
+      setTimeout(updateFullscreenUi,150);
+    }
+  }catch(e){
+    setPseudoFullscreen(true);
   }
 }
+['fullscreenchange','webkitfullscreenchange','msfullscreenchange'].forEach(function(ev){
+  document.addEventListener(ev,function(){
+    var el=document.getElementById('wheelPremiumBg');
+    if(!fullscreenElementNow() && el && !el.classList.contains('pseudo-fullscreen')){
+      restoreBodyScroll();
+    }
+    updateFullscreenUi();
+  });
+});
 
 /* ============================================================
    RANDOM / SPIN
@@ -2621,6 +2798,11 @@ function trapFocus(e,container){
 
 document.addEventListener('keydown',function(e){
   if(e.key==='Escape'){
+    var wpb=document.getElementById('wheelPremiumBg');
+    if(wpb&&wpb.classList.contains('pseudo-fullscreen')){
+      setPseudoFullscreen(false);
+      return;
+    }
     closeWinnerPopup();closeShareModal();closeSettingsModal();
     closeModal('aboutModal');closeModal('contactModal');closeModal('privacyModal');
     closeModal('termsModal');closeModal('blogModal');
@@ -2645,10 +2827,10 @@ window.addEventListener('resize',function(){
   if(window.innerWidth>900){
     var sb=document.getElementById('mobileSidebar');
     if(sb&&sb.classList.contains('show'))closeSidebar();
+    closeToolsMenu();
   }
 });
 
-/* Legacy hash routes → redirect to real pages */
 function handleRoute(){
   var hash = window.location.hash;
   var presetRedirects = {
@@ -2690,6 +2872,7 @@ function init(){
   updateEntries();
   updateSoundIcon();
   renderResultsList();
+  updateFullscreenUi();
   handleRoute();
 }
 if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',init);
