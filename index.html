@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-<title>Spin The Wheelly — Spin the Wheel to Decide a Random Choice</title>
+<title>Spin the Wheel to Decide a Random Choice - spinthewheelly.com</title>
 <meta name="description" content="Spin the wheel to pick a random winner, make decisions, or choose a random item. Create your own picker wheel for free with one click.">
 <meta name="theme-color" content="#ffffff" id="themeColorMeta">
 <link rel="canonical" href="https://spinthewheelly.com/">
@@ -641,9 +641,26 @@ html.dark-mode .results-list li { color: #f1f5f9; border-bottom-color: #334155; 
 .wheel-premium-bg {position: relative;display: flex;align-items: center;justify-content: center;width: 100%;aspect-ratio: 1/1;max-width: 520px;margin: 0 auto;border-radius: 50%;box-shadow: inset 0 0 0 1px rgba(0,0,0,0.02);}
 html.dark-mode .wheel-premium-bg {box-shadow: inset 0 0 0 1px rgba(255,255,255,0.03);}
 .wheel-premium-bg:fullscreen,
-.wheel-premium-bg:-webkit-full-screen {max-width: none;width: 100vw;height: 100vh;aspect-ratio: auto;border-radius: 0;background: var(--bg);box-shadow: none;}
+.wheel-premium-bg:-webkit-full-screen {max-width: none;width: 100vw;height: 100vh;height: 100dvh;aspect-ratio: auto;border-radius: 0;background: var(--bg);box-shadow: none;}
 .wheel-premium-bg:fullscreen .wheel-stage,
-.wheel-premium-bg:-webkit-full-screen .wheel-stage {max-width: min(90vh, 90vw);}
+.wheel-premium-bg:-webkit-full-screen .wheel-stage,
+.wheel-premium-bg.pseudo-fullscreen .wheel-stage {max-width: min(84vh, 88vw);}
+
+/* ---------- PSEUDO FULLSCREEN FALLBACK (iOS / unsupported) ---------- */
+.wheel-premium-bg.pseudo-fullscreen{
+  position: fixed;
+  inset: 0;
+  z-index: 9997;
+  width: 100vw;
+  height: 100vh;
+  height: 100dvh;
+  max-width: none;
+  aspect-ratio: auto;
+  border-radius: 0;
+  margin: 0;
+  background: var(--bg);
+  box-shadow: none;
+}
 .wheel-premium-bg::before {content: '';position: absolute;top: 50%;left: 50%;transform: translate(-50%, -50%);width: 95%;height: 95%;border-radius: 50%;background: radial-gradient(circle, rgba(232, 165, 0, 0.25) 0%, rgba(255, 255, 255, 0) 70%);filter: blur(40px);z-index: 0;animation: pulseGlow 5s infinite alternate ease-in-out;pointer-events: none;}
 html.dark-mode .wheel-premium-bg::before {background: radial-gradient(circle, rgba(96, 165, 250, 0.2) 0%, rgba(15, 23, 42, 0) 70%);}
 @keyframes pulseGlow {
@@ -666,7 +683,8 @@ html.dark-mode .wheel-premium-bg::before {background: radial-gradient(circle, rg
   pointer-events: none;
 }
 .wheel-premium-bg:fullscreen .fullscreen-brand-bar,
-.wheel-premium-bg:-webkit-full-screen .fullscreen-brand-bar {
+.wheel-premium-bg:-webkit-full-screen .fullscreen-brand-bar,
+.wheel-premium-bg.pseudo-fullscreen .fullscreen-brand-bar {
   display: flex;
 }
 .fullscreen-brand-bar > * { pointer-events: auto; }
@@ -752,6 +770,54 @@ html.dark-mode .fs-icon-btn svg {
   .fs-brand-text { font-size: 13px; }
   .fs-icon-btn { width: 36px; height: 36px; }
   .fs-icon-btn svg { width: 20px; height: 20px; }
+}
+
+/* ============================================================
+   FULLSCREEN BOTTOM BAR — POWERED BY
+   ============================================================ */
+.fullscreen-footer-bar {
+  display: none;
+  position: absolute;
+  left: 0; right: 0; bottom: 0;
+  padding: 14px clamp(16px, 3vw, 32px) calc(14px + env(safe-area-inset-bottom, 0px));
+  z-index: 20;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  font-size: clamp(12px, 2.5vw, 14px);
+  font-weight: 600;
+  letter-spacing: -0.2px;
+  color: #1a1a1a;
+  text-align: center;
+  white-space: nowrap;
+  pointer-events: none;
+  max-width: 100%;
+  box-sizing: border-box;
+}
+html.dark-mode .fullscreen-footer-bar { color: #e2e8f0; }
+.fullscreen-footer-bar a {
+  pointer-events: auto;
+  color: inherit;
+  text-decoration: none;
+  font-weight: 800;
+  transition: opacity 0.2s;
+}
+.fullscreen-footer-bar a:hover { opacity: 0.75; }
+.wheel-premium-bg:fullscreen .fullscreen-footer-bar,
+.wheel-premium-bg:-webkit-full-screen .fullscreen-footer-bar,
+.wheel-premium-bg.pseudo-fullscreen .fullscreen-footer-bar { display: flex; }
+@media (max-width: 560px) {
+  .fullscreen-footer-bar {
+    font-size: 12.5px;
+    padding: 10px 12px calc(10px + env(safe-area-inset-bottom, 0px));
+  }
+}
+@media (max-width: 400px) {
+  .fullscreen-footer-bar {
+    white-space: normal;
+    font-size: 12px;
+    padding: 8px 10px calc(8px + env(safe-area-inset-bottom, 0px));
+  }
 }
 
 .wheel-stage{position:relative;display:block;width:100%;max-width:440px;margin:0 auto;aspect-ratio:1/1;min-width:0;z-index:1;}
@@ -1146,14 +1212,14 @@ html.dark-mode .footer-link-item svg { color: #9ca3af; }
             <button class="icon-btn" id="headerSoundBtn" onclick="cycleSoundVolume()" title="Change Volume" aria-label="Change Volume">
               <svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-speaker-wave" id="soundIconUse"/></svg>
             </button>
-            <button class="icon-btn" onclick="toggleFullscreenWheel()" title="Fullscreen Wheel" aria-label="Fullscreen Wheel">
-              <svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-maximize"/></svg>
+            <button class="icon-btn" id="fsToggleBtn" onclick="toggleFullscreenWheel()" title="Fullscreen Wheel" aria-label="Enter fullscreen" aria-pressed="false">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-maximize" id="fsToggleIcon"/></svg>
             </button>
           </div>
           
           <div class="wheel-premium-bg" id="wheelPremiumBg">
-            <!-- FULLSCREEN-ONLY BAR -->
-            <div class="fullscreen-brand-bar" id="fullscreenBrandBar" aria-hidden="true">
+            <!-- FULLSCREEN-ONLY TOP BAR -->
+            <div class="fullscreen-brand-bar" id="fullscreenBrandBar">
               <div class="fs-brand">
                 <img src="/apple-touch-icon.png" alt="Spin The Wheelly Logo" class="fs-brand-img">
                 <span class="fs-brand-text">Spin The Wheelly</span>
@@ -1175,6 +1241,40 @@ html.dark-mode .footer-link-item svg { color: #9ca3af; }
               </svg>
               <button type="button" class="spin-button" id="spinBtn" onclick="spinWheel()" aria-label="Spin the wheel" title="Spin the wheel">SPIN</button>
             </div>
+
+            <!-- FULLSCREEN-ONLY BOTTOM BAR -->
+            <div class="fullscreen-footer-bar" id="fullscreenFooterBar">
+              <span>Powered by</span>
+              <a href="https://spinthewheelly.com/" target="_blank" rel="noopener noreferrer">spinthewheelly.com</a>
+            </div>
+
+            <!-- WINNER POPUP — placed inside fullscreen container -->
+            <div class="winner-overlay" id="winnerOverlay" role="dialog" aria-modal="true" aria-labelledby="winnerPopupTitle" aria-hidden="true">
+              <div class="winner-popup" id="winnerPopup">
+                <h2 id="winnerPopupTitle" class="sr-only">Winner selected</h2>
+                <div>
+                  <div class="winner-name-big" id="winnerNameBig">—</div>
+                  <div class="winner-pays" id="winnerPaysLine">Selected</div>
+                </div>
+                <div>
+                  <div class="winner-icons">
+                    <button type="button" class="winner-icon-btn" onclick="speakWinnerName()" aria-label="Speak winner name" title="Speak name">
+                      <svg aria-hidden="true"><use href="#i-speaker"/></svg>
+                    </button>
+                    <button type="button" class="winner-icon-btn" onclick="shareWinnerFromPopup()" aria-label="Share result" title="Share result">
+                      <svg aria-hidden="true"><use href="#i-share-2"/></svg>
+                    </button>
+                  </div>
+                  <div class="winner-footer">
+                    <img src="/apple-touch-icon.png" alt="Spin The Wheelly Logo" style="width: 30px; height: 30px; border-radius: 50%; object-fit: cover; flex-shrink: 0;">
+                    <span>Spin The Wheelly</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- CONFETTI — placed inside fullscreen container -->
+            <canvas class="confetti-canvas" id="confettiCanvas" aria-hidden="true"></canvas>
           </div>
         </div>
 
@@ -1528,33 +1628,6 @@ Soup</textarea>
 </div>
 
 <input type="file" id="imageInput" accept="image/*" style="display:none;" onchange="handleImageUpload(event)">
-
-<!-- Winner popup -->
-<div class="winner-overlay" id="winnerOverlay" role="dialog" aria-modal="true" aria-labelledby="winnerPopupTitle" aria-hidden="true">
-  <div class="winner-popup" id="winnerPopup">
-    <h2 id="winnerPopupTitle" class="sr-only">Winner selected</h2>
-    <div>
-      <div class="winner-name-big" id="winnerNameBig">—</div>
-      <div class="winner-pays" id="winnerPaysLine">Selected</div>
-    </div>
-    <div>
-      <div class="winner-icons">
-        <button type="button" class="winner-icon-btn" onclick="speakWinnerName()" aria-label="Speak winner name" title="Speak name">
-          <svg aria-hidden="true"><use href="#i-speaker"/></svg>
-        </button>
-        <button type="button" class="winner-icon-btn" onclick="shareWinnerFromPopup()" aria-label="Share result" title="Share result">
-          <svg aria-hidden="true"><use href="#i-share-2"/></svg>
-        </button>
-      </div>
-      <div class="winner-footer">
-        <img src="/apple-touch-icon.png" alt="Spin The Wheelly Logo" style="width: 30px; height: 30px; border-radius: 50%; object-fit: cover; flex-shrink: 0;">
-        <span>Spin The Wheelly</span>
-      </div>
-    </div>
-  </div>
-</div>
-
-<canvas class="confetti-canvas" id="confettiCanvas" aria-hidden="true"></canvas>
 
 <!-- Share modal -->
 <div class="modal-overlay" id="shareModal" role="dialog" aria-modal="true" aria-label="Share result" aria-hidden="true">
@@ -2174,19 +2247,76 @@ function playSweetMusic(){
   events.forEach(function(e){document.addEventListener(e,once,{once:true,passive:true});});
 })();
 
+/* ============================================================
+   FULLSCREEN
+   ============================================================ */
+function fullscreenElementNow(){
+  return document.fullscreenElement||document.webkitFullscreenElement||document.msFullscreenElement||null;
+}
+function isWheelFullscreen(){
+  var el=document.getElementById('wheelPremiumBg');
+  return !!fullscreenElementNow() || !!(el && el.classList.contains('pseudo-fullscreen'));
+}
+function restoreBodyScroll(){
+  var winnerOpen=document.getElementById('winnerOverlay')&&document.getElementById('winnerOverlay').classList.contains('show');
+  var modalOpen=document.querySelector('.modal-overlay.active');
+  var sidebarOpen=document.getElementById('mobileSidebar')&&document.getElementById('mobileSidebar').classList.contains('show');
+  if(!winnerOpen&&!modalOpen&&!sidebarOpen)document.body.style.overflow='';
+}
+function updateFullscreenUi(){
+  var on=isWheelFullscreen();
+  var btn=document.getElementById('fsToggleBtn');
+  var icon=document.getElementById('fsToggleIcon');
+  if(btn){
+    btn.title=on?'Exit Fullscreen':'Fullscreen Wheel';
+    btn.setAttribute('aria-label',on?'Exit fullscreen':'Enter fullscreen');
+    btn.setAttribute('aria-pressed',on?'true':'false');
+  }
+  if(icon)icon.setAttribute('href',on?'#i-minimize':'#i-maximize');
+}
+function setPseudoFullscreen(on){
+  var el=document.getElementById('wheelPremiumBg');
+  if(!el)return;
+  el.classList.toggle('pseudo-fullscreen',on);
+  if(on){document.body.style.overflow='hidden';}else{restoreBodyScroll();}
+  updateFullscreenUi();
+}
 function toggleFullscreenWheel(){
   var el=document.getElementById('wheelPremiumBg');
   if(!el)return;
-  var isFs=document.fullscreenElement||document.webkitFullscreenElement||document.msFullscreenElement;
-  if(!isFs){
-    var req=el.requestFullscreen||el.webkitRequestFullscreen||el.msRequestFullscreen;
-    if(req){try{req.call(el);}catch(e){showToast('Fullscreen not available.');}}
-    else{showToast('Fullscreen not supported.');}
-  }else{
+
+  /* ---- EXIT ---- */
+  if(isWheelFullscreen()){
+    if(el.classList.contains('pseudo-fullscreen')){setPseudoFullscreen(false);return;}
     var exit=document.exitFullscreen||document.webkitExitFullscreen||document.msExitFullscreen;
-    if(exit){try{exit.call(document);}catch(e){}}
+    if(exit){try{exit.call(document);}catch(e){setPseudoFullscreen(false);}}
+    else{setPseudoFullscreen(false);}
+    return;
+  }
+
+  /* ---- ENTER ---- */
+  var req=el.requestFullscreen||el.webkitRequestFullscreen||el.msRequestFullscreen;
+  if(!req){setPseudoFullscreen(true);return;}
+  try{
+    var p=req.call(el);
+    if(p&&typeof p.then==='function'){
+      p.then(function(){updateFullscreenUi();}).catch(function(){setPseudoFullscreen(true);});
+    }else{
+      setTimeout(updateFullscreenUi,150);
+    }
+  }catch(e){
+    setPseudoFullscreen(true);
   }
 }
+['fullscreenchange','webkitfullscreenchange','msfullscreenchange'].forEach(function(ev){
+  document.addEventListener(ev,function(){
+    var el=document.getElementById('wheelPremiumBg');
+    if(!fullscreenElementNow() && el && !el.classList.contains('pseudo-fullscreen')){
+      restoreBodyScroll();
+    }
+    updateFullscreenUi();
+  });
+});
 
 /* ============================================================
    RANDOM / SPIN
@@ -2688,6 +2818,8 @@ function trapFocus(e,container){
 
 document.addEventListener('keydown',function(e){
   if(e.key==='Escape'){
+    var wpb=document.getElementById('wheelPremiumBg');
+    if(wpb&&wpb.classList.contains('pseudo-fullscreen')){setPseudoFullscreen(false);return;}
     closeWinnerPopup();closeShareModal();closeSettingsModal();
     closeModal('aboutModal');closeModal('contactModal');closeModal('privacyModal');
     closeModal('termsModal');closeModal('blogModal');
@@ -2762,6 +2894,7 @@ function init(){
   updateEntries();
   updateSoundIcon();
   renderResultsList();
+  updateFullscreenUi();
   handleRoute();
 }
 if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',init);
