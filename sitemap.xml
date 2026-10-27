@@ -4,22 +4,26 @@
         xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
                             http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
 
-  <!-- ====================== MAIN PAGES ====================== -->
+  <!-- ============================================================
+       MAIN / HOME
+       ============================================================ -->
 
-  <!-- Home / Main Spin the Wheel -->
+  <!-- Home — Main Spin the Wheel -->
   <url>
     <loc>https://spinthewheelly.com/</loc>
-    <lastmod>2025-01-15</lastmod>
+    <lastmod>2025-10-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
 
-  <!-- ====================== TOOL PAGES ====================== -->
+  <!-- ============================================================
+       TOOL PAGES
+       ============================================================ -->
 
   <!-- Random Name Picker -->
   <url>
     <loc>https://spinthewheelly.com/random-name-picker</loc>
-    <lastmod>2025-01-15</lastmod>
+    <lastmod>2025-10-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
@@ -27,7 +31,7 @@
   <!-- Yes / No Wheel -->
   <url>
     <loc>https://spinthewheelly.com/yes-no-wheel</loc>
-    <lastmod>2025-01-15</lastmod>
+    <lastmod>2025-10-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
@@ -35,7 +39,7 @@
   <!-- Random Team Generator -->
   <url>
     <loc>https://spinthewheelly.com/random-team-generator</loc>
-    <lastmod>2025-01-15</lastmod>
+    <lastmod>2025-10-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
@@ -43,25 +47,27 @@
   <!-- What to Eat -->
   <url>
     <loc>https://spinthewheelly.com/what-to-eat</loc>
-    <lastmod>2025-01-15</lastmod>
+    <lastmod>2025-10-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
 
-  <!-- ====================== INFO / LEGAL PAGES ====================== -->
+  <!-- ============================================================
+       INFO / LEGAL PAGES
+       ============================================================ -->
 
   <!-- About Us -->
   <url>
     <loc>https://spinthewheelly.com/about-us</loc>
-    <lastmod>2025-01-15</lastmod>
+    <lastmod>2025-10-27</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
+    <priority>0.6</priority>
   </url>
 
   <!-- Privacy Policy -->
   <url>
     <loc>https://spinthewheelly.com/privacy-policy</loc>
-    <lastmod>2025-01-15</lastmod>
+    <lastmod>2025-10-27</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>
@@ -69,7 +75,7 @@
   <!-- Terms & Conditions -->
   <url>
     <loc>https://spinthewheelly.com/terms</loc>
-    <lastmod>2025-01-15</lastmod>
+    <lastmod>2025-10-27</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>
