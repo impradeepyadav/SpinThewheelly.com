@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-<title>Spin The Wheelly — Free Spin the Wheel to Pick a Random Choice</title>
-<meta name="description" content="Free online spin the wheel random picker. Add names or options, hit SPIN, and let the wheel decide fairly. 100% private, no signup, 18 premium color themes, custom backgrounds, up to 50 entries.">
+<title>Spin the Wheel – Random Choice Picker | Spin The Wheelly</title>
+<meta name="description" content="Spin the wheel online to make random choices, pick a winner, choose names, or decide what to do next. Customize your wheel and spin for free with Spin The Wheelly.">
 <meta name="keywords" content="spin the wheel, random wheel, wheel of names, random picker, decision wheel, random choice picker, spin wheel free, picker wheel, random name picker, spin the wheel online, wheel spinner, random decision maker, name wheel, lucky draw wheel, raffle picker">
 <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
 <meta name="author" content="Spin The Wheelly">
@@ -20,7 +20,6 @@
 :root{color-scheme:light;--bg:#ffffff;--text:#0a0a0a;--text-light:#525252;--line:#e5e5e5;--hover:#f3f4f6;--card:#fafafa;--soft-bg:#f9fafb;--panel-bg:#ffffff;--input-bg:#ffffff;--input-border:#e5e5e5;--shadow:rgba(0,0,0,.1);--overlay-bg:rgba(0,0,0,.55);--footer-link-color:#2563eb;--toast-bg:#0f172a;--toast-text:#fff;--page-max:1200px;--gutter:clamp(16px,3vw,40px);}
 *{box-sizing:border-box;margin:0;padding:0}
 
-/* ▼ NO HORIZONTAL SCROLL ANYWHERE */
 html{scroll-behavior:smooth;overflow-x:hidden !important;overflow-x:clip !important;-webkit-text-size-adjust:100%;max-width:100% !important;width:100%;background-color:#ffffff !important;}
 body{font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;color:var(--text);min-height:100vh;overflow-x:hidden !important;overflow-x:clip !important;width:100% !important;max-width:100% !important;overflow-wrap:break-word;-webkit-font-smoothing:antialiased;display:flex;flex-direction:column;position:relative;z-index:0;background-color:#ffffff !important;background-image:none !important;}
 
@@ -33,7 +32,6 @@ a:focus-visible,button:focus-visible,input:focus-visible,[tabindex]:focus-visibl
 .seo-block{content-visibility:auto;contain-intrinsic-size:auto 320px;}
 .preset-grid{contain:layout style;}
 .panel-view{will-change:opacity,transform;}
-.wheel-premium-bg::before{will-change:transform,opacity;}
 
 .site-header{background:#ffffff;border-bottom:1px solid #e5e7eb;width:100%;position:relative;z-index:100;padding:0;max-width:100%;overflow:hidden;}
 .header-container{max-width:var(--page-max);margin:0 auto;padding:0 var(--gutter);display:flex;align-items:center;justify-content:space-between;height:64px;gap:12px;}
@@ -85,19 +83,15 @@ a:focus-visible,button:focus-visible,input:focus-visible,[tabindex]:focus-visibl
 .sidebar-sub-item .item-content{display:flex;flex-direction:column;gap:2px;min-width:0;flex:1;text-align:left;}
 .sidebar-sub-item .item-title{font-size:13.5px;font-weight:600;color:var(--text);line-height:1.2;}
 
-/* ▼ NO HORIZONTAL SCROLL — main */
 main{flex:1;display:flex;align-items:flex-start;justify-content:center;padding:0 20px 58px;width:100%;min-width:0;max-width:100%;overflow-x:hidden !important;overflow-x:clip !important;background-color:#ffffff !important;}
 .content-container{width:100%;max-width:var(--page-max);margin:0 auto;min-width:0;overflow-x:hidden !important;overflow-x:clip !important;}
 .wheel-section{background:transparent;border:none;border-radius:0;box-shadow:none;padding:0;width:100%;max-width:100%;}
 .count-badge{background:#2563eb;color:#ffffff;padding:4px 12px;border-radius:999px;font-size:12px;font-weight:600;display:inline-block;}
 
-/* ▼ NO HORIZONTAL SCROLL — layout container */
 .wheel-layout{display:flex;justify-content:center;align-items:flex-start;gap:clamp(20px,4vw,50px);flex-wrap:nowrap;width:100%;max-width:100%;overflow-x:hidden !important;overflow-x:clip !important;}
 
-/* ▼ min-width:0 lets these flex children shrink below their content width */
 .wheel-col{width:100%;max-width:580px;min-width:0;flex-shrink:1;display:flex;flex-direction:column;align-items:center;margin-bottom:40px;}
 
-/* ▼ icons sit closer to wheel */
 .wheel-controls-top{display:flex;justify-content:flex-end;align-items:center;gap:10px;width:100%;max-width:580px;margin:0 auto 0;padding:0 8px;position:relative;top:12px;z-index:10;}
 
 @media (max-width:900px){.wheel-layout{flex-direction:column;align-items:center;gap:22px;}.wheel-col{margin-bottom:40px;}}
@@ -107,7 +101,6 @@ main{flex:1;display:flex;align-items:flex-start;justify-content:center;padding:0
 .icon-btn:active{transform:translateY(0) scale(.94);opacity:.6}
 .icon-btn svg{width:22px;height:22px;stroke:currentColor;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round;}
 
-/* ▼ min-width:0 for entries-panel too */
 .entries-panel{width:100%;max-width:360px;min-width:0;flex-shrink:1;display:flex;flex-direction:column;margin-top:48px;}
 @media (max-width:900px){.entries-panel{max-width:500px;margin-top:0;}}
 .entries-top-tools{display:flex;gap:12px;margin-bottom:16px;justify-content:flex-start;padding:0;flex-wrap:wrap;}
@@ -152,18 +145,15 @@ main{flex:1;display:flex;align-items:flex-start;justify-content:center;padding:0
 .results-empty{color:#6b7280 !important;font-style:italic;border-bottom:none !important;font-size:15px;}
 .entries-footer{display:flex;align-items:center;justify-content:flex-end;gap:12px;margin-top:12px;flex-wrap:wrap;}
 
-/* ▼ NO HORIZONTAL SCROLL + glow clipped inside container */
 .wheel-premium-bg{position:relative;display:flex;align-items:center;justify-content:center;width:100%;max-width:580px;aspect-ratio:1/1;margin:0 auto;border-radius:50%;overflow:hidden;}
 
-/* ▼ fullscreen uses inset:0 + width:100% (not 100vw) so no scrollbar overflow */
 .wheel-premium-bg:fullscreen,.wheel-premium-bg:-webkit-full-screen{max-width:none;width:100%;height:100%;height:100dvh;aspect-ratio:auto;border-radius:0;background:var(--bg);box-shadow:none;overflow:hidden;}
 .wheel-premium-bg:fullscreen .wheel-stage,.wheel-premium-bg:-webkit-full-screen .wheel-stage,.wheel-premium-bg.pseudo-fullscreen .wheel-stage{max-width:min(84vh,88vw) !important;}
 
-/* ▼ pseudo-fullscreen uses inset:0 + width:100% (not 100vw) */
 .wheel-premium-bg.pseudo-fullscreen{position:fixed;inset:0;z-index:9997;width:100%;height:100%;height:100dvh;max-width:none;aspect-ratio:auto;border-radius:0;margin:0;background:var(--bg);overflow:hidden;}
 
-.wheel-premium-bg::before{content:'';position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:95%;height:95%;border-radius:50%;background:radial-gradient(circle,rgba(232,165,0,0.25) 0%,rgba(255,255,255,0) 70%);filter:blur(40px);z-index:0;animation:pulseGlow 5s infinite alternate ease-in-out;pointer-events:none;}
-@keyframes pulseGlow{0%{transform:translate(-50%,-50%) scale(1);opacity:0.6}100%{transform:translate(-50%,-50%) scale(1.08);opacity:1}}
+.wheel-premium-bg::before{content:none;display:none !important;animation:none !important;}
+@keyframes pulseGlow{0%{opacity:0.6}100%{opacity:1}}
 
 .fullscreen-brand-bar{display:none;position:absolute;top:0;left:0;right:0;padding:16px clamp(16px,3vw,32px);z-index:20;align-items:center;justify-content:space-between;gap:12px;pointer-events:none;}
 .wheel-premium-bg:fullscreen .fullscreen-brand-bar,.wheel-premium-bg:-webkit-full-screen .fullscreen-brand-bar,.wheel-premium-bg.pseudo-fullscreen .fullscreen-brand-bar{display:flex;}
@@ -195,10 +185,8 @@ main{flex:1;display:flex;align-items:flex-start;justify-content:center;padding:0
 .spin-button:hover:not(:disabled){filter:brightness(0.97);transform:translate(-50%,-50%) scale(1.04);box-shadow:0 4px 18px rgba(0,0,0,0.28),inset 0 -2px 4px rgba(0,0,0,0.05);}
 .spin-button:active:not(:disabled){transform:translate(-50%,-50%) scale(.97);}
 
-/* Disabled because <2 entries — greyed out */
 .spin-button:disabled{cursor:not-allowed;opacity:0.5;filter:grayscale(0.4);background:#f3f4f6;color:#9ca3af;box-shadow:0 2px 8px rgba(0,0,0,0.08),inset 0 -2px 4px rgba(0,0,0,0.03);}
 
-/* Disabled because SPINNING — stays full white, opaque, no fade */
 .spin-button:disabled[aria-busy="true"]{opacity:1;filter:none;background:#ffffff;color:#0a0a0a;border-color:rgba(0,0,0,0.12);box-shadow:0 3px 14px rgba(0,0,0,0.22),inset 0 -2px 4px rgba(0,0,0,0.05);cursor:progress;}
 
 .spin-button:focus-visible{outline:2px solid var(--text) !important;outline-offset:5px !important;border-radius:50%;}
@@ -249,6 +237,15 @@ main{flex:1;display:flex;align-items:flex-start;justify-content:center;padding:0
 .btn-outline{background:transparent;color:var(--text);border:1.5px solid var(--line)}
 .btn-outline:hover{background:var(--hover)}
 
+.modal-box.modal-wide-settings{max-width:840px;width:100%;padding:26px 26px 20px;}
+.settings-columns{display:grid;grid-template-columns:1fr 1fr;gap:0 32px;align-items:start;}
+.settings-col{min-width:0;}
+.settings-col .palette-grid{grid-template-columns:repeat(auto-fill,minmax(46px,1fr));}
+@media (max-width:720px){
+  .modal-box.modal-wide-settings{padding:20px 16px 16px;max-height:92vh;}
+  .settings-columns{grid-template-columns:1fr;gap:0;}
+}
+
 .settings-section{padding:14px 0;border-bottom:1px solid var(--line);}
 .settings-section:first-of-type{padding-top:2px;}
 .settings-label{font-size:13px;font-weight:700;color:var(--text);margin-bottom:10px;display:block;letter-spacing:-0.1px;}
@@ -256,7 +253,7 @@ main{flex:1;display:flex;align-items:flex-start;justify-content:center;padding:0
 .settings-row label{display:flex;align-items:center;gap:10px;cursor:pointer;flex:1;}
 .settings-row input[type="checkbox"]{width:18px;height:18px;accent-color:#3b82f6;}
 .settings-row select{padding:7px 12px;border-radius:9px;border:1.5px solid var(--input-border);background:var(--input-bg);color:var(--text);font-family:inherit;font-size:14px;font-weight:400;cursor:pointer;min-width:110px;}
-.settings-note{font-size:12.5px;color:var(--text-light);line-height:1.5;margin:12px 0 18px;}
+.settings-note{font-size:12.5px;color:var(--text-light);line-height:1.5;margin:12px 0 4px;}
 
 .segmented-control{display:flex;background:var(--soft-bg);border-radius:10px;padding:3px;gap:2px;}
 .segmented-control button{flex:1;padding:8px 6px;border:none;background:transparent;color:var(--text-light);font-family:inherit;font-size:12.5px;font-weight:600;border-radius:7px;cursor:pointer;transition:background 0.15s,color 0.15s;-webkit-tap-highlight-color:transparent;touch-action:manipulation;}
@@ -286,30 +283,28 @@ main{flex:1;display:flex;align-items:flex-start;justify-content:center;padding:0
 .seo-content{width:100%;margin:0 auto;padding:0;text-align:left;}
 .seo-block{margin-bottom:28px;width:100%;text-align:left;}
 .seo-block:last-child{margin-bottom:0;}
-.seo-block h2{font-size:22px;font-weight:800;color:#111827;margin-top:0;margin-bottom:14px;letter-spacing:-0.3px;}
-.seo-block h3{font-size:17px;font-weight:700;color:#111827;margin:16px 0 10px;letter-spacing:-0.2px;}
+.seo-block h2{font-size:22px;font-weight:700;color:#111827;margin-top:0;margin-bottom:14px;letter-spacing:-0.3px;}
+.seo-block h3{font-size:17px;font-weight:600;color:#111827;margin:16px 0 10px;letter-spacing:-0.2px;}
 .seo-block p,.seo-block li{font-size:14.5px;line-height:1.6;color:#374151;}
 .seo-block p{margin-bottom:14px;}
 .seo-block ul,.seo-block ol{margin:14px 0 18px 20px;padding:0;}
 .seo-block li{margin-bottom:10px;}
-.seo-block strong{font-weight:800;color:#111827;}
+.seo-block strong{font-weight:700;color:#111827;}
 .seo-block a{color:#2563eb;text-decoration:underline;font-weight:600;}
 .seo-block code{background:#f3f4f6;padding:2px 6px;border-radius:4px;font-size:13px;color:#c2410c;font-weight:600;}
 .faq-item{border:none;border-bottom:1px solid #e5e7eb;padding:0;width:100%;text-align:left;}
 .faq-item:last-child{border-bottom:none;}
-.faq-q{font-size:16px;font-weight:700;color:#111827;line-height:1.4;padding:14px 0;margin:0;cursor:pointer;display:flex;justify-content:space-between;align-items:center;list-style:none;-webkit-tap-highlight-color:transparent;}
+.faq-q{font-size:16px;font-weight:600;color:#111827;line-height:1.4;padding:14px 0;margin:0;cursor:pointer;display:flex;justify-content:space-between;align-items:center;list-style:none;-webkit-tap-highlight-color:transparent;}
 .faq-q::-webkit-details-marker{display:none;}
-.faq-q::after{content:'+';font-size:22px;font-weight:400;color:#9ca3af;line-height:1;margin-left:16px;}
+.faq-q::after{content:'+';font-size:22px;font-weight:400;color:#9ca3af;line-height:1;margin-left:16px;transition:transform 0.2s;}
 .faq-item[open] .faq-q::after{content:'−';color:#111827;}
 .faq-a{font-size:14.5px;color:#374151;line-height:1.6;margin:0;padding-bottom:14px;text-align:left;}
-.faq-a strong{font-weight:800;color:#111827;}
+.faq-a strong{font-weight:700;color:#111827;}
 
 .site-footer{background-color:#ffffff;width:100%;max-width:100%;margin-top:34px;padding:14px 0 90px 0;overflow:hidden;}
 .footer-container{max-width:var(--page-max);margin:0 auto;display:flex;align-items:center;justify-content:center;gap:10px;text-align:center;padding:0 var(--gutter);}
 
-/* 40px gap between footer links (24px on mobile) */
 .footer-links{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:40px;}
-
 .footer-links a{font-family:inherit;font-size:13.5px;font-weight:600;color:#2563eb;text-decoration:none;letter-spacing:0.2px;}
 .footer-links a:hover{color:#1d4ed8}
 
@@ -320,6 +315,131 @@ main{flex:1;display:flex;align-items:flex-start;justify-content:center;padding:0
 @media (min-width:1440px){:root{--page-max:1300px;}}
 @media (min-width:1920px){:root{--page-max:1400px;}.wheel-col{max-width:640px;}.wheel-premium-bg{max-width:640px;}.wheel-stage.size-large{max-width:620px;}}
 @media (min-width:2560px){:root{--page-max:1600px;}}
+
+.btn:active,.nav-btn:active,.icon-btn:active,.tool-btn:active,.sub-btn:active,
+.preset-card:active,.palette-swatch:active,.sidebar-item:active,
+.winner-btn-close:active,.winner-btn-remove:active{transform:none !important;}
+
+/* ══════════════════════════════════════════════════════════
+   AUTOMATIC DARK MODE — follows OS light / dark preference
+   ══════════════════════════════════════════════════════════ */
+@media (prefers-color-scheme: dark){
+  :root{
+    color-scheme:dark;
+    --bg:#0b0f14;
+    --text:#f4f7fb;
+    --text-light:#a3adba;
+    --line:#1e2836;
+    --hover:#16202c;
+    --card:#111821;
+    --soft-bg:#141c26;
+    --panel-bg:#0f1620;
+    --input-bg:#0f1620;
+    --input-border:#2a3546;
+    --shadow:rgba(0,0,0,.6);
+    --overlay-bg:rgba(0,0,0,.72);
+    --footer-link-color:#7aa2ff;
+    --toast-bg:#f4f7fb;
+    --toast-text:#0b0f14;
+  }
+  html{background-color:#0b0f14 !important;}
+  body{background-color:#0b0f14 !important;color:var(--text);}
+  main{background-color:#0b0f14 !important;}
+
+  .site-header{background:#0b0f14;border-bottom-color:#1e2836;}
+  .nav-logo-text{color:#f4f7fb;}
+  .nav-btn{color:#c8d2de;}
+  .nav-btn:hover{background:#16202c;}
+  .nav-btn svg{stroke:#8b96a5;}
+  .nav-btn.share-btn{background:#1e3a2a;color:#d6f5c8;}
+  .nav-btn.share-btn:hover{background:#26492f;}
+  .nav-btn.share-btn svg{stroke:#d6f5c8;}
+  .hamburger-btn svg{stroke:#c8d2de;}
+
+  .tools-menu{background:#0f1620;border-color:#1e2836;box-shadow:0 10px 40px rgba(0,0,0,.7);}
+  .tools-menu-item:hover{background:#16202c;}
+  .tools-item-title{color:#e8eef6;}
+  .tools-menu-item svg{stroke:#8b96a5;}
+
+  .mobile-sidebar{background:#0b0f14;box-shadow:12px 0 40px rgba(0,0,0,.8);}
+  .sidebar-item{color:#c8d2de;}
+  .sidebar-item:hover,.sidebar-item:active{background:#16202c;}
+  .sidebar-item svg{stroke:#8b96a5;}
+  .sidebar-item.share-btn{background:#1e3a2a;color:#d6f5c8;}
+  .sidebar-item.share-btn svg{stroke:#d6f5c8;}
+  .sidebar-tools-btn .chevron{stroke:#8b96a5;}
+  .sidebar-sub-item .item-title{color:#e8eef6;}
+  .sidebar-sub-item:hover,.sidebar-sub-item:active{background:#16202c;}
+  .sidebar-overlay{background:rgba(0,0,0,.75);}
+
+  .icon-btn{color:#e8eef6;}
+  .tool-btn{color:#c8d2de;}
+  .tool-btn:hover{background:#16202c;}
+  .entry-toolbar .tool-btn{background:#16202c;}
+  .entries-top-tools .tool-btn.active{border-bottom-color:#f4f7fb;}
+  .sub-btn{background:#16202c;color:#6d7988;}
+
+  #entriesTextarea{background:#0f1620;color:#e8eef6;border-color:#2a3546;}
+  #entriesTextarea::placeholder{color:#6d7988;}
+  #entriesTextarea:focus,#entriesTextarea:focus-visible{border-color:#4c5f78 !important;}
+  .emoji-btn svg{color:#9aa5b4;}
+
+  .results-box{border-color:#2a3546;}
+  .results-box:focus,.results-box:focus-visible{border-color:#4c5f78 !important;}
+  .results-title{color:#e8eef6;}
+  .results-list li{color:#c8d2de;border-bottom-color:#1e2836;}
+  .results-empty{color:#8b96a5 !important;}
+
+  .wheel-premium-bg:fullscreen,.wheel-premium-bg:-webkit-full-screen,.wheel-premium-bg.pseudo-fullscreen{background:#0b0f14;}
+
+  .spin-button{background:#111a24;color:#f4f7fb;border-color:rgba(255,255,255,0.16);box-shadow:0 3px 16px rgba(0,0,0,.65),inset 0 -2px 4px rgba(255,255,255,.05);}
+  .spin-button:hover:not(:disabled){filter:brightness(1.12);box-shadow:0 4px 20px rgba(0,0,0,.75),inset 0 -2px 4px rgba(255,255,255,.05);}
+  .spin-button:disabled{background:#16202c;color:#5b6879;filter:none;opacity:.75;}
+  .spin-button:disabled[aria-busy="true"]{background:#111a24;color:#f4f7fb;border-color:rgba(255,255,255,0.16);opacity:1;}
+  .wheel-pointer-shape{fill:#0f1620;stroke:rgba(255,255,255,0.55);filter:drop-shadow(0 2px 3px rgba(0,0,0,0.6));}
+
+  .fs-brand-text,.fs-icon-btn,.fullscreen-footer-bar{color:#f4f7fb;}
+
+  .winner-popup{background:#0f1620;box-shadow:0 20px 60px rgba(0,0,0,.75);}
+  .winner-body,.winner-actions{background:#0f1620;}
+  .winner-name-big{color:#f4f7fb;}
+  .winner-btn-close{color:#a3adba;}
+  .winner-btn-close:hover{background:#16202c;color:#fff;}
+
+  .modal-box{background:#0f1620;border-color:#1e2836;box-shadow:0 25px 50px -12px rgba(0,0,0,.85);}
+  .settings-row{border-bottom-color:#1e2836;}
+  .settings-section{border-bottom-color:#1e2836;}
+  .settings-row select{color-scheme:dark;}
+  .segmented-control{background:#16202c;}
+  .segmented-control button.active{background:#243040;color:#f4f7fb;box-shadow:0 2px 6px rgba(0,0,0,.5);}
+  .palette-swatch{background:#0f1620;border-color:#243040;}
+  .palette-swatch.active{border-color:#5b8cff;box-shadow:0 0 0 2px rgba(91,140,255,.25);}
+  .btn-primary{background:#f4f7fb;color:#0b0f14;}
+  .btn-outline{color:#f4f7fb;border-color:#243040;}
+  .btn-outline:hover{background:#16202c;}
+
+  .preset-card{background:#141c26;border-color:#243040;}
+  .preset-card:hover{background:#16202c;border-color:#3b4a60;box-shadow:0 8px 22px rgba(0,0,0,.6);}
+  .preset-title{color:#f4f7fb;}
+  .preset-subtitle{color:#8b96a5;}
+
+  .white-bottom-bg{background-color:#0b0f14;}
+  .seo-content-box{background-color:#0b0f14;border-color:#1e2836;}
+  .seo-block h2,.seo-block h3,.seo-block strong{color:#f4f7fb;}
+  .seo-block p,.seo-block li{color:#b3bdc9;}
+  .seo-block a,.footer-links a{color:#7aa2ff;}
+  .seo-block a:hover,.footer-links a:hover{color:#9dbaff;}
+  .seo-block code{background:#16202c;color:#ffb27a;}
+  .faq-item{border-bottom-color:#1e2836;}
+  .faq-q{color:#f4f7fb;}
+  .faq-q::after{color:#6d7988;}
+  .faq-item[open] .faq-q::after{color:#f4f7fb;}
+  .faq-a{color:#b3bdc9;}
+  .faq-a strong{color:#f4f7fb;}
+
+  .site-footer{background-color:#0b0f14;}
+  .toast{background:#f4f7fb;color:#0b0f14;box-shadow:0 10px 30px rgba(0,0,0,.7);}
+}
 </style>
 </head>
 <body itemscope itemtype="https://schema.org/WebApplication">
@@ -658,39 +778,45 @@ Choice 7</textarea>
 </div>
 
 <div class="modal-overlay" id="settingsModal" role="dialog" aria-modal="true" aria-hidden="true">
-  <div class="modal-box">
+  <div class="modal-box modal-wide-settings">
     <h3>Wheel Settings</h3>
-    <div class="settings-section">
-      <span class="settings-label">Wheel Size</span>
-      <div class="segmented-control" data-setting="wheelSize">
-        <button type="button" data-value="compact">Compact</button>
-        <button type="button" data-value="medium" class="active">Medium</button>
-        <button type="button" data-value="large">Large</button>
+    <div class="settings-columns">
+      <div class="settings-col">
+        <div class="settings-section">
+          <span class="settings-label">Wheel Size</span>
+          <div class="segmented-control" data-setting="wheelSize">
+            <button type="button" data-value="compact">Compact</button>
+            <button type="button" data-value="medium" class="active">Medium</button>
+            <button type="button" data-value="large">Large</button>
+          </div>
+        </div>
+        <div class="settings-section">
+          <span class="settings-label">Text Size on Wheel</span>
+          <div class="segmented-control" data-setting="textSize">
+            <button type="button" data-value="small">Small</button>
+            <button type="button" data-value="medium" class="active">Medium</button>
+            <button type="button" data-value="large">Large</button>
+          </div>
+        </div>
+        <div class="settings-row"><label for="segmentBorders"><input type="checkbox" id="segmentBorders"> Segment borders</label></div>
+        <div class="settings-row"><label for="outerRing"><input type="checkbox" id="outerRing"> Outer ring</label></div>
+        <div class="settings-row"><label for="showWheelText"><input type="checkbox" id="showWheelText"> Show text on wheel</label></div>
+        <div class="settings-row"><label for="showPointer"><input type="checkbox" id="showPointer"> Show pointer</label></div>
+        <div class="settings-row"><label for="soundEnabled"><input type="checkbox" id="soundEnabled"> Sound effects</label></div>
+      </div>
+      <div class="settings-col">
+        <div class="settings-section">
+          <span class="settings-label">Color Theme (18 Premium Palettes)</span>
+          <div class="palette-grid" id="paletteGrid"></div>
+        </div>
+        <div class="settings-row">
+          <label for="wheelSpeed" style="flex:1;">Spin speed</label>
+          <select id="wheelSpeed"><option value="slow">Slow</option><option value="normal">Normal</option><option value="fast">Fast</option></select>
+        </div>
+        <div class="settings-row"><label for="autoRemoveWinner"><input type="checkbox" id="autoRemoveWinner"> Auto-remove winner after spin</label></div>
+        <p class="settings-note">Auto-remove deletes the winning entry so you can spin again with the remaining choices.</p>
       </div>
     </div>
-    <div class="settings-section">
-      <span class="settings-label">Text Size on Wheel</span>
-      <div class="segmented-control" data-setting="textSize">
-        <button type="button" data-value="small">Small</button>
-        <button type="button" data-value="medium" class="active">Medium</button>
-        <button type="button" data-value="large">Large</button>
-      </div>
-    </div>
-    <div class="settings-row"><label for="segmentBorders"><input type="checkbox" id="segmentBorders"> Segment borders</label></div>
-    <div class="settings-row"><label for="outerRing"><input type="checkbox" id="outerRing"> Outer ring</label></div>
-    <div class="settings-row"><label for="showWheelText"><input type="checkbox" id="showWheelText"> Show text on wheel</label></div>
-    <div class="settings-row"><label for="showPointer"><input type="checkbox" id="showPointer"> Show pointer</label></div>
-    <div class="settings-section">
-      <span class="settings-label">Color Theme (18 Premium Palettes)</span>
-      <div class="palette-grid" id="paletteGrid"></div>
-    </div>
-    <div class="settings-row"><label for="soundEnabled"><input type="checkbox" id="soundEnabled"> Sound effects</label></div>
-    <div class="settings-row">
-      <label for="wheelSpeed" style="flex:1;">Spin speed</label>
-      <select id="wheelSpeed"><option value="slow">Slow</option><option value="normal">Normal</option><option value="fast">Fast</option></select>
-    </div>
-    <div class="settings-row"><label for="autoRemoveWinner"><input type="checkbox" id="autoRemoveWinner"> Auto-remove winner after spin</label></div>
-    <p class="settings-note">Auto-remove deletes the winning entry so you can spin again with the remaining choices.</p>
     <div class="modal-actions"><button type="button" class="btn btn-primary" onclick="closeSettingsModal()">Done</button></div>
   </div>
 </div>
@@ -731,6 +857,21 @@ Choice 7</textarea>
 <div id="liveAnnouncer" role="status" aria-live="polite" aria-atomic="true" class="sr-only"></div>
 
 <script>
+(function(){
+  var mq = window.matchMedia ? window.matchMedia('(prefers-color-scheme: dark)') : null;
+  function syncTheme(){
+    var dark = !!(mq && mq.matches);
+    var meta = document.getElementById('themeColorMeta');
+    if(meta) meta.setAttribute('content', dark ? '#0b0f14' : '#ffffff');
+    document.documentElement.style.colorScheme = dark ? 'dark' : 'light';
+  }
+  syncTheme();
+  if(mq){
+    if(mq.addEventListener) mq.addEventListener('change', syncTheme);
+    else if(mq.addListener) mq.addListener(syncTheme);
+  }
+})();
+
 function escHtml(s){return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;').replace(/'/g,'&#39;');}
 function announce(msg){var el=document.getElementById('liveAnnouncer');if(!el)return;el.textContent='';setTimeout(function(){el.textContent=msg;},40);}
 var toastTimer;
@@ -788,7 +929,6 @@ var textSize='medium';
 var textSizeMultipliers={small:0.85,medium:1.0,large:1.15};
 var segmentBorders=false;
 var outerRing=false;
-var pageBgImage=null;
 var MAX_PARTICIPANTS=50;
 var participants=[];
 var participantImages={};
@@ -832,7 +972,6 @@ function fitTextForSegment(name, chordWidth, radialWidth, segmentCount) {
 
 function shareApp(){var text='Check out Spin The Wheelly — a free spin the wheel app!\n\nhttps://spinthewheelly.com/';if(navigator.share){navigator.share({title:'Spin The Wheelly',text:text,url:'https://spinthewheelly.com/'}).catch(function(){openShareModal(text);});}else{openShareModal(text);}}
 
-function openModal(id){var m=document.getElementById(id);if(!m)return;m.classList.add('active');m.setAttribute('aria-hidden','false');document.body.style.overflow='hidden';}
 function closeModal(id){var m=document.getElementById(id);if(!m)return;m.classList.remove('active');m.setAttribute('aria-hidden','true');var anyActive=document.querySelector('.modal-overlay.active');if(!anyActive)document.body.style.overflow='';}
 
 function openSettingsModal(){
@@ -1271,7 +1410,6 @@ function updatePointerColor(rotation){
   pointerEl.style.fill=segColor;pointerEl.style.stroke=getContrastColor(segColor);
 }
 function applyRotation(deg){var g=document.getElementById('wheelGroup');if(g)g.setAttribute('transform','rotate('+deg+')');updatePointerColor(deg);}
-function resetSpinButtonLabel(){if(isSpinning)return;setSpinLabel('SPIN');}
 function updateSpinButtonState(){var btn=document.getElementById('spinBtn');if(!btn||isSpinning)return;btn.disabled=participants.length<2;}
 
 function spinWheel(){
