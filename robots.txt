@@ -1,8 +1,4 @@
-# robots.txt for Spin The Wheelly
-# https://spinthewheelly.com/
-
 User-agent: *
 Allow: /
 
-# Sitemap location
 Sitemap: https://spinthewheelly.com/sitemap.xml
