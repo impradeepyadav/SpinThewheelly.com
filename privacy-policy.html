@@ -3,15 +3,29 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+
+<!-- ================= Google tag (gtag.js) ================= -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-1MFMKMFL0X"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-1MFMKMFL0X');
+</script>
+<!-- ======================================================== -->
+
 <title>Privacy Policy — Spin The Wheelly</title>
 <meta name="description" content="Privacy Policy for Spin The Wheelly — learn how we use cookies, Google Analytics, and third-party ads while keeping your wheel data local and private.">
 <meta name="keywords" content="privacy policy, spinthewheelly privacy, cookie policy, google analytics, gdpr, ccpa, data protection, wheel privacy">
 <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+<meta name="googlebot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+<meta name="bingbot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
 <meta name="author" content="Spin The Wheelly">
 <meta name="theme-color" content="#ffffff" id="themeColorMeta">
 <link rel="canonical" href="https://spinthewheelly.com/privacy-policy">
 <link rel="alternate" hreflang="en-us" href="https://spinthewheelly.com/privacy-policy">
 <link rel="alternate" hreflang="x-default" href="https://spinthewheelly.com/privacy-policy">
+<link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml">
 
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Spin The Wheelly">
@@ -26,14 +40,18 @@
 <meta name="twitter:description" content="Learn how we protect your privacy while keeping the wheel free.">
 <meta name="twitter:image" content="https://spinthewheelly.com/apple-touch-icon.png">
 
+<!-- ================= Preconnects ================= -->
+<link rel="preconnect" href="https://www.googletagmanager.com" crossorigin>
+<link rel="preconnect" href="https://www.google-analytics.com" crossorigin>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
 <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
 <link rel="manifest" href="/site.webmanifest">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='46' fill='%231a1a1a'/%3E%3Cpath d='M50 50 L50 8 A42 42 0 0 1 88 71 Z' fill='%23E8A500'/%3E%3Cpath d='M50 50 L88 71 A42 42 0 0 1 12 71 Z' fill='%23F5EBC8'/%3E%3Cpath d='M50 50 L12 71 A42 42 0 0 1 50 8 Z' fill='%231E4620'/%3E%3Ccircle cx='50' cy='50' r='9' fill='%23fff'/%3E%3C/svg%3E">
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap">
 
 <script type="application/ld+json">
@@ -144,7 +162,7 @@ button:focus-visible{
 }
 
 /* ============================================================
-   TOP BAR / HEADER — ORIGINAL STYLE
+   TOP BAR / HEADER
    ============================================================ */
 .top-bar{
   display: flex;
@@ -185,6 +203,8 @@ button:focus-visible{
 .back-link svg{
   width: 24px;
   height: 24px;
+  stroke: currentColor;
+  color: currentColor;
 }
 
 .site-name{
@@ -227,7 +247,8 @@ button:focus-visible{
   width: 20px;
   height: 20px;
   fill: var(--icon-fill);
-  transition: fill 0.3s ease;
+  color: var(--icon-fill);
+  transition: fill 0.3s ease, color 0.3s ease;
 }
 
 /* ============================================================
@@ -434,7 +455,7 @@ code{
 </head>
 <body>
 
-<!-- Top Navigation Bar — ORIGINAL STYLE -->
+<!-- Top Navigation Bar -->
 <header class="top-bar">
   <div class="top-bar-left">
     <a href="/" class="back-link" aria-label="Go back">
