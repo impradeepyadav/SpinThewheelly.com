@@ -85,7 +85,7 @@ a:focus-visible,button:focus-visible,input:focus-visible,[tabindex]:focus-visibl
 .nav-btn.share-btn svg{stroke:#000000;color:#000000}
 .hamburger-btn{display:none;padding:9px;margin-left:4px}
 .hamburger-btn svg{width:24px;height:24px;stroke:#000000;color:#000000}
-@media (max-width:900px){.nav-btn .nav-text{display:none}.nav-btn{padding:9px}.nav-btn.share-btn{padding:9px 12px;margin-left:0}.header-container{height:60px}.nav-links .nav-btn:not(.share-btn):not(.hamburger-btn){display:none}.hamburger-btn{display:flex}}
+@media (max-width:900px){.nav-btn .nav-text{display:none}.nav-btn{padding:9px}.nav-btn.share-btn{padding:9px 12px;margin-left:0}.header-container{height:60px}.nav-links > .nav-btn:not(.share-btn):not(.hamburger-btn){display:none}.hamburger-btn{display:flex}}
 @media (max-width:560px){.header-container{height:56px;gap:8px}.nav-logo-text{font-size:16px;letter-spacing:-0.5px}.nav-logo-img{width:24px;height:24px}.nav-btn{padding:8px}.nav-btn.share-btn{padding:8px 10px}.nav-btn svg{width:20px;height:20px}}
 @media (max-width:380px){.header-container{gap:6px}.nav-logo-text{font-size:14px;letter-spacing:-0.4px}.nav-logo-img{width:22px;height:22px}.nav-btn{padding:7px}.nav-btn.share-btn{padding:7px 9px}.nav-btn svg{width:18px;height:18px}.hamburger-btn svg{width:22px;height:22px}}
 
@@ -227,7 +227,7 @@ main{flex:1;display:flex;align-items:flex-start;justify-content:center;padding:0
 .wheel-premium-bg:fullscreen,.wheel-premium-bg:-webkit-full-screen{max-width:none;width:100%;height:100%;height:100dvh;aspect-ratio:auto;border-radius:0;background:var(--bg);box-shadow:none;overflow:hidden;}
 .wheel-premium-bg:fullscreen .wheel-stage,.wheel-premium-bg:-webkit-full-screen .wheel-stage,.wheel-premium-bg.pseudo-fullscreen .wheel-stage{max-width:min(84vh,88vw) !important;}
 
-.wheel-premium-bg.pseudo-fullscreen{position:fixed;inset:0;z-index:10000;width:100%;height:100%;height:100dvh;max-width:none;aspect-ratio:auto;border-radius:0;margin:0;background:var(--bg);overflow:hidden;}
+.wheel-premium-bg.pseudo-fullscreen{position:fixed;inset:0;z-index:9997;width:100%;height:100%;height:100dvh;max-width:none;aspect-ratio:auto;border-radius:0;margin:0;background:var(--bg);overflow:hidden;}
 
 .wheel-premium-bg::before{content:none;display:none !important;animation:none !important;}
 @keyframes pulseGlow{0%{opacity:0.6}100%{opacity:1}}
@@ -275,12 +275,10 @@ main{flex:1;display:flex;align-items:flex-start;justify-content:center;padding:0
 .winner-header{background-color:#b581e6;color:#ffffff;font-size:15px;font-weight:700;padding:12px 20px;text-align:left;}
 .winner-body{padding:24px 20px;display:flex;align-items:center;justify-content:center;background:#ffffff;min-height:80px;}
 .winner-name-big{font-size:clamp(32px,5vw,52px);font-weight:300;color:#333333;text-align:center;margin:0;line-height:1.1;letter-spacing:-1px;word-break:break-word;}
-.winner-actions{display:flex;align-items:center;justify-content:flex-end;padding:12px 20px;background:#ffffff;gap:12px;flex-wrap:wrap;}
+.winner-actions{display:flex;align-items:center;justify-content:flex-end;padding:12px 20px;background:#ffffff;gap:12px;}
 
 .winner-btn-close{background:transparent;border:none;color:#555555;font-family:inherit;font-size:14px;font-weight:600;cursor:pointer;padding:8px 12px;transition:background 0.2s,color 0.2s;border-radius:4px;}
 .winner-btn-close:hover{background:#f3f4f6;color:#111111;}
-.winner-btn-share{background-color:#0f766e;color:#ffffff;border:none;padding:8px 20px;font-family:inherit;font-size:14px;font-weight:600;cursor:pointer;border-radius:4px;transition:background 0.2s;}
-.winner-btn-share:hover{background-color:#0d5f59;}
 .winner-btn-remove{background-color:#5b4bc4;color:#ffffff;border:none;padding:8px 20px;font-family:inherit;font-size:14px;font-weight:600;cursor:pointer;border-radius:4px;transition:background 0.2s;}
 .winner-btn-remove:hover{background-color:#4a3cae;}
 
@@ -291,7 +289,6 @@ main{flex:1;display:flex;align-items:flex-start;justify-content:center;padding:0
   .winner-name-big{font-size:30px;}
   .winner-actions{padding:10px 16px;gap:8px;}
   .winner-btn-close{padding:6px 10px;font-size:13px;}
-  .winner-btn-share{padding:6px 14px;font-size:13px;}
   .winner-btn-remove{padding:6px 14px;font-size:13px;}
 }
 
@@ -372,7 +369,7 @@ main{flex:1;display:flex;align-items:flex-start;justify-content:center;padding:0
 @media (max-width:560px){.modal-box.preset-modal-box{padding:24px 20px 20px;}.preset-grid{grid-template-columns:1fr;gap:10px;max-height:52vh;}.preset-card{padding:12px 14px;gap:12px;}.preset-emoji{width:46px;height:46px;font-size:24px;}.preset-title{font-size:14.5px;}.preset-subtitle{font-size:12px;}}
 
 .white-bottom-bg{background-color:#ffffff;width:100%;max-width:100%;overflow:hidden;padding-bottom:0;}
-.seo-content-box{background-color:#ffffff;border:0.5px solid #000000;border-radius:8px;padding:28px;margin:30px auto 0 auto;max-width:calc(var(--page-max) - 60px);width:calc(100% - 60px);box-sizing:border-box;}
+.seo-content-box{background-color:#ffffff;border:0.05px solid #000000;border-radius:8px;padding:28px;margin:30px auto 0 auto;max-width:calc(var(--page-max) - 60px);width:calc(100% - 60px);box-sizing:border-box;}
 .seo-content{width:100%;margin:0 auto;padding:0;text-align:left;}
 .seo-block{margin-bottom:24px;width:100%;text-align:left;}
 .seo-block:last-child{margin-bottom:0;}
@@ -412,7 +409,7 @@ main{flex:1;display:flex;align-items:flex-start;justify-content:center;padding:0
 
 .btn:active,.nav-btn:active,.icon-btn:active,.tool-btn:active,.sub-btn:active,
 .preset-card:active,.palette-swatch:active,.sidebar-item:active,
-.winner-btn-close:active,.winner-btn-share:active,.winner-btn-remove:active{transform:none !important;}
+.winner-btn-close:active,.winner-btn-remove:active{transform:none !important;}
 
 /* ══════════════════════════════════════════════════════════
    AUTOMATIC DARK MODE
@@ -738,7 +735,6 @@ main{flex:1;display:flex;align-items:flex-start;justify-content:center;padding:0
                 </div>
                 <div class="winner-actions">
                   <button type="button" class="winner-btn-close" onclick="closeWinnerPopup()">Close</button>
-                  <button type="button" class="winner-btn-share" onclick="shareWinner()">Share</button>
                   <button type="button" class="winner-btn-remove" onclick="removeWinnerAndClose()">Remove</button>
                 </div>
               </div>
@@ -774,7 +770,7 @@ main{flex:1;display:flex;align-items:flex-start;justify-content:center;padding:0
           <div class="sliding-container" id="slidingContainer">
             <div class="panel-view active" id="entriesView">
               <div class="textarea-wrapper">
-                <div class="fake-placeholder hidden" id="fakePlaceholder">← Type/paste entries here</div>
+                <div class="fake-placeholder" id="fakePlaceholder">← Type/paste entries here</div>
                 <textarea id="entriesTextarea" aria-label="Wheel entries, one per line">John
 Emma
 Michael
@@ -951,8 +947,8 @@ James</textarea>
 
 <div class="modal-overlay" id="shareModal" role="dialog" aria-modal="true" aria-hidden="true">
   <div class="modal-box">
-    <h3>Share</h3>
-    <p>Copy the text below and paste it wherever you like.</p>
+    <h3>Share Result</h3>
+    <p>Copy the text below and paste it into your group chat.</p>
     <textarea id="shareText" readonly></textarea>
     <div class="modal-actions">
       <button type="button" class="btn btn-outline" onclick="closeShareModal()">Close</button>
@@ -1134,6 +1130,7 @@ var idleLastTime=0;
 var IDLE_SPEED=12;
 var pointerEl=null;
 var spinToken=0;
+var restoreDefaultNextFocus = false;
 
 var _measureCanvas = document.createElement('canvas');
 var _measureCtx = _measureCanvas.getContext('2d');
@@ -1161,10 +1158,9 @@ function fitTextForSegment(name, chordWidth, radialWidth, segmentCount) {
 
 function shareApp(){var text='Check out Spin The Wheelly — a free spin the wheel app!\n\nhttps://spinthewheelly.com/';if(navigator.share){navigator.share({title:'Spin The Wheelly',text:text,url:'https://spinthewheelly.com/'}).catch(function(){openShareModal(text);});}else{openShareModal(text);}}
 
-function closeModal(id){var m=document.getElementById(id);if(!m)return;m.classList.remove('active');m.setAttribute('aria-hidden','true');restoreBodyScroll();}
+function closeModal(id){var m=document.getElementById(id);if(!m)return;m.classList.remove('active');m.setAttribute('aria-hidden','true');var anyActive=document.querySelector('.modal-overlay.active');if(!anyActive)document.body.style.overflow='';}
 
 function openSettingsModal(){
-  if(isSpinning){showToast('Please wait for the spin to finish.');return;}
   var m=document.getElementById('settingsModal');if(!m)return;
   document.getElementById('autoRemoveWinner').checked=autoRemoveWinner;
   document.getElementById('soundEnabled').checked=soundEnabled;
@@ -1198,7 +1194,7 @@ function closeSettingsModal(){
   saveWheelSettings();
   rebuildWheel();
   m.classList.remove('active');m.setAttribute('aria-hidden','true');
-  restoreBodyScroll();
+  if(!document.getElementById('winnerOverlay').classList.contains('show') && !document.getElementById('shareModal').classList.contains('active')){document.body.style.overflow='';}
 }
 
 function resetAllSettings(){
@@ -1312,6 +1308,7 @@ function loadPreset(index){
   if(ta){ta.readOnly=false;ta.value=preset.entries.join('\n');}
   syncPlaceholder();
   participantImages={};winnerHistory=[];currentWinnerName='';currentWinnerIndex=-1;currentRotation=0;
+  document.title=preset.title+' — Spin The Wheelly';
   updateEntries();renderResultsList();closeWinnerPopup();switchPanel('edit');closeModal('presetModal');
   showToast(preset.icon+' '+preset.title+' loaded!');
 }
@@ -1384,7 +1381,7 @@ window.addEventListener('resize',function(){
 },{passive:true});
 
 function openSidebar(){var sb=document.getElementById('mobileSidebar');var ov=document.getElementById('sidebarOverlay');var btn=document.getElementById('hamburgerBtn');if(!sb)return;closeToolsMenu();sb.classList.add('show');sb.removeAttribute('inert');if(ov)ov.classList.add('show');if(btn)btn.setAttribute('aria-expanded','true');sb.setAttribute('aria-hidden','false');document.body.style.overflow='hidden';}
-function closeSidebar(){var sb=document.getElementById('mobileSidebar');var ov=document.getElementById('sidebarOverlay');var btn=document.getElementById('hamburgerBtn');if(!sb)return;sb.classList.remove('show');sb.setAttribute('inert','');if(ov)ov.classList.remove('show');if(btn)btn.setAttribute('aria-expanded','false');sb.setAttribute('aria-hidden','true');var toolsSub=document.getElementById('sidebarToolsSub');var toolsBtn=document.getElementById('sidebarToolsBtn');if(toolsSub)toolsSub.classList.remove('open');if(toolsBtn){toolsBtn.classList.remove('open');toolsBtn.setAttribute('aria-expanded','false');}restoreBodyScroll();}
+function closeSidebar(){var sb=document.getElementById('mobileSidebar');var ov=document.getElementById('sidebarOverlay');var btn=document.getElementById('hamburgerBtn');if(!sb)return;sb.classList.remove('show');sb.setAttribute('inert','');if(ov)ov.classList.remove('show');if(btn)btn.setAttribute('aria-expanded','false');sb.setAttribute('aria-hidden','true');var toolsSub=document.getElementById('sidebarToolsSub');var toolsBtn=document.getElementById('sidebarToolsBtn');if(toolsSub)toolsSub.classList.remove('open');if(toolsBtn){toolsBtn.classList.remove('open');toolsBtn.setAttribute('aria-expanded','false');}var winnerOpen=document.getElementById('winnerOverlay')&&document.getElementById('winnerOverlay').classList.contains('show');var anyModalOpen=document.querySelector('.modal-overlay.active');if(!winnerOpen&&!anyModalOpen)document.body.style.overflow='';}
 function toggleSidebarTools(e){if(e)e.stopPropagation();var btn=document.getElementById('sidebarToolsBtn');var sub=document.getElementById('sidebarToolsSub');if(!btn||!sub)return;var isOpen=sub.classList.contains('open');sub.classList.toggle('open',!isOpen);btn.classList.toggle('open',!isOpen);btn.setAttribute('aria-expanded',!isOpen);}
 
 function blockIfSpinning(){if(isSpinning){showToast('Please wait for the spin to finish.');return true;}return false;}
@@ -1398,6 +1395,7 @@ function resetWheel(){
   var ta=document.getElementById('entriesTextarea');if(ta){ta.readOnly=false;ta.value='';}
   syncPlaceholder();
   participantImages={};winnerHistory=[];currentWinnerName='';currentWinnerIndex=-1;currentRotation=0;
+  document.title='Spin The Wheelly — Free Spin the Wheel to Pick a Random Choice';
   updateEntries();renderResultsList();closeWinnerPopup();switchPanel('edit');showToast('New blank wheel started!');
 }
 
@@ -1466,17 +1464,17 @@ function renderResultsList(){
       topBar.style.display = 'flex';
       var recent = winnerHistory.slice(-5).reverse();
       var html = '';
-      for(var r=0; r<recent.length; r++){
-        html += '<div class="rank-badge"><span class="rank-num">#'+(r+1)+'</span> ' + escHtml(recent[r]) + '</div>';
+      for(var j=0; j<recent.length; j++){
+        html += '<div class="rank-badge"><span class="rank-num">#'+(j+1)+'</span> ' + escHtml(recent[j]) + '</div>';
       }
       topList.innerHTML = html;
     }
   }
   
   var subBtns=document.querySelectorAll('#resultsSubTools .sub-btn');
-  for(var b=0;b<subBtns.length;b++){
-    if(winnerHistory.length>0){subBtns[b].classList.remove('disabled');subBtns[b].disabled=false;}
-    else{subBtns[b].classList.add('disabled');subBtns[b].disabled=true;}
+  for(var j=0;j<subBtns.length;j++){
+    if(winnerHistory.length>0)subBtns[j].classList.remove('disabled');
+    else subBtns[j].classList.add('disabled');
   }
 }
 function sortResults(){if(winnerHistory.length===0)return;winnerHistory.sort(function(a,b){return a.localeCompare(b);});renderResultsList();showToast("Results sorted A-Z.");}
@@ -1517,13 +1515,7 @@ function playSweetMusic(){if(!soundEnabled||!audioCtx)return;var now=audioCtx.cu
 
 function fullscreenElementNow(){return document.fullscreenElement||document.webkitFullscreenElement||document.msFullscreenElement||null;}
 function isWheelFullscreen(){var el=document.getElementById('wheelPremiumBg');return !!fullscreenElementNow()||!!(el&&el.classList.contains('pseudo-fullscreen'));}
-function restoreBodyScroll(){
-  var winnerOpen=document.getElementById('winnerOverlay')&&document.getElementById('winnerOverlay').classList.contains('show');
-  var modalOpen=document.querySelector('.modal-overlay.active');
-  var sidebarOpen=document.getElementById('mobileSidebar')&&document.getElementById('mobileSidebar').classList.contains('show');
-  if(isWheelFullscreen()||winnerOpen||modalOpen||sidebarOpen)return;
-  document.body.style.overflow='';
-}
+function restoreBodyScroll(){var winnerOpen=document.getElementById('winnerOverlay')&&document.getElementById('winnerOverlay').classList.contains('show');var modalOpen=document.querySelector('.modal-overlay.active');var sidebarOpen=document.getElementById('mobileSidebar')&&document.getElementById('mobileSidebar').classList.contains('show');if(!winnerOpen&&!modalOpen&&!sidebarOpen)document.body.style.overflow='';}
 function updateFullscreenUi(){var on=isWheelFullscreen();var btn=document.getElementById('fsToggleBtn');var icon=document.getElementById('fsToggleIcon');if(btn){btn.title=on?'Exit Fullscreen':'Fullscreen Wheel';btn.setAttribute('aria-label',on?'Exit fullscreen':'Enter fullscreen');btn.setAttribute('aria-pressed',on?'true':'false');}if(icon)icon.setAttribute('href',on?'#i-minimize':'#i-maximize');}
 function setPseudoFullscreen(on){var el=document.getElementById('wheelPremiumBg');if(!el)return;el.classList.toggle('pseudo-fullscreen',on);if(on){document.body.style.overflow='hidden';}else{restoreBodyScroll();}updateFullscreenUi();}
 function toggleFullscreenWheel(){var el=document.getElementById('wheelPremiumBg');if(!el)return;if(isWheelFullscreen()){if(el.classList.contains('pseudo-fullscreen')){setPseudoFullscreen(false);return;}var exit=document.exitFullscreen||document.webkitExitFullscreen||document.msExitFullscreen;if(exit){try{exit.call(document);}catch(e){setPseudoFullscreen(false);}}else{setPseudoFullscreen(false);}return;}var req=el.requestFullscreen||el.webkitRequestFullscreen||el.msRequestFullscreen;if(!req){setPseudoFullscreen(true);return;}try{var p=req.call(el);if(p&&typeof p.then==='function'){p.then(function(){updateFullscreenUi();}).catch(function(){setPseudoFullscreen(true);});}else{setTimeout(updateFullscreenUi,150);}}catch(e){setPseudoFullscreen(true);}}
@@ -1562,22 +1554,20 @@ function updateEntries(){
   if(isSpinning)return;
   var ta=document.getElementById('entriesTextarea');if(!ta)return;
   var lines=ta.value.split('\n');var validNames=[];
-  for(var i=0;i<lines.length;i++){var name=lines[i].trim();if(name.length>0&&validNames.length<MAX_PARTICIPANTS){validNames.push(name);}}
+  for(var i=0;i<lines.length;i++){var name=lines[i].trim();if(name.length>0&&validNames.length<MAX_PARTICIPANTS){validNames.push(name.slice(0,30));}}
   participants=validNames;
-  // prune image data for names no longer present
-  var presentMap=Object.create(null);
-  for(var q=0;q<participants.length;q++){presentMap[participants[q]]=true;}
-  for(var key in participantImages){if(!presentMap[key])delete participantImages[key];}
   var badge=document.getElementById('entriesCountBadge');
   if(badge)badge.textContent='Entries: '+participants.length;
   updateSpinButtonState();rebuildWheel();
-  var popupOpen=document.getElementById('winnerOverlay').classList.contains('show');
-  var editing=(document.activeElement===ta);
   if(participants.length>=2){
-    if(!isSpinning&&!popupOpen&&!editing)startIdleSpin();
+    var popupOpen=document.getElementById('winnerOverlay').classList.contains('show');
+    if(!isSpinning&&!popupOpen)startIdleSpin();
   }else{
     stopIdleSpin();
     if(!isSpinning)setSpinLabel('SPIN');
+  }
+  if(participants.length===0){
+    document.title='Spin The Wheelly — Free Spin the Wheel to Pick a Random Choice';
   }
 }
 var debouncedUpdateEntries = debounce(updateEntries, 50);
@@ -1586,7 +1576,8 @@ function syncPlaceholder() {
   var ta = document.getElementById('entriesTextarea');
   var ph = document.getElementById('fakePlaceholder');
   if (!ta || !ph) return;
-  if (ta.value.trim() === '') {
+  var defaultText = 'John\nEmma\nMichael\nSophia\nWilliam\nOlivia\nJames';
+  if (ta.value === defaultText || ta.value.trim() === '') {
     ph.classList.remove('hidden');
   } else {
     ph.classList.add('hidden');
@@ -1598,7 +1589,15 @@ function addEntry(){
   if(currentTab!=='edit')switchPanel('edit');
   var ta=document.getElementById('entriesTextarea');
   if(!ta)return;
-  if(ta.value.length>0 && !ta.value.endsWith('\n')) ta.value+='\n';
+  
+  var defaultText = 'John\nEmma\nMichael\nSophia\nWilliam\nOlivia\nJames';
+  
+  if(ta.value.trim() === ''){
+    ta.value = defaultText;
+    restoreDefaultNextFocus = true;
+  } else {
+    if(ta.value.length>0 && !ta.value.endsWith('\n')) ta.value+='\n';
+  }
   ta.focus();
   ta.selectionStart=ta.selectionEnd=ta.value.length;
   updateEntries();
@@ -1632,7 +1631,7 @@ function handleImageUpload(event){
   if(!/^image\//.test(file.type)){showToast('Please choose an image file.');return;}
   if(file.size>10*1024*1024){showToast('Image is too large (max 10MB).');return;}
   if(blockIfSpinning())return;
-  var rawName=file.name.replace(/\.[^/.]+$/,'').trim()||'Image';
+  var rawName=file.name.replace(/\.[^/.]+$/,'').trim().slice(0,30)||'Image';
   var reader=new FileReader();
   reader.onload=function(e){
     downscaleImage(e.target.result,320,function(dataUrl){
@@ -1643,7 +1642,6 @@ function handleImageUpload(event){
         participantImages[rawName]=dataUrl;
         updateEntries();showToast('Image updated: '+rawName);
       }else{
-        if(current.length>=MAX_PARTICIPANTS){showToast('Maximum of '+MAX_PARTICIPANTS+' entries reached.');return;}
         ta.value+=(ta.value.length>0&&!ta.value.endsWith('\n')?'\n':'')+rawName;
         participantImages[rawName]=dataUrl;
         updateEntries();showToast('Image added: '+rawName);
@@ -1776,9 +1774,7 @@ function spinWheel(){
   var winnerName=participants[winnerIndex];
   var n=participants.length;var segAngle=360/n;
   var winnerCenter=winnerIndex*segAngle+segAngle/2;
-  var jitterMax=segAngle*0.30;
-  // cryptographically secure jitter (range -jitterMax..+jitterMax)
-  var jitter=((secureRandomInt(2001)/1000)-1)*jitterMax;
+  var jitterMax=segAngle*0.30;var jitter=(Math.random()*2-1)*jitterMax;
   var targetMod=((90-winnerCenter-jitter)%360+360)%360;
   var currentMod=((currentRotation%360)+360)%360;
   var delta=targetMod-currentMod;if(delta<0)delta+=360;
@@ -1807,17 +1803,14 @@ function onSpinComplete(winnerIndex,winnerName){
   var ta=document.getElementById('entriesTextarea');if(ta)ta.readOnly=false;
   var btn=document.getElementById('spinBtn');btn.disabled=false;setSpinLabel('SPIN AGAIN');btn.removeAttribute('aria-busy');
   currentWinnerIndex=winnerIndex;currentWinnerName=winnerName;currentWinnerRemoved=false;
-  winnerHistory.push(winnerName);
-  if(winnerHistory.length>200)winnerHistory=winnerHistory.slice(-200);
-  renderResultsList();
+  winnerHistory.push(winnerName);renderResultsList();
   if(soundEnabled&&audioCtx)playSweetMusic();
   if(confettiEnabled&&(!window.matchMedia||!window.matchMedia('(prefers-reduced-motion: reduce)').matches)){launchConfetti();}
-  // Show the popup first: updateEntries() then sees the overlay open and won't restart the idle spin.
-  showWinnerPopup(winnerName);
   if(autoRemoveWinner){
-    removeEntryByName(winnerName);
+    removeEntryByIndex(winnerIndex);
     currentWinnerRemoved=true;
   }
+  showWinnerPopup(winnerName);
   syncPlaceholder();
   setTimeout(function(){
     if(!isSpinning&&participants.length>=2&&!document.getElementById('winnerOverlay').classList.contains('show')){
@@ -1826,23 +1819,31 @@ function onSpinComplete(winnerIndex,winnerName){
   },500);
 }
 
-function removeEntryByName(name){
+function removeEntryByIndex(idx){
   var ta=document.getElementById('entriesTextarea');
-  if(!ta||!name)return false;
+  if(!ta||idx<0)return;
   var lines=ta.value.split('\n');
+  var nonEmpty=0;
+  var removedName='';
   for(var i=0;i<lines.length;i++){
-    if(lines[i].trim()===name){
-      lines.splice(i,1);
-      ta.value=lines.join('\n');
-      var stillExists=false;
-      for(var k=0;k<lines.length;k++){if(lines[k].trim()===name){stillExists=true;break;}}
-      if(!stillExists)delete participantImages[name];
-      updateEntries();
-      syncPlaceholder();
-      return true;
+    if(lines[i].trim().length>0){
+      if(nonEmpty===idx){
+        removedName=lines[i].trim().slice(0,30);
+        lines.splice(i,1);
+        break;
+      }
+      nonEmpty++;
     }
   }
-  return false;
+  ta.value=lines.join('\n');
+  var stillExists=false;
+  var check=ta.value.split('\n');
+  for(var k=0;k<check.length;k++){
+    if(check[k].trim().slice(0,30)===removedName){stillExists=true;break;}
+  }
+  if(!stillExists&&removedName)delete participantImages[removedName];
+  updateEntries();
+  syncPlaceholder();
 }
 
 function showWinnerPopup(name){
@@ -1859,7 +1860,8 @@ function closeWinnerPopup(){
   var overlay=document.getElementById('winnerOverlay');
   if(!overlay||!overlay.classList.contains('show'))return;
   overlay.classList.remove('show');overlay.setAttribute('aria-hidden','true');
-  restoreBodyScroll();
+  var shareOpen=document.getElementById('shareModal').classList.contains('active');
+  if(!shareOpen)document.body.style.overflow='';
   var spinBtn=document.getElementById('spinBtn');
   if(spinBtn&&!spinBtn.disabled)try{spinBtn.focus();}catch(e){}
   setTimeout(function(){
@@ -1868,18 +1870,11 @@ function closeWinnerPopup(){
 }
 
 function removeWinnerAndClose(){
-  if(!currentWinnerRemoved&&currentWinnerName){
-    removeEntryByName(currentWinnerName);
+  if(!currentWinnerRemoved&&currentWinnerIndex>=0){
+    removeEntryByIndex(currentWinnerIndex);
     currentWinnerRemoved=true;
   }
   closeWinnerPopup();
-}
-
-function shareWinner(){
-  if(!currentWinnerName)return;
-  var text='🎉 The wheel picked: '+currentWinnerName+'\n\nSpin yours free: https://spinthewheelly.com/';
-  closeWinnerPopup();
-  openShareModal(text);
 }
 
 document.getElementById('winnerOverlay').addEventListener('click',function(e){if(e.target===this)closeWinnerPopup();},{passive:true});
@@ -1924,7 +1919,7 @@ function closeShareModal(){
   var m=document.getElementById('shareModal');if(!m||!m.classList.contains('active'))return;
   if(m.contains(document.activeElement)&&document.activeElement.blur){document.activeElement.blur();}
   m.classList.remove('active');m.setAttribute('aria-hidden','true');
-  restoreBodyScroll();
+  if(!document.getElementById('winnerOverlay').classList.contains('show')){document.body.style.overflow='';}
 }
 function copyShareText(){
   var ta=document.getElementById('shareText');if(!ta)return;ta.select();
@@ -2008,18 +2003,20 @@ function init(){
     textarea.addEventListener('focus', function() {
       var ph = document.getElementById('fakePlaceholder');
       if(ph) ph.classList.add('hidden');
-      // Select the sample data so the first keystroke replaces it — without deleting it on a mere click.
+      
+      if (restoreDefaultNextFocus) {
+        restoreDefaultNextFocus = false;
+        return;
+      }
       var defaultText = 'John\nEmma\nMichael\nSophia\nWilliam\nOlivia\nJames';
       if (this.value === defaultText) {
-        try{this.select();}catch(e){}
+        this.value = '';
+        updateEntries();
       }
     });
     
     textarea.addEventListener('blur', function() {
       syncPlaceholder();
-      if(!isSpinning && participants.length>=2 && !document.getElementById('winnerOverlay').classList.contains('show')){
-        startIdleSpin();
-      }
     });
   }
   renderPresetGrid();
