@@ -25,6 +25,20 @@
 <link rel="canonical" href="https://spinthewheelly.com/">
 <link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml">
 
+<!-- ================= Hreflang (International SEO) ================= -->
+<link rel="alternate" hreflang="en" href="https://spinthewheelly.com/">
+<link rel="alternate" hreflang="es" href="https://spinthewheelly.com/es/">
+<link rel="alternate" hreflang="pt" href="https://spinthewheelly.com/pt/">
+<link rel="alternate" hreflang="fr" href="https://spinthewheelly.com/fr/">
+<link rel="alternate" hreflang="pl" href="https://spinthewheelly.com/pl/">
+<link rel="alternate" hreflang="de" href="https://spinthewheelly.com/de/">
+<link rel="alternate" hreflang="id" href="https://spinthewheelly.com/id/">
+<link rel="alternate" hreflang="th" href="https://spinthewheelly.com/th/">
+<link rel="alternate" hreflang="tl" href="https://spinthewheelly.com/tl/">
+<link rel="alternate" hreflang="ja" href="https://spinthewheelly.com/ja/">
+<link rel="alternate" hreflang="zh" href="https://spinthewheelly.com/zh/">
+<link rel="alternate" hreflang="x-default" href="https://spinthewheelly.com/">
+
 <!-- ================= Open Graph ================= -->
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Spin The Wheelly">
@@ -34,6 +48,16 @@
 <meta property="og:image" content="https://spinthewheelly.com/apple-touch-icon.png">
 <meta property="og:image:alt" content="Spin The Wheelly logo">
 <meta property="og:locale" content="en_US">
+<meta property="og:locale:alternate" content="es_ES">
+<meta property="og:locale:alternate" content="pt_BR">
+<meta property="og:locale:alternate" content="fr_FR">
+<meta property="og:locale:alternate" content="pl_PL">
+<meta property="og:locale:alternate" content="de_DE">
+<meta property="og:locale:alternate" content="id_ID">
+<meta property="og:locale:alternate" content="th_TH">
+<meta property="og:locale:alternate" content="tl_PH">
+<meta property="og:locale:alternate" content="ja_JP">
+<meta property="og:locale:alternate" content="zh_CN">
 
 <!-- ================= Twitter Card ================= -->
 <meta name="twitter:card" content="summary_large_image">
@@ -85,11 +109,13 @@ a:focus-visible,button:focus-visible,input:focus-visible,[tabindex]:focus-visibl
 .nav-btn.share-btn svg{stroke:#000000;color:#000000}
 .hamburger-btn{display:none;padding:9px;margin-left:4px}
 .hamburger-btn svg{width:24px;height:24px;stroke:#000000;color:#000000}
-@media (max-width:900px){.nav-btn .nav-text{display:none}.nav-btn{padding:9px}.nav-btn.share-btn{padding:9px 12px;margin-left:0}.header-container{height:60px}.nav-links > .nav-btn:not(.share-btn):not(.hamburger-btn){display:none}.hamburger-btn{display:flex}}
+@media (max-width:1100px){.nav-btn .nav-text{display:none}.nav-btn{padding:9px}.nav-btn.share-btn{padding:9px 12px;margin-left:0}.header-container{height:60px}.hamburger-btn{display:flex}}
+@media (max-width:900px){.nav-links > .nav-btn:not(.share-btn):not(.hamburger-btn){display:none}.nav-tools-wrap{display:none}.nav-lang-wrap .nav-btn{display:flex !important}}
 @media (max-width:560px){.header-container{height:56px;gap:8px}.nav-logo-text{font-size:16px;letter-spacing:-0.5px}.nav-logo-img{width:24px;height:24px}.nav-btn{padding:8px}.nav-btn.share-btn{padding:8px 10px}.nav-btn svg{width:20px;height:20px}}
 @media (max-width:380px){.header-container{gap:6px}.nav-logo-text{font-size:14px;letter-spacing:-0.4px}.nav-logo-img{width:22px;height:22px}.nav-btn{padding:7px}.nav-btn.share-btn{padding:7px 9px}.nav-btn svg{width:18px;height:18px}.hamburger-btn svg{width:22px;height:22px}}
 
 .nav-tools-wrap{position:relative}
+.nav-lang-wrap{position:relative}
 
 .tools-menu{
   position:fixed;top:0;left:0;min-width:240px;max-width:calc(100vw - 24px);max-height:calc(100vh - 24px);
@@ -105,6 +131,10 @@ a:focus-visible,button:focus-visible,input:focus-visible,[tabindex]:focus-visibl
 .tools-menu-item svg{width:20px;height:20px;stroke:#000000;color:#000000;flex-shrink:0}
 .tools-item-content{display:flex;flex-direction:column;gap:2px;min-width:0;text-align:left}
 .tools-item-title{font-size:14.5px;font-weight:600;color:var(--text);line-height:1.3}
+.lang-flag{font-size:20px;line-height:1;display:inline-flex;align-items:center;justify-content:center;flex-shrink:0;width:24px;height:20px;}
+.tools-menu-item.lang-active{background:var(--hover);}
+.tools-menu-item.lang-active .tools-item-title{font-weight:800;color:#111827;}
+.tools-menu-item.lang-active::after{content:'✓';margin-left:auto;font-size:14px;font-weight:800;color:#111827;}
 
 .sidebar-overlay{position:fixed;inset:0;background:rgba(0,0,0,0.5);-webkit-backdrop-filter:blur(2px);backdrop-filter:blur(2px);z-index:9998;opacity:0;visibility:hidden;transition:opacity 0.25s ease,visibility 0.25s ease;}
 .sidebar-overlay.show{opacity:1;visibility:visible}
@@ -120,12 +150,16 @@ a:focus-visible,button:focus-visible,input:focus-visible,[tabindex]:focus-visibl
 .sidebar-tools-btn .chevron{margin-left:auto;width:16px;height:16px;stroke:#000000;color:#000000;transition:transform 0.22s ease;}
 .sidebar-tools-btn.open .chevron{transform:rotate(180deg)}
 .sidebar-tools-sub{max-height:0;overflow:hidden;transition:max-height 0.28s ease;padding-left:6px;}
-.sidebar-tools-sub.open{max-height:500px}
+.sidebar-tools-sub.open{max-height:800px}
 .sidebar-sub-item{display:flex;align-items:flex-start;gap:10px;width:100%;padding:10px 12px;background:transparent;border:none;border-radius:7px;font-family:inherit;color:var(--text);cursor:pointer;text-align:left;transition:background 0.18s ease;margin-bottom:2px;text-decoration:none;}
 .sidebar-sub-item:hover,.sidebar-sub-item:active{background:#f3f4f6}
 .sidebar-sub-item svg{width:18px;height:18px;stroke:#000000;color:#000000;flex-shrink:0;margin-top:2px}
+.sidebar-sub-item .flag-icon{font-size:18px;line-height:1;flex-shrink:0;display:inline-flex;align-items:center;justify-content:center;width:18px;height:18px;margin-top:1px;}
 .sidebar-sub-item .item-content{display:flex;flex-direction:column;gap:2px;min-width:0;flex:1;text-align:left;}
 .sidebar-sub-item .item-title{font-size:13.5px;font-weight:600;color:var(--text);line-height:1.2;}
+.sidebar-sub-item.lang-active{background:var(--hover);}
+.sidebar-sub-item.lang-active .item-title{font-weight:800;}
+.sidebar-sub-item.lang-active::after{content:'✓';margin-left:auto;align-self:center;font-size:13px;font-weight:800;color:#111827;}
 
 main{flex:1;display:flex;align-items:flex-start;justify-content:center;padding:0 20px 58px;width:100%;min-width:0;max-width:100%;overflow-x:hidden !important;overflow-x:clip !important;background-color:#ffffff !important;}
 .content-container{width:100%;max-width:var(--page-max);margin:0 auto;min-width:0;overflow-x:hidden !important;overflow-x:clip !important;}
@@ -136,7 +170,6 @@ main{flex:1;display:flex;align-items:flex-start;justify-content:center;padding:0
 .page-subtitle{font-size:13px;font-weight:400;color:#6b7280;line-height:1.5;margin:0 0 20px;padding:0;letter-spacing:0;width:100%;text-align:left;}
 @media (max-width:560px){.page-h1{font-size:18px;}.page-subtitle{font-size:12.5px;margin-bottom:16px;}}
 
-/* Top Ranking Premium Bar */
 .top-ranking-bar { display: flex; align-items: center; justify-content: center; gap: 12px; background: var(--soft-bg); border: 1px solid var(--line); padding: 10px 20px; border-radius: 12px; margin-bottom: 24px; box-shadow: 0 4px 12px rgba(0,0,0,0.03); overflow-x: auto; white-space: nowrap; }
 .top-ranking-title { font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; color: var(--text-light); display: flex; align-items: center; gap: 6px; }
 .top-ranking-title svg { width: 18px; height: 18px; stroke: #eab308; }
@@ -176,7 +209,6 @@ main{flex:1;display:flex;align-items:flex-start;justify-content:center;padding:0
 
 .tool-badge{position:absolute;top:4px;right:4px;background:#2563eb;color:#ffffff;font-size:9px;font-weight:700;min-width:15px;height:15px;border-radius:8px;display:flex;align-items:center;justify-content:center;padding:0 4px;line-height:1;pointer-events:none;z-index:2;box-shadow:0 1px 2px rgba(0,0,0,0.2);}
 
-/* Slightly shorter box */
 .sliding-container{position:relative;width:100%;height:210px;margin-top:8px;padding-top:12px;overflow:hidden;}
 .panel-view{position:absolute;top:12px;left:0;width:100%;height:calc(100% - 12px);opacity:0;visibility:hidden;transform:translateX(20px);transition:opacity 0.24s ease,transform 0.24s ease,visibility 0.24s ease;pointer-events:none;}
 .panel-view.active{opacity:1;visibility:visible;transform:translateX(0);pointer-events:auto;z-index:2;}
@@ -252,19 +284,50 @@ main{flex:1;display:flex;align-items:flex-start;justify-content:center;padding:0
 .wheel-stage.size-large{max-width:580px;}
 @media (max-width:900px){.wheel-stage.size-compact,.wheel-stage.size-medium,.wheel-stage.size-large{max-width:min(100%,480px);}}
 @media (max-width:400px){.wheel-stage.size-compact,.wheel-stage.size-medium,.wheel-stage.size-large{max-width:100%;}}
-.wheel-svg{width:100%;height:100%;display:block;overflow:visible;}
+.wheel-svg{width:100%;height:100%;display:block;overflow:visible;cursor:pointer;-webkit-tap-highlight-color:transparent;touch-action:manipulation;}
 .wheel-svg .wheel-segment{stroke:none;transition:stroke 0.2s;}
 .wheel-svg.wheel-borders-on .wheel-segment{stroke:rgba(0,0,0,0.18);stroke-width:1.2;}
 #wheelOuterRing{transition:opacity 0.2s;}
 .wheel-pointer-shape{fill:#ffffff;stroke:rgba(0,0,0,0.62);stroke-width:1.5;stroke-linejoin:round;pointer-events:none;filter:drop-shadow(0 2px 3px rgba(0,0,0,0.35));}
 
-.spin-button{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:21%;height:21%;min-width:60px;min-height:60px;border-radius:50%;background:#ffffff;color:#0a0a0a;border:2px solid rgba(0,0,0,0.12);font-family:inherit;font-weight:900;font-size:clamp(11px,1.7vw,15px);letter-spacing:1.2px;cursor:pointer;display:flex;align-items:center;justify-content:center;text-transform:uppercase;outline:none;z-index:5;transition:transform .15s,filter .15s,box-shadow .15s,background .15s;box-shadow:0 3px 14px rgba(0,0,0,0.22),inset 0 -2px 4px rgba(0,0,0,0.05);-webkit-tap-highlight-color:transparent;touch-action:manipulation;}
-.spin-button:hover:not(:disabled){filter:brightness(0.97);transform:translate(-50%,-50%) scale(1.04);box-shadow:0 4px 18px rgba(0,0,0,0.28),inset 0 -2px 4px rgba(0,0,0,0.05);}
-.spin-button:active:not(:disabled){transform:translate(-50%,-50%) scale(.97);}
-.spin-button:disabled{cursor:not-allowed;opacity:0.5;filter:grayscale(0.4);background:#f3f4f6;color:#9ca3af;box-shadow:0 2px 8px rgba(0,0,0,0.08),inset 0 -2px 4px rgba(0,0,0,0.03);}
-.spin-button:disabled[aria-busy="true"]{opacity:1;filter:none;background:#ffffff;color:#0a0a0a;border-color:rgba(0,0,0,0.12);box-shadow:0 3px 14px rgba(0,0,0,0.22),inset 0 -2px 4px rgba(0,0,0,0.05);cursor:progress;}
-.spin-button:focus-visible{outline:2px solid var(--text) !important;outline-offset:5px !important;border-radius:50%;}
-.spin-button.long-label{font-size:clamp(7px,1.15vw,10px);letter-spacing:0;}
+/* ══════════════════════════════════════════════════════════════
+   SPIN BUTTON — WHITE CIRCLE (no icon, no text)
+   ══════════════════════════════════════════════════════════════ */
+.spin-button{
+  position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);
+  width:21%;height:21%;min-width:60px;min-height:60px;border-radius:50%;
+  background:#ffffff;color:#0a0a0a;
+  border:2px solid rgba(0,0,0,0.12);
+  cursor:pointer;display:flex;align-items:center;justify-content:center;
+  outline:none;z-index:5;padding:0;
+  transition:transform .15s,filter .15s,box-shadow .15s,background .15s;
+  box-shadow:0 3px 14px rgba(0,0,0,0.22),inset 0 -2px 4px rgba(0,0,0,0.05);
+  -webkit-tap-highlight-color:transparent;touch-action:manipulation;
+}
+.spin-button:hover:not(:disabled){
+  filter:brightness(0.97);
+  transform:translate(-50%,-50%) scale(1.04);
+  box-shadow:0 4px 18px rgba(0,0,0,0.28),inset 0 -2px 4px rgba(0,0,0,0.05);
+}
+.spin-button:active:not(:disabled){
+  transform:translate(-50%,-50%) scale(.97);
+}
+.spin-button:disabled{
+  cursor:not-allowed;opacity:0.5;filter:grayscale(0.4);
+  background:#f3f4f6;color:#9ca3af;
+  box-shadow:0 2px 8px rgba(0,0,0,0.08),inset 0 -2px 4px rgba(0,0,0,0.03);
+}
+.spin-button:disabled[aria-busy="true"]{
+  opacity:1;filter:none;background:#ffffff;color:#0a0a0a;
+  border-color:rgba(0,0,0,0.12);
+  box-shadow:0 3px 14px rgba(0,0,0,0.22),inset 0 -2px 4px rgba(0,0,0,0.05);
+  cursor:progress;
+}
+.spin-button:focus-visible{
+  outline:2px solid var(--text) !important;
+  outline-offset:5px !important;
+  border-radius:50%;
+}
 
 .winner-overlay{position:fixed;inset:0;background:rgba(0,0,0,0.45);z-index:10000;display:flex;align-items:center;justify-content:center;padding:20px;opacity:0;visibility:hidden;transition:opacity .3s ease,visibility .3s ease;}
 .winner-overlay.show{opacity:1;visibility:visible}
@@ -295,7 +358,6 @@ main{flex:1;display:flex;align-items:flex-start;justify-content:center;padding:0
 .confetti-canvas{position:fixed;inset:0;width:100%;height:100%;pointer-events:none;z-index:10001;display:none;}
 .confetti-canvas.active{display:block}
 
-/* Premium Modals */
 .modal-overlay{position:fixed;inset:0;background:rgba(0,0,0,.55);z-index:10001;display:flex;align-items:center;justify-content:center;opacity:0;visibility:hidden;transition:.3s;padding:16px; -webkit-backdrop-filter: blur(4px); backdrop-filter: blur(4px);}
 .modal-overlay.active{opacity:1;visibility:visible}
 .modal-box{background:var(--bg);border:1px solid var(--line);border-radius:24px;padding:32px 28px;max-width:460px;width:100%;box-shadow:0 24px 60px -12px rgba(0,0,0,.15), 0 0 0 1px rgba(0,0,0,0.02);transform:translateY(20px);transition:transform .3s cubic-bezier(0.34, 1.56, 0.64, 1);max-height:90vh;overflow-y:auto; position: relative;}
@@ -314,7 +376,6 @@ main{flex:1;display:flex;align-items:flex-start;justify-content:center;padding:0
 .btn-outline{background:transparent;color:var(--text);border:1.5px solid var(--line)}
 .btn-outline:hover{background:var(--hover); border-color: #ccc;}
 
-/* Custom Scrollbar for Modals */
 .modal-box::-webkit-scrollbar { width: 6px; }
 .modal-box::-webkit-scrollbar-track { background: transparent; }
 .modal-box::-webkit-scrollbar-thumb { background: var(--line); border-radius: 10px; }
@@ -344,6 +405,32 @@ main{flex:1;display:flex;align-items:flex-start;justify-content:center;padding:0
 .settings-row input[type="checkbox"]{width:20px;height:20px;accent-color:#000; cursor: pointer;}
 .settings-row select{padding:10px 14px;border-radius:10px;border:1.5px solid var(--input-border);background:var(--input-bg);color:var(--text);font-family:inherit;font-size:14px;font-weight:500;cursor:pointer;min-width:120px; outline: none;}
 .settings-note{font-size:13px;color:var(--text-light);line-height:1.5;margin:14px 0 4px;}
+
+/* ══════════════════════════════════════════════════════════════
+   SPIN DURATION SLIDER
+   ══════════════════════════════════════════════════════════════ */
+.speed-slider-row{display:flex;align-items:center;gap:14px;padding:8px 0 4px;}
+.speed-slider-row input[type="range"]{
+  flex:1;height:6px;border-radius:3px;background:var(--line);
+  outline:none;appearance:none;-webkit-appearance:none;cursor:pointer;
+}
+.speed-slider-row input[type="range"]::-webkit-slider-thumb{
+  -webkit-appearance:none;appearance:none;width:22px;height:22px;border-radius:50%;
+  background:var(--text);border:3px solid var(--bg);
+  box-shadow:0 2px 8px rgba(0,0,0,0.22);cursor:pointer;transition:transform 0.15s;
+}
+.speed-slider-row input[type="range"]::-webkit-slider-thumb:hover{transform:scale(1.12);}
+.speed-slider-row input[type="range"]::-moz-range-thumb{
+  width:22px;height:22px;border-radius:50%;background:var(--text);
+  border:3px solid var(--bg);box-shadow:0 2px 8px rgba(0,0,0,0.22);cursor:pointer;
+}
+.speed-slider-row input[type="range"]::-moz-range-track{
+  height:6px;border-radius:3px;background:var(--line);
+}
+.speed-value{
+  font-size:15px;font-weight:800;min-width:56px;text-align:right;
+  color:var(--text);font-variant-numeric:tabular-nums;letter-spacing:-0.3px;
+}
 
 .segmented-control{display:flex;background:var(--soft-bg);border-radius:12px;padding:4px;gap:4px; border: 1px solid var(--line);}
 .segmented-control button{flex:1;padding:10px 8px;border:none;background:transparent;color:var(--text-light);font-family:inherit;font-size:13px;font-weight:600;border-radius:8px;cursor:pointer;transition:all 0.2s;-webkit-tap-highlight-color:transparent;touch-action:manipulation;}
@@ -399,8 +486,8 @@ main{flex:1;display:flex;align-items:flex-start;justify-content:center;padding:0
 .footer-links a{font-family:inherit;font-size:13px;font-weight:500;color:#2563eb;text-decoration:none;letter-spacing:0.2px;}
 .footer-links a:hover{color:#1d4ed8}
 
-@media (max-width:560px){.spin-button{font-size:10px;min-width:54px;min-height:54px;letter-spacing:.8px}.seo-block{margin-bottom:20px;}.seo-block h2{font-size:16.5px;}.seo-block h3{font-size:13.5px;}.seo-block p,.seo-block ul,.seo-block ol{font-size:13px;}.faq-q{font-size:13.5px;padding:11px 0;}.faq-a{font-size:12.5px;}.site-footer{padding:12px 16px 90px 16px;margin-top:30px;}.footer-links{gap:24px}.footer-links a{font-size:12.5px}.seo-content-box{padding:20px;width:calc(100% - 32px);margin:22px auto 0 auto;}}
-@media (max-width:400px){.spin-button{font-size:9.5px;min-width:48px;min-height:48px;}.seo-content-box{padding:16px;width:calc(100% - 24px);}}
+@media (max-width:560px){.seo-block{margin-bottom:20px;}.seo-block h2{font-size:16.5px;}.seo-block h3{font-size:13.5px;}.seo-block p,.seo-block ul,.seo-block ol{font-size:13px;}.faq-q{font-size:13.5px;padding:11px 0;}.faq-a{font-size:12.5px;}.site-footer{padding:12px 16px 90px 16px;margin-top:30px;}.footer-links{gap:24px}.footer-links a{font-size:12.5px}.seo-content-box{padding:20px;width:calc(100% - 32px);margin:22px auto 0 auto;}}
+@media (max-width:400px){.seo-content-box{padding:16px;width:calc(100% - 24px);}}
 @media (max-width:320px){.seo-content-box{padding:14px;width:calc(100% - 16px);}.seo-block h2{font-size:15px;}.seo-block p,.seo-block li{font-size:12px;}}
 
 @media (min-width:1440px){:root{--page-max:1300px;}}
@@ -411,9 +498,6 @@ main{flex:1;display:flex;align-items:flex-start;justify-content:center;padding:0
 .preset-card:active,.palette-swatch:active,.sidebar-item:active,
 .winner-btn-close:active,.winner-btn-remove:active{transform:none !important;}
 
-/* ══════════════════════════════════════════════════════════
-   AUTOMATIC DARK MODE
-   ══════════════════════════════════════════════════════════ */
 @media (prefers-color-scheme: dark){
   :root{
     color-scheme:dark;
@@ -440,6 +524,8 @@ main{flex:1;display:flex;align-items:flex-start;justify-content:center;padding:0
   .tools-menu-item:hover{background:#16202c;}
   .tools-item-title{color:#e8eef6;}
   .tools-menu-item svg{stroke:#f4f7fb;color:#f4f7fb;}
+  .tools-menu-item.lang-active .tools-item-title{color:#f4f7fb;}
+  .tools-menu-item.lang-active::after{color:#f4f7fb;}
 
   .mobile-sidebar{background:#0b0f14;box-shadow:12px 0 40px rgba(0,0,0,.8);}
   .sidebar-item{color:#f4f7fb;}
@@ -451,6 +537,7 @@ main{flex:1;display:flex;align-items:flex-start;justify-content:center;padding:0
   .sidebar-sub-item .item-title{color:#e8eef6;}
   .sidebar-sub-item:hover,.sidebar-sub-item:active{background:#16202c;}
   .sidebar-sub-item svg{stroke:#f4f7fb;color:#f4f7fb;}
+  .sidebar-sub-item.lang-active::after{color:#f4f7fb;}
   .sidebar-overlay{background:rgba(0,0,0,.75);}
 
   .icon-btn{color:#f4f7fb;}
@@ -474,8 +561,15 @@ main{flex:1;display:flex;align-items:flex-start;justify-content:center;padding:0
 
   .wheel-premium-bg:fullscreen,.wheel-premium-bg:-webkit-full-screen,.wheel-premium-bg.pseudo-fullscreen{background:#0b0f14;}
 
-  .spin-button{background:#111a24;color:#f4f7fb;border-color:rgba(255,255,255,0.16);box-shadow:0 3px 16px rgba(0,0,0,.65),inset 0 -2px 4px rgba(255,255,255,.05);}
-  .spin-button:hover:not(:disabled){filter:brightness(1.12);box-shadow:0 4px 20px rgba(0,0,0,.75),inset 0 -2px 4px rgba(255,255,255,.05);}
+  .spin-button{
+    background:#111a24;color:#f4f7fb;
+    border-color:rgba(255,255,255,0.16);
+    box-shadow:0 3px 16px rgba(0,0,0,.65),inset 0 -2px 4px rgba(255,255,255,.05);
+  }
+  .spin-button:hover:not(:disabled){
+    filter:brightness(1.12);
+    box-shadow:0 4px 20px rgba(0,0,0,.75),inset 0 -2px 4px rgba(255,255,255,.05);
+  }
   .spin-button:disabled{background:#16202c;color:#5b6879;filter:none;opacity:.75;}
   .spin-button:disabled[aria-busy="true"]{background:#111a24;color:#f4f7fb;border-color:rgba(255,255,255,0.16);opacity:1;}
   .wheel-pointer-shape{fill:#0f1620;stroke:rgba(255,255,255,0.55);filter:drop-shadow(0 2px 3px rgba(0,0,0,0.6));}
@@ -548,6 +642,7 @@ main{flex:1;display:flex;align-items:flex-start;justify-content:center;padding:0
   "operatingSystem": "Any",
   "browserRequirements": "Requires JavaScript. Works on all modern browsers.",
   "inLanguage": "en-US",
+  "availableLanguage": ["en-US","es-ES","pt-BR","fr-FR","pl-PL","de-DE","id-ID","th-TH","tl-PH","ja-JP","zh-CN"],
   "isAccessibleForFree": true,
   "offers": {
     "@type": "Offer",
@@ -567,8 +662,11 @@ main{flex:1;display:flex;align-items:flex-start;justify-content:center;padding:0
 {
   "@context": "https://schema.org",
   "@type": "FAQPage",
+  "inLanguage": "en-US",
   "mainEntity": [
     {"@type":"Question","name":"Is Spin The Wheelly really free?","acceptedAnswer":{"@type":"Answer","text":"Yes! It's 100% free. No premium tiers, no ads, no hidden fees — forever. No signup required."}},
+    {"@type":"Question","name":"Can I control the spin speed?","acceptedAnswer":{"@type":"Answer","text":"Yes. In Settings there's a spin duration slider from 1.5 seconds (very fast) to 15 seconds (slow and dramatic). You can also toggle background music on or off."}},
+    {"@type":"Question","name":"Is there background music available?","acceptedAnswer":{"@type":"Answer","text":"Yes! Enable background music in Settings for a more immersive experience. The melody is generated 100% in your browser — no external files, no downloads."}},
     {"@type":"Question","name":"Can I customize the wheel?","acceptedAnswer":{"@type":"Answer","text":"Yes! Pick from 18 premium color themes, adjust wheel size and text size, add segment borders, upload a full-page background image, and more in Settings."}},
     {"@type":"Question","name":"How many entries can I add?","acceptedAnswer":{"@type":"Answer","text":"Up to 50 entries per wheel. For best readability we recommend keeping labels short — ideally under 15 characters."}},
     {"@type":"Question","name":"Is the wheel truly random?","acceptedAnswer":{"@type":"Answer","text":"Yes. Every spin uses crypto.getRandomValues — the same cryptographically secure random number generator used by password managers and banking apps. Zero bias, zero patterns."}},
@@ -579,12 +677,13 @@ main{flex:1;display:flex;align-items:flex-start;justify-content:center;padding:0
     {"@type":"Question","name":"Which browsers are supported?","acceptedAnswer":{"@type":"Answer","text":"All modern browsers: Chrome, Edge, Firefox, Safari, Opera, Brave — on Windows, macOS, Linux, iOS, and Android. Requires JavaScript enabled."}},
     {"@type":"Question","name":"Is there a limit on how many times I can spin?","acceptedAnswer":{"@type":"Answer","text":"No limit. Spin as many times as you want, on as many wheels as you want. No accounts, no caps, no cooldowns."}},
     {"@type":"Question","name":"Can I save my wheel for later?","acceptedAnswer":{"@type":"Answer","text":"Yes. Click the File button in the header or the save icon in the toolbar to download your list as a text file."}},
-    {"@type":"Question","name":"Does the wheel support emojis?","acceptedAnswer":{"@type":"Answer","text":"Yes! Emojis work perfectly as wheel entries. Use the smile button to insert one quickly, or type any emoji directly into the textarea."}}
+    {"@type":"Question","name":"Does the wheel support emojis?","acceptedAnswer":{"@type":"Answer","text":"Yes! Emojis work perfectly as wheel entries. Use the smile button to insert one quickly, or type any emoji directly into the textarea."}},
+    {"@type":"Question","name":"What languages is the site available in?","acceptedAnswer":{"@type":"Answer","text":"Spin The Wheelly is available in 11 languages: English, Español, Português, Français, Polski, Deutsch, Bahasa Indonesia, ไทย, Filipino, 日本語 and 中文. Use the globe icon in the header to switch languages at any time."}}
   ]
 }
 </script>
 
-<!-- ================= Structured Data: WebPage (matches H1) ================= -->
+<!-- ================= Structured Data: WebPage ================= -->
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -611,7 +710,6 @@ main{flex:1;display:flex;align-items:flex-start;justify-content:center;padding:0
 <svg xmlns="http://www.w3.org/2000/svg" style="position:absolute;width:0;height:0;overflow:hidden" aria-hidden="true">
 <defs>
 <symbol id="i-share-2" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" x2="15.42" y1="13.51" y2="17.49"/><line x1="15.41" x2="8.59" y1="6.51" y2="10.49"/></symbol>
-<symbol id="i-speaker" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m3 11 18-5v12L3 14v-3z"/><path d="M11.6 16.8a3 3 0 1 1-5.8-1.6"/></symbol>
 <symbol id="i-speaker-wave" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 5L6 9H2v6h4l5 4V5z"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14"/></symbol>
 <symbol id="i-speaker-mute-wave" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 5L6 9H2v6h4l5 4V5z"/><line x1="22" y1="9" x2="16" y2="15"/><line x1="16" y1="9" x2="22" y2="15"/></symbol>
 <symbol id="i-maximize" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 3 21 3 21 9"></polyline><polyline points="9 21 3 21 3 15"></polyline><line x1="21" y1="3" x2="14" y2="10"></line><line x1="3" y1="21" x2="10" y2="14"></line></symbol>
@@ -636,6 +734,8 @@ main{flex:1;display:flex;align-items:flex-start;justify-content:center;padding:0
 <symbol id="i-menu" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="18" x2="21" y2="18"/></symbol>
 <symbol id="i-plus" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></symbol>
 <symbol id="i-trophy" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6"/><path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18"/><path d="M4 22h16"/><path d="M10 14.66V17c0 .55-.47.98-.97 1.21C7.85 18.75 7 20.24 7 22"/><path d="M14 14.66V17c0 .55.47.98.97 1.21C16.15 18.75 17 20.24 17 22"/><path d="M18 2H6v7a6 6 0 0 0 12 0V2Z"/></symbol>
+<symbol id="i-globe" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></symbol>
+<symbol id="i-music" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/></symbol>
 </defs>
 </svg>
 
@@ -658,6 +758,7 @@ main{flex:1;display:flex;align-items:flex-start;justify-content:center;padding:0
       <button type="button" class="nav-btn share-btn" onclick="shareApp()" aria-label="Share app">
         <svg aria-hidden="true"><use href="#i-share-2"/></svg><span class="nav-text">Share</span>
       </button>
+
       <div class="nav-tools-wrap">
         <button type="button" class="nav-btn" id="toolsMenuBtn" onclick="toggleToolsMenu(event)" aria-haspopup="true" aria-expanded="false" aria-label="Open tools menu">
           <svg aria-hidden="true"><use href="#i-tool"/></svg><span class="nav-text">Tools</span>
@@ -669,9 +770,28 @@ main{flex:1;display:flex;align-items:flex-start;justify-content:center;padding:0
           <a href="/what-to-eat" class="tools-menu-item" role="menuitem"><svg aria-hidden="true"><use href="#i-smile"/></svg><span class="tools-item-content"><span class="tools-item-title">What to Eat</span></span></a>
         </div>
       </div>
-      <button type="button" class="nav-btn" onclick="toggleFullscreenPage()" aria-label="Fullscreen Mode">
-        <svg aria-hidden="true"><use href="#i-maximize"/></svg><span class="nav-text">Fullscreen</span>
-      </button>
+
+      <!-- ================= LANGUAGE SELECTOR ================= -->
+      <div class="nav-lang-wrap">
+        <button type="button" class="nav-btn" id="langMenuBtn" onclick="toggleLangMenu(event)" aria-haspopup="true" aria-expanded="false" aria-label="Change language">
+          <svg aria-hidden="true"><use href="#i-globe"/></svg><span class="nav-text">Language</span>
+        </button>
+        <div class="tools-menu" id="langMenu" role="menu" aria-label="Language selector">
+          <a href="https://spinthewheelly.com/" class="tools-menu-item lang-active" role="menuitem" lang="en" hreflang="en" aria-current="page"><span class="lang-flag">🇬🇧</span><span class="tools-item-content"><span class="tools-item-title">English</span></span></a>
+          <a href="https://spinthewheelly.com/es/" class="tools-menu-item" role="menuitem" lang="es" hreflang="es"><span class="lang-flag">🇪🇸</span><span class="tools-item-content"><span class="tools-item-title">Español</span></span></a>
+          <a href="https://spinthewheelly.com/pt/" class="tools-menu-item" role="menuitem" lang="pt" hreflang="pt"><span class="lang-flag">🇵🇹</span><span class="tools-item-content"><span class="tools-item-title">Português</span></span></a>
+          <a href="https://spinthewheelly.com/fr/" class="tools-menu-item" role="menuitem" lang="fr" hreflang="fr"><span class="lang-flag">🇫🇷</span><span class="tools-item-content"><span class="tools-item-title">Français</span></span></a>
+          <a href="https://spinthewheelly.com/pl/" class="tools-menu-item" role="menuitem" lang="pl" hreflang="pl"><span class="lang-flag">🇵🇱</span><span class="tools-item-content"><span class="tools-item-title">Polski</span></span></a>
+          <a href="https://spinthewheelly.com/de/" class="tools-menu-item" role="menuitem" lang="de" hreflang="de"><span class="lang-flag">🇩🇪</span><span class="tools-item-content"><span class="tools-item-title">Deutsch</span></span></a>
+          <a href="https://spinthewheelly.com/id/" class="tools-menu-item" role="menuitem" lang="id" hreflang="id"><span class="lang-flag">🇮🇩</span><span class="tools-item-content"><span class="tools-item-title">Bahasa Indonesia</span></span></a>
+          <a href="https://spinthewheelly.com/th/" class="tools-menu-item" role="menuitem" lang="th" hreflang="th"><span class="lang-flag">🇹🇭</span><span class="tools-item-content"><span class="tools-item-title">ไทย</span></span></a>
+          <a href="https://spinthewheelly.com/tl/" class="tools-menu-item" role="menuitem" lang="tl" hreflang="tl"><span class="lang-flag">🇵🇭</span><span class="tools-item-content"><span class="tools-item-title">Filipino</span></span></a>
+          <a href="https://spinthewheelly.com/ja/" class="tools-menu-item" role="menuitem" lang="ja" hreflang="ja"><span class="lang-flag">🇯🇵</span><span class="tools-item-content"><span class="tools-item-title">日本語</span></span></a>
+          <a href="https://spinthewheelly.com/zh/" class="tools-menu-item" role="menuitem" lang="zh" hreflang="zh"><span class="lang-flag">🇨🇳</span><span class="tools-item-content"><span class="tools-item-title">中文</span></span></a>
+        </div>
+      </div>
+      <!-- ================= /LANGUAGE SELECTOR ================= -->
+
       <button type="button" class="nav-btn hamburger-btn" id="hamburgerBtn" onclick="openSidebar()" aria-label="Open mobile menu" aria-expanded="false" aria-controls="mobileSidebar">
         <svg aria-hidden="true"><use href="#i-menu"/></svg>
       </button>
@@ -682,7 +802,6 @@ main{flex:1;display:flex;align-items:flex-start;justify-content:center;padding:0
 <main id="mainContent" tabindex="-1">
   <div class="content-container">
     
-    <!-- Top Ranking Bar -->
     <div class="top-ranking-bar" id="topRankingBar" style="display:none;">
       <div class="top-ranking-title"><svg><use href="#i-trophy"/></svg> Latest Winners</div>
       <div class="top-ranking-list" id="topRankingList"></div>
@@ -715,12 +834,12 @@ main{flex:1;display:flex;align-items:flex-start;justify-content:center;padding:0
               </div>
             </div>
             <div class="wheel-stage size-medium" id="wheelStage">
-              <svg class="wheel-svg" id="wheelSvg" viewBox="-110 -110 220 220" role="img" aria-label="Spin the wheel with your choices">
+              <svg class="wheel-svg" id="wheelSvg" viewBox="-110 -110 220 220" role="img" aria-label="Spin the wheel with your choices" onclick="spinWheel()" title="Click the wheel to spin">
                 <g id="wheelGroup"></g>
                 <circle id="wheelOuterRing" cx="0" cy="0" r="108" fill="none" stroke="rgba(0,0,0,0.15)" stroke-width="2.5" style="display:none"/>
                 <path class="wheel-pointer-shape" id="wheelPointer" d="M 107 -8 L 107 8 L 91 0 Z"/>
               </svg>
-              <button type="button" class="spin-button" id="spinBtn" onclick="spinWheel()" aria-label="Spin the wheel" title="Spin the wheel">SPIN</button>
+              <button type="button" class="spin-button" id="spinBtn" onclick="spinWheel()" aria-label="Spin the wheel" title="Spin the wheel"></button>
             </div>
             <div class="fullscreen-footer-bar" id="fullscreenFooterBar">
               <span>Powered by</span>
@@ -816,10 +935,12 @@ James</textarea>
           <li><strong>It actually looks good:</strong> Smooth animations, satisfying tick sounds, and a burst of confetti when a winner is chosen.</li>
           <li><strong>It's instant:</strong> No logins, no emails, no downloads. The wheel is ready the second the page loads.</li>
           <li><strong>Your data is yours:</strong> Everything happens right there in your browser. We don't store your lists, your names, or your results.</li>
-          <li><strong>Total control:</strong> Add up to <strong>50 options</strong>, insert emojis, upload custom images for the segments, choose from <strong>18 premium color themes</strong>, and tweak the spin speed.</li>
-          <li><strong>Customizable backgrounds:</strong> Upload a personal photo to use as the full-page background for a personal touch.</li>
+          <li><strong>Total control:</strong> Add up to <strong>50 options</strong>, insert emojis, upload custom images for the segments, choose from <strong>18 premium color themes</strong>, adjust the <strong>spin speed</strong>, and toggle <strong>background music</strong>.</li>
+          <li><strong>Speed on your terms:</strong> A slider lets you adjust spin duration from 1.5 to 15 seconds — from super quick to slow and dramatic.</li>
+          <li><strong>Background music:</strong> Turn on a gentle melody generated in real-time that accompanies your spinning experience.</li>
           <li><strong>Fast &amp; smooth:</strong> Optimized rendering keeps the wheel silky smooth even on older phones and tablets.</li>
           <li><strong>Works offline:</strong> After the page loads, you can disconnect Wi-Fi and keep spinning.</li>
+          <li><strong>Available in 11 languages:</strong> English, Español, Português, Français, Polski, Deutsch, Bahasa Indonesia, ไทย, Filipino, 日本語, and 中文.</li>
         </ul>
       </div>
 
@@ -828,7 +949,7 @@ James</textarea>
         <p>You don't need a tutorial for this, but here is the quick rundown anyway:</p>
         <ol>
           <li><strong>Make your list:</strong> Type your choices in the text box on the right. One option per line. (Pizza, Burgers, Sushi — whatever you're craving.)</li>
-          <li><strong>Hit the button:</strong> Click the big <strong>SPIN</strong> button in the middle of the wheel.</li>
+          <li><strong>Click the white circle:</strong> Click the white circle in the middle of the wheel (or anywhere on the wheel) to spin it.</li>
           <li><strong>Find out the answer:</strong> Watch the wheel spin, hold your breath for a second, and see where the pointer lands.</li>
         </ol>
         <p>If you want to keep playing, just turn on the <strong>"Auto-remove winner"</strong> setting in the menu. This is perfect for things like picking multiple winners for a raffle or assigning tasks to different team members one by one.</p>
@@ -836,6 +957,7 @@ James</textarea>
         <ul>
           <li><strong>Enter</strong> — add a new entry when editing the list</li>
           <li><strong>Escape</strong> — close any open popup or fullscreen mode</li>
+          <li><strong>Ctrl+Enter</strong> — spin the wheel</li>
           <li><strong>Tab</strong> — move between controls (fully accessible with keyboard only)</li>
         </ul>
       </div>
@@ -880,6 +1002,26 @@ James</textarea>
       </div>
 
       <div class="seo-block">
+        <h2>Customize Your Experience</h2>
+        <p>In <strong>Settings</strong> you can tune the wheel exactly the way you want:</p>
+        <h3>🎚️ Spin duration</h3>
+        <p>A slider lets you choose <strong>how long the spin lasts</strong>, from <strong>1.5 seconds</strong> (super quick, great for rapid-fire decisions) to <strong>15 seconds</strong> (slow and dramatic, perfect for high-stakes giveaways). Adjust the exact time you want in 0.5-second increments.</p>
+        <h3>🎵 Background music</h3>
+        <p>Turn on <strong>background music</strong> for a more immersive experience. The melody is generated in real time using the Web Audio API — no external files, no downloads, 100% in your browser.</p>
+        <h3>🎨 Other options</h3>
+        <ul>
+          <li>18 premium color palettes</li>
+          <li>Wheel size (compact, medium, large)</li>
+          <li>Text size on the segments</li>
+          <li>Optional segment borders</li>
+          <li>Outer ring</li>
+          <li>Sound effects (adjustable volume)</li>
+          <li>Confetti effect on win</li>
+          <li>Auto-remove winner</li>
+        </ul>
+      </div>
+
+      <div class="seo-block">
         <h2>Tips for the Best Experience</h2>
         <p>A few small things can make your spin sessions smoother:</p>
         <ul>
@@ -896,7 +1038,7 @@ James</textarea>
         <h2>Is It Actually Fair? (Behind the Scenes)</h2>
         <p><strong>Yes. And we take that seriously.</strong> We don't use basic math to pick the winner; we use your browser's built-in <code>crypto.getRandomValues</code> API. This is the <strong>same level of cryptographic security</strong> used to keep passwords safe.</p>
         <h3>How the randomness works</h3>
-        <p>When you click SPIN, here's exactly what happens:</p>
+        <p>When you click the white circle in the middle of the wheel, here's exactly what happens:</p>
         <ol>
           <li>The browser generates a cryptographically secure random number between 0 and the number of entries.</li>
           <li>That number maps directly to a slice on the wheel.</li>
@@ -917,6 +1059,8 @@ James</textarea>
       <div class="seo-block">
         <h2>Frequently Asked Questions</h2>
         <details class="faq-item"><summary class="faq-q">Is Spin The Wheelly really free?</summary><div class="faq-a">Yes! It's <strong>100% free</strong>. No premium tiers, no ads, no hidden fees — forever. No signup required.</div></details>
+        <details class="faq-item"><summary class="faq-q">Can I control the spin speed?</summary><div class="faq-a"><strong>Yes.</strong> In Settings there's a <strong>spin duration slider</strong> from 1.5 seconds (very fast) to 15 seconds (slow and dramatic). Adjust the exact time you want in 0.5-second increments.</div></details>
+        <details class="faq-item"><summary class="faq-q">Is there background music available?</summary><div class="faq-a"><strong>Yes!</strong> Enable <strong>background music</strong> in Settings for a more immersive experience. The melody is generated 100% in your browser — no external files, no downloads.</div></details>
         <details class="faq-item"><summary class="faq-q">Can I customize the wheel?</summary><div class="faq-a"><strong>Yes!</strong> Pick from <strong>18 premium color themes</strong>, adjust wheel size and text size, add segment borders, upload a <strong>full-page background image</strong>, and more in Settings.</div></details>
         <details class="faq-item"><summary class="faq-q">How many entries can I add?</summary><div class="faq-a">Up to <strong>50 entries</strong> per wheel. For best readability we recommend keeping labels short — ideally under 15 characters.</div></details>
         <details class="faq-item"><summary class="faq-q">Is the wheel truly random?</summary><div class="faq-a"><strong>Yes.</strong> Every spin uses <code>crypto.getRandomValues</code> — the same cryptographically secure random number generator used by password managers and banking apps. Zero bias, zero patterns.</div></details>
@@ -928,6 +1072,7 @@ James</textarea>
         <details class="faq-item"><summary class="faq-q">Is there a limit on how many times I can spin?</summary><div class="faq-a"><strong>No limit.</strong> Spin as many times as you want, on as many wheels as you want. No accounts, no caps, no cooldowns.</div></details>
         <details class="faq-item"><summary class="faq-q">Can I save my wheel for later?</summary><div class="faq-a"><strong>Yes.</strong> Click the <strong>File</strong> button in the header (or the save icon in the toolbar) to download your list as a text file. Paste it back into the textarea any time to restore the wheel.</div></details>
         <details class="faq-item"><summary class="faq-q">Does the wheel support emojis?</summary><div class="faq-a"><strong>Yes!</strong> Emojis work perfectly as wheel entries. Use the smile button to insert one quickly, or type any emoji directly into the textarea.</div></details>
+        <details class="faq-item"><summary class="faq-q">What languages is the site available in?</summary><div class="faq-a">Spin The Wheelly is available in <strong>11 languages</strong>: English, Español, Português, Français, Polski, Deutsch, Bahasa Indonesia, ไทย, Filipino, 日本語, and 中文. Use the <strong>globe icon</strong> in the header to switch languages at any time.</div></details>
       </div>
     </article>
   </div>
@@ -990,12 +1135,27 @@ James</textarea>
           <span class="settings-label">Color Theme (18 Premium Palettes)</span>
           <div class="palette-grid" id="paletteGrid"></div>
         </div>
-        <div class="settings-row">
-          <label for="wheelSpeed" style="flex:1;">Spin speed</label>
-          <select id="wheelSpeed"><option value="slow">Slow</option><option value="normal">Normal</option><option value="fast">Fast</option></select>
+
+        <div class="settings-section">
+          <span class="settings-label">🎚️ Spin duration (customizable)</span>
+          <div class="speed-slider-row">
+            <input type="range" id="spinDurationRange" min="1.5" max="15" step="0.5" value="5.5" aria-label="Spin duration in seconds">
+            <span class="speed-value" id="spinDurationValue">5.5s</span>
+          </div>
+          <p class="settings-note">Drag to adjust how long the spin lasts — from 1.5s (super quick) to 15s (slow and dramatic).</p>
         </div>
+
         <div class="settings-row"><label for="autoRemoveWinner"><input type="checkbox" id="autoRemoveWinner"> Auto-remove winner after spin</label></div>
         <p class="settings-note">Auto-remove deletes the winning entry so you can spin again with the remaining choices.</p>
+
+        <div class="settings-row">
+          <label for="musicEnabled">
+            <input type="checkbox" id="musicEnabled">
+            <svg style="width:18px;height:18px;stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;display:inline-block;vertical-align:middle;" aria-hidden="true"><use href="#i-music"/></svg>
+            Background music
+          </label>
+        </div>
+        <p class="settings-note">Turn on a gentle melody generated in real-time while you use the wheel.</p>
       </div>
     </div>
     <div class="modal-actions">
@@ -1024,6 +1184,25 @@ James</textarea>
     <button type="button" class="sidebar-item" onclick="saveEntries();closeSidebar();"><svg aria-hidden="true"><use href="#i-folder"/></svg><span>File</span></button>
     <button type="button" class="sidebar-item" onclick="openSettingsModal();closeSidebar();"><svg aria-hidden="true"><use href="#i-settings"/></svg><span>Settings</span></button>
     <button type="button" class="sidebar-item share-btn" onclick="shareApp();closeSidebar();"><svg aria-hidden="true"><use href="#i-share-2"/></svg><span>Share</span></button>
+
+    <button type="button" class="sidebar-item sidebar-tools-btn" id="sidebarLangBtn" onclick="toggleSidebarLang(event)" aria-expanded="false">
+      <svg aria-hidden="true"><use href="#i-globe"/></svg><span>Language</span>
+      <svg class="chevron" aria-hidden="true"><use href="#i-chevron-down"/></svg>
+    </button>
+    <div class="sidebar-tools-sub" id="sidebarLangSub">
+      <a href="https://spinthewheelly.com/" class="sidebar-sub-item lang-active" lang="en" hreflang="en" aria-current="page"><span class="flag-icon">🇬🇧</span><span class="item-content"><span class="item-title">English</span></span></a>
+      <a href="https://spinthewheelly.com/es/" class="sidebar-sub-item" lang="es" hreflang="es"><span class="flag-icon">🇪🇸</span><span class="item-content"><span class="item-title">Español</span></span></a>
+      <a href="https://spinthewheelly.com/pt/" class="sidebar-sub-item" lang="pt" hreflang="pt"><span class="flag-icon">🇵🇹</span><span class="item-content"><span class="item-title">Português</span></span></a>
+      <a href="https://spinthewheelly.com/fr/" class="sidebar-sub-item" lang="fr" hreflang="fr"><span class="flag-icon">🇫🇷</span><span class="item-content"><span class="item-title">Français</span></span></a>
+      <a href="https://spinthewheelly.com/pl/" class="sidebar-sub-item" lang="pl" hreflang="pl"><span class="flag-icon">🇵🇱</span><span class="item-content"><span class="item-title">Polski</span></span></a>
+      <a href="https://spinthewheelly.com/de/" class="sidebar-sub-item" lang="de" hreflang="de"><span class="flag-icon">🇩🇪</span><span class="item-content"><span class="item-title">Deutsch</span></span></a>
+      <a href="https://spinthewheelly.com/id/" class="sidebar-sub-item" lang="id" hreflang="id"><span class="flag-icon">🇮🇩</span><span class="item-content"><span class="item-title">Bahasa Indonesia</span></span></a>
+      <a href="https://spinthewheelly.com/th/" class="sidebar-sub-item" lang="th" hreflang="th"><span class="flag-icon">🇹🇭</span><span class="item-content"><span class="item-title">ไทย</span></span></a>
+      <a href="https://spinthewheelly.com/tl/" class="sidebar-sub-item" lang="tl" hreflang="tl"><span class="flag-icon">🇵🇭</span><span class="item-content"><span class="item-title">Filipino</span></span></a>
+      <a href="https://spinthewheelly.com/ja/" class="sidebar-sub-item" lang="ja" hreflang="ja"><span class="flag-icon">🇯🇵</span><span class="item-content"><span class="item-title">日本語</span></span></a>
+      <a href="https://spinthewheelly.com/zh/" class="sidebar-sub-item" lang="zh" hreflang="zh"><span class="flag-icon">🇨🇳</span><span class="item-content"><span class="item-title">中文</span></span></a>
+    </div>
+
     <button type="button" class="sidebar-item sidebar-tools-btn" id="sidebarToolsBtn" onclick="toggleSidebarTools(event)" aria-expanded="false">
       <svg aria-hidden="true"><use href="#i-tool"/></svg><span>Tools</span>
       <svg class="chevron" aria-hidden="true"><use href="#i-chevron-down"/></svg>
@@ -1123,7 +1302,24 @@ var currentWinnerIndex=-1;
 var currentWinnerName='';
 var currentWinnerRemoved=false;
 var autoRemoveWinner=false;
-var wheelSpeed='normal';
+
+var spinDurationBase = 5.5;
+
+var musicEnabled = false;
+var musicGainNode = null;
+var musicScheduleTimer = null;
+var musicStepIndex = 0;
+var MUSIC_PATTERN = [
+  {f: 261.63, d: 0.45},
+  {f: 329.63, d: 0.45},
+  {f: 392.00, d: 0.45},
+  {f: 523.25, d: 0.90},
+  {f: 440.00, d: 0.45},
+  {f: 392.00, d: 0.45},
+  {f: 329.63, d: 0.45},
+  {f: 293.66, d: 0.90}
+];
+
 var idleActive=false;
 var idleRAF=0;
 var idleLastTime=0;
@@ -1160,12 +1356,55 @@ function shareApp(){var text='Check out Spin The Wheelly — a free spin the whe
 
 function closeModal(id){var m=document.getElementById(id);if(!m)return;m.classList.remove('active');m.setAttribute('aria-hidden','true');var anyActive=document.querySelector('.modal-overlay.active');if(!anyActive)document.body.style.overflow='';}
 
+function startMusic(){
+  if(!audioCtx){
+    try{var Ctx=window.AudioContext||window.webkitAudioContext;if(Ctx)audioCtx=new Ctx();}catch(e){return;}
+  }
+  if(!audioCtx)return;
+  if(audioCtx.state==='suspended'){audioCtx.resume().catch(function(){});}
+  if(musicGainNode)return;
+  try{
+    musicGainNode=audioCtx.createGain();
+    musicGainNode.gain.value=0.035;
+    musicGainNode.connect(audioCtx.destination);
+  }catch(e){return;}
+  musicStepIndex=0;
+  scheduleMusicNote();
+}
+function scheduleMusicNote(){
+  if(!musicEnabled||!musicGainNode||!audioCtx)return;
+  var note=MUSIC_PATTERN[musicStepIndex%MUSIC_PATTERN.length];
+  var now=audioCtx.currentTime;
+  try{
+    var osc=audioCtx.createOscillator();
+    var g=audioCtx.createGain();
+    osc.type='sine';
+    osc.frequency.value=note.f;
+    g.gain.setValueAtTime(0,now);
+    g.gain.linearRampToValueAtTime(1,now+0.04);
+    g.gain.exponentialRampToValueAtTime(0.001,now+note.d*0.95);
+    osc.connect(g);
+    g.connect(musicGainNode);
+    osc.start(now);
+    osc.stop(now+note.d);
+  }catch(e){}
+  musicStepIndex++;
+  musicScheduleTimer=setTimeout(scheduleMusicNote,note.d*1000);
+}
+function stopMusic(){
+  if(musicScheduleTimer){clearTimeout(musicScheduleTimer);musicScheduleTimer=null;}
+  if(musicGainNode){try{musicGainNode.disconnect();}catch(e){}musicGainNode=null;}
+  musicStepIndex=0;
+}
+
 function openSettingsModal(){
   var m=document.getElementById('settingsModal');if(!m)return;
   document.getElementById('autoRemoveWinner').checked=autoRemoveWinner;
   document.getElementById('soundEnabled').checked=soundEnabled;
   document.getElementById('confettiEnabled').checked=confettiEnabled;
-  document.getElementById('wheelSpeed').value=wheelSpeed;
+  document.getElementById('musicEnabled').checked=musicEnabled;
+  document.getElementById('spinDurationRange').value=spinDurationBase;
+  document.getElementById('spinDurationValue').textContent=spinDurationBase.toFixed(1)+'s';
   document.getElementById('showWheelText').checked=showWheelText;
   document.getElementById('showPointer').checked=showPointer;
   document.getElementById('segmentBorders').checked=segmentBorders;
@@ -1180,10 +1419,16 @@ function closeSettingsModal(){
   autoRemoveWinner=document.getElementById('autoRemoveWinner').checked;
   var newSound=document.getElementById('soundEnabled').checked;
   confettiEnabled=document.getElementById('confettiEnabled').checked;
+  var newMusic=document.getElementById('musicEnabled').checked;
+  if(newMusic!==musicEnabled){
+    musicEnabled=newMusic;
+    if(musicEnabled){initAudio();startMusic();}
+    else{stopMusic();}
+  }
   if(!newSound){currentVolumeLevel=0;}else if(currentVolumeLevel===0){currentVolumeLevel=2;}
   soundEnabled=currentVolumeLevel>0;
   updateSoundIcon();
-  wheelSpeed=document.getElementById('wheelSpeed').value;
+  spinDurationBase=parseFloat(document.getElementById('spinDurationRange').value)||5.5;
   showWheelText=document.getElementById('showWheelText').checked;
   showPointer=document.getElementById('showPointer').checked;
   segmentBorders=document.getElementById('segmentBorders').checked;
@@ -1199,6 +1444,7 @@ function closeSettingsModal(){
 
 function resetAllSettings(){
   if(!confirm('Are you sure you want to reset all settings to default?')) return;
+  stopMusic();
   localStorage.removeItem('wheelSettings');
   location.reload();
 }
@@ -1257,7 +1503,12 @@ function updateSegmentedUI(){
 
 function saveWheelSettings(){
   try{
-    var s={showWheelText:showWheelText,showPointer:showPointer,colorTheme:colorTheme,wheelSize:wheelSize,textSize:textSize,segmentBorders:segmentBorders,outerRing:outerRing,soundEnabled:soundEnabled,currentVolumeLevel:currentVolumeLevel,wheelSpeed:wheelSpeed,autoRemoveWinner:autoRemoveWinner,confettiEnabled:confettiEnabled};
+    var s={
+      showWheelText:showWheelText,showPointer:showPointer,colorTheme:colorTheme,
+      wheelSize:wheelSize,textSize:textSize,segmentBorders:segmentBorders,outerRing:outerRing,
+      soundEnabled:soundEnabled,currentVolumeLevel:currentVolumeLevel,spinDurationBase:spinDurationBase,
+      autoRemoveWinner:autoRemoveWinner,confettiEnabled:confettiEnabled,musicEnabled:musicEnabled
+    };
     localStorage.setItem('wheelSettings',JSON.stringify(s));
   }catch(e){}
 }
@@ -1276,8 +1527,9 @@ function loadWheelSettings(){
       if(typeof s.soundEnabled==='boolean')soundEnabled=s.soundEnabled;
       if(typeof s.confettiEnabled==='boolean')confettiEnabled=s.confettiEnabled;
       if(typeof s.currentVolumeLevel==='number')currentVolumeLevel=Math.max(0,Math.min(2,Math.floor(s.currentVolumeLevel)));
-      if(s.wheelSpeed&&['slow','normal','fast'].indexOf(s.wheelSpeed)!==-1)wheelSpeed=s.wheelSpeed;
+      if(typeof s.spinDurationBase==='number'&&s.spinDurationBase>=1.5&&s.spinDurationBase<=15)spinDurationBase=s.spinDurationBase;
       if(typeof s.autoRemoveWinner==='boolean')autoRemoveWinner=s.autoRemoveWinner;
+      if(typeof s.musicEnabled==='boolean')musicEnabled=s.musicEnabled;
       if(!soundEnabled)currentVolumeLevel=0;else if(currentVolumeLevel===0)currentVolumeLevel=2;
     }
   }catch(e){}
@@ -1296,14 +1548,13 @@ function renderPresetGrid(){
 function openPresetModal(){
   if(isSpinning){showToast('Please wait for the spin to finish.');return;}
   var m=document.getElementById('presetModal');if(!m)return;
-  m.classList.add('active');m.setAttribute('aria-hidden','false');document.body.style.overflow='hidden';closeToolsMenu();
+  m.classList.add('active');m.setAttribute('aria-hidden','false');document.body.style.overflow='hidden';closeToolsMenu();closeLangMenu();
 }
 function loadPreset(index){
   var preset=WHEEL_PRESETS[index];if(!preset)return;
   spinToken++;isSpinning=false;stopIdleSpin();
   currentWinnerRemoved=false;
   var btn=document.getElementById('spinBtn');if(btn){btn.disabled=false;btn.removeAttribute('aria-busy');}
-  setSpinLabel('SPIN');
   var ta=document.getElementById('entriesTextarea');
   if(ta){ta.readOnly=false;ta.value=preset.entries.join('\n');}
   syncPlaceholder();
@@ -1314,84 +1565,104 @@ function loadPreset(index){
 }
 function startBlankWheel(){closeModal('presetModal');resetWheel();}
 
-function toggleToolsMenu(e){
+function toggleLangMenu(e){
   if(e)e.stopPropagation();
-  var menu=document.getElementById('toolsMenu');
-  var btn=document.getElementById('toolsMenuBtn');
+  var menu=document.getElementById('langMenu');var btn=document.getElementById('langMenuBtn');
   if(!menu)return;
-  if(menu.classList.contains('show')){
-    closeToolsMenu();
-  }else{
-    menu.style.visibility='hidden';
-    menu.style.display='flex';
-    positionToolsMenu();
-    menu.classList.add('show');
-    if(btn)btn.setAttribute('aria-expanded','true');
-    menu.style.visibility='';
-  }
+  closeToolsMenu();
+  if(menu.classList.contains('show')){closeLangMenu();}
+  else{menu.style.visibility='hidden';menu.style.display='flex';positionLangMenu();menu.classList.add('show');if(btn)btn.setAttribute('aria-expanded','true');menu.style.visibility='';}
 }
-
-function positionToolsMenu(){
-  var btn=document.getElementById('toolsMenuBtn');
-  var menu=document.getElementById('toolsMenu');
+function positionLangMenu(){
+  var btn=document.getElementById('langMenuBtn');var menu=document.getElementById('langMenu');
   if(!btn||!menu)return;
-  var menuW=menu.offsetWidth;
-  var menuH=menu.offsetHeight;
-  var rect=btn.getBoundingClientRect();
-  var gap=8;
-  var vw=window.innerWidth;
-  var vh=window.innerHeight;
+  var menuW=menu.offsetWidth,menuH=menu.offsetHeight,rect=btn.getBoundingClientRect(),gap=8;
+  var vw=window.innerWidth,vh=window.innerHeight;
   var topPos=rect.bottom+gap;
-  if(topPos+menuH>vh-gap){
-    topPos=vh-gap-menuH;
-    if(topPos<gap)topPos=gap;
-  }
+  if(topPos+menuH>vh-gap){topPos=vh-gap-menuH;if(topPos<gap)topPos=gap;}
   var leftPos=rect.right-menuW;
   if(leftPos<gap)leftPos=gap;
   if(leftPos+menuW>vw-gap)leftPos=vw-gap-menuW;
-  menu.style.top=topPos+'px';
-  menu.style.left=leftPos+'px';
+  menu.style.top=topPos+'px';menu.style.left=leftPos+'px';
 }
+function closeLangMenu(){var menu=document.getElementById('langMenu');var btn=document.getElementById('langMenuBtn');if(menu)menu.classList.remove('show');if(btn)btn.setAttribute('aria-expanded','false');}
 
-function closeToolsMenu(){
-  var menu=document.getElementById('toolsMenu');
-  var btn=document.getElementById('toolsMenuBtn');
-  if(menu)menu.classList.remove('show');
-  if(btn)btn.setAttribute('aria-expanded','false');
+function toggleToolsMenu(e){
+  if(e)e.stopPropagation();
+  var menu=document.getElementById('toolsMenu');var btn=document.getElementById('toolsMenuBtn');
+  if(!menu)return;
+  closeLangMenu();
+  if(menu.classList.contains('show')){closeToolsMenu();}
+  else{menu.style.visibility='hidden';menu.style.display='flex';positionToolsMenu();menu.classList.add('show');if(btn)btn.setAttribute('aria-expanded','true');menu.style.visibility='';}
 }
+function positionToolsMenu(){
+  var btn=document.getElementById('toolsMenuBtn');var menu=document.getElementById('toolsMenu');
+  if(!btn||!menu)return;
+  var menuW=menu.offsetWidth,menuH=menu.offsetHeight,rect=btn.getBoundingClientRect(),gap=8;
+  var vw=window.innerWidth,vh=window.innerHeight;
+  var topPos=rect.bottom+gap;
+  if(topPos+menuH>vh-gap){topPos=vh-gap-menuH;if(topPos<gap)topPos=gap;}
+  var leftPos=rect.right-menuW;
+  if(leftPos<gap)leftPos=gap;
+  if(leftPos+menuW>vw-gap)leftPos=vw-gap-menuW;
+  menu.style.top=topPos+'px';menu.style.left=leftPos+'px';
+}
+function closeToolsMenu(){var menu=document.getElementById('toolsMenu');var btn=document.getElementById('toolsMenuBtn');if(menu)menu.classList.remove('show');if(btn)btn.setAttribute('aria-expanded','false');}
 
 document.addEventListener('click',function(e){
-  var wrap=document.querySelector('.nav-tools-wrap');
-  if(wrap&&!wrap.contains(e.target)){closeToolsMenu();}
+  var toolsWrap=document.querySelector('.nav-tools-wrap');
+  var langWrap=document.querySelector('.nav-lang-wrap');
+  if(toolsWrap&&!toolsWrap.contains(e.target)){closeToolsMenu();}
+  if(langWrap&&!langWrap.contains(e.target)){closeLangMenu();}
 },{passive:true});
 
 window.addEventListener('scroll',function(){
-  var menu=document.getElementById('toolsMenu');
-  if(!menu||!menu.classList.contains('show'))return;
-  var btn=document.getElementById('toolsMenuBtn');
-  if(!btn)return;
-  var rect=btn.getBoundingClientRect();
-  if(rect.bottom<0||rect.top>window.innerHeight){closeToolsMenu();}
-  else{positionToolsMenu();}
+  var toolsMenu=document.getElementById('toolsMenu');
+  var langMenu=document.getElementById('langMenu');
+  if(toolsMenu&&toolsMenu.classList.contains('show')){
+    var btn=document.getElementById('toolsMenuBtn');
+    if(btn){var r=btn.getBoundingClientRect();if(r.bottom<0||r.top>window.innerHeight){closeToolsMenu();}else{positionToolsMenu();}}
+  }
+  if(langMenu&&langMenu.classList.contains('show')){
+    var lbtn=document.getElementById('langMenuBtn');
+    if(lbtn){var lr=lbtn.getBoundingClientRect();if(lr.bottom<0||lr.top>window.innerHeight){closeLangMenu();}else{positionLangMenu();}}
+  }
 },{passive:true});
 
 window.addEventListener('resize',function(){
-  var menu=document.getElementById('toolsMenu');
-  if(menu&&menu.classList.contains('show'))positionToolsMenu();
+  var toolsMenu=document.getElementById('toolsMenu');
+  if(toolsMenu&&toolsMenu.classList.contains('show'))positionToolsMenu();
+  var langMenu=document.getElementById('langMenu');
+  if(langMenu&&langMenu.classList.contains('show'))positionLangMenu();
 },{passive:true});
 
-function openSidebar(){var sb=document.getElementById('mobileSidebar');var ov=document.getElementById('sidebarOverlay');var btn=document.getElementById('hamburgerBtn');if(!sb)return;closeToolsMenu();sb.classList.add('show');sb.removeAttribute('inert');if(ov)ov.classList.add('show');if(btn)btn.setAttribute('aria-expanded','true');sb.setAttribute('aria-hidden','false');document.body.style.overflow='hidden';}
-function closeSidebar(){var sb=document.getElementById('mobileSidebar');var ov=document.getElementById('sidebarOverlay');var btn=document.getElementById('hamburgerBtn');if(!sb)return;sb.classList.remove('show');sb.setAttribute('inert','');if(ov)ov.classList.remove('show');if(btn)btn.setAttribute('aria-expanded','false');sb.setAttribute('aria-hidden','true');var toolsSub=document.getElementById('sidebarToolsSub');var toolsBtn=document.getElementById('sidebarToolsBtn');if(toolsSub)toolsSub.classList.remove('open');if(toolsBtn){toolsBtn.classList.remove('open');toolsBtn.setAttribute('aria-expanded','false');}var winnerOpen=document.getElementById('winnerOverlay')&&document.getElementById('winnerOverlay').classList.contains('show');var anyModalOpen=document.querySelector('.modal-overlay.active');if(!winnerOpen&&!anyModalOpen)document.body.style.overflow='';}
-function toggleSidebarTools(e){if(e)e.stopPropagation();var btn=document.getElementById('sidebarToolsBtn');var sub=document.getElementById('sidebarToolsSub');if(!btn||!sub)return;var isOpen=sub.classList.contains('open');sub.classList.toggle('open',!isOpen);btn.classList.toggle('open',!isOpen);btn.setAttribute('aria-expanded',!isOpen);}
+function openSidebar(){var sb=document.getElementById('mobileSidebar');var ov=document.getElementById('sidebarOverlay');var btn=document.getElementById('hamburgerBtn');if(!sb)return;closeToolsMenu();closeLangMenu();sb.classList.add('show');sb.removeAttribute('inert');if(ov)ov.classList.add('show');if(btn)btn.setAttribute('aria-expanded','true');sb.setAttribute('aria-hidden','false');document.body.style.overflow='hidden';}
+function closeSidebar(){var sb=document.getElementById('mobileSidebar');var ov=document.getElementById('sidebarOverlay');var btn=document.getElementById('hamburgerBtn');if(!sb)return;sb.classList.remove('show');sb.setAttribute('inert','');if(ov)ov.classList.remove('show');if(btn)btn.setAttribute('aria-expanded','false');sb.setAttribute('aria-hidden','true');var toolsSub=document.getElementById('sidebarToolsSub');var toolsBtn=document.getElementById('sidebarToolsBtn');if(toolsSub)toolsSub.classList.remove('open');if(toolsBtn){toolsBtn.classList.remove('open');toolsBtn.setAttribute('aria-expanded','false');}var langSub=document.getElementById('sidebarLangSub');var langBtn=document.getElementById('sidebarLangBtn');if(langSub)langSub.classList.remove('open');if(langBtn){langBtn.classList.remove('open');langBtn.setAttribute('aria-expanded','false');}var winnerOpen=document.getElementById('winnerOverlay')&&document.getElementById('winnerOverlay').classList.contains('show');var anyModalOpen=document.querySelector('.modal-overlay.active');if(!winnerOpen&&!anyModalOpen)document.body.style.overflow='';}
+function toggleSidebarTools(e){
+  if(e)e.stopPropagation();
+  var btn=document.getElementById('sidebarToolsBtn');var sub=document.getElementById('sidebarToolsSub');
+  if(!btn||!sub)return;
+  var isOpen=sub.classList.contains('open');
+  var langSub=document.getElementById('sidebarLangSub');var langBtn=document.getElementById('sidebarLangBtn');
+  if(langSub&&langSub.classList.contains('open')){langSub.classList.remove('open');if(langBtn){langBtn.classList.remove('open');langBtn.setAttribute('aria-expanded','false');}}
+  sub.classList.toggle('open',!isOpen);btn.classList.toggle('open',!isOpen);btn.setAttribute('aria-expanded',!isOpen);
+}
+function toggleSidebarLang(e){
+  if(e)e.stopPropagation();
+  var btn=document.getElementById('sidebarLangBtn');var sub=document.getElementById('sidebarLangSub');
+  if(!btn||!sub)return;
+  var isOpen=sub.classList.contains('open');
+  var toolsSub=document.getElementById('sidebarToolsSub');var toolsBtn=document.getElementById('sidebarToolsBtn');
+  if(toolsSub&&toolsSub.classList.contains('open')){toolsSub.classList.remove('open');if(toolsBtn){toolsBtn.classList.remove('open');toolsBtn.setAttribute('aria-expanded','false');}}
+  sub.classList.toggle('open',!isOpen);btn.classList.toggle('open',!isOpen);btn.setAttribute('aria-expanded',!isOpen);
+}
 
 function blockIfSpinning(){if(isSpinning){showToast('Please wait for the spin to finish.');return true;}return false;}
-function setSpinLabel(text){var btn=document.getElementById('spinBtn');if(!btn)return;btn.textContent=text;if(text.length>6)btn.classList.add('long-label');else btn.classList.remove('long-label');}
 
 function resetWheel(){
   spinToken++;isSpinning=false;stopIdleSpin();
   currentWinnerRemoved=false;
   var btn=document.getElementById('spinBtn');if(btn){btn.disabled=false;btn.removeAttribute('aria-busy');}
-  setSpinLabel('SPIN');
   var ta=document.getElementById('entriesTextarea');if(ta){ta.readOnly=false;ta.value='';}
   syncPlaceholder();
   participantImages={};winnerHistory=[];currentWinnerName='';currentWinnerIndex=-1;currentRotation=0;
@@ -1420,9 +1691,7 @@ function switchPanel(tab){
     entriesView.classList.add('active');entriesView.classList.remove('exit-left','exit-right');
     resultsView.classList.remove('active');resultsView.classList.add('exit-right');
     editSubTools.style.display='flex';resultsSubTools.style.display='none';entriesFooter.style.display='flex';
-    if(window.innerWidth>900){
-      setTimeout(function(){var ta=document.getElementById('entriesTextarea');if(ta&&!isSpinning)ta.focus();},150);
-    }
+    if(window.innerWidth>900){setTimeout(function(){var ta=document.getElementById('entriesTextarea');if(ta&&!isSpinning)ta.focus();},150);}
   }else if(tab==='results'){
     if(btnEdit)btnEdit.classList.remove('active');if(btnResults)btnResults.classList.add('active');
     resultsView.classList.add('active');resultsView.classList.remove('exit-left','exit-right');
@@ -1447,71 +1716,62 @@ function renderResultsList(){
   if(!listEl)return;
   if(winnerHistory.length>0){badge.textContent=winnerHistory.length;badge.style.display='flex';}else{badge.style.display='none';}
   listEl.innerHTML='';
-  
-  var topBar = document.getElementById('topRankingBar');
-  var topList = document.getElementById('topRankingList');
-
+  var topBar=document.getElementById('topRankingBar');
+  var topList=document.getElementById('topRankingList');
   if(winnerHistory.length===0){
     listEl.innerHTML='<li class="results-empty">Results will appear here</li>';
-    if(topBar) topBar.style.display = 'none';
-  } else {
-    for(var i=0;i<winnerHistory.length;i++){
-      var li=document.createElement('li');
-      li.textContent=winnerHistory[i];
-      listEl.appendChild(li);
-    }
-    if(topBar && topList) {
-      topBar.style.display = 'flex';
-      var recent = winnerHistory.slice(-5).reverse();
-      var html = '';
-      for(var j=0; j<recent.length; j++){
-        html += '<div class="rank-badge"><span class="rank-num">#'+(j+1)+'</span> ' + escHtml(recent[j]) + '</div>';
-      }
-      topList.innerHTML = html;
+    if(topBar)topBar.style.display='none';
+  }else{
+    for(var i=0;i<winnerHistory.length;i++){var li=document.createElement('li');li.textContent=winnerHistory[i];listEl.appendChild(li);}
+    if(topBar&&topList){
+      topBar.style.display='flex';
+      var recent=winnerHistory.slice(-5).reverse();var html='';
+      for(var j=0;j<recent.length;j++){html+='<div class="rank-badge"><span class="rank-num">#'+(j+1)+'</span> '+escHtml(recent[j])+'</div>';}
+      topList.innerHTML=html;
     }
   }
-  
   var subBtns=document.querySelectorAll('#resultsSubTools .sub-btn');
-  for(var j=0;j<subBtns.length;j++){
-    if(winnerHistory.length>0)subBtns[j].classList.remove('disabled');
-    else subBtns[j].classList.add('disabled');
-  }
+  for(var k=0;k<subBtns.length;k++){if(winnerHistory.length>0)subBtns[k].classList.remove('disabled');else subBtns[k].classList.add('disabled');}
 }
 function sortResults(){if(winnerHistory.length===0)return;winnerHistory.sort(function(a,b){return a.localeCompare(b);});renderResultsList();showToast("Results sorted A-Z.");}
 function clearResults(){if(winnerHistory.length===0)return;winnerHistory=[];renderResultsList();showToast("Results cleared.");}
 
 function updateSoundIcon(){var useEl=document.getElementById('soundIconUse');if(useEl)useEl.setAttribute('href',currentVolumeLevel===0?'#i-speaker-mute-wave':'#i-speaker-wave');var fsEl=document.getElementById('fsSoundIconUse');if(fsEl)fsEl.setAttribute('href',currentVolumeLevel===0?'#i-speaker-mute-wave':'#i-speaker-wave');}
-function cycleSoundVolume(){currentVolumeLevel=(currentVolumeLevel+1)%3;updateSoundIcon();soundEnabled=currentVolumeLevel>0;if(soundEnabled){initAudio();ensureAudio();playTick();}var soundCheckbox=document.getElementById('soundEnabled');if(soundCheckbox)soundCheckbox.checked=soundEnabled;saveWheelSettings();var msgs=["Sound Muted","Sound Low","Sound High"];showToast(msgs[currentVolumeLevel]);}
+function cycleSoundVolume(){currentVolumeLevel=(currentVolumeLevel+1)%3;updateSoundIcon();soundEnabled=currentVolumeLevel>0;if(soundEnabled){initAudio();ensureAudio();playTick();}var cb=document.getElementById('soundEnabled');if(cb)cb.checked=soundEnabled;saveWheelSettings();var msgs=["Sound Muted","Sound Low","Sound High"];showToast(msgs[currentVolumeLevel]);}
 
 var audioCtx=null;var audioUnlocked=false;var lastTickTime=0;
 function initAudio(){if(audioCtx)return;try{var Ctx=window.AudioContext||window.webkitAudioContext;if(Ctx)audioCtx=new Ctx();}catch(e){audioCtx=null;}audioUnlocked=true;}
 function ensureAudio(){if(!audioCtx)return false;if(audioCtx.state==='suspended'){audioCtx.resume().catch(function(){});}return true;}
 
-// Realistic wheel tick sound
 function playTick(){
   if(!soundEnabled||!audioCtx)return;
   var now=audioCtx.currentTime;
   if(now-lastTickTime<0.014)return;
   lastTickTime=now;
   try{
-    var osc=audioCtx.createOscillator();
-    var gain=audioCtx.createGain();
-    // Sharp, mechanical click/clack
+    var osc=audioCtx.createOscillator();var gain=audioCtx.createGain();
     osc.type='triangle';
     osc.frequency.setValueAtTime(1400,now);
     osc.frequency.exponentialRampToValueAtTime(300,now+0.015);
     var vol=currentVolumeLevel===1?0.03:0.12;
     gain.gain.setValueAtTime(vol,now);
     gain.gain.exponentialRampToValueAtTime(0.0001,now+0.025);
-    osc.connect(gain);
-    gain.connect(audioCtx.destination);
-    osc.start(now);
-    osc.stop(now+0.03);
+    osc.connect(gain);gain.connect(audioCtx.destination);
+    osc.start(now);osc.stop(now+0.03);
   }catch(e){}
 }
 
 function playSweetMusic(){if(!soundEnabled||!audioCtx)return;var now=audioCtx.currentTime;var notes=[{f:523.25,t:0.0,d:1.5},{f:659.25,t:0.15,d:1.5},{f:783.99,t:0.3,d:1.5},{f:1046.50,t:0.45,d:2.0},{f:1318.51,t:0.8,d:1.5},{f:1567.98,t:1.1,d:2.5}];notes.forEach(function(n){var osc1=audioCtx.createOscillator();var osc2=audioCtx.createOscillator();var gain=audioCtx.createGain();osc1.type='sine';osc1.frequency.value=n.f;osc2.type='triangle';osc2.frequency.value=n.f*2;var start=now+n.t;var vol=currentVolumeLevel===1?0.05:0.2;gain.gain.setValueAtTime(0,start);gain.gain.linearRampToValueAtTime(vol,start+0.05);gain.gain.exponentialRampToValueAtTime(0.001,start+n.d);osc1.connect(gain);osc2.connect(gain);gain.connect(audioCtx.destination);osc1.start(start);osc1.stop(start+n.d);osc2.start(start);osc2.stop(start+n.d);});}
-(function(){var events=['click','touchstart','keydown'];function once(){initAudio();events.forEach(function(e){document.removeEventListener(e,once);});}events.forEach(function(e){document.addEventListener(e,once,{once:true,passive:true});});})();
+
+(function(){
+  var events=['click','touchstart','keydown'];
+  function once(){
+    initAudio();
+    if(musicEnabled)startMusic();
+    events.forEach(function(e){document.removeEventListener(e,once);});
+  }
+  events.forEach(function(e){document.addEventListener(e,once,{once:true,passive:true});});
+})();
 
 function fullscreenElementNow(){return document.fullscreenElement||document.webkitFullscreenElement||document.msFullscreenElement||null;}
 function isWheelFullscreen(){var el=document.getElementById('wheelPremiumBg');return !!fullscreenElementNow()||!!(el&&el.classList.contains('pseudo-fullscreen'));}
@@ -1520,32 +1780,15 @@ function updateFullscreenUi(){var on=isWheelFullscreen();var btn=document.getEle
 function setPseudoFullscreen(on){var el=document.getElementById('wheelPremiumBg');if(!el)return;el.classList.toggle('pseudo-fullscreen',on);if(on){document.body.style.overflow='hidden';}else{restoreBodyScroll();}updateFullscreenUi();}
 function toggleFullscreenWheel(){var el=document.getElementById('wheelPremiumBg');if(!el)return;if(isWheelFullscreen()){if(el.classList.contains('pseudo-fullscreen')){setPseudoFullscreen(false);return;}var exit=document.exitFullscreen||document.webkitExitFullscreen||document.msExitFullscreen;if(exit){try{exit.call(document);}catch(e){setPseudoFullscreen(false);}}else{setPseudoFullscreen(false);}return;}var req=el.requestFullscreen||el.webkitRequestFullscreen||el.msRequestFullscreen;if(!req){setPseudoFullscreen(true);return;}try{var p=req.call(el);if(p&&typeof p.then==='function'){p.then(function(){updateFullscreenUi();}).catch(function(){setPseudoFullscreen(true);});}else{setTimeout(updateFullscreenUi,150);}}catch(e){setPseudoFullscreen(true);}}
 
-// Global Page Fullscreen
-function toggleFullscreenPage() {
-  if (!document.fullscreenElement && !document.webkitFullscreenElement && !document.msFullscreenElement) {
-    var elem = document.documentElement;
-    if (elem.requestFullscreen) {
-      elem.requestFullscreen();
-    } else if (elem.webkitRequestFullscreen) {
-      elem.webkitRequestFullscreen();
-    } else if (elem.msRequestFullscreen) {
-      elem.msRequestFullscreen();
-    }
-  } else {
-    if (document.exitFullscreen) {
-      document.exitFullscreen();
-    } else if (document.webkitExitFullscreen) {
-      document.webkitExitFullscreen();
-    } else if (document.msExitFullscreen) {
-      document.msExitFullscreen();
-    }
-  }
-}
-
 ['fullscreenchange','webkitfullscreenchange','msfullscreenchange'].forEach(function(ev){document.addEventListener(ev,function(){var el=document.getElementById('wheelPremiumBg');if(!fullscreenElementNow()&&el&&!el.classList.contains('pseudo-fullscreen')){restoreBodyScroll();}updateFullscreenUi();});});
 
 function secureRandomInt(max){if(max<=0)return 0;if(window.crypto&&window.crypto.getRandomValues){var arr=new Uint32Array(1);var limit=Math.floor(0x100000000/max)*max;var v;do{window.crypto.getRandomValues(arr);v=arr[0];}while(v>=limit);return v%max;}return Math.floor(Math.random()*max);}
-function getSpinDuration(){var base;switch(wheelSpeed){case 'fast':base=3200;break;case 'slow':base=8500;break;default:base=5500;break;}return base+secureRandomInt(1200);}
+
+function getSpinDuration(){
+  var base = spinDurationBase * 1000;
+  return base + secureRandomInt(1200);
+}
+
 function startIdleSpin(){if(idleActive||isSpinning)return;if(participants.length<2)return;if(window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches)return;idleActive=true;idleLastTime=performance.now();idleRAF=requestAnimationFrame(idleLoop);}
 function stopIdleSpin(){idleActive=false;if(idleRAF){cancelAnimationFrame(idleRAF);idleRAF=0;}}
 function idleLoop(now){if(!idleActive||isSpinning)return;var dt=(now-idleLastTime)/1000;idleLastTime=now;if(dt>0&&dt<0.5){currentRotation=(currentRotation+IDLE_SPEED*dt)%360;applyRotation(currentRotation);}idleRAF=requestAnimationFrame(idleLoop);}
@@ -1562,49 +1805,31 @@ function updateEntries(){
   if(participants.length>=2){
     var popupOpen=document.getElementById('winnerOverlay').classList.contains('show');
     if(!isSpinning&&!popupOpen)startIdleSpin();
-  }else{
-    stopIdleSpin();
-    if(!isSpinning)setSpinLabel('SPIN');
-  }
-  if(participants.length===0){
-    document.title='Spin The Wheelly — Free Spin the Wheel to Pick a Random Choice';
-  }
+  }else{stopIdleSpin();}
+  if(participants.length===0){document.title='Spin The Wheelly — Free Spin the Wheel to Pick a Random Choice';}
 }
-var debouncedUpdateEntries = debounce(updateEntries, 50);
+var debouncedUpdateEntries=debounce(updateEntries,50);
 
 function syncPlaceholder() {
-  var ta = document.getElementById('entriesTextarea');
-  var ph = document.getElementById('fakePlaceholder');
-  if (!ta || !ph) return;
-  var defaultText = 'John\nEmma\nMichael\nSophia\nWilliam\nOlivia\nJames';
-  if (ta.value === defaultText || ta.value.trim() === '') {
-    ph.classList.remove('hidden');
-  } else {
-    ph.classList.add('hidden');
-  }
+  var ta=document.getElementById('entriesTextarea');var ph=document.getElementById('fakePlaceholder');
+  if(!ta||!ph)return;
+  var defaultText='John\nEmma\nMichael\nSophia\nWilliam\nOlivia\nJames';
+  if(ta.value===defaultText||ta.value.trim()===''){ph.classList.remove('hidden');}
+  else{ph.classList.add('hidden');}
 }
 
 function addEntry(){
   if(blockIfSpinning())return;
   if(currentTab!=='edit')switchPanel('edit');
-  var ta=document.getElementById('entriesTextarea');
-  if(!ta)return;
-  
-  var defaultText = 'John\nEmma\nMichael\nSophia\nWilliam\nOlivia\nJames';
-  
-  if(ta.value.trim() === ''){
-    ta.value = defaultText;
-    restoreDefaultNextFocus = true;
-  } else {
-    if(ta.value.length>0 && !ta.value.endsWith('\n')) ta.value+='\n';
-  }
-  ta.focus();
-  ta.selectionStart=ta.selectionEnd=ta.value.length;
-  updateEntries();
-  syncPlaceholder();
+  var ta=document.getElementById('entriesTextarea');if(!ta)return;
+  var defaultText='John\nEmma\nMichael\nSophia\nWilliam\nOlivia\nJames';
+  if(ta.value.trim()===''){ta.value=defaultText;restoreDefaultNextFocus=true;}
+  else{if(ta.value.length>0&&!ta.value.endsWith('\n'))ta.value+='\n';}
+  ta.focus();ta.selectionStart=ta.selectionEnd=ta.value.length;
+  updateEntries();syncPlaceholder();
 }
 
-function shuffleEntries(){if(blockIfSpinning())return;var ta=document.getElementById('entriesTextarea');if(!ta)return;var lines=ta.value.split('\n').map(function(l){return l.trim();}).filter(function(l){return l.length>0;});for(var i=lines.length-1;i>0;i--){var j=Math.floor(Math.random()*(i+1));var temp=lines[i];lines[i]=lines[j];lines[j]=temp;}ta.value=lines.join('\n');updateEntries();showToast('Entries shuffled.');}
+function shuffleEntries(){if(blockIfSpinning())return;var ta=document.getElementById('entriesTextarea');if(!ta)return;var lines=ta.value.split('\n').map(function(l){return l.trim();}).filter(function(l){return l.length>0;});for(var i=lines.length-1;i>0;i--){var j=Math.floor(Math.random()*(i+1));var t=lines[i];lines[i]=lines[j];lines[j]=t;}ta.value=lines.join('\n');updateEntries();showToast('Entries shuffled.');}
 function sortEntries(){if(blockIfSpinning())return;var ta=document.getElementById('entriesTextarea');if(!ta)return;var lines=ta.value.split('\n').map(function(l){return l.trim();}).filter(function(l){return l.length>0;});lines.sort(function(a,b){return a.localeCompare(b);});ta.value=lines.join('\n');updateEntries();showToast('Entries sorted.');}
 function triggerImageUpload(){if(blockIfSpinning())return;document.getElementById('imageInput').click();}
 
@@ -1638,14 +1863,8 @@ function handleImageUpload(event){
       var ta=document.getElementById('entriesTextarea');if(!ta)return;
       var current=ta.value.split('\n').map(function(s){return s.trim();}).filter(function(s){return s.length;});
       var existingIdx=current.indexOf(rawName);
-      if(existingIdx!==-1){
-        participantImages[rawName]=dataUrl;
-        updateEntries();showToast('Image updated: '+rawName);
-      }else{
-        ta.value+=(ta.value.length>0&&!ta.value.endsWith('\n')?'\n':'')+rawName;
-        participantImages[rawName]=dataUrl;
-        updateEntries();showToast('Image added: '+rawName);
-      }
+      if(existingIdx!==-1){participantImages[rawName]=dataUrl;updateEntries();showToast('Image updated: '+rawName);}
+      else{ta.value+=(ta.value.length>0&&!ta.value.endsWith('\n')?'\n':'')+rawName;participantImages[rawName]=dataUrl;updateEntries();showToast('Image added: '+rawName);}
     });
   };
   reader.onerror=function(){showToast('Could not read image.');};reader.readAsDataURL(file);
@@ -1679,7 +1898,7 @@ function rebuildWheel(){
   var g=document.getElementById('wheelGroup');if(!g)return;
   var n=participants.length;
   if(n===0){
-    g.innerHTML='<circle cx="0" cy="0" r="105" fill="#e8e8e8"/><text x="0" y="0" text-anchor="middle" dominant-baseline="middle" font-size="11" fill="#666" font-family="Inter,sans-serif">Add entries to spin</text>';
+    g.innerHTML='<circle cx="0" cy="0" r="105" fill="#e8e8e8"/>';
     updatePointerColor(currentRotation);return;
   }
   var segAngle=360/n;var r=105;var defs='';var html='';
@@ -1703,34 +1922,24 @@ function rebuildWheel(){
       }else{html+='<path d="'+dPath+'" fill="'+color+'" class="wheel-segment" data-index="'+i+'"/>';}
     }
   }
-  if(showWheelText&&n<=40){
-    if(n===1){
-      var singleName=participants[0];
-      var singleHasImg=!!participantImages[singleName];
-      var singleAttrs;
-      if(singleHasImg){singleAttrs='fill="#ffffff" stroke="rgba(0,0,0,0.62)" stroke-width="2.5" paint-order="stroke fill"';}
-      else{singleAttrs='fill="'+SEGMENT_COLORS[0].fg+'"';}
-      var singleFit=fitTextForSegment(singleName,r*1.7,r*1.7,1);
-      html+='<text x="0" y="0" text-anchor="middle" dominant-baseline="middle" font-size="'+singleFit.fontSize+'" font-weight="800" '+singleAttrs+' style="pointer-events:none;font-family:Inter,-apple-system,sans-serif;letter-spacing:0.2px;">'+escHtml(singleFit.lines[0])+'</text>';
-    }else{
-      var labelR=r*0.62;var segAngleRad=(segAngle*Math.PI)/180;
-      var chordWidth=2*labelR*Math.sin(segAngleRad/2);
-      var radialWidth=r*0.72;
-      for(var j=0;j<n;j++){
-        var midAngle=j*segAngle+segAngle/2;var midRad=(midAngle-90)*Math.PI/180;
-        var px=(Math.cos(midRad)*labelR).toFixed(4);var py=(Math.sin(midRad)*labelR).toFixed(4);
-        var baseRot=midAngle-90;var norm=((baseRot%360)+360)%360;
-        var textRot=(norm>90&&norm<270)?baseRot+180:baseRot;
-        var name=participants[j];var hasImg=!!participantImages[participants[j]];
-        var textAttrs;
-        if(hasImg){textAttrs='fill="#ffffff" stroke="rgba(0,0,0,0.62)" stroke-width="2.5" paint-order="stroke fill"';}
-        else{var fg=SEGMENT_COLORS[j%SEGMENT_COLORS.length].fg;textAttrs='fill="'+fg+'"';}
-        var fit=fitTextForSegment(name,chordWidth,radialWidth,n);
-        var transformAttr='transform="rotate('+textRot+' '+px+' '+py+')"';
-        var baseAttrs='text-anchor="middle" dominant-baseline="middle" font-size="'+fit.fontSize+'" font-weight="800" '+textAttrs+' style="pointer-events:none;font-family:Inter,-apple-system,sans-serif;letter-spacing:0.2px;"';
-        if(fit.lines.length===1){html+='<text x="'+px+'" y="'+py+'" '+transformAttr+' '+baseAttrs+'>'+escHtml(fit.lines[0])+'</text>';}
-        else{var lineH=fit.fontSize*1.15;var y1=(parseFloat(py)-lineH/2).toFixed(4);var y2=(parseFloat(py)+lineH/2).toFixed(4);html+='<text '+transformAttr+' '+baseAttrs+'><tspan x="'+px+'" y="'+y1+'">'+escHtml(fit.lines[0])+'</tspan><tspan x="'+px+'" y="'+y2+'">'+escHtml(fit.lines[1])+'</tspan></text>';}
-      }
+  if(showWheelText&&n>1&&n<=40){
+    var labelR=r*0.62;var segAngleRad=(segAngle*Math.PI)/180;
+    var chordWidth=2*labelR*Math.sin(segAngleRad/2);
+    var radialWidth=r*0.72;
+    for(var j=0;j<n;j++){
+      var midAngle=j*segAngle+segAngle/2;var midRad=(midAngle-90)*Math.PI/180;
+      var px=(Math.cos(midRad)*labelR).toFixed(4);var py=(Math.sin(midRad)*labelR).toFixed(4);
+      var baseRot=midAngle-90;var norm=((baseRot%360)+360)%360;
+      var textRot=(norm>90&&norm<270)?baseRot+180:baseRot;
+      var name=participants[j];var hasImg=!!participantImages[participants[j]];
+      var textAttrs;
+      if(hasImg){textAttrs='fill="#ffffff" stroke="rgba(0,0,0,0.62)" stroke-width="2.5" paint-order="stroke fill"';}
+      else{var fg=SEGMENT_COLORS[j%SEGMENT_COLORS.length].fg;textAttrs='fill="'+fg+'"';}
+      var fit=fitTextForSegment(name,chordWidth,radialWidth,n);
+      var transformAttr='transform="rotate('+textRot+' '+px+' '+py+')"';
+      var baseAttrs='text-anchor="middle" dominant-baseline="middle" font-size="'+fit.fontSize+'" font-weight="800" '+textAttrs+' style="pointer-events:none;font-family:Inter,-apple-system,sans-serif;letter-spacing:0.2px;"';
+      if(fit.lines.length===1){html+='<text x="'+px+'" y="'+py+'" '+transformAttr+' '+baseAttrs+'>'+escHtml(fit.lines[0])+'</text>';}
+      else{var lineH=fit.fontSize*1.15;var y1=(parseFloat(py)-lineH/2).toFixed(4);var y2=(parseFloat(py)+lineH/2).toFixed(4);html+='<text '+transformAttr+' '+baseAttrs+'><tspan x="'+px+'" y="'+y1+'">'+escHtml(fit.lines[0])+'</tspan><tspan x="'+px+'" y="'+y2+'">'+escHtml(fit.lines[1])+'</tspan></text>';}
     }
   }
   g.innerHTML=(defs?'<defs>'+defs+'</defs>':'')+html;
@@ -1783,7 +1992,7 @@ function spinWheel(){
   var duration=getSpinDuration();var startTime=performance.now();
   var lastBoundaryIndex=Math.floor(startRotation/segAngle);
   var btn=document.getElementById('spinBtn');
-  btn.disabled=true;setSpinLabel('SPINNING');btn.setAttribute('aria-busy','true');
+  btn.disabled=true;btn.setAttribute('aria-busy','true');
   function animate(now){
     if(token!==spinToken)return;
     var t=Math.min((now-startTime)/duration,1);
@@ -1801,49 +2010,34 @@ function spinWheel(){
 function onSpinComplete(winnerIndex,winnerName){
   isSpinning=false;
   var ta=document.getElementById('entriesTextarea');if(ta)ta.readOnly=false;
-  var btn=document.getElementById('spinBtn');btn.disabled=false;setSpinLabel('SPIN AGAIN');btn.removeAttribute('aria-busy');
+  var btn=document.getElementById('spinBtn');btn.disabled=false;btn.removeAttribute('aria-busy');
   currentWinnerIndex=winnerIndex;currentWinnerName=winnerName;currentWinnerRemoved=false;
   winnerHistory.push(winnerName);renderResultsList();
   if(soundEnabled&&audioCtx)playSweetMusic();
   if(confettiEnabled&&(!window.matchMedia||!window.matchMedia('(prefers-reduced-motion: reduce)').matches)){launchConfetti();}
-  if(autoRemoveWinner){
-    removeEntryByIndex(winnerIndex);
-    currentWinnerRemoved=true;
-  }
+  if(autoRemoveWinner){removeEntryByIndex(winnerIndex);currentWinnerRemoved=true;}
   showWinnerPopup(winnerName);
   syncPlaceholder();
   setTimeout(function(){
-    if(!isSpinning&&participants.length>=2&&!document.getElementById('winnerOverlay').classList.contains('show')){
-      startIdleSpin();
-    }
+    if(!isSpinning&&participants.length>=2&&!document.getElementById('winnerOverlay').classList.contains('show')){startIdleSpin();}
   },500);
 }
 
 function removeEntryByIndex(idx){
   var ta=document.getElementById('entriesTextarea');
   if(!ta||idx<0)return;
-  var lines=ta.value.split('\n');
-  var nonEmpty=0;
-  var removedName='';
+  var lines=ta.value.split('\n');var nonEmpty=0;var removedName='';
   for(var i=0;i<lines.length;i++){
     if(lines[i].trim().length>0){
-      if(nonEmpty===idx){
-        removedName=lines[i].trim().slice(0,30);
-        lines.splice(i,1);
-        break;
-      }
+      if(nonEmpty===idx){removedName=lines[i].trim().slice(0,30);lines.splice(i,1);break;}
       nonEmpty++;
     }
   }
   ta.value=lines.join('\n');
-  var stillExists=false;
-  var check=ta.value.split('\n');
-  for(var k=0;k<check.length;k++){
-    if(check[k].trim().slice(0,30)===removedName){stillExists=true;break;}
-  }
+  var stillExists=false;var check=ta.value.split('\n');
+  for(var k=0;k<check.length;k++){if(check[k].trim().slice(0,30)===removedName){stillExists=true;break;}}
   if(!stillExists&&removedName)delete participantImages[removedName];
-  updateEntries();
-  syncPlaceholder();
+  updateEntries();syncPlaceholder();
 }
 
 function showWinnerPopup(name){
@@ -1851,10 +2045,7 @@ function showWinnerPopup(name){
   document.getElementById('winnerNameBig').textContent=name;
   overlay.classList.add('show');overlay.setAttribute('aria-hidden','false');
   document.body.style.overflow='hidden';announce(name+' Selected');
-  setTimeout(function(){
-    var btn=overlay.querySelector('.winner-btn-close');
-    if(btn)try{btn.focus();}catch(e){}
-  },80);
+  setTimeout(function(){var btn=overlay.querySelector('.winner-btn-close');if(btn)try{btn.focus();}catch(e){}},80);
 }
 function closeWinnerPopup(){
   var overlay=document.getElementById('winnerOverlay');
@@ -1864,18 +2055,9 @@ function closeWinnerPopup(){
   if(!shareOpen)document.body.style.overflow='';
   var spinBtn=document.getElementById('spinBtn');
   if(spinBtn&&!spinBtn.disabled)try{spinBtn.focus();}catch(e){}
-  setTimeout(function(){
-    if(!isSpinning&&participants.length>=2)startIdleSpin();
-  },100);
+  setTimeout(function(){if(!isSpinning&&participants.length>=2)startIdleSpin();},100);
 }
-
-function removeWinnerAndClose(){
-  if(!currentWinnerRemoved&&currentWinnerIndex>=0){
-    removeEntryByIndex(currentWinnerIndex);
-    currentWinnerRemoved=true;
-  }
-  closeWinnerPopup();
-}
+function removeWinnerAndClose(){if(!currentWinnerRemoved&&currentWinnerIndex>=0){removeEntryByIndex(currentWinnerIndex);currentWinnerRemoved=true;}closeWinnerPopup();}
 
 document.getElementById('winnerOverlay').addEventListener('click',function(e){if(e.target===this)closeWinnerPopup();},{passive:true});
 
@@ -1888,8 +2070,8 @@ function launchConfetti(){
   var W=window.innerWidth,H=window.innerHeight;
   var colors=['#E8A500','#B5A642','#1E4620','#F5EBC8','#ef4444','#3b82f6','#e11d48','#8b5cf6'];
   var particles=[];
-  var maxCount = isMobileViewport() ? 100 : 220;
-  var count = Math.min(maxCount, 100+Math.floor(Math.random()*40));
+  var maxCount=isMobileViewport()?100:220;
+  var count=Math.min(maxCount,100+Math.floor(Math.random()*40));
   for(var i=0;i<count;i++){particles.push({x:Math.random()*W,y:-20-Math.random()*H*0.8,vx:(Math.random()-0.5)*4,vy:2+Math.random()*5,size:5+Math.random()*7,color:colors[Math.floor(Math.random()*colors.length)],rot:Math.random()*Math.PI*2,vrot:(Math.random()-0.5)*0.2,life:1.0,shape:Math.random()>0.4?'rect':'circle'});}
   var startTime=performance.now();
   function loop(now){
@@ -1899,12 +2081,10 @@ function launchConfetti(){
       p.vy+=0.08;p.vx+=(Math.random()-0.5)*0.2;p.x+=p.vx;p.y+=p.vy;p.rot+=p.vrot;
       if(p.y>H-50)p.life-=0.02;
       ctx.save();ctx.globalAlpha=Math.max(0,p.life);ctx.translate(p.x,p.y);ctx.rotate(p.rot);ctx.fillStyle=p.color;
-      if(p.shape==='rect'){ctx.fillRect(-p.size/2,-p.size/3,p.size,p.size*0.6);}
-      else{ctx.beginPath();ctx.arc(0,0,p.size/2,0,Math.PI*2);ctx.fill();}
+      if(p.shape==='rect'){ctx.fillRect(-p.size/2,-p.size/3,p.size,p.size*0.6);}else{ctx.beginPath();ctx.arc(0,0,p.size/2,0,Math.PI*2);ctx.fill();}
       ctx.restore();
     }
-    if(elapsed<5000){requestAnimationFrame(loop);}
-    else{ctx.clearRect(0,0,W,H);canvas.classList.remove('active');}
+    if(elapsed<5000){requestAnimationFrame(loop);}else{ctx.clearRect(0,0,W,H);canvas.classList.remove('active');}
   }
   requestAnimationFrame(loop);
 }
@@ -1933,7 +2113,6 @@ function fallbackCopyText(text){
   document.body.removeChild(ta);
 }
 document.getElementById('shareModal').addEventListener('click',function(e){if(e.target===this)closeShareModal();},{passive:true});
-
 document.getElementById('settingsModal').addEventListener('click',function(e){if(e.target===this)closeSettingsModal();},{passive:true});
 document.getElementById('presetModal').addEventListener('click',function(e){if(e.target===this)closeModal('presetModal');},{passive:true});
 
@@ -1952,7 +2131,7 @@ document.addEventListener('keydown',function(e){
     if(wpb&&wpb.classList.contains('pseudo-fullscreen')){setPseudoFullscreen(false);return;}
     var pm=document.getElementById('presetModal');
     if(pm&&pm.classList.contains('active')){closeModal('presetModal');return;}
-    closeWinnerPopup();closeShareModal();closeSettingsModal();closeToolsMenu();closeSidebar();
+    closeWinnerPopup();closeShareModal();closeSettingsModal();closeToolsMenu();closeLangMenu();closeSidebar();
     return;
   }
   var wo=document.getElementById('winnerOverlay');
@@ -1962,14 +2141,7 @@ document.addEventListener('keydown',function(e){
     var m=document.getElementById(modalIds[i]);
     if(m&&m.classList.contains('active')){trapFocus(e,m.querySelector('.modal-box'));return;}
   }
-  
-  // Ctrl+Enter to Spin
-  if((e.ctrlKey || e.metaKey) && e.key === 'Enter') {
-    if(!isSpinning) {
-      e.preventDefault();
-      spinWheel();
-    }
-  }
+  if((e.ctrlKey||e.metaKey)&&e.key==='Enter'){if(!isSpinning){e.preventDefault();spinWheel();}}
 });
 
 document.addEventListener('visibilitychange',function(){if(document.hidden){stopIdleSpin();}else if(!isSpinning&&participants.length>=2&&!document.getElementById('winnerOverlay').classList.contains('show')){startIdleSpin();}});
@@ -1981,7 +2153,7 @@ window.addEventListener('resize',function(){
     if(window.innerWidth>900){
       var sb=document.getElementById('mobileSidebar');
       if(sb&&sb.classList.contains('show'))closeSidebar();
-      closeToolsMenu();
+      closeToolsMenu();closeLangMenu();
     }
   });
 },{passive:true});
@@ -1990,34 +2162,34 @@ function init(){
   pointerEl=document.getElementById('wheelPointer');
   loadWheelSettings();
   setupSegmentedControls();
+
+  var sdRange=document.getElementById('spinDurationRange');
+  var sdValue=document.getElementById('spinDurationValue');
+  if(sdRange){
+    sdRange.value=spinDurationBase;
+    if(sdValue)sdValue.textContent=spinDurationBase.toFixed(1)+'s';
+    sdRange.addEventListener('input',function(){
+      var val=parseFloat(this.value);
+      spinDurationBase=val;
+      if(sdValue)sdValue.textContent=val.toFixed(1)+'s';
+    });
+  }
+
   var textarea=document.getElementById('entriesTextarea');
   if(textarea){
-    textarea.addEventListener('input', function() {
-      var ph = document.getElementById('fakePlaceholder');
-      if (this.value.trim() !== '') {
-         if(ph) ph.classList.add('hidden');
-      }
+    textarea.addEventListener('input',function(){
+      var ph=document.getElementById('fakePlaceholder');
+      if(this.value.trim()!==''){if(ph)ph.classList.add('hidden');}
       debouncedUpdateEntries();
     },{passive:true});
-    
-    textarea.addEventListener('focus', function() {
-      var ph = document.getElementById('fakePlaceholder');
-      if(ph) ph.classList.add('hidden');
-      
-      if (restoreDefaultNextFocus) {
-        restoreDefaultNextFocus = false;
-        return;
-      }
-      var defaultText = 'John\nEmma\nMichael\nSophia\nWilliam\nOlivia\nJames';
-      if (this.value === defaultText) {
-        this.value = '';
-        updateEntries();
-      }
+    textarea.addEventListener('focus',function(){
+      var ph=document.getElementById('fakePlaceholder');
+      if(ph)ph.classList.add('hidden');
+      if(restoreDefaultNextFocus){restoreDefaultNextFocus=false;return;}
+      var defaultText='John\nEmma\nMichael\nSophia\nWilliam\nOlivia\nJames';
+      if(this.value===defaultText){this.value='';updateEntries();}
     });
-    
-    textarea.addEventListener('blur', function() {
-      syncPlaceholder();
-    });
+    textarea.addEventListener('blur',function(){syncPlaceholder();});
   }
   renderPresetGrid();
   renderPaletteGrid();
