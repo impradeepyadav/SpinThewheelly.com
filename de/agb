@@ -1,0 +1,614 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+
+<!-- ================= Google tag (gtag.js) ================= -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-1MFMKMFL0X"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-1MFMKMFL0X');
+</script>
+<!-- ======================================================== -->
+
+<title>Allgemeine Geschäftsbedingungen (AGB) — Spin The Wheelly</title>
+<meta name="description" content="Allgemeine Geschäftsbedingungen (AGB) für Spin The Wheelly — Informationen zu Werbung, Affiliate-Links, Cookies, Analyse-Tools und Datenschutzrechten (DSGVO, CCPA).">
+<meta name="keywords" content="agb, allgemeine geschäftsbedingungen, spinthewheelly agb, nutzungsbedingungen, cookie-richtlinie, google analytics agb, dsgvo, ccpa, affiliate-offenlegung, werbe-offenlegung">
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+<meta name="googlebot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+<meta name="bingbot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+<meta name="author" content="Spin The Wheelly">
+<meta name="theme-color" content="#ffffff" id="themeColorMeta">
+<link rel="canonical" href="https://spinthewheelly.com/de/agb">
+<link rel="alternate" hreflang="de" href="https://spinthewheelly.com/de/agb">
+<link rel="alternate" hreflang="x-default" href="https://spinthewheelly.com/terms">
+<link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml">
+
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Spin The Wheelly">
+<meta property="og:title" content="Allgemeine Geschäftsbedingungen (AGB) — Spin The Wheelly">
+<meta property="og:description" content="AGB zu Werbung, Affiliate-Links, Cookies, Analyse-Tools und Datenschutzrechten (DSGVO, CCPA).">
+<meta property="og:url" content="https://spinthewheelly.com/de/agb">
+<meta property="og:locale" content="de_DE">
+<meta property="og:image" content="https://spinthewheelly.com/apple-touch-icon.png">
+<meta property="og:image:alt" content="Allgemeine Geschäftsbedingungen — Spin The Wheelly">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Allgemeine Geschäftsbedingungen (AGB) — Spin The Wheelly">
+<meta name="twitter:description" content="Informationen zu Werbung, Affiliate-Links, Cookies, Analyse-Tools und Datenschutzrechten.">
+<meta name="twitter:image" content="https://spinthewheelly.com/apple-touch-icon.png">
+
+<!-- ================= Preconnects ================= -->
+<link rel="preconnect" href="https://www.googletagmanager.com" crossorigin>
+<link rel="preconnect" href="https://www.google-analytics.com" crossorigin>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/site.webmanifest">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='46' fill='%231a1a1a'/%3E%3Cpath d='M50 50 L50 8 A42 42 0 0 1 88 71 Z' fill='%23E8A500'/%3E%3Cpath d='M50 50 L88 71 A42 42 0 0 1 12 71 Z' fill='%23F5EBC8'/%3E%3Cpath d='M50 50 L12 71 A42 42 0 0 1 50 8 Z' fill='%231E4620'/%3E%3Ccircle cx='50' cy='50' r='9' fill='%23fff'/%3E%3C/svg%3E">
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap">
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebSite","name":"Spin The Wheelly","url":"https://spinthewheelly.com/","inLanguage":"de-DE","potentialAction":{"@type":"SearchAction","target":{"@type":"EntryPoint","urlTemplate":"https://spinthewheelly.com/?q={search_term_string}"},"query-input":"required name=search_term_string"}}
+</script>
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Organization","name":"Spin The Wheelly","url":"https://spinthewheelly.com/","logo":"https://spinthewheelly.com/apple-touch-icon.png","sameAs":[],"contactPoint":{"@type":"ContactPoint","contactType":"customer support","email":"hello@spinthewheelly.com","availableLanguage":["German","English"]}}
+</script>
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebPage","name":"Allgemeine Geschäftsbedingungen (AGB) — Spin The Wheelly","url":"https://spinthewheelly.com/de/agb","description":"Allgemeine Geschäftsbedingungen (AGB) für Spin The Wheelly — Informationen zu Werbung, Affiliate-Links, Cookies, Analyse-Tools und Datenschutzrechten (DSGVO, CCPA).","inLanguage":"de-DE","isPartOf":{"@type":"WebSite","url":"https://spinthewheelly.com/"},"publisher":{"@type":"Organization","name":"Spin The Wheelly","url":"https://spinthewheelly.com/","logo":"https://spinthewheelly.com/apple-touch-icon.png"},"dateModified":"2026-10-30","about":{"@type":"Thing","name":"Allgemeine Geschäftsbedingungen"}}
+</script>
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Startseite","item":"https://spinthewheelly.com/"},{"@type":"ListItem","position":2,"name":"Allgemeine Geschäftsbedingungen","item":"https://spinthewheelly.com/de/agb"}]}
+</script>
+
+<script>
+(function(){
+  var stored=null;
+  try{stored=localStorage.getItem('theme');}catch(e){}
+  var prefersDark=window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches;
+  var isDark=stored==='dark'||(!stored&&prefersDark);
+  if(isDark){
+    document.documentElement.classList.add('dark-mode');
+    var meta=document.getElementById('themeColorMeta');
+    if(meta)meta.setAttribute('content','#0f172a');
+  }
+})();
+</script>
+
+<style>
+/* ============================================================
+   THEME VARIABLES
+   ============================================================ */
+:root{
+  color-scheme: light dark;
+  --bg: #ffffff;
+  --text: #333333;
+  --text-strong: #111111;
+  --text-muted: #555555;
+  --line: #eaeaea;
+  --hover-bg: #f0f0f0;
+  --shadow: rgba(0,0,0,0.02);
+  --link: #0066cc;
+  --link-hover: #004c99;
+  --icon-fill: #111111;
+  --header-bg: #ffffff;
+  --code-bg: #f3f4f6;
+  --code-text: #c2410c;
+}
+html.dark-mode{
+  color-scheme: dark;
+  --bg: #0f172a;
+  --text: #cbd5e1;
+  --text-strong: #f1f5f9;
+  --text-muted: #94a3b8;
+  --line: #1e293b;
+  --hover-bg: #1e293b;
+  --shadow: rgba(0,0,0,0.35);
+  --link: #60a5fa;
+  --link-hover: #93c5fd;
+  --icon-fill: #f1f5f9;
+  --header-bg: #0f172a;
+  --code-bg: #1e293b;
+  --code-text: #fbbf24;
+}
+
+/* ============================================================
+   BASE RESET
+   ============================================================ */
+*{
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html{
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+body{
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  background-color: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  overflow-x: hidden;
+  width: 100%;
+  max-width: 100%;
+  overflow-wrap: break-word;
+}
+
+a:focus-visible,
+button:focus-visible{
+  outline: 2px solid var(--text-strong);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+/* ============================================================
+   TOP BAR / HEADER
+   ============================================================ */
+.top-bar{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 24px;
+  background-color: var(--header-bg);
+  border-bottom: 1px solid var(--line);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0 2px 4px var(--shadow);
+  transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.top-bar-left{
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.back-link{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-strong);
+  text-decoration: none;
+  padding: 8px;
+  border-radius: 50%;
+  transition: background-color 0.2s ease;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.back-link:hover{
+  background-color: var(--hover-bg);
+}
+
+.back-link svg{
+  width: 24px;
+  height: 24px;
+  stroke: currentColor;
+  color: currentColor;
+}
+
+.site-name{
+  font-size: 20px;
+  font-weight: 600;
+  color: var(--text-strong);
+  letter-spacing: -0.3px;
+  transition: color 0.3s ease;
+}
+
+.top-bar-right{
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.feedback-btn{
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: none;
+  border: none;
+  font-family: inherit;
+  font-size: 15px;
+  font-weight: 500;
+  color: var(--text-strong);
+  cursor: pointer;
+  padding: 8px 12px;
+  border-radius: 8px;
+  transition: background-color 0.2s ease, color 0.3s ease;
+  -webkit-tap-highlight-color: transparent;
+  touch-action: manipulation;
+}
+
+.feedback-btn:hover{
+  background-color: var(--hover-bg);
+}
+
+.feedback-btn svg{
+  width: 20px;
+  height: 20px;
+  fill: var(--icon-fill);
+  color: var(--icon-fill);
+  transition: fill 0.3s ease, color 0.3s ease;
+}
+
+/* ============================================================
+   MAIN CONTENT
+   ============================================================ */
+.terms-container{
+  max-width: 820px;
+  margin: 0 auto;
+  padding: 48px 24px 80px 24px;
+  flex: 1;
+  width: 100%;
+  min-width: 0;
+}
+
+h1{
+  font-size: 36px;
+  font-weight: 500;
+  color: var(--text-strong);
+  margin-bottom: 24px;
+  letter-spacing: -0.5px;
+  line-height: 1.2;
+  transition: color 0.3s ease;
+}
+
+.last-updated{
+  font-size: 15px;
+  color: var(--text-muted);
+  margin-bottom: 16px;
+  transition: color 0.3s ease;
+}
+
+.intro-text{
+  font-size: 16px;
+  color: var(--text);
+  margin-bottom: 40px;
+  transition: color 0.3s ease;
+}
+
+h2{
+  font-size: 26px;
+  font-weight: 500;
+  color: var(--text-strong);
+  margin-top: 40px;
+  margin-bottom: 20px;
+  letter-spacing: -0.3px;
+  line-height: 1.3;
+  transition: color 0.3s ease;
+}
+
+h3{
+  font-size: 20px;
+  font-weight: 600;
+  color: var(--text-strong);
+  margin-top: 32px;
+  margin-bottom: 16px;
+  transition: color 0.3s ease;
+}
+
+p{
+  font-size: 16px;
+  color: var(--text);
+  margin-bottom: 18px;
+  transition: color 0.3s ease;
+}
+
+ul, ol{
+  margin-bottom: 24px;
+  padding-left: 24px;
+}
+
+li{
+  font-size: 16px;
+  color: var(--text);
+  margin-bottom: 12px;
+  transition: color 0.3s ease;
+}
+
+li strong,
+p strong{
+  font-weight: 600;
+  color: var(--text-strong);
+  transition: color 0.3s ease;
+}
+
+p em,
+li em{
+  font-style: italic;
+  color: var(--text);
+}
+
+a{
+  color: var(--link);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+a:hover{
+  color: var(--link-hover);
+  text-decoration: underline;
+}
+
+code{
+  background: var(--code-bg);
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-size: 14px;
+  font-family: 'SF Mono', Consolas, 'Courier New', monospace;
+  color: var(--code-text);
+  font-weight: 600;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* ============================================================
+   RESPONSIVE
+   ============================================================ */
+@media (max-width: 900px){
+  .terms-container{
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 600px){
+  .top-bar{
+    padding: 12px 16px;
+  }
+  .site-name{
+    font-size: 18px;
+  }
+  .feedback-btn span{
+    display: none;
+  }
+  .terms-container{
+    padding: 32px 16px 60px 16px;
+  }
+  h1{
+    font-size: 28px;
+  }
+  h2{
+    font-size: 22px;
+  }
+  h3{
+    font-size: 18px;
+  }
+  p, li, .intro-text{
+    font-size: 15.5px;
+  }
+}
+
+@media (max-width: 380px){
+  .top-bar{
+    padding: 10px 12px;
+  }
+  .site-name{
+    font-size: 16px;
+    letter-spacing: -0.2px;
+  }
+  .back-link svg{
+    width: 20px;
+    height: 20px;
+  }
+  h1{
+    font-size: 24px;
+  }
+  h2{
+    font-size: 20px;
+  }
+  h3{
+    font-size: 17px;
+  }
+  p, li, .intro-text{
+    font-size: 15px;
+  }
+  .terms-container{
+    padding: 24px 14px 52px 14px;
+  }
+}
+
+@media (max-width: 320px){
+  .site-name{
+    font-size: 14.5px;
+  }
+  h1{
+    font-size: 22px;
+  }
+  h2{
+    font-size: 18px;
+  }
+  h3{
+    font-size: 16px;
+  }
+  p, li, .intro-text{
+    font-size: 14.5px;
+  }
+}
+
+@media (min-width: 1440px){
+  .terms-container{
+    max-width: 880px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce){
+  html{scroll-behavior: auto;}
+  *, *::before, *::after{
+    animation-duration: 0.001ms !important;
+    transition-duration: 0.001ms !important;
+  }
+}
+</style>
+</head>
+<body>
+
+<!-- Top Navigation Bar -->
+<header class="top-bar">
+  <div class="top-bar-left">
+    <a href="/" class="back-link" aria-label="Zurück">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <line x1="19" y1="12" x2="5" y2="12"></line>
+        <polyline points="12 19 5 12 12 5"></polyline>
+      </svg>
+    </a>
+    <span class="site-name">spinthewheelly.com</span>
+  </div>
+
+  <div class="top-bar-right">
+    <button class="feedback-btn" onclick="window.location.href='mailto:contact@spinthewheelly.com'" aria-label="Feedback senden">
+      <svg viewBox="0 0 24 24" aria-hidden="true">
+        <path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2z"></path>
+      </svg>
+      <span>Feedback</span>
+    </button>
+  </div>
+</header>
+
+<main class="terms-container" id="mainContent">
+
+  <h1>Allgemeine Geschäftsbedingungen (AGB)</h1>
+
+  <p class="last-updated">Zuletzt aktualisiert: 30. Oktober 2026</p>
+
+  <p class="intro-text">Bitte lesen Sie diese Allgemeinen Geschäftsbedingungen sorgfältig durch, bevor Sie Unseren Dienst nutzen. Diese Bedingungen gelten für alle Besucher, Nutzer und sonstige Personen, die weltweit auf den Dienst zugreifen oder ihn nutzen.</p>
+
+  <h2>Auslegung und Definitionen</h2>
+
+  <h3>Auslegung</h3>
+  <p>Die Wörter, deren Anfangsbuchstabe großgeschrieben ist, haben die unter den folgenden Bedingungen definierten Bedeutungen. Die folgenden Definitionen gelten unabhängig davon, ob sie im Singular oder im Plural erscheinen.</p>
+
+  <h3>Definitionen</h3>
+  <p>Für die Zwecke dieser Allgemeinen Geschäftsbedingungen:</p>
+
+  <ul>
+    <li><strong>Verbundenes Unternehmen</strong> bezeichnet eine Entität, die eine Partei kontrolliert, von ihr kontrolliert wird oder mit ihr unter gemeinsamer Kontrolle steht, wobei „Kontrolle“ den Besitz von 50 % oder mehr der Anteile, Beteiligungen oder sonstigen stimmberechtigten Wertpapiere zur Wahl von Direktoren oder einer anderen leitenden Behörde bedeutet.</li>
+    <li><strong>Konto</strong> bezeichnet ein eindeutiges Konto, das für Sie erstellt wurde, um auf unseren Dienst oder Teile unseres Dienstes zuzugreifen.</li>
+    <li><strong>Unternehmen</strong> (in dieser Vereinbarung auch als „das Unternehmen“, „Wir“, „Uns“ oder „Unser“ bezeichnet) bezieht sich auf Spin The Wheelly.</li>
+    <li><strong>Land</strong> bezeichnet die Gerichtsbarkeit, in der das Unternehmen tätig ist.</li>
+    <li><strong>Inhalte</strong> bezeichnet Inhalte wie Texte, Bilder oder andere Informationen, die von Ihnen veröffentlicht, hochgeladen, verlinkt oder anderweitig verfügbar gemacht werden können, unabhängig von der Form dieser Inhalte.</li>
+    <li><strong>Gerät</strong> bezeichnet jedes Gerät, das auf den Dienst zugreifen kann, wie einen Computer, ein Mobiltelefon oder ein digitales Tablet.</li>
+    <li><strong>Feedback</strong> bezeichnet Feedback, Innovationen oder Vorschläge, die Sie bezüglich der Eigenschaften, der Leistung oder der Funktionen unseres Dienstes senden.</li>
+    <li><strong>Dienst</strong> bezeichnet die Website.</li>
+    <li><strong>Allgemeine Geschäftsbedingungen</strong> (auch als „AGB“ bezeichnet) bezeichnet diese Allgemeinen Geschäftsbedingungen, die die gesamte Vereinbarung zwischen Ihnen und dem Unternehmen bezüglich der Nutzung des Dienstes bilden.</li>
+    <li><strong>Sozialer Drittanbieter-Dienst</strong> bezeichnet Dienste oder Inhalte (einschließlich Daten, Informationen, Produkte oder Dienstleistungen), die von einem Dritten bereitgestellt und vom Dienst angezeigt, eingebunden oder verfügbar gemacht werden können.</li>
+    <li><strong>Website</strong> bezeichnet Spin The Wheelly, abrufbar unter https://spinthewheelly.com/</li>
+    <li><strong>Sie</strong> bezeichnet die natürliche Person, die auf den Dienst zugreift oder ihn nutzt, oder das Unternehmen bzw. eine andere juristische Person, in deren Namen diese Person auf den Dienst zugreift oder ihn nutzt, je nach Anwendbarkeit.</li>
+  </ul>
+
+  <h2>Anerkenntnis</h2>
+  <p>Dies sind die Allgemeinen Geschäftsbedingungen, die die Nutzung dieses Dienstes regeln und die Vereinbarung darstellen, die zwischen Ihnen und dem Unternehmen gilt. Diese Allgemeinen Geschäftsbedingungen legen die Rechte und Pflichten aller Nutzer in Bezug auf die Nutzung des Dienstes fest.</p>
+  <p>Ihr Zugriff auf und Ihre Nutzung des Dienstes setzt voraus, dass Sie diese Allgemeinen Geschäftsbedingungen akzeptieren und einhalten. Diese Allgemeinen Geschäftsbedingungen gelten für alle Besucher, Nutzer und sonstige Personen, die auf den Dienst zugreifen oder ihn nutzen.</p>
+  <p>Durch den Zugriff auf oder die Nutzung des Dienstes erklären Sie sich mit diesen Allgemeinen Geschäftsbedingungen einverstanden. Wenn Sie mit einem Teil dieser Allgemeinen Geschäftsbedingungen nicht einverstanden sind, dürfen Sie nicht auf den Dienst zugreifen.</p>
+
+  <h2>Geistiges Eigentum</h2>
+  <p>Der Dienst und seine ursprünglichen Inhalte (mit Ausnahme von Inhalten, die von Ihnen oder anderen Nutzern bereitgestellt werden), Funktionen und Funktionalitäten sind und bleiben das ausschließliche Eigentum des Unternehmens und seiner Lizenzgeber.</p>
+  <p>Der Dienst ist durch Urheberrechte, Markenrechte und andere Gesetze sowohl des Landes als auch ausländischer Länder geschützt.</p>
+  <p>Unsere Marken und unser Erscheinungsbild dürfen ohne vorherige schriftliche Zustimmung des Unternehmens nicht in Verbindung mit Produkten oder Dienstleistungen verwendet werden.</p>
+
+  <h2>Werbung, Affiliate-Links und Inhalte Dritter</h2>
+  <p>Der Dienst kann Werbeanzeigen, gesponserte Inhalte und Affiliate-Links Dritter anzeigen. Wenn Sie auf einen Affiliate-Link klicken und einen Kauf tätigen, erhalten Wir möglicherweise eine Provision, ohne dass Ihnen zusätzliche Kosten entstehen. Wir können auch an Werbenetzwerken teilnehmen, die personalisierte oder nicht personalisierte Werbung basierend auf Ihren Interaktionen mit dem Dienst und anderen Websites anzeigen.</p>
+  <p>Wir kontrollieren, befürworten oder übernehmen keine Verantwortung für die Inhalte, Produkte, Dienstleistungen, Datenschutzpraktiken oder Richtigkeit von Werbeanzeigen Dritter, Affiliate-Partnern oder verlinkten Websites. Jede Transaktion, die Sie mit einem Dritten eingehen, erfolgt ausschließlich zwischen Ihnen und diesem Dritten.</p>
+  <p>Wir nehmen an Affiliate-Marketing-Programmen teil, die darauf ausgelegt sind, uns eine Möglichkeit zu bieten, durch die Verlinkung auf Partner-Websites Gebühren zu verdienen. Diese Offenlegung erfolgt in Übereinstimmung mit den geltenden Werbe- und Verbraucherschutzgesetzen, einschließlich der FTC-Endorsement-Richtlinien der USA.</p>
+
+  <h2>Cookies und Tracking-Technologien</h2>
+  <p>Der Dienst verwendet Cookies, Web-Beacons, Pixel und ähnliche Tracking-Technologien, um die Website zu betreiben, den Datenverkehr zu analysieren und relevante Werbung bereitzustellen. Cookies sind kleine Textdateien, die auf Ihrem Gerät platziert werden und uns helfen, Ihre Präferenzen zu speichern und zu verstehen, wie Sie mit dem Dienst interagieren.</p>
+  <p>Wir verwenden die folgenden Kategorien von Cookies:</p>
+  <ul>
+    <li><strong>Unbedingt erforderliche Cookies:</strong> Erforderlich für das ordnungsgemäße Funktionieren des Dienstes (z. B. Sicherheit, grundlegende Navigation). Diese können nicht deaktiviert werden.</li>
+    <li><strong>Analyse-Cookies:</strong> Helfen uns zu verstehen, wie Besucher den Dienst nutzen, welche Seiten besucht werden und wie Nutzer auf die Website gelangen. Wir verwenden hierfür Google Analytics.</li>
+    <li><strong>Werbe-Cookies:</strong> Werden von Werbenetzwerken Dritter verwendet, um Werbung bereitzustellen, die für Sie relevant sein könnte, und um die Wirksamkeit von Werbekampagnen zu messen.</li>
+  </ul>
+  <p>Sofern nach geltendem Recht erforderlich, holen Wir Ihre Einwilligung ein, bevor nicht erforderliche Cookies auf Ihrem Gerät platziert werden. Sie können Ihre Einwilligung jederzeit über das Cookie-Einwilligungsbanner oder durch Anpassung Ihrer Browsereinstellungen verwalten oder widerrufen. Das Deaktivieren von Cookies kann die Funktionalität des Dienstes beeinträchtigen.</p>
+
+  <h2>Google Analytics</h2>
+  <p>Wir verwenden Google Analytics, einen Webanalyse-Dienst der Google LLC („Google“), um zu messen und zu analysieren, wie Besucher den Dienst nutzen. Google Analytics erfasst Informationen wie Ihre IP-Adresse, den Browsertyp, Geräteinformationen, besuchte Seiten, auf Seiten verbrachte Zeit und Verweisquellen. Diese Daten werden verwendet, um den Dienst zu verbessern und das Nutzerverhalten zu verstehen.</p>
+  <p>Google Analytics kann Cookies auf Ihrem Gerät setzen und Daten an Server außerhalb Ihres Wohnsitzlandes übermitteln. Google verarbeitet diese Daten in Unserem Auftrag und ist vertraglich verpflichtet, sie zu schützen. Weitere Informationen darüber, wie Google Daten erfasst und verarbeitet, finden Sie unter <a href="https://policies.google.com/technologies/partner-sites?hl=de" target="_blank" rel="noopener">Wie Google Informationen von Websites oder Apps verwendet, die unsere Dienste nutzen</a>.</p>
+  <p>Sie können das Tracking durch Google Analytics deaktivieren, indem Sie das <a href="https://tools.google.com/dlpage/gaoptout?hl=de" target="_blank" rel="noopener">Google Analytics-Opt-out-Browser-Add-on</a> installieren oder Ihre Google Ads-Einstellungen anpassen. Bitte beachten Sie, dass ein Opt-out nicht die gesamte Datenerfassung durch andere Dritte verhindert.</p>
+
+  <h2>Ihre Datenschutzrechte (DSGVO, CCPA und andere Gesetze)</h2>
+  <p>Je nach Ihrem Standort haben Sie möglicherweise bestimmte Rechte in Bezug auf Ihre personenbezogenen Daten nach geltendem Datenschutzrecht, einschließlich der Datenschutz-Grundverordnung („DSGVO“) der Europäischen Union und des California Consumer Privacy Act („CCPA“).</p>
+  <p>Vorbehaltlich des geltenden Rechts haben Sie möglicherweise das Recht:</p>
+  <ul>
+    <li>Auf die personenbezogenen Daten zuzugreifen, die Wir über Sie speichern.</li>
+    <li>Die Berichtigung unrichtiger personenbezogener Daten zu verlangen.</li>
+    <li>Die Löschung Ihrer personenbezogenen Daten zu verlangen.</li>
+    <li>Der Verarbeitung Ihrer personenbezogenen Daten zu widersprechen oder sie einzuschränken.</li>
+    <li>Die Übertragbarkeit Ihrer personenbezogenen Daten zu verlangen.</li>
+    <li>Ihre Einwilligung jederzeit zu widerrufen, wenn die Verarbeitung auf einer Einwilligung beruht.</li>
+    <li>Dem „Verkauf“ oder der „Weitergabe“ personenbezogener Informationen zu widersprechen (wie diese Begriffe im CCPA definiert sind).</li>
+    <li>Nicht diskriminiert zu werden, weil Sie Ihre Datenschutzrechte ausüben.</li>
+  </ul>
+  <p>Um eines dieser Rechte auszuüben, kontaktieren Sie Uns bitte über die im Abschnitt „Kontakt“ unten angegebenen Details. Wir werden verifizierte Anfragen innerhalb der nach geltendem Recht erforderlichen Fristen beantworten.</p>
+  <p>Wir erfassen wissentlich keine personenbezogenen Daten von Kindern unter 16 Jahren. Wenn Sie Elternteil oder Erziehungsberechtigter sind und glauben, dass ein Kind Uns personenbezogene Daten zur Verfügung gestellt hat, kontaktieren Sie Uns bitte, damit Wir geeignete Maßnahmen ergreifen können.</p>
+
+  <h2>Links zu anderen Websites</h2>
+  <p>Unser Dienst kann Links zu Websites oder Diensten Dritter enthalten, die nicht Eigentum des Unternehmens sind oder von ihm kontrolliert werden.</p>
+  <p>Das Unternehmen hat keine Kontrolle über die Inhalte, Datenschutzrichtlinien oder Praktiken von Websites oder Diensten Dritter und übernimmt keine Verantwortung dafür. Sie erkennen ferner an und stimmen zu, dass das Unternehmen nicht für direkte oder indirekte Schäden oder Verluste verantwortlich oder haftbar ist, die durch die Nutzung von oder das Vertrauen auf solche Inhalte, Waren oder Dienstleistungen entstehen, die auf oder über solche Websites oder Dienste verfügbar sind.</p>
+  <p>Wir empfehlen Ihnen dringend, die Allgemeinen Geschäftsbedingungen und Datenschutzrichtlinien aller Websites oder Dienste Dritter zu lesen, die Sie besuchen.</p>
+
+  <h2>Haftungsbeschränkung</h2>
+  <p>Ungeachtet etwaiger Schäden, die Ihnen entstehen könnten, ist die gesamte Haftung des Unternehmens und seiner Lieferanten nach einer Bestimmung dieser AGB und Ihr ausschließlicher Rechtsbehelf für alle vorstehenden Punkte auf den Betrag begrenzt, den Sie tatsächlich über den Dienst gezahlt haben, oder auf 100 USD, wenn Sie nichts über den Dienst gekauft haben.</p>
+  <p>Soweit nach geltendem Recht zulässig, haften das Unternehmen oder seine Lieferanten in keinem Fall für besondere, zufällige, indirekte oder Folgeschäden (einschließlich, aber nicht beschränkt auf Schäden aus entgangenem Gewinn, Datenverlust oder anderen Informationen, Betriebsunterbrechung, Personenschäden, Verlust der Privatsphäre), die sich aus oder in irgendeiner Weise im Zusammenhang mit der Nutzung oder Nichtnutzung des Dienstes, von Drittanbieter-Software und/oder Drittanbieter-Hardware, die mit dem Dienst verwendet wird, oder anderweitig im Zusammenhang mit einer Bestimmung dieser AGB ergeben, selbst wenn das Unternehmen oder ein Lieferant auf die Möglichkeit solcher Schäden hingewiesen wurde und selbst wenn der Rechtsbehelf seinen wesentlichen Zweck verfehlt.</p>
+
+  <h2>„WIE BESEHEN“ und „WIE VERFÜGBAR“ – Haftungsausschluss</h2>
+  <p>Der Dienst wird Ihnen „WIE BESEHEN“ und „WIE VERFÜGBAR“ und mit allen Fehlern und Mängeln ohne jegliche Gewährleistung zur Verfügung gestellt. Soweit nach geltendem Recht zulässig, lehnen das Unternehmen in eigenem Namen und im Namen seiner verbundenen Unternehmen sowie deren jeweiliger Lizenzgeber und Dienstleister ausdrücklich alle Gewährleistungen ab, ob ausdrücklich, stillschweigend, gesetzlich oder anderweitig, in Bezug auf den Dienst, einschließlich aller stillschweigenden Gewährleistungen der Marktgängigkeit, der Eignung für einen bestimmten Zweck, des Rechtsanspruchs und der Nichtverletzung sowie Gewährleistungen, die sich aus Handelsbrauch, Leistungsgepflogenheiten oder Handelsbräuchen ergeben.</p>
+
+  <h2>Anwendbares Recht</h2>
+  <p>Die Gesetze des Landes, mit Ausnahme seiner Kollisionsnormen, regeln diese AGB und Ihre Nutzung des Dienstes. Ihre Nutzung der Anwendung kann auch anderen lokalen, staatlichen, nationalen oder internationalen Gesetzen unterliegen.</p>
+
+  <h2>Streitbeilegung</h2>
+  <p>Wenn Sie Bedenken oder Streitigkeiten bezüglich des Dienstes haben, erklären Sie sich damit einverstanden, zunächst zu versuchen, die Streitigkeit informell durch Kontaktaufnahme mit dem Unternehmen beizulegen.</p>
+
+  <h2>Änderungen dieser Allgemeinen Geschäftsbedingungen</h2>
+  <p>Wir behalten uns das Recht vor, diese AGB nach eigenem Ermessen jederzeit zu ändern oder zu ersetzen. Bei wesentlichen Änderungen werden Wir uns bemühen, mindestens 30 Tage vor Inkrafttreten der neuen Bedingungen eine Mitteilung zu machen. Was eine wesentliche Änderung darstellt, liegt in Unserem alleinigen Ermessen.</p>
+  <p>Durch den fortgesetzten Zugriff auf oder die fortgesetzte Nutzung Unseres Dienstes nach Inkrafttreten dieser Änderungen erklären Sie sich mit den geänderten Bedingungen einverstanden. Wenn Sie den neuen Bedingungen ganz oder teilweise nicht zustimmen, stellen Sie bitte die Nutzung der Website und des Dienstes ein.</p>
+
+  <h2>Kontakt</h2>
+  <p>Wenn Sie Fragen zu diesen Allgemeinen Geschäftsbedingungen haben, können Sie uns kontaktieren:</p>
+  <ul>
+    <li>Per E-Mail: <a href="mailto:contact@spinthewheelly.com">contact@spinthewheelly.com</a></li>
+  </ul>
+
+</main>
+
+<script>
+(function(){
+  var mq = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)');
+  if(!mq || !mq.addEventListener) return;
+  mq.addEventListener('change', function(e){
+    var stored=null;
+    try{stored=localStorage.getItem('theme');}catch(err){}
+    var meta=document.getElementById('themeColorMeta');
+    if(stored === 'dark' || stored === 'light') return;
+    if(e.matches){
+      document.documentElement.classList.add('dark-mode');
+      if(meta) meta.setAttribute('content','#0f172a');
+    } else {
+      document.documentElement.classList.remove('dark-mode');
+      if(meta) meta.setAttribute('content','#ffffff');
+    }
+  });
+})();
+</script>
+
+</body>
+</html>
