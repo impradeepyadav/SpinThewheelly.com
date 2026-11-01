@@ -14,9 +14,9 @@
 </script>
 <!-- ======================================================== -->
 
-<title>Spin the Wheel – Random Name Picker</title>
-<meta name="description" content="Create your own custom wheel to make random choices, pick winners and decide what to do next. Free, fun and easy to use online.">
-<meta name="keywords" content="spin the wheel, random wheel, name wheel, random picker, decision wheel, random choice picker, free wheel, random name wheel, spin the wheel online, spinning wheel, random decision maker, name picker wheel, raffle wheel, raffle picker">
+<title>Spin the Wheel – Free Random Name Picker & Decision Maker | Spin The Wheelly</title>
+<meta name="description" content="Free online spin the wheel tool. Make random choices, pick a winner, choose names or decide what to do next. Custom colors, spin speed, emojis & images. No signup required.">
+<meta name="keywords" content="spin the wheel, random name picker, free online spin the wheel, wheel spinner, decision wheel, random choice picker, name picker wheel, classroom random name picker, raffle wheel spinner, free raffle wheel, yes or no wheel, what to eat spinner, random team generator, spinning wheel online free, random decision maker, customizable spin the wheel">
 <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
 <meta name="googlebot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
 <meta name="bingbot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
@@ -42,8 +42,8 @@
 <!-- ================= Open Graph ================= -->
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Spin The Wheelly">
-<meta property="og:title" content="Spin the Wheel – Random Choice Picker | Spin The Wheelly">
-<meta property="og:description" content="Spin the wheel online to make random choices, pick a winner, choose names or decide what to do next. Customize your wheel and spin for free.">
+<meta property="og:title" content="Spin the Wheel – Free Random Name Picker & Decision Maker | Spin The Wheelly">
+<meta property="og:description" content="Free online spin the wheel. Make random choices, pick winners, choose names or decide what to do next. 29 color themes, custom spin speed, emojis & images. No signup.">
 <meta property="og:url" content="https://spinthewheelly.com/">
 <meta property="og:image" content="https://spinthewheelly.com/apple-touch-icon.png">
 <meta property="og:image:alt" content="Spin The Wheelly logo">
@@ -61,8 +61,8 @@
 
 <!-- ================= Twitter Card ================= -->
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Spin the Wheel – Random Choice Picker | Spin The Wheelly">
-<meta name="twitter:description" content="Spin the wheel online to make random choices, pick a winner, choose names or decide what to do next.">
+<meta name="twitter:title" content="Spin the Wheel – Free Random Name Picker & Decision Maker | Spin The Wheelly">
+<meta name="twitter:description" content="Free online spin the wheel. Make random choices, pick winners, choose names or decide what to do next. Custom colors, spin speed & more. No signup required.">
 <meta name="twitter:image" content="https://spinthewheelly.com/apple-touch-icon.png">
 
 <!-- ================= Preconnects ================= -->
@@ -110,31 +110,75 @@ a:focus-visible,button:focus-visible,input:focus-visible,[tabindex]:focus-visibl
 .hamburger-btn{display:none;padding:9px;margin-left:4px}
 .hamburger-btn svg{width:24px;height:24px;stroke:#000000;color:#000000}
 @media (max-width:1100px){.nav-btn .nav-text{display:none}.nav-btn{padding:9px}.nav-btn.share-btn{padding:9px 12px;margin-left:0}.header-container{height:60px}.hamburger-btn{display:flex}}
-@media (max-width:900px){.nav-links > .nav-btn:not(.share-btn):not(.hamburger-btn){display:none}.nav-tools-wrap{display:none}.nav-lang-wrap .nav-btn{display:flex !important}}
+@media (max-width:900px){
+  .nav-links > .nav-btn:not(.share-btn):not(.hamburger-btn){display:none}
+  .nav-tools-wrap .nav-btn,
+  .nav-lang-wrap .nav-btn,
+  .nav-new-wrap .nav-btn{display:flex !important}
+}
 @media (max-width:560px){.header-container{height:56px;gap:8px}.nav-logo-text{font-size:16px;letter-spacing:-0.5px}.nav-logo-img{width:24px;height:24px}.nav-btn{padding:8px}.nav-btn.share-btn{padding:8px 10px}.nav-btn svg{width:20px;height:20px}}
 @media (max-width:380px){.header-container{gap:6px}.nav-logo-text{font-size:14px;letter-spacing:-0.4px}.nav-logo-img{width:22px;height:22px}.nav-btn{padding:7px}.nav-btn.share-btn{padding:7px 9px}.nav-btn svg{width:18px;height:18px}.hamburger-btn svg{width:22px;height:22px}}
 
-.nav-tools-wrap{position:relative}
-.nav-lang-wrap{position:relative}
+.nav-tools-wrap,.nav-lang-wrap,.nav-new-wrap{position:relative}
 
 .tools-menu{
-  position:fixed;top:0;left:0;min-width:240px;max-width:calc(100vw - 24px);max-height:calc(100vh - 24px);
-  overflow-y:auto;background:var(--bg);border:1px solid var(--line);border-radius:12px;
-  box-shadow:0 10px 40px rgba(0,0,0,0.18);padding:6px;z-index:200;
-  opacity:0;visibility:hidden;transform:translateY(-8px);
-  transition:opacity 0.18s ease,transform 0.18s ease,visibility 0.18s ease;
+  position:fixed;top:0;left:0;min-width:280px;max-width:calc(100vw - 24px);max-height:calc(100vh - 24px);
+  overflow-y:auto;background:var(--bg);border:1px solid rgba(0,0,0,0.08);
+  border-radius:16px;
+  box-shadow:
+    0 4px 6px -1px rgba(0,0,0,0.06),
+    0 12px 28px -4px rgba(0,0,0,0.14),
+    0 0 0 1px rgba(0,0,0,0.03);
+  padding:8px;
+  z-index:200;
+  opacity:0;visibility:hidden;transform:translateY(-10px) scale(0.98);
+  transition:opacity 0.2s cubic-bezier(0.16,1,0.3,1),transform 0.2s cubic-bezier(0.16,1,0.3,1),visibility 0.2s;
   display:flex;flex-direction:column;gap:2px;pointer-events:none;
+  -webkit-font-smoothing:antialiased;
+  backdrop-filter:blur(12px);
+  -webkit-backdrop-filter:blur(12px);
 }
-.tools-menu.show{opacity:1;visibility:visible;transform:translateY(0);pointer-events:auto;}
-.tools-menu-item{display:flex;align-items:center;gap:10px;width:100%;padding:11px 12px;background:transparent;border:none;border-radius:8px;font-family:inherit;color:var(--text);cursor:pointer;text-align:left;transition:background 0.14s ease;white-space:nowrap;text-decoration:none;}
+.tools-menu.show{opacity:1;visibility:visible;transform:translateY(0) scale(1);pointer-events:auto;}
+.tools-menu-item{
+  display:flex;align-items:center;gap:12px;width:100%;
+  padding:12px 14px;background:transparent;border:none;border-radius:11px;
+  font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;
+  color:var(--text);cursor:pointer;text-align:left;
+  transition:background 0.15s ease,transform 0.12s ease;
+  white-space:nowrap;text-decoration:none;
+  -webkit-tap-highlight-color:transparent;
+}
 .tools-menu-item:hover{background:var(--hover)}
-.tools-menu-item svg{width:20px;height:20px;stroke:#000000;color:#000000;flex-shrink:0}
-.tools-item-content{display:flex;flex-direction:column;gap:2px;min-width:0;text-align:left}
-.tools-item-title{font-size:14.5px;font-weight:600;color:var(--text);line-height:1.3}
-.lang-flag{font-size:20px;line-height:1;display:inline-flex;align-items:center;justify-content:center;flex-shrink:0;width:24px;height:20px;}
+.tools-menu-item:active{transform:scale(0.985);}
+.tools-menu-item svg{width:20px;height:20px;stroke:currentColor;color:var(--text);flex-shrink:0;opacity:0.85;}
+.tools-menu-item .preset-emoji-icon{
+  font-size:20px;line-height:1;width:24px;height:24px;
+  display:inline-flex;align-items:center;justify-content:center;
+  flex-shrink:0;border-radius:8px;background:var(--soft-bg);
+}
+.tools-item-content{display:flex;flex-direction:column;gap:3px;min-width:0;text-align:left;flex:1;}
+.tools-item-title{
+  font-size:14.5px;font-weight:600;letter-spacing:-0.25px;
+  color:var(--text);line-height:1.25;
+}
+.tools-item-sub{
+  font-size:12px;font-weight:400;letter-spacing:0.01em;
+  color:var(--text-light);line-height:1.3;opacity:0.9;
+}
+.tools-menu-divider{
+  height:1px;background:var(--line);margin:6px 10px;flex-shrink:0;opacity:0.85;
+}
+.lang-flag{
+  font-size:20px;line-height:1;
+  display:inline-flex;align-items:center;justify-content:center;
+  flex-shrink:0;width:26px;height:22px;
+}
 .tools-menu-item.lang-active{background:var(--hover);}
-.tools-menu-item.lang-active .tools-item-title{font-weight:800;color:#111827;}
-.tools-menu-item.lang-active::after{content:'✓';margin-left:auto;font-size:14px;font-weight:800;color:#111827;}
+.tools-menu-item.lang-active .tools-item-title{font-weight:700;color:var(--text);}
+.tools-menu-item.lang-active::after{
+  content:'✓';margin-left:auto;font-size:13px;font-weight:700;
+  color:var(--text);opacity:0.7;letter-spacing:-0.5px;
+}
 
 .sidebar-overlay{position:fixed;inset:0;background:rgba(0,0,0,0.5);-webkit-backdrop-filter:blur(2px);backdrop-filter:blur(2px);z-index:9998;opacity:0;visibility:hidden;transition:opacity 0.25s ease,visibility 0.25s ease;}
 .sidebar-overlay.show{opacity:1;visibility:visible}
@@ -150,13 +194,15 @@ a:focus-visible,button:focus-visible,input:focus-visible,[tabindex]:focus-visibl
 .sidebar-tools-btn .chevron{margin-left:auto;width:16px;height:16px;stroke:#000000;color:#000000;transition:transform 0.22s ease;}
 .sidebar-tools-btn.open .chevron{transform:rotate(180deg)}
 .sidebar-tools-sub{max-height:0;overflow:hidden;transition:max-height 0.28s ease;padding-left:6px;}
-.sidebar-tools-sub.open{max-height:800px}
+.sidebar-tools-sub.open{max-height:900px}
 .sidebar-sub-item{display:flex;align-items:flex-start;gap:10px;width:100%;padding:10px 12px;background:transparent;border:none;border-radius:7px;font-family:inherit;color:var(--text);cursor:pointer;text-align:left;transition:background 0.18s ease;margin-bottom:2px;text-decoration:none;}
 .sidebar-sub-item:hover,.sidebar-sub-item:active{background:#f3f4f6}
 .sidebar-sub-item svg{width:18px;height:18px;stroke:#000000;color:#000000;flex-shrink:0;margin-top:2px}
 .sidebar-sub-item .flag-icon{font-size:18px;line-height:1;flex-shrink:0;display:inline-flex;align-items:center;justify-content:center;width:18px;height:18px;margin-top:1px;}
 .sidebar-sub-item .item-content{display:flex;flex-direction:column;gap:2px;min-width:0;flex:1;text-align:left;}
 .sidebar-sub-item .item-title{font-size:13.5px;font-weight:600;color:var(--text);line-height:1.2;}
+.sidebar-sub-item .item-sub{font-size:11.5px;font-weight:400;color:var(--text-light);line-height:1.25;opacity:0.9;}
+.sidebar-menu-divider{height:1px;background:var(--line);margin:6px 10px;flex-shrink:0;opacity:0.85;}
 .sidebar-sub-item.lang-active{background:var(--hover);}
 .sidebar-sub-item.lang-active .item-title{font-weight:800;}
 .sidebar-sub-item.lang-active::after{content:'✓';margin-left:auto;align-self:center;font-size:13px;font-weight:800;color:#111827;}
@@ -291,8 +337,8 @@ main{flex:1;display:flex;align-items:flex-start;justify-content:center;padding:0
 .wheel-pointer-shape{fill:#ffffff;stroke:rgba(0,0,0,0.62);stroke-width:1.5;stroke-linejoin:round;pointer-events:none;filter:drop-shadow(0 2px 3px rgba(0,0,0,0.35));}
 
 /* ══════════════════════════════════════════════════════════════
-   SPIN BUTTON — WHITE CIRCLE IN THE CENTER (no icon, no text)
-   The center of the wheel stays a clean white circle.
+   SPIN BUTTON — CLEAN CENTER BUTTON WITH "SPIN" LABEL
+   The center of the wheel has a clean SPIN button.
    ══════════════════════════════════════════════════════════════ */
 .spin-button{
   position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);
@@ -329,6 +375,18 @@ main{flex:1;display:flex;align-items:flex-start;justify-content:center;padding:0
   outline-offset:5px !important;
   border-radius:50%;
 }
+.spin-label{
+  font-size:clamp(10px,2.1vw,13px);
+  font-weight:800;
+  letter-spacing:0.6px;
+  color:#0a0a0a;
+  pointer-events:none;
+  user-select:none;
+  opacity:0.9;
+  line-height:1;
+}
+.spin-button:disabled .spin-label{opacity:0.45;}
+.spin-button:disabled[aria-busy="true"] .spin-label{opacity:0.9;}
 
 .winner-overlay{position:fixed;inset:0;background:rgba(0,0,0,0.45);z-index:10000;display:flex;align-items:center;justify-content:center;padding:20px;opacity:0;visibility:hidden;transition:opacity .3s ease,visibility .3s ease;}
 .winner-overlay.show{opacity:1;visibility:visible}
@@ -521,12 +579,22 @@ main{flex:1;display:flex;align-items:flex-start;justify-content:center;padding:0
   .nav-btn.share-btn svg{stroke:#d6f5c8;color:#d6f5c8;}
   .hamburger-btn svg{stroke:#f4f7fb;color:#f4f7fb;}
 
-  .tools-menu{background:#0f1620;border-color:#1e2836;box-shadow:0 10px 40px rgba(0,0,0,.7);}
+  .tools-menu{
+    background:rgba(15,22,32,0.96);
+    border-color:rgba(255,255,255,0.08);
+    box-shadow:
+      0 4px 6px -1px rgba(0,0,0,0.4),
+      0 16px 36px -6px rgba(0,0,0,0.65),
+      0 0 0 1px rgba(255,255,255,0.04);
+  }
   .tools-menu-item:hover{background:#16202c;}
   .tools-item-title{color:#e8eef6;}
+  .tools-item-sub{color:#8b96a5;}
   .tools-menu-item svg{stroke:#f4f7fb;color:#f4f7fb;}
+  .tools-menu-item .preset-emoji-icon{background:#16202c;}
   .tools-menu-item.lang-active .tools-item-title{color:#f4f7fb;}
   .tools-menu-item.lang-active::after{color:#f4f7fb;}
+  .tools-menu-divider{background:#1e2836;}
 
   .mobile-sidebar{background:#0b0f14;box-shadow:12px 0 40px rgba(0,0,0,.8);}
   .sidebar-item{color:#f4f7fb;}
@@ -536,6 +604,8 @@ main{flex:1;display:flex;align-items:flex-start;justify-content:center;padding:0
   .sidebar-item.share-btn svg{stroke:#d6f5c8;color:#d6f5c8;}
   .sidebar-tools-btn .chevron{stroke:#f4f7fb;color:#f4f7fb;}
   .sidebar-sub-item .item-title{color:#e8eef6;}
+  .sidebar-sub-item .item-sub{color:#8b96a5;}
+  .sidebar-menu-divider{background:#1e2836;}
   .sidebar-sub-item:hover,.sidebar-sub-item:active{background:#16202c;}
   .sidebar-sub-item svg{stroke:#f4f7fb;color:#f4f7fb;}
   .sidebar-sub-item.lang-active::after{color:#f4f7fb;}
@@ -574,6 +644,9 @@ main{flex:1;display:flex;align-items:flex-start;justify-content:center;padding:0
   }
   .spin-button:disabled{background:#16202c;color:#5b6879;filter:none;opacity:.75;}
   .spin-button:disabled[aria-busy="true"]{background:#111a24;color:#f4f7fb;border-color:rgba(255,255,255,0.16);opacity:1;}
+  .spin-label{color:#f4f7fb;}
+  .spin-button:disabled .spin-label{opacity:0.4;}
+  .spin-button:disabled[aria-busy="true"] .spin-label{opacity:0.9;}
   .wheel-pointer-shape{fill:#0f1620;stroke:rgba(255,255,255,0.55);filter:drop-shadow(0 2px 3px rgba(0,0,0,0.6));}
 
   .fs-brand-text,.fs-icon-btn,.fullscreen-footer-bar{color:#f4f7fb;}
@@ -634,7 +707,7 @@ main{flex:1;display:flex;align-items:flex-start;justify-content:center;padding:0
   "name": "Spin The Wheelly",
   "alternateName": ["Spin The Wheelly", "Spin the Wheel"],
   "url": "https://spinthewheelly.com/",
-  "description": "Spin the wheel online to make random choices, pick a winner, choose names or decide what to do next. Customize your wheel and spin for free.",
+  "description": "Free online spin the wheel and random name picker. Make random choices, pick winners, choose names or decide what to do next. 29 color themes, custom spin speed, emojis, images and more. No signup required.",
   "applicationCategory": "UtilityApplication",
   "operatingSystem": "Any",
   "browserRequirements": "Requires JavaScript. Works in all modern browsers.",
@@ -654,7 +727,7 @@ main{flex:1;display:flex;align-items:flex-start;justify-content:center;padding:0
   "inLanguage": "en-US",
   "mainEntity": [
     {"@type":"Question","name":"Is Spin The Wheelly really free?","acceptedAnswer":{"@type":"Answer","text":"Yes! It's 100% free. No premium plans, no ads, no hidden charges — forever. No sign-up required."}},
-    {"@type":"Question","name":"Can I customize the wheel?","acceptedAnswer":{"@type":"Answer","text":"Yes! Choose from 18 premium color themes, adjust the wheel and text size, add segment borders, upload a fullscreen background image and more in Settings."}},
+    {"@type":"Question","name":"Can I customize the wheel?","acceptedAnswer":{"@type":"Answer","text":"Yes! Choose from 29 premium color themes, adjust the wheel and text size, add segment borders, upload a fullscreen background image and more in Settings."}},
     {"@type":"Question","name":"Can I control the spin speed?","acceptedAnswer":{"@type":"Answer","text":"Yes. Settings has a spin duration slider that goes from 1.5 seconds (super fast) to 15 seconds (very slow). You can also turn background music on or off."}},
     {"@type":"Question","name":"How many entries can I add?","acceptedAnswer":{"@type":"Answer","text":"Up to 50 entries per wheel. For best readability we recommend keeping labels short — ideally under 15 characters."}},
     {"@type":"Question","name":"Is the wheel truly random?","acceptedAnswer":{"@type":"Answer","text":"Yes. Every spin uses crypto.getRandomValues — the same cryptographically secure random number generator used by password managers and banking apps. Zero bias, zero patterns."}},
@@ -666,7 +739,9 @@ main{flex:1;display:flex;align-items:flex-start;justify-content:center;padding:0
     {"@type":"Question","name":"Is there a limit on how many times I can spin?","acceptedAnswer":{"@type":"Answer","text":"No limit. Spin as many times as you want, on as many wheels as you want. No accounts, no caps, no cooldowns."}},
     {"@type":"Question","name":"Can I save my wheel for later?","acceptedAnswer":{"@type":"Answer","text":"Yes. Click the File button in the header or the save icon in the toolbar to download your list as a text file."}},
     {"@type":"Question","name":"Does the wheel support emojis?","acceptedAnswer":{"@type":"Answer","text":"Yes! Emojis work perfectly as wheel entries. Use the smiley button to insert one quickly, or type any emoji directly into the textarea."}},
-    {"@type":"Question","name":"What languages is the site available in?","acceptedAnswer":{"@type":"Answer","text":"Spin The Wheelly is available in 11 languages: English, Español, Português, Français, Polski, Deutsch, Bahasa Indonesia, ไทย, Filipino, 日本語 and 中文. Use the globe icon in the header to switch languages at any time."}}
+    {"@type":"Question","name":"What languages is the site available in?","acceptedAnswer":{"@type":"Answer","text":"Spin The Wheelly is available in 11 languages: English, Español, Português, Français, Polski, Deutsch, Bahasa Indonesia, ไทย, Filipino, 日本語 and 中文. Use the globe icon in the header to switch languages at any time."}},
+    {"@type":"Question","name":"Can I use it as a classroom random name picker?","acceptedAnswer":{"@type":"Answer","text":"Absolutely. Teachers love using Spin The Wheelly as a classroom random name picker or student selector. It works great on smartboards and tablets, supports images, and has an optional remove winner mode so every student gets a turn."}},
+    {"@type":"Question","name":"Is there a free raffle wheel spinner?","acceptedAnswer":{"@type":"Answer","text":"Yes — this is a free raffle wheel spinner. Add participant names, spin in front of your audience, optionally remove winners, and download the results list. Completely transparent and fair."}}
   ]
 }
 </script>
@@ -676,10 +751,10 @@ main{flex:1;display:flex;align-items:flex-start;justify-content:center;padding:0
 {
   "@context": "https://schema.org",
   "@type": "WebPage",
-  "name": "Spin the Wheel – Random Choice Picker",
+  "name": "Spin the Wheel – Free Random Name Picker & Decision Maker",
   "url": "https://spinthewheelly.com/",
   "inLanguage": "en-US",
-  "description": "Make random choices, pick a winner or decide what to do next — free, fast and fair. Spin the wheel online with Spin The Wheelly.",
+  "description": "Free online spin the wheel tool. Make random choices, pick a winner, choose names or decide what to do next. Fully customizable, no signup required.",
   "isPartOf": { "@type": "WebSite", "name": "Spin The Wheelly", "url": "https://spinthewheelly.com/" },
   "about": { "@type": "WebApplication", "name": "Spin The Wheelly", "url": "https://spinthewheelly.com/" }
 }
@@ -689,32 +764,32 @@ main{flex:1;display:flex;align-items:flex-start;justify-content:center;padding:0
 
 <svg xmlns="http://www.w3.org/2000/svg" style="position:absolute;width:0;height:0;overflow:hidden" aria-hidden="true">
 <defs>
-<symbol id="i-share-2" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" x2="15.42" y1="13.51" y2="17.49"/><line x1="15.41" x2="8.59" y1="6.51" y2="10.49"/></symbol>
-<symbol id="i-speaker-wave" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 5L6 9H2v6h4l5 4V5z"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14"/></symbol>
-<symbol id="i-speaker-mute-wave" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 5L6 9H2v6h4l5 4V5z"/><line x1="22" y1="9" x2="16" y2="15"/><line x1="16" y1="9" x2="22" y2="15"/></symbol>
-<symbol id="i-maximize" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 3 21 3 21 9"></polyline><polyline points="9 21 3 21 3 15"></polyline><line x1="21" y1="3" x2="14" y2="10"></line><line x1="3" y1="21" x2="10" y2="14"></line></symbol>
-<symbol id="i-minimize" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="4 14 10 14 10 20"></polyline><polyline points="20 10 14 10 14 4"></polyline><line x1="14" y1="10" x2="21" y2="3"></line><line x1="3" y1="21" x2="10" y2="14"></line></symbol>
-<symbol id="i-pencil" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 3a2.828 2.828 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5L17 3z"/></symbol>
-<symbol id="i-clipboard" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="8" y="2" width="8" height="4" rx="1"/><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/><path d="m9 14 2 2 4-4"/></symbol>
+<symbol id="i-share-2" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" x2="15.42" y1="13.51" y2="17.49"/><line x1="15.41" x2="8.59" y1="6.51" y2="10.49"/></symbol>
+<symbol id="i-speaker-wave" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14"/></symbol>
+<symbol id="i-speaker-mute-wave" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><line x1="23" y1="9" x2="17" y2="15"/><line x1="17" y1="9" x2="23" y2="15"/></symbol>
+<symbol id="i-maximize" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 3H5a2 2 0 0 0-2 2v3"/><path d="M21 8V5a2 2 0 0 0-2-2h-3"/><path d="M3 16v3a2 2 0 0 0 2 2h3"/><path d="M16 21h3a2 2 0 0 0 2-2v-3"/></symbol>
+<symbol id="i-minimize" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 3v3a2 2 0 0 1-2 2H3"/><path d="M21 8h-3a2 2 0 0 1-2-2V3"/><path d="M3 16h3a2 2 0 0 1 2 2v3"/><path d="M16 21v-3a2 2 0 0 1 2-2h3"/></symbol>
+<symbol id="i-pencil" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 3a2.85 2.83 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5Z"/><path d="m15 5 4 4"/></symbol>
+<symbol id="i-clipboard" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="8" height="4" x="8" y="2" rx="1" ry="1"/><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/><path d="m9 14 2 2 4-4"/></symbol>
 <symbol id="i-eye-off" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9.88 9.88a3 3 0 1 0 4.24 4.24"/><path d="M10.73 5.08A10.43 10.43 0 0 1 12 5c7 0 10 7 10 7a13.16 13.16 0 0 1-1.67 2.68"/><path d="M6.61 6.61A13.526 13.526 0 0 0 2 12s3 7 10 7a9.74 9.74 0 0 0 5.39-1.61"/><line x1="2" x2="22" y1="2" y2="22"/></symbol>
 <symbol id="i-eye" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z"/><circle cx="12" cy="12" r="3"/></symbol>
 <symbol id="i-shuffle" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 18h1.4c1.3 0 2.5-.6 3.3-1.7l6.1-8.6c.8-1.1 2-1.7 3.3-1.7H22"/><path d="m18 2 4 4-4 4"/><path d="M2 6h1.9c1.5 0 2.9.9 3.6 2.2"/><path d="M22 18h-5.9c-1.3 0-2.6-.7-3.3-1.8l-.5-.8"/><path d="m18 14 4 4-4 4"/></symbol>
 <symbol id="i-sort" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m3 16 4 4 4-4"/><path d="M7 20V4"/><path d="m21 8-4-4-4 4"/><path d="M17 4v16"/></symbol>
-<symbol id="i-settings" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12.22 2h-.44a2 2 0 0 0-2 2v.18a2 2 0 0 1-1 1.73l-.43.25a2 2 0 0 1-2 0l-.15-.08a2 2 0 0 0-2.73.73l-.22.38a2 2 0 0 0 .73 2.73l.15.1a2 2 0 0 1 1 1.72v.51a2 2 0 0 1-1 1.74l-.15.09a2 2 0 0 0-.73 2.73l.22.38a2 2 0 0 0 2.73.73l.15-.08a2 2 0 0 1 2 0l.43.25a2 2 0 0 1 1 1.73V20a2 2 0 0 0 2 2h.44a2 2 0 0 0 2-2v-.18a2 2 0 0 1 1-1.73l.43-.25a2 2 0 0 1 2 0l.15.08a2 2 0 0 0 2.73-.73l.22-.39a2 2 0 0 0-.73-2.73l-.15-.08a2 2 0 0 1-1-1.74v-.5a2 2 0 0 1 1-1.74l.15-.09a2 2 0 0 0 .73-2.73l-.22-.38a2 2 0 0 0-2.73-.73l-.15.08a2 2 0 0 1-2 0l-.43-.25a2 2 0 0 1-1-1.73V4a2 2 0 0 0-2-2z"/><circle cx="12" cy="12" r="3"/></symbol>
-<symbol id="i-image" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="18" x="3" y="3" rx="2"/><circle cx="9" cy="9" r="2"/><path d="m21 15-3.086-3.086a2 2 0 0 0-2.828 0L6 21"/></symbol>
+<symbol id="i-settings" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M12.22 2h-.44a2 2 0 0 0-2 2v.18a2 2 0 0 1-1 1.73l-.43.25a2 2 0 0 1-2 0l-.15-.08a2 2 0 0 0-2.73.73l-.22.38a2 2 0 0 0 .73 2.73l.15.1a2 2 0 0 1 1 1.72v.51a2 2 0 0 1-1 1.74l-.15.09a2 2 0 0 0-.73 2.73l.22.38a2 2 0 0 0 2.73.73l.15-.08a2 2 0 0 1 2 0l.43.25a2 2 0 0 1 1 1.73V20a2 2 0 0 0 2 2h.44a2 2 0 0 0 2-2v-.18a2 2 0 0 1 1-1.73l.43-.25a2 2 0 0 1 2 0l.15.08a2 2 0 0 0 2.73-.73l.22-.39a2 2 0 0 0-.73-2.73l-.15-.08a2 2 0 0 1-1-1.74v-.5a2 2 0 0 1 1-1.74l.15-.09a2 2 0 0 0 .73-2.73l-.22-.38a2 2 0 0 0-2.73-.73l-.15.08a2 2 0 0 1-2 0l-.43-.25a2 2 0 0 1-1-1.73V4a2 2 0 0 0-2-2z"/><circle cx="12" cy="12" r="3"/></symbol>
+<symbol id="i-image" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="18" x="3" y="3" rx="2" ry="2"/><circle cx="9" cy="9" r="2"/><path d="m21 15-3.086-3.086a2 2 0 0 0-2.828 0L6 21"/></symbol>
 <symbol id="i-save" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15.2 3a2 2 0 0 1 1.4.6l3.8 3.8a2 2 0 0 1 .6 1.4V19a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2z"/><path d="M17 21v-7a1 1 0 0 0-1-1H8a1 1 0 0 0-1 1v7"/><path d="M7 3v4a1 1 0 0 0 1 1h7"/></symbol>
-<symbol id="i-trash" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 6h18"/><path d="M19 6v14c0 1-1 2-2 2H7c-1 0-2-1-2-2V6"/><path d="M8 6V4c0-1 1-2 2-2h4c1 0 2 1 2 2v2"/></symbol>
-<symbol id="i-sort-alpha" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 7h16"/><path d="M4 12h9"/><path d="M4 17h5"/><path d="m17 17 3 3 3-3"/><path d="M20 20V10"/></symbol>
+<symbol id="i-trash" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 6h18"/><path d="M19 6v14c0 1-1 2-2 2H7c-1 0-2-1-2-2V6"/><path d="M8 6V4c0-1 1-2 2-2h4c1 0 2 1 2 2v2"/><line x1="10" x2="10" y1="11" y2="17"/><line x1="14" x2="14" y1="11" y2="17"/></symbol>
+<symbol id="i-sort-alpha" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m3 16 4 4 4-4"/><path d="M7 20V4"/><path d="M20 8h-5"/><path d="M15 10V6.5a2.5 2.5 0 0 1 5 0V10"/><path d="M15 14h5l-5 6h5"/></symbol>
 <symbol id="i-smile" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M8 14s1.5 2 4 2 4-2 4-2"/><line x1="9" x2="9.01" y1="9" y2="9"/><line x1="15" x2="15.01" y1="9" y2="9"/></symbol>
-<symbol id="i-chevron-down" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></symbol>
-<symbol id="i-help" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></symbol>
-<symbol id="i-pie" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21.21 15.89A10 10 0 1 1 8 2.83"/><path d="M22 12A10 10 0 0 0 12 2v10z"/></symbol>
-<symbol id="i-folder" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"/></symbol>
-<symbol id="i-tool" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></symbol>
-<symbol id="i-menu" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="18" x2="21" y2="18"/></symbol>
-<symbol id="i-plus" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></symbol>
+<symbol id="i-chevron-down" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></symbol>
+<symbol id="i-help" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><path d="M12 17h.01"/></symbol>
+<symbol id="i-pie" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 2a10 10 0 0 1 10 10"/><path d="M12 12 2.5 8"/><path d="M12 12l5 8.5"/></symbol>
+<symbol id="i-folder" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><line x1="10" y1="9" x2="8" y2="9"/></symbol>
+<symbol id="i-tool" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></symbol>
+<symbol id="i-menu" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><line x1="4" x2="20" y1="12" y2="12"/><line x1="4" x2="20" y1="6" y2="6"/><line x1="4" x2="20" y1="18" y2="18"/></symbol>
+<symbol id="i-plus" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="M12 5v14"/></symbol>
 <symbol id="i-trophy" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6"/><path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18"/><path d="M4 22h16"/><path d="M10 14.66V17c0 .55-.47.98-.97 1.21C7.85 18.75 7 20.24 7 22"/><path d="M14 14.66V17c0 .55.47.98.97 1.21C16.15 18.75 17 20.24 17 22"/><path d="M18 2H6v7a6 6 0 0 0 12 0V2Z"/></symbol>
-<symbol id="i-globe" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></symbol>
+<symbol id="i-globe" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/><path d="M2 12h20"/></symbol>
 <symbol id="i-music" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/></symbol>
 </defs>
 </svg>
@@ -726,9 +801,22 @@ main{flex:1;display:flex;align-items:flex-start;justify-content:center;padding:0
       <span class="nav-logo-text">Spin The Wheelly</span>
     </a>
     <nav class="nav-links" aria-label="Main navigation">
-      <button type="button" class="nav-btn" onclick="openPresetModal()" aria-label="Open preset wheels">
-        <svg aria-hidden="true"><use href="#i-pie"/></svg><span class="nav-text">New Wheel</span>
-      </button>
+      <div class="nav-new-wrap">
+        <button type="button" class="nav-btn" id="newWheelMenuBtn" onclick="toggleNewWheelMenu(event)" aria-haspopup="true" aria-expanded="false" aria-label="Open new wheel menu">
+          <svg aria-hidden="true"><use href="#i-pie"/></svg><span class="nav-text">New Wheel</span>
+        </button>
+        <div class="tools-menu" id="newWheelMenu" role="menu" aria-label="Choose a wheel">
+          <button type="button" class="tools-menu-item" role="menuitem" onclick="startBlankWheel();closeNewWheelMenu();">
+            <svg aria-hidden="true"><use href="#i-plus"/></svg>
+            <span class="tools-item-content">
+              <span class="tools-item-title">Blank Wheel</span>
+              <span class="tools-item-sub">Start from scratch</span>
+            </span>
+          </button>
+          <div class="tools-menu-divider"></div>
+          <!-- presets filled by JS -->
+        </div>
+      </div>
       <button type="button" class="nav-btn" onclick="saveEntries()" aria-label="Save entries to file">
         <svg aria-hidden="true"><use href="#i-folder"/></svg><span class="nav-text">File</span>
       </button>
@@ -744,10 +832,10 @@ main{flex:1;display:flex;align-items:flex-start;justify-content:center;padding:0
           <svg aria-hidden="true"><use href="#i-tool"/></svg><span class="nav-text">Tools</span>
         </button>
         <div class="tools-menu" id="toolsMenu" role="menu">
-          <a href="/random-name-picker" class="tools-menu-item" role="menuitem"><svg aria-hidden="true"><use href="#i-pencil"/></svg><span class="tools-item-content"><span class="tools-item-title">Random Name Picker</span></span></a>
-          <a href="/yes-no-wheel" class="tools-menu-item" role="menuitem"><svg aria-hidden="true"><use href="#i-help"/></svg><span class="tools-item-content"><span class="tools-item-title">Yes / No Wheel</span></span></a>
-          <a href="/random-team-generator" class="tools-menu-item" role="menuitem"><svg aria-hidden="true"><use href="#i-folder"/></svg><span class="tools-item-content"><span class="tools-item-title">Random Team Generator</span></span></a>
-          <a href="/what-to-eat" class="tools-menu-item" role="menuitem"><svg aria-hidden="true"><use href="#i-smile"/></svg><span class="tools-item-content"><span class="tools-item-title">What to Eat</span></span></a>
+          <a href="/random-name-picker" class="tools-menu-item" role="menuitem"><svg aria-hidden="true"><use href="#i-pencil"/></svg><span class="tools-item-content"><span class="tools-item-title">Random Name Picker</span><span class="tools-item-sub">Pick a name fairly</span></span></a>
+          <a href="/yes-no-wheel" class="tools-menu-item" role="menuitem"><svg aria-hidden="true"><use href="#i-help"/></svg><span class="tools-item-content"><span class="tools-item-title">Yes / No Wheel</span><span class="tools-item-sub">Quick decisions</span></span></a>
+          <a href="/random-team-generator" class="tools-menu-item" role="menuitem"><svg aria-hidden="true"><use href="#i-folder"/></svg><span class="tools-item-content"><span class="tools-item-title">Random Team Generator</span><span class="tools-item-sub">Split into teams</span></span></a>
+          <a href="/what-to-eat" class="tools-menu-item" role="menuitem"><svg aria-hidden="true"><use href="#i-smile"/></svg><span class="tools-item-content"><span class="tools-item-title">What to Eat</span><span class="tools-item-sub">Decide your next meal</span></span></a>
         </div>
       </div>
 
@@ -779,7 +867,6 @@ main{flex:1;display:flex;align-items:flex-start;justify-content:center;padding:0
 
 <main id="mainContent" tabindex="-1">
   <div class="content-container">
-    
     <div class="top-ranking-bar" id="topRankingBar" style="display:none;">
       <div class="top-ranking-title"><svg><use href="#i-trophy"/></svg> Latest Winners</div>
       <div class="top-ranking-list" id="topRankingList"></div>
@@ -818,8 +905,8 @@ main{flex:1;display:flex;align-items:flex-start;justify-content:center;padding:0
                 <circle id="wheelOuterRing" cx="0" cy="0" r="108" fill="none" stroke="rgba(0,0,0,0.15)" stroke-width="2.5" style="display:none"/>
                 <path class="wheel-pointer-shape" id="wheelPointer" d="M 107 -8 L 107 8 L 91 0 Z"/>
               </svg>
-              <!-- ═══ WHITE CIRCLE IN THE CENTER (no icon, no text) ═══ -->
-              <button type="button" class="spin-button" id="spinBtn" onclick="spinWheel()" aria-label="Spin the wheel" title="Spin the wheel"></button>
+              <!-- ═══ CENTER SPIN BUTTON ═══ -->
+              <button type="button" class="spin-button" id="spinBtn" onclick="spinWheel()" aria-label="Spin the wheel" title="Spin the wheel"><span class="spin-label">SPIN</span></button>
             </div>
             <div class="fullscreen-footer-bar" id="fullscreenFooterBar">
               <span>Created by</span>
@@ -899,55 +986,130 @@ James</textarea>
 <div class="white-bottom-bg">
   <div class="seo-content-box">
     <article class="seo-content">
-      <h1 class="page-h1">Spin the Wheel – Random Choice Picker</h1>
-      <p class="page-subtitle">Make random choices, pick a winner or decide what to do next — free, fast and fair. Spin the wheel online with Spin The Wheelly.</p>
+      <h1 class="page-h1" style="margin-top:0;margin-bottom:8px;">Spin the Wheel – Free Random Name Picker & Decision Maker</h1>
+      <p class="page-subtitle" style="margin-bottom:18px;">Make random choices, pick a winner, choose names or decide what to do next — free, fast, fair and fully customizable.</p>
+      <h2>About Spin The Wheelly – Free Spin the Wheel & Random Name Picker</h2>
+      <p class="page-subtitle">A free online random name picker and decision wheel that helps you pick winners, choose names and settle everyday choices fairly and quickly.</p>
       <div class="seo-block">
         <h2>Let the Wheel Choose for You</h2>
-        <p>We've all been there: you're trying to pick a restaurant with friends, decide who pays for the next round of coffee or figure out what to watch on a Friday night, and suddenly everyone has lost the ability to make a decision. <strong>That's exactly why we created Spin The Wheelly.</strong></p>
-        <p>It's a <strong>simple, beautiful and completely free tool</strong> designed to <strong>take the stress out of everyday decisions</strong>. No arguments, no endless scrolling and definitely no "I don't mind, you pick" loops. Just type your options, hit spin and let a little randomness do the heavy lifting.</p>
+        <p>We've all been there: you're trying to pick a restaurant with friends, decide who pays for the next round of coffee or figure out what to watch on a Friday night, and suddenly everyone has lost the ability to make a decision. <strong>That's exactly why we created Spin The Wheelly – the free online spin the wheel tool.</strong></p>
+        <p>It's a <strong>simple, beautiful and completely free random choice picker</strong> designed to <strong>take the stress out of everyday decisions</strong>. No arguments, no endless scrolling and definitely no "I don't mind, you pick" loops. Just type your options, hit spin and let a little randomness do the heavy lifting. Perfect as a <strong>random name picker</strong>, <strong>raffle wheel spinner</strong> or <strong>yes or no decision maker</strong>.</p>
       </div>
 
       <div class="seo-block">
-        <h2>Why People Love It</h2>
+        <h2>Why People Love This Spin the Wheel Tool</h2>
         <ul>
           <li><strong>It actually looks good:</strong> Smooth animations, satisfying tick sounds and a confetti burst when a winner is picked.</li>
-          <li><strong>It's instant:</strong> No logins, no emails, no downloads. The wheel is ready the second the page loads.</li>
+          <li><strong>It's instant:</strong> No logins, no emails, no downloads. The random name picker is ready the second the page loads.</li>
           <li><strong>Your data is yours:</strong> Everything happens right there in your browser. We don't store your lists, names or results.</li>
-          <li><strong>Total control:</strong> Add up to <strong>50 options</strong>, insert emojis, upload custom images, choose from <strong>18 premium color themes</strong>, adjust the <strong>spin speed</strong> and turn on <strong>background music</strong>.</li>
+          <li><strong>Total control:</strong> Add up to <strong>50 options</strong>, insert emojis, upload custom images, choose from <strong>29 premium color themes</strong>, adjust the <strong>spin speed</strong> and turn on <strong>background music</strong>.</li>
           <li><strong>Speed your way:</strong> A slider lets you set the spin duration from 1.5 to 15 seconds — from lightning fast to slow and dramatic.</li>
           <li><strong>Background music:</strong> Turn on a soft melody generated in real time that accompanies your spinning experience.</li>
-          <li><strong>Works offline:</strong> After the page loads, you can disconnect the Wi-Fi and keep spinning.</li>
+          <li><strong>Works offline:</strong> After the page loads, you can disconnect the Wi-Fi and keep spinning — ideal for classrooms or events with poor internet.</li>
           <li><strong>Available in 11 languages:</strong> English, Español, Português, Français, Polski, Deutsch, Bahasa Indonesia, ไทย, Filipino, 日本語 and 中文.</li>
+          <li><strong>Truly random:</strong> Uses cryptographically secure randomness so every spin is fair — perfect for raffles, classrooms, giveaways and team selection.</li>
         </ul>
       </div>
 
       <div class="seo-block">
-        <h2>How to Use It (Super Easy)</h2>
+        <h2>Popular Ways to Use a Free Online Spin the Wheel</h2>
+        <p>People use our <strong>spin the wheel random name picker</strong> for dozens of everyday situations:</p>
+        <ul>
+          <li><strong>Classroom random name picker:</strong> Fairly call on students without bias or favoritism.</li>
+          <li><strong>Raffle and giveaway winner picker:</strong> Spin to choose contest winners transparently in front of your audience.</li>
+          <li><strong>What to eat spinner:</strong> Can't decide on dinner? Load your favorite meals and let the wheel decide. Try our dedicated <a href="/what-to-eat">What to Eat wheel</a>.</li>
+          <li><strong>Yes or No decision wheel:</strong> Quick binary choices. Use our ready-made <a href="/yes-no-wheel">Yes / No Wheel</a>.</li>
+          <li><strong>Random team generator:</strong> Split a group into teams fairly. Check out the <a href="/random-team-generator">Random Team Generator</a>.</li>
+          <li><strong>Party games & icebreakers:</strong> Truth or Dare, movie night genre picker, or "who pays the bill".</li>
+          <li><strong>Meeting or presentation order:</strong> Decide who speaks first without arguments.</li>
+        </ul>
+        <p>You can also start with a blank wheel or load ready-made presets (What to Eat, Movie Night, Yes or No, Random Winner, and more) from the <strong>New Wheel</strong> menu.</p>
+      </div>
+
+      <div class="seo-block">
+        <h2>Best for Teachers – Classroom Random Name Picker</h2>
+        <p>Teachers and educators use Spin The Wheelly every day as a fair, engaging <strong>classroom random name picker</strong> and student selector. It removes bias, keeps students attentive, and makes participation fun — without any signup or complicated setup.</p>
+        <ul>
+          <li><strong>Call on students fairly:</strong> No more “who hasn’t answered yet?” debates. Spin to pick the next student to answer, read aloud, or present.</li>
+          <li><strong>Remove winner mode:</strong> Turn on “Remove winner automatically” so every student gets a turn before anyone is called twice. Perfect for cold-calling and participation tracking.</li>
+          <li><strong>Works on smartboards & tablets:</strong> Fullscreen mode + large text size makes it perfect for the front of the class or hybrid learning.</li>
+          <li><strong>Group activities & teams:</strong> Quickly form discussion groups or project teams. Pair it with our <a href="/random-team-generator">Random Team Generator</a> for bigger classes.</li>
+          <li><strong>Icebreakers & brain breaks:</strong> Load fun prompts, vocabulary words, math problems, or “would you rather” questions and spin for instant engagement.</li>
+          <li><strong>Attendance & random helpers:</strong> Pick a random classroom helper, line leader, or student to collect papers.</li>
+          <li><strong>Review games:</strong> Put quiz questions or key terms on the wheel and spin for a fun retrieval practice activity.</li>
+          <li><strong>Privacy first:</strong> Student names never leave the browser — ideal for school privacy policies and FERPA-conscious classrooms.</li>
+        </ul>
+        <p><strong>Pro tips for teachers:</strong></p>
+        <ul>
+          <li>Save your class list once with the File button, then reload it anytime.</li>
+          <li>Add student photos or avatars for a more visual and engaging wheel.</li>
+          <li>Use the shuffle button to mix the order before spinning.</li>
+          <li>Turn on sound effects for younger students — they love the tick and confetti.</li>
+        </ul>
+        <p>Whether you teach elementary, middle school, high school or university, this free online random name picker makes fair participation effortless.</p>
+      </div>
+
+      <div class="seo-block">
+        <h2>Best for Giveaways & Raffles – Free Raffle Wheel Spinner</h2>
+        <p>Running a giveaway, contest, or live raffle? Spin The Wheelly is a transparent, free <strong>raffle wheel spinner</strong> that builds trust with your audience.</p>
+        <ul>
+          <li><strong>Live winner selection:</strong> Project the wheel on screen or share your screen during a live stream, webinar, or in-person event. Everyone sees the spin in real time.</li>
+          <li><strong>Fair & verifiable:</strong> Uses cryptographically secure randomness — no bias, no “rigged” accusations. Perfect for brand giveaways and community contests.</li>
+          <li><strong>Remove winners after each spin:</strong> Draw multiple prizes without the same person winning twice. Results history is kept so you can download or screenshot the full list.</li>
+          <li><strong>Custom branding feel:</strong> Choose from 29 color themes, upload product images as segments, or add prize names with emojis.</li>
+          <li><strong>No signup, no limits:</strong> Spin as many times as you need. Works offline once loaded — useful for venues with weak Wi-Fi.</li>
+          <li><strong>Share results easily:</strong> Use the Share button or copy the winner list for social media posts and winner announcements.</li>
+        </ul>
+        <p>Whether you’re giving away a product, a gift card, or event tickets, a spinning wheel feels more exciting than a random number generator — and your audience loves watching it land.</p>
+      </div>
+
+      <div class="seo-block">
+        <h2>How to Use the Random Name Picker Wheel (Super Easy)</h2>
         <ol>
-          <li><strong>Make your list:</strong> Type your options into the text box on the right. One option per line.</li>
-          <li><strong>Click the white circle in the center:</strong> Press the white circle at the center of the wheel (or anywhere on the wheel) to spin it.</li>
-          <li><strong>Find out the answer:</strong> Watch the wheel spin and see where the pointer stops.</li>
+          <li><strong>Make your list:</strong> Type or paste names/options into the text box — one entry per line. Supports emojis and images.</li>
+          <li><strong>Customize (optional):</strong> Open Settings to change colors, wheel size, text size, spin duration, sound and more.</li>
+          <li><strong>Click the SPIN button:</strong> Press the center SPIN button (or anywhere on the wheel) or use Ctrl+Enter.</li>
+          <li><strong>See the winner:</strong> Watch the wheel spin and land on a fair random result. Optionally remove the winner and spin again.</li>
         </ol>
+        <p>Looking for a pure name-focused experience? Visit our dedicated <a href="/random-name-picker">Random Name Picker</a> page.</p>
       </div>
 
       <div class="seo-block">
         <h2>Customize Your Experience</h2>
         <p>In <strong>Settings</strong> you can customize the wheel exactly the way you want:</p>
-        <h3>🎚️ Spin duration</h3>
-        <p>A slider lets you choose <strong>how long the spin lasts</strong>, from <strong>1.5 seconds</strong> (super fast) to <strong>15 seconds</strong> (slow and dramatic). Set the exact time you want in 0.5-second increments.</p>
+        <h3>🎚️ Spin duration (custom spin speed)</h3>
+        <p>A slider lets you choose <strong>how long the spin lasts</strong>, from <strong>1.5 seconds</strong> (super fast) to <strong>15 seconds</strong> (slow and dramatic). Ideal for dramatic raffle reveals or quick classroom picks.</p>
+        <h3>🎨 29 Premium Color Themes</h3>
+        <p>From Classic and Neon to Ocean, Sunset, Galaxy and Cyber — pick the palette that matches your event or brand.</p>
         <h3>🎵 Background music</h3>
         <p>Turn on <strong>background music</strong> for a more immersive experience. The melody is generated in real time with the Web Audio API — no external files, 100% in your browser.</p>
+        <h3>🖼️ Images & Emojis</h3>
+        <p>Upload photos for each segment or use emojis as entries. Great for visual giveaways or themed wheels.</p>
+      </div>
+
+      <div class="seo-block">
+        <h2>More Free Decision Tools</h2>
+        <p>Spin The Wheelly offers a growing collection of free online tools:</p>
+        <ul>
+          <li><a href="/random-name-picker">Random Name Picker</a> – Fair name selection for classrooms and events</li>
+          <li><a href="/yes-no-wheel">Yes / No Wheel</a> – Quick binary decisions</li>
+          <li><a href="/random-team-generator">Random Team Generator</a> – Split groups into balanced teams</li>
+          <li><a href="/what-to-eat">What to Eat</a> – Decide your next meal with a food spinner</li>
+        </ul>
+        <p>All tools work offline after loading, require no account, and keep your data private in the browser.</p>
       </div>
 
       <div class="seo-block">
         <h2>Frequently Asked Questions</h2>
-        <details class="faq-item"><summary class="faq-q">Is Spin The Wheelly really free?</summary><div class="faq-a">Yes! It's <strong>100% free</strong>. No premium plans, no ads, no hidden charges — forever. No sign-up required.</div></details>
-        <details class="faq-item"><summary class="faq-q">Can I control the spin speed?</summary><div class="faq-a"><strong>Yes.</strong> Settings has a <strong>spin duration slider</strong> that goes from 1.5 seconds (very fast) to 15 seconds (very slow).</div></details>
+        <details class="faq-item"><summary class="faq-q">Is Spin The Wheelly really free?</summary><div class="faq-a">Yes! It's <strong>100% free</strong>. No premium plans, no ads, no hidden charges — forever. No sign-up required. Use it as a free online spin the wheel, random name picker or decision maker as often as you like.</div></details>
+        <details class="faq-item"><summary class="faq-q">Can I control the spin speed?</summary><div class="faq-a"><strong>Yes.</strong> Settings has a <strong>spin duration slider</strong> that goes from 1.5 seconds (very fast) to 15 seconds (very slow). Perfect for both quick classroom picks and dramatic raffle reveals.</div></details>
         <details class="faq-item"><summary class="faq-q">Is background music available?</summary><div class="faq-a"><strong>Yes!</strong> Turn on <strong>background music</strong> in Settings for a more immersive experience. The melody is generated 100% in your browser.</div></details>
-        <details class="faq-item"><summary class="faq-q">How do I spin the wheel?</summary><div class="faq-a">Click the <strong>white circle in the center</strong> of the wheel, or anywhere on the wheel. The whole wheel is clickable. You can also use <strong>Ctrl+Enter</strong> from the keyboard.</div></details>
-        <details class="faq-item"><summary class="faq-q">Is the wheel truly random?</summary><div class="faq-a"><strong>Yes.</strong> Every spin uses <code>crypto.getRandomValues</code> — the same cryptographically secure random number generator used by password managers.</div></details>
-        <details class="faq-item"><summary class="faq-q">Do you store my entries?</summary><div class="faq-a"><strong>No.</strong> Everything runs locally in your browser. Nothing is ever sent to a server.</div></details>
-        <details class="faq-item"><summary class="faq-q">What languages is the site available in?</summary><div class="faq-a">Spin The Wheelly is available in <strong>11 languages</strong>: English, Español, Português, Français, Polski, Deutsch, Bahasa Indonesia, ไทย, Filipino, 日本語 and 中文.</div></details>
+        <details class="faq-item"><summary class="faq-q">How do I spin the wheel?</summary><div class="faq-a">Click the <strong>SPIN button in the center</strong> of the wheel, or anywhere on the wheel. The whole wheel is clickable. You can also use <strong>Ctrl+Enter</strong> from the keyboard.</div></details>
+        <details class="faq-item"><summary class="faq-q">Is the wheel truly random?</summary><div class="faq-a"><strong>Yes.</strong> Every spin uses <code>crypto.getRandomValues</code> — the same cryptographically secure random number generator used by password managers. Ideal for fair raffles, giveaways and classroom selection.</div></details>
+        <details class="faq-item"><summary class="faq-q">Do you store my entries?</summary><div class="faq-a"><strong>No.</strong> Everything runs locally in your browser. Nothing is ever sent to a server. Your random name picker list stays private.</div></details>
+        <details class="faq-item"><summary class="faq-q">Can I use it as a classroom random name picker?</summary><div class="faq-a">Absolutely. Teachers love using Spin The Wheelly as a <strong>classroom random name picker</strong> or student selector. It works great on smartboards and tablets, supports images, and has an optional "remove winner" mode so every student gets a turn.</div></details>
+        <details class="faq-item"><summary class="faq-q">Is there a free raffle wheel spinner?</summary><div class="faq-a">Yes — this is a free <strong>raffle wheel spinner</strong>. Add participant names, spin in front of your audience, optionally remove winners, and download the results list. Completely transparent and fair.</div></details>
+        <details class="faq-item"><summary class="faq-q">What languages is the site available in?</summary><div class="faq-a">Spin The Wheelly is available in <strong>11 languages</strong>: English, Español, Português, Français, Polski, Deutsch, Bahasa Indonesia, ไทย, Filipino, 日本語 and 中文. Use the globe icon in the header to switch.</div></details>
       </div>
     </article>
   </div>
@@ -956,6 +1118,10 @@ James</textarea>
 <footer class="site-footer">
   <div class="footer-container">
     <nav class="footer-links" aria-label="Footer navigation">
+      <a href="/random-name-picker">Random Name Picker</a>
+      <a href="/yes-no-wheel">Yes / No Wheel</a>
+      <a href="/what-to-eat">What to Eat</a>
+      <a href="/random-team-generator">Team Generator</a>
       <a href="/about-us">About Us</a>
       <a href="/privacy-policy">Privacy</a>
       <a href="/terms">Terms</a>
@@ -1007,7 +1173,7 @@ James</textarea>
       </div>
       <div class="settings-col">
         <div class="settings-section">
-          <span class="settings-label">Color Theme (18 Premium Palettes)</span>
+          <span class="settings-label">Color Theme (29 Premium Palettes)</span>
           <div class="palette-grid" id="paletteGrid"></div>
         </div>
 
@@ -1042,8 +1208,8 @@ James</textarea>
 
 <div class="modal-overlay" id="presetModal" role="dialog" aria-modal="true" aria-hidden="true">
   <div class="modal-box preset-modal-box">
-    <h3><svg class="modal-title-icon"><use href="#i-pie"/></svg> Choose a Wheel</h3>
-    <p>Pick a premium ready-to-spin wheel and start right away.</p>
+    <h3><svg class="modal-title-icon"><use href="#i-pie"/></svg> New Wheel</h3>
+    <p>Pick a ready-made wheel or start blank.</p>
     <div class="preset-grid" id="presetGrid"></div>
     <div class="modal-actions">
       <button type="button" class="btn btn-outline" onclick="closeModal('presetModal')">Cancel</button>
@@ -1055,7 +1221,18 @@ James</textarea>
 <div class="sidebar-overlay" id="sidebarOverlay" onclick="closeSidebar()"></div>
 <aside class="mobile-sidebar" id="mobileSidebar" aria-hidden="true" inert>
   <div class="sidebar-body">
-    <button type="button" class="sidebar-item" onclick="closeSidebar();openPresetModal();"><svg aria-hidden="true"><use href="#i-pie"/></svg><span>New Wheel</span></button>
+    <button type="button" class="sidebar-item sidebar-tools-btn" id="sidebarNewWheelBtn" onclick="toggleSidebarNewWheel(event)" aria-expanded="false">
+      <svg aria-hidden="true"><use href="#i-pie"/></svg><span>New Wheel</span>
+      <svg class="chevron" aria-hidden="true"><use href="#i-chevron-down"/></svg>
+    </button>
+    <div class="sidebar-tools-sub" id="sidebarNewWheelSub">
+      <button type="button" class="sidebar-sub-item" onclick="startBlankWheel();closeSidebar();">
+        <svg aria-hidden="true"><use href="#i-plus"/></svg>
+        <span class="item-content"><span class="item-title">Blank Wheel</span></span>
+      </button>
+      <!-- presets will be injected by JS -->
+    </div>
+
     <button type="button" class="sidebar-item" onclick="saveEntries();closeSidebar();"><svg aria-hidden="true"><use href="#i-folder"/></svg><span>File</span></button>
     <button type="button" class="sidebar-item" onclick="openSettingsModal();closeSidebar();"><svg aria-hidden="true"><use href="#i-settings"/></svg><span>Settings</span></button>
     <button type="button" class="sidebar-item share-btn" onclick="shareApp();closeSidebar();"><svg aria-hidden="true"><use href="#i-share-2"/></svg><span>Share</span></button>
@@ -1137,27 +1314,40 @@ var COLOR_PALETTES = {
   berry:[{bg:'#9D2235',fg:'#ffffff'},{bg:'#C2185B',fg:'#ffffff'},{bg:'#7B1FA2',fg:'#ffffff'},{bg:'#AD1457',fg:'#ffffff'},{bg:'#880E4F',fg:'#ffffff'},{bg:'#E91E63',fg:'#ffffff'},{bg:'#F06292',fg:'#ffffff'},{bg:'#F48FB1',fg:'#5a1e3a'},{bg:'#D81B60',fg:'#ffffff'},{bg:'#4A148C',fg:'#ffffff'}],
   monochrome:[{bg:'#0a0a0a',fg:'#ffffff'},{bg:'#262626',fg:'#ffffff'},{bg:'#525252',fg:'#ffffff'},{bg:'#737373',fg:'#ffffff'},{bg:'#A3A3A3',fg:'#1a1a1a'},{bg:'#D4D4D4',fg:'#1a1a1a'},{bg:'#E5E5E5',fg:'#1a1a1a'},{bg:'#F5F5F5',fg:'#1a1a1a'},{bg:'#171717',fg:'#ffffff'},{bg:'#404040',fg:'#ffffff'}],
   fire:[{bg:'#DC2626',fg:'#ffffff'},{bg:'#EA580C',fg:'#ffffff'},{bg:'#F59E0B',fg:'#1a1a1a'},{bg:'#991B1B',fg:'#ffffff'},{bg:'#FCD34D',fg:'#1a1a1a'},{bg:'#FB923C',fg:'#1a1a1a'},{bg:'#7F1D1D',fg:'#ffffff'},{bg:'#FED7AA',fg:'#5a3010'},{bg:'#FBBF24',fg:'#1a1a1a'},{bg:'#450A0A',fg:'#ffffff'}],
-  ice:[{bg:'#0EA5E9',fg:'#ffffff'},{bg:'#38BDF8',fg:'#1a1a1a'},{bg:'#7DD3FC',fg:'#0a0a0a'},{bg:'#BAE6FD',fg:'#1a3a5a'},{bg:'#E0F2FE',fg:'#1a3a5a'},{bg:'#0284C7',fg:'#ffffff'},{bg:'#075985',fg:'#ffffff'},{bg:'#E0F7FA',fg:'#1a3a5a'},{bg:'#B2EBF2',fg:'#1a3a5a'},{bg:'#80DEEA',fg:'#0a0a0a'}]
+  ice:[{bg:'#0EA5E9',fg:'#ffffff'},{bg:'#38BDF8',fg:'#1a1a1a'},{bg:'#7DD3FC',fg:'#0a0a0a'},{bg:'#BAE6FD',fg:'#1a3a5a'},{bg:'#E0F2FE',fg:'#1a3a5a'},{bg:'#0284C7',fg:'#ffffff'},{bg:'#075985',fg:'#ffffff'},{bg:'#E0F7FA',fg:'#1a3a5a'},{bg:'#B2EBF2',fg:'#1a3a5a'},{bg:'#80DEEA',fg:'#0a0a0a'}],
+  gold:[{bg:'#B45309',fg:'#ffffff'},{bg:'#D97706',fg:'#ffffff'},{bg:'#F59E0B',fg:'#1a1a1a'},{bg:'#FBBF24',fg:'#1a1a1a'},{bg:'#FCD34D',fg:'#1a1a1a'},{bg:'#FDE68A',fg:'#1a1a1a'},{bg:'#92400E',fg:'#ffffff'},{bg:'#78350F',fg:'#ffffff'},{bg:'#FEF3C7',fg:'#1a1a1a'},{bg:'#CA8A04',fg:'#1a1a1a'}],
+  forest:[{bg:'#14532D',fg:'#ffffff'},{bg:'#166534',fg:'#ffffff'},{bg:'#15803D',fg:'#ffffff'},{bg:'#16A34A',fg:'#ffffff'},{bg:'#22C55E',fg:'#0a0a0a'},{bg:'#4ADE80',fg:'#0a0a0a'},{bg:'#86EFAC',fg:'#1a3a1a'},{bg:'#052E16',fg:'#ffffff'},{bg:'#064E3B',fg:'#ffffff'},{bg:'#A7F3D0',fg:'#1a3a2a'}],
+  galaxy:[{bg:'#0F0C29',fg:'#ffffff'},{bg:'#302B63',fg:'#ffffff'},{bg:'#24243E',fg:'#ffffff'},{bg:'#5B2C6F',fg:'#ffffff'},{bg:'#8E44AD',fg:'#ffffff'},{bg:'#1A1A2E',fg:'#ffffff'},{bg:'#16213E',fg:'#ffffff'},{bg:'#0F3460',fg:'#ffffff'},{bg:'#E94560',fg:'#ffffff'},{bg:'#533483',fg:'#ffffff'}],
+  coral:[{bg:'#FF6F61',fg:'#ffffff'},{bg:'#FF8A80',fg:'#1a1a1a'},{bg:'#FFAB91',fg:'#1a1a1a'},{bg:'#FFCCBC',fg:'#5a2e1a'},{bg:'#E57373',fg:'#ffffff'},{bg:'#EF5350',fg:'#ffffff'},{bg:'#FF7043',fg:'#ffffff'},{bg:'#FF8A65',fg:'#1a1a1a'},{bg:'#D84315',fg:'#ffffff'},{bg:'#BF360C',fg:'#ffffff'}],
+  mint:[{bg:'#00BFA5',fg:'#ffffff'},{bg:'#1DE9B6',fg:'#0a0a0a'},{bg:'#64FFDA',fg:'#0a0a0a'},{bg:'#A7FFEB',fg:'#1a3a2a'},{bg:'#00897B',fg:'#ffffff'},{bg:'#26A69A',fg:'#ffffff'},{bg:'#4DB6AC',fg:'#0a0a0a'},{bg:'#80CBC4',fg:'#1a3a2a'},{bg:'#00695C',fg:'#ffffff'},{bg:'#004D40',fg:'#ffffff'}],
+  autumn:[{bg:'#C2410C',fg:'#ffffff'},{bg:'#EA580C',fg:'#ffffff'},{bg:'#F97316',fg:'#1a1a1a'},{bg:'#FB923C',fg:'#1a1a1a'},{bg:'#FDBA74',fg:'#5a3010'},{bg:'#92400E',fg:'#ffffff'},{bg:'#B45309',fg:'#ffffff'},{bg:'#78350F',fg:'#ffffff'},{bg:'#FED7AA',fg:'#5a3010'},{bg:'#7C2D12',fg:'#ffffff'}],
+  cyber:[{bg:'#00F0FF',fg:'#0a0a0a'},{bg:'#FF00E5',fg:'#ffffff'},{bg:'#7B2CBF',fg:'#ffffff'},{bg:'#00FF9F',fg:'#0a0a0a'},{bg:'#0A0A0A',fg:'#ffffff'},{bg:'#FF2A6D',fg:'#ffffff'},{bg:'#05D9E8',fg:'#0a0a0a'},{bg:'#D1F7FF',fg:'#0a0a0a'},{bg:'#01012B',fg:'#ffffff'},{bg:'#FF6EC7',fg:'#ffffff'}],
+  rose:[{bg:'#BE185D',fg:'#ffffff'},{bg:'#DB2777',fg:'#ffffff'},{bg:'#EC4899',fg:'#ffffff'},{bg:'#F472B6',fg:'#ffffff'},{bg:'#F9A8D4',fg:'#5a1e3a'},{bg:'#9D174D',fg:'#ffffff'},{bg:'#831843',fg:'#ffffff'},{bg:'#FCE7F3',fg:'#5a1e3a'},{bg:'#FB7185',fg:'#ffffff'},{bg:'#E11D48',fg:'#ffffff'}],
+  sapphire:[{bg:'#1E3A8A',fg:'#ffffff'},{bg:'#1D4ED8',fg:'#ffffff'},{bg:'#2563EB',fg:'#ffffff'},{bg:'#3B82F6',fg:'#ffffff'},{bg:'#60A5FA',fg:'#1a1a1a'},{bg:'#93C5FD',fg:'#1a3a5a'},{bg:'#1E40AF',fg:'#ffffff'},{bg:'#172554',fg:'#ffffff'},{bg:'#BFDBFE',fg:'#1a3a5a'},{bg:'#0C4A6E',fg:'#ffffff'}],
+  vintage:[{bg:'#8B7355',fg:'#ffffff'},{bg:'#A67C52',fg:'#ffffff'},{bg:'#C4A484',fg:'#1a1a1a'},{bg:'#D2B48C',fg:'#1a1a1a'},{bg:'#E8D5B7',fg:'#3a2a1a'},{bg:'#6B5344',fg:'#ffffff'},{bg:'#5D4037',fg:'#ffffff'},{bg:'#F5E6D3',fg:'#3a2a1a'},{bg:'#BFA07A',fg:'#1a1a1a'},{bg:'#4A3728',fg:'#ffffff'}],
+  neon2:[{bg:'#39FF14',fg:'#0a0a0a'},{bg:'#FF10F0',fg:'#ffffff'},{bg:'#00FFFF',fg:'#0a0a0a'},{bg:'#FFFF00',fg:'#0a0a0a'},{bg:'#FF5F1F',fg:'#ffffff'},{bg:'#BC13FE',fg:'#ffffff'},{bg:'#FE019A',fg:'#ffffff'},{bg:'#0AFF0A',fg:'#0a0a0a'},{bg:'#1B03A3',fg:'#ffffff'},{bg:'#FF073A',fg:'#ffffff'}]
 };
 
 var PALETTE_NAMES = {
   classic:'Classic', neon:'Neon', pastel:'Pastel', ocean:'Ocean', sunset:'Sunset',
   royal:'Royal', nature:'Nature', candy:'Candy', lavender:'Lavender', cherry:'Cherry',
   emerald:'Emerald', midnight:'Midnight', copper:'Copper', tropical:'Tropical',
-  berry:'Berry', monochrome:'Monochrome', fire:'Fire', ice:'Ice'
+  berry:'Berry', monochrome:'Monochrome', fire:'Fire', ice:'Ice',
+  gold:'Gold', forest:'Forest', galaxy:'Galaxy', coral:'Coral', mint:'Mint',
+  autumn:'Autumn', cyber:'Cyber', rose:'Rose', sapphire:'Sapphire', vintage:'Vintage', neon2:'Neon Pro'
 };
 
 var WHEEL_PRESETS = [
-  {icon:'🍕',title:'What to Eat',subtitle:'Decide your next meal',entries:['Pizza','Burger','Sushi','Pasta','Tacos','Salad','Ramen','Steak']},
-  {icon:'🎬',title:'Movie Night',subtitle:'Pick a genre',entries:['Action','Comedy','Horror','Romance','Sci-Fi','Animation','Thriller','Documentary']},
-  {icon:'✅',title:'Yes or No',subtitle:'Quick decisions',entries:['Yes','No','Maybe','Definitely','Never','Ask again','Absolutely','No way']},
-  {icon:'🏆',title:'Random Winner',subtitle:'Pick a name fairly',entries:['Alice','Bob','Charlie','Diana','Eve','Frank','Grace','Henry']},
+  {icon:'🍕',title:'What to Eat',subtitle:'Pick your next meal',entries:['Pizza','Burger','Sushi','Pasta','Tacos','Salad','Ramen','Steak']},
+  {icon:'🎬',title:'Movie Night',subtitle:'Choose a genre',entries:['Action','Comedy','Horror','Romance','Sci-Fi','Animation','Thriller','Documentary']},
+  {icon:'✅',title:'Yes or No',subtitle:'Quick decision maker',entries:['Yes','No','Maybe','Definitely','Never','Ask again','Absolutely','No way']},
+  {icon:'🏆',title:'Random Winner',subtitle:'Fair name picker',entries:['Alice','Bob','Charlie','Diana','Eve','Frank','Grace','Henry']},
   {icon:'🎭',title:'Truth or Dare',subtitle:'Party classic',entries:['Truth','Dare','Truth','Dare','Truth','Dare','Truth','Dare']},
   {icon:'🎉',title:'Party Games',subtitle:'Fun with friends',entries:['Charades','Pictionary','Karaoke','Dancing','Trivia','Would You Rather','Never Have I Ever','Two Truths and a Lie']},
-  {icon:'💼',title:'Split Teams',subtitle:'Assign teams',entries:['Red Team','Blue Team','Green Team','Yellow Team','Purple Team','Orange Team']},
+  {icon:'💼',title:'Split Teams',subtitle:'Assign teams randomly',entries:['Red Team','Blue Team','Green Team','Yellow Team','Purple Team','Orange Team']},
   {icon:'✈️',title:'Travel Destination',subtitle:'Where to go next',entries:['Paris','Tokyo','New York','Bali','Rome','Sydney','Dubai','London']},
   {icon:'🎁',title:'Gift Ideas',subtitle:'What to buy',entries:['Book','Gift Card','Chocolate','Flowers','Gadget','Clothes','Experience','Jewelry']},
-  {icon:'💪',title:'Exercises',subtitle:'Workout picker',entries:['Push-ups','Squats','Burpees','Plank','Jumping Jacks','Lunges','Sit-ups','Mountain Climbers']}
+  {icon:'💪',title:'Exercises',subtitle:'Workout of the day',entries:['Push-ups','Squats','Burpees','Plank','Jumping Jacks','Lunges','Sit-ups','Mountain Climbers']}
 ];
 
 var winnerHistory=[];
@@ -1440,7 +1630,7 @@ function renderPresetGrid(){
 function openPresetModal(){
   if(isSpinning){showToast('Please wait for the spin to finish.');return;}
   var m=document.getElementById('presetModal');if(!m)return;
-  m.classList.add('active');m.setAttribute('aria-hidden','false');document.body.style.overflow='hidden';closeToolsMenu();closeLangMenu();
+  m.classList.add('active');m.setAttribute('aria-hidden','false');document.body.style.overflow='hidden';closeToolsMenu();closeLangMenu();closeNewWheelMenu();
 }
 function loadPreset(index){
   var preset=WHEEL_PRESETS[index];if(!preset)return;
@@ -1457,86 +1647,245 @@ function loadPreset(index){
 }
 function startBlankWheel(){closeModal('presetModal');resetWheel();}
 
+function positionDropdownMenu(btn, menu){
+  if(!btn||!menu)return;
+
+  // Hide + disable transition while measuring/positioning (prevents jump animation)
+  menu.style.transition='none';
+  menu.style.visibility='hidden';
+  menu.style.opacity='0';
+  menu.style.display='flex';
+  menu.style.pointerEvents='none';
+  menu.classList.remove('show');
+
+  // Force layout so we get real size
+  void menu.offsetWidth;
+
+  var menuW = menu.offsetWidth || 240;
+  var menuH = menu.offsetHeight || 200;
+  var rect = btn.getBoundingClientRect();
+  var gap = 8;
+  var vw = window.innerWidth;
+  var vh = window.innerHeight;
+
+  // Vertical: prefer below button, flip above if not enough space
+  var topPos = rect.bottom + gap;
+  if(topPos + menuH > vh - gap){
+    var above = rect.top - gap - menuH;
+    topPos = above >= gap ? above : Math.max(gap, vh - gap - menuH);
+  }
+
+  // Horizontal: prefer left-align under button
+  var leftPos = rect.left;
+  // If overflows right → right-align under button
+  if(leftPos + menuW > vw - gap){
+    leftPos = rect.right - menuW;
+  }
+  // Clamp to viewport
+  if(leftPos < gap) leftPos = gap;
+  if(leftPos + menuW > vw - gap) leftPos = Math.max(gap, vw - gap - menuW);
+
+  menu.style.top = Math.round(topPos) + 'px';
+  menu.style.left = Math.round(leftPos) + 'px';
+
+  // Restore transition on next frame, then show
+  requestAnimationFrame(function(){
+    menu.style.transition = '';
+    menu.style.opacity = '';
+    menu.style.visibility = '';
+    menu.style.pointerEvents = '';
+  });
+}
+
 function toggleLangMenu(e){
   if(e)e.stopPropagation();
-  var menu=document.getElementById('langMenu');var btn=document.getElementById('langMenuBtn');
+  var menu=document.getElementById('langMenu');
+  var btn=document.getElementById('langMenuBtn');
   if(!menu)return;
   closeToolsMenu();
-  if(menu.classList.contains('show')){closeLangMenu();}
-  else{menu.style.visibility='hidden';menu.style.display='flex';positionLangMenu();menu.classList.add('show');if(btn)btn.setAttribute('aria-expanded','true');menu.style.visibility='';}
+  closeNewWheelMenu();
+  if(menu.classList.contains('show')){
+    closeLangMenu();
+  }else{
+    positionDropdownMenu(btn, menu);
+    menu.classList.add('show');
+    if(btn)btn.setAttribute('aria-expanded','true');
+  }
 }
-function positionLangMenu(){
-  var btn=document.getElementById('langMenuBtn');var menu=document.getElementById('langMenu');
-  if(!btn||!menu)return;
-  var menuW=menu.offsetWidth,menuH=menu.offsetHeight,rect=btn.getBoundingClientRect(),gap=8;
-  var vw=window.innerWidth,vh=window.innerHeight;
-  var topPos=rect.bottom+gap;
-  if(topPos+menuH>vh-gap){topPos=vh-gap-menuH;if(topPos<gap)topPos=gap;}
-  var leftPos=rect.right-menuW;
-  if(leftPos<gap)leftPos=gap;
-  if(leftPos+menuW>vw-gap)leftPos=vw-gap-menuW;
-  menu.style.top=topPos+'px';menu.style.left=leftPos+'px';
+function closeLangMenu(){
+  var menu=document.getElementById('langMenu');
+  var btn=document.getElementById('langMenuBtn');
+  if(menu)menu.classList.remove('show');
+  if(btn)btn.setAttribute('aria-expanded','false');
 }
-function closeLangMenu(){var menu=document.getElementById('langMenu');var btn=document.getElementById('langMenuBtn');if(menu)menu.classList.remove('show');if(btn)btn.setAttribute('aria-expanded','false');}
 
 function toggleToolsMenu(e){
   if(e)e.stopPropagation();
-  var menu=document.getElementById('toolsMenu');var btn=document.getElementById('toolsMenuBtn');
+  var menu=document.getElementById('toolsMenu');
+  var btn=document.getElementById('toolsMenuBtn');
   if(!menu)return;
   closeLangMenu();
-  if(menu.classList.contains('show')){closeToolsMenu();}
-  else{menu.style.visibility='hidden';menu.style.display='flex';positionToolsMenu();menu.classList.add('show');if(btn)btn.setAttribute('aria-expanded','true');menu.style.visibility='';}
+  closeNewWheelMenu();
+  if(menu.classList.contains('show')){
+    closeToolsMenu();
+  }else{
+    positionDropdownMenu(btn, menu);
+    menu.classList.add('show');
+    if(btn)btn.setAttribute('aria-expanded','true');
+  }
 }
-function positionToolsMenu(){
-  var btn=document.getElementById('toolsMenuBtn');var menu=document.getElementById('toolsMenu');
-  if(!btn||!menu)return;
-  var menuW=menu.offsetWidth,menuH=menu.offsetHeight,rect=btn.getBoundingClientRect(),gap=8;
-  var vw=window.innerWidth,vh=window.innerHeight;
-  var topPos=rect.bottom+gap;
-  if(topPos+menuH>vh-gap){topPos=vh-gap-menuH;if(topPos<gap)topPos=gap;}
-  var leftPos=rect.right-menuW;
-  if(leftPos<gap)leftPos=gap;
-  if(leftPos+menuW>vw-gap)leftPos=vw-gap-menuW;
-  menu.style.top=topPos+'px';menu.style.left=leftPos+'px';
+function closeToolsMenu(){
+  var menu=document.getElementById('toolsMenu');
+  var btn=document.getElementById('toolsMenuBtn');
+  if(menu)menu.classList.remove('show');
+  if(btn)btn.setAttribute('aria-expanded','false');
 }
-function closeToolsMenu(){var menu=document.getElementById('toolsMenu');var btn=document.getElementById('toolsMenuBtn');if(menu)menu.classList.remove('show');if(btn)btn.setAttribute('aria-expanded','false');}
+
+function toggleNewWheelMenu(e){
+  if(e)e.stopPropagation();
+  var menu=document.getElementById('newWheelMenu');
+  var btn=document.getElementById('newWheelMenuBtn');
+  if(!menu)return;
+  closeToolsMenu();
+  closeLangMenu();
+  if(menu.classList.contains('show')){
+    closeNewWheelMenu();
+  }else{
+    positionDropdownMenu(btn, menu);
+    menu.classList.add('show');
+    if(btn)btn.setAttribute('aria-expanded','true');
+  }
+}
+function closeNewWheelMenu(){
+  var menu=document.getElementById('newWheelMenu');
+  var btn=document.getElementById('newWheelMenuBtn');
+  if(menu)menu.classList.remove('show');
+  if(btn)btn.setAttribute('aria-expanded','false');
+}
+
+function renderNewWheelMenu(){
+  var menu=document.getElementById('newWheelMenu');
+  if(!menu)return;
+  // Keep the Blank button + divider that are already in HTML, append presets
+  var existing = menu.querySelectorAll('.tools-menu-item[data-preset], .tools-menu-divider + .tools-menu-item');
+  // Remove old preset items (keep first blank + first divider)
+  var items = menu.querySelectorAll('.tools-menu-item');
+  for(var i=items.length-1;i>=1;i--){ // keep index 0 = Blank
+    items[i].remove();
+  }
+  var dividers = menu.querySelectorAll('.tools-menu-divider');
+  // keep only first divider
+  for(var d=dividers.length-1;d>=1;d--) dividers[d].remove();
+
+  for(var i=0;i<WHEEL_PRESETS.length;i++){
+    var p=WHEEL_PRESETS[i];
+    var btn=document.createElement('button');
+    btn.type='button';
+    btn.className='tools-menu-item';
+    btn.setAttribute('role','menuitem');
+    btn.setAttribute('data-preset', String(i));
+    btn.onclick=(function(idx){
+      return function(){ loadPreset(idx); closeNewWheelMenu(); };
+    })(i);
+    btn.innerHTML=
+      '<span class="preset-emoji-icon" aria-hidden="true">'+p.icon+'</span>'+
+      '<span class="tools-item-content">'+
+        '<span class="tools-item-title">'+escHtml(p.title)+'</span>'+
+        '<span class="tools-item-sub">'+escHtml(p.subtitle)+'</span>'+
+      '</span>';
+    menu.appendChild(btn);
+  }
+}
 
 document.addEventListener('click',function(e){
   var toolsWrap=document.querySelector('.nav-tools-wrap');
   var langWrap=document.querySelector('.nav-lang-wrap');
+  var newWrap=document.querySelector('.nav-new-wrap');
   if(toolsWrap&&!toolsWrap.contains(e.target)){closeToolsMenu();}
   if(langWrap&&!langWrap.contains(e.target)){closeLangMenu();}
+  if(newWrap&&!newWrap.contains(e.target)){closeNewWheelMenu();}
 },{passive:true});
 
 window.addEventListener('scroll',function(){
   var toolsMenu=document.getElementById('toolsMenu');
   var langMenu=document.getElementById('langMenu');
+  var newMenu=document.getElementById('newWheelMenu');
   if(toolsMenu&&toolsMenu.classList.contains('show')){
     var btn=document.getElementById('toolsMenuBtn');
-    if(btn){var r=btn.getBoundingClientRect();if(r.bottom<0||r.top>window.innerHeight){closeToolsMenu();}else{positionToolsMenu();}}
+    if(btn){
+      var r=btn.getBoundingClientRect();
+      if(r.bottom<0||r.top>window.innerHeight){closeToolsMenu();}
+      else{positionDropdownMenu(btn, toolsMenu);}
+    }
   }
   if(langMenu&&langMenu.classList.contains('show')){
     var lbtn=document.getElementById('langMenuBtn');
-    if(lbtn){var lr=lbtn.getBoundingClientRect();if(lr.bottom<0||lr.top>window.innerHeight){closeLangMenu();}else{positionLangMenu();}}
+    if(lbtn){
+      var lr=lbtn.getBoundingClientRect();
+      if(lr.bottom<0||lr.top>window.innerHeight){closeLangMenu();}
+      else{positionDropdownMenu(lbtn, langMenu);}
+    }
+  }
+  if(newMenu&&newMenu.classList.contains('show')){
+    var nbtn=document.getElementById('newWheelMenuBtn');
+    if(nbtn){
+      var nr=nbtn.getBoundingClientRect();
+      if(nr.bottom<0||nr.top>window.innerHeight){closeNewWheelMenu();}
+      else{positionDropdownMenu(nbtn, newMenu);}
+    }
   }
 },{passive:true});
 
 window.addEventListener('resize',function(){
   var toolsMenu=document.getElementById('toolsMenu');
-  if(toolsMenu&&toolsMenu.classList.contains('show'))positionToolsMenu();
+  var toolsBtn=document.getElementById('toolsMenuBtn');
+  if(toolsMenu&&toolsMenu.classList.contains('show')&&toolsBtn)positionDropdownMenu(toolsBtn, toolsMenu);
   var langMenu=document.getElementById('langMenu');
-  if(langMenu&&langMenu.classList.contains('show'))positionLangMenu();
+  var langBtn=document.getElementById('langMenuBtn');
+  if(langMenu&&langMenu.classList.contains('show')&&langBtn)positionDropdownMenu(langBtn, langMenu);
+  var newMenu=document.getElementById('newWheelMenu');
+  var newBtn=document.getElementById('newWheelMenuBtn');
+  if(newMenu&&newMenu.classList.contains('show')&&newBtn)positionDropdownMenu(newBtn, newMenu);
 },{passive:true});
 
-function openSidebar(){var sb=document.getElementById('mobileSidebar');var ov=document.getElementById('sidebarOverlay');var btn=document.getElementById('hamburgerBtn');if(!sb)return;closeToolsMenu();closeLangMenu();sb.classList.add('show');sb.removeAttribute('inert');if(ov)ov.classList.add('show');if(btn)btn.setAttribute('aria-expanded','true');sb.setAttribute('aria-hidden','false');document.body.style.overflow='hidden';}
-function closeSidebar(){var sb=document.getElementById('mobileSidebar');var ov=document.getElementById('sidebarOverlay');var btn=document.getElementById('hamburgerBtn');if(!sb)return;sb.classList.remove('show');sb.setAttribute('inert','');if(ov)ov.classList.remove('show');if(btn)btn.setAttribute('aria-expanded','false');sb.setAttribute('aria-hidden','true');var toolsSub=document.getElementById('sidebarToolsSub');var toolsBtn=document.getElementById('sidebarToolsBtn');if(toolsSub)toolsSub.classList.remove('open');if(toolsBtn){toolsBtn.classList.remove('open');toolsBtn.setAttribute('aria-expanded','false');}var langSub=document.getElementById('sidebarLangSub');var langBtn=document.getElementById('sidebarLangBtn');if(langSub)langSub.classList.remove('open');if(langBtn){langBtn.classList.remove('open');langBtn.setAttribute('aria-expanded','false');}var winnerOpen=document.getElementById('winnerOverlay')&&document.getElementById('winnerOverlay').classList.contains('show');var anyModalOpen=document.querySelector('.modal-overlay.active');if(!winnerOpen&&!anyModalOpen)document.body.style.overflow='';}
+function openSidebar(){var sb=document.getElementById('mobileSidebar');var ov=document.getElementById('sidebarOverlay');var btn=document.getElementById('hamburgerBtn');if(!sb)return;closeToolsMenu();closeLangMenu();closeNewWheelMenu();sb.classList.add('show');sb.removeAttribute('inert');if(ov)ov.classList.add('show');if(btn)btn.setAttribute('aria-expanded','true');sb.setAttribute('aria-hidden','false');document.body.style.overflow='hidden';}
+function closeSidebar(){
+  var sb=document.getElementById('mobileSidebar');var ov=document.getElementById('sidebarOverlay');var btn=document.getElementById('hamburgerBtn');
+  if(!sb)return;
+  sb.classList.remove('show');sb.setAttribute('inert','');
+  if(ov)ov.classList.remove('show');
+  if(btn)btn.setAttribute('aria-expanded','false');
+  sb.setAttribute('aria-hidden','true');
+  // Close all expandable subs
+  ['sidebarToolsSub','sidebarLangSub','sidebarNewWheelSub'].forEach(function(id){
+    var sub=document.getElementById(id);if(sub)sub.classList.remove('open');
+  });
+  ['sidebarToolsBtn','sidebarLangBtn','sidebarNewWheelBtn'].forEach(function(id){
+    var b=document.getElementById(id);if(b){b.classList.remove('open');b.setAttribute('aria-expanded','false');}
+  });
+  var winnerOpen=document.getElementById('winnerOverlay')&&document.getElementById('winnerOverlay').classList.contains('show');
+  var anyModalOpen=document.querySelector('.modal-overlay.active');
+  if(!winnerOpen&&!anyModalOpen)document.body.style.overflow='';
+}
+function closeAllSidebarSubs(exceptId){
+  var pairs=[
+    {btn:'sidebarToolsBtn',sub:'sidebarToolsSub'},
+    {btn:'sidebarLangBtn',sub:'sidebarLangSub'},
+    {btn:'sidebarNewWheelBtn',sub:'sidebarNewWheelSub'}
+  ];
+  pairs.forEach(function(p){
+    if(p.sub===exceptId)return;
+    var sub=document.getElementById(p.sub);var btn=document.getElementById(p.btn);
+    if(sub)sub.classList.remove('open');
+    if(btn){btn.classList.remove('open');btn.setAttribute('aria-expanded','false');}
+  });
+}
 function toggleSidebarTools(e){
   if(e)e.stopPropagation();
   var btn=document.getElementById('sidebarToolsBtn');var sub=document.getElementById('sidebarToolsSub');
   if(!btn||!sub)return;
   var isOpen=sub.classList.contains('open');
-  var langSub=document.getElementById('sidebarLangSub');var langBtn=document.getElementById('sidebarLangBtn');
-  if(langSub&&langSub.classList.contains('open')){langSub.classList.remove('open');if(langBtn){langBtn.classList.remove('open');langBtn.setAttribute('aria-expanded','false');}}
+  closeAllSidebarSubs('sidebarToolsSub');
   sub.classList.toggle('open',!isOpen);btn.classList.toggle('open',!isOpen);btn.setAttribute('aria-expanded',!isOpen);
 }
 function toggleSidebarLang(e){
@@ -1544,9 +1893,59 @@ function toggleSidebarLang(e){
   var btn=document.getElementById('sidebarLangBtn');var sub=document.getElementById('sidebarLangSub');
   if(!btn||!sub)return;
   var isOpen=sub.classList.contains('open');
-  var toolsSub=document.getElementById('sidebarToolsSub');var toolsBtn=document.getElementById('sidebarToolsBtn');
-  if(toolsSub&&toolsSub.classList.contains('open')){toolsSub.classList.remove('open');if(toolsBtn){toolsBtn.classList.remove('open');toolsBtn.setAttribute('aria-expanded','false');}}
+  closeAllSidebarSubs('sidebarLangSub');
   sub.classList.toggle('open',!isOpen);btn.classList.toggle('open',!isOpen);btn.setAttribute('aria-expanded',!isOpen);
+}
+function toggleSidebarNewWheel(e){
+  if(e)e.stopPropagation();
+  var btn=document.getElementById('sidebarNewWheelBtn');var sub=document.getElementById('sidebarNewWheelSub');
+  if(!btn||!sub)return;
+  var isOpen=sub.classList.contains('open');
+  closeAllSidebarSubs('sidebarNewWheelSub');
+  sub.classList.toggle('open',!isOpen);btn.classList.toggle('open',!isOpen);btn.setAttribute('aria-expanded',!isOpen);
+}
+function renderSidebarNewWheelMenu(){
+  var sub=document.getElementById('sidebarNewWheelSub');
+  if(!sub)return;
+  // Clear everything and rebuild (Blank + presets) so style matches desktop New Wheel menu
+  sub.innerHTML='';
+
+  // Blank Wheel
+  var blankBtn=document.createElement('button');
+  blankBtn.type='button';
+  blankBtn.className='sidebar-sub-item';
+  blankBtn.onclick=function(){ startBlankWheel(); closeSidebar(); };
+  blankBtn.innerHTML=
+    '<svg aria-hidden="true" style="width:18px;height:18px;stroke:currentColor;flex-shrink:0;margin-top:2px;"><use href="#i-plus"/></svg>'+
+    '<span class="item-content">'+
+      '<span class="item-title">Blank Wheel</span>'+
+      '<span class="item-sub">Start from scratch</span>'+
+    '</span>';
+  sub.appendChild(blankBtn);
+
+  // Divider
+  var divider=document.createElement('div');
+  divider.className='sidebar-menu-divider';
+  sub.appendChild(divider);
+
+  // Presets
+  for(var i=0;i<WHEEL_PRESETS.length;i++){
+    var p=WHEEL_PRESETS[i];
+    var btn=document.createElement('button');
+    btn.type='button';
+    btn.className='sidebar-sub-item';
+    btn.setAttribute('data-preset',String(i));
+    btn.onclick=(function(idx){
+      return function(){ loadPreset(idx); closeSidebar(); };
+    })(i);
+    btn.innerHTML=
+      '<span class="flag-icon" aria-hidden="true" style="font-size:18px;line-height:1;">'+p.icon+'</span>'+
+      '<span class="item-content">'+
+        '<span class="item-title">'+escHtml(p.title)+'</span>'+
+        '<span class="item-sub">'+escHtml(p.subtitle)+'</span>'+
+      '</span>';
+    sub.appendChild(btn);
+  }
 }
 
 function blockIfSpinning(){if(isSpinning){showToast('Please wait for the spin to finish.');return true;}return false;}
@@ -1667,7 +2066,15 @@ function playSweetMusic(){if(!soundEnabled||!audioCtx)return;var now=audioCtx.cu
 
 function fullscreenElementNow(){return document.fullscreenElement||document.webkitFullscreenElement||document.msFullscreenElement||null;}
 function isWheelFullscreen(){var el=document.getElementById('wheelPremiumBg');return !!fullscreenElementNow()||!!(el&&el.classList.contains('pseudo-fullscreen'));}
-function restoreBodyScroll(){var winnerOpen=document.getElementById('winnerOverlay')&&document.getElementById('winnerOverlay').classList.contains('show');var modalOpen=document.querySelector('.modal-overlay.active');var sidebarOpen=document.getElementById('mobileSidebar')&&document.getElementById('mobileSidebar').classList.contains('show');if(!winnerOpen&&!modalOpen&&!sidebarOpen)document.body.style.overflow='';}
+function restoreBodyScroll(){
+  var winnerOpen = document.getElementById('winnerOverlay') && document.getElementById('winnerOverlay').classList.contains('show');
+  var modalOpen = !!document.querySelector('.modal-overlay.active');
+  var sidebarOpen = document.getElementById('mobileSidebar') && document.getElementById('mobileSidebar').classList.contains('show');
+  var fs = isWheelFullscreen();
+  if(!winnerOpen && !modalOpen && !sidebarOpen && !fs){
+    document.body.style.overflow = '';
+  }
+}
 function updateFullscreenUi(){var on=isWheelFullscreen();var btn=document.getElementById('fsToggleBtn');var icon=document.getElementById('fsToggleIcon');if(btn){btn.title=on?'Exit Fullscreen':'Wheel Fullscreen';btn.setAttribute('aria-label',on?'Exit fullscreen':'Enter fullscreen');btn.setAttribute('aria-pressed',on?'true':'false');}if(icon)icon.setAttribute('href',on?'#i-minimize':'#i-maximize');}
 function setPseudoFullscreen(on){var el=document.getElementById('wheelPremiumBg');if(!el)return;el.classList.toggle('pseudo-fullscreen',on);if(on){document.body.style.overflow='hidden';}else{restoreBodyScroll();}updateFullscreenUi();}
 function toggleFullscreenWheel(){var el=document.getElementById('wheelPremiumBg');if(!el)return;if(isWheelFullscreen()){if(el.classList.contains('pseudo-fullscreen')){setPseudoFullscreen(false);return;}var exit=document.exitFullscreen||document.webkitExitFullscreen||document.msExitFullscreen;if(exit){try{exit.call(document);}catch(e){setPseudoFullscreen(false);}}else{setPseudoFullscreen(false);}return;}var req=el.requestFullscreen||el.webkitRequestFullscreen||el.msRequestFullscreen;if(!req){setPseudoFullscreen(true);return;}try{var p=req.call(el);if(p&&typeof p.then==='function'){p.then(function(){updateFullscreenUi();}).catch(function(){setPseudoFullscreen(true);});}else{setTimeout(updateFullscreenUi,150);}}catch(e){setPseudoFullscreen(true);}}
@@ -1688,11 +2095,38 @@ function idleLoop(now){if(!idleActive||isSpinning)return;var dt=(now-idleLastTim
 function updateEntries(){
   if(isSpinning)return;
   var ta=document.getElementById('entriesTextarea');if(!ta)return;
-  var lines=ta.value.split('\n');var validNames=[];
-  for(var i=0;i<lines.length;i++){var name=lines[i].trim();if(name.length>0&&validNames.length<MAX_PARTICIPANTS){validNames.push(name.slice(0,30));}}
+  var lines=ta.value.split('\n');
+  var validNames=[];
+  var didTruncate=false;
+  var hitLimit=false;
+  for(var i=0;i<lines.length;i++){
+    var raw=lines[i].trim();
+    if(raw.length===0)continue;
+    if(validNames.length>=MAX_PARTICIPANTS){
+      hitLimit=true;
+      break;
+    }
+    var name=raw;
+    if(name.length>30){
+      name=name.slice(0,30);
+      didTruncate=true;
+    }
+    validNames.push(name);
+  }
+  // Toast only when the condition newly appears (simple cooldown)
+  if(didTruncate && !window._truncToastShown){
+    window._truncToastShown=true;
+    showToast('Some entries truncated to 30 characters.');
+    setTimeout(function(){window._truncToastShown=false;},4000);
+  }
+  if(hitLimit && !window._limitToastShown){
+    window._limitToastShown=true;
+    showToast('Maximum of 50 entries reached.');
+    setTimeout(function(){window._limitToastShown=false;},4000);
+  }
   participants=validNames;
   var badge=document.getElementById('entriesCountBadge');
-  if(badge)badge.textContent='Entries: '+participants.length;
+  if(badge)badge.textContent='Entries: '+participants.length+(hitLimit?' (max)':'');
   updateSpinButtonState();rebuildWheel();
   if(participants.length>=2){
     var popupOpen=document.getElementById('winnerOverlay').classList.contains('show');
@@ -1803,13 +2237,13 @@ function rebuildWheel(){
     var color=SEGMENT_COLORS[i%SEGMENT_COLORS.length].bg;
     var img=participantImages[participants[i]];
     if(n===1){
-      if(img){defs+='<clipPath id="wclip-'+i+'"><circle cx="0" cy="0" r="'+r+'"/></clipPath>';html+='<image href="'+img+'" x="'+(-r)+'" y="'+(-r)+'" width="'+(2*r)+'" height="'+(2*r)+'" preserveAspectRatio="xMidYMid slice" clip-path="url(#wclip-'+i+')"/>';}
+      if(img){defs+='<clipPath id="wclip-'+i+'"><circle cx="0" cy="0" r="'+r+'"/></clipPath>';html+='<image href="'+img+'" x="'+(-r)+'" y="'+(-r)+'" width="'+(2*r)+'" height="'+(2*r)+'" preserveAspectRatio="xMidYMid slice" clip-path="url(#wclip-'+i+')" role="img" aria-label="Image for '+escHtml(participants[i])+'"/>';}
       else{html+='<circle cx="0" cy="0" r="'+r+'" fill="'+color+'" class="wheel-segment" data-index="'+i+'"/>';}
     }else{
       var dPath='M 0 0 L '+x1+' '+y1+' A '+r+' '+r+' 0 '+largeArc+' 1 '+x2+' '+y2+' Z';
       if(img){
         defs+='<clipPath id="wclip-'+i+'"><path d="'+dPath+'"/></clipPath>';
-        html+='<image href="'+img+'" x="'+(-r)+'" y="'+(-r)+'" width="'+(2*r)+'" height="'+(2*r)+'" preserveAspectRatio="xMidYMid slice" clip-path="url(#wclip-'+i+')"/>';
+        html+='<image href="'+img+'" x="'+(-r)+'" y="'+(-r)+'" width="'+(2*r)+'" height="'+(2*r)+'" preserveAspectRatio="xMidYMid slice" clip-path="url(#wclip-'+i+')" role="img" aria-label="Image for '+escHtml(participants[i])+'"/>';
         html+='<path d="'+dPath+'" fill="none" stroke="rgba(0,0,0,0.12)" stroke-width="1"/>';
       }else{html+='<path d="'+dPath+'" fill="'+color+'" class="wheel-segment" data-index="'+i+'"/>';}
     }
@@ -1825,7 +2259,7 @@ function rebuildWheel(){
       var textRot=(norm>90&&norm<270)?baseRot+180:baseRot;
       var name=participants[j];var hasImg=!!participantImages[participants[j]];
       var textAttrs;
-      if(hasImg){textAttrs='fill="#ffffff" stroke="rgba(0,0,0,0.62)" stroke-width="2.5" paint-order="stroke fill"';}
+      if(hasImg){textAttrs='fill="#ffffff" stroke="rgba(0,0,0,0.75)" stroke-width="3" paint-order="stroke fill"';}
       else{var fg=SEGMENT_COLORS[j%SEGMENT_COLORS.length].fg;textAttrs='fill="'+fg+'"';}
       var fit=fitTextForSegment(name,chordWidth,radialWidth,n);
       var transformAttr='transform="rotate('+textRot+' '+px+' '+py+')"';
@@ -1962,8 +2396,9 @@ function launchConfetti(){
   var W=window.innerWidth,H=window.innerHeight;
   var colors=['#E8A500','#B5A642','#1E4620','#F5EBC8','#ef4444','#3b82f6','#e11d48','#8b5cf6'];
   var particles=[];
-  var maxCount=isMobileViewport()?100:220;
-  var count=Math.min(maxCount,100+Math.floor(Math.random()*40));
+  var cores = (navigator.hardwareConcurrency || 4);
+  var maxCount = isMobileViewport() ? 70 : (cores < 4 ? 90 : 160);
+  var count = Math.min(maxCount, 80 + Math.floor(Math.random()*30));
   for(var i=0;i<count;i++){particles.push({x:Math.random()*W,y:-20-Math.random()*H*0.8,vx:(Math.random()-0.5)*4,vy:2+Math.random()*5,size:5+Math.random()*7,color:colors[Math.floor(Math.random()*colors.length)],rot:Math.random()*Math.PI*2,vrot:(Math.random()-0.5)*0.2,life:1.0,shape:Math.random()>0.4?'rect':'circle'});}
   var startTime=performance.now();
   function loop(now){
@@ -2023,7 +2458,7 @@ document.addEventListener('keydown',function(e){
     if(wpb&&wpb.classList.contains('pseudo-fullscreen')){setPseudoFullscreen(false);return;}
     var pm=document.getElementById('presetModal');
     if(pm&&pm.classList.contains('active')){closeModal('presetModal');return;}
-    closeWinnerPopup();closeShareModal();closeSettingsModal();closeToolsMenu();closeLangMenu();closeSidebar();
+    closeWinnerPopup();closeShareModal();closeSettingsModal();closeToolsMenu();closeLangMenu();closeNewWheelMenu();closeSidebar();
     return;
   }
   var wo=document.getElementById('winnerOverlay');
@@ -2045,7 +2480,7 @@ window.addEventListener('resize',function(){
     if(window.innerWidth>900){
       var sb=document.getElementById('mobileSidebar');
       if(sb&&sb.classList.contains('show'))closeSidebar();
-      closeToolsMenu();closeLangMenu();
+      closeToolsMenu();closeLangMenu();closeNewWheelMenu();
     }
   });
 },{passive:true});
@@ -2054,6 +2489,8 @@ function init(){
   pointerEl=document.getElementById('wheelPointer');
   loadWheelSettings();
   setupSegmentedControls();
+  renderNewWheelMenu();
+  renderSidebarNewWheelMenu();
 
   var sdRange=document.getElementById('spinDurationRange');
   var sdValue=document.getElementById('spinDurationValue');
