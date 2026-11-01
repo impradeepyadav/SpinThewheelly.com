@@ -122,8 +122,9 @@ a:focus-visible,button:focus-visible,input:focus-visible,[tabindex]:focus-visibl
 .nav-tools-wrap,.nav-lang-wrap,.nav-new-wrap{position:relative}
 
 .tools-menu{
-  position:fixed;top:0;left:0;min-width:280px;max-width:calc(100vw - 24px);max-height:calc(100vh - 24px);
-  overflow-y:auto;background:var(--bg);border:1px solid rgba(0,0,0,0.08);
+  position:fixed;top:0;left:0;min-width:260px;max-width:calc(100vw - 16px);max-height:min(70vh, calc(100dvh - 24px));
+  overflow-y:auto;-webkit-overflow-scrolling:touch;overscroll-behavior:contain;
+  background:var(--bg);border:1px solid rgba(0,0,0,0.08);
   border-radius:16px;
   box-shadow:
     0 4px 6px -1px rgba(0,0,0,0.06),
@@ -137,6 +138,16 @@ a:focus-visible,button:focus-visible,input:focus-visible,[tabindex]:focus-visibl
   -webkit-font-smoothing:antialiased;
   backdrop-filter:blur(12px);
   -webkit-backdrop-filter:blur(12px);
+  box-sizing:border-box;
+}
+@media (max-width:560px){
+  .tools-menu{
+    min-width:0;
+    width:min(320px, calc(100vw - 16px));
+    max-width:calc(100vw - 16px);
+    max-height:min(65dvh, calc(100dvh - 80px));
+    border-radius:14px;
+  }
 }
 .tools-menu.show{opacity:1;visibility:visible;transform:translateY(0) scale(1);pointer-events:auto;}
 .tools-menu-item{
@@ -832,6 +843,14 @@ main{flex:1;display:flex;align-items:flex-start;justify-content:center;padding:0
           <svg aria-hidden="true"><use href="#i-tool"/></svg><span class="nav-text">Tools</span>
         </button>
         <div class="tools-menu" id="toolsMenu" role="menu">
+          <button type="button" class="tools-menu-item" role="menuitem" onclick="closeToolsMenu();openPresetModal();">
+            <svg aria-hidden="true"><use href="#i-pie"/></svg>
+            <span class="tools-item-content">
+              <span class="tools-item-title">New Wheel</span>
+              <span class="tools-item-sub">Blank or ready-made presets</span>
+            </span>
+          </button>
+          <div class="tools-menu-divider"></div>
           <a href="/random-name-picker" class="tools-menu-item" role="menuitem"><svg aria-hidden="true"><use href="#i-pencil"/></svg><span class="tools-item-content"><span class="tools-item-title">Random Name Picker</span><span class="tools-item-sub">Pick a name fairly</span></span></a>
           <a href="/yes-no-wheel" class="tools-menu-item" role="menuitem"><svg aria-hidden="true"><use href="#i-help"/></svg><span class="tools-item-content"><span class="tools-item-title">Yes / No Wheel</span><span class="tools-item-sub">Quick decisions</span></span></a>
           <a href="/random-team-generator" class="tools-menu-item" role="menuitem"><svg aria-hidden="true"><use href="#i-folder"/></svg><span class="tools-item-content"><span class="tools-item-title">Random Team Generator</span><span class="tools-item-sub">Split into teams</span></span></a>
@@ -1260,6 +1279,14 @@ James</textarea>
       <svg class="chevron" aria-hidden="true"><use href="#i-chevron-down"/></svg>
     </button>
     <div class="sidebar-tools-sub" id="sidebarToolsSub">
+      <button type="button" class="sidebar-sub-item" onclick="openPresetModal();closeSidebar();">
+        <svg aria-hidden="true"><use href="#i-pie"/></svg>
+        <span class="item-content">
+          <span class="item-title">New Wheel</span>
+          <span class="item-sub">Blank or ready-made presets</span>
+        </span>
+      </button>
+      <div class="sidebar-menu-divider"></div>
       <a href="/random-name-picker" class="sidebar-sub-item"><svg aria-hidden="true"><use href="#i-pencil"/></svg><span class="item-content"><span class="item-title">Random Name Picker</span></span></a>
       <a href="/yes-no-wheel" class="sidebar-sub-item"><svg aria-hidden="true"><use href="#i-help"/></svg><span class="item-content"><span class="item-title">Yes / No Wheel</span></span></a>
       <a href="/random-team-generator" class="sidebar-sub-item"><svg aria-hidden="true"><use href="#i-folder"/></svg><span class="item-content"><span class="item-title">Random Team Generator</span></span></a>
@@ -1657,36 +1684,70 @@ function positionDropdownMenu(btn, menu){
   menu.style.display='flex';
   menu.style.pointerEvents='none';
   menu.classList.remove('show');
+  // Reset any previous inline max-height so we can measure natural size
+  menu.style.maxHeight = '';
+  menu.style.top = '0';
+  menu.style.left = '0';
 
   // Force layout so we get real size
   void menu.offsetWidth;
 
-  var menuW = menu.offsetWidth || 240;
-  var menuH = menu.offsetHeight || 200;
   var rect = btn.getBoundingClientRect();
   var gap = 8;
+  var edge = 8;
   var vw = window.innerWidth;
-  var vh = window.innerHeight;
-
-  // Vertical: prefer below button, flip above if not enough space
-  var topPos = rect.bottom + gap;
-  if(topPos + menuH > vh - gap){
-    var above = rect.top - gap - menuH;
-    topPos = above >= gap ? above : Math.max(gap, vh - gap - menuH);
+  var vh = window.innerHeight || document.documentElement.clientHeight;
+  var safeTop = 0, safeBottom = 0, safeLeft = 0, safeRight = 0;
+  // Prefer visualViewport when available (mobile browser chrome / keyboard)
+  if(window.visualViewport){
+    vh = window.visualViewport.height;
+    vw = window.visualViewport.width;
   }
 
-  // Horizontal: prefer left-align under button
+  var spaceBelow = Math.max(0, vh - rect.bottom - gap - edge - safeBottom);
+  var spaceAbove = Math.max(0, rect.top - gap - edge - safeTop);
+
+  // Cap max-height to available space on the preferred side
+  var preferBelow = spaceBelow >= 160 || spaceBelow >= spaceAbove;
+  var available = preferBelow ? spaceBelow : spaceAbove;
+  // Never exceed ~70% of viewport; leave breathing room
+  var maxH = Math.max(120, Math.min(available, Math.floor(vh * 0.72)));
+  menu.style.maxHeight = maxH + 'px';
+
+  // Re-measure after applying max-height
+  void menu.offsetWidth;
+  var menuW = Math.min(menu.offsetWidth || 280, vw - edge * 2);
+  var menuH = menu.offsetHeight || Math.min(200, maxH);
+
+  // Vertical placement
+  var topPos;
+  if(preferBelow){
+    topPos = rect.bottom + gap;
+    if(topPos + menuH > vh - edge){
+      topPos = Math.max(edge + safeTop, vh - edge - menuH);
+    }
+  }else{
+    topPos = rect.top - gap - menuH;
+    if(topPos < edge + safeTop){
+      topPos = edge + safeTop;
+    }
+  }
+  // Final vertical clamp
+  topPos = Math.max(edge + safeTop, Math.min(topPos, vh - edge - Math.min(menuH, maxH)));
+
+  // Horizontal: prefer left-align under button, then right-align, then clamp
   var leftPos = rect.left;
-  // If overflows right → right-align under button
-  if(leftPos + menuW > vw - gap){
+  if(leftPos + menuW > vw - edge - safeRight){
     leftPos = rect.right - menuW;
   }
-  // Clamp to viewport
-  if(leftPos < gap) leftPos = gap;
-  if(leftPos + menuW > vw - gap) leftPos = Math.max(gap, vw - gap - menuW);
+  if(leftPos < edge + safeLeft) leftPos = edge + safeLeft;
+  if(leftPos + menuW > vw - edge - safeRight){
+    leftPos = Math.max(edge + safeLeft, vw - edge - safeRight - menuW);
+  }
 
   menu.style.top = Math.round(topPos) + 'px';
   menu.style.left = Math.round(leftPos) + 'px';
+  menu.style.width = '';
 
   // Restore transition on next frame, then show
   requestAnimationFrame(function(){
@@ -1715,7 +1776,7 @@ function toggleLangMenu(e){
 function closeLangMenu(){
   var menu=document.getElementById('langMenu');
   var btn=document.getElementById('langMenuBtn');
-  if(menu)menu.classList.remove('show');
+  if(menu){menu.classList.remove('show');menu.style.maxHeight='';}
   if(btn)btn.setAttribute('aria-expanded','false');
 }
 
@@ -1737,7 +1798,7 @@ function toggleToolsMenu(e){
 function closeToolsMenu(){
   var menu=document.getElementById('toolsMenu');
   var btn=document.getElementById('toolsMenuBtn');
-  if(menu)menu.classList.remove('show');
+  if(menu){menu.classList.remove('show');menu.style.maxHeight='';}
   if(btn)btn.setAttribute('aria-expanded','false');
 }
 
@@ -1759,7 +1820,7 @@ function toggleNewWheelMenu(e){
 function closeNewWheelMenu(){
   var menu=document.getElementById('newWheelMenu');
   var btn=document.getElementById('newWheelMenuBtn');
-  if(menu)menu.classList.remove('show');
+  if(menu){menu.classList.remove('show');menu.style.maxHeight='';}
   if(btn)btn.setAttribute('aria-expanded','false');
 }
 
