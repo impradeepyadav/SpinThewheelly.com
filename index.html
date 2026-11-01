@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en-US">
+<html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
@@ -14,18 +14,18 @@
 </script>
 <!-- ======================================================== -->
 
-<title>Spin the Wheel | Random Name Picker</title>
-<meta name="description" content="Spin the wheel online for free to pick random names, make decisions, choose what to eat, or answer yes-or-no questions. Spin The Wheel makes choosing easy!">
-<meta name="keywords" content="spin the wheel, random name picker, picker wheel, wheel of names, names on the wheel, names of wheel, random wheel, decision wheel, random choice picker, spin wheel free, name wheel, random picker, spin the wheel online, wheel spinner, random decision maker, lucky draw wheel, raffle picker, random name generator, spin wheel to pick a name, name picker wheel">
+<title>Spin the Wheel – Random Choice Picker</title>
+<meta name="description" content="Create your own custom wheel to make random choices, pick winners and decide what to do next. Free, fun and easy to use online.">
+<meta name="keywords" content="spin the wheel, random wheel, name wheel, random picker, decision wheel, random choice picker, free wheel, random name wheel, spin the wheel online, spinning wheel, random decision maker, name picker wheel, raffle wheel, raffle picker">
 <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
 <meta name="googlebot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
 <meta name="bingbot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
-<meta name="author" content="Spin the Wheel">
+<meta name="author" content="Spin The Wheelly">
 <meta name="theme-color" content="#ffffff" id="themeColorMeta">
 <link rel="canonical" href="https://spinthewheelly.com/">
 <link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml">
 
-<!-- ================= Hreflang (International SEO) ================= -->
+<!-- ================= Hreflang ================= -->
 <link rel="alternate" hreflang="en" href="https://spinthewheelly.com/">
 <link rel="alternate" hreflang="es" href="https://spinthewheelly.com/es/">
 <link rel="alternate" hreflang="pt" href="https://spinthewheelly.com/pt/">
@@ -41,15 +41,15 @@
 
 <!-- ================= Open Graph ================= -->
 <meta property="og:type" content="website">
-<meta property="og:site_name" content="Spin the Wheel">
-<meta property="og:title" content="Spin the Wheel – Random Name Picker &amp; Picker Wheel">
-<meta property="og:description" content="Spin the wheel online to pick a random name, choose a winner, or decide what to do next. A free wheel of names, random name picker and picker wheel in one page.">
+<meta property="og:site_name" content="Spin The Wheelly">
+<meta property="og:title" content="Spin the Wheel – Random Choice Picker | Spin The Wheelly">
+<meta property="og:description" content="Spin the wheel online to make random choices, pick a winner, choose names or decide what to do next. Customize your wheel and spin for free.">
 <meta property="og:url" content="https://spinthewheelly.com/">
 <meta property="og:image" content="https://spinthewheelly.com/apple-touch-icon.png">
-<meta property="og:image:alt" content="Spin the Wheel logo">
+<meta property="og:image:alt" content="Spin The Wheelly logo">
 <meta property="og:locale" content="en_US">
 <meta property="og:locale:alternate" content="es_ES">
-<meta property="og:locale:alternate" content="pt_BR">
+<meta property="og:locale:alternate" content="pt_PT">
 <meta property="og:locale:alternate" content="fr_FR">
 <meta property="og:locale:alternate" content="pl_PL">
 <meta property="og:locale:alternate" content="de_DE">
@@ -61,8 +61,8 @@
 
 <!-- ================= Twitter Card ================= -->
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Spin the Wheel – Random Name Picker &amp; Picker Wheel">
-<meta name="twitter:description" content="Spin the wheel online to pick a random name, choose a winner, or decide what to do next. Free wheel of names and picker wheel.">
+<meta name="twitter:title" content="Spin the Wheel – Random Choice Picker | Spin The Wheelly">
+<meta name="twitter:description" content="Spin the wheel online to make random choices, pick a winner, choose names or decide what to do next.">
 <meta name="twitter:image" content="https://spinthewheelly.com/apple-touch-icon.png">
 
 <!-- ================= Preconnects ================= -->
@@ -291,7 +291,8 @@ main{flex:1;display:flex;align-items:flex-start;justify-content:center;padding:0
 .wheel-pointer-shape{fill:#ffffff;stroke:rgba(0,0,0,0.62);stroke-width:1.5;stroke-linejoin:round;pointer-events:none;filter:drop-shadow(0 2px 3px rgba(0,0,0,0.35));}
 
 /* ══════════════════════════════════════════════════════════════
-   SPIN BUTTON — WHITE CIRCLE (no icon, no text)
+   SPIN BUTTON — WHITE CIRCLE IN THE CENTER (no icon, no text)
+   The center of the wheel stays a clean white circle.
    ══════════════════════════════════════════════════════════════ */
 .spin-button{
   position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);
@@ -406,9 +407,6 @@ main{flex:1;display:flex;align-items:flex-start;justify-content:center;padding:0
 .settings-row select{padding:10px 14px;border-radius:10px;border:1.5px solid var(--input-border);background:var(--input-bg);color:var(--text);font-family:inherit;font-size:14px;font-weight:500;cursor:pointer;min-width:120px; outline: none;}
 .settings-note{font-size:13px;color:var(--text-light);line-height:1.5;margin:14px 0 4px;}
 
-/* ══════════════════════════════════════════════════════════════
-   SPIN DURATION SLIDER
-   ══════════════════════════════════════════════════════════════ */
 .speed-slider-row{display:flex;align-items:center;gap:14px;padding:8px 0 4px;}
 .speed-slider-row input[type="range"]{
   flex:1;height:6px;border-radius:3px;background:var(--line);
@@ -498,6 +496,9 @@ main{flex:1;display:flex;align-items:flex-start;justify-content:center;padding:0
 .preset-card:active,.palette-swatch:active,.sidebar-item:active,
 .winner-btn-close:active,.winner-btn-remove:active{transform:none !important;}
 
+/* ══════════════════════════════════════════════════════════
+   AUTOMATIC DARK MODE
+   ══════════════════════════════════════════════════════════ */
 @media (prefers-color-scheme: dark){
   :root{
     color-scheme:dark;
@@ -561,6 +562,7 @@ main{flex:1;display:flex;align-items:flex-start;justify-content:center;padding:0
 
   .wheel-premium-bg:fullscreen,.wheel-premium-bg:-webkit-full-screen,.wheel-premium-bg.pseudo-fullscreen{background:#0b0f14;}
 
+  /* Spin button in dark mode: dark circle with inner glow */
   .spin-button{
     background:#111a24;color:#f4f7fb;
     border-color:rgba(255,255,255,0.16);
@@ -621,11 +623,6 @@ main{flex:1;display:flex;align-items:flex-start;justify-content:center;padding:0
   .toast{background:#f4f7fb;color:#0b0f14;box-shadow:0 10px 30px rgba(0,0,0,.7);}
   .page-h1{color:#f4f7fb;}
   .page-subtitle{color:#8b96a5;}
-
-  .modal-box::-webkit-scrollbar-thumb { background: var(--line); }
-  .modal-box::-webkit-scrollbar-thumb:hover { background: var(--text-light); }
-  .preset-grid::-webkit-scrollbar-thumb { background: var(--line); }
-  .preset-grid::-webkit-scrollbar-thumb:hover { background: var(--text-light); }
 }
 </style>
 
@@ -634,26 +631,18 @@ main{flex:1;display:flex;align-items:flex-start;justify-content:center;padding:0
 {
   "@context": "https://schema.org",
   "@type": "WebApplication",
-  "name": "Spin the Wheel",
-  "alternateName": ["Random Name Picker", "Picker Wheel", "Wheel of Names", "Names on the Wheel"],
+  "name": "Spin The Wheelly",
+  "alternateName": ["Spin The Wheelly", "Spin the Wheel"],
   "url": "https://spinthewheelly.com/",
-  "description": "Spin the Wheel online to pick a random name, choose a winner, or decide what to do next. A free random name picker, picker wheel and wheel of names — customize the names on the wheel and spin for free.",
+  "description": "Spin the wheel online to make random choices, pick a winner, choose names or decide what to do next. Customize your wheel and spin for free.",
   "applicationCategory": "UtilityApplication",
   "operatingSystem": "Any",
-  "browserRequirements": "Requires JavaScript. Works on all modern browsers.",
+  "browserRequirements": "Requires JavaScript. Works in all modern browsers.",
   "inLanguage": "en-US",
-  "availableLanguage": ["en-US","es-ES","pt-BR","fr-FR","pl-PL","de-DE","id-ID","th-TH","tl-PH","ja-JP","zh-CN"],
+  "availableLanguage": ["en-US","es-ES","pt-PT","fr-FR","pl-PL","de-DE","id-ID","th-TH","tl-PH","ja-JP","zh-CN"],
   "isAccessibleForFree": true,
-  "offers": {
-    "@type": "Offer",
-    "price": "0",
-    "priceCurrency": "USD"
-  },
-  "creator": {
-    "@type": "Organization",
-    "name": "Spin the Wheel",
-    "url": "https://spinthewheelly.com/"
-  }
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+  "creator": { "@type": "Organization", "name": "Spin The Wheelly", "url": "https://spinthewheelly.com/" }
 }
 </script>
 
@@ -664,23 +653,20 @@ main{flex:1;display:flex;align-items:flex-start;justify-content:center;padding:0
   "@type": "FAQPage",
   "inLanguage": "en-US",
   "mainEntity": [
-    {"@type":"Question","name":"Is this Spin the Wheel tool really free?","acceptedAnswer":{"@type":"Answer","text":"Yes! It's 100% free. No premium tiers, no ads, no hidden fees — forever. No signup required to spin the wheel."}},
-    {"@type":"Question","name":"How does the random name picker work?","acceptedAnswer":{"@type":"Answer","text":"Type or paste your names on the wheel — one per line — then press the spin button. The random name picker instantly selects one name from the wheel using a cryptographically secure random number generator."}},
-    {"@type":"Question","name":"What is a picker wheel?","acceptedAnswer":{"@type":"Answer","text":"A picker wheel is a spinning wheel of names used to pick a random option, winner or student. This page is a free online picker wheel and wheel of names that runs entirely in your browser."}},
-    {"@type":"Question","name":"How many names can I add to the wheel?","acceptedAnswer":{"@type":"Answer","text":"Up to 50 names on the wheel per spin. For best readability we recommend keeping each name short — ideally under 15 characters."}},
-    {"@type":"Question","name":"Can I control the spin speed?","acceptedAnswer":{"@type":"Answer","text":"Yes. In Settings there's a spin duration slider from 1.5 seconds (very fast) to 15 seconds (slow and dramatic). You can also toggle background music on or off."}},
-    {"@type":"Question","name":"Is there background music available?","acceptedAnswer":{"@type":"Answer","text":"Yes! Enable background music in Settings for a more immersive experience. The melody is generated 100% in your browser — no external files, no downloads."}},
-    {"@type":"Question","name":"Can I customize the wheel?","acceptedAnswer":{"@type":"Answer","text":"Yes! Pick from 18 premium color themes, adjust wheel size and text size, add segment borders, upload a full-page background image, and more in Settings."}},
+    {"@type":"Question","name":"Is Spin The Wheelly really free?","acceptedAnswer":{"@type":"Answer","text":"Yes! It's 100% free. No premium plans, no ads, no hidden charges — forever. No sign-up required."}},
+    {"@type":"Question","name":"Can I customize the wheel?","acceptedAnswer":{"@type":"Answer","text":"Yes! Choose from 18 premium color themes, adjust the wheel and text size, add segment borders, upload a fullscreen background image and more in Settings."}},
+    {"@type":"Question","name":"Can I control the spin speed?","acceptedAnswer":{"@type":"Answer","text":"Yes. Settings has a spin duration slider that goes from 1.5 seconds (super fast) to 15 seconds (very slow). You can also turn background music on or off."}},
+    {"@type":"Question","name":"How many entries can I add?","acceptedAnswer":{"@type":"Answer","text":"Up to 50 entries per wheel. For best readability we recommend keeping labels short — ideally under 15 characters."}},
     {"@type":"Question","name":"Is the wheel truly random?","acceptedAnswer":{"@type":"Answer","text":"Yes. Every spin uses crypto.getRandomValues — the same cryptographically secure random number generator used by password managers and banking apps. Zero bias, zero patterns."}},
-    {"@type":"Question","name":"Does it work on mobile?","acceptedAnswer":{"@type":"Answer","text":"Absolutely. The entire interface is responsive and mobile-first. Works on phones, tablets, laptops, desktops, and even smart TV browsers."}},
-    {"@type":"Question","name":"Do you save my names on the wheel?","acceptedAnswer":{"@type":"Answer","text":"No. Everything runs locally in your browser. Nothing is ever sent to a server. When you close the tab, your entries are gone unless you download them with the Save button."}},
-    {"@type":"Question","name":"Can I use the wheel offline?","acceptedAnswer":{"@type":"Answer","text":"Yes. Once the page loads, everything works 100% locally. You can turn off Wi-Fi and keep spinning — the code is already in your browser."}},
-    {"@type":"Question","name":"Can I add images instead of text?","acceptedAnswer":{"@type":"Answer","text":"Yes. Click the image icon in the toolbar to upload a photo. Each image is automatically resized and clipped into its slice."}},
-    {"@type":"Question","name":"Which browsers are supported?","acceptedAnswer":{"@type":"Answer","text":"All modern browsers: Chrome, Edge, Firefox, Safari, Opera, Brave — on Windows, macOS, Linux, iOS, and Android. Requires JavaScript enabled."}},
+    {"@type":"Question","name":"Does it work on mobile?","acceptedAnswer":{"@type":"Answer","text":"Of course. The entire interface is responsive and mobile-first. It works on phones, tablets, laptops, desktop computers and even smart TV browsers."}},
+    {"@type":"Question","name":"Do you store my entries?","acceptedAnswer":{"@type":"Answer","text":"No. Everything runs locally in your browser. Nothing is ever sent to a server. When you close the tab, your entries disappear unless you download them with the Save button."}},
+    {"@type":"Question","name":"Can I use the wheel offline?","acceptedAnswer":{"@type":"Answer","text":"Yes. Once the page has loaded, everything works 100% locally. You can turn off Wi-Fi and keep spinning — the code is already in your browser."}},
+    {"@type":"Question","name":"Can I add images instead of text?","acceptedAnswer":{"@type":"Answer","text":"Yes. Click the image icon in the toolbar to upload a photo. Each image is automatically resized and cropped into its segment."}},
+    {"@type":"Question","name":"Which browsers are supported?","acceptedAnswer":{"@type":"Answer","text":"All modern browsers: Chrome, Edge, Firefox, Safari, Opera, Brave — on Windows, macOS, Linux, iOS and Android. JavaScript must be enabled."}},
     {"@type":"Question","name":"Is there a limit on how many times I can spin?","acceptedAnswer":{"@type":"Answer","text":"No limit. Spin as many times as you want, on as many wheels as you want. No accounts, no caps, no cooldowns."}},
     {"@type":"Question","name":"Can I save my wheel for later?","acceptedAnswer":{"@type":"Answer","text":"Yes. Click the File button in the header or the save icon in the toolbar to download your list as a text file."}},
-    {"@type":"Question","name":"Does the wheel support emojis?","acceptedAnswer":{"@type":"Answer","text":"Yes! Emojis work perfectly as wheel entries. Use the smile button to insert one quickly, or type any emoji directly into the textarea."}},
-    {"@type":"Question","name":"What languages is the site available in?","acceptedAnswer":{"@type":"Answer","text":"This spin the wheel site is available in 11 languages: English, Español, Português, Français, Polski, Deutsch, Bahasa Indonesia, ไทย, Filipino, 日本語 and 中文. Use the globe icon in the header to switch languages at any time."}}
+    {"@type":"Question","name":"Does the wheel support emojis?","acceptedAnswer":{"@type":"Answer","text":"Yes! Emojis work perfectly as wheel entries. Use the smiley button to insert one quickly, or type any emoji directly into the textarea."}},
+    {"@type":"Question","name":"What languages is the site available in?","acceptedAnswer":{"@type":"Answer","text":"Spin The Wheelly is available in 11 languages: English, Español, Português, Français, Polski, Deutsch, Bahasa Indonesia, ไทย, Filipino, 日本語 and 中文. Use the globe icon in the header to switch languages at any time."}}
   ]
 }
 </script>
@@ -690,20 +676,12 @@ main{flex:1;display:flex;align-items:flex-start;justify-content:center;padding:0
 {
   "@context": "https://schema.org",
   "@type": "WebPage",
-  "name": "Spin the Wheel – Random Name Picker & Picker Wheel",
+  "name": "Spin the Wheel – Random Choice Picker",
   "url": "https://spinthewheelly.com/",
   "inLanguage": "en-US",
-  "description": "Spin the wheel to pick a random name, choose a winner, or decide what to do next. Free random name picker, picker wheel and wheel of names.",
-  "isPartOf": {
-    "@type": "WebSite",
-    "name": "Spin the Wheel",
-    "url": "https://spinthewheelly.com/"
-  },
-  "about": {
-    "@type": "WebApplication",
-    "name": "Spin the Wheel",
-    "url": "https://spinthewheelly.com/"
-  }
+  "description": "Make random choices, pick a winner or decide what to do next — free, fast and fair. Spin the wheel online with Spin The Wheelly.",
+  "isPartOf": { "@type": "WebSite", "name": "Spin The Wheelly", "url": "https://spinthewheelly.com/" },
+  "about": { "@type": "WebApplication", "name": "Spin The Wheelly", "url": "https://spinthewheelly.com/" }
 }
 </script>
 </head>
@@ -743,9 +721,9 @@ main{flex:1;display:flex;align-items:flex-start;justify-content:center;padding:0
 
 <header class="site-header">
   <div class="header-container">
-    <a href="/" class="nav-logo" title="Spin the Wheel — Random Name Picker &amp; Picker Wheel" aria-label="Spin the Wheel home">
-      <img src="/apple-touch-icon.png" alt="Spin the Wheel logo" class="nav-logo-img" width="28" height="28" loading="lazy">
-      <span class="nav-logo-text">Spin the Wheel</span>
+    <a href="/" class="nav-logo" title="Spin The Wheelly — Home" aria-label="Spin The Wheelly home">
+      <img src="/apple-touch-icon.png" alt="Spin The Wheelly logo" class="nav-logo-img" width="28" height="28" loading="lazy">
+      <span class="nav-logo-text">Spin The Wheelly</span>
     </a>
     <nav class="nav-links" aria-label="Main navigation">
       <button type="button" class="nav-btn" onclick="openPresetModal()" aria-label="Open preset wheels">
@@ -773,7 +751,6 @@ main{flex:1;display:flex;align-items:flex-start;justify-content:center;padding:0
         </div>
       </div>
 
-      <!-- ================= LANGUAGE SELECTOR ================= -->
       <div class="nav-lang-wrap">
         <button type="button" class="nav-btn" id="langMenuBtn" onclick="toggleLangMenu(event)" aria-haspopup="true" aria-expanded="false" aria-label="Change language">
           <svg aria-hidden="true"><use href="#i-globe"/></svg><span class="nav-text">Language</span>
@@ -792,7 +769,6 @@ main{flex:1;display:flex;align-items:flex-start;justify-content:center;padding:0
           <a href="https://spinthewheelly.com/zh/" class="tools-menu-item" role="menuitem" lang="zh" hreflang="zh"><span class="lang-flag">🇨🇳</span><span class="tools-item-content"><span class="tools-item-title">中文</span></span></a>
         </div>
       </div>
-      <!-- ================= /LANGUAGE SELECTOR ================= -->
 
       <button type="button" class="nav-btn hamburger-btn" id="hamburgerBtn" onclick="openSidebar()" aria-label="Open mobile menu" aria-expanded="false" aria-controls="mobileSidebar">
         <svg aria-hidden="true"><use href="#i-menu"/></svg>
@@ -809,22 +785,22 @@ main{flex:1;display:flex;align-items:flex-start;justify-content:center;padding:0
       <div class="top-ranking-list" id="topRankingList"></div>
     </div>
 
-    <section class="wheel-section" id="wheelSection" aria-label="Spin the wheel tool">
+    <section class="wheel-section" id="wheelSection" aria-label="Wheel tool">
       <div class="wheel-layout">
         <div class="wheel-col">
           <div class="wheel-controls-top">
             <button class="icon-btn" id="headerSoundBtn" onclick="cycleSoundVolume()" title="Change Volume" aria-label="Change sound volume">
               <svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-speaker-wave" id="soundIconUse"/></svg>
             </button>
-            <button class="icon-btn" id="fsToggleBtn" onclick="toggleFullscreenWheel()" title="Fullscreen Wheel" aria-label="Enter fullscreen" aria-pressed="false">
+            <button class="icon-btn" id="fsToggleBtn" onclick="toggleFullscreenWheel()" title="Wheel Fullscreen" aria-label="Enter fullscreen" aria-pressed="false">
               <svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-maximize" id="fsToggleIcon"/></svg>
             </button>
           </div>
           <div class="wheel-premium-bg" id="wheelPremiumBg">
             <div class="fullscreen-brand-bar" id="fullscreenBrandBar">
               <div class="fs-brand">
-                <img src="/apple-touch-icon.png" alt="Spin the Wheel" class="fs-brand-img" width="30" height="30" loading="lazy">
-                <span class="fs-brand-text">Spin the Wheel</span>
+                <img src="/apple-touch-icon.png" alt="Spin The Wheelly" class="fs-brand-img" width="30" height="30" loading="lazy">
+                <span class="fs-brand-text">Spin The Wheelly</span>
               </div>
               <div class="fs-actions">
                 <button type="button" class="fs-icon-btn" onclick="cycleSoundVolume()" title="Change Volume" aria-label="Change sound volume">
@@ -836,16 +812,18 @@ main{flex:1;display:flex;align-items:flex-start;justify-content:center;padding:0
               </div>
             </div>
             <div class="wheel-stage size-medium" id="wheelStage">
-              <svg class="wheel-svg" id="wheelSvg" viewBox="-110 -110 220 220" role="img" aria-label="Spin the wheel to pick a random name from the names on the wheel" onclick="spinWheel()" title="Click the wheel to spin">
+              <!-- The whole wheel is clickable -->
+              <svg class="wheel-svg" id="wheelSvg" viewBox="-110 -110 220 220" role="img" aria-label="Spin the wheel with your options" onclick="spinWheel()" title="Click the wheel to spin">
                 <g id="wheelGroup"></g>
                 <circle id="wheelOuterRing" cx="0" cy="0" r="108" fill="none" stroke="rgba(0,0,0,0.15)" stroke-width="2.5" style="display:none"/>
                 <path class="wheel-pointer-shape" id="wheelPointer" d="M 107 -8 L 107 8 L 91 0 Z"/>
               </svg>
+              <!-- ═══ WHITE CIRCLE IN THE CENTER (no icon, no text) ═══ -->
               <button type="button" class="spin-button" id="spinBtn" onclick="spinWheel()" aria-label="Spin the wheel" title="Spin the wheel"></button>
             </div>
             <div class="fullscreen-footer-bar" id="fullscreenFooterBar">
-              <span>Powered by</span>
-              <a href="https://spinthewheelly.com/" target="_blank" rel="noopener noreferrer">Spin the Wheel</a>
+              <span>Created by</span>
+              <a href="https://spinthewheelly.com/" target="_blank" rel="noopener noreferrer">spinthewheelly.com</a>
             </div>
 
             <div class="winner-overlay" id="winnerOverlay" role="dialog" aria-modal="true" aria-labelledby="winnerPopupTitle" aria-hidden="true">
@@ -881,7 +859,7 @@ main{flex:1;display:flex;align-items:flex-start;justify-content:center;padding:0
             <button type="button" class="tool-btn settings-btn" title="Settings" aria-label="Open settings" onclick="openSettingsModal()">
               <svg aria-hidden="true"><use href="#i-settings"/></svg><span class="red-dot"></span>
             </button>
-            <button type="button" class="tool-btn" title="Add Image" aria-label="Add image to wheel" onclick="triggerImageUpload()"><svg aria-hidden="true"><use href="#i-image"/></svg></button>
+            <button type="button" class="tool-btn" title="Add Image" aria-label="Add image to the wheel" onclick="triggerImageUpload()"><svg aria-hidden="true"><use href="#i-image"/></svg></button>
             <button type="button" class="tool-btn" title="Save Entries" aria-label="Save entries" onclick="saveEntries()"><svg aria-hidden="true"><use href="#i-save"/></svg></button>
           </div>
           <div class="entries-sub-tools" id="resultsSubTools" style="display:none;">
@@ -891,8 +869,8 @@ main{flex:1;display:flex;align-items:flex-start;justify-content:center;padding:0
           <div class="sliding-container" id="slidingContainer">
             <div class="panel-view active" id="entriesView">
               <div class="textarea-wrapper">
-                <div class="fake-placeholder" id="fakePlaceholder">← Type/paste names here</div>
-                <textarea id="entriesTextarea" aria-label="Names on the wheel, one per line">John
+                <div class="fake-placeholder" id="fakePlaceholder">← Type/paste entries here</div>
+                <textarea id="entriesTextarea" aria-label="Wheel entries, one per line">John
 Emma
 Michael
 Sophia
@@ -921,179 +899,55 @@ James</textarea>
 <div class="white-bottom-bg">
   <div class="seo-content-box">
     <article class="seo-content">
-      <h1 class="page-h1">Spin the Wheel – Random Name Picker &amp; Picker Wheel</h1>
-      <p class="page-subtitle">Spin the wheel to pick a random name, choose a winner, or decide what to do next. A free random name picker, picker wheel and wheel of names — add the names on the wheel and spin!</p>
-
+      <h1 class="page-h1">Spin the Wheel – Random Choice Picker</h1>
+      <p class="page-subtitle">Make random choices, pick a winner or decide what to do next — free, fast and fair. Spin the wheel online with Spin The Wheelly.</p>
       <div class="seo-block">
-        <h2>Spin the Wheel — The Free Random Name Picker</h2>
-        <p>We've all been there: you're trying to pick a restaurant with friends, decide who buys the next round of coffee, or figure out which student answers next, and suddenly everyone has lost the ability to make a decision. <strong>That's exactly why we built Spin the Wheel.</strong></p>
-        <p>It's a <strong>simple, beautiful, and completely free random name picker</strong> designed to take the stress out of everyday choices. Type the <strong>names on the wheel</strong>, hit spin, and let a little bit of randomness do the heavy lifting. Whether you call it a <strong>picker wheel</strong>, a <strong>wheel of names</strong>, or a <strong>name picker wheel</strong> — it's the same tool, and it's ready in one click.</p>
-        <p>Need something more specific? Try our dedicated <strong><a href="/random-name-picker">Random Name Picker</a></strong> for giveaways, the <strong><a href="/yes-no-wheel">Yes / No Wheel</a></strong> for quick binary decisions, the <strong><a href="/random-team-generator">Random Team Generator</a></strong> to split players evenly, or the <strong><a href="/what-to-eat">What to Eat</a></strong> wheel if you're just hungry.</p>
+        <h2>Let the Wheel Choose for You</h2>
+        <p>We've all been there: you're trying to pick a restaurant with friends, decide who pays for the next round of coffee or figure out what to watch on a Friday night, and suddenly everyone has lost the ability to make a decision. <strong>That's exactly why we created Spin The Wheelly.</strong></p>
+        <p>It's a <strong>simple, beautiful and completely free tool</strong> designed to <strong>take the stress out of everyday decisions</strong>. No arguments, no endless scrolling and definitely no "I don't mind, you pick" loops. Just type your options, hit spin and let a little randomness do the heavy lifting.</p>
       </div>
 
       <div class="seo-block">
-        <h2>Wheel of Names — Add Any Names to the Wheel</h2>
-        <p>The core of this page is a <strong>wheel of names</strong>. A wheel of names is a spinning disc split into slices, where each slice holds one name. Spin the wheel, and the pointer lands on one slice — that name wins. It is the fastest and fairest way to pick a random name from a list.</p>
-        <h3>What can you put on the wheel?</h3>
+        <h2>Why People Love It</h2>
         <ul>
-          <li><strong>People's names</strong> — students, teammates, friends, raffle entrants</li>
-          <li><strong>Food &amp; restaurants</strong> — pizza, sushi, burgers, tacos</li>
-          <li><strong>Yes / No options</strong> — for fast binary decisions</li>
-          <li><strong>Numbers or prizes</strong> — lucky draw entries, giveaway items</li>
-          <li><strong>Tasks &amp; chores</strong> — who does what this week</li>
-          <li><strong>Emojis</strong> — because why not 🍕 🎉 🔥</li>
-        </ul>
-        <p>You can add up to <strong>50 names on the wheel</strong> at once. Each name is fitted automatically so it stays readable, and you can shuffle or sort the list any time with one click. If you're running a big raffle, turn on <strong>Auto-remove winner</strong> so every name is drawn only once.</p>
-      </div>
-
-      <div class="seo-block">
-        <h2>Picker Wheel — How It Works</h2>
-        <p>A <strong>picker wheel</strong> is exactly what it sounds like: a wheel that picks something for you. Every time you press the spin button, this picker wheel chooses one option at random from the list you typed in. There is no bias, no weighting, and no favouritism — every name on the wheel has an equal chance.</p>
-        <h3>Three simple steps</h3>
-        <ol>
-          <li><strong>Make your list:</strong> Type your names in the box on the right. One name per line. (Pizza, Burgers, Sushi — whatever you're craving.)</li>
-          <li><strong>Click the white circle:</strong> Click the white circle in the middle of the wheel (or anywhere on the wheel) to spin it.</li>
-          <li><strong>Find out the answer:</strong> Watch the wheel spin, hold your breath for a second, and see where the pointer lands.</li>
-        </ol>
-        <p>If you want to keep playing, just turn on the <strong>"Auto-remove winner"</strong> setting. This is perfect for things like picking multiple winners for a raffle or assigning tasks to different team members one by one.</p>
-        <h3>Quick keyboard shortcuts</h3>
-        <ul>
-          <li><strong>Enter</strong> — add a new name when editing the list</li>
-          <li><strong>Escape</strong> — close any open popup or fullscreen mode</li>
-          <li><strong>Ctrl+Enter</strong> — spin the wheel</li>
-          <li><strong>Tab</strong> — move between controls (fully accessible with keyboard only)</li>
-        </ul>
-      </div>
-
-      <div class="seo-block">
-        <h2>Why People Love This Random Name Picker</h2>
-        <p>Unlike clunky, ad-filled randomizer apps, we focused on making this feel like a <strong>premium experience</strong> from the moment you land on the page. Here's what makes it different:</p>
-        <ul>
-          <li><strong>It actually looks good:</strong> Smooth animations, satisfying tick sounds, and a burst of confetti when a winner is chosen.</li>
+          <li><strong>It actually looks good:</strong> Smooth animations, satisfying tick sounds and a confetti burst when a winner is picked.</li>
           <li><strong>It's instant:</strong> No logins, no emails, no downloads. The wheel is ready the second the page loads.</li>
-          <li><strong>Your data is yours:</strong> Everything happens right there in your browser. We don't store your lists, your names on the wheel, or your results.</li>
-          <li><strong>Total control:</strong> Add up to <strong>50 options</strong>, insert emojis, upload custom images for the segments, choose from <strong>18 premium color themes</strong>, adjust the <strong>spin speed</strong>, and toggle <strong>background music</strong>.</li>
-          <li><strong>Speed on your terms:</strong> A slider lets you adjust spin duration from 1.5 to 15 seconds — from super quick to slow and dramatic.</li>
-          <li><strong>Background music:</strong> Turn on a gentle melody generated in real-time that accompanies your spinning experience.</li>
-          <li><strong>Fast &amp; smooth:</strong> Optimized rendering keeps the picker wheel silky smooth even on older phones and tablets.</li>
-          <li><strong>Works offline:</strong> After the page loads, you can disconnect Wi-Fi and keep spinning.</li>
-          <li><strong>Available in 11 languages:</strong> English, Español, Português, Français, Polski, Deutsch, Bahasa Indonesia, ไทย, Filipino, 日本語, and 中文.</li>
+          <li><strong>Your data is yours:</strong> Everything happens right there in your browser. We don't store your lists, names or results.</li>
+          <li><strong>Total control:</strong> Add up to <strong>50 options</strong>, insert emojis, upload custom images, choose from <strong>18 premium color themes</strong>, adjust the <strong>spin speed</strong> and turn on <strong>background music</strong>.</li>
+          <li><strong>Speed your way:</strong> A slider lets you set the spin duration from 1.5 to 15 seconds — from lightning fast to slow and dramatic.</li>
+          <li><strong>Background music:</strong> Turn on a soft melody generated in real time that accompanies your spinning experience.</li>
+          <li><strong>Works offline:</strong> After the page loads, you can disconnect the Wi-Fi and keep spinning.</li>
+          <li><strong>Available in 11 languages:</strong> English, Español, Português, Français, Polski, Deutsch, Bahasa Indonesia, ไทย, Filipino, 日本語 and 中文.</li>
         </ul>
       </div>
 
       <div class="seo-block">
-        <h2>Popular Ways to Use the Wheel</h2>
-        <p>Our users have spun this wheel millions of times. Here are some of the most popular ways the random name picker gets used every day:</p>
-        <h3>🎉 Parties &amp; Giveaways</h3>
-        <ul>
-          <li>Raffles, giveaways, and lucky draws with names on the wheel</li>
-          <li>Truth-or-Dare and party game selection</li>
-          <li>Picking who buys the next round</li>
-          <li>Assigning party themes or dress codes</li>
-        </ul>
-        <h3>🎓 Classroom &amp; Teaching</h3>
-        <ul>
-          <li>Calling on a random student to answer</li>
-          <li>Dividing the class into discussion groups</li>
-          <li>Selecting a topic from a list of options</li>
-          <li>Picking a random reward or activity</li>
-        </ul>
-        <h3>💼 Work &amp; Teams</h3>
-        <ul>
-          <li>Choosing who presents first at a meeting</li>
-          <li>Splitting a team into random groups</li>
-          <li>Assigning routine chores fairly</li>
-          <li>Picking a random item from a backlog</li>
-        </ul>
-        <h3>🍕 Food &amp; Restaurants</h3>
-        <ul>
-          <li>Deciding where to eat with indecisive friends</li>
-          <li>Picking a random cuisine to try on a date night</li>
-          <li>Choosing what to cook from the fridge tonight</li>
-          <li>Randomly selecting a snack from the pantry</li>
-        </ul>
-        <h3>💪 Fitness &amp; Habits</h3>
-        <ul>
-          <li>Choosing today's workout move</li>
-          <li>Random rest-day activity selection</li>
-          <li>Picking a habit to focus on for the week</li>
-        </ul>
-      </div>
-
-      <div class="seo-block">
-        <h2>Customize Your Picker Wheel</h2>
-        <p>In <strong>Settings</strong> you can tune the wheel exactly the way you want:</p>
-        <h3>🎚️ Spin duration</h3>
-        <p>A slider lets you choose <strong>how long the spin lasts</strong>, from <strong>1.5 seconds</strong> (super quick, great for rapid-fire decisions) to <strong>15 seconds</strong> (slow and dramatic, perfect for high-stakes giveaways). Adjust the exact time in 0.5-second increments.</p>
-        <h3>🎵 Background music</h3>
-        <p>Turn on <strong>background music</strong> for a more immersive experience. The melody is generated in real time using the Web Audio API — no external files, no downloads, 100% in your browser.</p>
-        <h3>🎨 Other options</h3>
-        <ul>
-          <li>18 premium color palettes</li>
-          <li>Wheel size (compact, medium, large)</li>
-          <li>Text size on the segments</li>
-          <li>Optional segment borders</li>
-          <li>Outer ring</li>
-          <li>Sound effects (adjustable volume)</li>
-          <li>Confetti effect on win</li>
-          <li>Auto-remove winner</li>
-        </ul>
-      </div>
-
-      <div class="seo-block">
-        <h2>Tips for the Best Wheel of Names Experience</h2>
-        <p>A few small things can make your spin sessions smoother:</p>
-        <ul>
-          <li><strong>Keep names short.</strong> Around 15 characters or fewer fits best on the wheel. Longer text still works — we auto-shrink and wrap it — but shorter is prettier.</li>
-          <li><strong>Use fewer than 20 names for parties.</strong> Too many slices make it hard to read, though up to 50 is supported.</li>
-          <li><strong>Toggle "Segment borders"</strong> in Settings to add subtle divider lines between slices.</li>
-          <li><strong>Turn on "Auto-remove winner"</strong> for raffles — each spin removes the winner so you can draw multiple winners easily.</li>
-          <li><strong>Try fullscreen mode</strong> for classroom or party use — the wheel fills the screen and looks great on a projector.</li>
-          <li><strong>Use images for movie posters, team logos, or food</strong> — just click the image button in the toolbar.</li>
-        </ul>
-      </div>
-
-      <div class="seo-block">
-        <h2>Is It Actually Fair? (Behind the Scenes)</h2>
-        <p><strong>Yes. And we take that seriously.</strong> We don't use basic math to pick the winner; we use your browser's built-in <code>crypto.getRandomValues</code> API. This is the <strong>same level of cryptographic security</strong> used to keep passwords safe.</p>
-        <h3>How the randomness works</h3>
-        <p>When you click the white circle in the middle of the wheel, here's exactly what happens:</p>
+        <h2>How to Use It (Super Easy)</h2>
         <ol>
-          <li>The browser generates a cryptographically secure random number between 0 and the number of names on the wheel.</li>
-          <li>That number maps directly to a slice on the wheel.</li>
-          <li>The wheel spins a randomized number of turns and lands on the pre-selected slice.</li>
+          <li><strong>Make your list:</strong> Type your options into the text box on the right. One option per line.</li>
+          <li><strong>Click the white circle in the center:</strong> Press the white circle at the center of the wheel (or anywhere on the wheel) to spin it.</li>
+          <li><strong>Find out the answer:</strong> Watch the wheel spin and see where the pointer stops.</li>
         </ol>
-        <p>That means there are <strong>no hidden weights</strong>, <strong>no algorithms favoring certain names</strong>, and <strong>no patterns</strong>. The winner is chosen the millisecond you click spin. The animation is just for the drama. <strong>Every single name on the wheel has a completely equal chance of winning.</strong></p>
-        <h3>Verified fair</h3>
-        <p>Because the random number is picked <strong>before</strong> the wheel spins, we can't "cheat" the result to make a certain slice land under the pointer. The visual spin always matches the pre-selected winner. No tricks.</p>
       </div>
 
       <div class="seo-block">
-        <h2>Your Privacy is the Default</h2>
-        <p>A lot of websites collect data just because they can. <strong>We don't.</strong> Spin the Wheel is designed to <strong>work entirely offline</strong> once it loads.</p>
-        <p>If you type your best friend's name into the picker wheel, <strong>that name never leaves your computer</strong>. It's not sent to our servers, it's not saved in a database, and it's not tracked by analytics. We literally have no way of knowing what you're spinning for. You can use it in a classroom, an office, or a party with <strong>total peace of mind</strong>.</p>
-        <p>You can read our full <strong><a href="/privacy-policy">Privacy Policy</a></strong> for all the details, or check out our <strong><a href="/terms">Terms &amp; Conditions</a></strong> to see the rules of the site. If you want to know more about who we are, visit the <strong><a href="/about-us">About Us</a></strong> page.</p>
+        <h2>Customize Your Experience</h2>
+        <p>In <strong>Settings</strong> you can customize the wheel exactly the way you want:</p>
+        <h3>🎚️ Spin duration</h3>
+        <p>A slider lets you choose <strong>how long the spin lasts</strong>, from <strong>1.5 seconds</strong> (super fast) to <strong>15 seconds</strong> (slow and dramatic). Set the exact time you want in 0.5-second increments.</p>
+        <h3>🎵 Background music</h3>
+        <p>Turn on <strong>background music</strong> for a more immersive experience. The melody is generated in real time with the Web Audio API — no external files, 100% in your browser.</p>
       </div>
 
       <div class="seo-block">
         <h2>Frequently Asked Questions</h2>
-        <details class="faq-item"><summary class="faq-q">Is this Spin the Wheel tool really free?</summary><div class="faq-a">Yes! It's <strong>100% free</strong>. No premium tiers, no ads, no hidden fees — forever. No signup required to spin the wheel.</div></details>
-        <details class="faq-item"><summary class="faq-q">How does the random name picker work?</summary><div class="faq-a">Type or paste your <strong>names on the wheel</strong> — one per line — then press the spin button. The random name picker instantly selects one name from the wheel using a cryptographically secure random number generator.</div></details>
-        <details class="faq-item"><summary class="faq-q">What is a picker wheel?</summary><div class="faq-a">A <strong>picker wheel</strong> is a spinning wheel of names used to pick a random option, winner or student. This page is a free online picker wheel and wheel of names that runs entirely in your browser.</div></details>
-        <details class="faq-item"><summary class="faq-q">How many names can I add to the wheel?</summary><div class="faq-a">Up to <strong>50 names on the wheel</strong> per spin. For best readability we recommend keeping each name short — ideally under 15 characters.</div></details>
-        <details class="faq-item"><summary class="faq-q">Can I control the spin speed?</summary><div class="faq-a"><strong>Yes.</strong> In Settings there's a <strong>spin duration slider</strong> from 1.5 seconds (very fast) to 15 seconds (slow and dramatic). Adjust the exact time in 0.5-second increments.</div></details>
-        <details class="faq-item"><summary class="faq-q">Is there background music available?</summary><div class="faq-a"><strong>Yes!</strong> Enable <strong>background music</strong> in Settings for a more immersive experience. The melody is generated 100% in your browser — no external files, no downloads.</div></details>
-        <details class="faq-item"><summary class="faq-q">Can I customize the wheel?</summary><div class="faq-a"><strong>Yes!</strong> Pick from <strong>18 premium color themes</strong>, adjust wheel size and text size, add segment borders, upload a <strong>full-page background image</strong>, and more in Settings.</div></details>
-        <details class="faq-item"><summary class="faq-q">Is the wheel truly random?</summary><div class="faq-a"><strong>Yes.</strong> Every spin uses <code>crypto.getRandomValues</code> — the same cryptographically secure random number generator used by password managers and banking apps. Zero bias, zero patterns.</div></details>
-        <details class="faq-item"><summary class="faq-q">Does it work on mobile?</summary><div class="faq-a"><strong>Absolutely.</strong> The entire interface is responsive and mobile-first. Works on phones, tablets, laptops, desktops, and even smart TV browsers.</div></details>
-        <details class="faq-item"><summary class="faq-q">Do you save my names on the wheel?</summary><div class="faq-a"><strong>No.</strong> Everything runs locally in your browser. Nothing is ever sent to a server. When you close the tab, your entries are gone unless you download them with the Save button.</div></details>
-        <details class="faq-item"><summary class="faq-q">Can I use the wheel offline?</summary><div class="faq-a"><strong>Yes.</strong> Once the page loads, everything works 100% locally. You can turn off Wi-Fi and keep spinning — the code is already in your browser.</div></details>
-        <details class="faq-item"><summary class="faq-q">Can I add images instead of text?</summary><div class="faq-a"><strong>Yes.</strong> Click the image icon in the toolbar to upload a photo. Each image is automatically resized and clipped into its slice. Great for movie posters, food photos, or team logos.</div></details>
-        <details class="faq-item"><summary class="faq-q">Which browsers are supported?</summary><div class="faq-a">All modern browsers: <strong>Chrome, Edge, Firefox, Safari, Opera, Brave</strong> — on Windows, macOS, Linux, iOS, and Android. Requires JavaScript enabled.</div></details>
-        <details class="faq-item"><summary class="faq-q">Is there a limit on how many times I can spin?</summary><div class="faq-a"><strong>No limit.</strong> Spin as many times as you want, on as many wheels as you want. No accounts, no caps, no cooldowns.</div></details>
-        <details class="faq-item"><summary class="faq-q">Can I save my wheel for later?</summary><div class="faq-a"><strong>Yes.</strong> Click the <strong>File</strong> button in the header (or the save icon in the toolbar) to download your list as a text file. Paste it back into the textarea any time to restore the wheel of names.</div></details>
-        <details class="faq-item"><summary class="faq-q">Does the wheel support emojis?</summary><div class="faq-a"><strong>Yes!</strong> Emojis work perfectly as wheel entries. Use the smile button to insert one quickly, or type any emoji directly into the textarea.</div></details>
-        <details class="faq-item"><summary class="faq-q">What languages is the site available in?</summary><div class="faq-a">This spin the wheel site is available in <strong>11 languages</strong>: English, Español, Português, Français, Polski, Deutsch, Bahasa Indonesia, ไทย, Filipino, 日本語, and 中文. Use the <strong>globe icon</strong> in the header to switch languages at any time.</div></details>
+        <details class="faq-item"><summary class="faq-q">Is Spin The Wheelly really free?</summary><div class="faq-a">Yes! It's <strong>100% free</strong>. No premium plans, no ads, no hidden charges — forever. No sign-up required.</div></details>
+        <details class="faq-item"><summary class="faq-q">Can I control the spin speed?</summary><div class="faq-a"><strong>Yes.</strong> Settings has a <strong>spin duration slider</strong> that goes from 1.5 seconds (very fast) to 15 seconds (very slow).</div></details>
+        <details class="faq-item"><summary class="faq-q">Is background music available?</summary><div class="faq-a"><strong>Yes!</strong> Turn on <strong>background music</strong> in Settings for a more immersive experience. The melody is generated 100% in your browser.</div></details>
+        <details class="faq-item"><summary class="faq-q">How do I spin the wheel?</summary><div class="faq-a">Click the <strong>white circle in the center</strong> of the wheel, or anywhere on the wheel. The whole wheel is clickable. You can also use <strong>Ctrl+Enter</strong> from the keyboard.</div></details>
+        <details class="faq-item"><summary class="faq-q">Is the wheel truly random?</summary><div class="faq-a"><strong>Yes.</strong> Every spin uses <code>crypto.getRandomValues</code> — the same cryptographically secure random number generator used by password managers.</div></details>
+        <details class="faq-item"><summary class="faq-q">Do you store my entries?</summary><div class="faq-a"><strong>No.</strong> Everything runs locally in your browser. Nothing is ever sent to a server.</div></details>
+        <details class="faq-item"><summary class="faq-q">What languages is the site available in?</summary><div class="faq-a">Spin The Wheelly is available in <strong>11 languages</strong>: English, Español, Português, Français, Polski, Deutsch, Bahasa Indonesia, ไทย, Filipino, 日本語 and 中文.</div></details>
       </div>
     </article>
   </div>
@@ -1102,7 +956,7 @@ James</textarea>
 <footer class="site-footer">
   <div class="footer-container">
     <nav class="footer-links" aria-label="Footer navigation">
-      <a href="/about-us">About</a>
+      <a href="/about-us">About Us</a>
       <a href="/privacy-policy">Privacy</a>
       <a href="/terms">Terms</a>
     </nav>
@@ -1137,7 +991,7 @@ James</textarea>
           </div>
         </div>
         <div class="settings-section">
-          <span class="settings-label">Text Size on Wheel</span>
+          <span class="settings-label">Wheel Text Size</span>
           <div class="segmented-control" data-setting="textSize">
             <button type="button" data-value="small">Small</button>
             <button type="button" data-value="medium" class="active">Medium</button>
@@ -1146,7 +1000,7 @@ James</textarea>
         </div>
         <div class="settings-row"><label for="segmentBorders"><input type="checkbox" id="segmentBorders"> Segment borders</label></div>
         <div class="settings-row"><label for="outerRing"><input type="checkbox" id="outerRing"> Outer ring</label></div>
-        <div class="settings-row"><label for="showWheelText"><input type="checkbox" id="showWheelText"> Show names on wheel</label></div>
+        <div class="settings-row"><label for="showWheelText"><input type="checkbox" id="showWheelText"> Show text on wheel</label></div>
         <div class="settings-row"><label for="showPointer"><input type="checkbox" id="showPointer"> Show pointer</label></div>
         <div class="settings-row"><label for="soundEnabled"><input type="checkbox" id="soundEnabled"> Sound effects</label></div>
         <div class="settings-row"><label for="confettiEnabled"><input type="checkbox" id="confettiEnabled"> Confetti effect</label></div>
@@ -1163,11 +1017,11 @@ James</textarea>
             <input type="range" id="spinDurationRange" min="1.5" max="15" step="0.5" value="5.5" aria-label="Spin duration in seconds">
             <span class="speed-value" id="spinDurationValue">5.5s</span>
           </div>
-          <p class="settings-note">Drag to adjust how long the spin lasts — from 1.5s (super quick) to 15s (slow and dramatic).</p>
+          <p class="settings-note">Drag to adjust how long the spin lasts — from 1.5s (super fast) to 15s (slow and dramatic).</p>
         </div>
 
-        <div class="settings-row"><label for="autoRemoveWinner"><input type="checkbox" id="autoRemoveWinner"> Auto-remove winner after spin</label></div>
-        <p class="settings-note">Auto-remove deletes the winning name from the wheel so you can spin again with the remaining choices.</p>
+        <div class="settings-row"><label for="autoRemoveWinner"><input type="checkbox" id="autoRemoveWinner"> Remove winner automatically after spin</label></div>
+        <p class="settings-note">Auto-remove deletes the winning entry so you can spin again with the remaining options.</p>
 
         <div class="settings-row">
           <label for="musicEnabled">
@@ -1176,11 +1030,11 @@ James</textarea>
             Background music
           </label>
         </div>
-        <p class="settings-note">Turn on a gentle melody generated in real-time while you use the wheel.</p>
+        <p class="settings-note">Turn on a soft melody generated in real time while you use the wheel.</p>
       </div>
     </div>
     <div class="modal-actions">
-      <button type="button" class="btn btn-outline" onclick="resetAllSettings()">Reset Defaults</button>
+      <button type="button" class="btn btn-outline" onclick="resetAllSettings()">Reset</button>
       <button type="button" class="btn btn-primary" onclick="closeSettingsModal()">Done</button>
     </div>
   </div>
@@ -1189,7 +1043,7 @@ James</textarea>
 <div class="modal-overlay" id="presetModal" role="dialog" aria-modal="true" aria-hidden="true">
   <div class="modal-box preset-modal-box">
     <h3><svg class="modal-title-icon"><use href="#i-pie"/></svg> Choose a Wheel</h3>
-    <p>Pick a ready-made premium wheel of names to start spinning instantly.</p>
+    <p>Pick a premium ready-to-spin wheel and start right away.</p>
     <div class="preset-grid" id="presetGrid"></div>
     <div class="modal-actions">
       <button type="button" class="btn btn-outline" onclick="closeModal('presetModal')">Cancel</button>
@@ -1208,7 +1062,7 @@ James</textarea>
 
     <button type="button" class="sidebar-item sidebar-tools-btn" id="sidebarLangBtn" onclick="toggleSidebarLang(event)" aria-expanded="false">
       <svg aria-hidden="true"><use href="#i-globe"/></svg><span>Language</span>
-           <svg class="chevron" aria-hidden="true"><use href="#i-chevron-down"/></svg>
+      <svg class="chevron" aria-hidden="true"><use href="#i-chevron-down"/></svg>
     </button>
     <div class="sidebar-tools-sub" id="sidebarLangSub">
       <a href="https://spinthewheelly.com/" class="sidebar-sub-item lang-active" lang="en" hreflang="en" aria-current="page"><span class="flag-icon">🇬🇧</span><span class="item-content"><span class="item-title">English</span></span></a>
@@ -1219,8 +1073,8 @@ James</textarea>
       <a href="https://spinthewheelly.com/de/" class="sidebar-sub-item" lang="de" hreflang="de"><span class="flag-icon">🇩🇪</span><span class="item-content"><span class="item-title">Deutsch</span></span></a>
       <a href="https://spinthewheelly.com/id/" class="sidebar-sub-item" lang="id" hreflang="id"><span class="flag-icon">🇮🇩</span><span class="item-content"><span class="item-title">Bahasa Indonesia</span></span></a>
       <a href="https://spinthewheelly.com/th/" class="sidebar-sub-item" lang="th" hreflang="th"><span class="flag-icon">🇹🇭</span><span class="item-content"><span class="item-title">ไทย</span></span></a>
-      <a href="https://spinthewheelly.com/tl/" class="sidebar-sub-item" lang="tl" hreflang="tl"><span class="flag-icon">🇵🇭</span><span class="item-content"><span class="item-title">Filipino</span></span></a>
-      <a href="https://spinthewheelly.com/ja/" class="sidebar-sub-item" lang="ja" hreflang="ja"><span class="flag-icon">🇯🇵</span><span class="item-content"><span class="item-title">日本語</span></span></a>
+      <a href="https://spinthewheelly.com/tl/" class="sidebar-sub-item" lang="tl" hreflang="tl"><span class="flag-icon">
+                <a href="https://spinthewheelly.com/ja/" class="sidebar-sub-item" lang="ja" hreflang="ja"><span class="flag-icon">🇯🇵</span><span class="item-content"><span class="item-title">日本語</span></span></a>
       <a href="https://spinthewheelly.com/zh/" class="sidebar-sub-item" lang="zh" hreflang="zh"><span class="flag-icon">🇨🇳</span><span class="item-content"><span class="item-title">中文</span></span></a>
     </div>
 
@@ -1286,17 +1140,24 @@ var COLOR_PALETTES = {
   ice:[{bg:'#0EA5E9',fg:'#ffffff'},{bg:'#38BDF8',fg:'#1a1a1a'},{bg:'#7DD3FC',fg:'#0a0a0a'},{bg:'#BAE6FD',fg:'#1a3a5a'},{bg:'#E0F2FE',fg:'#1a3a5a'},{bg:'#0284C7',fg:'#ffffff'},{bg:'#075985',fg:'#ffffff'},{bg:'#E0F7FA',fg:'#1a3a5a'},{bg:'#B2EBF2',fg:'#1a3a5a'},{bg:'#80DEEA',fg:'#0a0a0a'}]
 };
 
+var PALETTE_NAMES = {
+  classic:'Classic', neon:'Neon', pastel:'Pastel', ocean:'Ocean', sunset:'Sunset',
+  royal:'Royal', nature:'Nature', candy:'Candy', lavender:'Lavender', cherry:'Cherry',
+  emerald:'Emerald', midnight:'Midnight', copper:'Copper', tropical:'Tropical',
+  berry:'Berry', monochrome:'Monochrome', fire:'Fire', ice:'Ice'
+};
+
 var WHEEL_PRESETS = [
   {icon:'🍕',title:'What to Eat',subtitle:'Decide your next meal',entries:['Pizza','Burger','Sushi','Pasta','Tacos','Salad','Ramen','Steak']},
-  {icon:'🎬',title:'Movie Night',subtitle:'Pick a movie genre',entries:['Action','Comedy','Horror','Romance','Sci-Fi','Animation','Thriller','Documentary']},
-  {icon:'✅',title:'Yes or No',subtitle:'Quick decisions',entries:['Yes','No','Maybe','Definitely','Never','Ask Again','Absolutely','No Way']},
+  {icon:'🎬',title:'Movie Night',subtitle:'Pick a genre',entries:['Action','Comedy','Horror','Romance','Sci-Fi','Animation','Thriller','Documentary']},
+  {icon:'✅',title:'Yes or No',subtitle:'Quick decisions',entries:['Yes','No','Maybe','Definitely','Never','Ask again','Absolutely','No way']},
   {icon:'🏆',title:'Random Winner',subtitle:'Pick a name fairly',entries:['Alice','Bob','Charlie','Diana','Eve','Frank','Grace','Henry']},
   {icon:'🎭',title:'Truth or Dare',subtitle:'Party classic',entries:['Truth','Dare','Truth','Dare','Truth','Dare','Truth','Dare']},
-  {icon:'🎉',title:'Party Games',subtitle:'Fun with friends',entries:['Charades','Pictionary','Karaoke','Dance-off','Trivia','Would You Rather','Never Have I Ever','Two Truths One Lie']},
-  {icon:'💼',title:'Team Split',subtitle:'Assign teams',entries:['Team Red','Team Blue','Team Green','Team Yellow','Team Purple','Team Orange']},
+  {icon:'🎉',title:'Party Games',subtitle:'Fun with friends',entries:['Charades','Pictionary','Karaoke','Dancing','Trivia','Would You Rather','Never Have I Ever','Two Truths and a Lie']},
+  {icon:'💼',title:'Split Teams',subtitle:'Assign teams',entries:['Red Team','Blue Team','Green Team','Yellow Team','Purple Team','Orange Team']},
   {icon:'✈️',title:'Travel Destination',subtitle:'Where to go next',entries:['Paris','Tokyo','New York','Bali','Rome','Sydney','Dubai','London']},
-  {icon:'🎁',title:'Gift Ideas',subtitle:'What to buy',entries:['Book','Gift Card','Chocolate','Flowers','Tech Gadget','Clothing','Experience','Jewelry']},
-  {icon:'💪',title:'Workout Moves',subtitle:'Exercise picker',entries:['Push-ups','Squats','Burpees','Plank','Jumping Jacks','Lunges','Sit-ups','Mountain Climbers']}
+  {icon:'🎁',title:'Gift Ideas',subtitle:'What to buy',entries:['Book','Gift Card','Chocolate','Flowers','Gadget','Clothes','Experience','Jewelry']},
+  {icon:'💪',title:'Exercises',subtitle:'Workout picker',entries:['Push-ups','Squats','Burpees','Plank','Jumping Jacks','Lunges','Sit-ups','Mountain Climbers']}
 ];
 
 var winnerHistory=[];
@@ -1373,7 +1234,7 @@ function fitTextForSegment(name, chordWidth, radialWidth, segmentCount) {
   return {lines:[truncateToWidth(name,radialWidth,4.5)],fontSize:4.5};
 }
 
-function shareApp(){var text='Check out Spin the Wheel — a free random name picker and picker wheel!\n\nhttps://spinthewheelly.com/';if(navigator.share){navigator.share({title:'Spin the Wheel',text:text,url:'https://spinthewheelly.com/'}).catch(function(){openShareModal(text);});}else{openShareModal(text);}}
+function shareApp(){var text='Check out Spin The Wheelly — a free wheel spinner app!\n\nhttps://spinthewheelly.com/';if(navigator.share){navigator.share({title:'Spin The Wheelly',text:text,url:'https://spinthewheelly.com/'}).catch(function(){openShareModal(text);});}else{openShareModal(text);}}
 
 function closeModal(id){var m=document.getElementById(id);if(!m)return;m.classList.remove('active');m.setAttribute('aria-hidden','true');var anyActive=document.querySelector('.modal-overlay.active');if(!anyActive)document.body.style.overflow='';}
 
@@ -1464,7 +1325,7 @@ function closeSettingsModal(){
 }
 
 function resetAllSettings(){
-  if(!confirm('Are you sure you want to reset all settings to default?')) return;
+  if(!confirm('Are you sure you want to reset all settings to their default values?')) return;
   stopMusic();
   localStorage.removeItem('wheelSettings');
   location.reload();
@@ -1478,7 +1339,8 @@ function renderPaletteGrid(){
     var active=(key===colorTheme)?' active':'';
     var swatchCount=Math.min(4,palette.length);var swatches='';
     for(var i=0;i<swatchCount;i++){swatches+='<span class="swatch" style="background:'+palette[i].bg+'"></span>';}
-    html+='<button type="button" class="palette-swatch'+active+'" onclick="setColorTheme(\''+key+'\')" title="'+key.charAt(0).toUpperCase()+key.slice(1)+'" aria-label="'+key+' palette">'+swatches+'</button>';
+    var displayName=PALETTE_NAMES[key]||key;
+    html+='<button type="button" class="palette-swatch'+active+'" onclick="setColorTheme(\''+key+'\')" title="'+displayName+'" aria-label="'+displayName+' palette">'+swatches+'</button>';
   }
   grid.innerHTML=html;
 }
@@ -1490,7 +1352,7 @@ function setColorTheme(theme){
   renderPaletteGrid();
   rebuildWheel();
   saveWheelSettings();
-  showToast('Colors: '+theme.charAt(0).toUpperCase()+theme.slice(1));
+  showToast('Colors: '+(PALETTE_NAMES[theme]||theme));
 }
 
 function applyWheelSize(){var stage=document.getElementById('wheelStage');if(!stage)return;stage.classList.remove('size-compact','size-medium','size-large');stage.classList.add('size-'+wheelSize);}
@@ -1525,10 +1387,19 @@ function updateSegmentedUI(){
 function saveWheelSettings(){
   try{
     var s={
-      showWheelText:showWheelText,showPointer:showPointer,colorTheme:colorTheme,
-      wheelSize:wheelSize,textSize:textSize,segmentBorders:segmentBorders,outerRing:outerRing,
-      soundEnabled:soundEnabled,currentVolumeLevel:currentVolumeLevel,spinDurationBase:spinDurationBase,
-      autoRemoveWinner:autoRemoveWinner,confettiEnabled:confettiEnabled,musicEnabled:musicEnabled
+      showWheelText:showWheelText,
+      showPointer:showPointer,
+      colorTheme:colorTheme,
+      wheelSize:wheelSize,
+      textSize:textSize,
+      segmentBorders:segmentBorders,
+      outerRing:outerRing,
+      soundEnabled:soundEnabled,
+      currentVolumeLevel:currentVolumeLevel,
+      spinDurationBase:spinDurationBase,
+      autoRemoveWinner:autoRemoveWinner,
+      confettiEnabled:confettiEnabled,
+      musicEnabled:musicEnabled
     };
     localStorage.setItem('wheelSettings',JSON.stringify(s));
   }catch(e){}
@@ -1580,7 +1451,7 @@ function loadPreset(index){
   if(ta){ta.readOnly=false;ta.value=preset.entries.join('\n');}
   syncPlaceholder();
   participantImages={};winnerHistory=[];currentWinnerName='';currentWinnerIndex=-1;currentRotation=0;
-  document.title=preset.title+' — Spin the Wheel';
+  document.title=preset.title+' — Spin The Wheelly';
   updateEntries();renderResultsList();closeWinnerPopup();switchPanel('edit');closeModal('presetModal');
   showToast(preset.icon+' '+preset.title+' loaded!');
 }
@@ -1687,7 +1558,7 @@ function resetWheel(){
   var ta=document.getElementById('entriesTextarea');if(ta){ta.readOnly=false;ta.value='';}
   syncPlaceholder();
   participantImages={};winnerHistory=[];currentWinnerName='';currentWinnerIndex=-1;currentRotation=0;
-  document.title='Spin the Wheel — Free Random Name Picker & Picker Wheel';
+  document.title='Spin The Wheelly — Free Online Wheel Spinner to Pick a Random Option';
   updateEntries();renderResultsList();closeWinnerPopup();switchPanel('edit');showToast('New blank wheel started!');
 }
 
@@ -1797,7 +1668,7 @@ function playSweetMusic(){if(!soundEnabled||!audioCtx)return;var now=audioCtx.cu
 function fullscreenElementNow(){return document.fullscreenElement||document.webkitFullscreenElement||document.msFullscreenElement||null;}
 function isWheelFullscreen(){var el=document.getElementById('wheelPremiumBg');return !!fullscreenElementNow()||!!(el&&el.classList.contains('pseudo-fullscreen'));}
 function restoreBodyScroll(){var winnerOpen=document.getElementById('winnerOverlay')&&document.getElementById('winnerOverlay').classList.contains('show');var modalOpen=document.querySelector('.modal-overlay.active');var sidebarOpen=document.getElementById('mobileSidebar')&&document.getElementById('mobileSidebar').classList.contains('show');if(!winnerOpen&&!modalOpen&&!sidebarOpen)document.body.style.overflow='';}
-function updateFullscreenUi(){var on=isWheelFullscreen();var btn=document.getElementById('fsToggleBtn');var icon=document.getElementById('fsToggleIcon');if(btn){btn.title=on?'Exit Fullscreen':'Fullscreen Wheel';btn.setAttribute('aria-label',on?'Exit fullscreen':'Enter fullscreen');btn.setAttribute('aria-pressed',on?'true':'false');}if(icon)icon.setAttribute('href',on?'#i-minimize':'#i-maximize');}
+function updateFullscreenUi(){var on=isWheelFullscreen();var btn=document.getElementById('fsToggleBtn');var icon=document.getElementById('fsToggleIcon');if(btn){btn.title=on?'Exit Fullscreen':'Wheel Fullscreen';btn.setAttribute('aria-label',on?'Exit fullscreen':'Enter fullscreen');btn.setAttribute('aria-pressed',on?'true':'false');}if(icon)icon.setAttribute('href',on?'#i-minimize':'#i-maximize');}
 function setPseudoFullscreen(on){var el=document.getElementById('wheelPremiumBg');if(!el)return;el.classList.toggle('pseudo-fullscreen',on);if(on){document.body.style.overflow='hidden';}else{restoreBodyScroll();}updateFullscreenUi();}
 function toggleFullscreenWheel(){var el=document.getElementById('wheelPremiumBg');if(!el)return;if(isWheelFullscreen()){if(el.classList.contains('pseudo-fullscreen')){setPseudoFullscreen(false);return;}var exit=document.exitFullscreen||document.webkitExitFullscreen||document.msExitFullscreen;if(exit){try{exit.call(document);}catch(e){setPseudoFullscreen(false);}}else{setPseudoFullscreen(false);}return;}var req=el.requestFullscreen||el.webkitRequestFullscreen||el.msRequestFullscreen;if(!req){setPseudoFullscreen(true);return;}try{var p=req.call(el);if(p&&typeof p.then==='function'){p.then(function(){updateFullscreenUi();}).catch(function(){setPseudoFullscreen(true);});}else{setTimeout(updateFullscreenUi,150);}}catch(e){setPseudoFullscreen(true);}}
 
@@ -1827,7 +1698,7 @@ function updateEntries(){
     var popupOpen=document.getElementById('winnerOverlay').classList.contains('show');
     if(!isSpinning&&!popupOpen)startIdleSpin();
   }else{stopIdleSpin();}
-  if(participants.length===0){document.title='Spin the Wheel — Free Random Name Picker & Picker Wheel';}
+  if(participants.length===0){document.title='Spin The Wheelly — Free Online Wheel Spinner to Pick a Random Option';}
 }
 var debouncedUpdateEntries=debounce(updateEntries,50);
 
@@ -1888,7 +1759,7 @@ function handleImageUpload(event){
       else{ta.value+=(ta.value.length>0&&!ta.value.endsWith('\n')?'\n':'')+rawName;participantImages[rawName]=dataUrl;updateEntries();showToast('Image added: '+rawName);}
     });
   };
-  reader.onerror=function(){showToast('Could not read image.');};reader.readAsDataURL(file);
+  reader.onerror=function(){showToast('Could not read the image.');};reader.readAsDataURL(file);
 }
 
 function saveEntries(){
@@ -2065,7 +1936,7 @@ function showWinnerPopup(name){
   var overlay=document.getElementById('winnerOverlay');if(!overlay)return;
   document.getElementById('winnerNameBig').textContent=name;
   overlay.classList.add('show');overlay.setAttribute('aria-hidden','false');
-  document.body.style.overflow='hidden';announce(name+' Selected');
+  document.body.style.overflow='hidden';announce(name+' selected');
   setTimeout(function(){var btn=overlay.querySelector('.winner-btn-close');if(btn)try{btn.focus();}catch(e){}},80);
 }
 function closeWinnerPopup(){
