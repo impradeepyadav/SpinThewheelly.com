@@ -517,7 +517,8 @@ main{flex:1;display:flex;align-items:flex-start;justify-content:center;padding:0
 .seo-block{margin-bottom:24px;width:100%;text-align:left;}
 .seo-block:last-child{margin-bottom:0;}
 
-.seo-block h2{font-size:18px;font-weight:600;color:#111827;margin-top:0;margin-bottom:12px;letter-spacing:-0.2px;line-height:1.35;}
+.seo-block h2,
+.seo-content > h2{font-size:18px;font-weight:600;color:#111827;margin-top:0;margin-bottom:12px;letter-spacing:-0.2px;line-height:1.35;}
 .seo-block h3{font-size:14.5px;font-weight:500;color:#111827;margin:14px 0 8px;letter-spacing:-0.1px;line-height:1.4;}
 .seo-block p,.seo-block li{font-size:13.5px;line-height:1.65;color:#4b5563;font-weight:400;}
 .seo-block p{margin-bottom:12px;}
@@ -707,23 +708,123 @@ main{flex:1;display:flex;align-items:flex-start;justify-content:center;padding:0
 }
 </style>
 
+<!-- ================= Structured Data: Organization ================= -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "Spin The Wheelly",
+  "alternateName": "Spin the Wheel",
+  "url": "https://spinthewheelly.com/",
+  "logo": {
+    "@type": "ImageObject",
+    "url": "https://spinthewheelly.com/apple-touch-icon.png",
+    "width": 180,
+    "height": 180
+  },
+  "image": "https://spinthewheelly.com/apple-touch-icon.png",
+  "description": "Free online spin the wheel, picker wheel and random name picker. Pick winners, draw names, split teams or settle everyday decisions.",
+  "foundingDate": "2026"
+}
+</script>
+
+<!-- ================= Structured Data: WebSite ================= -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "Spin The Wheelly",
+  "alternateName": ["Spin The Wheelly", "Spin the Wheel", "Picker Wheel"],
+  "url": "https://spinthewheelly.com/",
+  "inLanguage": "en-US",
+  "publisher": {
+    "@type": "Organization",
+    "name": "Spin The Wheelly",
+    "url": "https://spinthewheelly.com/"
+  }
+}
+</script>
+
 <!-- ================= Structured Data: WebApplication ================= -->
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "WebApplication",
   "name": "Spin The Wheelly",
-  "alternateName": ["Spin The Wheelly", "Spin the Wheel"],
+  "alternateName": ["Spin The Wheelly", "Spin the Wheel", "Picker Wheel", "Random Name Picker"],
   "url": "https://spinthewheelly.com/",
-  "description": "Free online spin the wheel and random name picker. Make random choices, pick winners, choose names or decide what to do next. 29 color themes, custom spin speed, emojis, images and more. No signup required.",
+  "description": "Free online spin the wheel and picker wheel. Use it as a random name picker, wheel of names, team picker, raffle wheel or yes/no decision maker. No signup, works offline.",
   "applicationCategory": "UtilityApplication",
+  "applicationSubCategory": "Random Picker",
   "operatingSystem": "Any",
   "browserRequirements": "Requires JavaScript. Works in all modern browsers.",
   "inLanguage": "en-US",
   "availableLanguage": ["en-US","es-ES","pt-PT","fr-FR","pl-PL","de-DE","id-ID","th-TH","tl-PH","ja-JP","zh-CN"],
   "isAccessibleForFree": true,
   "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
-  "creator": { "@type": "Organization", "name": "Spin The Wheelly", "url": "https://spinthewheelly.com/" }
+  "featureList": [
+    "Random name picker",
+    "Picker wheel up to 50 entries",
+    "29 premium color themes",
+    "Customizable spin duration (1.5s to 15s)",
+    "Background music",
+    "Emoji and image support",
+    "Confetti winner celebration",
+    "Works offline",
+    "Remove winner mode",
+    "Fullscreen mode",
+    "11 languages"
+  ],
+  "creator": {
+    "@type": "Organization",
+    "name": "Spin The Wheelly",
+    "url": "https://spinthewheelly.com/"
+  }
+}
+</script>
+
+<!-- ================= Structured Data: ItemList (5 Tools) ================= -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ItemList",
+  "name": "Free Decision Tools by Spin The Wheelly",
+  "description": "A collection of free online decision and random picker tools.",
+  "numberOfItems": 5,
+  "itemListOrder": "https://schema.org/ItemListOrderAscending",
+  "itemListElement": [
+    {"@type": "ListItem", "position": 1, "name": "Spin the Wheel (Picker Wheel)", "url": "https://spinthewheelly.com/"},
+    {"@type": "ListItem", "position": 2, "name": "Random Name Picker", "url": "https://spinthewheelly.com/random-name-picker"},
+    {"@type": "ListItem", "position": 3, "name": "Yes / No Wheel", "url": "https://spinthewheelly.com/yes-no-wheel"},
+    {"@type": "ListItem", "position": 4, "name": "Random Team Generator", "url": "https://spinthewheelly.com/random-team-generator"},
+    {"@type": "ListItem", "position": 5, "name": "What to Eat", "url": "https://spinthewheelly.com/what-to-eat"}
+  ]
+}
+</script>
+
+<!-- ================= Structured Data: WebPage ================= -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "Spin the Wheel – Free Random Name Picker & Decision Maker",
+  "url": "https://spinthewheelly.com/",
+  "inLanguage": "en-US",
+  "description": "Free online spin the wheel, picker wheel and random name picker. Pick a winner, draw names, split teams or settle everyday decisions. Fully customizable, no signup.",
+  "isPartOf": {
+    "@type": "WebSite",
+    "name": "Spin The Wheelly",
+    "url": "https://spinthewheelly.com/"
+  },
+  "about": {
+    "@type": "WebApplication",
+    "name": "Spin The Wheelly",
+    "url": "https://spinthewheelly.com/"
+  },
+  "primaryImageOfPage": {
+    "@type": "ImageObject",
+    "url": "https://spinthewheelly.com/apple-touch-icon.png"
+  }
 }
 </script>
 
@@ -749,22 +850,10 @@ main{flex:1;display:flex;align-items:flex-start;justify-content:center;padding:0
     {"@type":"Question","name":"Does the wheel support emojis?","acceptedAnswer":{"@type":"Answer","text":"Yes! Emojis work perfectly as wheel entries. Use the smiley button to insert one quickly, or type any emoji directly into the textarea."}},
     {"@type":"Question","name":"What languages is the site available in?","acceptedAnswer":{"@type":"Answer","text":"Spin The Wheelly is available in 11 languages: English, Español, Português, Français, Polski, Deutsch, Bahasa Indonesia, ไทย, Filipino, 日本語 and 中文. Use the globe icon in the header to switch languages at any time."}},
     {"@type":"Question","name":"Can I use it as a classroom random name picker?","acceptedAnswer":{"@type":"Answer","text":"Absolutely. Teachers love using Spin The Wheelly as a classroom random name picker or student selector. It works great on smartboards and tablets, supports images, and has an optional remove winner mode so every student gets a turn."}},
-    {"@type":"Question","name":"Is there a free raffle wheel spinner?","acceptedAnswer":{"@type":"Answer","text":"Yes — this is a free raffle wheel spinner. Add participant names, spin in front of your audience, optionally remove winners, and download the results list. Completely transparent and fair."}}
+    {"@type":"Question","name":"Is there a free raffle wheel spinner?","acceptedAnswer":{"@type":"Answer","text":"Yes — this is a free raffle wheel spinner. Add participant names, spin in front of your audience, optionally remove winners, and download the results list. Completely transparent and fair."}},
+    {"@type":"Question","name":"Is background music available?","acceptedAnswer":{"@type":"Answer","text":"Yes. Turn on background music in Settings for a more immersive experience. The melody is generated 100% in your browser using the Web Audio API."}},
+    {"@type":"Question","name":"How do I spin the wheel?","acceptedAnswer":{"@type":"Answer","text":"Click the SPIN button in the center of the wheel, or click anywhere on the wheel. The whole wheel is clickable. You can also use Ctrl+Enter from the keyboard."}}
   ]
-}
-</script>
-
-<!-- ================= Structured Data: WebPage ================= -->
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "WebPage",
-  "name": "Spin the Wheel – Free Random Name Picker & Decision Maker",
-  "url": "https://spinthewheelly.com/",
-  "inLanguage": "en-US",
-  "description": "Free online spin the wheel tool. Make random choices, pick a winner, choose names or decide what to do next. Fully customizable, no signup required.",
-  "isPartOf": { "@type": "WebSite", "name": "Spin The Wheelly", "url": "https://spinthewheelly.com/" },
-  "about": { "@type": "WebApplication", "name": "Spin The Wheelly", "url": "https://spinthewheelly.com/" }
 }
 </script>
 </head>
@@ -996,8 +1085,10 @@ James</textarea>
     <article class="seo-content">
       <h1 class="page-h1" style="margin-top:0;margin-bottom:8px;">Spin the Wheel – Free Random Name Picker & Decision Maker</h1>
       <p class="page-subtitle" style="margin-bottom:18px;">Make random choices, pick a winner, choose names or decide what to do next — free, fast, fair and fully customizable.</p>
-      <h2>About Spin The Wheelly – Free Spin the Wheel & Random Name Picker</h2>
-      <p class="page-subtitle">A free online random name picker and decision wheel that helps you pick winners, choose names and settle everyday choices fairly and quickly.</p>
+            <div class="seo-block">
+        <h2>About Spin The Wheelly: Free Picker Wheel &amp; Random Name Picker</h2>
+        <p>Spin The Wheelly is a free online picker wheel and random name picker. Type your names or options, give the wheel a spin, and get a fair answer in seconds. Use it as a name picker for your classroom, a raffle wheel spinner for giveaways, or a quick decision wheel for everyday choices.</p>
+      </div>
       <div class="seo-block">
         <h2>Let the Wheel Choose for You</h2>
         <p>We've all been there: you're trying to pick a restaurant with friends, decide who pays for the next round of coffee or figure out what to watch on a Friday night, and suddenly everyone has lost the ability to make a decision. <strong>That's exactly why we created Spin The Wheelly – the free online spin the wheel tool.</strong></p>
@@ -1117,7 +1208,16 @@ James</textarea>
         <details class="faq-item"><summary class="faq-q">Do you store my entries?</summary><div class="faq-a"><strong>No.</strong> Everything runs locally in your browser. Nothing is ever sent to a server. Your random name picker list stays private.</div></details>
         <details class="faq-item"><summary class="faq-q">Can I use it as a classroom random name picker?</summary><div class="faq-a">Absolutely. Teachers love using Spin The Wheelly as a <strong>classroom random name picker</strong> or student selector. It works great on smartboards and tablets, supports images, and has an optional "remove winner" mode so every student gets a turn.</div></details>
         <details class="faq-item"><summary class="faq-q">Is there a free raffle wheel spinner?</summary><div class="faq-a">Yes — this is a free <strong>raffle wheel spinner</strong>. Add participant names, spin in front of your audience, optionally remove winners, and download the results list. Completely transparent and fair.</div></details>
-        <details class="faq-item"><summary class="faq-q">What languages is the site available in?</summary><div class="faq-a">Spin The Wheelly is available in <strong>11 languages</strong>: English, Español, Português, Français, Polski, Deutsch, Bahasa Indonesia, ไทย, Filipino, 日本語 and 中文. Use the globe icon in the header to switch.</div></details>
+        <details class="faq-item"><summary class="faq-q">What languages does the site support?</summary><div class="faq-a">Eleven: English, Español, Português, Français, Polski, Deutsch, Bahasa Indonesia, ไทย, Filipino, 日本語 and 中文. The globe icon in the header switches between them.</div></details>
+        <details class="faq-item"><summary class="faq-q">Can I customize the wheel?</summary><div class="faq-a">Yes. Open <strong>Settings</strong> to choose from <strong>29 colour themes</strong>, adjust wheel and text size, toggle segment borders, upload a fullscreen background image, and set the spin duration.</div></details>
+        <details class="faq-item"><summary class="faq-q">How many entries can I add?</summary><div class="faq-a">Up to <strong>50 entries</strong> per wheel. For best readability, keep labels short — ideally under 15 characters.</div></details>
+        <details class="faq-item"><summary class="faq-q">Does it work on mobile?</summary><div class="faq-a">Yes. The interface is fully responsive and works on phones, tablets, laptops, desktops and even smart TV browsers.</div></details>
+        <details class="faq-item"><summary class="faq-q">Can I use the wheel offline?</summary><div class="faq-a">Yes. Once the page has loaded, everything runs locally. Drop the Wi-Fi and keep spinning — the code is already in your browser.</div></details>
+        <details class="faq-item"><summary class="faq-q">Can I add images instead of text?</summary><div class="faq-a">Yes. Click the image icon in the toolbar to upload a photo. Each image is automatically cropped into its segment.</div></details>
+        <details class="faq-item"><summary class="faq-q">Which browsers are supported?</summary><div class="faq-a">All modern browsers: Chrome, Edge, Firefox, Safari, Opera, Brave — on Windows, macOS, Linux, iOS and Android. JavaScript must be enabled.</div></details>
+        <details class="faq-item"><summary class="faq-q">Is there a limit on how many times I can spin?</summary><div class="faq-a">No limit. Spin as many times as you want, on as many wheels as you want. No accounts, no caps, no cooldowns.</div></details>
+        <details class="faq-item"><summary class="faq-q">Can I save my wheel for later?</summary><div class="faq-a">Yes. Click the <strong>File</strong> button in the header or the save icon in the toolbar to download your list as a text file.</div></details>
+        <details class="faq-item"><summary class="faq-q">Does the wheel support emojis?</summary><div class="faq-a">Yes. Use the smiley button to insert an emoji quickly, or type any emoji directly into the textarea.</div></details>
       </div>
     </article>
   </div>
