@@ -726,7 +726,7 @@ main{flex:1;display:flex;align-items:flex-start;justify-content:center;padding:0
   "isAccessibleForFree": true,
   "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
   "featureList": [
-    "Yes or No wheel with 50/50 odds",
+    "Yes or No wheel with 5 default options",
     "Optional Maybe for 3-way outcomes",
     "Cryptographically secure randomness",
     "Custom answers like Definitely or Ask again",
@@ -777,8 +777,8 @@ main{flex:1;display:flex;align-items:flex-start;justify-content:center;padding:0
   "@type": "FAQPage",
   "inLanguage": "en-US",
   "mainEntity": [
-    {"@type":"Question","name":"How does the Yes or No Wheel work?","acceptedAnswer":{"@type":"Answer","text":"Type your question (or keep it in your head), then click the SPIN button in the centre of the wheel. The wheel lands on either Yes or No. If you enable Maybe, you get a third equal option. Every spin uses cryptographically secure randomness, so each answer has a fair chance."}},
-    {"@type":"Question","name":"Is the Yes or No Wheel 50/50?","acceptedAnswer":{"@type":"Answer","text":"Yes. With the default two slices (Yes and No), each has exactly a 50% chance on every spin — just like a fair coin flip. Add Maybe and you get three equal slices, giving each answer a 1-in-3 chance."}},
+    {"@type":"Question","name":"How does the Yes or No Wheel work?","acceptedAnswer":{"@type":"Answer","text":"Type your question (or keep it in your head), then click the SPIN button in the centre of the wheel. The wheel lands on one of five default options: Yes, No, Maybe, Definitely, or Never. Each has a fair 1-in-5 chance. Every spin uses cryptographically secure randomness, so each answer has a fair chance."}},
+    {"@type":"Question","name":"Is the Yes or No Wheel 50/50?","acceptedAnswer":{"@type":"Answer","text":"Not by default — the wheel starts with five equal slices (Yes, No, Maybe, Definitely, Never), giving each a 1-in-5 chance. Delete the extras to get back to two slices for a true 50/50 coin-flip experience."}},
     {"@type":"Question","name":"Is the Yes or No Wheel really free?","acceptedAnswer":{"@type":"Answer","text":"Yes! It's 100% free. No premium plans, no ads, no hidden charges, no sign-up required. Spin as many times as you like, forever."}},
     {"@type":"Question","name":"Is the result truly random?","acceptedAnswer":{"@type":"Answer","text":"Yes. Every spin uses crypto.getRandomValues — the browser's cryptographically secure random number generator. That means zero bias, zero patterns, and a completely fair pick every time. Past spins do not affect future spins."}},
     {"@type":"Question","name":"Can I add a Maybe option?","acceptedAnswer":{"@type":"Answer","text":"Absolutely. Open Settings and add Maybe as a third entry, or replace the default list with Yes, No, Maybe. You can also add custom answers like Definitely, Absolutely Not, Ask Again Later, or Not Today."}},
@@ -1012,7 +1012,7 @@ Never</textarea>
             </div>
           </div>
           <div class="entries-footer" id="entriesFooter">
-            <span class="count-badge" id="entriesCountBadge">Entries: 7</span>
+            <span class="count-badge" id="entriesCountBadge">Entries: 5</span>
           </div>
         </div>
       </div>
@@ -1039,7 +1039,7 @@ Never</textarea>
         <ul>
           <li><strong>It's instant:</strong> No signups, no downloads. The wheel is ready to spin the second the page loads.</li>
           <li><strong>Truly random:</strong> Every spin uses <code>crypto.getRandomValues</code> — the browser's cryptographically secure random number generator. Zero bias, zero patterns.</li>
-          <li><strong>50/50 by default:</strong> Yes and No each have an exactly equal chance. Add Maybe for a fair 1-in-3 outcome.</li>
+          <li><strong>5 equal options by default:</strong> Yes, No, Maybe, Definitely and Never — each with a fair 1-in-5 chance. Delete extras for a true 50/50.</li>
           <li><strong>Fully customizable:</strong> Replace Yes/No with any custom answers, add up to 50 entries, upload images, and choose from 29 colour themes.</li>
           <li><strong>The gut-check trick:</strong> The wheel doesn't make the decision — it reveals what you already wanted. If it lands on No and you feel disappointed, you know your answer is Yes.</li>
           <li><strong>Works offline:</strong> After the page loads, disconnect from Wi-Fi and keep spinning — ideal for classrooms or events with poor internet.</li>
@@ -1064,7 +1064,7 @@ Never</textarea>
 
       <div class="seo-block">
         <h2>Yes, No, or Maybe — Choosing Your Options</h2>
-        <p>The wheel starts with two equal slices: <strong>Yes</strong> and <strong>No</strong>, giving each a true 50/50 chance. Here's how to customise it:</p>
+        <p>The wheel starts with <strong>five equal slices</strong>: <strong>Yes</strong>, <strong>No</strong>, <strong>Maybe</strong>, <strong>Definitely</strong> and <strong>Never</strong> — each with a fair 1-in-5 chance. Here's how to customise it:</p>
         <ul>
           <li><strong>Add Maybe:</strong> Enable a third slice for a 1-in-3 chance each. Useful when "not now" is a real answer.</li>
           <li><strong>Custom answers:</strong> Replace Yes/No with anything — <em>Definitely</em> / <em>Absolutely Not</em>, <em>Do It</em> / <em>Skip It</em>, <em>Left</em> / <em>Right</em>, or whatever binary choice you need.</li>
@@ -1123,8 +1123,8 @@ Never</textarea>
 
       <div class="seo-block">
         <h2>Frequently Asked Questions</h2>
-        <details class="faq-item"><summary class="faq-q">How does the Yes or No Wheel work?</summary><div class="faq-a">Type your question (or keep it in your head), then click the <strong>SPIN button</strong> in the centre of the wheel. The wheel lands on either Yes or No. If you enable Maybe, you get a third equal option. Every spin uses cryptographically secure randomness, so each answer has a fair chance.</div></details>
-        <details class="faq-item"><summary class="faq-q">Is the Yes or No Wheel 50/50?</summary><div class="faq-a"><strong>Yes.</strong> With the default two slices (Yes and No), each has exactly a 50% chance on every spin — just like a fair coin flip. Add Maybe and you get three equal slices, giving each answer a 1-in-3 chance.</div></details>
+        <details class="faq-item"><summary class="faq-q">How does the Yes or No Wheel work?</summary><div class="faq-a">Type your question (or keep it in your head), then click the <strong>SPIN button</strong> in the centre of the wheel. The wheel lands on one of <strong>five default options</strong>: Yes, No, Maybe, Definitely, or Never. Each has a fair 1-in-5 chance. Every spin uses cryptographically secure randomness, so each answer has a fair chance.</div></details>
+        <details class="faq-item"><summary class="faq-q">Is the Yes or No Wheel 50/50?</summary><div class="faq-a"><strong>Not by default</strong> — the wheel starts with <strong>five equal slices</strong> (Yes, No, Maybe, Definitely, Never), giving each a 1-in-5 chance. Delete the extras to get back to two slices for a true 50/50 coin-flip experience.</div></details>
         <details class="faq-item"><summary class="faq-q">Is the Yes or No Wheel really free?</summary><div class="faq-a">Yes! It's <strong>100% free</strong>. No premium plans, no ads, no hidden charges, no sign-up required. Spin as many times as you like, forever.</div></details>
         <details class="faq-item"><summary class="faq-q">Is the result truly random?</summary><div class="faq-a"><strong>Yes.</strong> Every spin uses <code>crypto.getRandomValues</code> — the browser's cryptographically secure random number generator. That means zero bias, zero patterns, and a completely fair pick every time. Past spins do not affect future spins.</div></details>
         <details class="faq-item"><summary class="faq-q">Can I add a Maybe option?</summary><div class="faq-a">Absolutely. Open <strong>Settings</strong> and add Maybe as a third entry, or replace the default list with Yes, No, Maybe. You can also add custom answers like Definitely, Absolutely Not, Ask Again Later, or Not Today.</div></details>
@@ -2174,7 +2174,7 @@ function addEntry(){
   if(blockIfSpinning())return;
   if(currentTab!=='edit')switchPanel('edit');
   var ta=document.getElementById('entriesTextarea');if(!ta)return;
-  var defaultText='John\nEmma\nMichael\nSophia\nWilliam\nOlivia\nJames';
+  var defaultText='Yes\nNo\nMaybe\nDefinitely\nNever';
   if(ta.value.trim()===''){ta.value=defaultText;restoreDefaultNextFocus=true;}
   else{if(ta.value.length>0&&!ta.value.endsWith('\n'))ta.value+='\n';}
   ta.focus();ta.selectionStart=ta.selectionEnd=ta.value.length;
@@ -2541,7 +2541,7 @@ function init(){
       var ph=document.getElementById('fakePlaceholder');
       if(ph)ph.classList.add('hidden');
       if(restoreDefaultNextFocus){restoreDefaultNextFocus=false;return;}
-      var defaultText='John\nEmma\nMichael\nSophia\nWilliam\nOlivia\nJames';
+      var defaultText='Yes\nNo\nMaybe\nDefinitely\nNever';
       if(this.value===defaultText){this.value='';updateEntries();}
     });
     textarea.addEventListener('blur',function(){syncPlaceholder();});
