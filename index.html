@@ -120,11 +120,18 @@ main{flex:1;display:flex;align-items:flex-start;justify-content:center;padding:0
 
 .wheel-premium-bg{position:relative;display:flex;align-items:center;justify-content:center;width:100%;max-width:min(560px,calc(100vw - 40px),calc(100vh - 180px));max-width:min(560px,calc(100vw - 40px),calc(100dvh - 180px));aspect-ratio:1/1;margin:0 auto;border-radius:50%;overflow:hidden;}
 
+/* ══ MOBILE / TABLET — BIG WHEEL FIX ══ */
 @media (max-width:900px){
-  .wheel-layout{flex-direction:column;align-items:center;gap:24px;}
+  .wheel-layout{flex-direction:column;align-items:center;gap:20px;}
   .wheel-col{flex:0 1 auto;max-width:680px;width:100%;}
   .entries-panel{max-width:520px;width:100%;margin-top:0;}
-  .wheel-premium-bg:has(> .wheel-stage.size-medium){max-width:min(84vw,70vmin);}
+  .wheel-premium-bg,
+  .wheel-premium-bg:has(> .wheel-stage.size-medium){max-width:min(100%, calc(100dvh - 140px));}
+}
+@media (max-width:560px){
+  main{padding:0 10px 44px;}
+  .wheel-controls-top{padding:0 4px;}
+  .wheel-layout{gap:16px;}
 }
 
 @media (min-width:901px){
@@ -299,7 +306,6 @@ main{flex:1;display:flex;align-items:flex-start;justify-content:center;padding:0
 .settings-row select{padding:10px 14px;border-radius:8px;border:1px solid #d1d5db;background:#ffffff;color:#111827;font-family:inherit;font-size:14px;font-weight:500;cursor:pointer;min-width:120px;outline:none;}
 .settings-note{font-size:12.5px;color:#6b7280;line-height:1.5;margin:8px 0 4px;}
 
-/* Custom popup message input */
 #customPopupMessage{width:100%;padding:9px 12px;border:1px solid var(--line);border-radius:8px;font-family:inherit;font-size:14px;background:var(--input-bg);color:var(--text);outline:none;transition:border-color 0.2s,box-shadow 0.2s;}
 #customPopupMessage:focus{border-color:#4f46e5;box-shadow:0 0 0 3px rgba(79,70,229,0.1);}
 #customPopupMessage:disabled{opacity:0.5;cursor:not-allowed;}
@@ -322,7 +328,6 @@ main{flex:1;display:flex;align-items:flex-start;justify-content:center;padding:0
 .palette-swatch.active{border-color:#4f46e5;box-shadow:0 0 0 1px #4f46e5;}
 .palette-swatch .swatch{flex:1;height:20px;border-radius:4px;}
 
-/* Custom colors UI */
 .custom-colors-list{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:12px;min-height:38px;padding:8px;border:1px dashed var(--line);border-radius:8px;align-items:center;}
 .custom-color-swatch{position:relative;width:38px;height:38px;border-radius:8px;border:1px solid var(--line);transition:transform 0.15s;flex-shrink:0;}
 .custom-color-swatch:hover{transform:scale(1.08);}
@@ -333,8 +338,6 @@ main{flex:1;display:flex;align-items:flex-start;justify-content:center;padding:0
 
 .toast{position:fixed;bottom:26px;left:50%;transform:translateX(-50%) translateY(120px);background:#111827;color:#ffffff;padding:14px 28px;border-radius:40px;font-weight:600;font-size:14px;z-index:10002;box-shadow:0 10px 40px rgba(0,0,0,.2);transition:transform .4s cubic-bezier(0.34,1.56,0.64,1);pointer-events:none;max-width:min(90vw,460px);text-align:center;}
 .toast.show{transform:translateX(-50%) translateY(0)}
-
-.modal-box.preset-modal-box{max-width:820px;padding:32px 28px 28px;}
 
 .white-bottom-bg{background-color:#ffffff;width:100%;max-width:100%;overflow:hidden;padding-bottom:0;}
 .seo-content-box{background-color:#ffffff;border:1px solid #000000;border-radius:8px;padding:28px;margin:30px auto 0 auto;max-width:calc(var(--page-max) - 60px);width:calc(100% - 60px);box-sizing:border-box;}
@@ -350,12 +353,29 @@ main{flex:1;display:flex;align-items:flex-start;justify-content:center;padding:0
 .seo-block strong{font-weight:600;color:#111827;}
 .seo-block a{color:#2563eb;text-decoration:underline;font-weight:500;}
 .seo-block code{background:#f3f4f6;padding:2px 6px;border-radius:4px;font-size:12px;color:#c2410c;font-weight:500;}
+
+/* ══ CLEAN FAQ — rotating chevron ══ */
 .faq-item{border:none;border-bottom:1px solid #e5e7eb;padding:0;width:100%;text-align:left;}
 .faq-item:last-child{border-bottom:none;}
-.faq-q{font-size:14px;font-weight:500;color:#111827;line-height:1.4;padding:12px 0;margin:0;cursor:pointer;display:flex;justify-content:space-between;align-items:center;list-style:none;-webkit-tap-highlight-color:transparent;}
+.faq-q{
+  font-size:14px;font-weight:500;color:#111827;line-height:1.4;
+  padding:12px 0;margin:0;cursor:pointer;
+  display:flex;justify-content:space-between;align-items:center;
+  list-style:none;-webkit-tap-highlight-color:transparent;
+  gap:12px;
+}
 .faq-q::-webkit-details-marker{display:none;}
-.faq-q::after{content:'+';font-size:20px;font-weight:400;color:#9ca3af;line-height:1;margin-left:16px;transition:transform 0.2s;}
-.faq-item[open] .faq-q::after{content:'−';color:#111827;}
+.faq-q::after{
+  content:'';width:8px;height:8px;
+  border-right:1.8px solid currentColor;
+  border-bottom:1.8px solid currentColor;
+  transform:rotate(45deg);
+  margin-top:-3px;
+  transition:transform 0.25s ease, margin-top 0.25s ease;
+  opacity:0.42;
+  flex-shrink:0;
+}
+.faq-item[open] .faq-q::after{transform:rotate(-135deg);margin-top:3px;opacity:0.85;}
 .faq-a{font-size:13px;color:#4b5563;line-height:1.65;margin:0;padding-bottom:12px;text-align:left;font-weight:400;}
 .faq-a strong{font-weight:600;color:#111827;}
 
@@ -365,7 +385,18 @@ main{flex:1;display:flex;align-items:flex-start;justify-content:center;padding:0
 .footer-links a{font-family:inherit;font-size:13px;font-weight:500;color:#2563eb;text-decoration:none;letter-spacing:0.2px;}
 .footer-links a:hover{color:#1d4ed8}
 
-@media (max-width:560px){.seo-block{margin-bottom:20px;}.seo-block h2{font-size:16.5px;}.seo-block h3{font-size:13.5px;}.seo-block p,.seo-block ul,.seo-block ol{font-size:13px;}.faq-q{font-size:13.5px;padding:11px 0;}.faq-a{font-size:12.5px;}.site-footer{padding:12px 16px 90px 16px;margin-top:30px;}.footer-links{gap:24px}.footer-links a{font-size:12.5px}.seo-content-box{padding:20px;width:calc(100% - 32px);margin:22px auto 0 auto;}}
+@media (max-width:560px){
+  .seo-block{margin-bottom:20px;}
+  .seo-block h2{font-size:16.5px;}
+  .seo-block h3{font-size:13.5px;}
+  .seo-block p,.seo-block ul,.seo-block ol{font-size:13px;}
+  .faq-q{font-size:13.5px;padding:11px 0;}
+  .faq-a{font-size:12.5px;}
+  .site-footer{padding:12px 16px 90px 16px;margin-top:30px;}
+  .footer-links{gap:24px}
+  .footer-links a{font-size:12.5px}
+  .seo-content-box{padding:20px;width:calc(100% - 32px);margin:22px auto 0 auto;}
+}
 @media (max-width:400px){.seo-content-box{padding:16px;width:calc(100% - 24px);}}
 
 .btn:active,.nav-btn:active,.icon-btn:active,.tool-btn:active,.sub-btn:active,.preset-card:active,.palette-swatch:active,.sidebar-item:active,.winner-btn-close:active,.winner-btn-remove:active{transform:none !important;}
@@ -479,8 +510,6 @@ main{flex:1;display:flex;align-items:flex-start;justify-content:center;padding:0
   .seo-block code{background:#16202c;color:#ffb27a;}
   .faq-item{border-bottom-color:#1e2836;}
   .faq-q{color:#f4f7fb;}
-  .faq-q::after{color:#6d7988;}
-  .faq-item[open] .faq-q::after{color:#f4f7fb;}
   .faq-a{color:#b3bdc9;}
   .faq-a strong{color:#f4f7fb;}
   .site-footer{background-color:#0b0f14;}
@@ -833,15 +862,15 @@ James</textarea>
       <div class="seo-block">
         <h2>Customize Your Experience</h2>
         <p>In <strong>Settings</strong> you can customize the wheel exactly the way you want:</p>
-        <h3>🎚️ Spin duration (custom spin speed)</h3>
+        <h3>Spin duration (custom spin speed)</h3>
         <p>A slider lets you choose <strong>how long the spin lasts</strong>, from <strong>1.5 seconds</strong> (super fast) to <strong>15 seconds</strong> (slow and dramatic).</p>
-        <h3>🎨 50+ Premium Color Themes + Custom Colors</h3>
+        <h3>50+ Premium Color Themes + Custom Colors</h3>
         <p>From Classic and Neon to Ocean, Sunset, Galaxy and Cyber — pick the palette that matches your event. Or add your own <strong>custom wheel colors</strong> using the built-in color picker.</p>
-        <h3>🎵 Background music</h3>
+        <h3>Background music</h3>
         <p>Turn on <strong>background music</strong> for a more immersive experience. The melody is generated in real time with the Web Audio API — no external files, 100% in your browser.</p>
-        <h3>🔔 Winner popup &amp; sound</h3>
+        <h3>Winner popup &amp; sound</h3>
         <p>Customize the winner popup message, show or hide the <strong>Remove</strong> button, choose between a soft chime or <strong>subdued applause</strong>, and set the volume from <strong>0% to 100%</strong>.</p>
-        <h3>🖼️ Images &amp; Emojis</h3>
+        <h3>Images &amp; Emojis</h3>
         <p>Upload photos for each segment or use emojis as entries. Great for visual giveaways or themed wheels.</p>
       </div>
 
@@ -901,7 +930,6 @@ James</textarea>
     <h3><svg class="modal-title-icon"><use href="#i-settings"/></svg> Wheel Settings</h3>
     <div class="settings-columns">
 
-      <!-- ═══ COLUMN 1 ═══ -->
       <div class="settings-col">
         <div class="settings-section">
           <span class="settings-label">Wheel Text Size</span>
@@ -912,7 +940,6 @@ James</textarea>
           </div>
         </div>
 
-        <!-- DISPLAY SECTION -->
         <div class="settings-section">
           <span class="settings-label">Display</span>
           <div class="settings-row">
@@ -937,14 +964,12 @@ James</textarea>
         <div class="settings-row"><label for="confettiEnabled"><input type="checkbox" id="confettiEnabled"> Confetti effect</label></div>
       </div>
 
-      <!-- ═══ COLUMN 2 ═══ -->
       <div class="settings-col">
         <div class="settings-section">
           <span class="settings-label">Color Theme</span>
           <div class="palette-grid" id="paletteGrid"></div>
         </div>
 
-        <!-- CUSTOM COLORS SECTION -->
         <div class="settings-section">
           <span class="settings-label">Custom Wheel Colors</span>
           <p class="settings-note">Add your own colors. When at least one is added, it overrides the palette above.</p>
@@ -957,7 +982,7 @@ James</textarea>
         </div>
 
         <div class="settings-section">
-          <span class="settings-label">🎚️ Spin duration</span>
+          <span class="settings-label">Spin duration</span>
           <div class="speed-slider-row">
             <input type="range" id="spinDurationRange" min="1.5" max="15" step="0.5" value="5.5" aria-label="Spin duration in seconds">
             <span class="speed-value" id="spinDurationValue">5.5s</span>
@@ -965,7 +990,6 @@ James</textarea>
           <p class="settings-note">Drag to adjust how long the spin lasts — from 1.5s (super fast) to 15s (slow and dramatic).</p>
         </div>
 
-        <!-- SOUND SECTION -->
         <div class="settings-section">
           <span class="settings-label">Sound</span>
           <div class="settings-row">
@@ -1079,6 +1103,7 @@ function debounce(fn,wait){var t;return function(){var ctx=this,args=arguments;c
 function isMobileViewport(){return window.innerWidth<768;}
 var _resizeRAF=null;
 
+/* ==== PALETTES (50+) ==== */
 var COLOR_PALETTES = {
   classic:[{bg:'#E8A500',fg:'#1a1a1a'},{bg:'#F5EBC8',fg:'#1a1a1a'},{bg:'#1E4620',fg:'#ffffff'},{bg:'#B5A642',fg:'#1a1a1a'},{bg:'#D97706',fg:'#1a1a1a'},{bg:'#FEF3C7',fg:'#1a1a1a'},{bg:'#166534',fg:'#ffffff'},{bg:'#A16207',fg:'#ffffff'},{bg:'#F59E0B',fg:'#1a1a1a'},{bg:'#14532D',fg:'#ffffff'},{bg:'#CA8A04',fg:'#1a1a1a'},{bg:'#ECFCCB',fg:'#1a1a1a'}],
   neon:[{bg:'#FF006E',fg:'#ffffff'},{bg:'#FFBE0B',fg:'#1a1a1a'},{bg:'#8338EC',fg:'#ffffff'},{bg:'#3A86FF',fg:'#ffffff'},{bg:'#FF4365',fg:'#ffffff'},{bg:'#06FFA5',fg:'#0a0a0a'},{bg:'#FFD60A',fg:'#1a1a1a'},{bg:'#8B5CF6',fg:'#ffffff'},{bg:'#00F5D4',fg:'#0a0a0a'},{bg:'#F15BB5',fg:'#ffffff'}],
@@ -1108,45 +1133,8 @@ var COLOR_PALETTES = {
   rose:[{bg:'#BE185D',fg:'#ffffff'},{bg:'#DB2777',fg:'#ffffff'},{bg:'#EC4899',fg:'#ffffff'},{bg:'#F472B6',fg:'#ffffff'},{bg:'#F9A8D4',fg:'#5a1e3a'},{bg:'#9D174D',fg:'#ffffff'},{bg:'#831843',fg:'#ffffff'},{bg:'#FCE7F3',fg:'#5a1e3a'},{bg:'#FB7185',fg:'#ffffff'},{bg:'#E11D48',fg:'#ffffff'}],
   sapphire:[{bg:'#1E3A8A',fg:'#ffffff'},{bg:'#1D4ED8',fg:'#ffffff'},{bg:'#2563EB',fg:'#ffffff'},{bg:'#3B82F6',fg:'#ffffff'},{bg:'#60A5FA',fg:'#1a1a1a'},{bg:'#93C5FD',fg:'#1a3a5a'},{bg:'#1E40AF',fg:'#ffffff'},{bg:'#172554',fg:'#ffffff'},{bg:'#BFDBFE',fg:'#1a3a5a'},{bg:'#0C4A6E',fg:'#ffffff'}],
   vintage:[{bg:'#8B7355',fg:'#ffffff'},{bg:'#A67C52',fg:'#ffffff'},{bg:'#C4A484',fg:'#1a1a1a'},{bg:'#D2B48C',fg:'#1a1a1a'},{bg:'#E8D5B7',fg:'#3a2a1a'},{bg:'#6B5344',fg:'#ffffff'},{bg:'#5D4037',fg:'#ffffff'},{bg:'#F5E6D3',fg:'#3a2a1a'},{bg:'#BFA07A',fg:'#1a1a1a'},{bg:'#4A3728',fg:'#ffffff'}],
-  neon2:[{bg:'#39FF14',fg:'#0a0a0a'},{bg:'#FF10F0',fg:'#ffffff'},{bg:'#00FFFF',fg:'#0a0a0a'},{bg:'#FFFF00',fg:'#0a0a0a'},{bg:'#FF5F1F',fg:'#ffffff'},{bg:'#BC13FE',fg:'#ffffff'},{bg:'#FE019A',fg:'#ffffff'},{bg:'#0AFF0A',fg:'#0a0a0a'},{bg:'#1B03A3',fg:'#ffffff'},{bg:'#FF073A',fg:'#ffffff'}],
-  peach:[{bg:'#FFDAB9',fg:'#4a1e2e'},{bg:'#FFCBA4',fg:'#4a1e2e'},{bg:'#FFB347',fg:'#1a1a1a'},{bg:'#FFA07A',fg:'#1a1a1a'},{bg:'#FA8072',fg:'#ffffff'},{bg:'#E9967A',fg:'#1a1a1a'},{bg:'#F08080',fg:'#ffffff'},{bg:'#CD5C5C',fg:'#ffffff'},{bg:'#8B4513',fg:'#ffffff'},{bg:'#A0522D',fg:'#ffffff'}],
-  avocado:[{bg:'#568203',fg:'#ffffff'},{bg:'#6B8E23',fg:'#ffffff'},{bg:'#808000',fg:'#ffffff'},{bg:'#9ACD32',fg:'#1a1a1a'},{bg:'#ADFF2F',fg:'#1a1a1a'},{bg:'#7CFC00',fg:'#1a1a1a'},{bg:'#32CD32',fg:'#1a1a1a'},{bg:'#228B22',fg:'#ffffff'},{bg:'#006400',fg:'#ffffff'},{bg:'#2E8B57',fg:'#ffffff'}],
-  slate:[{bg:'#708090',fg:'#ffffff'},{bg:'#778899',fg:'#ffffff'},{bg:'#B0C4DE',fg:'#1a1a1a'},{bg:'#4682B4',fg:'#ffffff'},{bg:'#5F9EA0',fg:'#ffffff'},{bg:'#483D8B',fg:'#ffffff'},{bg:'#6A5ACD',fg:'#ffffff'},{bg:'#7B68EE',fg:'#ffffff'},{bg:'#9370DB',fg:'#ffffff'},{bg:'#8A2BE2',fg:'#ffffff'}],
-  sand:[{bg:'#F4A460',fg:'#1a1a1a'},{bg:'#DEB887',fg:'#1a1a1a'},{bg:'#D2B48C',fg:'#1a1a1a'},{bg:'#BC8F8F',fg:'#1a1a1a'},{bg:'#A0522D',fg:'#ffffff'},{bg:'#8B4513',fg:'#ffffff'},{bg:'#CD853F',fg:'#1a1a1a'},{bg:'#B8860B',fg:'#1a1a1a'},{bg:'#DAA520',fg:'#1a1a1a'},{bg:'#FFD700',fg:'#1a1a1a'}],
-  sky:[{bg:'#87CEEB',fg:'#1a1a1a'},{bg:'#87CEFA',fg:'#1a1a1a'},{bg:'#00BFFF',fg:'#1a1a1a'},{bg:'#1E90FF',fg:'#ffffff'},{bg:'#6495ED',fg:'#ffffff'},{bg:'#4169E1',fg:'#ffffff'},{bg:'#0000FF',fg:'#ffffff'},{bg:'#0000CD',fg:'#ffffff'},{bg:'#00008B',fg:'#ffffff'},{bg:'#191970',fg:'#ffffff'}],
-  watermelon:[{bg:'#FF3B30',fg:'#ffffff'},{bg:'#FF2D55',fg:'#ffffff'},{bg:'#FF9500',fg:'#1a1a1a'},{bg:'#FFCC00',fg:'#1a1a1a'},{bg:'#34C759',fg:'#ffffff'},{bg:'#30D158',fg:'#ffffff'},{bg:'#28CD41',fg:'#ffffff'},{bg:'#FF6B8B',fg:'#ffffff'},{bg:'#FF2D55',fg:'#ffffff'},{bg:'#2E8B57',fg:'#ffffff'}],
-  grape:[{bg:'#6A0DAD',fg:'#ffffff'},{bg:'#800080',fg:'#ffffff'},{bg:'#8B008B',fg:'#ffffff'},{bg:'#9400D3',fg:'#ffffff'},{bg:'#9932CC',fg:'#ffffff'},{bg:'#BA55D3',fg:'#ffffff'},{bg:'#DA70D6',fg:'#1a1a1a'},{bg:'#EE82EE',fg:'#1a1a1a'},{bg:'#DDA0DD',fg:'#1a1a1a'},{bg:'#E6E6FA',fg:'#1a1a1a'}],
-  lemon:[{bg:'#FFFACD',fg:'#1a1a1a'},{bg:'#FFF8DC',fg:'#1a1a1a'},{bg:'#FFE4B5',fg:'#1a1a1a'},{bg:'#FFD700',fg:'#1a1a1a'},{bg:'#FFC125',fg:'#1a1a1a'},{bg:'#FFB90F',fg:'#1a1a1a'},{bg:'#FFA500',fg:'#1a1a1a'},{bg:'#FF8C00',fg:'#ffffff'},{bg:'#FF7F50',fg:'#ffffff'},{bg:'#FF6347',fg:'#ffffff'}],
-  blueberry:[{bg:'#191970',fg:'#ffffff'},{bg:'#000080',fg:'#ffffff'},{bg:'#00008B',fg:'#ffffff'},{bg:'#0000CD',fg:'#ffffff'},{bg:'#0000FF',fg:'#ffffff'},{bg:'#1E90FF',fg:'#ffffff'},{bg:'#4169E1',fg:'#ffffff'},{bg:'#6495ED',fg:'#ffffff'},{bg:'#87CEFA',fg:'#1a1a1a'},{bg:'#87CEEB',fg:'#1a1a1a'}],
-  strawberry:[{bg:'#FF1493',fg:'#ffffff'},{bg:'#FF69B4',fg:'#ffffff'},{bg:'#FFB6C1',fg:'#1a1a1a'},{bg:'#FFC0CB',fg:'#1a1a1a'},{bg:'#DC143C',fg:'#ffffff'},{bg:'#B22222',fg:'#ffffff'},{bg:'#8B0000',fg:'#ffffff'},{bg:'#CD5C5C',fg:'#ffffff'},{bg:'#F08080',fg:'#ffffff'},{bg:'#FA8072',fg:'#ffffff'}],
-  kiwi:[{bg:'#7CFC00',fg:'#1a1a1a'},{bg:'#32CD32',fg:'#1a1a1a'},{bg:'#228B22',fg:'#ffffff'},{bg:'#006400',fg:'#ffffff'},{bg:'#2E8B57',fg:'#ffffff'},{bg:'#3CB371',fg:'#1a1a1a'},{bg:'#00FA9A',fg:'#1a1a1a'},{bg:'#00FF7F',fg:'#1a1a1a'},{bg:'#ADFF2F',fg:'#1a1a1a'},{bg:'#556B2F',fg:'#ffffff'}],
-  mango:[{bg:'#FFA07A',fg:'#1a1a1a'},{bg:'#FF8C00',fg:'#1a1a1a'},{bg:'#FF7F50',fg:'#1a1a1a'},{bg:'#FF6347',fg:'#ffffff'},{bg:'#FF4500',fg:'#ffffff'},{bg:'#FFD700',fg:'#1a1a1a'},{bg:'#FFA500',fg:'#1a1a1a'},{bg:'#FF8C69',fg:'#1a1a1a'},{bg:'#FFA07A',fg:'#1a1a1a'},{bg:'#FF7F00',fg:'#ffffff'}],
-  cherry2:[{bg:'#B22222',fg:'#ffffff'},{bg:'#A52A2A',fg:'#ffffff'},{bg:'#8B4513',fg:'#ffffff'},{bg:'#800000',fg:'#ffffff'},{bg:'#CD5C5C',fg:'#ffffff'},{bg:'#F08080',fg:'#ffffff'},{bg:'#FA8072',fg:'#ffffff'},{bg:'#E9967A',fg:'#ffffff'},{bg:'#FFA07A',fg:'#1a1a1a'},{bg:'#FF6347',fg:'#ffffff'}],
-  rose2:[{bg:'#FFC0CB',fg:'#1a1a1a'},{bg:'#FFB6C1',fg:'#1a1a1a'},{bg:'#FF69B4',fg:'#ffffff'},{bg:'#FF1493',fg:'#ffffff'},{bg:'#C71585',fg:'#ffffff'},{bg:'#DB7093',fg:'#ffffff'},{bg:'#DA70D6',fg:'#ffffff'},{bg:'#D8BFD8',fg:'#1a1a1a'},{bg:'#DDA0DD',fg:'#1a1a1a'},{bg:'#EE82EE',fg:'#1a1a1a'}],
-  mint2:[{bg:'#F5FFFA',fg:'#1a1a1a'},{bg:'#E0FFFF',fg:'#1a1a1a'},{bg:'#AFEEEE',fg:'#1a1a1a'},{bg:'#7FFFD4',fg:'#1a1a1a'},{bg:'#40E0D0',fg:'#1a1a1a'},{bg:'#48D1CC',fg:'#1a1a1a'},{bg:'#20B2AA',fg:'#1a1a1a'},{bg:'#008B8B',fg:'#ffffff'},{bg:'#008080',fg:'#ffffff'},{bg:'#2E8B57',fg:'#ffffff'}],
-  cyberpunk:[{bg:'#FF00FF',fg:'#ffffff'},{bg:'#00FFFF',fg:'#1a1a1a'},{bg:'#FFD700',fg:'#1a1a1a'},{bg:'#FF1493',fg:'#ffffff'},{bg:'#00FF7F',fg:'#1a1a1a'},{bg:'#1E90FF',fg:'#ffffff'},{bg:'#FF4500',fg:'#ffffff'},{bg:'#8A2BE2',fg:'#ffffff'},{bg:'#32CD32',fg:'#1a1a1a'},{bg:'#FF8C00',fg:'#1a1a1a'}],
-  retro:[{bg:'#FFB347',fg:'#1a1a1a'},{bg:'#FF7F50',fg:'#ffffff'},{bg:'#E97451',fg:'#ffffff'},{bg:'#D2691E',fg:'#ffffff'},{bg:'#CD853F',fg:'#1a1a1a'},{bg:'#F4A460',fg:'#1a1a1a'},{bg:'#BDB76B',fg:'#1a1a1a'},{bg:'#DAA520',fg:'#1a1a1a'},{bg:'#B8860B',fg:'#1a1a1a'},{bg:'#8B4513',fg:'#ffffff'}],
-  pastel2:[{bg:'#FFD1DC',fg:'#4a1e2e'},{bg:'#FFC0CB',fg:'#4a1e2e'},{bg:'#FFE4E1',fg:'#4a1e2e'},{bg:'#FFF0F5',fg:'#4a1e2e'},{bg:'#F0E6FF',fg:'#3a1e52'},{bg:'#E6E6FA',fg:'#2a2a4a'},{bg:'#D8BFD8',fg:'#2a2a4a'},{bg:'#DDA0DD',fg:'#2a2a4a'},{bg:'#E0FFFF',fg:'#1a3a52'},{bg:'#AFEEEE',fg:'#1a3a52'}],
-  neon3:[{bg:'#00FF00',fg:'#1a1a1a'},{bg:'#FF0000',fg:'#ffffff'},{bg:'#0000FF',fg:'#ffffff'},{bg:'#FFFF00',fg:'#1a1a1a'},{bg:'#FF00FF',fg:'#ffffff'},{bg:'#00FFFF',fg:'#1a1a1a'},{bg:'#FFA500',fg:'#1a1a1a'},{bg:'#800080',fg:'#ffffff'},{bg:'#008000',fg:'#ffffff'},{bg:'#FFC0CB',fg:'#1a1a1a'}],
-  winter:[{bg:'#E0FFFF',fg:'#1a3a52'},{bg:'#AFEEEE',fg:'#1a3a52'},{bg:'#7FFFD4',fg:'#1a1a1a'},{bg:'#40E0D0',fg:'#1a1a1a'},{bg:'#48D1CC',fg:'#1a1a1a'},{bg:'#00CED1',fg:'#1a1a1a'},{bg:'#5F9EA0',fg:'#ffffff'},{bg:'#4682B4',fg:'#ffffff'},{bg:'#B0C4DE',fg:'#1a1a1a'},{bg:'#F0F8FF',fg:'#1a3a52'}],
-  summer:[{bg:'#FFD700',fg:'#1a1a1a'},{bg:'#FFA500',fg:'#1a1a1a'},{bg:'#FF8C00',fg:'#ffffff'},{bg:'#FF7F50',fg:'#ffffff'},{bg:'#FF6347',fg:'#ffffff'},{bg:'#FF4500',fg:'#ffffff'},{bg:'#FF1493',fg:'#ffffff'},{bg:'#FF69B4',fg:'#ffffff'},{bg:'#00BFFF',fg:'#ffffff'},{bg:'#1E90FF',fg:'#ffffff'}],
-  autumn2:[{bg:'#FF4500',fg:'#ffffff'},{bg:'#FF6347',fg:'#ffffff'},{bg:'#FF7F50',fg:'#ffffff'},{bg:'#FF8C00',fg:'#1a1a1a'},{bg:'#FFA500',fg:'#1a1a1a'},{bg:'#FFD700',fg:'#1a1a1a'},{bg:'#B8860B',fg:'#1a1a1a'},{bg:'#DAA520',fg:'#1a1a1a'},{bg:'#8B4513',fg:'#ffffff'},{bg:'#A0522D',fg:'#ffffff'}],
-  spring:[{bg:'#98FB98',fg:'#1a1a1a'},{bg:'#90EE90',fg:'#1a1a1a'},{bg:'#7CFC00',fg:'#1a1a1a'},{bg:'#32CD32',fg:'#1a1a1a'},{bg:'#00FF7F',fg:'#1a1a1a'},{bg:'#00FA9A',fg:'#1a1a1a'},{bg:'#3CB371',fg:'#1a1a1a'},{bg:'#2E8B57',fg:'#ffffff'},{bg:'#228B22',fg:'#ffffff'},{bg:'#006400',fg:'#ffffff'}],
-  valentine:[{bg:'#FFC0CB',fg:'#4a1e2e'},{bg:'#FFB6C1',fg:'#4a1e2e'},{bg:'#FF69B4',fg:'#ffffff'},{bg:'#FF1493',fg:'#ffffff'},{bg:'#DB7093',fg:'#ffffff'},{bg:'#C71585',fg:'#ffffff'},{bg:'#DC143C',fg:'#ffffff'},{bg:'#B22222',fg:'#ffffff'},{bg:'#8B0000',fg:'#ffffff'},{bg:'#CD5C5C',fg:'#ffffff'}],
-  halloween:[{bg:'#FF8C00',fg:'#1a1a1a'},{bg:'#FFA500',fg:'#1a1a1a'},{bg:'#FFD700',fg:'#1a1a1a'},{bg:'#2F4F4F',fg:'#ffffff'},{bg:'#800080',fg:'#ffffff'},{bg:'#4B0082',fg:'#ffffff'},{bg:'#8A2BE2',fg:'#ffffff'},{bg:'#000000',fg:'#ffffff'},{bg:'#333333',fg:'#ffffff'},{bg:'#FF4500',fg:'#ffffff'}],
-  christmas:[{bg:'#FF0000',fg:'#ffffff'},{bg:'#228B22',fg:'#ffffff'},{bg:'#006400',fg:'#ffffff'},{bg:'#FFD700',fg:'#1a1a1a'},{bg:'#FFFFFF',fg:'#1a1a1a'},{bg:'#C0C0C0',fg:'#1a1a1a'},{bg:'#808080',fg:'#ffffff'},{bg:'#8B0000',fg:'#ffffff'},{bg:'#00FF00',fg:'#1a1a1a'},{bg:'#32CD32',fg:'#1a1a1a'}],
-  easter:[{bg:'#FFB6C1',fg:'#4a1e2e'},{bg:'#FFDAB9',fg:'#4a1e2e'},{bg:'#FFFACD',fg:'#5a4a00'},{bg:'#E0FFFF',fg:'#1a3a52'},{bg:'#D8BFD8',fg:'#2a2a4a'},{bg:'#E6E6FA',fg:'#2a2a4a'},{bg:'#98FB98',fg:'#1a1a1a'},{bg:'#AFEEEE',fg:'#1a3a52'},{bg:'#F0E68C',fg:'#1a1a1a'},{bg:'#FFC0CB',fg:'#4a1e2e'}],
-  '4thofjuly':[{bg:'#FF0000',fg:'#ffffff'},{bg:'#FFFFFF',fg:'#1a1a1a'},{bg:'#0000FF',fg:'#ffffff'},{bg:'#8B0000',fg:'#ffffff'},{bg:'#F0F8FF',fg:'#1a3a52'},{bg:'#00008B',fg:'#ffffff'},{bg:'#FF4500',fg:'#ffffff'},{bg:'#E6E6FA',fg:'#2a2a4a'},{bg:'#191970',fg:'#ffffff'},{bg:'#FF7F50',fg:'#ffffff'}],
-  stpatricks:[{bg:'#008000',fg:'#ffffff'},{bg:'#228B22',fg:'#ffffff'},{bg:'#32CD32',fg:'#1a1a1a'},{bg:'#00FF00',fg:'#1a1a1a'},{bg:'#98FB98',fg:'#1a1a1a'},{bg:'#90EE90',fg:'#1a1a1a'},{bg:'#006400',fg:'#ffffff'},{bg:'#2E8B57',fg:'#ffffff'},{bg:'#3CB371',fg:'#1a1a1a'},{bg:'#00FA9A',fg:'#1a1a1a'}],
-  dark:[{bg:'#000000',fg:'#ffffff'},{bg:'#111111',fg:'#ffffff'},{bg:'#222222',fg:'#ffffff'},{bg:'#333333',fg:'#ffffff'},{bg:'#444444',fg:'#ffffff'},{bg:'#555555',fg:'#ffffff'},{bg:'#666666',fg:'#ffffff'},{bg:'#777777',fg:'#ffffff'},{bg:'#888888',fg:'#ffffff'},{bg:'#999999',fg:'#1a1a1a'}],
-  light:[{bg:'#FFFFFF',fg:'#1a1a1a'},{bg:'#F5F5F5',fg:'#1a1a1a'},{bg:'#EEEEEE',fg:'#1a1a1a'},{bg:'#E0E0E0',fg:'#1a1a1a'},{bg:'#D3D3D3',fg:'#1a1a1a'},{bg:'#C0C0C0',fg:'#1a1a1a'},{bg:'#A9A9A9',fg:'#ffffff'},{bg:'#808080',fg:'#ffffff'},{bg:'#696969',fg:'#ffffff'},{bg:'#778899',fg:'#ffffff'}],
-  vibrant:[{bg:'#FF0000',fg:'#ffffff'},{bg:'#00FF00',fg:'#1a1a1a'},{bg:'#0000FF',fg:'#ffffff'},{bg:'#FFFF00',fg:'#1a1a1a'},{bg:'#FF00FF',fg:'#ffffff'},{bg:'#00FFFF',fg:'#1a1a1a'},{bg:'#FFA500',fg:'#1a1a1a'},{bg:'#800080',fg:'#ffffff'},{bg:'#008000',fg:'#ffffff'},{bg:'#FFC0CB',fg:'#1a1a1a'}],
-  earthy:[{bg:'#8B4513',fg:'#ffffff'},{bg:'#A0522D',fg:'#ffffff'},{bg:'#D2691E',fg:'#ffffff'},{bg:'#CD853F',fg:'#1a1a1a'},{bg:'#DEB887',fg:'#1a1a1a'},{bg:'#F5DEB3',fg:'#1a1a1a'},{bg:'#F4A460',fg:'#1a1a1a'},{bg:'#D2B48C',fg:'#1a1a1a'},{bg:'#BC8F8F',fg:'#1a1a1a'},{bg:'#808000',fg:'#ffffff'}],
   coffee:[{bg:'#3E2723',fg:'#ffffff'},{bg:'#4E342E',fg:'#ffffff'},{bg:'#5D4037',fg:'#ffffff'},{bg:'#6D4C41',fg:'#ffffff'},{bg:'#795548',fg:'#ffffff'},{bg:'#8D6E63',fg:'#ffffff'},{bg:'#A1887F',fg:'#1a1a1a'},{bg:'#BCAAA4',fg:'#1a1a1a'},{bg:'#D7CCC8',fg:'#1a1a1a'},{bg:'#EFEBE9',fg:'#1a1a1a'}],
   tea:[{bg:'#004D40',fg:'#ffffff'},{bg:'#00695C',fg:'#ffffff'},{bg:'#00796B',fg:'#ffffff'},{bg:'#00897B',fg:'#ffffff'},{bg:'#009688',fg:'#ffffff'},{bg:'#26A69A',fg:'#ffffff'},{bg:'#4DB6AC',fg:'#1a1a1a'},{bg:'#80CBC4',fg:'#1a1a1a'},{bg:'#B2DFDB',fg:'#1a1a1a'},{bg:'#E0F2F1',fg:'#1a1a1a'}],
-  metal:[{bg:'#212121',fg:'#ffffff'},{bg:'#424242',fg:'#ffffff'},{bg:'#616161',fg:'#ffffff'},{bg:'#757575',fg:'#ffffff'},{bg:'#9E9E9E',fg:'#1a1a1a'},{bg:'#BDBDBD',fg:'#1a1a1a'},{bg:'#E0E0E0',fg:'#1a1a1a'},{bg:'#EEEEEE',fg:'#1a1a1a'},{bg:'#FAFAFA',fg:'#1a1a1a'},{bg:'#FFFFFF',fg:'#1a1a1a'}],
-  gem:[{bg:'#880E4F',fg:'#ffffff'},{bg:'#AD1457',fg:'#ffffff'},{bg:'#D81B60',fg:'#ffffff'},{bg:'#E91E63',fg:'#ffffff'},{bg:'#F06292',fg:'#ffffff'},{bg:'#F48FB1',fg:'#1a1a1a'},{bg:'#F8BBD0',fg:'#1a1a1a'},{bg:'#FCE4EC',fg:'#1a1a1a'},{bg:'#FF80AB',fg:'#ffffff'},{bg:'#FF4081',fg:'#ffffff'}],
-  jewel:[{bg:'#1A237E',fg:'#ffffff'},{bg:'#283593',fg:'#ffffff'},{bg:'#303F9F',fg:'#ffffff'},{bg:'#3949AB',fg:'#ffffff'},{bg:'#3F51B5',fg:'#ffffff'},{bg:'#5C6BC0',fg:'#ffffff'},{bg:'#7986CB',fg:'#1a1a1a'},{bg:'#9FA8DA',fg:'#1a1a1a'},{bg:'#C5CAE9',fg:'#1a1a1a'},{bg:'#E8EAF6',fg:'#1a1a1a'}],
   rainbow:[{bg:'#FF0000',fg:'#ffffff'},{bg:'#FF7F00',fg:'#1a1a1a'},{bg:'#FFFF00',fg:'#1a1a1a'},{bg:'#00FF00',fg:'#1a1a1a'},{bg:'#0000FF',fg:'#ffffff'},{bg:'#4B0082',fg:'#ffffff'},{bg:'#8F00FF',fg:'#ffffff'},{bg:'#FF1493',fg:'#ffffff'},{bg:'#00FFFF',fg:'#1a1a1a'},{bg:'#FF00FF',fg:'#ffffff'}],
   sepia:[{bg:'#704214',fg:'#ffffff'},{bg:'#8B5A2B',fg:'#ffffff'},{bg:'#A0522D',fg:'#ffffff'},{bg:'#CD853F',fg:'#1a1a1a'},{bg:'#DEB887',fg:'#1a1a1a'},{bg:'#D2B48C',fg:'#1a1a1a'},{bg:'#F5DEB3',fg:'#1a1a1a'},{bg:'#FFE4B5',fg:'#1a1a1a'},{bg:'#FFDEAD',fg:'#1a1a1a'},{bg:'#FDF5E6',fg:'#1a1a1a'}],
   greyscale:[{bg:'#212121',fg:'#ffffff'},{bg:'#424242',fg:'#ffffff'},{bg:'#616161',fg:'#ffffff'},{bg:'#757575',fg:'#ffffff'},{bg:'#9E9E9E',fg:'#1a1a1a'},{bg:'#BDBDBD',fg:'#1a1a1a'},{bg:'#E0E0E0',fg:'#1a1a1a'},{bg:'#EEEEEE',fg:'#1a1a1a'},{bg:'#FAFAFA',fg:'#1a1a1a'},{bg:'#FFFFFF',fg:'#1a1a1a'}],
@@ -1159,16 +1147,9 @@ var PALETTE_NAMES = {
   emerald:'Emerald', midnight:'Midnight', copper:'Copper', tropical:'Tropical',
   berry:'Berry', monochrome:'Monochrome', fire:'Fire', ice:'Ice',
   gold:'Gold', forest:'Forest', galaxy:'Galaxy', coral:'Coral', mint:'Mint',
-  autumn:'Autumn', cyber:'Cyber', rose:'Rose', sapphire:'Sapphire', vintage:'Vintage', neon2:'Neon Pro',
-  peach:'Peach', avocado:'Avocado', slate:'Slate', sand:'Sand', sky:'Sky',
-  watermelon:'Watermelon', grape:'Grape', lemon:'Lemon', blueberry:'Blueberry', strawberry:'Strawberry',
-  kiwi:'Kiwi', mango:'Mango', cherry2:'Cherry Dark', rose2:'Rose Light', mint2:'Mint Light',
-  cyberpunk:'Cyberpunk', retro:'Retro', pastel2:'Pastel Light', neon3:'Neon Prime', winter:'Winter',
-  summer:'Summer', autumn2:'Autumn Deep', spring:'Spring', valentine:'Valentine', halloween:'Halloween',
-  christmas:'Christmas', easter:'Easter', '4thofjuly':'4th of July', stpatricks:'St. Patrick',
-  dark:'Dark', light:'Light', vibrant:'Vibrant', earthy:'Earthy',
-  coffee:'Coffee', tea:'Tea', metal:'Metal', gem:'Gem', jewel:'Jewel',
-  rainbow:'Rainbow', sepia:'Sepia', greyscale:'Greyscale', highcontrast:'High Contrast'
+  autumn:'Autumn', cyber:'Cyber', rose:'Rose', sapphire:'Sapphire', vintage:'Vintage',
+  coffee:'Coffee', tea:'Tea', rainbow:'Rainbow', sepia:'Sepia',
+  greyscale:'Greyscale', highcontrast:'High Contrast'
 };
 
 var WHEEL_PRESETS = [
@@ -1208,14 +1189,11 @@ var currentWinnerIndex=-1;
 var currentWinnerName='';
 var currentWinnerRemoved=false;
 var autoRemoveWinner=false;
-
 var applauseOnWin=false;
 var displayPopupWithMessage=true;
 var customPopupMessage='We have a winner!';
 var showRemoveButton=true;
-
 var spinDurationBase = 5.5;
-
 var musicEnabled = false;
 var musicGainNode = null;
 var musicScheduleTimer = null;
@@ -1224,7 +1202,6 @@ var MUSIC_PATTERN = [
   {f: 261.63, d: 0.45},{f: 329.63, d: 0.45},{f: 392.00, d: 0.45},{f: 523.25, d: 0.90},
   {f: 440.00, d: 0.45},{f: 392.00, d: 0.45},{f: 329.63, d: 0.45},{f: 293.66, d: 0.90}
 ];
-
 var idleActive=false;
 var idleRAF=0;
 var idleLastTime=0;
@@ -1256,7 +1233,6 @@ function fitTextForSegment(name, chordWidth, radialWidth, segmentCount) {
   return {lines:[truncateToWidth(name,radialWidth,4.5)],fontSize:4.5};
 }
 
-// ===== HELPERS =====
 function getVolumeMultiplier(){ return currentVolumeLevel / 4; }
 function hexToFg(hex){
   if(!hex||hex.charAt(0)!=='#')return '#ffffff';
@@ -1282,9 +1258,6 @@ function shareApp(){
   }else{openShareModal(text);}
 }
 
-function closeModal(id){var m=document.getElementById(id);if(!m)return;m.classList.remove('active');m.setAttribute('aria-hidden','true');var anyActive=document.querySelector('.modal-overlay.active');if(!anyActive)document.body.style.overflow='';}
-
-// ===== BACKGROUND MUSIC =====
 function startMusic(){
   if(!audioCtx){try{var Ctx=window.AudioContext||window.webkitAudioContext;if(Ctx)audioCtx=new Ctx();}catch(e){return;}}
   if(!audioCtx)return;
@@ -1305,7 +1278,6 @@ function scheduleMusicNote(){
 }
 function stopMusic(){if(musicScheduleTimer){clearTimeout(musicScheduleTimer);musicScheduleTimer=null;}if(musicGainNode){try{musicGainNode.disconnect();}catch(e){}musicGainNode=null;}musicStepIndex=0;}
 
-// ===== SETTINGS MODAL =====
 function openSettingsModal(){
   var m=document.getElementById('settingsModal');if(!m)return;
   document.getElementById('autoRemoveWinner').checked=autoRemoveWinner;
@@ -1358,7 +1330,6 @@ function resetAllSettings(){
   stopMusic();localStorage.removeItem('wheelSettings');location.reload();
 }
 
-// ===== PALETTE & CUSTOM COLORS =====
 function renderPaletteGrid(){
   var grid=document.getElementById('paletteGrid');if(!grid)return;
   var html='';var keys=Object.keys(COLOR_PALETTES);
@@ -1418,7 +1389,6 @@ function clearCustomColors(){
   showToast('Custom colors cleared.');
 }
 
-// ===== WHEEL APPLY HELPERS =====
 function applyWheelSize(){var stage=document.getElementById('wheelStage');if(!stage)return;stage.classList.remove('size-compact','size-medium','size-large');stage.classList.add('size-medium');}
 function applyPointerVisibility(){var p=document.getElementById('wheelPointer');if(p)p.style.display=showPointer?'':'none';}
 function applySegmentBorders(){var svg=document.getElementById('wheelSvg');if(svg)svg.classList.toggle('wheel-borders-on',segmentBorders);}
@@ -1455,7 +1425,6 @@ function updateSegmentedUI(){
   if(vc){vc.querySelectorAll('button').forEach(function(b){b.classList.toggle('active',b.getAttribute('data-value')===String(currentVolumeLevel));});}
 }
 
-// ===== PERSISTENCE =====
 function saveWheelSettings(){
   try{
     var s={
@@ -1509,11 +1478,9 @@ function loadWheelSettings(){
   updateSegmentColors();
 }
 
-// ===== PRESETS =====
 function loadPreset(index){
   var preset=WHEEL_PRESETS[index];if(!preset)return;
-  spinToken++;isSpinning=false;stopIdleSpin();
-  currentWinnerRemoved=false;
+  spinToken++;isSpinning=false;stopIdleSpin();currentWinnerRemoved=false;
   var btn=document.getElementById('spinBtn');if(btn){btn.disabled=false;btn.removeAttribute('aria-busy');}
   var ta=document.getElementById('entriesTextarea');
   if(ta){ta.readOnly=false;ta.value=preset.entries.join('\n');}
@@ -1525,7 +1492,6 @@ function loadPreset(index){
 }
 function startBlankWheel(){resetWheel();}
 
-// ===== DROPDOWN MENUS =====
 function positionDropdownMenu(btn, menu){
   if(!btn||!menu)return;
   menu.style.transition='none';menu.style.visibility='hidden';menu.style.opacity='0';menu.style.display='flex';menu.style.pointerEvents='none';
@@ -1586,7 +1552,6 @@ window.addEventListener('resize',function(){
   if(newMenu&&newMenu.classList.contains('show')&&newBtn)positionDropdownMenu(newBtn,newMenu);
 },{passive:true});
 
-// ===== SIDEBAR =====
 function openSidebar(){var sb=document.getElementById('mobileSidebar');var ov=document.getElementById('sidebarOverlay');var btn=document.getElementById('hamburgerBtn');if(!sb)return;closeToolsMenu();closeLangMenu();closeNewWheelMenu();sb.classList.add('show');sb.removeAttribute('inert');if(ov)ov.classList.add('show');if(btn)btn.setAttribute('aria-expanded','true');sb.setAttribute('aria-hidden','false');document.body.style.overflow='hidden';}
 function closeSidebar(){
   var sb=document.getElementById('mobileSidebar');var ov=document.getElementById('sidebarOverlay');var btn=document.getElementById('hamburgerBtn');
@@ -1629,7 +1594,6 @@ function renderSidebarNewWheelMenu(){
   }
 }
 
-// ===== WHEEL RESET / SPIN LOGIC =====
 function blockIfSpinning(){if(isSpinning){showToast('Please wait for the spin to finish.');return true;}return false;}
 
 function resetWheel(){
@@ -1684,7 +1648,6 @@ function renderResultsList(){
 function sortResults(){if(winnerHistory.length===0)return;winnerHistory.sort(function(a,b){return a.localeCompare(b);});renderResultsList();showToast('Results sorted A-Z.');}
 function clearResults(){if(winnerHistory.length===0)return;winnerHistory=[];renderResultsList();showToast('Results cleared.');}
 
-// ===== SOUND =====
 function updateSoundIcon(){
   var icon=currentVolumeLevel===0?'#i-speaker-mute-wave':'#i-speaker-wave';
   var useEl=document.getElementById('soundIconUse');if(useEl)useEl.setAttribute('href',icon);
@@ -1735,7 +1698,6 @@ function playSweetMusic(){
   });
 }
 
-// Subdued applause — synthesized via band-passed noise bursts
 function playSubduedApplause(){
   if(!soundEnabled||!audioCtx)return;
   var vol=0.13*getVolumeMultiplier();
@@ -1765,7 +1727,6 @@ function playSubduedApplause(){
   events.forEach(function(e){document.addEventListener(e,once,{once:true,passive:true});});
 })();
 
-// ===== FULLSCREEN =====
 function fullscreenElementNow(){return document.fullscreenElement||document.webkitFullscreenElement||document.msFullscreenElement||null;}
 function isWheelFullscreen(){var el=document.getElementById('wheelPremiumBg');return !!fullscreenElementNow()||!!(el&&el.classList.contains('pseudo-fullscreen'));}
 function restoreBodyScroll(){
@@ -1790,11 +1751,9 @@ function toggleFullscreenWheel(){
 }
 ['fullscreenchange','webkitfullscreenchange','msfullscreenchange'].forEach(function(ev){document.addEventListener(ev,function(){var el=document.getElementById('wheelPremiumBg');if(!fullscreenElementNow()&&el&&!el.classList.contains('pseudo-fullscreen')){restoreBodyScroll();}updateFullscreenUi();});});
 
-// ===== RANDOM =====
 function secureRandomInt(max){if(max<=0)return 0;if(window.crypto&&window.crypto.getRandomValues){var arr=new Uint32Array(1);var limit=Math.floor(0x100000000/max)*max;var v;do{window.crypto.getRandomValues(arr);v=arr[0];}while(v>=limit);return v%max;}return Math.floor(Math.random()*max);}
 function getSpinDuration(){var base=spinDurationBase*1000;return base+secureRandomInt(1200);}
 
-// ===== IDLE SPIN =====
 function startIdleSpin(){
   if(idleActive||isSpinning)return;
   var wo=document.getElementById('winnerOverlay');
@@ -1806,7 +1765,6 @@ function startIdleSpin(){
 function stopIdleSpin(){idleActive=false;if(idleRAF){cancelAnimationFrame(idleRAF);idleRAF=0;}}
 function idleLoop(now){if(!idleActive||isSpinning)return;var dt=(now-idleLastTime)/1000;idleLastTime=now;if(dt>0&&dt<0.5){currentRotation=(currentRotation+IDLE_SPEED*dt)%360;applyRotation(currentRotation);}idleRAF=requestAnimationFrame(idleLoop);}
 
-// ===== ENTRIES =====
 function updateEntries(){
   if(isSpinning)return;
   var ta=document.getElementById('entriesTextarea');if(!ta)return;
@@ -1819,7 +1777,6 @@ function updateEntries(){
     if(name.length>30){name=name.slice(0,30);didTruncate=true;}
     validNames.push(name);
   }
-  // Prune orphan images
   var keep={};for(var k=0;k<validNames.length;k++)keep[validNames[k]]=true;
   Object.keys(participantImages).forEach(function(key){if(!keep[key])delete participantImages[key];});
   if(didTruncate&&!window._truncToastShown){window._truncToastShown=true;showToast('Some entries truncated to 30 characters.');setTimeout(function(){window._truncToastShown=false;},4000);}
@@ -1918,7 +1875,6 @@ function addEmoji(){
   updateEntries();
 }
 
-// ===== WHEEL DRAW =====
 function rebuildWheel(){
   var g=document.getElementById('wheelGroup');if(!g)return;
   var n=participants.length;
@@ -1989,7 +1945,6 @@ function updatePointerColor(rotation){
 function applyRotation(deg){var g=document.getElementById('wheelGroup');if(g)g.setAttribute('transform','rotate('+deg+')');updatePointerColor(deg);}
 function updateSpinButtonState(){var btn=document.getElementById('spinBtn');if(!btn||isSpinning)return;btn.disabled=participants.length<2;}
 
-// ===== SPIN =====
 function spinWheel(){
   if(isSpinning)return;
   if(participants.length<2){showToast('Add at least 2 entries to spin.');return;}
@@ -2092,7 +2047,6 @@ function removeWinnerAndClose(){
 
 document.getElementById('winnerOverlay').addEventListener('click',function(e){if(e.target===this)closeWinnerPopup();},{passive:true});
 
-// ===== CONFETTI (with RAF cancel to prevent double-scale) =====
 function launchConfetti(){
   var canvas=document.getElementById('confettiCanvas');if(!canvas)return;
   if(canvas._confettiRaf){cancelAnimationFrame(canvas._confettiRaf);canvas._confettiRaf=null;}
@@ -2126,7 +2080,6 @@ function launchConfetti(){
   canvas._confettiRaf=requestAnimationFrame(loop);
 }
 
-// ===== SHARE MODAL =====
 function openShareModal(text){
   var t=document.getElementById('shareText');if(t)t.value=text;
   var m=document.getElementById('shareModal');if(m){m.classList.add('active');m.setAttribute('aria-hidden','false');}
@@ -2153,7 +2106,6 @@ function fallbackCopyText(text){
 document.getElementById('shareModal').addEventListener('click',function(e){if(e.target===this)closeShareModal();},{passive:true});
 document.getElementById('settingsModal').addEventListener('click',function(e){if(e.target===this)closeSettingsModal();},{passive:true});
 
-// ===== FOCUS TRAP & KEYBOARD =====
 function trapFocus(e,container){
   if(e.key!=='Tab'||!container)return;
   var focusable=container.querySelectorAll('a[href], button:not([disabled]), input:not([disabled]):not([type="hidden"]), textarea:not([disabled]), select:not([disabled]), [tabindex]:not([tabindex="-1"])');
@@ -2194,7 +2146,6 @@ window.addEventListener('resize',function(){
   });
 },{passive:true});
 
-// ===== INIT =====
 function init(){
   pointerEl=document.getElementById('wheelPointer');
   loadWheelSettings();
@@ -2212,7 +2163,6 @@ function init(){
     });
   }
 
-  // Popup toggle enables/disables the message input live
   var popupToggle=document.getElementById('displayPopupWithMessage');
   if(popupToggle){
     popupToggle.addEventListener('change',function(){
