@@ -215,13 +215,6 @@ main{flex:1;display:flex;align-items:flex-start;justify-content:center;padding:0
 .page-subtitle{font-size:13px;font-weight:400;color:#6b7280;line-height:1.5;margin:0 0 20px;padding:0;letter-spacing:0;width:100%;text-align:left;}
 @media (max-width:560px){.page-h1{font-size:18px;}.page-subtitle{font-size:12.5px;margin-bottom:16px;}}
 
-.top-ranking-bar { display: flex; align-items: center; justify-content: center; gap: 12px; background: var(--soft-bg); border: 1px solid var(--line); padding: 10px 20px; border-radius: 12px; margin-bottom: 24px; box-shadow: 0 4px 12px rgba(0,0,0,0.03); overflow-x: auto; white-space: nowrap; }
-.top-ranking-title { font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; color: var(--text-light); display: flex; align-items: center; gap: 6px; }
-.top-ranking-title svg { width: 18px; height: 18px; stroke: #eab308; }
-.top-ranking-list { display: flex; gap: 8px; }
-.rank-badge { background: #ffffff; border: 1px solid var(--line); padding: 4px 12px; border-radius: 20px; font-size: 13px; font-weight: 600; color: var(--text); box-shadow: 0 2px 4px rgba(0,0,0,0.02); display: flex; align-items: center; gap: 6px; }
-.rank-num { font-size: 11px; font-weight: 800; color: #eab308; }
-
 /* ══════════════════════════════════════════════════════════════
    WHEEL LAYOUT — wheel + entries side-by-side on desktop,
    stacked on mobile. Everything fits every screen.
@@ -280,8 +273,6 @@ main{flex:1;display:flex;align-items:flex-start;justify-content:center;padding:0
     max-width:min(680px, calc(100vh - 150px));
     max-width:min(680px, calc(100dvh - 150px));
   }
-  /* Wheel fills its column exactly — no dead space next to entries.
-     Fullscreen rule below has higher specificity, so it still wins there. */
   .wheel-premium-bg{max-width:100% !important;margin-top:0 !important;}
   .entries-panel{
     flex:0 0 auto;
@@ -294,10 +285,6 @@ main{flex:1;display:flex;align-items:flex-start;justify-content:center;padding:0
 
 /* ──────────────────────────────────────────────────────────────
    FULLSCREEN
-   `:is()` is a forgiving selector list, so unsupported
-   `:-webkit-full-screen` cannot invalidate the rule in Firefox.
-   `max-width:none !important` has specificity (0,2,0) and therefore
-   beats the desktop `max-width:100% !important` (0,1,0).
    ────────────────────────────────────────────────────────────── */
 
 .wheel-premium-bg:is(:fullscreen, :-webkit-full-screen, .pseudo-fullscreen){
@@ -712,8 +699,6 @@ main{flex:1;display:flex;align-items:flex-start;justify-content:center;padding:0
   .preset-title{color:#f4f7fb;}
   .preset-subtitle{color:#8b96a5;}
   .preset-emoji { background: #16202c; border-color: #243040; }
-  .top-ranking-bar { background: #141c26; border-color: #1e2836; }
-  .rank-badge { background: #0f1620; border-color: #243040; color: #f4f7fb; }
   .white-bottom-bg{background-color:#0b0f14;}
   .seo-content-box{background-color:#0b0f14;border-color:#1e2836;}
   .seo-block h2,.seo-block h3,.seo-block strong{color:#f4f7fb;}
@@ -993,11 +978,6 @@ main{flex:1;display:flex;align-items:flex-start;justify-content:center;padding:0
 
 <main id="mainContent" tabindex="-1">
   <div class="content-container">
-    <div class="top-ranking-bar" id="topRankingBar" style="display:none;">
-      <div class="top-ranking-title"><svg><use href="#i-trophy"/></svg> Latest Winners</div>
-      <div class="top-ranking-list" id="topRankingList"></div>
-    </div>
-
     <section class="wheel-section" id="wheelSection" aria-label="Wheel tool">
       <div class="wheel-layout">
         <div class="wheel-col">
@@ -1114,7 +1094,7 @@ James</textarea>
     <article class="seo-content">
       <h1 class="page-h1" style="margin-top:0;margin-bottom:8px;">Spin the Wheel – Free Random Name Picker & Decision Maker</h1>
       <p class="page-subtitle" style="margin-bottom:18px;">Make random choices, pick a winner, choose names or decide what to do next — free, fast, fair and fully customizable.</p>
-            <div class="seo-block">
+      <div class="seo-block">
         <h2>About Spin The Wheel: Free Picker Wheel &amp; Random Name Picker</h2>
         <p>Spin The Wheel is a free online picker wheel and random name picker. Type your names or options, give the wheel a spin, and get a fair answer in seconds. Use it as a name picker for your classroom, a raffle wheel spinner for giveaways, or a quick decision wheel for everyday choices.</p>
       </div>
@@ -1784,46 +1764,32 @@ function startBlankWheel(){closeModal('presetModal');resetWheel();}
 
 function positionDropdownMenu(btn, menu){
   if(!btn||!menu)return;
-
-  // Hide + disable transition while measuring/positioning (prevents jump animation)
   menu.style.transition='none';
   menu.style.visibility='hidden';
   menu.style.opacity='0';
   menu.style.display='flex';
   menu.style.pointerEvents='none';
   menu.classList.remove('show');
-
-  // Force layout so we get real size
   void menu.offsetWidth;
-
   var menuW = menu.offsetWidth || 240;
   var menuH = menu.offsetHeight || 200;
   var rect = btn.getBoundingClientRect();
   var gap = 8;
   var vw = window.innerWidth;
   var vh = window.innerHeight;
-
-  // Vertical: prefer below button, flip above if not enough space
   var topPos = rect.bottom + gap;
   if(topPos + menuH > vh - gap){
     var above = rect.top - gap - menuH;
     topPos = above >= gap ? above : Math.max(gap, vh - gap - menuH);
   }
-
-  // Horizontal: prefer left-align under button
   var leftPos = rect.left;
-  // If overflows right → right-align under button
   if(leftPos + menuW > vw - gap){
     leftPos = rect.right - menuW;
   }
-  // Clamp to viewport
   if(leftPos < gap) leftPos = gap;
   if(leftPos + menuW > vw - gap) leftPos = Math.max(gap, vw - gap - menuW);
-
   menu.style.top = Math.round(topPos) + 'px';
   menu.style.left = Math.round(leftPos) + 'px';
-
-  // Restore transition on next frame, then show
   requestAnimationFrame(function(){
     menu.style.transition = '';
     menu.style.opacity = '';
@@ -1901,17 +1867,10 @@ function closeNewWheelMenu(){
 function renderNewWheelMenu(){
   var menu=document.getElementById('newWheelMenu');
   if(!menu)return;
-  // Keep the Blank button + divider that are already in HTML, append presets
-  var existing = menu.querySelectorAll('.tools-menu-item[data-preset], .tools-menu-divider + .tools-menu-item');
-  // Remove old preset items (keep first blank + first divider)
   var items = menu.querySelectorAll('.tools-menu-item');
-  for(var i=items.length-1;i>=1;i--){ // keep index 0 = Blank
-    items[i].remove();
-  }
+  for(var i=items.length-1;i>=1;i--){ items[i].remove(); }
   var dividers = menu.querySelectorAll('.tools-menu-divider');
-  // keep only first divider
   for(var d=dividers.length-1;d>=1;d--) dividers[d].remove();
-
   for(var i=0;i<WHEEL_PRESETS.length;i++){
     var p=WHEEL_PRESETS[i];
     var btn=document.createElement('button');
@@ -1991,7 +1950,6 @@ function closeSidebar(){
   if(ov)ov.classList.remove('show');
   if(btn)btn.setAttribute('aria-expanded','false');
   sb.setAttribute('aria-hidden','true');
-  // Close all expandable subs
   ['sidebarToolsSub','sidebarLangSub','sidebarNewWheelSub'].forEach(function(id){
     var sub=document.getElementById(id);if(sub)sub.classList.remove('open');
   });
@@ -2042,10 +2000,7 @@ function toggleSidebarNewWheel(e){
 function renderSidebarNewWheelMenu(){
   var sub=document.getElementById('sidebarNewWheelSub');
   if(!sub)return;
-  // Clear everything and rebuild (Blank + presets) so style matches desktop New Wheel menu
   sub.innerHTML='';
-
-  // Blank Wheel
   var blankBtn=document.createElement('button');
   blankBtn.type='button';
   blankBtn.className='sidebar-sub-item';
@@ -2057,13 +2012,9 @@ function renderSidebarNewWheelMenu(){
       '<span class="item-sub">Start from scratch</span>'+
     '</span>';
   sub.appendChild(blankBtn);
-
-  // Divider
   var divider=document.createElement('div');
   divider.className='sidebar-menu-divider';
   sub.appendChild(divider);
-
-  // Presets
   for(var i=0;i<WHEEL_PRESETS.length;i++){
     var p=WHEEL_PRESETS[i];
     var btn=document.createElement('button');
@@ -2136,25 +2087,20 @@ function togglePanelVisibility(){
   else{eyeIcon.setAttribute('href','#i-eye');slidingContainer.classList.add('hidden-content');entriesFooter.style.display='none';showToast('Panel hidden.');}
 }
 
+/* ──────────────────────────────────────────────────────────────
+   renderResultsList — top-ranking-bar / rank-badge references REMOVED.
+   Sirf Results list + badge update hote hain.
+   ────────────────────────────────────────────────────────────── */
 function renderResultsList(){
   var listEl=document.getElementById('resultsList');
   var badge=document.getElementById('resultsBadge');
   if(!listEl)return;
   if(winnerHistory.length>0){badge.textContent=winnerHistory.length;badge.style.display='flex';}else{badge.style.display='none';}
   listEl.innerHTML='';
-  var topBar=document.getElementById('topRankingBar');
-  var topList=document.getElementById('topRankingList');
   if(winnerHistory.length===0){
     listEl.innerHTML='<li class="results-empty">Results will appear here</li>';
-    if(topBar)topBar.style.display='none';
   }else{
     for(var i=0;i<winnerHistory.length;i++){var li=document.createElement('li');li.textContent=winnerHistory[i];listEl.appendChild(li);}
-    if(topBar&&topList){
-      topBar.style.display='flex';
-      var recent=winnerHistory.slice(-5).reverse();var html='';
-      for(var j=0;j<recent.length;j++){html+='<div class="rank-badge"><span class="rank-num">#'+(j+1)+'</span> '+escHtml(recent[j])+'</div>';}
-      topList.innerHTML=html;
-    }
   }
   var subBtns=document.querySelectorAll('#resultsSubTools .sub-btn');
   for(var k=0;k<subBtns.length;k++){if(winnerHistory.length>0)subBtns[k].classList.remove('disabled');else subBtns[k].classList.add('disabled');}
@@ -2248,7 +2194,6 @@ function updateEntries(){
     }
     validNames.push(name);
   }
-  // Toast only when the condition newly appears (simple cooldown)
   if(didTruncate && !window._truncToastShown){
     window._truncToastShown=true;
     showToast('Some entries truncated to 30 characters.');
