@@ -222,16 +222,16 @@ main{flex:1;display:flex;align-items:flex-start;justify-content:center;padding:0
 .rank-badge { background: #ffffff; border: 1px solid var(--line); padding: 4px 12px; border-radius: 20px; font-size: 13px; font-weight: 600; color: var(--text); box-shadow: 0 2px 4px rgba(0,0,0,0.02); display: flex; align-items: center; gap: 6px; }
 .rank-num { font-size: 11px; font-weight: 800; color: #eab308; }
 
-.wheel-layout{display:flex;justify-content:center;align-items:flex-start;gap:clamp(14px,2vw,28px);flex-wrap:nowrap;width:100%;max-width:100%;overflow-x:hidden !important;overflow-x:clip !important;}
+/* ══════════════════════════════════════════════════════════════
+   WHEEL LAYOUT — wheel + entries side-by-side on desktop,
+   stacked on mobile. Everything fits every screen.
+   ══════════════════════════════════════════════════════════════ */
 
-.wheel-col{width:100%;max-width:680px;min-width:0;flex-shrink:1;display:flex;flex-direction:column;align-items:center;margin-bottom:40px;}
+.wheel-layout{display:flex;justify-content:center;align-items:flex-start;gap:clamp(16px,2.5vw,36px);flex-wrap:nowrap;width:100%;max-width:100%;overflow-x:hidden !important;overflow-x:clip !important;}
+
+.wheel-col{width:100%;max-width:680px;min-width:0;flex:1 1 auto;display:flex;flex-direction:column;align-items:center;margin:0;}
 
 .wheel-controls-top{display:flex;justify-content:flex-end;align-items:center;gap:10px;width:100%;max-width:680px;margin:0 auto 0;padding:0 8px;position:relative;top:12px;z-index:10;}
-
-/* ══════════════════════════════════════════════════════════════
-   WHEEL SIZING — parent controls size via :has(), works everywhere
-   NOTE: no !important here — the fullscreen state below must win.
-   ══════════════════════════════════════════════════════════════ */
 
 .wheel-premium-bg{
   position:relative;
@@ -240,65 +240,64 @@ main{flex:1;display:flex;align-items:flex-start;justify-content:center;padding:0
   justify-content:center;
   width:100%;
   max-width:min(560px, calc(100vw - 40px), calc(100vh - 180px));
+  max-width:min(560px, calc(100vw - 40px), calc(100dvh - 180px));
   aspect-ratio:1/1;
   margin:0 auto;
   border-radius:50%;
   overflow:hidden;
 }
 
+/* MOBILE / TABLET: stack */
 @media (max-width:900px){
-  .wheel-layout{flex-direction:column;align-items:center;gap:22px;}
-  .wheel-col{margin-bottom:40px;}
-  .wheel-premium-bg:has(> .wheel-stage.size-compact){
-    max-width:min(68vw, 55vmin);
-  }
-  .wheel-premium-bg:has(> .wheel-stage.size-medium){
-    max-width:min(84vw, 70vmin);
-  }
-  .wheel-premium-bg:has(> .wheel-stage.size-large){
-    max-width:min(95vw, 85vmin);
-  }
+  .wheel-layout{flex-direction:column;align-items:center;gap:24px;}
+  .wheel-col{flex:0 1 auto;max-width:680px;width:100%;}
+  .entries-panel{max-width:520px;width:100%;margin-top:0;}
+  .wheel-premium-bg:has(> .wheel-stage.size-compact){max-width:min(68vw, 55vmin);}
+  .wheel-premium-bg:has(> .wheel-stage.size-medium){max-width:min(84vw, 70vmin);}
+  .wheel-premium-bg:has(> .wheel-stage.size-large){max-width:min(95vw, 85vmin);}
 }
 
+/* DESKTOP: wheel left, entries right, both fit */
 @media (min-width:901px){
-  .wheel-col{margin-top:0;}
-  .wheel-premium-bg{margin-top:0 !important;}
-  .wheel-premium-bg:has(> .wheel-stage.size-compact){
-    max-width:min(440px, 40vw, calc((100vh - 130px) * 0.65));
+  .wheel-layout{flex-direction:row;flex-wrap:nowrap;align-items:flex-start;justify-content:center;}
+  .wheel-col{
+    flex:1 1 auto;
+    width:100%;
+    min-width:0;
+    margin:0;
+    max-width:min(680px, calc(100vh - 150px));
+    max-width:min(680px, calc(100dvh - 150px));
   }
-  .wheel-premium-bg:has(> .wheel-stage.size-medium){
-    max-width:min(560px, 50vw, calc((100vh - 130px) * 0.82));
+  .wheel-col:has(.wheel-stage.size-compact){
+    max-width:min(440px, calc(100vh - 150px));
+    max-width:min(440px, calc(100dvh - 150px));
   }
-  .wheel-premium-bg:has(> .wheel-stage.size-large){
-    max-width:min(680px, 62vw, calc(100vh - 130px));
+  .wheel-col:has(.wheel-stage.size-medium){
+    max-width:min(560px, calc(100vh - 150px));
+    max-width:min(560px, calc(100dvh - 150px));
   }
-}
-
-@supports (height: 100dvh){
-  @media (max-width:900px){
-    .wheel-premium-bg{
-      max-width:min(560px, calc(100vw - 40px), calc(100dvh - 180px));
-    }
+  .wheel-col:has(.wheel-stage.size-large){
+    max-width:min(680px, calc(100vh - 150px));
+    max-width:min(680px, calc(100dvh - 150px));
   }
-  @media (min-width:901px){
-    .wheel-premium-bg:has(> .wheel-stage.size-compact){
-      max-width:min(440px, 40vw, calc((100dvh - 130px) * 0.65));
-    }
-    .wheel-premium-bg:has(> .wheel-stage.size-medium){
-      max-width:min(560px, 50vw, calc((100dvh - 130px) * 0.82));
-    }
-    .wheel-premium-bg:has(> .wheel-stage.size-large){
-      max-width:min(680px, 62vw, calc(100dvh - 130px));
-    }
+  /* Wheel fills its column exactly — no dead space next to entries.
+     Fullscreen rule below has higher specificity, so it still wins there. */
+  .wheel-premium-bg{max-width:100% !important;margin-top:0 !important;}
+  .entries-panel{
+    flex:0 0 auto;
+    width:clamp(300px, 34vw, 420px);
+    max-width:420px;
+    min-width:0;
+    margin-top:0;
   }
 }
 
 /* ──────────────────────────────────────────────────────────────
    FULLSCREEN
-   `:is()` uses a forgiving selector list, so the unsupported
-   `:-webkit-full-screen` cannot invalidate the whole rule in Firefox.
-   `!important` on max-width/max-height is intentional and now actually
-   wins, because the `:has()` sizing rules above are no longer !important.
+   `:is()` is a forgiving selector list, so unsupported
+   `:-webkit-full-screen` cannot invalidate the rule in Firefox.
+   `max-width:none !important` has specificity (0,2,0) and therefore
+   beats the desktop `max-width:100% !important` (0,1,0).
    ────────────────────────────────────────────────────────────── */
 
 .wheel-premium-bg:is(:fullscreen, :-webkit-full-screen, .pseudo-fullscreen){
@@ -342,8 +341,7 @@ main{flex:1;display:flex;align-items:flex-start;justify-content:center;padding:0
 .icon-btn:active{transform:translateY(0) scale(.94);opacity:.6}
 .icon-btn svg{width:22px;height:22px;stroke:currentColor;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round;}
 
-.entries-panel{width:100%;max-width:420px;min-width:0;flex-shrink:1;display:flex;flex-direction:column;margin-top:20px;}
-@media (max-width:900px){.entries-panel{max-width:520px;margin-top:0;}}
+.entries-panel{width:100%;max-width:420px;min-width:0;flex-shrink:1;display:flex;flex-direction:column;margin-top:0;}
 .entries-top-tools{display:flex;gap:12px;margin-bottom:16px;justify-content:flex-start;padding:0;flex-wrap:wrap;}
 .tool-btn{width:44px;height:44px;border-radius:8px;border:none;background:transparent;color:#000000;display:flex;align-items:center;justify-content:center;cursor:pointer;transition:background 0.15s;position:relative;flex-shrink:0;}
 .tool-btn:hover{background:#f3f4f6}
@@ -599,15 +597,18 @@ main{flex:1;display:flex;align-items:flex-start;justify-content:center;padding:0
 
 @media (min-width:1920px){
   :root{--page-max:1400px;}
-  .wheel-col{max-width:780px;}
-  .wheel-premium-bg:has(> .wheel-stage.size-compact){
-    max-width:min(500px, 40vw, calc((100vh - 130px) * 0.65));
+  .wheel-col{max-width:min(780px, calc(100vh - 150px));max-width:min(780px, calc(100dvh - 150px));}
+  .wheel-col:has(.wheel-stage.size-compact){
+    max-width:min(500px, calc(100vh - 150px));
+    max-width:min(500px, calc(100dvh - 150px));
   }
-  .wheel-premium-bg:has(> .wheel-stage.size-medium){
-    max-width:min(640px, 50vw, calc((100vh - 130px) * 0.82));
+  .wheel-col:has(.wheel-stage.size-medium){
+    max-width:min(640px, calc(100vh - 150px));
+    max-width:min(640px, calc(100dvh - 150px));
   }
-  .wheel-premium-bg:has(> .wheel-stage.size-large){
-    max-width:min(780px, 62vw, calc(100vh - 130px));
+  .wheel-col:has(.wheel-stage.size-large){
+    max-width:min(780px, calc(100vh - 150px));
+    max-width:min(780px, calc(100dvh - 150px));
   }
 }
 
