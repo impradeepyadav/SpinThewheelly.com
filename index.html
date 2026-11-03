@@ -228,7 +228,24 @@ main{flex:1;display:flex;align-items:flex-start;justify-content:center;padding:0
 
 .wheel-controls-top{display:flex;justify-content:flex-end;align-items:center;gap:10px;width:100%;max-width:680px;margin:0 auto 0;padding:0 8px;position:relative;top:12px;z-index:10;}
 
-@media (max-width:900px){.wheel-layout{flex-direction:column;align-items:center;gap:22px;}.wheel-col{margin-bottom:40px;}}
+/* ══════════════════════════════════════════════════════════════
+   RESPONSIVE WHEEL — FITS ALL SCREENS + SIZE SETTING WORKS
+   Desktop: proportional to viewport height
+   Mobile: vmin + percentage
+   ══════════════════════════════════════════════════════════════ */
+
+@media (max-width:900px){
+  .wheel-layout{flex-direction:column;align-items:center;gap:22px;}
+  .wheel-col{margin-bottom:40px;}
+  .wheel-premium-bg{
+    width:min(100%, calc(100vh - 160px)) !important;
+    max-width:min(100%, calc(100vh - 160px)) !important;
+    height:auto !important;
+  }
+  .wheel-stage.size-compact{max-width:min(70%, 55vmin);}
+  .wheel-stage.size-medium{max-width:min(85%, 70vmin);}
+  .wheel-stage.size-large{max-width:100%;max-width:min(100%, 85vmin);}
+}
 
 @media (min-width:901px){
   .wheel-col{margin-top:0;}
@@ -240,14 +257,26 @@ main{flex:1;display:flex;align-items:flex-start;justify-content:center;padding:0
     height:auto !important;
   }
   .wheel-stage{transform:translateX(0);}
+  .wheel-stage.size-compact{max-width:min(440px, calc((100vh - 130px) * 0.65));}
+  .wheel-stage.size-medium{max-width:min(560px, calc((100vh - 130px) * 0.80));}
+  .wheel-stage.size-large{max-width:min(680px, calc(100vh - 130px));}
 }
 
 @supports (height: 100dvh){
+  @media (max-width:900px){
+    .wheel-premium-bg{
+      width:min(100%, calc(100dvh - 160px)) !important;
+      max-width:min(100%, calc(100dvh - 160px)) !important;
+    }
+  }
   @media (min-width:901px){
     .wheel-premium-bg{
       width:min(680px, calc(100dvh - 130px)) !important;
       max-width:min(680px, calc(100dvh - 130px)) !important;
     }
+    .wheel-stage.size-compact{max-width:min(440px, calc((100dvh - 130px) * 0.65));}
+    .wheel-stage.size-medium{max-width:min(560px, calc((100dvh - 130px) * 0.80));}
+    .wheel-stage.size-large{max-width:min(680px, calc(100dvh - 130px));}
   }
 }
 
@@ -359,12 +388,6 @@ main{flex:1;display:flex;align-items:flex-start;justify-content:center;padding:0
 .wheel-stage.size-compact{max-width:440px;}
 .wheel-stage.size-medium{max-width:560px;}
 .wheel-stage.size-large{max-width:680px;}
-@media (max-width:900px){
-  .wheel-stage.size-compact{max-width:min(100%,440px);}
-  .wheel-stage.size-medium{max-width:min(100%,560px);}
-  .wheel-stage.size-large{max-width:min(100%,680px);}
-}
-@media (max-width:400px){.wheel-stage.size-compact,.wheel-stage.size-medium,.wheel-stage.size-large{max-width:100%;}}
 .wheel-svg{width:100%;height:100%;display:block;overflow:visible;cursor:pointer;-webkit-tap-highlight-color:transparent;touch-action:manipulation;}
 .wheel-svg .wheel-segment{stroke:none;transition:stroke 0.2s;}
 .wheel-svg.wheel-borders-on .wheel-segment{stroke:rgba(0,0,0,0.18);stroke-width:1.2;}
@@ -592,9 +615,9 @@ main{flex:1;display:flex;align-items:flex-start;justify-content:center;padding:0
     max-height:none !important;
     height:auto !important;
   }
-  .wheel-stage.size-compact{max-width:500px;}
-  .wheel-stage.size-medium{max-width:640px;}
-  .wheel-stage.size-large{max-width:780px;}
+  .wheel-stage.size-compact{max-width:min(500px, calc((100vh - 130px) * 0.65));}
+  .wheel-stage.size-medium{max-width:min(640px, calc((100vh - 130px) * 0.80));}
+  .wheel-stage.size-large{max-width:min(780px, calc(100vh - 130px));}
 }
 
 @media (min-width:2560px){:root{--page-max:1600px;}}
@@ -689,7 +712,6 @@ main{flex:1;display:flex;align-items:flex-start;justify-content:center;padding:0
 
   .wheel-premium-bg:fullscreen,.wheel-premium-bg:-webkit-full-screen,.wheel-premium-bg.pseudo-fullscreen{background:#0b0f14;}
 
-  /* Spin button in dark mode: dark circle with inner glow */
   .spin-button{
     background:#111a24;color:#f4f7fb;
     border-color:rgba(255,255,255,0.16);
@@ -755,7 +777,6 @@ main{flex:1;display:flex;align-items:flex-start;justify-content:center;padding:0
   .page-subtitle{color:#8b96a5;}
 }
 </style>
-
 <!-- ================= Structured Data: Organization ================= -->
 <script type="application/ld+json">
 {
