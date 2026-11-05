@@ -59,7 +59,7 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap">
 
 <style>
-:root{color-scheme:light;--bg:#ffffff;--text:#0a0a0a;--text-light:#525252;--line:#e5e5e5;--hover:#f3f4f6;--card:#fafafa;--soft-bg:#f9fafb;--panel-bg:#ffffff;--input-bg:#ffffff;--input-border:#e5e5e5;--shadow:rgba(0,0,0,.1);--overlay-bg:rgba(0,0,0,.55);--toast-bg:#0f172a;--toast-text:#fff;--page-max:1200px;--gutter:clamp(16px,3vw,40px);}
+:root{color-scheme:light;--bg:#ffffff;--text:#0a0a0a;--text-light:#525252;--line:#e5e5e5;--hover:#f3f4f6;--card:#fafafa;--soft-bg:#f9fafb;--panel-bg:#ffffff;--input-bg:#ffffff;--input-border:#e5e5e5;--shadow:rgba(0,0,0,.1);--overlay-bg:rgba(0,0,0,.55);--toast-bg:#0f172a;--toast-text:#fff;--page-max:1320px;--gutter:clamp(16px,3vw,40px);}
 *{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth;overflow-x:hidden !important;overflow-x:clip !important;-webkit-text-size-adjust:100%;max-width:100% !important;width:100%;background-color:#ffffff !important;}
 body{font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;color:var(--text);min-height:100vh;overflow-x:hidden !important;overflow-x:clip !important;width:100% !important;max-width:100% !important;overflow-wrap:break-word;-webkit-font-smoothing:antialiased;display:flex;flex-direction:column;position:relative;z-index:0;background-color:#ffffff !important;font-weight:400;}
@@ -142,24 +142,24 @@ main{flex:1;display:flex;align-items:flex-start;justify-content:center;padding:0
 .page-h1{font-size:20px;font-weight:600;color:#111827;margin-top:0;margin-bottom:6px;letter-spacing:-0.3px;text-align:left;line-height:1.3;width:100%;padding:0;}
 .page-subtitle{font-size:13px;font-weight:400;color:#6b7280;line-height:1.5;margin:0 0 20px;padding:0;width:100%;text-align:left;}
 @media (max-width:560px){.page-h1{font-size:18px;}.page-subtitle{font-size:12.5px;margin-bottom:16px;}}
-.wheel-layout{display:flex;justify-content:center;align-items:flex-start;gap:clamp(16px,2.5vw,36px);flex-wrap:nowrap;width:100%;max-width:100%;overflow-x:hidden !important;overflow-x:clip !important;}
-.wheel-col{width:100%;max-width:720px;min-width:0;flex:1 1 auto;display:flex;flex-direction:column;align-items:center;margin:0;}
-.wheel-controls-top{display:flex;justify-content:flex-end;align-items:center;gap:10px;width:100%;max-width:720px;margin:0 auto 0;padding:0 8px;position:relative;top:0;z-index:10;}
-.wheel-premium-bg{position:relative;display:flex;align-items:center;justify-content:center;width:100%;max-width:clamp(220px,min(calc(100vw - 40px),calc(100dvh - 230px)),720px);aspect-ratio:1/1;margin:0 auto 30px auto;border-radius:50%;overflow:hidden;}
+.wheel-layout{display:flex;justify-content:center;align-items:flex-start;gap:clamp(14px,2vw,28px);flex-wrap:nowrap;width:100%;max-width:100%;overflow-x:hidden !important;overflow-x:clip !important;}
+.wheel-col{width:100%;max-width:900px;min-width:0;flex:1 1 auto;display:flex;flex-direction:column;align-items:center;margin:0;}
+.wheel-controls-top{display:flex;justify-content:flex-end;align-items:center;gap:10px;width:100%;max-width:900px;margin:0 auto 0;padding:0 8px;position:relative;top:0;z-index:10;}
+.wheel-premium-bg{position:relative;display:flex;align-items:center;justify-content:center;width:100%;max-width:clamp(240px,min(calc(100vw - 32px),calc(100dvh - 180px)),860px);aspect-ratio:1/1;margin:0 auto 24px auto;border-radius:50%;overflow:hidden;}
 @media (max-width:900px){
-  .wheel-layout{flex-direction:column;align-items:center;gap:20px;}
-  .wheel-col{flex:0 1 auto;max-width:720px;width:100%;}
+  .wheel-layout{flex-direction:column;align-items:center;gap:16px;}
+  .wheel-col{flex:0 1 auto;max-width:860px;width:100%;}
   .entries-panel{max-width:520px;width:100%;margin-top:0;}
-  .wheel-premium-bg{max-width:clamp(220px,min(100%,calc(100dvh - 210px)),720px);}
+  .wheel-premium-bg{max-width:clamp(240px,min(100%,calc(100dvh - 190px)),860px);}
 }
-@media (max-width:560px){main{padding-top:0;padding-bottom:44px;padding-left:max(10px,env(safe-area-inset-left));padding-right:max(10px,env(safe-area-inset-right));}.wheel-controls-top{padding:0 4px;}.wheel-layout{gap:16px;}}
+@media (max-width:560px){main{padding-top:0;padding-bottom:44px;padding-left:max(10px,env(safe-area-inset-left));padding-right:max(10px,env(safe-area-inset-right));}.wheel-controls-top{padding:0 4px;}.wheel-layout{gap:14px;}}
 @media (min-width:901px){
   .wheel-layout{flex-direction:row;flex-wrap:nowrap;align-items:flex-start;justify-content:center;}
-  .wheel-col{flex:1 1 auto;width:100%;min-width:0;margin:0;max-width:min(720px,calc(100dvh - 210px));}
-  .wheel-premium-bg{max-width:100% !important;margin-top:0 !important;margin-bottom:30px !important;}
-  .entries-panel{flex:0 0 auto;width:clamp(300px,34vw,420px);max-width:420px;min-width:0;margin-top:0;}
+  .wheel-col{flex:1 1 auto;width:100%;min-width:0;margin:0;max-width:min(900px,calc(100dvh - 130px));}
+  .wheel-premium-bg{max-width:100% !important;margin-top:0 !important;margin-bottom:24px !important;}
+  .entries-panel{flex:0 0 auto;width:clamp(280px,30vw,400px);max-width:400px;min-width:0;margin-top:0;}
 }
-@media (max-height:500px) and (orientation:landscape){.wheel-premium-bg{max-width:clamp(180px,calc(100dvh - 80px),400px);}}
+@media (max-height:500px) and (orientation:landscape){.wheel-premium-bg{max-width:clamp(200px,calc(100dvh - 70px),520px);}}
 .wheel-premium-bg:is(:fullscreen,:-webkit-full-screen,.pseudo-fullscreen){margin-top:0 !important;margin-bottom:0 !important;max-width:none !important;max-height:none !important;}
 .wheel-premium-bg:is(:fullscreen,:-webkit-full-screen,.pseudo-fullscreen) .wheel-stage{max-width:min(84vh,88vw) !important;transform:none !important;}
 .wheel-premium-bg:is(:fullscreen,:-webkit-full-screen){width:100%;height:100%;height:100dvh;aspect-ratio:auto;border-radius:0;background:var(--bg);box-shadow:none;overflow:hidden;}
@@ -681,8 +681,6 @@ main{flex:1;display:flex;align-items:flex-start;justify-content:center;padding:0
 <main id="mainContent" tabindex="-1">
   <div class="content-container">
     <section class="wheel-section" id="wheelSection" aria-label="Wheel tool">
-      <h1 class="page-h1">Spin the Wheel</h1>
-      <p class="page-subtitle">Spin the wheel to pick random names, choose winners, decide what to eat, and play yes or no. Add your own options, customize the wheel, and let a random result make your next decision more fun.</p>
       <div class="wheel-layout">
         <div class="wheel-col">
           <div class="wheel-controls-top">
@@ -791,6 +789,8 @@ James</textarea>
 <div class="white-bottom-bg">
   <div class="seo-content-box">
     <article class="seo-content">
+      <h1 class="page-h1">Spin the Wheel</h1>
+      <p class="page-subtitle">Spin the wheel to pick random names, choose winners, decide what to eat, and play yes or no. Add your own options, customize the wheel, and let a random result make your next decision more fun.</p>
       <div class="seo-block">
         <h2>What Is the Spin the Wheel Tool?</h2>
         <p>A <strong>spin the wheel tool</strong> helps you make a <strong>random choice</strong> when you do not want to decide yourself. Add names, foods, answers, or other options, then spin the wheel to see what it picks. It can help <strong>choose a giveaway winner</strong>, pick a name in class, <strong>decide what to eat</strong>, or settle a casual yes-or-no question.</p>
