@@ -9,8 +9,14 @@
 <link rel="dns-prefetch" href="https://www.googletagmanager.com">
 <link rel="dns-prefetch" href="https://www.google-analytics.com">
 
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-1MFMKMFL0X"></script>
-<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-1MFMKMFL0X');</script>
+<!-- Google Tag Manager -->
+<script async src="https://www.googletagmanager.com/gtm.js?id=GTM-KK52TP9T"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+</script>
+<!-- End Google Tag Manager -->
 
 <title>Spin the Wheel: Random Name Picker</title>
 <meta name="description" content="Spin the wheel to pick random names, choose winners, decide what to eat, and play yes or no. Perfect for giveaways, classrooms, and everyday fun. Spin now!">
@@ -591,6 +597,11 @@ main{flex:1;display:flex;align-items:flex-start;justify-content:center;padding:0
 </script>
 </head>
 <body>
+
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KK52TP9T"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
 
 <svg xmlns="http://www.w3.org/2000/svg" style="position:absolute;width:0;height:0;overflow:hidden" aria-hidden="true">
 <defs>
@@ -1412,7 +1423,7 @@ function handleImageUpload(event){
 }
 function saveEntries(){var ta=document.getElementById('entriesTextarea');if(!ta||ta.value.trim()===''){showToast('No entries to save.');return;}var blob=new Blob([ta.value],{type:'text/plain;charset=utf-8'});var url=URL.createObjectURL(blob);var a=document.createElement('a');a.href=url;a.download='wheel-entries.txt';document.body.appendChild(a);a.click();document.body.removeChild(a);setTimeout(function(){URL.revokeObjectURL(url);},1000);showToast('Entries saved.');}
 var EMOJIS=['😀','😂','🥳','🍕','💸','🎉','😎','🔥','🍻','✨','🤔','💡'];
-function addEmoji(){var ta=document.getElementById('entriesTextarea');if(!ta)return;if(blockIfSpinning())return;if(currentTab!=='edit')switchPanel('edit');ta.focus();var startPos=ta.selectionStart;var endPos=ta.selectionEnd;var emoji=EMOJIS[Math.floor(Math.random()*EMOJIS.length)];ta.value=ta.value.substring(0,startPos)+emoji+ta.value.substring(endPos,ta.value.length);ta.selectionStart=ta.selectionEnd=startPos+emoji.length;updateEntries();}
+function addEmoji(){var ta=document.getElementById('entriesTextarea');if(!ta)return;if(blockIfSpinning())return;if(currentTab!=='edit')switchPanel('edit');ta.focus();var startPos=ta.selectionStart;var endPos=ta.selectionEnd;var emoji=EMOJIS[Math.floor(Math.random()*EMOJIS.length)];ta.value=ta.value.substring(0,startPos)+emoji+ta.value.substring(endPos,ta.value.length);ta.selectionStart=ta.selectionEnd=startPos+emoji.length;updateEntries();syncPlaceholder();}
 var SAVED_WHEELS_KEY='wheelSaves',MAX_SAVED_WHEELS=20;
 function getSavedWheelsList(){
   try{
