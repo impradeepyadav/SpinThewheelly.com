@@ -18,12 +18,12 @@
 </script>
 <!-- End Google Tag Manager -->
 
-<title>Putar Roda – Pemilih Nama Acak</title>
-<meta name="description" content="Putar roda untuk memilih nama secara acak, menentukan pemenang, memilih makanan, dan bermain ya atau tidak. Cocok untuk giveaway, kelas, dan keseruan sehari-hari.">
+<title>Putar Roda: Pemilih Nama Acak</title>
+<meta name="description" content="Putar roda untuk memilih nama acak, memilih pemenang, menentukan apa yang akan dimakan, dan bermain ya atau tidak. Sempurna untuk undian, kelas, dan keseruan sehari-hari. Putar sekarang!">
 <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
 <meta name="googlebot" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
 <meta name="bingbot" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
-<meta name="author" content="Spin The Wheel">
+<meta name="author" content="Putar Roda">
 <meta name="language" content="Indonesian">
 <meta name="revisit-after" content="7 days">
 <meta name="rating" content="general">
@@ -33,16 +33,16 @@
 <link rel="canonical" href="https://wheeloffun.app/id/">
 <link rel="alternate" hreflang="x-default" href="https://wheeloffun.app/">
 <link rel="alternate" hreflang="en" href="https://wheeloffun.app/">
-<link rel="alternate" hreflang="id" href="https://wheeloffun.app/id/">
 <link rel="alternate" hreflang="es" href="https://wheeloffun.app/es/">
+<link rel="alternate" hreflang="id" href="https://wheeloffun.app/id/">
 <link rel="alternate" hreflang="pt" href="https://wheeloffun.app/pt/">
 <link rel="alternate" hreflang="de" href="https://wheeloffun.app/de/">
 <link rel="alternate" hreflang="fr" href="https://wheeloffun.app/fr/">
 
 <meta property="og:type" content="website">
-<meta property="og:site_name" content="Spin The Wheel">
-<meta property="og:title" content="Putar Roda – Pemilih Nama Acak">
-<meta property="og:description" content="Gunakan roda pemilih gratis untuk memilih nama, mengundi pemenang, membentuk tim, dan mengambil keputusan. Tambahkan entri dan putar roda!">
+<meta property="og:site_name" content="Putar Roda">
+<meta property="og:title" content="Putar Roda">
+<meta property="og:description" content="Gunakan roda pemilih acak gratis kami untuk memilih nama, mengundi pemenang, membentuk tim, dan membuat keputusan. Tambahkan entri Anda dan putar roda!">
 <meta property="og:url" content="https://wheeloffun.app/id/">
 <meta property="og:image" content="https://wheeloffun.app/og-image.png">
 <meta property="og:image:width" content="1200">
@@ -54,9 +54,9 @@
 
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Putar Roda – Pemilih Nama Acak">
-<meta name="twitter:description" content="Roda gratis untuk nama acak, keputusan cepat, dan undian. Tanpa pendaftaran.">
+<meta name="twitter:description" content="Roda pemutar gratis untuk nama acak, keputusan cepat, dan undian. Tanpa pendaftaran. Mencari roda nama? Putar roda untuk memilih nama secara acak, memilih pemenang beruntung, membentuk tim, dan menyelesaikan keputusan dengan mudah.">
 <meta name="twitter:image" content="https://wheeloffun.app/og-image.png">
-<meta name="twitter:image:alt" content="Spin The Wheel">
+<meta name="twitter:image:alt" content="Putar Roda">
 
 <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
@@ -261,7 +261,10 @@ main{flex:1;display:flex;align-items:flex-start;justify-content:center;padding:0
 .wheel-stage{position:relative;display:block;width:100%;max-width:100%;aspect-ratio:1/1;margin:0 auto;min-width:0;z-index:1;}
 .wheel-svg{width:100%;height:100%;display:block;overflow:visible;cursor:pointer;-webkit-tap-highlight-color:transparent;touch-action:manipulation;}
 .wheel-svg .wheel-segment{stroke:none;transition:stroke 0.2s;}
-#wheelGroup{will-change:transform;transform-origin:0 0;transform-box:view-box;}
+#wheelGroup{will-change:transform;transform-origin:50% 50%;transform-box:fill-box;}
+@keyframes wheelIdleSpin{from{transform:rotate(0deg)}to{transform:rotate(360deg)}}
+#wheelGroup.idle-spinning{animation:wheelIdleSpin 30s linear infinite;}
+@media (prefers-reduced-motion: reduce){#wheelGroup.idle-spinning{animation:none;}}
 .wheel-svg.wheel-borders-on .wheel-segment{stroke:rgba(0,0,0,0.18);stroke-width:1.2;}
 #wheelOuterRing{transition:opacity 0.2s;}
 .wheel-pointer-shape{fill:#ffffff;stroke:rgba(0,0,0,0.62);stroke-width:1.5;stroke-linejoin:round;pointer-events:none;filter:drop-shadow(0 2px 3px rgba(0,0,0,0.35));}
@@ -297,6 +300,7 @@ main{flex:1;display:flex;align-items:flex-start;justify-content:center;padding:0
 .confetti-canvas.active{display:block}
 .modal-overlay{position:fixed;inset:0;background:rgba(0,0,0,.55);z-index:10001;display:none;align-items:center;justify-content:center;padding:16px;-webkit-backdrop-filter:blur(4px);backdrop-filter:blur(4px);}
 .modal-overlay.active{display:flex}
+@media (max-width:720px){.modal-overlay{-webkit-backdrop-filter:none;backdrop-filter:none;}.sidebar-overlay{-webkit-backdrop-filter:none;backdrop-filter:none;}}
 .modal-box{background:#ffffff;border:none;border-radius:12px;padding:32px 28px;max-width:460px;width:100%;box-shadow:0 24px 60px -12px rgba(0,0,0,.15),0 0 0 1px rgba(0,0,0,0.05);max-height:90vh;overflow-y:auto;position:relative;}
 .modal-box h3{font-size:20px;font-weight:700;margin-bottom:16px;color:#111827;letter-spacing:-0.3px;display:flex;align-items:center;gap:10px;border-bottom:1px solid #e5e7eb;padding-bottom:16px;}
 .modal-title-icon{width:24px;height:24px;stroke:currentColor;flex-shrink:0;}
@@ -573,26 +577,26 @@ main{flex:1;display:flex;align-items:flex-start;justify-content:center;padding:0
 </style>
 
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"Organization","@id":"https://wheeloffun.app/#organization","name":"Spin The Wheel","alternateName":["Putar Roda","Pemilih Nama Acak"],"url":"https://wheeloffun.app/","logo":{"@type":"ImageObject","url":"https://wheeloffun.app/apple-touch-icon.png","width":180,"height":180},"description":"Putar roda online untuk memilih nama secara acak, memilih pemenang, membentuk tim, dan memutuskan apa pun. Roda pemilih gratis dan mudah digunakan.","foundingDate":"2026"}
+{"@context":"https://schema.org","@type":"Organization","@id":"https://wheeloffun.app/#organization","name":"Putar Roda","alternateName":["Putar Roda","Roda Nama","Pemilih Nama Acak"],"url":"https://wheeloffun.app/id/","logo":{"@type":"ImageObject","url":"https://wheeloffun.app/apple-touch-icon.png","width":180,"height":180},"description":"Putar roda online untuk memilih nama acak, memilih pemenang, membentuk tim, dan menentukan apa saja. Roda pemilih acak gratis dan mudah digunakan.","foundingDate":"2026"}
 </script>
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"WebSite","@id":"https://wheeloffun.app/#website","name":"Spin The Wheel","alternateName":["Putar Roda","Wheel Spinner"],"url":"https://wheeloffun.app/","inLanguage":"id-ID","publisher":{"@id":"https://wheeloffun.app/#organization"}}
+{"@context":"https://schema.org","@type":"WebSite","@id":"https://wheeloffun.app/id/#website","name":"Putar Roda","alternateName":["Putar Roda","Roda Nama"],"url":"https://wheeloffun.app/id/","inLanguage":"id-ID","publisher":{"@id":"https://wheeloffun.app/#organization"}}
 </script>
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"WebApplication","@id":"https://wheeloffun.app/#webapp","name":"Spin The Wheel","alternateName":["Putar Roda","Pemilih Nama Acak","Wheel Spinner"],"url":"https://wheeloffun.app/id/","description":"Roda putar gratis dan alat pemilih nama acak. Masukkan opsi Anda, sesuaikan roda, dan putar untuk memilih pemenang acak atau membuat keputusan.","applicationCategory":"UtilityApplication","applicationSubCategory":"Random Picker","operatingSystem":"Any","browserRequirements":"Memerlukan JavaScript. Berfungsi di Chrome, Safari, Firefox, Edge, dan browser modern lainnya.","inLanguage":"id-ID","availableLanguage":["id-ID","en-US","es-ES","pt-PT","de-DE","fr-FR"],"isAccessibleForFree":true,"offers":{"@type":"Offer","price":"0","priceCurrency":"IDR"},"publisher":{"@id":"https://wheeloffun.app/#organization"},"featureList":["Pemilih nama acak hingga 50 entri","Lebih dari 30 tema warna plus warna khusus","Kecepatan putaran yang dapat disesuaikan (1,5 dtk hingga 15 dtk)","Mode hapus pemenang untuk undian","Dukungan emoji dan gambar","Perayaan confetti saat menang","Berfungsi offline setelah pemuatan pertama","Mode layar penuh","6 bahasa"]}
+{"@context":"https://schema.org","@type":"WebApplication","@id":"https://wheeloffun.app/id/#webapp","name":"Putar Roda","alternateName":["Putar Roda","Pemilih Nama Acak","Roda Nama"],"url":"https://wheeloffun.app/id/","description":"Alat gratis untuk memutar roda dan memilih nama secara acak. Masukkan pilihan Anda, sesuaikan roda, dan putar untuk memilih pemenang acak atau membuat keputusan.","applicationCategory":"UtilityApplication","applicationSubCategory":"Pemilih Acak","operatingSystem":"Any","browserRequirements":"Memerlukan JavaScript. Berfungsi di Chrome, Safari, Firefox, Edge, dan browser modern lainnya.","inLanguage":"id-ID","availableLanguage":["en-US","es-ES","id-ID","pt-PT","de-DE","fr-FR"],"isAccessibleForFree":true,"offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"publisher":{"@id":"https://wheeloffun.app/#organization"},"featureList":["Pemilih nama acak hingga 50 entri","30+ tema warna plus warna khusus","Kecepatan putaran yang dapat disesuaikan (1,5 dtk hingga 15 dtk)","Mode hapus pemenang untuk undian","Dukungan emoji dan gambar","Perayaan confetti saat menang","Berfungsi offline setelah pemuatan pertama","Mode layar penuh","6 bahasa"]}
 </script>
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"HowTo","name":"Cara menggunakan Putar Roda","description":"Ketik nama atau opsi Anda, lalu putar roda untuk mendapatkan pilihan acak.","totalTime":"PT30S","estimatedCost":{"@type":"MonetaryAmount","currency":"IDR","value":"0"},"step":[{"@type":"HowToStep","position":1,"name":"Tambahkan entri Anda","text":"Ketik atau tempel nama atau opsi ke dalam kotak teks. Satu entri per baris."},{"@type":"HowToStep","position":2,"name":"Sesuaikan (opsional)","text":"Buka Pengaturan untuk mengubah warna, kecepatan putaran, suara, atau popup pemenang."},{"@type":"HowToStep","position":3,"name":"Putar roda","text":"Klik tombol PUTAR, klik di mana saja pada roda, atau tekan Ctrl+Enter."},{"@type":"HowToStep","position":4,"name":"Lihat pemenang","text":"Roda berhenti pada hasil acak. Tutup popup untuk memutar lagi, atau hapus pemenang dari daftar."}]}
+{"@context":"https://schema.org","@type":"HowTo","name":"Cara menggunakan Putar Roda","description":"Ketik nama atau pilihan Anda, lalu putar roda untuk mendapatkan pilihan acak.","totalTime":"PT30S","estimatedCost":{"@type":"MonetaryAmount","currency":"USD","value":"0"},"step":[{"@type":"HowToStep","position":1,"name":"Tambahkan entri Anda","text":"Ketik atau tempel nama atau pilihan ke dalam kotak teks. Satu entri per baris."},{"@type":"HowToStep","position":2,"name":"Sesuaikan (opsional)","text":"Buka Pengaturan untuk mengubah warna, kecepatan putaran, suara, atau popup pemenang."},{"@type":"HowToStep","position":3,"name":"Putar roda","text":"Klik tombol PUTAR, klik di mana saja pada roda, atau tekan Ctrl+Enter."},{"@type":"HowToStep","position":4,"name":"Lihat pemenang","text":"Roda berhenti pada hasil acak. Tutup popup untuk memutar lagi, atau hapus pemenang dari daftar."}]}
 </script>
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"FAQPage","@id":"https://wheeloffun.app/id/#faq","inLanguage":"id-ID","mainEntity":[
 {"@type":"Question","name":"Bagaimana cara menggunakan pemilih nama acak?","acceptedAnswer":{"@type":"Answer","text":"Masukkan atau tempel nama Anda ke dalam kotak teks, dengan satu nama per baris. Putar roda untuk memilih nama acak dari daftar Anda."}},
-{"@type":"Question","name":"Bisakah saya menggunakan roda untuk memutuskan apa yang akan dimakan?","acceptedAnswer":{"@type":"Answer","text":"Ya. Tambahkan makanan, camilan, atau pilihan restoran ke roda dan putar untuk mendapatkan saran makanan acak dari daftar Anda sendiri."}},
-{"@type":"Question","name":"Bagaimana cara membuat roda Ya atau Tidak?","acceptedAnswer":{"@type":"Answer","text":"Tambahkan “Ya” dan “Tidak” sebagai dua entri, lalu putar roda untuk mendapatkan jawaban acak."}},
-{"@type":"Question","name":"Bisakah saya menggunakan roda untuk memilih pemenang giveaway?","acceptedAnswer":{"@type":"Answer","text":"Ya. Tambahkan nama peserta ke roda dan putar untuk memilih entri acak. Anda dapat mengaktifkan mode hapus pemenang untuk beberapa putaran."}},
+{"@type":"Question","name":"Bisakah saya menggunakan roda untuk menentukan apa yang akan dimakan?","acceptedAnswer":{"@type":"Answer","text":"Ya. Tambahkan makanan, camilan, atau pilihan restoran ke roda dan putar untuk mendapatkan saran makanan acak dari daftar Anda sendiri."}},
+{"@type":"Question","name":"Bagaimana cara membuat roda Ya atau Tidak?","acceptedAnswer":{"@type":"Answer","text":"Tambahkan \"Ya\" dan \"Tidak\" sebagai dua entri, lalu putar roda untuk mendapatkan jawaban acak."}},
+{"@type":"Question","name":"Bisakah saya menggunakan roda untuk memilih pemenang undian?","acceptedAnswer":{"@type":"Answer","text":"Ya. Tambahkan nama peserta ke roda dan putar untuk memilih entri acak. Anda dapat mengaktifkan mode hapus pemenang untuk beberapa putaran."}},
 {"@type":"Question","name":"Bisakah saya membuat roda khusus saya sendiri?","acceptedAnswer":{"@type":"Answer","text":"Ya. Tambahkan nama, pilihan, jawaban, atau ide Anda sendiri untuk membuat roda untuk aktivitas Anda, lalu sesuaikan tampilannya menggunakan pengaturan yang tersedia."}},
 {"@type":"Question","name":"Apakah Putar Roda gratis?","acceptedAnswer":{"@type":"Answer","text":"Ya. Putar Roda gratis digunakan, tanpa akun atau langganan."}},
-{"@type":"Question","name":"Apakah alat putar roda berfungsi di ponsel?","acceptedAnswer":{"@type":"Answer","text":"Ya. Anda dapat menggunakan roda di ponsel dan tablet serta laptop dan komputer desktop dengan browser modern."}}
+{"@type":"Question","name":"Apakah alat ini berfungsi di ponsel?","acceptedAnswer":{"@type":"Answer","text":"Ya. Anda dapat menggunakan roda di smartphone dan tablet serta laptop dan komputer desktop dengan browser modern."}}
 ]}
 </script>
 </head>
@@ -636,9 +640,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 <header class="site-header">
   <div class="header-container">
-    <a href="/id/" class="nav-logo" title="Spin The Wheel — Beranda" aria-label="Spin The Wheel beranda">
-      <img src="/apple-touch-icon.png" alt="Logo Spin The Wheel" class="nav-logo-img" width="28" height="28" loading="lazy">
-      <span class="nav-logo-text">Spin The Wheel</span>
+    <a href="/id/" class="nav-logo" title="Wheel Of Fun — Beranda" aria-label="Wheel Of Fun beranda">
+      <img src="/apple-touch-icon.png" alt="Wheel Of Fun logo" class="nav-logo-img" width="28" height="28" loading="lazy">
+      <span class="nav-logo-text">Wheel Of Fun</span>
     </a>
     <nav class="nav-links" aria-label="Navigasi utama">
       <div class="nav-new-wrap">
@@ -694,8 +698,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         </button>
         <div class="tools-menu" id="langMenu" role="menu" aria-label="Pemilih bahasa">
           <a href="https://wheeloffun.app/" class="tools-menu-item" role="menuitem" lang="en" hreflang="en"><span class="lang-flag">🇬🇧</span><span class="tools-item-content"><span class="tools-item-title">English</span></span></a>
-          <a href="https://wheeloffun.app/id/" class="tools-menu-item lang-active" role="menuitem" lang="id" hreflang="id" aria-current="page"><span class="lang-flag">🇮🇩</span><span class="tools-item-content"><span class="tools-item-title">Bahasa Indonesia</span></span></a>
           <a href="https://wheeloffun.app/es/" class="tools-menu-item" role="menuitem" lang="es" hreflang="es"><span class="lang-flag">🇪🇸</span><span class="tools-item-content"><span class="tools-item-title">Español</span></span></a>
+          <a href="https://wheeloffun.app/id/" class="tools-menu-item lang-active" role="menuitem" lang="id" hreflang="id" aria-current="page"><span class="lang-flag">🇮🇩</span><span class="tools-item-content"><span class="tools-item-title">Bahasa Indonesia</span></span></a>
           <a href="https://wheeloffun.app/pt/" class="tools-menu-item" role="menuitem" lang="pt" hreflang="pt"><span class="lang-flag">🇵🇹</span><span class="tools-item-content"><span class="tools-item-title">Português</span></span></a>
           <a href="https://wheeloffun.app/de/" class="tools-menu-item" role="menuitem" lang="de" hreflang="de"><span class="lang-flag">🇩🇪</span><span class="tools-item-content"><span class="tools-item-title">Deutsch</span></span></a>
           <a href="https://wheeloffun.app/fr/" class="tools-menu-item" role="menuitem" lang="fr" hreflang="fr"><span class="lang-flag">🇫🇷</span><span class="tools-item-content"><span class="tools-item-title">Français</span></span></a>
@@ -714,30 +718,30 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <div class="wheel-layout">
         <div class="wheel-col">
           <div class="wheel-controls-top">
-            <button class="icon-btn" id="headerSoundBtn" onclick="cycleSoundVolume()" title="Ubah volume" aria-label="Ubah volume suara">
+            <button class="icon-btn" id="headerSoundBtn" onclick="cycleSoundVolume()" title="Ubah Volume" aria-label="Ubah volume suara">
               <svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-speaker-wave" id="soundIconUse"/></svg>
             </button>
-            <button class="icon-btn" id="fsToggleBtn" onclick="toggleFullscreenWheel()" title="Layar penuh" aria-label="Masuk layar penuh" aria-pressed="false">
+            <button class="icon-btn" id="fsToggleBtn" onclick="toggleFullscreenWheel()" title="Layar Penuh Roda" aria-label="Masuk layar penuh" aria-pressed="false">
               <svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-maximize" id="fsToggleIcon"/></svg>
             </button>
           </div>
           <div class="wheel-premium-bg" id="wheelPremiumBg">
             <div class="fullscreen-brand-bar" id="fullscreenBrandBar">
               <div class="fs-brand">
-                <img src="/apple-touch-icon.png" alt="Spin The Wheel" class="fs-brand-img" width="30" height="30" loading="lazy">
-                <span class="fs-brand-text">Spin The Wheel</span>
+                <img src="/apple-touch-icon.png" alt="Putar Roda" class="fs-brand-img" width="30" height="30" loading="lazy">
+                <span class="fs-brand-text">Putar Roda</span>
               </div>
               <div class="fs-actions">
-                <button type="button" class="fs-icon-btn" onclick="cycleSoundVolume()" title="Ubah volume" aria-label="Ubah volume suara">
+                <button type="button" class="fs-icon-btn" onclick="cycleSoundVolume()" title="Ubah Volume" aria-label="Ubah volume suara">
                   <svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-speaker-wave" id="fsSoundIconUse"/></svg>
                 </button>
-                <button type="button" class="fs-icon-btn" onclick="toggleFullscreenWheel()" title="Keluar layar penuh" aria-label="Keluar layar penuh">
+                <button type="button" class="fs-icon-btn" onclick="toggleFullscreenWheel()" title="Keluar Layar Penuh" aria-label="Keluar layar penuh">
                   <svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-minimize"/></svg>
                 </button>
               </div>
             </div>
             <div class="wheel-stage size-medium" id="wheelStage">
-              <svg class="wheel-svg" id="wheelSvg" viewBox="-110 -110 220 220" role="img" aria-label="Putar roda dengan opsi Anda" onclick="spinWheel()" title="Klik roda untuk memutar">
+              <svg class="wheel-svg" id="wheelSvg" viewBox="-110 -110 220 220" role="img" aria-label="Putar roda dengan pilihan Anda" onclick="spinWheel()" title="Klik roda untuk memutar">
                 <g id="wheelGroup"></g>
                 <circle id="wheelOuterRing" cx="0" cy="0" r="108" fill="none" stroke="rgba(0,0,0,0.15)" stroke-width="2.5" style="display:none"/>
                 <path class="wheel-pointer-shape" id="wheelPointer" d="M 107 -8 L 107 8 L 91 0 Z"/>
@@ -746,7 +750,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             </div>
             <div class="fullscreen-footer-bar" id="fullscreenFooterBar">
               <span>Dibuat oleh</span>
-              <a href="https://wheeloffun.app/" target="_blank" rel="noopener noreferrer">wheeloffun.app</a>
+              <a href="https://wheeloffun.app/id/" target="_blank" rel="noopener noreferrer">wheeloffun.app</a>
             </div>
             <div class="winner-overlay" id="winnerOverlay" role="dialog" aria-modal="true" aria-labelledby="winnerPopupTitle" aria-hidden="true">
               <div class="winner-popup" id="winnerPopup">
@@ -790,13 +794,13 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             <div class="panel-view active" id="entriesView">
               <div class="textarea-wrapper">
                 <div class="fake-placeholder hidden" id="fakePlaceholder">← Ketik/tempel entri di sini</div>
-                <textarea id="entriesTextarea" aria-label="Entri roda, satu per baris">John
-Emma
-Michael
-Sophia
-William
-Olivia
-James</textarea>
+                <textarea id="entriesTextarea" aria-label="Entri roda, satu per baris">Budi
+Siti
+Andi
+Dewi
+Rudi
+Rina
+Agus</textarea>
               </div>
               <button type="button" class="emoji-btn" aria-label="Tambah emoji" onclick="addEmoji()"><svg aria-hidden="true"><use href="#i-smile"/></svg></button>
             </div>
@@ -820,162 +824,157 @@ James</textarea>
   <div class="seo-content-box">
     <article class="seo-content">
       <h1 class="page-h1">Putar Roda</h1>
-      <p class="page-subtitle">Masukkan nama atau opsi, putar roda, dan biarkan keberuntungan memutuskan. Pilih pemenang acak, pilih nama, bentuk tim, atau selesaikan keputusan sehari-hari dengan alat gratis dan mudah digunakan.</p>
+      <p class="page-subtitle">Putar roda untuk memilih nama acak, memilih pemenang, menentukan apa yang akan dimakan, dan bermain ya atau tidak. Tambahkan pilihan Anda sendiri, sesuaikan roda, dan biarkan hasil acak membuat keputusan Anda berikutnya lebih menyenangkan.</p>
       <div class="seo-block">
-        <h2>Apa itu Roda Putar?</h2>
-        <p>Jujur saja, ini berguna saat Anda tidak bisa memutuskan. Entah untuk memilih siapa yang traktir kopi berikutnya, memilih pemenang undian tanpa ada yang protes, atau menyelesaikan debat "makan di mana?" yang sudah dua puluh menit. Inilah yang sebenarnya digunakan orang:</p>
+        <h2>Apa Itu Alat Putar Roda?</h2>
+        <p><strong>Alat putar roda</strong> membantu Anda membuat <strong>pilihan acak</strong> saat Anda tidak ingin memutuskan sendiri. Tambahkan nama, makanan, jawaban, atau pilihan lain, lalu putar roda untuk melihat apa yang dipilih. Ini dapat membantu <strong>memilih pemenang undian</strong>, memilih nama di kelas, <strong>menentukan apa yang akan dimakan</strong>, atau menyelesaikan pertanyaan ya-atau-tidak santai.</p>
+        <p>Inilah yang sebenarnya digunakan orang:</p>
         <ul>
-          <li>Memilih <strong>pemenang acak</strong> untuk giveaway atau undian</li>
-          <li>Memutuskan <strong>siapa yang mulai duluan</strong> dalam permainan papan</li>
-          <li>Menyelesaikan di mana makan saat tidak ada yang berpendapat</li>
+          <li>Memilih <strong>pemenang acak</strong> untuk undian atau lotre</li>
+          <li>Memilih <strong>siapa yang mulai duluan</strong> dalam permainan papan</li>
+          <li>Menyelesaikan di mana harus makan ketika tidak ada yang berpendapat</li>
           <li>Memanggil siswa di kelas (secara adil)</li>
-          <li>Membagi tugas ke anak-anak</li>
+          <li>Membagi tugas rumah tangga kepada anak-anak</li>
           <li>Memilih film untuk malam film</li>
           <li>Memilih topik untuk rapat atau presentasi</li>
-          <li>Memilih anggota chat acak untuk <strong>giveaway streamer</strong></li>
-          <li>Membuat keputusan apa pun yang tidak terlalu penting</li>
+          <li>Memilih anggota obrolan acak untuk <strong>undian streamer</strong></li>
+          <li>Membuat keputusan sehari-hari saat Anda menginginkan saran acak</li>
         </ul>
-        <p>Jika Anda membutuhkan <strong>pilihan acak yang adil</strong> untuk apa pun, Anda berada di tempat yang tepat.</p>
+        <p>Jika Anda memerlukan <strong>pilihan acak cepat</strong> untuk aktivitas sehari-hari, tambahkan pilihan Anda dan putar roda.</p>
+      </div>
+
+      <div class="seo-block">
+        <h2>Pemilih Nama Acak – Putar Roda untuk Memilih Nama</h2>
+        <p>Perlu memilih <strong>nama acak</strong>? Masukkan atau tempel daftar nama ke dalam roda dan putar untuk memilih satu. Ini berguna bagi guru yang memilih siswa untuk kegiatan kelas, teman yang memutuskan siapa yang mulai duluan, atau kelompok yang membuat pilihan cepat.</p>
+        <p>Tambahkan <strong>satu nama per baris</strong>, putar roda, dan lihat nama mana yang berhenti. Anda dapat menggunakan <strong>mode hapus pemenang</strong> ketika Anda ingin menghindari memilih orang yang sama lagi di putaran berikutnya.</p>
+        <p>Baik Anda memiliki daftar nama pendek atau daftar kelas lengkap, <strong>pemilih nama acak</strong> membuat pemilihan menjadi sederhana. Jaga entri Anda tetap jelas dan mudah dikenali agar semua orang dapat mengikuti hasilnya.</p>
+      </div>
+
+      <div class="seo-block">
+        <h2>Roda Apa yang Dimakan – Tentukan Apa yang Akan Dimakan</h2>
+        <p><strong>Tidak bisa memutuskan apa yang akan dimakan?</strong> Tambahkan makanan favorit, camilan, masakan, atau pilihan restoran ke roda dan putar. Biarkan hasil acak membantu Anda memilih sarapan, makan siang, makan malam, atau camilan.</p>
+        <p>Anda dapat membuat roda untuk <strong>ide makan malam</strong>, makan siang cepat, camilan akhir pekan, atau tempat untuk memesan. Tambahkan atau hapus pilihan makanan setiap kali rencana Anda berubah, lalu putar ketika tidak ada yang setuju.</p>
+        <p>Roda memilih dari pilihan yang Anda masukkan, jadi sertakan <strong>hanya makanan yang sesuai dengan preferensi</strong> dan rencana Anda.</p>
+      </div>
+
+      <div class="seo-block">
+        <h2>Roda Ya atau Tidak – Buat Keputusan Cepat</h2>
+        <p>Punya pertanyaan dan tidak bisa memutuskan? Tambahkan <strong>"Ya" dan "Tidak"</strong> sebagai pilihan Anda dan putar untuk jawaban acak. Ini adalah cara sederhana untuk menambahkan sedikit kesenangan pada pertanyaan santai dan pilihan sehari-hari.</p>
+        <p>Anda juga dapat menambahkan lebih dari dua jawaban jika Anda ingin roda dengan pilihan seperti <strong>"Mungkin," "Tanya lagi," atau "Tidak sekarang."</strong> Hasilnya acak, jadi gunakan fitur ini untuk <strong>keputusan ringan</strong> daripada pilihan penting yang memerlukan pemikiran matang.</p>
+      </div>
+
+      <div class="seo-block">
+        <h2>Pemilih Pemenang – Pilih Pemenang Acak</h2>
+        <p>Membuat pemilihan <strong>pemenang undian atau lotre</strong> menjadi sederhana. Tambahkan nama setiap peserta ke roda, putar, dan gunakan nama yang dipilih sebagai pilihan acak Anda. Roda dapat membuat <strong>pemilihan langsung</strong> mudah ditonton oleh peserta.</p>
+        <p>Untuk beberapa putaran, aktifkan <strong>mode hapus pemenang</strong> sehingga entri yang dipilih dapat dihapus sebelum putaran berikutnya. <strong>Periksa daftar peserta Anda</strong> sebelum memutar dan jelaskan aturan pemilihan kepada semua orang yang berpartisipasi.</p>
+      </div>
+
+      <div class="seo-block">
+        <h2>Roda Kustom – Tambahkan Pilihan Anda Sendiri</h2>
+        <p>Buat roda untuk hampir semua pilihan dengan memasukkan <strong>nama, jawaban, tugas, aktivitas, atau ide Anda sendiri</strong>. Edit entri dan sesuaikan tampilan roda dengan warna dan pengaturan lain yang tersedia.</p>
+        <p>Gunakan roda kustom untuk <strong>malam permainan, kegiatan kelas, tugas rumah tangga, pilihan film, topik rapat, permainan pesta</strong>, atau situasi apa pun di mana pilihan acak akan membantu.</p>
+        <p>Mulai dengan beberapa pilihan, tambahkan lebih banyak saat diperlukan, dan <strong>simpan roda Anda</strong> di browser jika Anda ingin menggunakannya lagi nanti.</p>
+      </div>
+
+      <div class="seo-block">
+        <h2>Cara Memaksimalkan Roda Anda</h2>
+        <p>Sedikit persiapan dapat membuat setiap putaran lebih mudah diikuti. Gunakan tips sederhana ini sebelum Anda mulai:</p>
+        <ul>
+          <li><strong>Jaga entri tetap jelas.</strong> Gunakan nama atau label pendek agar mudah dibaca pada roda.</li>
+          <li><strong>Periksa daftar Anda.</strong> Hapus opsi duplikat atau usang jika tidak boleh disertakan.</li>
+          <li><strong>Gunakan entri yang sama untuk peluang yang sama.</strong> Jika setiap opsi harus memiliki peluang yang sama, tambahkan masing-masing satu kali.</li>
+          <li><strong>Pilih mode hapus pemenang bila diperlukan.</strong> Ini dapat membantu menghindari pemilihan berulang selama beberapa putaran.</li>
+          <li><strong>Simpan roda yang sering Anda gunakan.</strong> Simpan di browser Anda atau ekspor cadangan jika opsi tersebut tersedia.</li>
+          <li><strong>Buat aturan yang jelas.</strong> Untuk undian atau kegiatan kelompok, jelaskan bagaimana entri ditambahkan dan bagaimana pemenang dipilih.</li>
+        </ul>
       </div>
 
       <div class="seo-block">
         <h2>Fitur roda</h2>
-        <p>Terlihat sederhana dari luar, tapi cukup banyak di dalamnya:</p>
+        <p>Roda ini mencakup kontrol praktis untuk mempersonalisasi putaran, mengelola entri, dan menggunakan alat untuk berbagai aktivitas:</p>
         <ul>
           <li><strong>Hingga 50 entri</strong> per roda (meskipun lebih sedikit lebih mudah dibaca)</li>
-          <li><strong>Kecepatan putaran yang dapat disesuaikan</strong> — dari 1,5 detik (hampir tidak terlihat bergerak) hingga 15 detik (drama total)</li>
-          <li><strong>Lebih dari 30 tema warna</strong> — Classic, Neon, Ocean, Sunset, Galaxy, dan lainnya</li>
-          <li><strong>Warna khusus</strong> — tambahkan milik Anda sendiri jika tidak ada tema yang cocok</li>
+          <li><strong>Kecepatan putaran yang dapat disesuaikan</strong> — dari 1,5 detik (hampir tidak terlihat bergerak) hingga 15 detik (drama penuh)</li>
+          <li><strong>30+ tema warna</strong> — Classic, Neon, Ocean, Sunset, Galaxy, dan lainnya</li>
+          <li><strong>Warna kustom</strong> — tambahkan warna Anda sendiri jika tidak ada tema yang cocok</li>
           <li><strong>Mode hapus pemenang</strong> — agar orang yang sama tidak terpilih dua kali</li>
-          <li><strong>Entri gambar</strong> — unggah foto sebagai ganti teks</li>
+          <li><strong>Entri gambar</strong> — unggah foto alih-alih teks</li>
           <li><strong>Dukungan emoji</strong> — tempel emoji langsung ke kotak teks</li>
-          <li><strong>Confetti saat menang</strong> — nonaktifkan jika tidak ingin meriah</li>
-          <li><strong>Kontrol suara</strong> — tik putaran, lonceng pemenang, tepuk tangan, semuanya dari 0% hingga 100%</li>
+          <li><strong>Confetti saat menang</strong> — matikan jika Anda tidak merasa festif</li>
+          <li><strong>Kontrol suara</strong> — tik putaran, lonceng pemenang, tepuk tangan, semua dari 0% hingga 100%</li>
           <li><strong>Musik latar</strong> — opsional, dibuat langsung di browser Anda</li>
-          <li><strong>Simpan roda</strong> — simpan di browser Anda untuk lain waktu</li>
-          <li><strong>Ekspor roda</strong> — unduh sebagai .json untuk cadangan atau dibagikan</li>
+          <li><strong>Simpan roda</strong> — simpan di browser Anda untuk lain kali</li>
+          <li><strong>Ekspor roda</strong> — unduh sebagai .json untuk cadangan atau berbagi</li>
           <li><strong>Ekspor entri</strong> — unduh sebagai .txt jika Anda hanya ingin daftarnya</li>
-          <li><strong>Mode layar penuh</strong> — ideal untuk kelas dan audiens langsung</li>
-          <li><strong>6 bahasa</strong> — Inggris, Spanyol, Indonesia, Portugis, Jerman, dan Prancis</li>
+          <li><strong>Mode layar penuh</strong> — bagus untuk kelas dan audiens langsung</li>
+          <li><strong>6 bahasa</strong> — Inggris, Spanyol, Indonesia, Portugis, Jerman, Prancis</li>
         </ul>
       </div>
 
       <div class="seo-block">
         <h2>Apakah roda ini benar-benar acak?</h2>
         <p><strong>Ya.</strong> Dan inilah cara kerjanya sebenarnya, karena Anda berhak tahu.</p>
-        <p>Roda menggunakan <code>crypto.getRandomValues</code>, fungsi browser yang menghasilkan <strong>angka acak yang aman secara kriptografis</strong>. Ini adalah jenis keacakan yang sama yang digunakan pengelola kata sandi untuk membuat kata sandi. Ini bukan jenis "acak" yang mulai berulang setelah beberapa kali percobaan. <strong>Ini sungguhan.</strong></p>
-        <p>Setiap segmen pada roda memiliki <strong>peluang yang sama</strong> untuk muncul pada putaran mana pun. <strong>Tanpa bobot, tanpa algoritma tersembunyi, tanpa favorit.</strong> Jika Anda memiliki 10 nama di roda, masing-masing memiliki <strong>1 peluang dari 10</strong>.</p>
-        <p>Animasi putaran hanyalah visual. <strong>Pemenang dipilih sebelum roda mulai berputar</strong>, menggunakan nilai acak tersebut. Animasi itulah yang membuatnya menyenangkan, tetapi hasilnya sudah ditentukan saat Anda mengklik PUTAR.</p>
+        <p>Roda menggunakan <code>crypto.getRandomValues</code> — fungsi browser yang menghasilkan <strong>angka acak yang aman secara kriptografis</strong>. Ini adalah jenis keacakan yang sama yang digunakan pengelola kata sandi untuk membuat kata sandi. Ini bukan jenis "acak" yang mulai berulang setelah beberapa kali percobaan. <strong>Ini the real deal.</strong></p>
+        <p>Setiap segmen pada roda memiliki <strong>peluang yang sama</strong> untuk mendarat pada putaran tertentu. <strong>Tanpa pembobotan, tanpa algoritma tersembunyi, tanpa favorit.</strong> Jika Anda memiliki 10 nama pada roda, masing-masing memiliki <strong>peluang 1 banding 10</strong>.</p>
+        <p>Animasi putaran hanyalah visual. <strong>Pemenang dipilih sebelum roda mulai berputar</strong>, menggunakan nilai acak itu. Animasi itulah yang membuatnya menyenangkan — tetapi hasilnya sudah ditentukan saat Anda mengklik PUTAR.</p>
       </div>
 
       <div class="seo-block">
-        <h2>Cara menggunakan roda putar</h2>
-        <p>Ini benar-benar sederhana, tapi inilah panduan lengkapnya:</p>
+        <h2>Cara menggunakan pemutar roda</h2>
+        <p>Ini benar-benar sederhana, tetapi inilah panduan lengkapnya:</p>
         <ol>
-          <li><strong>Tambahkan entri Anda.</strong> Ketik atau tempel di kotak teks di sebelah kanan (atau di bawah pada seluler). Satu per baris. Roda diperbarui saat Anda mengetik.</li>
-          <li><strong>Sesuaikan (opsional).</strong> Buka Pengaturan untuk mengubah warna, kecepatan putaran, suara, atau popup pemenang. Tidak ada yang wajib — roda berfungsi baik dengan pengaturan default.</li>
-          <li><strong>Putar.</strong> Klik tombol PUTAR di tengah, klik di mana saja pada roda, atau tekan <strong>Ctrl+Enter</strong>. Ketiganya berfungsi sama.</li>
-          <li><strong>Lihat pemenang.</strong> Popup menampilkan hasilnya. Tutup untuk memutar lagi, atau gunakan <strong>Hapus</strong> jika Anda tidak ingin orang yang sama terpilih dua kali.</li>
+          <li><strong>Tambahkan entri Anda.</strong> Ketik atau tempel ke dalam kotak teks di sebelah kanan (atau di bawah pada seluler). Satu per baris. Roda diperbarui saat Anda mengetik.</li>
+          <li><strong>Sesuaikan (opsional).</strong> Buka Pengaturan untuk mengubah warna, kecepatan putaran, suara, atau popup pemenang. Tidak ada yang wajib — roda berfungsi dengan baik dengan pengaturan default.</li>
+          <li><strong>Putar.</strong> Klik tombol PUTAR di tengah, klik di mana saja pada roda, atau tekan <strong>Ctrl+Enter</strong>. Ketiganya bekerja dengan cara yang sama.</li>
+          <li><strong>Lihat pemenang.</strong> Popup menunjukkan hasilnya. Tutup untuk memutar lagi, atau gunakan <strong>Hapus</strong> jika Anda tidak ingin orang yang sama terpilih dua kali.</li>
         </ol>
         <p>Itu saja. <strong>Tidak ada lagi yang perlu dipelajari.</strong></p>
       </div>
 
       <div class="seo-block">
-        <h2>Apakah data saya privat?</h2>
-        <p><strong>Ya. Sepenuhnya.</strong> Semuanya berjalan di browser Anda. Artinya, entri, gambar, dan roda tersimpan Anda tidak pernah meninggalkan perangkat Anda. Tidak dikirim ke server, tidak disimpan dalam basis data, tidak ada yang melihatnya.</p>
+        <h2>Apakah data saya pribadi?</h2>
+        <p><strong>Ya.</strong> Entri roda Anda <strong>ditangani secara lokal</strong> oleh alat roda di browser Anda.</p>
+        <p>Alat roda memproses entri dan gambar Anda <strong>di browser Anda</strong>. Roda yang disimpan menggunakan penyimpanan browser Anda, sementara file yang diekspor diunduh ke perangkat Anda. Tinjau <a href="https://wheeloffun.app/id/privacy-policy">Kebijakan Privasi</a> kami untuk detail tentang analitik atau layanan pihak ketiga.</p>
         <p>Inilah artinya dalam praktik:</p>
         <ul>
           <li>Tutup tab dan entri Anda <strong>hilang</strong> (kecuali Anda menyimpannya)</li>
-          <li>Roda tersimpan hidup di <strong>localStorage</strong> browser Anda, hanya di perangkat Anda</li>
+          <li>Roda yang disimpan berada di <strong>localStorage</strong> browser Anda — hanya di perangkat Anda</li>
           <li>File yang diekspor adalah <strong>file di komputer Anda</strong>, bukan di server mana pun</li>
-          <li>Tidak ada <strong>akun</strong>, jadi kami tidak tahu siapa Anda</li>
-          <li>Tidak ada pelacak iklan, jadi kami tidak menjual data Anda ke pengiklan</li>
-          <li>Tidak perlu banner cookie karena tidak ada cookie pelacakan</li>
+          <li><strong>Tidak ada akun</strong>, jadi kami tidak tahu siapa Anda</li>
         </ul>
-        <p>Satu-satunya layanan pihak ketiga di situs ini adalah Google Analytics: memberi tahu kami secara kasar berapa banyak orang yang mengunjungi, tetapi tidak tahu apa yang ada di roda Anda atau siapa Anda. Jika Anda ingin lebih aman, Anda dapat menggunakan situs ini secara offline. Setelah halaman dimuat, semuanya berfungsi tanpa internet.</p>
+        <p>Situs ini mungkin menggunakan <strong>Google Analytics</strong> untuk memahami kunjungan situs web secara umum. Lihat <a href="https://wheeloffun.app/id/privacy-policy">Kebijakan Privasi</a> kami untuk detail lengkap tentang penanganan data.</p>
+        <p>Jika penggunaan offline didukung oleh halaman yang dimuat saat ini dan sumber dayanya, Anda mungkin dapat <strong>terus menggunakan roda tanpa koneksi internet</strong>.</p>
       </div>
 
       <div class="seo-block">
         <h2>Pertanyaan yang Sering Diajukan</h2>
         <div class="faq-item">
-          <h3 class="faq-q">Apakah Putar Roda benar-benar gratis?</h3>
-          <p class="faq-a">Ya! Tidak ada paket premium, tidak ada popup "berlangganan", tidak ada biaya tersembunyi. Ini adalah alat gratis yang berfungsi.</p>
+          <h3 class="faq-q">Bagaimana cara menggunakan pemilih nama acak?</h3>
+          <p class="faq-a">Masukkan atau tempel nama Anda ke dalam kotak teks, dengan <strong>satu nama per baris</strong>. Putar roda untuk memilih <strong>nama acak</strong> dari daftar Anda.</p>
         </div>
         <div class="faq-item">
-          <h3 class="faq-q">Bisakah saya menyesuaikan roda?</h3>
-          <p class="faq-a">Ada lebih dari 30 tema warna untuk dipilih: Classic, Neon, Ocean, Sunset, Galaxy, dan lainnya. Jika tidak ada yang cocok, tambahkan warna Anda sendiri satu per satu. Anda juga dapat mengaktifkan atau menonaktifkan batas segmen, menampilkan atau menyembunyikan penunjuk, dan banyak lagi.</p>
+          <h3 class="faq-q">Bisakah saya menggunakan roda untuk menentukan apa yang akan dimakan?</h3>
+          <p class="faq-a">Ya. Tambahkan makanan, camilan, atau pilihan restoran ke roda dan putar untuk mendapatkan <strong>saran makanan acak</strong> dari daftar Anda sendiri.</p>
         </div>
         <div class="faq-item">
-          <h3 class="faq-q">Bisakah saya mengontrol kecepatan putaran?</h3>
-          <p class="faq-a">Di Pengaturan ada penggeser yang berkisar dari 1,5 detik (hampir tidak terlihat bergerak) hingga 15 detik (mode suspans total). Nilai default sekitar 5,5 detik, yang berfungsi baik untuk sebagian besar penggunaan.</p>
+          <h3 class="faq-q">Bagaimana cara membuat roda Ya atau Tidak?</h3>
+          <p class="faq-a">Tambahkan <strong>"Ya" dan "Tidak"</strong> sebagai dua entri, lalu putar roda untuk mendapatkan <strong>jawaban acak</strong>.</p>
         </div>
         <div class="faq-item">
-          <h3 class="faq-q">Berapa banyak entri yang bisa saya tambahkan?</h3>
-          <p class="faq-a">Maksimal lima puluh, dan sejujurnya lebih sedikit lebih baik. Jika Anda memiliki lebih dari sekitar 15 opsi, teks menjadi kecil dan sulit dibaca. Pertimbangkan untuk membaginya menjadi beberapa roda atau mempersingkat label.</p>
+          <h3 class="faq-q">Bisakah saya menggunakan roda untuk memilih pemenang undian?</h3>
+          <p class="faq-a">Ya. Tambahkan nama peserta ke roda dan putar untuk memilih entri acak. Anda dapat mengaktifkan <strong>mode hapus pemenang</strong> untuk beberapa putaran.</p>
         </div>
         <div class="faq-item">
-          <h3 class="faq-q">Apakah roda ini benar-benar acak?</h3>
-          <p class="faq-a">Menggunakan <code>crypto.getRandomValues</code>, mekanisme aman secara kriptografis yang sama yang digunakan browser untuk menghasilkan kata sandi. Setiap segmen memiliki peluang yang sama. Tanpa bobot, tanpa trik tersembunyi.</p>
+          <h3 class="faq-q">Bisakah saya membuat roda khusus saya sendiri?</h3>
+          <p class="faq-a">Ya. Tambahkan <strong>nama, pilihan, jawaban, atau ide Anda sendiri</strong> untuk membuat roda untuk aktivitas Anda, lalu sesuaikan tampilannya menggunakan pengaturan yang tersedia.</p>
         </div>
         <div class="faq-item">
-          <h3 class="faq-q">Apakah berfungsi di ponsel?</h3>
-          <p class="faq-a">Ya, sebenarnya ini dirancang mengutamakan seluler. Berfungsi di ponsel, tablet, laptop, dan komputer desktop. Jika Anda bisa membuka browser, kemungkinan besar berfungsi.</p>
+          <h3 class="faq-q">Apakah Putar Roda gratis?</h3>
+          <p class="faq-a">Ya. Putar Roda <strong>gratis</strong>, tanpa akun atau langganan.</p>
         </div>
         <div class="faq-item">
-          <h3 class="faq-q">Apakah Anda menyimpan entri saya?</h3>
-          <p class="faq-a">Tidak. Semuanya berjalan di browser Anda. Tidak ada yang dikirim ke server. Jika Anda menutup tab, itu hilang, kecuali Anda menyimpan atau mengekspornya terlebih dahulu.</p>
-        </div>
-        <div class="faq-item">
-          <h3 class="faq-q">Bisakah saya menggunakan roda secara offline?</h3>
-          <p class="faq-a">Ya, setelah halaman dimuat. Semuanya berjalan di sisi klien, jadi Anda dapat mematikan Wi-Fi dan terus memutar.</p>
-        </div>
-        <div class="faq-item">
-          <h3 class="faq-q">Bisakah saya menambahkan gambar sebagai ganti teks?</h3>
-          <p class="faq-a">Ya. Klik ikon gambar di toolbar dan unggah foto. Secara otomatis diubah ukurannya dan dipotong. Ideal untuk undian visual atau roda hewan atau karakter.</p>
-        </div>
-        <div class="faq-item">
-          <h3 class="faq-q">Browser apa yang didukung?</h3>
-          <p class="faq-a">Semua yang biasa: Chrome, Safari, Firefox, Edge, Brave, Opera. Windows, Mac, Linux, iOS, Android. Anda hanya perlu JavaScript aktif.</p>
-        </div>
-        <div class="faq-item">
-          <h3 class="faq-q">Apakah ada batasan berapa kali saya bisa memutar?</h3>
-          <p class="faq-a">Tidak ada batasan. Putar 10 kali, putar 10.000 kali. Tanpa akun, tanpa batas kecepatan, tanpa "Anda telah mencapai batas putaran harian".</p>
-        </div>
-        <div class="faq-item">
-          <h3 class="faq-q">Bisakah saya menyimpan roda saya untuk nanti?</h3>
-          <p class="faq-a">Dua cara: "Simpan Roda" menyimpannya di browser Anda untuk lain waktu, dan "Ekspor Roda" mengunduh file .json yang dapat Anda cadangkan atau bagikan. Ada juga "Ekspor Entri" jika Anda hanya ingin daftar sederhana.</p>
-        </div>
-        <div class="faq-item">
-          <h3 class="faq-q">Apakah roda mendukung emoji?</h3>
-          <p class="faq-a">Ya, dan orang menyukainya. Gunakan tombol wajah tersenyum atau tempel emoji langsung ke kotak teks. Bagus untuk roda pesta, roda suasana hati, atau saat gambar lebih bermakna daripada kata.</p>
-        </div>
-        <div class="faq-item">
-          <h3 class="faq-q">Dalam bahasa apa situs ini tersedia?</h3>
-          <p class="faq-a">Saat ini 6 bahasa: Inggris, Spanyol, Indonesia, Portugis, Jerman, dan Prancis.</p>
-        </div>
-        <div class="faq-item">
-          <h3 class="faq-q">Bisakah saya menggunakannya sebagai pemilih nama acak untuk kelas?</h3>
-          <p class="faq-a">Tentu. Guru menggunakannya untuk memilih siswa yang menjawab pertanyaan, membentuk kelompok, memilih ketua barisan, dan selusin hal lainnya. Opsi "hapus pemenang" sangat berguna agar tidak ada yang terpilih dua kali.</p>
-        </div>
-        <div class="faq-item">
-          <h3 class="faq-q">Apakah ada roda gratis untuk undian?</h3>
-          <p class="faq-a">Ya, yang ini gratis. Tambahkan nama semua orang, putar di depan audiens Anda, dan opsional, hapus pemenang setelah setiap putaran. Anda juga dapat mengekspor daftar hasil setelahnya.</p>
-        </div>
-        <div class="faq-item">
-          <h3 class="faq-q">Apakah musik latar tersedia?</h3>
-          <p class="faq-a">Ya, tapi halus. Aktifkan di Pengaturan jika Anda ingin suasana. Melodi dibuat langsung di browser Anda; tidak ada file audio yang dimuat.</p>
-        </div>
-        <div class="faq-item">
-          <h3 class="faq-q">Bagaimana cara memutar roda?</h3>
-          <p class="faq-a">Klik tombol PUTAR di tengah roda, klik di mana saja pada roda, atau tekan Ctrl+Enter (atau Cmd+Enter di Mac). Tiga cara berbeda, semuanya melakukan hal yang sama.</p>
-        </div>
-        <div class="faq-item">
-          <h3 class="faq-q">Bisakah saya menyesuaikan pesan popup pemenang?</h3>
-          <p class="faq-a">Ya, di Pengaturan → Popup Pemenang. Anda dapat menulis pesan Anda sendiri, menyembunyikan tombol Hapus, atau menonaktifkan popup sepenuhnya.</p>
-        </div>
-        <div class="faq-item">
-          <h3 class="faq-q">Bisakah saya menambahkan warna saya sendiri ke roda?</h3>
-          <p class="faq-a">Tentu. Di Pengaturan → Warna Khusus, gunakan pemilih warna untuk memilih yang Anda inginkan dan klik Tambah. Segera setelah Anda memiliki warna khusus, itu akan menggantikan palet bawaan. Warna khusus Anda disimpan untuk lain waktu.</p>
+          <h3 class="faq-q">Apakah alat ini berfungsi di ponsel?</h3>
+          <p class="faq-a">Ya. Anda dapat menggunakan roda di <strong>smartphone dan tablet</strong> serta laptop dan komputer desktop dengan browser modern.</p>
         </div>
       </div>
     </article>
@@ -998,7 +997,7 @@ James</textarea>
 <div class="modal-overlay" id="shareModal" role="dialog" aria-modal="true" aria-hidden="true" aria-labelledby="shareModalTitle">
   <div class="modal-box">
     <h3 id="shareModalTitle">Bagikan Hasil</h3>
-    <p>Salin teks di bawah dan tempel ke chat grup Anda.</p>
+    <p>Salin teks di bawah ini dan tempel ke obrolan grup Anda.</p>
     <textarea id="shareText" readonly></textarea>
     <div class="modal-actions">
       <button type="button" class="btn btn-outline" onclick="closeShareModal()">Tutup</button>
@@ -1055,10 +1054,10 @@ James</textarea>
     <div class="settings-columns">
       <div class="settings-col">
         <div class="settings-card">
-          <div class="settings-card-title"><svg><use href="#i-pencil"/></svg>Tampilan</div>
+          <div class="settings-card-title"><svg><use href="#i-pencil"/></svg>Penampilan</div>
           <div class="settings-row"><label for="segmentBorders"><input type="checkbox" id="segmentBorders"> Batas segmen</label></div>
           <div class="settings-row"><label for="outerRing"><input type="checkbox" id="outerRing"> Cincin luar</label></div>
-          <div class="settings-row"><label for="showWheelText"><input type="checkbox" id="showWheelText" checked> Tampilkan teks di roda</label></div>
+          <div class="settings-row"><label for="showWheelText"><input type="checkbox" id="showWheelText" checked> Tampilkan teks pada roda</label></div>
           <div class="settings-row"><label for="showPointer"><input type="checkbox" id="showPointer" checked> Tampilkan penunjuk</label></div>
         </div>
         <div class="settings-card">
@@ -1069,7 +1068,7 @@ James</textarea>
         </div>
         <div class="settings-card">
           <div class="settings-card-title"><svg><use href="#i-settings"/></svg>Perilaku</div>
-          <div class="settings-row"><label for="autoRemoveWinner"><input type="checkbox" id="autoRemoveWinner"> Hapus pemenang secara otomatis setelah putaran</label></div>
+          <div class="settings-row"><label for="autoRemoveWinner"><input type="checkbox" id="autoRemoveWinner"> Hapus pemenang otomatis setelah putaran</label></div>
           <div class="settings-row"><label for="confettiEnabled"><input type="checkbox" id="confettiEnabled" checked> Efek confetti</label></div>
         </div>
       </div>
@@ -1079,10 +1078,10 @@ James</textarea>
           <div class="palette-grid" id="paletteGrid"></div>
         </div>
         <div class="settings-card">
-          <div class="settings-card-title"><svg><use href="#i-plus"/></svg>Warna Khusus</div>
+          <div class="settings-card-title"><svg><use href="#i-plus"/></svg>Warna Kustom</div>
           <div class="custom-colors-list" id="customColorsList"></div>
           <div class="custom-color-add">
-            <input type="color" id="customColorPicker" value="#ff6b6b" aria-label="Pilih warna khusus">
+            <input type="color" id="customColorPicker" value="#ff6b6b" aria-label="Pilih warna kustom">
             <button type="button" class="btn btn-outline" onclick="addCustomColor()">Tambah</button>
             <button type="button" class="btn btn-outline" onclick="clearCustomColors()">Hapus</button>
           </div>
@@ -1091,9 +1090,9 @@ James</textarea>
           <div class="settings-card-title"><svg><use href="#i-pie"/></svg>Durasi Putaran</div>
           <div class="speed-slider-row">
             <input type="range" id="spinDurationRange" min="1.5" max="15" step="0.5" value="5.5" aria-label="Durasi putaran dalam detik">
-            <span class="speed-value" id="spinDurationValue">5.5s</span>
+            <span class="speed-value" id="spinDurationValue">5.5d</span>
           </div>
-          <p class="settings-note">1,5 dtk (sangat cepat) hingga 15 dtk (lambat dan dramatis)</p>
+          <p class="settings-note">1,5d (sangat cepat) hingga 15d (lambat dan dramatis)</p>
         </div>
         <div class="settings-card">
           <div class="settings-card-title"><svg><use href="#i-speaker-wave"/></svg>Suara & Musik</div>
@@ -1113,7 +1112,7 @@ James</textarea>
     <div class="settings-footer">
       <button type="button" class="btn btn-outline" onclick="resetAllSettings()">Atur Ulang Semua</button>
       <div class="settings-footer-actions">
-        <button type="button" class="btn btn-primary" onclick="closeSettingsModal()">Simpan & Tutup</button>
+        <button type="button" class="btn btn-primary" onclick="closeSettingsModal()">Simpan &amp; Tutup</button>
       </div>
     </div>
   </div>
@@ -1163,8 +1162,8 @@ James</textarea>
     </button>
     <div class="sidebar-tools-sub" id="sidebarLangSub">
       <a href="https://wheeloffun.app/" class="sidebar-sub-item" lang="en" hreflang="en"><span class="flag-icon">🇬🇧</span><span class="item-content"><span class="item-title">English</span></span></a>
-      <a href="https://wheeloffun.app/id/" class="sidebar-sub-item lang-active" lang="id" hreflang="id" aria-current="page"><span class="flag-icon">🇮🇩</span><span class="item-content"><span class="item-title">Bahasa Indonesia</span></span></a>
       <a href="https://wheeloffun.app/es/" class="sidebar-sub-item" lang="es" hreflang="es"><span class="flag-icon">🇪🇸</span><span class="item-content"><span class="item-title">Español</span></span></a>
+      <a href="https://wheeloffun.app/id/" class="sidebar-sub-item lang-active" lang="id" hreflang="id" aria-current="page"><span class="flag-icon">🇮🇩</span><span class="item-content"><span class="item-title">Bahasa Indonesia</span></span></a>
       <a href="https://wheeloffun.app/pt/" class="sidebar-sub-item" lang="pt" hreflang="pt"><span class="flag-icon">🇵🇹</span><span class="item-content"><span class="item-title">Português</span></span></a>
       <a href="https://wheeloffun.app/de/" class="sidebar-sub-item" lang="de" hreflang="de"><span class="flag-icon">🇩🇪</span><span class="item-content"><span class="item-title">Deutsch</span></span></a>
       <a href="https://wheeloffun.app/fr/" class="sidebar-sub-item" lang="fr" hreflang="fr"><span class="flag-icon">🇫🇷</span><span class="item-content"><span class="item-title">Français</span></span></a>
@@ -1224,20 +1223,21 @@ var COLOR_PALETTES = {
 var PALETTE_NAMES = {classic:'Classic',neon:'Neon',pastel:'Pastel',ocean:'Ocean',sunset:'Sunset',royal:'Royal',nature:'Nature',candy:'Candy',lavender:'Lavender',cherry:'Cherry',emerald:'Emerald',midnight:'Midnight',copper:'Copper',tropical:'Tropical',berry:'Berry',monochrome:'Monochrome',fire:'Fire',ice:'Ice',gold:'Gold',forest:'Forest',galaxy:'Galaxy',coral:'Coral',mint:'Mint',autumn:'Autumn',cyber:'Cyber',rose:'Rose',sapphire:'Sapphire',vintage:'Vintage',coffee:'Coffee',tea:'Tea',rainbow:'Rainbow',sepia:'Sepia',greyscale:'Greyscale',highcontrast:'High Contrast'};
 
 var WHEEL_PRESETS = [
-  {icon:'🍕',title:'Makan Apa',subtitle:'Pilih makanan berikutnya',entries:['Pizza','Burger','Sushi','Pasta','Tacos','Salad','Ramen','Steak']},
-  {icon:'🎬',title:'Malam Film',subtitle:'Pilih genre',entries:['Aksi','Komedi','Horor','Romansa','Sci-Fi','Animasi','Thriller','Dokumenter']},
-  {icon:'✅',title:'Ya atau Tidak',subtitle:'Pengambil keputusan cepat',entries:['Ya','Tidak','Mungkin','Tentu saja','Tidak pernah','Tanya lagi','Absolut','Tidak mungkin']},
-  {icon:'🏆',title:'Pemenang Acak',subtitle:'Pemilih nama adil',entries:['Andi','Budi','Citra','Dewi','Eko','Fajar','Gita','Hadi']},
-  {icon:'🎭',title:'Jujur atau Tantangan',subtitle:'Klasik pesta',entries:['Jujur','Tantangan','Jujur','Tantangan','Jujur','Tantangan','Jujur','Tantangan']},
-  {icon:'🎉',title:'Permainan Pesta',subtitle:'Seru bersama teman',entries:['Charades','Pictionary','Karaoke','Menari','Trivia','Would You Rather','Never Have I Ever','Two Truths and a Lie']},
+  {icon:'🍕',title:'Apa yang Dimakan',subtitle:'Pilih makanan berikutnya',entries:['Pizza','Burger','Sushi','Pasta','Taco','Salad','Ramen','Steak']},
+  {icon:'🎬',title:'Malam Film',subtitle:'Pilih genre',entries:['Aksi','Komedi','Horor','Romansa','Fiksi Ilmiah','Animasi','Thriller','Dokumenter']},
+  {icon:'✅',title:'Ya atau Tidak',subtitle:'Pembuat keputusan cepat',entries:['Ya','Tidak','Mungkin','Pasti','Tidak Pernah','Tanya Lagi','Tentu Saja','Tidak Mungkin']},
+  {icon:'🏆',title:'Pemenang Acak',subtitle:'Pemilih nama adil',entries:['Andi','Budi','Citra','Dewi','Eko','Fani','Gita','Hadi']},
+  {icon:'🎭',title:'Kebenaran atau Tantangan',subtitle:'Klasik pesta',entries:['Kebenaran','Tantangan','Kebenaran','Tantangan','Kebenaran','Tantangan','Kebenaran','Tantangan']},
+  {icon:'🎉',title:'Permainan Pesta',subtitle:'Bersenang-senang dengan teman',entries:['Tebak Kata','Pictionary','Karaoke','Menari','Trivia','Mau Pilih Mana','Tidak Pernah','Dua Kebenaran dan Satu Kebohongan']},
   {icon:'💼',title:'Bagi Tim',subtitle:'Tetapkan tim secara acak',entries:['Tim Merah','Tim Biru','Tim Hijau','Tim Kuning','Tim Ungu','Tim Oranye']},
   {icon:'✈️',title:'Tujuan Wisata',subtitle:'Ke mana selanjutnya',entries:['Paris','Tokyo','New York','Bali','Roma','Sydney','Dubai','London']},
-  {icon:'🎁',title:'Ide Hadiah',subtitle:'Apa yang dibeli',entries:['Buku','Kartu Hadiah','Cokelat','Bunga','Gadget','Pakaian','Pengalaman','Perhiasan']},
+  {icon:'🎁',title:'Ide Hadiah',subtitle:'Apa yang harus dibeli',entries:['Buku','Kartu Hadiah','Cokelat','Bunga','Gadget','Pakaian','Pengalaman','Perhiasan']},
   {icon:'💪',title:'Latihan',subtitle:'Latihan hari ini',entries:['Push-up','Squat','Burpee','Plank','Jumping Jack','Lunge','Sit-up','Mountain Climber']}
 ];
 
 var winnerHistory=[],currentTab='edit',isPanelVisible=true,currentVolumeLevel=4,soundEnabled=true;
 var colorTheme='classic',SEGMENT_COLORS=COLOR_PALETTES['classic'],customColors=[];
+/* textSize is kept internally pinned to 'medium' (UI removed). */
 var textSize='medium',textSizeMultipliers={small:0.85,medium:1.0,large:1.15};
 var showWheelText=true,showPointer=true;
 var segmentBorders=false,outerRing=false,confettiEnabled=true,MAX_PARTICIPANTS=50,MAX_NAME_LENGTH=30,MAX_RESULTS=200;
@@ -1247,18 +1247,50 @@ var autoRemoveWinner=false,applauseOnWin=false,displayPopupWithMessage=true;
 var customPopupMessage='Kami punya pemenang!',showRemoveButton=true,spinDurationBase=5.5;
 var musicEnabled=false,musicGainNode=null,musicScheduleTimer=null,musicStepIndex=0;
 var MUSIC_PATTERN=[{f:261.63,d:0.45},{f:329.63,d:0.45},{f:392.00,d:0.45},{f:523.25,d:0.90},{f:440.00,d:0.45},{f:392.00,d:0.45},{f:329.63,d:0.45},{f:293.66,d:0.90}];
-var idleActive=false,idleRAF=0,idleLastTime=0,IDLE_SPEED=12,pointerEl=null,spinToken=0;
+/* Perf: cached DOM refs + compositor-driven idle rotation. */
+var idleActive=false,IDLE_SPEED=12,pointerEl=null,wheelGroupEl=null,spinToken=0;
+var IDLE_PERIOD=360/IDLE_SPEED,idleBaseRotation=0,idleStartTime=0,idlePointerTimer=null,_lastPointerKey='';
+var lowEndDevice=(function(){try{var c=navigator.hardwareConcurrency||8;var m=navigator.deviceMemory||8;return c<=2||m<=2;}catch(e){return false;}})();
 
 var _measureCanvas=document.createElement('canvas'),_measureCtx=_measureCanvas.getContext('2d');
 function measureTextWidth(text,fontSize){_measureCtx.font='800 '+fontSize+'px Inter, -apple-system, sans-serif';return _measureCtx.measureText(text).width;}
 function truncateToWidth(text,maxWidth,fontSize){if(measureTextWidth(text,fontSize)<=maxWidth)return text;var ellipsis='…';var lo=0,hi=text.length;while(lo<hi){var mid=Math.ceil((lo+hi)/2);var test=text.slice(0,mid)+ellipsis;if(measureTextWidth(test,fontSize)<=maxWidth)lo=mid;else hi=mid-1;}if(lo<=0)return ellipsis;return text.slice(0,lo)+ellipsis;}
-function fitTextForSegment(name,chordWidth,radialWidth,segmentCount){var mult=textSizeMultipliers[textSize]||1.0;var maxFontByChord=chordWidth*0.65*mult;var maxFontByCount=(100/Math.max(segmentCount,1)+3)*mult;var maxFontSize=Math.min(15*mult,maxFontByChord,maxFontByCount);maxFontSize=Math.max(maxFontSize,4.5);for(var fs=maxFontSize;fs>=4.5;fs-=0.35){if(measureTextWidth(name,fs)<=radialWidth){return{lines:[name],fontSize:Math.round(fs*10)/10};}}if(chordWidth>=20){var words=name.split(/\s+/).filter(function(w){return w.length>0;});if(words.length>=2){var twoLineMaxFs=Math.min(maxFontSize,chordWidth*0.38*mult);for(var s=1;s<words.length;s++){var l1=words.slice(0,s).join(' ');var l2=words.slice(s).join(' ');for(var fs2=twoLineMaxFs;fs2>=4.5;fs2-=0.35){if(Math.max(measureTextWidth(l1,fs2),measureTextWidth(l2,fs2))<=radialWidth){return{lines:[l1,l2],fontSize:Math.round(fs2*10)/10};}}}}}return{lines:[truncateToWidth(name,radialWidth,4.5)],fontSize:4.5};}
+/* Perf: binary-search font sizing instead of stepping ~30 times per segment. */
+function fitTextForSegment(name,chordWidth,radialWidth,segmentCount){
+  var mult=textSizeMultipliers[textSize]||1.0;
+  var maxFontByChord=chordWidth*0.65*mult;
+  var maxFontByCount=(100/Math.max(segmentCount,1)+3)*mult;
+  var maxFontSize=Math.min(15*mult,maxFontByChord,maxFontByCount);
+  maxFontSize=Math.max(maxFontSize,4.5);
+  if(measureTextWidth(name,maxFontSize)<=radialWidth){return{lines:[name],fontSize:Math.round(maxFontSize*10)/10};}
+  var lo=4.5,hi=maxFontSize;
+  for(var b=0;b<9;b++){var mid=(lo+hi)/2;if(measureTextWidth(name,mid)<=radialWidth)lo=mid;else hi=mid;}
+  if(lo>4.6){return{lines:[name],fontSize:Math.round(lo*10)/10};}
+  if(chordWidth>=20){
+    var words=name.split(/\s+/).filter(function(w){return w.length>0;});
+    if(words.length>=2){
+      var twoLineMaxFs=Math.min(maxFontSize,chordWidth*0.38*mult);
+      for(var s=1;s<words.length;s++){
+        var l1=words.slice(0,s).join(' ');
+        var l2=words.slice(s).join(' ');
+        if(Math.max(measureTextWidth(l1,twoLineMaxFs),measureTextWidth(l2,twoLineMaxFs))<=radialWidth){
+          return{lines:[l1,l2],fontSize:Math.round(twoLineMaxFs*10)/10};
+        }
+        var tlo=4.5,thi=twoLineMaxFs;
+        for(var b2=0;b2<8;b2++){var tmid=(tlo+thi)/2;if(Math.max(measureTextWidth(l1,tmid),measureTextWidth(l2,tmid))<=radialWidth)tlo=tmid;else thi=tmid;}
+        if(tlo>4.6){return{lines:[l1,l2],fontSize:Math.round(tlo*10)/10};}
+      }
+    }
+  }
+  return{lines:[truncateToWidth(name,radialWidth,4.5)],fontSize:4.5};
+}
+/* Single normalization used everywhere so textarea lines, participants and image keys can never drift apart. */
 function normalizeEntryName(raw){return String(raw).trim().slice(0,MAX_NAME_LENGTH);}
 
 function getVolumeMultiplier(){return currentVolumeLevel/4;}
 function hexToFg(hex){if(!hex||hex.charAt(0)!=='#')return '#ffffff';var h=hex.slice(1);if(h.length===3)h=h[0]+h[0]+h[1]+h[1]+h[2]+h[2];var r=parseInt(h.substr(0,2),16),g=parseInt(h.substr(2,2),16),b=parseInt(h.substr(4,2),16);var lum=(0.299*r+0.587*g+0.114*b)/255;return lum>0.55?'#1a1a1a':'#ffffff';}
 function updateSegmentColors(){if(customColors.length>0){SEGMENT_COLORS=customColors.map(function(hex){return{bg:hex,fg:hexToFg(hex)};});}else{SEGMENT_COLORS=COLOR_PALETTES[colorTheme]||COLOR_PALETTES['classic'];}}
-function shareApp(){var text='Lihat Spin The Wheel — aplikasi roda putar gratis!\n\nhttps://wheeloffun.app/id/';if(navigator.share){navigator.share({title:'Spin The Wheel',text:text,url:'https://wheeloffun.app/id/'}).catch(function(err){if(err&&err.name==='AbortError')return;openShareModal(text);});}else{openShareModal(text);}}
+function shareApp(){var text='Cek Putar Roda — aplikasi roda pemutar gratis!\n\nhttps://wheeloffun.app/id/';if(navigator.share){navigator.share({title:'Putar Roda',text:text,url:'https://wheeloffun.app/id/'}).catch(function(err){if(err&&err.name==='AbortError')return;openShareModal(text);});}else{openShareModal(text);}}
 function startMusic(){if(!audioCtx){try{var Ctx=window.AudioContext||window.webkitAudioContext;if(Ctx)audioCtx=new Ctx();}catch(e){return;}}if(!audioCtx)return;if(audioCtx.state==='suspended'){audioCtx.resume().catch(function(){});}if(musicGainNode)return;try{musicGainNode=audioCtx.createGain();musicGainNode.gain.value=0.035;musicGainNode.connect(audioCtx.destination);}catch(e){return;}musicStepIndex=0;scheduleMusicNote();}
 function scheduleMusicNote(){if(!musicEnabled||!musicGainNode||!audioCtx)return;var note=MUSIC_PATTERN[musicStepIndex%MUSIC_PATTERN.length];var now=audioCtx.currentTime;try{var osc=audioCtx.createOscillator();var g=audioCtx.createGain();osc.type='sine';osc.frequency.value=note.f;g.gain.setValueAtTime(0,now);g.gain.linearRampToValueAtTime(1,now+0.04);g.gain.exponentialRampToValueAtTime(0.001,now+note.d*0.95);osc.connect(g);g.connect(musicGainNode);osc.start(now);osc.stop(now+note.d);}catch(e){}musicStepIndex++;musicScheduleTimer=setTimeout(scheduleMusicNote,note.d*1000);}
 function stopMusic(){if(musicScheduleTimer){clearTimeout(musicScheduleTimer);musicScheduleTimer=null;}if(musicGainNode){try{musicGainNode.disconnect();}catch(e){}musicGainNode=null;}musicStepIndex=0;}
@@ -1274,7 +1306,7 @@ function openSettingsModal(){
   document.getElementById('customPopupMessage').disabled=!displayPopupWithMessage;
   document.getElementById('showRemoveButton').checked=showRemoveButton;
   document.getElementById('spinDurationRange').value=spinDurationBase;
-  document.getElementById('spinDurationValue').textContent=spinDurationBase.toFixed(1)+'s';
+  document.getElementById('spinDurationValue').textContent=spinDurationBase.toFixed(1)+'d';
   document.getElementById('showWheelText').checked=showWheelText;
   document.getElementById('showPointer').checked=showPointer;
   document.getElementById('segmentBorders').checked=segmentBorders;
@@ -1284,12 +1316,12 @@ function openSettingsModal(){
   setTimeout(function(){var cb=m.querySelector('.settings-close-btn');if(cb)try{cb.focus();}catch(e){}},80);
 }
 function closeSettingsModal(){var m=document.getElementById('settingsModal');if(!m||!m.classList.contains('active'))return;autoRemoveWinner=document.getElementById('autoRemoveWinner').checked;confettiEnabled=document.getElementById('confettiEnabled').checked;applauseOnWin=document.getElementById('applauseOnWin').checked;displayPopupWithMessage=document.getElementById('displayPopupWithMessage').checked;var msg=document.getElementById('customPopupMessage').value.trim();customPopupMessage=msg||'Kami punya pemenang!';showRemoveButton=document.getElementById('showRemoveButton').checked;var newMusic=document.getElementById('musicEnabled').checked;if(newMusic!==musicEnabled){musicEnabled=newMusic;if(musicEnabled){initAudio();startMusic();}else{stopMusic();}}spinDurationBase=parseFloat(document.getElementById('spinDurationRange').value)||5.5;showWheelText=document.getElementById('showWheelText').checked;showPointer=document.getElementById('showPointer').checked;segmentBorders=document.getElementById('segmentBorders').checked;outerRing=document.getElementById('outerRing').checked;applyPointerVisibility();applySegmentBorders();applyOuterRingVisibility();saveWheelSettings();rebuildWheel();m.classList.remove('active');m.setAttribute('aria-hidden','true');syncBodyScroll();}
-function resetAllSettings(){if(!confirm('Atur ulang semua pengaturan ke default? Roda tersimpan akan dipertahankan.'))return;stopMusic();try{localStorage.removeItem('wheelSettings');}catch(e){}location.reload();}
+function resetAllSettings(){if(!confirm('Atur ulang semua pengaturan ke default? Roda yang tersimpan akan dipertahankan.'))return;stopMusic();try{localStorage.removeItem('wheelSettings');}catch(e){}location.reload();}
 function renderPaletteGrid(){var grid=document.getElementById('paletteGrid');if(!grid)return;var html='';var keys=Object.keys(COLOR_PALETTES);for(var k=0;k<keys.length;k++){var key=keys[k];var palette=COLOR_PALETTES[key];var active=(key===colorTheme&&customColors.length===0)?' active':'';var swatchCount=Math.min(4,palette.length);var swatches='';for(var i=0;i<swatchCount;i++){swatches+='<span class="swatch" style="background:'+palette[i].bg+'"></span>';}var displayName=PALETTE_NAMES[key]||key;html+='<button type="button" class="palette-swatch'+active+'" onclick="setColorTheme(\''+key+'\')" title="'+displayName+'">'+swatches+'</button>';}grid.innerHTML=html;}
 function setColorTheme(theme){if(!COLOR_PALETTES[theme])return;colorTheme=theme;customColors=[];updateSegmentColors();renderPaletteGrid();renderCustomColors();rebuildWheel();saveWheelSettings();showToast('Warna: '+(PALETTE_NAMES[theme]||theme));}
-function renderCustomColors(){var list=document.getElementById('customColorsList');if(!list)return;list.innerHTML='';if(customColors.length===0){list.innerHTML='<span style="font-size:12.5px;color:var(--text-light);">Belum ada warna khusus.</span>';return;}customColors.forEach(function(hex,idx){var sw=document.createElement('div');sw.className='custom-color-swatch';sw.style.background=hex;sw.title=hex;var btn=document.createElement('button');btn.type='button';btn.className='remove-color';btn.textContent='×';btn.setAttribute('aria-label','Hapus warna '+hex);btn.onclick=(function(i){return function(e){e.stopPropagation();customColors.splice(i,1);updateSegmentColors();renderCustomColors();rebuildWheel();saveWheelSettings();};})(idx);sw.appendChild(btn);list.appendChild(sw);});}
-function addCustomColor(){var picker=document.getElementById('customColorPicker');if(!picker)return;var hex=picker.value.toLowerCase();if(!/^#[0-9a-f]{6}$/.test(hex)){showToast('Warna tidak valid.');return;}if(customColors.indexOf(hex)!==-1){showToast('Warna sudah ditambahkan.');return;}if(customColors.length>=20){showToast('Maksimal 20 warna khusus.');return;}customColors.push(hex);updateSegmentColors();renderCustomColors();rebuildWheel();saveWheelSettings();showToast('Warna ditambahkan.');}
-function clearCustomColors(){if(customColors.length===0)return;customColors=[];updateSegmentColors();renderCustomColors();rebuildWheel();saveWheelSettings();showToast('Warna khusus dihapus.');}
+function renderCustomColors(){var list=document.getElementById('customColorsList');if(!list)return;list.innerHTML='';if(customColors.length===0){list.innerHTML='<span style="font-size:12.5px;color:var(--text-light);">Belum ada warna kustom.</span>';return;}customColors.forEach(function(hex,idx){var sw=document.createElement('div');sw.className='custom-color-swatch';sw.style.background=hex;sw.title=hex;var btn=document.createElement('button');btn.type='button';btn.className='remove-color';btn.textContent='×';btn.setAttribute('aria-label','Hapus warna '+hex);btn.onclick=(function(i){return function(e){e.stopPropagation();customColors.splice(i,1);updateSegmentColors();renderCustomColors();rebuildWheel();saveWheelSettings();};})(idx);sw.appendChild(btn);list.appendChild(sw);});}
+function addCustomColor(){var picker=document.getElementById('customColorPicker');if(!picker)return;var hex=picker.value.toLowerCase();if(!/^#[0-9a-f]{6}$/.test(hex)){showToast('Warna tidak valid.');return;}if(customColors.indexOf(hex)!==-1){showToast('Warna sudah ditambahkan.');return;}if(customColors.length>=20){showToast('Maksimal 20 warna kustom.');return;}customColors.push(hex);updateSegmentColors();renderCustomColors();rebuildWheel();saveWheelSettings();showToast('Warna ditambahkan.');}
+function clearCustomColors(){if(customColors.length===0)return;customColors=[];updateSegmentColors();renderCustomColors();rebuildWheel();saveWheelSettings();showToast('Warna kustom dihapus.');}
 function applyPointerVisibility(){var p=document.getElementById('wheelPointer');if(p)p.style.display=showPointer?'':'none';}
 function applySegmentBorders(){var svg=document.getElementById('wheelSvg');if(svg)svg.classList.toggle('wheel-borders-on',segmentBorders);}
 function applyOuterRingVisibility(){var ring=document.getElementById('wheelOuterRing');if(ring)ring.style.display=outerRing?'':'none';}
@@ -1347,16 +1379,51 @@ function playSubduedApplause(){if(!soundEnabled||!audioCtx)return;var vol=0.13*g
 (function(){var events=['click','touchstart','keydown'];function once(){initAudio();if(musicEnabled)startMusic();events.forEach(function(e){document.removeEventListener(e,once);});}events.forEach(function(e){document.addEventListener(e,once,{once:true,passive:true});});})();
 function fullscreenElementNow(){return document.fullscreenElement||document.webkitFullscreenElement||document.msFullscreenElement||null;}
 function isWheelFullscreen(){var el=document.getElementById('wheelPremiumBg');return !!fullscreenElementNow()||!!(el&&el.classList.contains('pseudo-fullscreen'));}
-function updateFullscreenUi(){var on=isWheelFullscreen();var btn=document.getElementById('fsToggleBtn');var icon=document.getElementById('fsToggleIcon');if(btn){btn.title=on?'Keluar layar penuh':'Layar penuh';btn.setAttribute('aria-label',on?'Keluar layar penuh':'Masuk layar penuh');btn.setAttribute('aria-pressed',on?'true':'false');}if(icon)icon.setAttribute('href',on?'#i-minimize':'#i-maximize');}
+function updateFullscreenUi(){var on=isWheelFullscreen();var btn=document.getElementById('fsToggleBtn');var icon=document.getElementById('fsToggleIcon');if(btn){btn.title=on?'Keluar Layar Penuh':'Layar Penuh Roda';btn.setAttribute('aria-label',on?'Keluar layar penuh':'Masuk layar penuh');btn.setAttribute('aria-pressed',on?'true':'false');}if(icon)icon.setAttribute('href',on?'#i-minimize':'#i-maximize');}
 function setPseudoFullscreen(on){var el=document.getElementById('wheelPremiumBg');if(!el)return;el.classList.toggle('pseudo-fullscreen',on);syncBodyScroll();updateFullscreenUi();}
 function toggleFullscreenWheel(){var el=document.getElementById('wheelPremiumBg');if(!el)return;if(isWheelFullscreen()){if(el.classList.contains('pseudo-fullscreen')){setPseudoFullscreen(false);return;}var exit=document.exitFullscreen||document.webkitExitFullscreen||document.msExitFullscreen;if(exit){try{exit.call(document);}catch(e){setPseudoFullscreen(false);}}else{setPseudoFullscreen(false);}return;}var req=el.requestFullscreen||el.webkitRequestFullscreen||el.msRequestFullscreen;if(!req){setPseudoFullscreen(true);return;}try{var p=req.call(el);if(p&&typeof p.then==='function'){p.then(function(){updateFullscreenUi();}).catch(function(){setPseudoFullscreen(true);});}else{setTimeout(updateFullscreenUi,150);}}catch(e){setPseudoFullscreen(true);}}
 ['fullscreenchange','webkitfullscreenchange','msfullscreenchange'].forEach(function(ev){document.addEventListener(ev,function(){updateFullscreenUi();syncBodyScroll();});});
 function secureRandomInt(max){if(max<=0)return 0;if(window.crypto&&window.crypto.getRandomValues){var arr=new Uint32Array(1);var limit=Math.floor(0x100000000/max)*max;var v;do{window.crypto.getRandomValues(arr);v=arr[0];}while(v>=limit);return v%max;}return Math.floor(Math.random()*max);}
 function getSpinDuration(){var base=spinDurationBase*1000;return base+secureRandomInt(1200);}
-function startIdleSpin(){if(idleActive||isSpinning)return;if(document.hidden)return;var wo=document.getElementById('winnerOverlay');if(wo&&wo.classList.contains('show'))return;if(participants.length<2)return;if(window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches)return;idleActive=true;idleLastTime=performance.now();idleRAF=requestAnimationFrame(idleLoop);}
-function stopIdleSpin(){idleActive=false;if(idleRAF){cancelAnimationFrame(idleRAF);idleRAF=0;}}
-var _idlePointerCheck=0;
-function idleLoop(now){if(!idleActive||isSpinning)return;var dt=(now-idleLastTime)/1000;idleLastTime=now;if(dt>0&&dt<0.5){currentRotation=(currentRotation+IDLE_SPEED*dt)%360;var g=document.getElementById('wheelGroup');if(g)g.setAttribute('transform','rotate('+currentRotation+')');if(now-_idlePointerCheck>200){_idlePointerCheck=now;updatePointerColor(currentRotation);}}idleRAF=requestAnimationFrame(idleLoop);}
+/* Perf: idle rotation now runs on the compositor via CSS animation, with a cheap timer only for pointer color. */
+function startIdleSpin(){
+  if(idleActive||isSpinning)return;
+  if(document.hidden)return;
+  var wo=document.getElementById('winnerOverlay');
+  if(wo&&wo.classList.contains('show'))return;
+  if(participants.length<2)return;
+  if(window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches)return;
+  var g=wheelGroupEl||(wheelGroupEl=document.getElementById('wheelGroup'));
+  if(!g)return;
+  idleActive=true;
+  idleBaseRotation=((currentRotation%360)+360)%360;
+  idleStartTime=performance.now();
+  g.style.transform='';
+  g.classList.add('idle-spinning');
+  g.style.animationDuration=IDLE_PERIOD+'s';
+  g.style.animationDelay=(-(idleBaseRotation/360)*IDLE_PERIOD)+'s';
+  if(idlePointerTimer)clearInterval(idlePointerTimer);
+  idlePointerTimer=setInterval(function(){
+    if(!idleActive||isSpinning||document.hidden)return;
+    var ang=(idleBaseRotation+IDLE_SPEED*((performance.now()-idleStartTime)/1000))%360;
+    updatePointerColor(ang);
+  },350);
+}
+function stopIdleSpin(){
+  if(idlePointerTimer){clearInterval(idlePointerTimer);idlePointerTimer=null;}
+  var g=wheelGroupEl||document.getElementById('wheelGroup');
+  if(idleActive&&g){
+    var elapsed=(performance.now()-idleStartTime)/1000;
+    var rot=((idleBaseRotation+IDLE_SPEED*elapsed)%360+360)%360;
+    currentRotation=rot;
+    g.classList.remove('idle-spinning');
+    g.style.animationDuration='';
+    g.style.animationDelay='';
+    g.style.transform='rotate('+rot+'deg)';
+    updatePointerColor(rot);
+  }
+  idleActive=false;
+}
 function updateEntries(){
   if(isSpinning)return;
   var ta=document.getElementById('entriesTextarea');if(!ta)return;
@@ -1369,11 +1436,12 @@ function updateEntries(){
     if(raw.length>MAX_NAME_LENGTH)didTruncate=true;
     validNames.push(normalizeEntryName(raw));
   }
+  /* Keep the textarea and the participant list identical so index-based removal always targets the right line. */
   if(hitLimit){ta.value=validNames.join('\n');}
   var keep={};for(var k=0;k<validNames.length;k++)keep[validNames[k]]=true;
   Object.keys(participantImages).forEach(function(key){if(!keep[key])delete participantImages[key];});
   if(didTruncate&&!window._truncToastShown){window._truncToastShown=true;showToast('Beberapa entri dipotong menjadi '+MAX_NAME_LENGTH+' karakter.');setTimeout(function(){window._truncToastShown=false;},4000);}
-  if(hitLimit&&!window._limitToastShown){window._limitToastShown=true;showToast('Batas maksimal '+MAX_PARTICIPANTS+' entri tercapai — baris ekstra dihapus.');setTimeout(function(){window._limitToastShown=false;},4000);}
+  if(hitLimit&&!window._limitToastShown){window._limitToastShown=true;showToast('Maksimal '+MAX_PARTICIPANTS+' entri tercapai — baris tambahan dihapus.');setTimeout(function(){window._limitToastShown=false;},4000);}
   participants=validNames;
   var badge=document.getElementById('entriesCountBadge');
   if(badge)badge.textContent='Entri: '+participants.length+(hitLimit?' (maks)':'');
@@ -1389,17 +1457,19 @@ function triggerImageUpload(){if(blockIfSpinning())return;document.getElementByI
 function downscaleImage(dataUrl,maxSize,callback){try{var img=new Image();img.onload=function(){try{var w=img.width,h=img.height;var scale=Math.min(1,maxSize/Math.max(w,h));var cw=Math.max(1,Math.round(w*scale));var ch=Math.max(1,Math.round(h*scale));var canvas=document.createElement('canvas');canvas.width=cw;canvas.height=ch;var ctx=canvas.getContext('2d');ctx.drawImage(img,0,0,cw,ch);var out;try{out=canvas.toDataURL('image/jpeg',0.82);}catch(e){out=dataUrl;}callback(out);}catch(e){callback(dataUrl);}};img.onerror=function(){callback(dataUrl);};img.src=dataUrl;}catch(e){callback(dataUrl);}}
 function handleImageUpload(event){
   var file=event.target.files[0];event.target.value='';if(!file)return;
-  if(!/^image\//.test(file.type)){showToast('Pilih file gambar.');return;}
-  if(file.size>10*1024*1024){showToast('Gambar terlalu besar (maks 10 MB).');return;}
+  if(!/^image\//.test(file.type)){showToast('Silakan pilih file gambar.');return;}
+  if(file.size>10*1024*1024){showToast('Gambar terlalu besar (maks. 10MB).');return;}
   if(blockIfSpinning())return;
   var rawName=file.name.replace(/\.[^/.]+$/,'').trim().slice(0,MAX_NAME_LENGTH)||'Gambar';
   var reader=new FileReader();
   reader.onload=function(e){
     if(isSpinning){showToast('Gambar dilewati — tunggu putaran selesai.');return;}
     downscaleImage(e.target.result,320,function(dataUrl){
+      /* Re-check: the user may have started a spin while the file was being processed. */
       if(isSpinning){showToast('Gambar dilewati — tunggu putaran selesai.');return;}
       var ta=document.getElementById('entriesTextarea');if(!ta)return;
       var current=ta.value.split('\n').map(function(s){return s.trim();}).filter(function(s){return s.length;});
+      /* Compare against the normalized name so the image key matches the participant key exactly. */
       var existingName=null;
       for(var ci=0;ci<current.length;ci++){
         var norm=normalizeEntryName(current[ci]);
@@ -1410,7 +1480,7 @@ function handleImageUpload(event){
         updateEntries();syncPlaceholder();
         showToast('Gambar diperbarui: '+existingName);
       }else{
-        if(participants.length>=MAX_PARTICIPANTS){showToast('Batas maksimal '+MAX_PARTICIPANTS+' entri tercapai.');return;}
+        if(participants.length>=MAX_PARTICIPANTS){showToast('Maksimal '+MAX_PARTICIPANTS+' entri tercapai.');return;}
         ta.value+=(ta.value.length>0&&!ta.value.endsWith('\n')?'\n':'')+rawName;
         participantImages[rawName]=dataUrl;
         updateEntries();syncPlaceholder();
@@ -1430,14 +1500,16 @@ function getSavedWheelsList(){
     var raw=localStorage.getItem(SAVED_WHEELS_KEY);
     if(!raw)return [];
     var parsed=JSON.parse(raw);
+    /* Guard against legacy / foreign values that are valid JSON but not an array. */
     if(!Array.isArray(parsed))return [];
     return parsed.filter(function(x){return x&&typeof x==='object';});
   }catch(e){return [];}
 }
-function persistSavedWheels(list){try{localStorage.setItem(SAVED_WHEELS_KEY,JSON.stringify(list));return true;}catch(e){showToast('Penyimpanan penuh — hapus beberapa roda tersimpan.');return false;}}
+function persistSavedWheels(list){try{localStorage.setItem(SAVED_WHEELS_KEY,JSON.stringify(list));return true;}catch(e){showToast('Penyimpanan penuh — hapus beberapa simpanan lama.');return false;}}
 function serializeWheel(name){var ta=document.getElementById('entriesTextarea');var entries=ta?ta.value.split('\n').map(function(s){return s.trim();}).filter(function(s){return s.length>0;}):[];return{version:'1',name:name||'Roda Tanpa Judul',savedAt:new Date().toISOString(),entries:entries,images:participantImages||{},settings:{colorTheme:colorTheme,spinDurationBase:spinDurationBase,segmentBorders:segmentBorders,outerRing:outerRing,showWheelText:showWheelText,showPointer:showPointer,customColors:customColors.slice(),customPopupMessage:customPopupMessage,showRemoveButton:showRemoveButton,displayPopupWithMessage:displayPopupWithMessage,applauseOnWin:applauseOnWin,confettiEnabled:confettiEnabled,autoRemoveWinner:autoRemoveWinner,musicEnabled:musicEnabled}};}
 function applyWheelData(data){
   if(!data||typeof data!=='object')return false;
+  /* Reset spin state up front so loading during a spin doesn't corrupt state */
   spinToken++;isSpinning=false;stopIdleSpin();
   var spinBtnReset=document.getElementById('spinBtn');
   if(spinBtnReset){spinBtnReset.disabled=false;spinBtnReset.removeAttribute('aria-busy');}
@@ -1451,6 +1523,7 @@ function applyWheelData(data){
     participantImages={};
     if(data.images&&typeof data.images==='object'){
       Object.keys(data.images).forEach(function(k){
+        /* Only accept data-URI image strings — blocks injected HTML/SVG payloads */
         if(typeof data.images[k]==='string'&&/^data:image\//.test(data.images[k]))participantImages[k]=data.images[k];
       });
     }
@@ -1469,6 +1542,7 @@ function applyWheelData(data){
     if(typeof s.confettiEnabled==='boolean')confettiEnabled=s.confettiEnabled;
     if(typeof s.autoRemoveWinner==='boolean')autoRemoveWinner=s.autoRemoveWinner;
     if(typeof s.musicEnabled==='boolean')musicEnabled=s.musicEnabled;
+    /* Fresh wheel → fresh results, rotation, winner state */
     winnerHistory=[];currentWinnerName='';currentWinnerIndex=-1;currentWinnerRemoved=false;
     currentRotation=0;
     renderResultsList();
@@ -1503,6 +1577,7 @@ function renderSavedWheelsList(){
     var dateStr=isNaN(d.getTime())?'':d.toLocaleDateString()+' '+d.toLocaleTimeString([],{hour:'2-digit',minute:'2-digit'});
     var cnt=Array.isArray(w.entries)?w.entries.length:0;
     var idAttr=escHtml(w.id||'');
+    /* Data attributes + delegation: no user-controlled string ever reaches an inline JS context. */
     html+='<div class="saved-wheel-item"><div class="saved-wheel-info"><div class="saved-wheel-name">'+escHtml(w.name||'Tanpa Judul')+'</div><div class="saved-wheel-meta">'+cnt+' entri · '+escHtml(dateStr)+'</div></div><button type="button" class="saved-wheel-btn saved-wheel-btn-load" data-wheel-id="'+idAttr+'">Muat</button><button type="button" class="saved-wheel-btn saved-wheel-btn-del" data-wheel-id="'+idAttr+'" aria-label="Hapus roda tersimpan">✕</button></div>';
   }
   el.innerHTML=html;
@@ -1515,19 +1590,45 @@ function exportWheelFile(){var ta=document.getElementById('entriesTextarea');if(
 function closeExportWheelModal(){var m=document.getElementById('exportWheelModal');if(!m||!m.classList.contains('active'))return;m.classList.remove('active');m.setAttribute('aria-hidden','true');syncBodyScroll();}
 function confirmExportWheel(){var input=document.getElementById('exportWheelNameInput');var rawName=(input&&input.value.trim())||('roda-'+new Date().toISOString().slice(0,10));var safeName=rawName.replace(/[\/\\:*?"<>|]/g,'-').replace(/\.json$/i,'').slice(0,80)||'roda';var data=serializeWheel(safeName);var blob=new Blob([JSON.stringify(data,null,2)],{type:'application/json'});var url=URL.createObjectURL(blob);var a=document.createElement('a');a.href=url;a.download=safeName+'.json';document.body.appendChild(a);a.click();document.body.removeChild(a);setTimeout(function(){URL.revokeObjectURL(url);},1000);closeExportWheelModal();showToast('Roda diekspor: '+safeName+'.json');}
 function triggerWheelImport(){var inp=document.getElementById('wheelImportInput');if(inp)inp.click();}
-function handleWheelImport(event){var file=event.target.files[0];event.target.value='';if(!file)return;if(file.size>5*1024*1024){showToast('File terlalu besar (maks 5 MB).');return;}var reader=new FileReader();reader.onload=function(e){try{var data=JSON.parse(e.target.result);if(!data||!Array.isArray(data.entries))throw new Error('Invalid');if(applyWheelData(data)){closeLoadWheelModal();closeWinnerPopup();showToast('Diimpor: '+(data.name||'Roda'));}else{showToast('Tidak dapat mengimpor roda.');}}catch(err){showToast('File roda tidak valid.');}};reader.onerror=function(){showToast('Tidak dapat membaca file.');};reader.readAsText(file);}
-function exportResults(){if(winnerHistory.length===0){showToast('Tidak ada hasil untuk diekspor.');return;}var ts=new Date().toISOString().slice(0,10);var lines=['Spin The Wheel — Hasil','Diekspor: '+new Date().toLocaleString(),'Total: '+winnerHistory.length,''];for(var i=0;i<winnerHistory.length;i++){lines.push((i+1)+'. '+winnerHistory[i]);}var blob=new Blob([lines.join('\n')],{type:'text/plain;charset=utf-8'});var url=URL.createObjectURL(blob);var a=document.createElement('a');a.href=url;a.download='hasil-roda-'+ts+'.txt';document.body.appendChild(a);a.click();document.body.removeChild(a);setTimeout(function(){URL.revokeObjectURL(url);},1000);showToast('Hasil diekspor.');}
-function rebuildWheel(){var g=document.getElementById('wheelGroup');if(!g)return;var n=participants.length;if(n===0){g.innerHTML='<circle cx="0" cy="0" r="105" fill="#e8e8e8"/>';updatePointerColor(currentRotation);return;}var segAngle=360/n,r=105,defs='',html='';for(var i=0;i<n;i++){var startAngle=i*segAngle;var endAngle=(i+1)*segAngle;var a1=(startAngle-90)*Math.PI/180,a2=(endAngle-90)*Math.PI/180;var x1=(Math.cos(a1)*r).toFixed(4),y1=(Math.sin(a1)*r).toFixed(4);var x2=(Math.cos(a2)*r).toFixed(4),y2=(Math.sin(a2)*r).toFixed(4);var largeArc=segAngle>180?1:0;var color=SEGMENT_COLORS[i%SEGMENT_COLORS.length].bg;var img=participantImages[participants[i]];if(n===1){if(img){defs+='<clipPath id="wclip-'+i+'"><circle cx="0" cy="0" r="'+r+'"/></clipPath>';html+='<image href="'+escHtml(img)+'" x="'+(-r)+'" y="'+(-r)+'" width="'+(2*r)+'" height="'+(2*r)+'" preserveAspectRatio="xMidYMid slice" clip-path="url(#wclip-'+i+')"/>';}else{html+='<circle cx="0" cy="0" r="'+r+'" fill="'+color+'" class="wheel-segment"/>';}}else{var dPath='M 0 0 L '+x1+' '+y1+' A '+r+' '+r+' 0 '+largeArc+' 1 '+x2+' '+y2+' Z';if(img){defs+='<clipPath id="wclip-'+i+'"><path d="'+dPath+'"/></clipPath>';html+='<image href="'+escHtml(img)+'" x="'+(-r)+'" y="'+(-r)+'" width="'+(2*r)+'" height="'+(2*r)+'" preserveAspectRatio="xMidYMid slice" clip-path="url(#wclip-'+i+')"/>';html+='<path d="'+dPath+'" fill="none" stroke="rgba(0,0,0,0.12)" stroke-width="1"/>';}else{html+='<path d="'+dPath+'" fill="'+color+'" class="wheel-segment"/>';}}}
+function handleWheelImport(event){var file=event.target.files[0];event.target.value='';if(!file)return;if(file.size>5*1024*1024){showToast('File terlalu besar (maks. 5MB).');return;}var reader=new FileReader();reader.onload=function(e){try{var data=JSON.parse(e.target.result);if(!data||!Array.isArray(data.entries))throw new Error('Invalid');if(applyWheelData(data)){closeLoadWheelModal();closeWinnerPopup();showToast('Diimpor: '+(data.name||'Roda'));}else{showToast('Tidak dapat mengimpor roda.');}}catch(err){showToast('File roda tidak valid.');}};reader.onerror=function(){showToast('Tidak dapat membaca file.');};reader.readAsText(file);}
+function exportResults(){if(winnerHistory.length===0){showToast('Tidak ada hasil untuk diekspor.');return;}var ts=new Date().toISOString().slice(0,10);var lines=['Putar Roda — Hasil','Diekspor: '+new Date().toLocaleString(),'Total: '+winnerHistory.length,''];for(var i=0;i<winnerHistory.length;i++){lines.push((i+1)+'. '+winnerHistory[i]);}var blob=new Blob([lines.join('\n')],{type:'text/plain;charset=utf-8'});var url=URL.createObjectURL(blob);var a=document.createElement('a');a.href=url;a.download='hasil-roda-'+ts+'.txt';document.body.appendChild(a);a.click();document.body.removeChild(a);setTimeout(function(){URL.revokeObjectURL(url);},1000);showToast('Hasil diekspor.');}
+function rebuildWheel(){var g=wheelGroupEl||(wheelGroupEl=document.getElementById('wheelGroup'));if(!g)return;var n=participants.length;if(n===0){g.innerHTML='<circle cx="0" cy="0" r="105" fill="#e8e8e8"/>';updatePointerColor(currentRotation);return;}var segAngle=360/n,r=105,defs='',html='';for(var i=0;i<n;i++){var startAngle=i*segAngle;var endAngle=(i+1)*segAngle;var a1=(startAngle-90)*Math.PI/180,a2=(endAngle-90)*Math.PI/180;var x1=(Math.cos(a1)*r).toFixed(4),y1=(Math.sin(a1)*r).toFixed(4);var x2=(Math.cos(a2)*r).toFixed(4),y2=(Math.sin(a2)*r).toFixed(4);var largeArc=segAngle>180?1:0;var color=SEGMENT_COLORS[i%SEGMENT_COLORS.length].bg;var img=participantImages[participants[i]];if(n===1){if(img){defs+='<clipPath id="wclip-'+i+'"><circle cx="0" cy="0" r="'+r+'"/></clipPath>';html+='<image href="'+escHtml(img)+'" x="'+(-r)+'" y="'+(-r)+'" width="'+(2*r)+'" height="'+(2*r)+'" preserveAspectRatio="xMidYMid slice" clip-path="url(#wclip-'+i+')"/>';}else{html+='<circle cx="0" cy="0" r="'+r+'" fill="'+color+'" class="wheel-segment"/>';}}else{var dPath='M 0 0 L '+x1+' '+y1+' A '+r+' '+r+' 0 '+largeArc+' 1 '+x2+' '+y2+' Z';if(img){defs+='<clipPath id="wclip-'+i+'"><path d="'+dPath+'"/></clipPath>';html+='<image href="'+escHtml(img)+'" x="'+(-r)+'" y="'+(-r)+'" width="'+(2*r)+'" height="'+(2*r)+'" preserveAspectRatio="xMidYMid slice" clip-path="url(#wclip-'+i+')"/>';html+='<path d="'+dPath+'" fill="none" stroke="rgba(0,0,0,0.12)" stroke-width="1"/>';}else{html+='<path d="'+dPath+'" fill="'+color+'" class="wheel-segment"/>';}}}
 if(showWheelText&&n>1&&n<=MAX_PARTICIPANTS){var labelR=r*0.62;var segAngleRad=(segAngle*Math.PI)/180;var chordWidth=2*labelR*Math.sin(segAngleRad/2);var radialWidth=r*0.72;for(var j=0;j<n;j++){var midAngle=j*segAngle+segAngle/2;var midRad=(midAngle-90)*Math.PI/180;var px=(Math.cos(midRad)*labelR).toFixed(4);var py=(Math.sin(midRad)*labelR).toFixed(4);var baseRot=midAngle-90;var norm=((baseRot%360)+360)%360;var textRot=(norm>90&&norm<270)?baseRot+180:baseRot;var name=participants[j];var hasImg=!!participantImages[participants[j]];var textAttrs=hasImg?'fill="#ffffff" stroke="rgba(0,0,0,0.75)" stroke-width="3" paint-order="stroke fill"':'fill="'+SEGMENT_COLORS[j%SEGMENT_COLORS.length].fg+'"';var fit=fitTextForSegment(name,chordWidth,radialWidth,n);var transformAttr='transform="rotate('+textRot+' '+px+' '+py+')"';var baseAttrs='text-anchor="middle" dominant-baseline="middle" font-size="'+fit.fontSize+'" font-weight="800" '+textAttrs+' style="pointer-events:none;font-family:Inter,-apple-system,sans-serif;letter-spacing:0.2px;"';if(fit.lines.length===1){html+='<text x="'+px+'" y="'+py+'" '+transformAttr+' '+baseAttrs+'>'+escHtml(fit.lines[0])+'</text>';}else{var lineH=fit.fontSize*1.15;var yy1=(parseFloat(py)-lineH/2).toFixed(4);var yy2=(parseFloat(py)+lineH/2).toFixed(4);html+='<text '+transformAttr+' '+baseAttrs+'><tspan x="'+px+'" y="'+yy1+'">'+escHtml(fit.lines[0])+'</tspan><tspan x="'+px+'" y="'+yy2+'">'+escHtml(fit.lines[1])+'</tspan></text>';}}}
 g.innerHTML=(defs?'<defs>'+defs+'</defs>':'')+html;applyRotation(currentRotation);applyPointerVisibility();applyOuterRingVisibility();}
 function getContrastColor(hex){if(!hex||hex.charAt(0)!=='#')return 'rgba(0,0,0,0.62)';var h=hex.slice(1);if(h.length===3){h=h[0]+h[0]+h[1]+h[1]+h[2]+h[2];}var r=parseInt(h.substr(0,2),16),g=parseInt(h.substr(2,2),16),b=parseInt(h.substr(4,2),16);var lum=(0.299*r+0.587*g+0.114*b)/255;return lum>0.55?'rgba(0,0,0,0.55)':'rgba(255,255,255,0.9)';}
-function updatePointerColor(rotation){if(!pointerEl)pointerEl=document.getElementById('wheelPointer');if(!pointerEl)return;var n=participants.length;if(n===0){pointerEl.style.fill='#ffffff';pointerEl.style.stroke='rgba(0,0,0,0.62)';return;}var segAngle=360/n;var pointerAngle=((90-rotation)%360+360)%360;var segIndex=Math.floor(pointerAngle/segAngle)%n;var hasImg=!!participantImages[participants[segIndex]];var segColor=hasImg?'#ffffff':SEGMENT_COLORS[segIndex%SEGMENT_COLORS.length].bg;pointerEl.style.fill=segColor;pointerEl.style.stroke=getContrastColor(segColor);}
-function applyRotation(deg){var g=document.getElementById('wheelGroup');if(g)g.setAttribute('transform','rotate('+deg+')');updatePointerColor(deg);}
+/* Perf: only touch the DOM when the pointer's segment actually changes. */
+function updatePointerColor(rotation){
+  if(!pointerEl)pointerEl=document.getElementById('wheelPointer');
+  if(!pointerEl)return;
+  var n=participants.length;
+  if(n===0){
+    if(_lastPointerKey!=='empty'){_lastPointerKey='empty';pointerEl.style.fill='#ffffff';pointerEl.style.stroke='rgba(0,0,0,0.62)';}
+    return;
+  }
+  var segAngle=360/n;
+  var pointerAngle=((90-rotation)%360+360)%360;
+  var segIndex=Math.floor(pointerAngle/segAngle)%n;
+  var name=participants[segIndex];
+  var hasImg=!!participantImages[name];
+  var segColor=hasImg?'#ffffff':SEGMENT_COLORS[segIndex%SEGMENT_COLORS.length].bg;
+  var key=segIndex+'|'+n+'|'+(hasImg?1:0)+'|'+segColor;
+  if(key===_lastPointerKey)return;
+  _lastPointerKey=key;
+  pointerEl.style.fill=segColor;
+  pointerEl.style.stroke=getContrastColor(segColor);
+}
+/* Perf: CSS transform on the SVG group → GPU composited, no attribute thrash. */
+function applyRotation(deg){
+  var g=wheelGroupEl||(wheelGroupEl=document.getElementById('wheelGroup'));
+  if(g)g.style.transform='rotate('+deg+'deg)';
+  updatePointerColor(deg);
+}
 function updateSpinButtonState(){var btn=document.getElementById('spinBtn');if(!btn||isSpinning)return;btn.disabled=participants.length<2;}
 function spinWheel(){
   if(isSpinning)return;
+  /* Flush any pending debounced textarea edit so the wheel matches what the user sees */
   updateEntries();
-  if(participants.length<2){showToast('Tambahkan minimal 2 entri untuk memutar.');return;}
+  if(participants.length<2){showToast('Tambahkan setidaknya 2 entri untuk memutar.');return;}
   if(!audioUnlocked)initAudio();
   if(soundEnabled)ensureAudio();
   stopIdleSpin();
@@ -1596,6 +1697,7 @@ function onSpinComplete(winnerIndex,winnerName){
     try{if(confettiEnabled&&(!window.matchMedia||!window.matchMedia('(prefers-reduced-motion: reduce)').matches)){requestAnimationFrame(launchConfetti);}}catch(e){}
     if(autoRemoveWinner){removeEntryByIndex(winnerIndex);currentWinnerRemoved=true;}
     syncPlaceholder();
+    /* Re-evaluate button state after auto-remove may have dropped entries below 2 */
     updateSpinButtonState();
     setTimeout(function(){if(!isSpinning&&participants.length>=2&&!document.getElementById('winnerOverlay').classList.contains('show')){startIdleSpin();}},500);
   });
@@ -1616,11 +1718,11 @@ function removeEntryByIndex(idx){
   if(!stillExists)delete participantImages[removedName];
   updateEntries();syncPlaceholder();
 }
-function showWinnerPopup(name){var overlay=document.getElementById('winnerOverlay');if(!overlay)return;var titleEl=document.getElementById('winnerPopupTitle');if(titleEl)titleEl.textContent=customPopupMessage||'Kami punya pemenang!';document.getElementById('winnerNameBig').textContent=name;var removeBtn=document.getElementById('winnerRemoveBtn');if(removeBtn)removeBtn.style.display=showRemoveButton?'':'none';overlay.classList.add('show');overlay.setAttribute('aria-hidden','false');document.body.style.overflow='hidden';announce(name+' terpilih');setTimeout(function(){var b=overlay.querySelector('.winner-btn-close');if(b)try{b.focus();}catch(e){}},80);}
+function showWinnerPopup(name){var overlay=document.getElementById('winnerOverlay');if(!overlay)return;var titleEl=document.getElementById('winnerPopupTitle');if(titleEl)titleEl.textContent=customPopupMessage||'Kami punya pemenang!';document.getElementById('winnerNameBig').textContent=name;var removeBtn=document.getElementById('winnerRemoveBtn');if(removeBtn)removeBtn.style.display=showRemoveButton?'':'none';overlay.classList.add('show');overlay.setAttribute('aria-hidden','false');document.body.style.overflow='hidden';announce(name+' dipilih');setTimeout(function(){var b=overlay.querySelector('.winner-btn-close');if(b)try{b.focus();}catch(e){}},80);}
 function closeWinnerPopup(){var overlay=document.getElementById('winnerOverlay');if(!overlay||!overlay.classList.contains('show'))return;overlay.classList.remove('show');overlay.setAttribute('aria-hidden','true');syncBodyScroll();var spinBtn=document.getElementById('spinBtn');if(spinBtn&&!spinBtn.disabled)try{spinBtn.focus();}catch(e){}setTimeout(function(){if(!isSpinning&&participants.length>=2)startIdleSpin();},50);}
 function removeWinnerAndClose(){if(!currentWinnerRemoved&&currentWinnerIndex>=0){removeEntryByIndex(currentWinnerIndex);currentWinnerRemoved=true;}closeWinnerPopup();}
 document.getElementById('winnerOverlay').addEventListener('click',function(e){if(e.target===this)closeWinnerPopup();},{passive:true});
-function launchConfetti(){var canvas=document.getElementById('confettiCanvas');if(!canvas)return;if(canvas._confettiRaf){cancelAnimationFrame(canvas._confettiRaf);canvas._confettiRaf=null;}canvas.classList.add('active');var dpr=Math.min(window.devicePixelRatio||1,1.5);var W=window.innerWidth,H=window.innerHeight;var targetW=(W*dpr)|0,targetH=(H*dpr)|0;if(canvas.width!==targetW)canvas.width=targetW;if(canvas.height!==targetH)canvas.height=targetH;var ctx=canvas.getContext('2d');ctx.setTransform(dpr,0,0,dpr,0,0);var colors=['#E8A500','#B5A642','#1E4620','#F5EBC8','#ef4444','#3b82f6','#e11d48','#8b5cf6'];var particles=[];var cores=(navigator.hardwareConcurrency||4);var maxCount=isMobileViewport()?60:(cores<4?80:120);var count=Math.min(maxCount,60+Math.floor(Math.random()*30));for(var i=0;i<count;i++){particles.push({x:Math.random()*W,y:-20-Math.random()*H*0.8,vx:(Math.random()-0.5)*4,vy:2+Math.random()*5,size:5+Math.random()*7,color:colors[Math.floor(Math.random()*colors.length)],rot:Math.random()*Math.PI*2,vrot:(Math.random()-0.5)*0.2,life:1.0,shape:Math.random()>0.4?'rect':'circle'});}var startTime=performance.now();function loop(now){ctx.clearRect(0,0,W,H);var elapsed=now-startTime;for(var i=0;i<particles.length;i++){var p=particles[i];if(p.life<=0)continue;p.vy+=0.08;p.vx+=(Math.random()-0.5)*0.2;p.x+=p.vx;p.y+=p.vy;p.rot+=p.vrot;if(p.y>H-50)p.life-=0.02;ctx.save();ctx.globalAlpha=Math.max(0,p.life);ctx.translate(p.x,p.y);ctx.rotate(p.rot);ctx.fillStyle=p.color;if(p.shape==='rect'){ctx.fillRect(-p.size/2,-p.size/3,p.size,p.size*0.6);}else{ctx.beginPath();ctx.arc(0,0,p.size/2,0,Math.PI*2);ctx.fill();}ctx.restore();}if(elapsed<4000){canvas._confettiRaf=requestAnimationFrame(loop);}else{ctx.clearRect(0,0,W,H);canvas.classList.remove('active');canvas._confettiRaf=null;}}canvas._confettiRaf=requestAnimationFrame(loop);}
+function launchConfetti(){var canvas=document.getElementById('confettiCanvas');if(!canvas)return;if(canvas._confettiRaf){cancelAnimationFrame(canvas._confettiRaf);canvas._confettiRaf=null;}canvas.classList.add('active');var dpr=lowEndDevice?1:Math.min(window.devicePixelRatio||1,1.5);var W=window.innerWidth,H=window.innerHeight;var targetW=(W*dpr)|0,targetH=(H*dpr)|0;if(canvas.width!==targetW)canvas.width=targetW;if(canvas.height!==targetH)canvas.height=targetH;var ctx=canvas.getContext('2d');ctx.setTransform(dpr,0,0,dpr,0,0);var colors=['#E8A500','#B5A642','#1E4620','#F5EBC8','#ef4444','#3b82f6','#e11d48','#8b5cf6'];var particles=[];var cores=(navigator.hardwareConcurrency||4);var maxCount=lowEndDevice?40:(isMobileViewport()?60:(cores<4?80:120));var count=Math.min(maxCount,60+Math.floor(Math.random()*30));for(var i=0;i<count;i++){particles.push({x:Math.random()*W,y:-20-Math.random()*H*0.8,vx:(Math.random()-0.5)*4,vy:2+Math.random()*5,size:5+Math.random()*7,color:colors[Math.floor(Math.random()*colors.length)],rot:Math.random()*Math.PI*2,vrot:(Math.random()-0.5)*0.2,life:1.0,shape:Math.random()>0.4?'rect':'circle'});}var startTime=performance.now();function loop(now){ctx.clearRect(0,0,W,H);var elapsed=now-startTime;for(var i=0;i<particles.length;i++){var p=particles[i];if(p.life<=0)continue;p.vy+=0.08;p.vx+=(Math.random()-0.5)*0.2;p.x+=p.vx;p.y+=p.vy;p.rot+=p.vrot;if(p.y>H-50)p.life-=0.02;ctx.save();ctx.globalAlpha=Math.max(0,p.life);ctx.translate(p.x,p.y);ctx.rotate(p.rot);ctx.fillStyle=p.color;if(p.shape==='rect'){ctx.fillRect(-p.size/2,-p.size/3,p.size,p.size*0.6);}else{ctx.beginPath();ctx.arc(0,0,p.size/2,0,Math.PI*2);ctx.fill();}ctx.restore();}if(elapsed<4000){canvas._confettiRaf=requestAnimationFrame(loop);}else{ctx.clearRect(0,0,W,H);canvas.classList.remove('active');canvas._confettiRaf=null;}}canvas._confettiRaf=requestAnimationFrame(loop);}
 function openShareModal(text){var t=document.getElementById('shareText');if(t)t.value=text;var m=document.getElementById('shareModal');if(m){m.classList.add('active');m.setAttribute('aria-hidden','false');}document.body.style.overflow='hidden';setTimeout(function(){var ta=document.getElementById('shareText');if(ta){ta.focus();ta.select();}},100);}
 function closeShareModal(){var m=document.getElementById('shareModal');if(!m||!m.classList.contains('active'))return;if(m.contains(document.activeElement)&&document.activeElement.blur){document.activeElement.blur();}m.classList.remove('active');m.setAttribute('aria-hidden','true');syncBodyScroll();}
 function copyShareText(){var ta=document.getElementById('shareText');if(!ta)return;ta.select();if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(ta.value).then(function(){showToast('Disalin ke clipboard.');closeShareModal();}).catch(function(){fallbackCopyText(ta.value);closeShareModal();});}else{fallbackCopyText(ta.value);closeShareModal();}}
@@ -1640,6 +1742,7 @@ document.addEventListener('keydown',function(e){
 document.addEventListener('visibilitychange',function(){if(document.hidden){stopIdleSpin();}else if(!isSpinning&&participants.length>=2&&!document.getElementById('winnerOverlay').classList.contains('show')){startIdleSpin();}});
 window.addEventListener('resize',function(){if(_resizeRAF)return;_resizeRAF=requestAnimationFrame(function(){_resizeRAF=null;if(window.innerWidth>900){var sb=document.getElementById('mobileSidebar');if(sb&&sb.classList.contains('show'))closeSidebar();closeLangMenu();closeNewWheelMenu();closeFileMenu();}});},{passive:true});
 function init(){
+  wheelGroupEl=document.getElementById('wheelGroup');
   pointerEl=document.getElementById('wheelPointer');
   loadWheelSettings();
   setupSegmentedControls();
@@ -1647,7 +1750,7 @@ function init(){
   renderNewWheelMenu();
   renderSidebarNewWheelMenu();
   var sdRange=document.getElementById('spinDurationRange');var sdValue=document.getElementById('spinDurationValue');
-  if(sdRange){sdRange.value=spinDurationBase;if(sdValue)sdValue.textContent=spinDurationBase.toFixed(1)+'s';sdRange.addEventListener('input',function(){var val=parseFloat(this.value);spinDurationBase=val;if(sdValue)sdValue.textContent=val.toFixed(1)+'s';});}
+  if(sdRange){sdRange.value=spinDurationBase;if(sdValue)sdValue.textContent=spinDurationBase.toFixed(1)+'d';sdRange.addEventListener('input',function(){var val=parseFloat(this.value);spinDurationBase=val;if(sdValue)sdValue.textContent=val.toFixed(1)+'d';});}
   var saveNameInput=document.getElementById('saveWheelNameInput');
   if(saveNameInput){saveNameInput.addEventListener('keydown',function(e){if(e.key==='Enter'){e.preventDefault();confirmSaveWheel();}});}
   var exportNameInput=document.getElementById('exportWheelNameInput');
